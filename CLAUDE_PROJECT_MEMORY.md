@@ -16,7 +16,9 @@
 
 | File | Purpose |
 |-----------------------------|-------------------------------------------|
-| `MNP Quality Standards Crosswalk v2.xlsx` | Master Excel crosswalk — **do not write while Excel is open** (file corrupts in transit) |
+| `MNP Quality Standards Crosswalk v3.xlsx` | Current master crosswalk (105 papers, 33 cols A–AG) |
+| `MNP Quality Standards Crosswalk v4.xlsx` | Extended crosswalk with new cols AH (Particle Size Range) + AI (Key Metrics) — 31 rows populated |
+| `add_metadata_columns_v4.py` | Script that created v4 from v3; extend PAPER_METADATA dict for more rows |
 | `crosswalk_append_new_papers.py` | Run after closing Excel to safely append \~18 new papers |
 | `Key Paper Content - Extracted from Full Text.md` | Full extractions from priority papers (sections 1–12) |
 | `Letter to journals and funders.md` | Manuscript cover letter draft |
@@ -99,17 +101,33 @@
 
 All figures are standalone interactive Plotly HTML files. Plotly loaded from CDN (`plotly-2.35.0.min.js`) — **no local network access needed at render time, only at open time.**
 
-### Fig 1 — Workflow Flowchart (`fig1_workflow_flowchart.py`)
+### Fig 1 — Workflow Flowchart (`fig1_workflow_flowchart.py`) — updated 2026-04-23
 
--   24 nodes, 29 edges; two-track (Environmental Monitoring left, Toxicology right)
--   Custom Plotly shapes (rectangles/diamonds) + scatter for edges/labels
--   Background shading: green=monitoring, purple=toxicology track
+-   27 nodes, 35 edges; two-track (Environmental Monitoring left, Toxicology right)
+-   **ALL 7 MATRICES now shown** in monitoring track: DW, SW, Sed, Bio, Air, Food, HumTis
+    -   Was: 4 combined nodes (DW, SW, Sed, "Air/Food/HumTis"); Air/Food/HumTis were collapsed into Gap
+    -   Now: 7 separate matrix nodes with correct tiers: DW=T1, SW=T2, Sed=T1, Bio=T1, Air=T3, Food=T3, HumTis=T3
+    -   Sediment and Biota now show Tier 1 (SCCWRP 2025 TR 1410.A)
+    -   All 7 matrices fan into shared workflow steps (Sampling → Lab Proc → Analysis → QA → Report)
+-   Monitoring track width expanded to x=0.00–0.55; matrix nodes use MAT_W=0.062 (narrower)
+-   Each workflow step hover text shows per-matrix tier breakdown with key citations
+-   Background shading: green=monitoring (0–0.56), purple=toxicology (0.58–1.0)
 
-### Fig 2 — Gap Heatmap (`fig2_gap_heatmap.py`)
+### Fig 2 — Gap Heatmap (`fig2_gap_heatmap.py`) — REDESIGNED 2026-04-23
 
--   7 matrix rows × 11 env workflow cols + separator + 3 tox cols
--   Discrete colorscale: z=1–5 mapped to tier colors + salmon gap
--   Key finding visible: only Drinking Water row has Tier 1 (purple) coverage
+-   **TWO-FACET LAYOUT** (previously single merged heatmap):
+    -   **Top (Environmental Monitoring):** 7 matrices (y) × 11 workflow steps (x) — yaxis domain [0.28, 1.0]
+    -   **Bottom (Toxicology Workflow):** 4 tox steps; matrix-independent — yaxis2 domain [0.0, 0.20]
+    -   Tox subplot occupies left 44% of width (xaxis2 domain [0, 0.44])
+-   **ENRICHED HOVER TEXT** for every cell:
+    -   Per-paper breakdowns: citation, tier, analytical method(s), particle size range, key metrics, Key Notes
+    -   PAPER_METADATA dict (keyed by row ID) provides size ranges and key metrics for 30+ key papers
+    -   Method inference: checks which FTIR/Raman/Py-GC-MS columns have tier values per paper
+-   Key data finding: 32/77 monitoring cells = Gap (41%); DW has most complete coverage
+-   Gap logic: AND intersection (matrix column AND workflow column must both have tier values)
+    -   Reporting/DataDep show as Gap for DW because reporting guidance papers have no matrix-specific tiers
+    -   This is CORRECT: general reporting guidance ≠ DW-specific reporting SOP
+-   Discrete colorscale: z=1–5 → tier colors + salmon gap (unchanged)
 
 ### Fig 3 — Quality Pass Rates (`fig3_quality_passrates.py`)
 
@@ -233,10 +251,11 @@ All 8 added to Zotero (collection AKNE8BJL) and crosswalk. Ciornii et al. 2025 a
 | Lenz et al., 2024 (ring trials EST) | TRB5U5TE | 99 | T3 | FTIR, Raman, RefMat, Blanks, InterLab |
 | Ashta et al., 2026 (atm. deposition AMT) | QXH62ZSF | 100 | T3 | Air, SampProc, FTIR, Blanks, DataAnal |
 | Ren et al., 2026 (atm. review Springer) | RXPEWSMR | 101 | T4 | Samp, Air, SampProc, Report |
-| European Commission, 2024 (Decision EU 2024/1441) | PSTRUFWX | 102 | T1 | DW, SampProc, FTIR, Raman |
+| European Commission, 2024 (Decision EU 2024/1441) | **B6BMGKZ2** (not PSTRUFWX) | 102 | T1 | DW, SampProc, FTIR, Raman |
 | SCCWRP, 2025 (TR 1410.A sediment/biota) | BP397VWH | 103 | T1 | Samp, Sediment, Biota, SampProc, Subsamp, Blanks |
-| [TBD] et al., 2025 (STAR Protocols freshwater/sed/fish) | ZVFB976N | 104 | T3 | SW, Sed, Bio, SampProc, Subsamp, Raman, RefMat, Blanks |
-| [TBD] et al., 2025 (Py-GC-MS + EU 2024/1441, Environ. Pollut.) | HTI2VRRF | 105 | T3 | DW, SW, SampProc, PyGCMS, DataAnal |
+| Vural et al., 2025 (STAR Protocols freshwater/sed/fish) | **3EMHDUUP** (ZVFB976N is webpage bookmark same paper) | 104 | T3 | SW, Sed, Bio, SampProc, Subsamp, Raman, RefMat, Blanks |
+| Dalmau-Soler et al., 2025 (Py-GC-MS EU 2024/1441) | HTI2VRRF | 1 | T3 | DW, SW, SampProc, PyGCMS, DataAnal |
+| **SWRCB/DDW 2025 (ID 82): Zotero key 5WM9L8RJ returns 404** | NOT IN LIBRARY | 82 | T1 | DW, SampProc, FTIR, Raman |
 
 ### Key regulatory documents newly added (both Tier 1):
 - **EU Commission Delegated Decision (EU) 2024/1441** (11 March 2024): EU-wide methodology for measuring MPs in drinking water. Requires ≥1000 L sample, filter cascade (100+20 µm), IR or Raman micro-spectroscopy. Supplements Directive (EU) 2020/2184.
