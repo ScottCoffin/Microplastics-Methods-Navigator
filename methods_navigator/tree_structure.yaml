@@ -1,0 +1,231 @@
+# Microplastics Methods Navigator — Decision Tree Structure
+# Each node defines a question, options, and how to filter the crosswalk.
+# "filter" keys map to crosswalk column names + conditions.
+
+root:
+  question: "What type of study are you designing?"
+  options:
+    monitoring:
+      label: "🔬 Environmental Monitoring"
+      description: "Sampling, analysis, and detection of microplastics in environmental or human matrices"
+      next: matrix_select
+    toxicology:
+      label: "🧫 Toxicology / Effects Testing"
+      description: "Designing or evaluating studies on biological effects of micro/nanoplastics"
+      next: tox_workflow
+    risk_assessment:
+      label: "⚖️ Risk Assessment"
+      description: "Hazard identification, exposure assessment, or risk characterization"
+      next: ra_workflow
+
+# ── MONITORING BRANCH ──────────────────────────────────────
+
+matrix_select:
+  question: "Which environmental matrix?"
+  options:
+    drinking_water:
+      label: "🚰 Drinking Water"
+      next: monitoring_workflow
+      matrix_filter: "Drinking Water"
+    surface_water:
+      label: "🌊 Surface Water / Wastewater"
+      next: monitoring_workflow
+      matrix_filter: "Surface Water"
+    sediment:
+      label: "🪨 Sediment"
+      next: monitoring_workflow
+      matrix_filter: "Sediment"
+    biota:
+      label: "🐟 Biota / Tissue"
+      next: monitoring_workflow
+      matrix_filter: "Biota"
+    air:
+      label: "💨 Air / Atmospheric Deposition"
+      next: monitoring_workflow
+      matrix_filter: "Air"
+    food:
+      label: "🍽️ Food / Dietary"
+      next: monitoring_workflow
+      matrix_filter: "Food"
+    human_tissue:
+      label: "🩸 Human Tissue / Biomonitoring"
+      next: monitoring_workflow
+      matrix_filter: "Human"
+    soil:
+      label: "🌱 Soil / Terrestrial"
+      next: monitoring_workflow
+      matrix_filter: "Soil"
+
+monitoring_workflow:
+  question: "Which workflow step?"
+  options:
+    definitions:
+      label: "📖 Definitions & Terminology"
+      description: "What counts as a microplastic? Size ranges, polymer scope, regulatory definitions"
+      crosswalk_column: "Definitions & Terminology"
+    sampling:
+      label: "📍 Sampling / Field Methods"
+      description: "How to collect representative samples in the field"
+      crosswalk_column: "Sampling (Field Methods)"
+    extraction:
+      label: "🧪 Sample Processing / Extraction"
+      description: "Digestion, density separation, filtration, matrix removal"
+      crosswalk_column: "Sample Processing / Extraction"
+    analysis:
+      label: "🔎 Analytical Identification"
+      description: "Instrument-based polymer identification and quantification"
+      next: instrumentation_select
+    reference_materials:
+      label: "📦 Reference Materials / Positive Controls"
+      description: "Spike standards, calibration materials, reference particles"
+      crosswalk_column: "Reference Materials / +Controls"
+    blanks_qc:
+      label: "🧹 Blanks & Contamination Control"
+      description: "Procedural blanks, field blanks, contamination prevention"
+      crosswalk_column: "Blanks & Contamination Control"
+    data_stats:
+      label: "📊 Data Analysis & Statistics"
+      description: "Sub-sampling statistics, blank correction, uncertainty quantification"
+      terminal: true
+      crosswalk_columns:
+        - "Blanks & Contamination Control"
+        - "Reporting & Harmonization"
+    reporting:
+      label: "📝 Reporting & Data Deposition"
+      description: "Reporting standards, data portals, harmonization guidelines"
+      crosswalk_column: "Reporting & Harmonization"
+    interlaboratory:
+      label: "🔄 Interlaboratory / Validation"
+      description: "Ring trials, method comparisons, proficiency tests"
+      doc_type_filter: "Interlaboratory Study"
+
+instrumentation_select:
+  question: "Which analytical technique?"
+  options:
+    ftir:
+      label: "µFTIR / FPA-FTIR / LDIR"
+      description: "Fourier-transform infrared spectroscopy and laser direct IR"
+      instrument_filter: "µFTIR"
+    raman:
+      label: "µRaman"
+      description: "Micro-Raman spectroscopy"
+      instrument_filter: "µRaman"
+    pyrolysis:
+      label: "Py-GC-MS"
+      description: "Pyrolysis gas chromatography–mass spectrometry"
+      instrument_filter: "Py-GC-MS"
+    ted:
+      label: "TED-GC-MS"
+      description: "Thermal extraction desorption GC-MS (mass-based)"
+      instrument_filter: "TED-GC-MS"
+    nile_red:
+      label: "Nile Red / Fluorescence Screening"
+      description: "Rapid fluorescent staining for screening and hotspot detection"
+      instrument_filter: "Nile Red"
+    visual:
+      label: "Visual / Stereomicroscopy"
+      description: "Optical identification (requires spectroscopic confirmation)"
+      instrument_filter: "Stereomicroscopy"
+    all_instruments:
+      label: "📋 Compare All Techniques"
+      description: "Overview papers comparing multiple analytical approaches"
+      crosswalk_column: "Analytical Methods (General)"
+
+# ── TOXICOLOGY BRANCH ──────────────────────────────────────
+
+tox_workflow:
+  question: "Which toxicology workflow step?"
+  options:
+    particle_char:
+      label: "🔬 Particle Characterization"
+      description: "Characterizing test particles: size, shape, polymer, additives"
+      crosswalk_column: "Toxicology: Study Design & Dosimetry"
+      domain_filter: "Toxicology"
+    reference_particles:
+      label: "📦 Reference / Test Particles"
+      description: "Selecting or preparing environmentally relevant test materials"
+      crosswalk_column: "Reference Materials / +Controls"
+      domain_filter: "Toxicology"
+    dosimetry:
+      label: "💊 Dosimetry (in vitro)"
+      description: "Calculating delivered dose: sedimentation, diffusion, particokinetics"
+      crosswalk_column: "Toxicology: Study Design & Dosimetry"
+      keyword_filter: "dosimetry"
+    effects_testing:
+      label: "🧬 Effects Testing"
+      description: "Assays, test organisms, endpoints, protocols"
+      next: tox_system_select
+    quality_scoring:
+      label: "✅ Study Quality / Scoring"
+      description: "Quality criteria, QA checklists, data scoring tools"
+      crosswalk_column: "Toxicology: Study Design & Dosimetry"
+      keyword_filter: "quality"
+    tox_reporting:
+      label: "📝 Reporting (Tox)"
+      description: "Reporting standards and data deposition for tox studies"
+      crosswalk_column: "Reporting & Harmonization"
+      domain_filter: "Toxicology"
+
+tox_system_select:
+  question: "Which test system?"
+  options:
+    in_vitro:
+      label: "🧫 In Vitro (cell-based)"
+      description: "Cell culture assays, organoids, barrier models"
+      keyword_filter: "in vitro"
+    ecotox_aquatic:
+      label: "🐠 Ecotox — Aquatic"
+      description: "Fish, Daphnia, algae, bivalves, benthic invertebrates"
+      keyword_filter: "ecotox;aquatic;benthic;fish;invertebrate"
+    ecotox_terrestrial:
+      label: "🌱 Ecotox — Terrestrial"
+      description: "Soil organisms, earthworms, plant uptake"
+      keyword_filter: "soil;terrestrial"
+    mammalian:
+      label: "🐁 Mammalian In Vivo"
+      description: "Rodent studies, oral exposure, organ effects"
+      keyword_filter: "mammalian;rodent;mouse;rat;oral"
+    human_epi:
+      label: "👤 Human / Epidemiological"
+      description: "Human biomonitoring, epidemiology, clinical"
+      keyword_filter: "human;blood;placenta;epidemiolog"
+
+# ── RISK ASSESSMENT BRANCH ─────────────────────────────────
+
+ra_workflow:
+  question: "Which risk assessment component?"
+  options:
+    ra_framework:
+      label: "🏗️ RA Frameworks & Approaches"
+      description: "Overall risk assessment frameworks, paradigm comparisons"
+      crosswalk_column: "Risk Assessment / Risk Char."
+      doc_type_filter: "Framework"
+    hazard_id:
+      label: "⚠️ Hazard Identification"
+      description: "Tox databases, quality-screened effect data, evidence synthesis"
+      crosswalk_column: "Risk Assessment / Risk Char."
+      keyword_filter: "hazard;toxicity;effect;ToMEx"
+    exposure:
+      label: "📏 Exposure Assessment"
+      description: "Exposure scenarios, monitoring data, PBK modeling"
+      crosswalk_column: "Risk Assessment / Risk Char."
+      keyword_filter: "exposure;PBK;monitoring;scenario"
+    risk_char:
+      label: "📊 Risk Characterization"
+      description: "Risk quotients, thresholds, management levels"
+      crosswalk_column: "Risk Assessment / Risk Char."
+      keyword_filter: "risk quotient;threshold;management;SSD"
+
+# ── GAP NOTES ──────────────────────────────────────────────
+# Displayed as warnings when a matrix+step combination has no Tier 1/2
+
+gap_notes:
+  surface_water_sampling: "⚠️ No Tier 1 regulatory SOP for surface water sampling. ASTM D8332-20 exists (recommended for crosswalk addition). Brander et al. 2020 (Tier 3) is best available guide."
+  surface_water_extraction: "⚠️ No Tier 1 SOP. ASTM D8333-20 covers sample preparation. Thornton Hampton et al. 2023 documents matrix effects."
+  air_all: "⚠️ No Tier 1/2 method for any air workflow step. Ashta et al. 2026 (Tier 3) is best available (~90% recovery)."
+  food_all: "⚠️ No Tier 1/2 method for food matrices. EFSA (2016) highlighted major standardization gaps."
+  human_tissue_all: "⚠️ No Tier 1/2 method for human biomonitoring. Rauert et al. 2025 (Tier 4) is the leading Py-GC-MS blood method."
+  soil_all: "⚠️ No Tier 1/2 standard for soil. Best available are Tier 3 peer-reviewed protocols (Li 2019, Möller 2022, Ling 2026)."
+  nanoplastics: "⚠️ CRITICAL GAP: No standardized method for particles <1 µm. ISO 16094-2 specifies 20 µm minimum."
+  tox_all: "⚠️ No MP-specific test guidelines exist. OECD TGs for standard endpoints are applicable but not MP-validated."
+  reference_materials: "⚠️ Only one certified RM exists (EURM-060, PET in water). Multi-polymer and matrix-specific RMs under development by NIST/JRC."
