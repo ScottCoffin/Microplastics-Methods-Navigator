@@ -79,19 +79,14 @@ RA_AUXILIARY = [
 
 # Matrices
 MATRICES = {
-    "drinking_water": {"label": "Drinking Water",  "icon": "🚰", "kw": "Drinking Water", "gap": None},
-    "surface_water":  {"label": "Surface Water",   "icon": "🌊", "kw": "Surface Water",
-                       "gap": "⚠️ No Tier 1 SOP. ASTM D8332 recommended. Brander et al. 2020 (Tier 3) best available."},
-    "sediment":       {"label": "Sediment",        "icon": "🪨", "kw": "Sediment", "gap": None},
-    "biota":          {"label": "Biota / Tissue",  "icon": "🐟", "kw": "Biota", "gap": None},
-    "air":            {"label": "Air",             "icon": "💨", "kw": "Air",
-                       "gap": "⚠️ No Tier 1/2 method. Ashta et al. 2026 (Tier 3) best available."},
-    "food":           {"label": "Food / Dietary",  "icon": "🍽️", "kw": "Food",
-                       "gap": "⚠️ No Tier 1/2 method. EFSA (2016) highlighted major gaps."},
-    "human_tissue":   {"label": "Human Tissue",    "icon": "🩸", "kw": "Human",
-                       "gap": "⚠️ No Tier 1/2 method. Rauert et al. 2025 (Tier 4) leads for blood."},
-    "soil":           {"label": "Soil",            "icon": "🌱", "kw": "Soil",
-                       "gap": "⚠️ No Tier 1/2 standard. Li 2019, Möller 2022, Ling 2026 (Tier 3) best available."},
+    "drinking_water": {"label": "Drinking Water",  "icon": "🚰", "kw": "Drinking Water"},
+    "surface_water":  {"label": "Surface Water",   "icon": "🌊", "kw": "Surface Water"},
+    "sediment":       {"label": "Sediment",        "icon": "🪨", "kw": "Sediment"},
+    "biota":          {"label": "Biota / Tissue",  "icon": "🐟", "kw": "Biota"},
+    "air":            {"label": "Air",             "icon": "💨", "kw": "Air"},
+    "food":           {"label": "Food / Dietary",  "icon": "🍽️", "kw": "Food"},
+    "human_tissue":   {"label": "Human Tissue",    "icon": "🩸", "kw": "Human"},
+    "soil":           {"label": "Soil",            "icon": "🌱", "kw": "Soil"},
 }
 
 # Instruments (sub-branch of Analysis)
@@ -203,6 +198,109 @@ def _sort_tier(df):
         asc = [True] + ([False] if yr else [])
         return df.sort_values(cols, ascending=asc)
     return df
+
+
+def _year_series(df):
+    year_col = _find_col(df, ["Year"])
+    if year_col is None or year_col not in df.columns:
+        return pd.Series(dtype="float64")
+    return pd.to_numeric(df[year_col], errors="coerce")
+
+
+def _tier_series(df):
+    if "tier_num" not in df.columns:
+        return pd.Series(dtype="float64")
+    return pd.to_numeric(df["tier_num"], errors="coerce")
+
+
+def _format_tier_counts(tier_counts):
+    parts = [
+        f"Tier {tier}: {tier_counts.get(tier, 0)}"
+        for tier in [1, 2, 3, 4]
+        if tier_counts.get(tier, 0) > 0
+    ]
+    return ", ".join(parts) if parts else "no tiered references"
+
+
+def _state_choice(key, options, default_index=0):
+    if not options:
+        return None
+    value = st.session_state.get(key)
+    if value in options:
+        return value
+    return options[min(default_index, len(options) - 1)]
+
+
+def _reference_context_messages(df):
+    """Generate rules-based context from the selected Crosswalk rows."""
+    if len(df) == 0:
+        return []
+
+    tier_values = _tier_series(df)
+    valid_tier_mask = tier_values.notna()
+    if not valid_tier_mask.any():
+        return []
+
+    tiers = tier_values.loc[valid_tier_mask].astype(int)
+    best_tier = int(tiers.min())
+    tier_counts = tiers.value_counts().sort_index().to_dict()
+    best_tier_count = tier_counts.get(best_tier, 0)
+    messages = []
+
+    if best_tier > 2:
+        messages.append(
+            (
+                "warning",
+                f"No Tier 1/2 references match this selected path. "
+                f"Highest available tier is Tier {best_tier} "
+                f"({best_tier_count} reference"
+                f"{'' if best_tier_count == 1 else 's'}); review all "
+                f"Tier {best_tier} candidates rather than treating any "
+                f"single citation as preferred.",
+            )
+        )
+
+    messages.append(
+        (
+            "info",
+            f"Current Crosswalk coverage for this path: "
+            f"{_format_tier_counts(tier_counts)}.",
+        )
+    )
+
+    years = _year_series(df)
+    if years.empty:
+        return messages
+
+    best_mask = valid_tier_mask & (tier_values.astype("Int64") == best_tier)
+    best_years = years.loc[best_mask].dropna()
+    if best_years.empty:
+        return messages
+
+    newest_best_year = int(best_years.max())
+    if newest_best_year < 2021:
+        lower_mask = (
+            valid_tier_mask
+            & (tier_values > best_tier)
+            & (years > newest_best_year)
+        )
+        lower_newer_years = years.loc[lower_mask].dropna()
+        lower_tier_note = ""
+        if not lower_newer_years.empty:
+            lower_tier_note = (
+                f" Newer lower-tier references are present through "
+                f"{int(lower_newer_years.max())}."
+            )
+        messages.append(
+            (
+                "warning",
+                f"Newest Tier {best_tier} reference is from {newest_best_year}. "
+                f"Use caution and consider whether newer documents in lower "
+                f"tiers update the approach.{lower_tier_note}",
+            )
+        )
+
+    return messages
 
 
 # ── GRAPHVIZ BUILDER ────────────────────────────────────────
@@ -533,17 +631,18 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
 
 # ── REFERENCE DISPLAY ───────────────────────────────────────
 
-def _display_compact_results(df, gap_note=None, tier_expanders=True):
+def _display_compact_results(df, tier_expanders=True):
     df_sorted = _sort_tier(df)
 
     if len(df_sorted) == 0:
         st.info("No references found for this path.")
-        if gap_note:
-            st.error(gap_note)
         return
 
-    if gap_note:
-        st.warning(gap_note)
+    for level, message in _reference_context_messages(df_sorted):
+        if level == "warning":
+            st.warning(message)
+        else:
+            st.info(message)
 
     st.caption(f"📚 {len(df_sorted)} references")
 
@@ -607,8 +706,6 @@ def render_decision_tree(df, tree=None):
         "**Auxiliary supports** (dashed lines) apply across the workflow."
     )
 
-    col_tree, col_results = st.columns([1, 1])
-
     matrix_key = None
     instrument_key = None
     core_step_key = None
@@ -617,239 +714,246 @@ def render_decision_tree(df, tree=None):
     aux_label = ""
     core_result_df = pd.DataFrame()
     aux_result_df = pd.DataFrame()
-    core_gap_note = None
+    core_selector_key = None
+    aux_selector_key = None
+    core_options = {}
+    aux_options = {}
+    detail_selector = None
     availability = {}
 
-    with col_tree:
-        domain = st.radio(
-            "**1. Study Type**",
+    study_col, matrix_col = st.columns([1.1, 1.2])
+    with study_col:
+        domain = st.selectbox(
+            "Study type",
             ["Monitoring", "Toxicology", "Risk Assessment"],
-            horizontal=True,
             key="tree_domain",
         )
 
-        if domain == "Monitoring":
-            df_domain = _filter_domain(df, "Monitoring")
-            matrix_options = {
-                key: f'{value["icon"]} {value["label"]}'
-                for key, value in MATRICES.items()
-            }
+    if domain == "Monitoring":
+        df_domain = _filter_domain(df, "Monitoring")
+        matrix_options = {
+            key: f'{value["icon"]} {value["label"]}'
+            for key, value in MATRICES.items()
+        }
+        core_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in MONITORING_CORE
+        }
+        aux_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in MONITORING_AUXILIARY
+        }
+        core_selector_key = "tree_core_step"
+        aux_selector_key = "tree_aux_step"
+
+        with matrix_col:
             matrix_key = st.selectbox(
-                "**2. Matrix**",
+                "Matrix",
                 list(matrix_options.keys()),
                 format_func=lambda key: matrix_options[key],
                 key="tree_matrix",
             )
-            matrix_info = MATRICES[matrix_key]
-            context_df = _filter_matrix(df_domain, matrix_info["kw"])
-            core_gap_note = matrix_info.get("gap")
+        core_step_key = _state_choice("tree_core_step", list(core_options.keys()))
+        aux_step_key = _state_choice("tree_aux_step", list(aux_options.keys()))
 
-            st.markdown("**3. Workflow Step**")
-            core_col, aux_col = st.columns(2)
-            with core_col:
-                core_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in MONITORING_CORE
-                }
-                core_step_key = st.radio(
-                    "Core Workflow",
-                    list(core_options.keys()),
-                    format_func=lambda key: core_options[key],
-                    key="tree_core_step",
-                )
-            with aux_col:
-                aux_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in MONITORING_AUXILIARY
-                }
-                aux_step_key = st.radio(
-                    "Auxiliary Supports",
-                    list(aux_options.keys()),
-                    format_func=lambda key: aux_options[key],
-                    key="tree_aux_step",
-                )
+        matrix_info = MATRICES[matrix_key]
+        context_df = _filter_matrix(df_domain, matrix_info["kw"])
+        core_info = next(
+            step for step in MONITORING_CORE if step["key"] == core_step_key
+        )
+        aux_info = next(
+            step for step in MONITORING_AUXILIARY if step["key"] == aux_step_key
+        )
+        core_label = f'{core_info["icon"]} {core_info["label"]}'
+        aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
 
-            core_info = next(
-                step for step in MONITORING_CORE if step["key"] == core_step_key
+        if core_info.get("has_instruments"):
+            instrument_options = {"all": "📋 All Techniques"} | {
+                key: value["label"] for key, value in INSTRUMENTS.items()
+            }
+            detail_selector = {
+                "label": "Technique",
+                "key": "tree_instrument",
+                "options": instrument_options,
+            }
+            instrument_key = _state_choice(
+                "tree_instrument", list(instrument_options.keys())
             )
-            aux_info = next(
-                step for step in MONITORING_AUXILIARY if step["key"] == aux_step_key
-            )
-            core_label = f'{core_info["icon"]} {core_info["label"]}'
-            aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
-
-            if core_info.get("has_instruments"):
-                instrument_options = {"all": "📋 All Techniques"} | {
-                    key: value["label"] for key, value in INSTRUMENTS.items()
-                }
-                instrument_key = st.selectbox(
-                    "Analytical technique",
-                    list(instrument_options.keys()),
-                    format_func=lambda key: instrument_options[key],
-                    key="tree_instrument",
-                )
-                if instrument_key == "all":
-                    core_result_df = _filter_column(context_df, core_info["column"])
-                    instrument_key = None
-                else:
-                    core_result_df = _filter_instrument(
-                        context_df, INSTRUMENTS[instrument_key]["kw"]
-                    )
+            if instrument_key == "all":
+                core_result_df = _filter_column(context_df, core_info["column"])
+                instrument_key = None
             else:
-                core_result_df = _apply_step_filters(context_df, core_info)
-            aux_result_df = _apply_step_filters(context_df, aux_info)
-
-            availability.update(
-                _workflow_availability(context_df, MONITORING_CORE, "CORE")
-            )
-            availability.update(
-                _workflow_availability(context_df, MONITORING_AUXILIARY, "AUX")
-            )
-            availability.update(_instrument_availability(context_df))
-
-        elif domain == "Toxicology":
-            context_df = _filter_domain(df, "Toxicology")
-            core_gap_note = (
-                "⚠️ No MP-specific test guidelines. OECD TGs applicable "
-                "but not MP-validated."
-            )
-
-            st.markdown("**2. Workflow Step**")
-            core_col, aux_col = st.columns(2)
-            with core_col:
-                core_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in TOX_CORE
-                }
-                core_step_key = st.radio(
-                    "Core Workflow",
-                    list(core_options.keys()),
-                    format_func=lambda key: core_options[key],
-                    key="tree_tox_core",
+                core_result_df = _filter_instrument(
+                    context_df, INSTRUMENTS[instrument_key]["kw"]
                 )
-            with aux_col:
-                aux_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in TOX_AUXILIARY
-                }
-                aux_step_key = st.radio(
-                    "Auxiliary Supports",
-                    list(aux_options.keys()),
-                    format_func=lambda key: aux_options[key],
-                    key="tree_tox_aux",
-                )
-
-            core_info = next(step for step in TOX_CORE if step["key"] == core_step_key)
-            aux_info = next(
-                step for step in TOX_AUXILIARY if step["key"] == aux_step_key
-            )
-            core_label = f'{core_info["icon"]} {core_info["label"]}'
-            aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
-
+        else:
             core_result_df = _apply_step_filters(context_df, core_info)
-            if core_info.get("has_test_systems"):
-                system_options = {"all": "📋 All Systems"} | {
-                    key: value["label"] for key, value in TEST_SYSTEMS.items()
-                }
-                system_key = st.selectbox(
-                    "Test system",
-                    list(system_options.keys()),
-                    format_func=lambda key: system_options[key],
-                    key="tree_test_sys",
-                )
-                if system_key != "all":
-                    core_result_df = _filter_keywords(
-                        core_result_df, TEST_SYSTEMS[system_key]["keywords"]
-                    )
-            aux_result_df = _apply_step_filters(context_df, aux_info)
+        aux_result_df = _apply_step_filters(context_df, aux_info)
 
-            availability.update(_workflow_availability(context_df, TOX_CORE, "CORE"))
-            availability.update(
-                _workflow_availability(context_df, TOX_AUXILIARY, "AUX")
-            )
-
-        elif domain == "Risk Assessment":
-            context_df = df
-            st.markdown("**2. Component**")
-            core_col, aux_col = st.columns(2)
-            with core_col:
-                core_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in RA_CORE
-                }
-                core_step_key = st.radio(
-                    "Core Workflow",
-                    list(core_options.keys()),
-                    format_func=lambda key: core_options[key],
-                    key="tree_ra_step",
-                )
-            with aux_col:
-                aux_options = {
-                    step["key"]: f'{step["icon"]} {step["label"]}'
-                    for step in RA_AUXILIARY
-                }
-                aux_step_key = st.radio(
-                    "Auxiliary Supports",
-                    list(aux_options.keys()),
-                    format_func=lambda key: aux_options[key],
-                    key="tree_ra_aux",
-                )
-
-            core_info = next(step for step in RA_CORE if step["key"] == core_step_key)
-            aux_info = next(
-                step for step in RA_AUXILIARY if step["key"] == aux_step_key
-            )
-            core_label = f'{core_info["icon"]} {core_info["label"]}'
-            aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
-            core_result_df = _apply_step_filters(context_df, core_info)
-            aux_result_df = _apply_step_filters(context_df, aux_info)
-
-            availability.update(_workflow_availability(context_df, RA_CORE, "CORE"))
-            availability.update(_workflow_availability(context_df, RA_AUXILIARY, "AUX"))
-
-        st.markdown("---")
-        dot = build_graphviz(
-            domain=domain,
-            matrix_key=matrix_key,
-            core_step_key=core_step_key,
-            aux_step_key=aux_step_key,
-            instrument_key=instrument_key,
-            availability=availability,
+        availability.update(
+            _workflow_availability(context_df, MONITORING_CORE, "CORE")
         )
-        st.graphviz_chart(dot, width="stretch")
+        availability.update(
+            _workflow_availability(context_df, MONITORING_AUXILIARY, "AUX")
+        )
+        availability.update(_instrument_availability(context_df))
 
-        st.caption(
-            "Node color shows best available tier: Tier 1 green, Tier 2 blue, "
-            "Tier 3 gold, Tier 4 gray; red means no matching references."
+    elif domain == "Toxicology":
+        context_df = _filter_domain(df, "Toxicology")
+        core_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in TOX_CORE
+        }
+        aux_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in TOX_AUXILIARY
+        }
+        core_selector_key = "tree_tox_core"
+        aux_selector_key = "tree_tox_aux"
+
+        with matrix_col:
+            st.selectbox(
+                "Matrix",
+                ["Not applicable"],
+                disabled=True,
+                key="tree_tox_matrix_placeholder",
+            )
+        core_step_key = _state_choice("tree_tox_core", list(core_options.keys()))
+        aux_step_key = _state_choice("tree_tox_aux", list(aux_options.keys()))
+
+        core_info = next(step for step in TOX_CORE if step["key"] == core_step_key)
+        aux_info = next(
+            step for step in TOX_AUXILIARY if step["key"] == aux_step_key
+        )
+        core_label = f'{core_info["icon"]} {core_info["label"]}'
+        aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
+
+        core_result_df = _apply_step_filters(context_df, core_info)
+        if core_info.get("has_test_systems"):
+            system_options = {"all": "📋 All Systems"} | {
+                key: value["label"] for key, value in TEST_SYSTEMS.items()
+            }
+            detail_selector = {
+                "label": "Test system",
+                "key": "tree_test_sys",
+                "options": system_options,
+            }
+            system_key = _state_choice(
+                "tree_test_sys", list(system_options.keys())
+            )
+            if system_key != "all":
+                core_result_df = _filter_keywords(
+                    core_result_df, TEST_SYSTEMS[system_key]["keywords"]
+                )
+        aux_result_df = _apply_step_filters(context_df, aux_info)
+
+        availability.update(_workflow_availability(context_df, TOX_CORE, "CORE"))
+        availability.update(
+            _workflow_availability(context_df, TOX_AUXILIARY, "AUX")
         )
 
-    with col_results:
-        path_parts = ["📋 Problem Formulation", domain]
-        if matrix_key:
-            matrix_info = MATRICES[matrix_key]
-            path_parts.append(f'{matrix_info["icon"]} {matrix_info["label"]}')
-        if core_label:
-            path_parts.append(core_label)
-        if instrument_key and instrument_key in INSTRUMENTS:
-            path_parts.append(INSTRUMENTS[instrument_key]["label"])
+    elif domain == "Risk Assessment":
+        context_df = df
+        core_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in RA_CORE
+        }
+        aux_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in RA_AUXILIARY
+        }
+        core_selector_key = "tree_ra_step"
+        aux_selector_key = "tree_ra_aux"
 
-        st.markdown(f"**📍 Core Path:** {' → '.join(path_parts)}")
-        if aux_label:
-            st.markdown(f"**🔧 Auxiliary Support:** {aux_label}")
-        st.markdown("---")
-
-        with st.expander(
-            f"Core Workflow references: {core_label} ({len(core_result_df)})",
-            expanded=True,
-        ):
-            _display_compact_results(
-                core_result_df,
-                gap_note=core_gap_note,
-                tier_expanders=False,
+        with matrix_col:
+            st.selectbox(
+                "Matrix",
+                ["Not applicable"],
+                disabled=True,
+                key="tree_ra_matrix_placeholder",
             )
+        core_step_key = _state_choice("tree_ra_step", list(core_options.keys()))
+        aux_step_key = _state_choice("tree_ra_aux", list(aux_options.keys()))
 
-        with st.expander(
-            f"Auxiliary Support references: {aux_label} ({len(aux_result_df)})",
-            expanded=False,
-        ):
-            _display_compact_results(aux_result_df, tier_expanders=False)
+        core_info = next(step for step in RA_CORE if step["key"] == core_step_key)
+        aux_info = next(
+            step for step in RA_AUXILIARY if step["key"] == aux_step_key
+        )
+        core_label = f'{core_info["icon"]} {core_info["label"]}'
+        aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
+        core_result_df = _apply_step_filters(context_df, core_info)
+        aux_result_df = _apply_step_filters(context_df, aux_info)
+
+        availability.update(_workflow_availability(context_df, RA_CORE, "CORE"))
+        availability.update(_workflow_availability(context_df, RA_AUXILIARY, "AUX"))
+
+    st.markdown("---")
+    dot = build_graphviz(
+        domain=domain,
+        matrix_key=matrix_key,
+        core_step_key=core_step_key,
+        aux_step_key=aux_step_key,
+        instrument_key=instrument_key,
+        availability=availability,
+    )
+    st.graphviz_chart(dot, width="stretch")
+
+    st.caption(
+        "Node color shows best available tier: Tier 1 green, Tier 2 blue, "
+        "Tier 3 gold, Tier 4 gray; red means no matching references."
+    )
+
+    path_parts = ["📋 Problem Formulation", domain]
+    if matrix_key:
+        matrix_info = MATRICES[matrix_key]
+        path_parts.append(f'{matrix_info["icon"]} {matrix_info["label"]}')
+    if core_label:
+        path_parts.append(core_label)
+    if instrument_key and instrument_key in INSTRUMENTS:
+        path_parts.append(INSTRUMENTS[instrument_key]["label"])
+
+    st.markdown("---")
+    st.markdown(f"**📍 Core Path:** {' → '.join(path_parts)}")
+    if aux_label:
+        st.markdown(f"**🔧 Auxiliary Support:** {aux_label}")
+
+    if core_selector_key:
+        core_control_cols = st.columns([1.5, 1.2]) if detail_selector else [st.container()]
+        with core_control_cols[0]:
+            st.selectbox(
+                "Core workflow",
+                list(core_options.keys()),
+                format_func=lambda key: core_options[key],
+                key=core_selector_key,
+            )
+        if detail_selector:
+            with core_control_cols[1]:
+                st.selectbox(
+                    detail_selector["label"],
+                    list(detail_selector["options"].keys()),
+                    format_func=lambda key: detail_selector["options"][key],
+                    key=detail_selector["key"],
+                )
+
+    with st.expander(
+        f"Core Workflow references: {core_label} ({len(core_result_df)})",
+        expanded=True,
+    ):
+        _display_compact_results(
+            core_result_df,
+            tier_expanders=False,
+        )
+
+    if aux_selector_key:
+        st.selectbox(
+            "Auxiliary support",
+            list(aux_options.keys()),
+            format_func=lambda key: aux_options[key],
+            key=aux_selector_key,
+        )
+
+    with st.expander(
+        f"Auxiliary Support references: {aux_label} ({len(aux_result_df)})",
+        expanded=False,
+    ):
+        _display_compact_results(aux_result_df, tier_expanders=False)

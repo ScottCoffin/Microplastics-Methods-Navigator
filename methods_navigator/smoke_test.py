@@ -9,6 +9,8 @@ import py_compile
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 from app import (
     filter_by_domain,
     filter_by_matrix,
@@ -24,6 +26,7 @@ from visual_tree_tab import (
     _filter_domain,
     _filter_matrix,
     _instrument_availability,
+    _reference_context_messages,
     _workflow_availability,
     build_graphviz,
 )
@@ -127,6 +130,40 @@ def main():
         check(len(aux_results) > 0, "Decision Tree auxiliary result returns rows", errors)
         check("Tier 1\\n" in dot, "Decision Tree node tier labels render on separate lines", errors)
         check("AUX_DEFINITIONS" in dot, "Decision Tree auxiliary node renders", errors)
+
+        air_df = _filter_matrix(nav_monitoring, MATRICES["air"]["kw"])
+        extraction_step = next(
+            step for step in MONITORING_CORE if step["key"] == "extraction"
+        )
+        air_extraction = _apply_step_filters(air_df, extraction_step)
+        context_messages = [
+            text for _, text in _reference_context_messages(air_extraction)
+        ]
+        check(
+            any(
+                "No Tier 1/2 references match this selected path" in text
+                for text in context_messages
+            ),
+            "Decision Tree detects no Tier 1/2 coverage dynamically",
+            errors,
+        )
+        check(
+            not any("Ashta" in text for text in context_messages),
+            "Decision Tree context avoids single hardcoded best-available citation",
+            errors,
+        )
+
+        age_test = _reference_context_messages(
+            pd.DataFrame({"Year": [2020, 2024], "tier_num": [1, 3]})
+        )
+        check(
+            any(
+                "Newest Tier 1 reference is from 2020" in text
+                for _, text in age_test
+            ),
+            "Decision Tree warns when top-tier coverage is older than 2021",
+            errors,
+        )
     except Exception as exc:
         print(f"FAIL: decision tree smoke error: {exc}")
         errors.append("decision tree smoke error")

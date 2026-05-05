@@ -364,359 +364,364 @@ def main():
     tree = load_tree()
 
     # ── App tabs ────────────────────────────────────────────
-    tab1, tab2, tab3 = st.tabs(
-        ["🔍 Step-by-Step Navigator", "🌳 Decision Tree", "📋 Crosswalk"]
-    )
+    step_by_step_enabled = False
+    if step_by_step_enabled:
+        tab1, tab2, tab3 = st.tabs(
+            ["Step-by-Step Navigator", "Decision Tree", "Crosswalk"]
+        )
+    else:
+        tab2, tab3 = st.tabs(["Decision Tree", "Crosswalk"])
 
-    with tab1:
-
-        st.divider()
-
-        # ── STEP 1: Study Domain ────────────────────────────────
-        col1, col2 = st.columns([1, 2])
-    
-        with col1:
-            st.markdown("### Step 1: Study Type")
-            domain = st.radio(
-                "What are you designing?",
-                [
-                    "🔬 Environmental Monitoring",
-                    "🧫 Toxicology / Effects Testing",
-                    "⚖️ Risk Assessment",
-                ],
-                label_visibility="collapsed",
-            )
-    
-        domain_key = {
-            "🔬 Environmental Monitoring": "Monitoring",
-            "🧫 Toxicology / Effects Testing": "Toxicology",
-            "⚖️ Risk Assessment": "Both",
-        }[domain]
-    
-        df_domain = filter_by_domain(df, domain_key)
-    
-        # ── MONITORING PATH ─────────────────────────────────────
-        if domain_key == "Monitoring":
-            with col2:
-                st.markdown("### Step 2: Matrix")
-                matrix = st.selectbox(
-                    "Which environmental matrix?",
-                    [
-                        "🚰 Drinking Water",
-                        "🌊 Surface Water / Wastewater",
-                        "🪨 Sediment",
-                        "🐟 Biota / Tissue",
-                        "💨 Air / Atmospheric Deposition",
-                        "🍽️ Food / Dietary",
-                        "🩸 Human Tissue / Biomonitoring",
-                        "🌱 Soil / Terrestrial",
-                    ],
-                )
-    
-            matrix_map = {
-                "🚰 Drinking Water": ("Drinking Water", "drinking_water"),
-                "🌊 Surface Water / Wastewater": (
-                    "Surface Water",
-                    "surface_water",
-                ),
-                "🪨 Sediment": ("Sediment", "sediment"),
-                "🐟 Biota / Tissue": ("Biota", "biota"),
-                "💨 Air / Atmospheric Deposition": ("Air", "air"),
-                "🍽️ Food / Dietary": ("Food", "food"),
-                "🩸 Human Tissue / Biomonitoring": (
-                    "Human",
-                    "human_tissue",
-                ),
-                "🌱 Soil / Terrestrial": ("Soil", "soil"),
-            }
-            matrix_filter, matrix_key = matrix_map[matrix]
-            df_matrix = filter_by_matrix(df_domain, matrix_filter)
+    if step_by_step_enabled:
+        with tab1:
     
             st.divider()
-            st.markdown("### Step 3: Workflow Step")
     
-            workflow_step = st.selectbox(
-                "Which step of the monitoring workflow?",
-                [
-                    "📖 Definitions & Terminology",
-                    "📍 Sampling / Field Methods",
-                    "🧪 Sample Processing / Extraction",
-                    "🔎 Analytical Identification",
-                    "📦 Reference Materials / Controls",
-                    "🧹 Blanks & Contamination Control",
-                    "📊 Data Analysis & Statistics",
-                    "📝 Reporting & Data Deposition",
-                    "🔄 Interlaboratory / Validation Studies",
-                ],
-            )
-    
-            step_column_map = {
-                "📖 Definitions & Terminology": "Definitions & Terminology",
-                "📍 Sampling / Field Methods": "Sampling (Field Methods)",
-                "🧪 Sample Processing / Extraction": (
-                    "Sample Processing / Extraction"
-                ),
-                "📦 Reference Materials / Controls": (
-                    "Reference Materials / +Controls"
-                ),
-                "🧹 Blanks & Contamination Control": (
-                    "Blanks & Contamination Control"
-                ),
-                "📊 Data Analysis & Statistics": "Data Analysis & Statistics",
-                "📝 Reporting & Data Deposition": "Reporting & Harmonization",
-                "🔄 Interlaboratory / Validation Studies": None,
-            }
-    
-            step_key = (
-                workflow_step.split(" ", 1)[1]
-                .lower()
-                .replace(" ", "_")
-                .replace("/", "")
-            )
-    
-            # ── Analytical: extra instrument filter ─────────────
-            if workflow_step == "🔎 Analytical Identification":
-                instrument = st.selectbox(
-                    "Which analytical technique?",
+            # ── STEP 1: Study Domain ────────────────────────────────
+            col1, col2 = st.columns([1, 2])
+        
+            with col1:
+                st.markdown("### Step 1: Study Type")
+                domain = st.radio(
+                    "What are you designing?",
                     [
-                        "📋 All Techniques (overview)",
-                        "µFTIR / FPA-FTIR",
-                        "LDIR (Laser Direct IR)",
-                        "µRaman",
-                        "Py-GC-MS",
-                        "TED-GC-MS",
-                        "Nile Red / Fluorescence",
-                        "Visual / Stereomicroscopy",
+                        "🔬 Environmental Monitoring",
+                        "🧫 Toxicology / Effects Testing",
+                        "⚖️ Risk Assessment",
                     ],
+                    label_visibility="collapsed",
                 )
-    
-                instrument_map = {
-                    "µFTIR / FPA-FTIR": "µFTIR",
-                    "LDIR (Laser Direct IR)": "LDIR",
-                    "µRaman": "µRaman",
-                    "Py-GC-MS": "Py-GC-MS",
-                    "TED-GC-MS": "TED-GC-MS",
-                    "Nile Red / Fluorescence": "Nile Red",
-                    "Visual / Stereomicroscopy": "Stereomicroscopy",
-                }
-    
-                if instrument == "📋 All Techniques (overview)":
-                    df_result = filter_by_topic_column(
-                        df_matrix, "Analytical Methods (General)"
+        
+            domain_key = {
+                "🔬 Environmental Monitoring": "Monitoring",
+                "🧫 Toxicology / Effects Testing": "Toxicology",
+                "⚖️ Risk Assessment": "Both",
+            }[domain]
+        
+            df_domain = filter_by_domain(df, domain_key)
+        
+            # ── MONITORING PATH ─────────────────────────────────────
+            if domain_key == "Monitoring":
+                with col2:
+                    st.markdown("### Step 2: Matrix")
+                    matrix = st.selectbox(
+                        "Which environmental matrix?",
+                        [
+                            "🚰 Drinking Water",
+                            "🌊 Surface Water / Wastewater",
+                            "🪨 Sediment",
+                            "🐟 Biota / Tissue",
+                            "💨 Air / Atmospheric Deposition",
+                            "🍽️ Food / Dietary",
+                            "🩸 Human Tissue / Biomonitoring",
+                            "🌱 Soil / Terrestrial",
+                        ],
                     )
-                else:
-                    inst_key = instrument_map[instrument]
-                    df_result = filter_by_instrument(df_matrix, inst_key)
-    
-                gap_note = get_gap_note(tree, matrix_key, "analysis")
-                display_results(
-                    df_result,
-                    f"Analytical Methods — "
-                    f"{matrix.split(' ', 1)[1]} — {instrument}",
-                    gap_note,
-                )
-    
-            # ── Interlaboratory: filter by doc type ─────────────
-            elif workflow_step == "🔄 Interlaboratory / Validation Studies":
-                df_result = filter_by_doc_type(df_matrix, "Interlaboratory")
-                gap_note = get_gap_note(
-                    tree, matrix_key, "interlaboratory"
-                )
-                display_results(
-                    df_result,
-                    f"Interlaboratory Studies — "
-                    f"{matrix.split(' ', 1)[1]}",
-                    gap_note,
-                )
-    
-            # ── Standard workflow steps ─────────────────────────
-            else:
-                col_name = step_column_map.get(workflow_step)
-                if col_name:
-                    df_result = filter_by_topic_column(df_matrix, col_name)
-                else:
-                    df_result = df_matrix
-                gap_note = get_gap_note(tree, matrix_key, step_key)
-                display_results(
-                    df_result,
-                    f"{workflow_step.split(' ', 1)[1]} — "
-                    f"{matrix.split(' ', 1)[1]}",
-                    gap_note,
-                )
-    
-        # ── TOXICOLOGY PATH ─────────────────────────────────────
-        elif domain_key == "Toxicology":
-            with col2:
-                st.markdown("### Step 2: Workflow Step")
-                tox_step = st.selectbox(
-                    "Which toxicology workflow step?",
-                    [
-                        "🔬 Particle Characterization",
-                        "📦 Reference / Test Particles",
-                        "💊 Dosimetry (in vitro)",
-                        "🧬 Effects Testing",
-                        "✅ Study Quality / Scoring",
-                        "📝 Reporting (Tox)",
-                    ],
-                )
-    
-            tox_column_map = {
-                "🔬 Particle Characterization": (
-                    "Toxicology: Study Design & Dosimetry"
-                ),
-                "📦 Reference / Test Particles": (
-                    "Reference Materials / +Controls"
-                ),
-                "💊 Dosimetry (in vitro)": (
-                    "Toxicology: Study Design & Dosimetry"
-                ),
-                "✅ Study Quality / Scoring": (
-                    "Toxicology: Study Design & Dosimetry"
-                ),
-                "📝 Reporting (Tox)": "Reporting & Harmonization",
-            }
-    
-            if tox_step == "🧬 Effects Testing":
+        
+                matrix_map = {
+                    "🚰 Drinking Water": ("Drinking Water", "drinking_water"),
+                    "🌊 Surface Water / Wastewater": (
+                        "Surface Water",
+                        "surface_water",
+                    ),
+                    "🪨 Sediment": ("Sediment", "sediment"),
+                    "🐟 Biota / Tissue": ("Biota", "biota"),
+                    "💨 Air / Atmospheric Deposition": ("Air", "air"),
+                    "🍽️ Food / Dietary": ("Food", "food"),
+                    "🩸 Human Tissue / Biomonitoring": (
+                        "Human",
+                        "human_tissue",
+                    ),
+                    "🌱 Soil / Terrestrial": ("Soil", "soil"),
+                }
+                matrix_filter, matrix_key = matrix_map[matrix]
+                df_matrix = filter_by_matrix(df_domain, matrix_filter)
+        
                 st.divider()
-                st.markdown("### Step 3: Test System")
-                test_system = st.selectbox(
-                    "Which test system?",
+                st.markdown("### Step 3: Workflow Step")
+        
+                workflow_step = st.selectbox(
+                    "Which step of the monitoring workflow?",
                     [
-                        "🧫 In Vitro (cell-based)",
-                        "🐠 Ecotox — Aquatic",
-                        "🌱 Ecotox — Terrestrial / Soil",
-                        "🐁 Mammalian In Vivo",
-                        "👤 Human / Epidemiological",
-                        "📋 All Effects Testing",
+                        "📖 Definitions & Terminology",
+                        "📍 Sampling / Field Methods",
+                        "🧪 Sample Processing / Extraction",
+                        "🔎 Analytical Identification",
+                        "📦 Reference Materials / Controls",
+                        "🧹 Blanks & Contamination Control",
+                        "📊 Data Analysis & Statistics",
+                        "📝 Reporting & Data Deposition",
+                        "🔄 Interlaboratory / Validation Studies",
                     ],
                 )
-    
-                keyword_map = {
-                    "🧫 In Vitro (cell-based)": (
-                        "in vitro;steroidogenesis;cell;H295R;Caco"
+        
+                step_column_map = {
+                    "📖 Definitions & Terminology": "Definitions & Terminology",
+                    "📍 Sampling / Field Methods": "Sampling (Field Methods)",
+                    "🧪 Sample Processing / Extraction": (
+                        "Sample Processing / Extraction"
                     ),
-                    "🐠 Ecotox — Aquatic": (
-                        "ecotox;aquatic;benthic;fish;invertebrate;"
-                        "Daphnia;bivalve;algae"
+                    "📦 Reference Materials / Controls": (
+                        "Reference Materials / +Controls"
                     ),
-                    "🌱 Ecotox — Terrestrial / Soil": (
-                        "soil;terrestrial;earthworm"
+                    "🧹 Blanks & Contamination Control": (
+                        "Blanks & Contamination Control"
                     ),
-                    "🐁 Mammalian In Vivo": (
-                        "mammalian;rodent;mouse;rat;oral exposure;organ"
-                    ),
-                    "👤 Human / Epidemiological": (
-                        "human;blood;placenta;epidemiolog;clinical;lung"
-                    ),
+                    "📊 Data Analysis & Statistics": "Data Analysis & Statistics",
+                    "📝 Reporting & Data Deposition": "Reporting & Harmonization",
+                    "🔄 Interlaboratory / Validation Studies": None,
                 }
-    
-                df_tox = filter_by_domain(df, "Toxicology")
-                df_result = filter_by_topic_column(
-                    df_tox, "Toxicology: Effects Testing Methods"
+        
+                step_key = (
+                    workflow_step.split(" ", 1)[1]
+                    .lower()
+                    .replace(" ", "_")
+                    .replace("/", "")
                 )
-    
-                if test_system != "📋 All Effects Testing":
-                    kw = keyword_map[test_system]
-                    df_result = filter_by_keyword(df_result, kw)
-    
-                gap_note = get_gap_note(tree, "tox", "all")
-                display_results(
-                    df_result,
-                    f"Effects Testing — {test_system.split(' ', 1)[1]}",
-                    gap_note,
-                )
-    
-            else:
-                col_name = tox_column_map.get(tox_step)
-                df_tox = filter_by_domain(df, "Toxicology")
-    
-                if col_name:
-                    df_result = filter_by_topic_column(df_tox, col_name)
+        
+                # ── Analytical: extra instrument filter ─────────────
+                if workflow_step == "🔎 Analytical Identification":
+                    instrument = st.selectbox(
+                        "Which analytical technique?",
+                        [
+                            "📋 All Techniques (overview)",
+                            "µFTIR / FPA-FTIR",
+                            "LDIR (Laser Direct IR)",
+                            "µRaman",
+                            "Py-GC-MS",
+                            "TED-GC-MS",
+                            "Nile Red / Fluorescence",
+                            "Visual / Stereomicroscopy",
+                        ],
+                    )
+        
+                    instrument_map = {
+                        "µFTIR / FPA-FTIR": "µFTIR",
+                        "LDIR (Laser Direct IR)": "LDIR",
+                        "µRaman": "µRaman",
+                        "Py-GC-MS": "Py-GC-MS",
+                        "TED-GC-MS": "TED-GC-MS",
+                        "Nile Red / Fluorescence": "Nile Red",
+                        "Visual / Stereomicroscopy": "Stereomicroscopy",
+                    }
+        
+                    if instrument == "📋 All Techniques (overview)":
+                        df_result = filter_by_topic_column(
+                            df_matrix, "Analytical Methods (General)"
+                        )
+                    else:
+                        inst_key = instrument_map[instrument]
+                        df_result = filter_by_instrument(df_matrix, inst_key)
+        
+                    gap_note = get_gap_note(tree, matrix_key, "analysis")
+                    display_results(
+                        df_result,
+                        f"Analytical Methods — "
+                        f"{matrix.split(' ', 1)[1]} — {instrument}",
+                        gap_note,
+                    )
+        
+                # ── Interlaboratory: filter by doc type ─────────────
+                elif workflow_step == "🔄 Interlaboratory / Validation Studies":
+                    df_result = filter_by_doc_type(df_matrix, "Interlaboratory")
+                    gap_note = get_gap_note(
+                        tree, matrix_key, "interlaboratory"
+                    )
+                    display_results(
+                        df_result,
+                        f"Interlaboratory Studies — "
+                        f"{matrix.split(' ', 1)[1]}",
+                        gap_note,
+                    )
+        
+                # ── Standard workflow steps ─────────────────────────
                 else:
-                    df_result = df_tox
-    
-                # Additional keyword filtering
-                if tox_step == "💊 Dosimetry (in vitro)":
-                    df_result = filter_by_keyword(
+                    col_name = step_column_map.get(workflow_step)
+                    if col_name:
+                        df_result = filter_by_topic_column(df_matrix, col_name)
+                    else:
+                        df_result = df_matrix
+                    gap_note = get_gap_note(tree, matrix_key, step_key)
+                    display_results(
                         df_result,
-                        "dosimetry;particokinetics;delivered dose;"
-                        "ISDD;PBK;sedimentation",
+                        f"{workflow_step.split(' ', 1)[1]} — "
+                        f"{matrix.split(' ', 1)[1]}",
+                        gap_note,
                     )
-                elif tox_step == "✅ Study Quality / Scoring":
-                    df_result = filter_by_keyword(
+        
+            # ── TOXICOLOGY PATH ─────────────────────────────────────
+            elif domain_key == "Toxicology":
+                with col2:
+                    st.markdown("### Step 2: Workflow Step")
+                    tox_step = st.selectbox(
+                        "Which toxicology workflow step?",
+                        [
+                            "🔬 Particle Characterization",
+                            "📦 Reference / Test Particles",
+                            "💊 Dosimetry (in vitro)",
+                            "🧬 Effects Testing",
+                            "✅ Study Quality / Scoring",
+                            "📝 Reporting (Tox)",
+                        ],
+                    )
+        
+                tox_column_map = {
+                    "🔬 Particle Characterization": (
+                        "Toxicology: Study Design & Dosimetry"
+                    ),
+                    "📦 Reference / Test Particles": (
+                        "Reference Materials / +Controls"
+                    ),
+                    "💊 Dosimetry (in vitro)": (
+                        "Toxicology: Study Design & Dosimetry"
+                    ),
+                    "✅ Study Quality / Scoring": (
+                        "Toxicology: Study Design & Dosimetry"
+                    ),
+                    "📝 Reporting (Tox)": "Reporting & Harmonization",
+                }
+        
+                if tox_step == "🧬 Effects Testing":
+                    st.divider()
+                    st.markdown("### Step 3: Test System")
+                    test_system = st.selectbox(
+                        "Which test system?",
+                        [
+                            "🧫 In Vitro (cell-based)",
+                            "🐠 Ecotox — Aquatic",
+                            "🌱 Ecotox — Terrestrial / Soil",
+                            "🐁 Mammalian In Vivo",
+                            "👤 Human / Epidemiological",
+                            "📋 All Effects Testing",
+                        ],
+                    )
+        
+                    keyword_map = {
+                        "🧫 In Vitro (cell-based)": (
+                            "in vitro;steroidogenesis;cell;H295R;Caco"
+                        ),
+                        "🐠 Ecotox — Aquatic": (
+                            "ecotox;aquatic;benthic;fish;invertebrate;"
+                            "Daphnia;bivalve;algae"
+                        ),
+                        "🌱 Ecotox — Terrestrial / Soil": (
+                            "soil;terrestrial;earthworm"
+                        ),
+                        "🐁 Mammalian In Vivo": (
+                            "mammalian;rodent;mouse;rat;oral exposure;organ"
+                        ),
+                        "👤 Human / Epidemiological": (
+                            "human;blood;placenta;epidemiolog;clinical;lung"
+                        ),
+                    }
+        
+                    df_tox = filter_by_domain(df, "Toxicology")
+                    df_result = filter_by_topic_column(
+                        df_tox, "Toxicology: Effects Testing Methods"
+                    )
+        
+                    if test_system != "📋 All Effects Testing":
+                        kw = keyword_map[test_system]
+                        df_result = filter_by_keyword(df_result, kw)
+        
+                    gap_note = get_gap_note(tree, "tox", "all")
+                    display_results(
                         df_result,
-                        "quality;QA;scoring;criteria;checklist;ToMEx",
+                        f"Effects Testing — {test_system.split(' ', 1)[1]}",
+                        gap_note,
                     )
-    
-                gap_note = get_gap_note(tree, "tox", "all")
+        
+                else:
+                    col_name = tox_column_map.get(tox_step)
+                    df_tox = filter_by_domain(df, "Toxicology")
+        
+                    if col_name:
+                        df_result = filter_by_topic_column(df_tox, col_name)
+                    else:
+                        df_result = df_tox
+        
+                    # Additional keyword filtering
+                    if tox_step == "💊 Dosimetry (in vitro)":
+                        df_result = filter_by_keyword(
+                            df_result,
+                            "dosimetry;particokinetics;delivered dose;"
+                            "ISDD;PBK;sedimentation",
+                        )
+                    elif tox_step == "✅ Study Quality / Scoring":
+                        df_result = filter_by_keyword(
+                            df_result,
+                            "quality;QA;scoring;criteria;checklist;ToMEx",
+                        )
+        
+                    gap_note = get_gap_note(tree, "tox", "all")
+                    display_results(
+                        df_result,
+                        tox_step.split(" ", 1)[1],
+                        gap_note,
+                    )
+        
+            # ── RISK ASSESSMENT PATH ────────────────────────────────
+            elif domain_key == "Both":  # Risk Assessment
+                with col2:
+                    st.markdown("### Step 2: RA Component")
+                    ra_step = st.selectbox(
+                        "Which risk assessment component?",
+                        [
+                            "🏗️ RA Frameworks & Approaches",
+                            "⚠️ Hazard Identification",
+                            "📏 Exposure Assessment",
+                            "📊 Risk Characterization",
+                            "📋 All RA References",
+                        ],
+                    )
+        
+                # Get all entries scored in the RA column
+                ra_col = find_column(
+                    df, ["Risk Assessment / Risk Char.", "Risk Assessment"]
+                )
+                if ra_col:
+                    df_ra = df[
+                        df[ra_col].notna()
+                        & (df[ra_col] != "")
+                        & (df[ra_col] != 0)
+                    ]
+                else:
+                    df_ra = df
+        
+                if ra_step == "📋 All RA References":
+                    df_result = df_ra
+                elif ra_step == "🏗️ RA Frameworks & Approaches":
+                    df_fw = filter_by_doc_type(df_ra, "Framework")
+                    df_adopted = filter_by_doc_type(
+                        df_ra, "Regulatory-Adopted"
+                    )
+                    df_result = pd.concat(
+                        [df_fw, df_adopted]
+                    ).drop_duplicates()
+                elif ra_step == "⚠️ Hazard Identification":
+                    df_result = filter_by_keyword(
+                        df_ra,
+                        "hazard;toxicity;effect;ToMEx;tox database;SSD",
+                    )
+                elif ra_step == "📏 Exposure Assessment":
+                    df_result = filter_by_keyword(
+                        df_ra,
+                        "exposure;PBK;monitoring;scenario;"
+                        "dietary;inhalation",
+                    )
+                elif ra_step == "📊 Risk Characterization":
+                    df_result = filter_by_keyword(
+                        df_ra,
+                        "risk quotient;threshold;management;"
+                        "stochastic;SSD;characterization;TRL",
+                    )
+                else:
+                    df_result = df_ra
+        
                 display_results(
-                    df_result,
-                    tox_step.split(" ", 1)[1],
-                    gap_note,
+                    df_result, ra_step.split(" ", 1)[1]
                 )
     
-        # ── RISK ASSESSMENT PATH ────────────────────────────────
-        elif domain_key == "Both":  # Risk Assessment
-            with col2:
-                st.markdown("### Step 2: RA Component")
-                ra_step = st.selectbox(
-                    "Which risk assessment component?",
-                    [
-                        "🏗️ RA Frameworks & Approaches",
-                        "⚠️ Hazard Identification",
-                        "📏 Exposure Assessment",
-                        "📊 Risk Characterization",
-                        "📋 All RA References",
-                    ],
-                )
-    
-            # Get all entries scored in the RA column
-            ra_col = find_column(
-                df, ["Risk Assessment / Risk Char.", "Risk Assessment"]
-            )
-            if ra_col:
-                df_ra = df[
-                    df[ra_col].notna()
-                    & (df[ra_col] != "")
-                    & (df[ra_col] != 0)
-                ]
-            else:
-                df_ra = df
-    
-            if ra_step == "📋 All RA References":
-                df_result = df_ra
-            elif ra_step == "🏗️ RA Frameworks & Approaches":
-                df_fw = filter_by_doc_type(df_ra, "Framework")
-                df_adopted = filter_by_doc_type(
-                    df_ra, "Regulatory-Adopted"
-                )
-                df_result = pd.concat(
-                    [df_fw, df_adopted]
-                ).drop_duplicates()
-            elif ra_step == "⚠️ Hazard Identification":
-                df_result = filter_by_keyword(
-                    df_ra,
-                    "hazard;toxicity;effect;ToMEx;tox database;SSD",
-                )
-            elif ra_step == "📏 Exposure Assessment":
-                df_result = filter_by_keyword(
-                    df_ra,
-                    "exposure;PBK;monitoring;scenario;"
-                    "dietary;inhalation",
-                )
-            elif ra_step == "📊 Risk Characterization":
-                df_result = filter_by_keyword(
-                    df_ra,
-                    "risk quotient;threshold;management;"
-                    "stochastic;SSD;characterization;TRL",
-                )
-            else:
-                df_result = df_ra
-    
-            display_results(
-                df_result, ra_step.split(" ", 1)[1]
-            )
-
     with tab2:
         from visual_tree_tab import render_decision_tree
         render_decision_tree(df, tree)
