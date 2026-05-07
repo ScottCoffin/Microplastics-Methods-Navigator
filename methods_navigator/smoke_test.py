@@ -40,6 +40,8 @@ from visual_tree_tab import (
     _normalize_abstract_text,
     _ra_core_for_receptor,
     _reference_context_messages,
+    _ensure_graphviz_dot_on_path,
+    _zoomable_svg_html,
     _workflow_availability,
     build_graphviz,
 )
@@ -151,16 +153,8 @@ def main():
         check("Tier 1\\n" in dot, "Decision Tree node tier labels render on separate lines", errors)
         check("AUX_DEFINITIONS" in dot, "Decision Tree auxiliary node renders", errors)
         check("splines=polyline" in dot, "Decision Tree uses polyline graph routing", errors)
-        check(
-            'URL="?tree_core_step=sampling"' in dot,
-            "Decision Tree core nodes include clickable selection URLs",
-            errors,
-        )
-        check(
-            'URL="?tree_aux_step=definitions"' in dot,
-            "Decision Tree auxiliary nodes include clickable selection URLs",
-            errors,
-        )
+        check("URL=" not in dot, "Decision Tree graph nodes are not clickable", errors)
+        check("target=" not in dot, "Decision Tree graph nodes do not navigate iframes", errors)
         analysis_dot = build_graphviz(
             domain="Monitoring",
             matrix_key="drinking_water",
@@ -176,6 +170,44 @@ def main():
         check(
             "CORE_SAMPLING" not in analysis_dot and "CORE_REPORTING" not in analysis_dot,
             "Monitoring Analysis graph hides individual non-selected core nodes",
+            errors,
+        )
+        zoom_html = _zoomable_svg_html(
+            '<svg width="100pt" height="50pt" viewBox="0 0 100 50"></svg>',
+            450,
+        )
+        check(
+            "svg-pan-zoom@3.6.1" in zoom_html,
+            "Zoomable diagram loads svg-pan-zoom from CDN",
+            errors,
+        )
+        check(
+            'width="100%"' in zoom_html and 'height="100%"' in zoom_html,
+            "Zoomable diagram SVG fills its container",
+            errors,
+        )
+        check(
+            "ResizeObserver" in zoom_html and "diagram-height: 450px" in zoom_html,
+            "Zoomable diagram reacts to component height changes",
+            errors,
+        )
+        check(
+            _ensure_graphviz_dot_on_path(),
+            "Graphviz dot executable is discoverable for zoomable rendering",
+            errors,
+        )
+        check(
+            "controlIconsEnabled: true" in zoom_html
+            and "fit: true" in zoom_html
+            and "center: true" in zoom_html
+            and "zoomScaleSensitivity: 0.3" in zoom_html,
+            "Zoomable diagram enables requested pan/zoom settings",
+            errors,
+        )
+        visual_tree_source = (base_dir / "visual_tree_tab.py").read_text(encoding="utf-8")
+        check(
+            "components.html" not in visual_tree_source,
+            "Zoomable diagram avoids deprecated st.components.v1.html",
             errors,
         )
 
@@ -385,8 +417,8 @@ def main():
             availability={"PF": {"count": 1, "tier": 1, "active": False}},
         )
         check(
-            'URL="?tree_problem=1"' in dot_with_problem,
-            "Problem Formulation node includes clickable selection URL",
+            'URL="?tree_problem=1"' not in dot_with_problem,
+            "Problem Formulation node is display-only in graph",
             errors,
         )
 

@@ -1,0 +1,305 @@
+- generic [ref=e3]:
+  - banner [ref=e6]:
+    - generic [ref=e9]:
+      - button "Deploy" [ref=e19] [cursor=pointer]:
+        - generic [ref=e21]: Deploy
+      - button "Main menu" [ref=e23] [cursor=pointer]:
+        - img [ref=e24]
+  - generic [ref=e27]:
+    - heading "🔬 Microplastics Methods Navigator" [level=1] [ref=e32]:
+      - text: 🔬 Microplastics Methods Navigator
+      - generic [ref=e33]:
+        - link "Link to heading":
+          - /url: "#microplastics-methods-navigator"
+          - img
+    - paragraph [ref=e38]:
+      - emphasis [ref=e39]: Interactive decision tree for planning microplastics monitoring and toxicology studies.
+      - text: Select your study type, matrix, and workflow step to find the best available methods ranked by authority tier.
+    - generic [ref=e41]:
+      - tablist [ref=e43]:
+        - tab "Decision Tree" [selected] [ref=e44] [cursor=pointer]:
+          - paragraph [ref=e46]: Decision Tree
+        - tab "Crosswalk" [ref=e47] [cursor=pointer]:
+          - paragraph [ref=e49]: Crosswalk
+        - tab "Search All References" [ref=e50] [cursor=pointer]:
+          - paragraph [ref=e52]: Search All References
+      - tabpanel "Decision Tree" [ref=e55]:
+        - generic [ref=e56]:
+          - heading "🌳 Study Design Workflow" [level=3] [ref=e62]:
+            - text: 🌳 Study Design Workflow
+            - generic [ref=e63]:
+              - link "Link to heading":
+                - /url: "#study-design-workflow"
+                - img
+          - paragraph [ref=e68]:
+            - text: Follow the linear workflow below.
+            - strong [ref=e69]: Core steps
+            - text: (solid lines) proceed sequentially.
+            - strong [ref=e70]: Auxiliary supports
+            - text: (dashed lines) apply across the workflow.
+          - generic [ref=e72]:
+            - generic [ref=e76]:
+              - paragraph [ref=e80]: Study type
+              - generic [ref=e82]:
+                - generic [ref=e83]:
+                  - generic [ref=e84]: Monitoring
+                  - combobox "Selected Monitoring. Study type" [ref=e86]
+                - img "open" [ref=e88]
+            - generic [ref=e93]:
+              - paragraph [ref=e97]: Matrix
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - generic [ref=e101]: 🚰 Drinking Water
+                  - combobox "Selected 🚰 Drinking Water. Matrix" [ref=e103]
+                - img "open" [ref=e105]
+          - generic [ref=e108]:
+            - paragraph [ref=e112]: Particle/polymer type
+            - generic [ref=e115]:
+              - generic [ref=e116]:
+                - combobox "Particle/polymer type" [ref=e118]
+                - generic: Choose options
+              - img "open" [ref=e120] [cursor=pointer]
+          - paragraph [ref=e126]: Showing references matching ANY selected type
+          - separator [ref=e131]
+          - iframe [ref=e133]:
+            - img [ref=f2e3]:
+              - generic "Workflow" [ref=f2e5]:
+                - generic "PF" [ref=f2e6]:
+                  - generic "Click to select" [ref=f2e8] [cursor=pointer]:
+                    - generic [ref=f2e10]: 📋 Problem Formulation
+                    - generic [ref=f2e11]: Tier 1
+                    - generic [ref=f2e12]: 60 refs
+                - generic "MONITORING" [ref=f2e13]:
+                  - generic "Click to select" [ref=f2e15] [cursor=pointer]:
+                    - generic [ref=f2e17]: 🔬 Monitoring
+                - generic "PF->MONITORING" [ref=f2e18]
+                - generic "TOXICOLOGY" [ref=f2e21]:
+                  - generic "Click to select" [ref=f2e23] [cursor=pointer]:
+                    - generic [ref=f2e25]: 🧫 Toxicology
+                - generic "PF->TOXICOLOGY" [ref=f2e26]
+                - generic "RISK_ASSESSMENT" [ref=f2e28]:
+                  - generic "Click to select" [ref=f2e30] [cursor=pointer]:
+                    - generic [ref=f2e32]: ⚖️ Risk Assessment
+                - generic "PF->RISK_ASSESSMENT" [ref=f2e33]
+                - generic "MAT_DRINKING_WATER" [ref=f2e36]:
+                  - generic "Click to select" [ref=f2e38] [cursor=pointer]:
+                    - generic [ref=f2e40]: 🚰 Drinking Water
+                - generic "MONITORING->MAT_DRINKING_WATER" [ref=f2e41]
+                - generic "CORE_SAMPLING" [ref=f2e43]:
+                  - generic "Click to select" [ref=f2e45] [cursor=pointer]:
+                    - generic [ref=f2e47]: 📍 Sampling
+                    - generic [ref=f2e48]: Tier 1
+                    - generic [ref=f2e49]: 8 refs
+                - generic "MAT_DRINKING_WATER->CORE_SAMPLING" [ref=f2e50]
+                - generic "AUX_DEFINITIONS" [ref=f2e53]:
+                  - generic "Click to select" [ref=f2e55] [cursor=pointer]:
+                    - generic [ref=f2e57]: 📖 Definitions & Terminology
+                    - generic [ref=f2e58]: Tier 1
+                    - generic [ref=f2e59]: 17 refs
+                - generic "MAT_DRINKING_WATER->AUX_DEFINITIONS" [ref=f2e60]
+                - generic "AUX_REF_MATERIALS" [ref=f2e63]:
+                  - generic "Click to select" [ref=f2e65] [cursor=pointer]:
+                    - generic [ref=f2e67]: 📦 Reference Materials
+                    - generic [ref=f2e68]: Tier 2
+                    - generic [ref=f2e69]: 13 refs
+                - generic "MAT_DRINKING_WATER->AUX_REF_MATERIALS" [ref=f2e70]
+                - generic "AUX_BLANKS" [ref=f2e73]:
+                  - generic "Click to select" [ref=f2e75] [cursor=pointer]:
+                    - generic [ref=f2e77]: 🧹 Blanks & Contamination Control
+                    - generic [ref=f2e78]: Tier 2
+                    - generic [ref=f2e79]: 14 refs
+                - generic "MAT_DRINKING_WATER->AUX_BLANKS" [ref=f2e80]
+                - generic "CORE_EXTRACTION" [ref=f2e83]:
+                  - generic "Click to select" [ref=f2e85] [cursor=pointer]:
+                    - generic [ref=f2e87]: 🧪 Extraction
+                    - generic [ref=f2e88]: Tier 1
+                    - generic [ref=f2e89]: 9 refs
+                - generic "CORE_SAMPLING->CORE_EXTRACTION" [ref=f2e90]
+                - generic "CORE_SUBSAMPLING" [ref=f2e92]:
+                  - generic "Click to select" [ref=f2e94] [cursor=pointer]:
+                    - generic [ref=f2e96]: 🔢 Sub-sampling
+                    - generic [ref=f2e97]: Tier 2
+                    - generic [ref=f2e98]: 3 refs
+                - generic "CORE_EXTRACTION->CORE_SUBSAMPLING" [ref=f2e99]
+                - generic "CORE_ANALYSIS" [ref=f2e101]:
+                  - generic "Click to select" [ref=f2e103] [cursor=pointer]:
+                    - generic [ref=f2e105]: 🔎 Analysis
+                    - generic [ref=f2e106]: Tier 1
+                    - generic [ref=f2e107]: 23 refs
+                - generic "CORE_SUBSAMPLING->CORE_ANALYSIS" [ref=f2e108]
+                - generic "CORE_DATA_STATS" [ref=f2e110]:
+                  - generic "Click to select" [ref=f2e112] [cursor=pointer]:
+                    - generic [ref=f2e114]: 📊 Data Analysis & Statistics
+                    - generic [ref=f2e115]: Tier 3
+                    - generic [ref=f2e116]: 8 refs
+                - generic "CORE_ANALYSIS->CORE_DATA_STATS" [ref=f2e117]
+                - generic "CORE_REPORTING" [ref=f2e119]:
+                  - generic "Click to select" [ref=f2e121] [cursor=pointer]:
+                    - generic [ref=f2e123]: 📝 Reporting & Data Deposition
+                    - generic [ref=f2e124]: Tier 1
+                    - generic [ref=f2e125]: 8 refs
+                - generic "CORE_DATA_STATS->CORE_REPORTING" [ref=f2e126]
+          - paragraph [ref=e138]: "Node color shows best available tier: Tier 1 green, Tier 2 blue, Tier 3 gold, Tier 4 gray; red means no matching references."
+          - separator [ref=e143]
+          - paragraph [ref=e148]:
+            - strong [ref=e149]: "📍 Core Path:"
+            - text: 📋 Problem Formulation → Monitoring → 🚰 Drinking Water → 📍 Sampling
+          - paragraph [ref=e154]:
+            - strong [ref=e155]: "🔧 Auxiliary Support:"
+            - text: 📖 Definitions & Terminology
+          - group [ref=e158]:
+            - generic "keyboard_arrow_right Problem Formulation references (60)" [ref=e159] [cursor=pointer]:
+              - generic [ref=e160]:
+                - generic [ref=e162]: keyboard_arrow_right
+                - paragraph [ref=e165]: Problem Formulation references (60)
+          - generic [ref=e169]:
+            - paragraph [ref=e173]: Core workflow
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e177]: 📍 Sampling
+                - combobox "Selected 📍 Sampling. Core workflow" [ref=e179]
+              - img "open" [ref=e181]
+          - group [ref=e185]:
+            - 'generic "keyboard_arrow_down Core Workflow references: 📍 Sampling (8)" [ref=e186] [cursor=pointer]':
+              - generic [ref=e187]:
+                - generic [ref=e189]: keyboard_arrow_down
+                - paragraph [ref=e192]: "Core Workflow references: 📍 Sampling (8)"
+            - generic [ref=e194]:
+              - alert [ref=e197]:
+                - paragraph [ref=e202]: "Current Crosswalk coverage for this path: Tier 1: 1, Tier 2: 2, Tier 3: 2, Tier 4: 3."
+              - paragraph [ref=e207]: 📚 8 references
+              - paragraph [ref=e212]:
+                - strong [ref=e213]: ★★★★ Tier 1 — Normative / Binding (1)
+              - generic [ref=e215]:
+                - generic [ref=e220]:
+                  - strong [ref=e221]: 🟢 SWRCB/DDW, 2025
+                  - text: (2025) — Method / Protocol ·
+                  - link "link" [ref=e222] [cursor=pointer]:
+                    - /url: https://ftp.sccwrp.org/pub/download/MICROPLASTICS_WORKSHOP_DRINKING_WATER/MPDW%20workshop%20materials/Training%20recources%20on%20sample%20collection/031925%20-%20SOP%20-%20Collection%20of%20Drinking%20Water%20Sample.pdf
+                  - text: "TIER 1: California State Water Board SOP for DW sample collection; regulatory-grade accredited method"
+                  - text: 📊 Estimated daily intake by route and matrix; population exposure distributions
+                  - text: 📐 0.1–5000 µm (NMPs; multi-route exposure scenarios — oral, inhalation, dermal)
+                - group [ref=e225]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e226] [cursor=pointer]:
+                    - generic [ref=e227]:
+                      - generic [ref=e229]: keyboard_arrow_right
+                      - paragraph [ref=e232]: Abstract
+              - paragraph [ref=e237]:
+                - strong [ref=e238]: ★★★☆ Tier 2 — Authoritative / Institutional (2)
+              - generic [ref=e240]:
+                - generic [ref=e245]:
+                  - strong [ref=e246]: 🔵 ISO 16094-2:2025
+                  - text: (2025) — Method / Protocol ·
+                  - link "link" [ref=e247] [cursor=pointer]:
+                    - /url: https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en
+                  - text: ISO standard. Vibrational spectroscopy (µFTIR, µRaman) for microplastic analysis in drinking water and low-turbidity waters. Specifies minimum requirements for spectral libraries, resolution, blank co...
+                  - text: "📊 particle size, particle count, size classification, chemical composition (polymer type: PE, PP, PET, PC, PS, PTFE, PVC, PA, PMMA, PU)"
+                  - text: 📐 1–5,000 μm
+                - group [ref=e250]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e251] [cursor=pointer]:
+                    - generic [ref=e252]:
+                      - generic [ref=e254]: keyboard_arrow_right
+                      - paragraph [ref=e257]: Abstract
+                - generic [ref=e262]:
+                  - strong [ref=e263]: 🔵 ISO 24187:2023
+                  - text: (2023) — Method / Protocol ·
+                  - link "link" [ref=e264] [cursor=pointer]:
+                    - /url: https://www.iso.org/standard/78033.html
+                  - text: · 🎯 All environmental matrices · 📋 Published 2023
+                  - text: Umbrella ISO standard for MP analysis principles across all environmental matrices. Specifies particle size classification and minimum requirements.
+                  - text: 📊 particle size classification, sampling apparatus specifications, sample preparation procedures, representative sample quantities
+                - group [ref=e267]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e268] [cursor=pointer]:
+                    - generic [ref=e269]:
+                      - generic [ref=e271]: keyboard_arrow_right
+                      - paragraph [ref=e274]: Abstract
+              - paragraph [ref=e279]:
+                - strong [ref=e280]: ★★☆☆ Tier 3 — Peer-Reviewed / Validated (2)
+              - generic [ref=e282]:
+                - generic [ref=e287]:
+                  - strong [ref=e288]: 🟡 Dalmau-Soler et al., 2025
+                  - text: (2025) — Method / Protocol ·
+                  - link "link" [ref=e289] [cursor=pointer]:
+                    - /url: https://doi.org/10.1016/j.envpol.2025.126174
+                  - text: "Implements EU Decision 2024/1441 Py-GC-MS method; glass-fiber filter + Py-GC-MS applied to Llobregat river basin → Barcelona DW; 92–99% removal in DWTP. Environ. Pollut. v373, p126174. Zotero: 56WC834..."
+                  - text: 📊 Particle count/L by polymer type, size bin, morphology; blank-corrected
+                  - text: 📐 ≥5 µm (FTIR / SWB-MP1); ≥1 µm (Raman / SWB-MP2)
+                - group [ref=e292]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e293] [cursor=pointer]:
+                    - generic [ref=e294]:
+                      - generic [ref=e296]: keyboard_arrow_right
+                      - paragraph [ref=e299]: Abstract
+                - generic [ref=e304]:
+                  - strong [ref=e305]: 🟡 Brander et al., 2020
+                  - text: (2020) — Guideline / Best Practice ·
+                  - link "link" [ref=e306] [cursor=pointer]:
+                    - /url: https://doi.org/10.1177/0003702820945713
+                  - text: PRIMARY sampling guide for all matrices; best available when no Tier 1 SOP exists
+                  - text: 📊 KOH digestion recovery 96.7%; H₂O₂ recovery 88.8%; interlaboratory CV <11%; 3 polymers; 4 labs
+                  - text: 📐 PE/PP/PET spike particles (µm range); fish GIT and mussel tissue matrices
+                - group [ref=e309]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e310] [cursor=pointer]:
+                    - generic [ref=e311]:
+                      - generic [ref=e313]: keyboard_arrow_right
+                      - paragraph [ref=e316]: Abstract
+              - paragraph [ref=e321]:
+                - strong [ref=e322]: ★☆☆☆ Tier 4 — Supporting / Contextual (3)
+              - generic [ref=e324]:
+                - generic [ref=e329]:
+                  - strong [ref=e330]: ⚪ Lusher & Primpke, 2023
+                  - text: (2023) — Review ·
+                  - link "link" [ref=e331] [cursor=pointer]:
+                    - /url: https://doi.org/10.1021/acs.est.2c06018
+                  - text: Philosophical guidance on when methods are fit for purpose; research vs. monitoring
+                - group [ref=e334]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e335] [cursor=pointer]:
+                    - generic [ref=e336]:
+                      - generic [ref=e338]: keyboard_arrow_right
+                      - paragraph [ref=e341]: Abstract
+                - generic [ref=e346]:
+                  - strong [ref=e347]: ⚪ Athey & Erdle, 2021
+                  - text: (2021) — Review ·
+                  - link "link" [ref=e348] [cursor=pointer]:
+                    - /url: https://doi.org/10/gnbjqq
+                  - text: Critical review of microfiber-specific sampling and reporting gaps
+                  - text: 📊 Fiber abundance, material composition (synthetic, semisynthetic, natural), fiber type (cellulosic, proteinaceous, mineral), chemical additives (dyes, ...
+                  - text: 📐 1000 µm to 5000 µm (upper limits used in literature; no standardized lower limit defined)
+                - group [ref=e351]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e352] [cursor=pointer]:
+                    - generic [ref=e353]:
+                      - generic [ref=e355]: keyboard_arrow_right
+                      - paragraph [ref=e358]: Abstract
+                - generic [ref=e363]:
+                  - strong [ref=e364]: ⚪ ISO 21960:2020
+                  - text: (2020) — Review ·
+                  - link "link" [ref=e365] [cursor=pointer]:
+                    - /url: https://www.iso.org/standard/72300.html
+                  - text: This document summarizes current scientific literature on the occurrence of macroplastics and microplastics, in the environment and biota. It gives an overview of testing methods, including sampling f...
+                  - text: 📊 occurrence of macroplastics and microplastics; sampling methods from various environmental matrices; sample preparation and analysis; chemical and phy...
+                - group [ref=e368]:
+                  - generic "keyboard_arrow_right Abstract" [ref=e369] [cursor=pointer]:
+                    - generic [ref=e370]:
+                      - generic [ref=e372]: keyboard_arrow_right
+                      - paragraph [ref=e375]: Abstract
+              - generic [ref=e377]:
+                - button "📥 Export (compact)" [ref=e382] [cursor=pointer]:
+                  - paragraph [ref=e386]: 📥 Export (compact)
+                - button "📥 Export (full)" [ref=e391] [cursor=pointer]:
+                  - paragraph [ref=e395]: 📥 Export (full)
+          - generic [ref=e397]:
+            - paragraph [ref=e401]: Auxiliary support
+            - generic [ref=e403]:
+              - generic [ref=e404]:
+                - generic [ref=e405]: 📖 Definitions & Terminology
+                - combobox "Selected 📖 Definitions & Terminology. Auxiliary support" [ref=e407]
+              - img "open" [ref=e409]
+          - group [ref=e413]:
+            - 'generic "keyboard_arrow_right Auxiliary Support references: 📖 Definitions & Terminology (17)" [ref=e414] [cursor=pointer]':
+              - generic [ref=e415]:
+                - generic [ref=e417]: keyboard_arrow_right
+                - paragraph [ref=e420]: "Auxiliary Support references: 📖 Definitions & Terminology (17)"
+    - separator [ref=e425]
+    - generic [ref=e430]:
+      - strong [ref=e431]: Microplastics Methods Navigator
+      - text: · Built from the Microplastics Research Harmonization Crosswalk
+      - text: "Crosswalk entries: 168 · Tier 1: 10 · Tier 2: 29 · Tier 3: 25 · Tier 4: 104"

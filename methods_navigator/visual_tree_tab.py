@@ -19,7 +19,8 @@ import pandas as pd
 import re
 import html
 import graphviz
-import streamlit.components.v1 as components
+import os
+import shutil
 from urllib.parse import urlencode
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 
@@ -571,15 +572,10 @@ def _n(nid, label, active=False, auxiliary=False, availability=None, url=None):
     )
     label = _availability_label(label, availability)
     fontsize = 10 if auxiliary else 11
-    link_attrs = (
-        f', URL="{url}", target="_self", tooltip="Click to select"'
-        if url
-        else ""
-    )
     return (f'    {nid} [label="{label}", style="{style}", '
             f'fillcolor="{fill}", color="{border}", '
             f'fontcolor="{text}", penwidth={penwidth}, '
-            f'fontsize={fontsize}{link_attrs}];')
+            f'fontsize={fontsize}];')
 
 
 def _e(src, dst, active=False, auxiliary=False, tier=None):
@@ -888,6 +884,111 @@ def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_ke
 
     lines.append("}")
     return "\n".join(lines)
+
+
+def _prepare_svg_for_pan_zoom(svg):
+    """Ensure the rendered SVG fills the pan/zoom container."""
+    svg = re.sub(r"\s(width|height)=\"[^\"]*\"", "", svg, count=2)
+    svg = re.sub(r"\sid=\"[^\"]*\"", "", svg, count=1)
+    return re.sub(
+        r"<svg\b",
+        '<svg id="workflow-svg" width="100%" height="100%"',
+        svg,
+        count=1,
+    )
+
+
+def _zoomable_svg_html(svg, height):
+    svg = _prepare_svg_for_pan_zoom(svg)
+    return f"""
+<!doctype html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <style>
+    html, body {{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fafafa;
+    }}
+    #workflow-container {{
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      box-sizing: border-box;
+      overflow: hidden;
+    }}
+    #workflow-svg {{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }}
+  </style>
+</head>
+<body>
+  <!-- diagram-height: {height}px -->
+  <div id="workflow-container">
+    {svg}
+  </div>
+  <script>
+    const container = document.getElementById("workflow-container");
+    const panZoom = svgPanZoom("#workflow-svg", {{
+      controlIconsEnabled: true,
+      fit: true,
+      center: true,
+      zoomScaleSensitivity: 0.3
+    }});
+    function refitDiagram() {{
+      panZoom.resize();
+      panZoom.fit();
+      panZoom.center();
+    }}
+    window.addEventListener("resize", refitDiagram);
+    if (window.ResizeObserver) {{
+      new ResizeObserver(refitDiagram).observe(container);
+    }}
+    setTimeout(refitDiagram, 0);
+  </script>
+</body>
+</html>
+"""
+
+
+def _ensure_graphviz_dot_on_path():
+    if shutil.which("dot"):
+        return True
+    for path in [
+        r"C:\Program Files\Graphviz\bin",
+        r"C:\Program Files (x86)\Graphviz\bin",
+    ]:
+        dot_path = os.path.join(path, "dot.exe")
+        if os.path.exists(dot_path):
+            os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + path
+            return True
+    return False
+
+
+@st.cache_data(show_spinner=False)
+def _dot_to_svg(dot):
+    return graphviz.Source(dot).pipe(format="svg").decode("utf-8")
+
+
+def _render_zoomable_graphviz(dot, height):
+    _ensure_graphviz_dot_on_path()
+    try:
+        svg = _dot_to_svg(dot)
+    except graphviz.ExecutableNotFound:
+        st.warning(
+            "Zoomable diagram rendering requires the Graphviz 'dot' executable "
+            "on PATH. Falling back to Streamlit's static Graphviz renderer."
+        )
+        st.graphviz_chart(dot, width="stretch")
+        return
+    st.iframe(_zoomable_svg_html(svg, height), width="stretch", height=height)
 
 
 # ── REFERENCE DISPLAY ───────────────────────────────────────
@@ -1274,7 +1375,7 @@ def render_decision_tree(df, tree=None):
         instrument_key=instrument_key,
         availability=availability,
     )
-    st.graphviz_chart(dot, width="stretch")
+    _render_zoomable_graphviz(dot, 800)
 
     st.caption(
         "Node color shows best available tier: Tier 1 green, Tier 2 blue, "
@@ -1307,19 +1408,26 @@ def render_decision_tree(df, tree=None):
     if core_selector_key:
         core_control_cols = st.columns([1.5, 1.2]) if detail_selector else [st.container()]
         with core_control_cols[0]:
+            st.markdown("**<span style='font-size:1.5em;'>Core workflow</span>**", unsafe_allow_html=True)
             st.selectbox(
                 "Core workflow",
                 list(core_options.keys()),
                 format_func=lambda key: core_options[key],
                 key=core_selector_key,
+                label_visibility="collapsed",
             )
         if detail_selector:
             with core_control_cols[1]:
+                st.markdown(
+                    f"**<span style='font-size:1.5em;'>{detail_selector['label']}</span>**",
+                    unsafe_allow_html=True,
+                )
                 st.selectbox(
                     detail_selector["label"],
                     list(detail_selector["options"].keys()),
                     format_func=lambda key: detail_selector["options"][key],
                     key=detail_selector["key"],
+                    label_visibility="collapsed",
                 )
 
     with st.expander(
@@ -1332,11 +1440,13 @@ def render_decision_tree(df, tree=None):
         )
 
     if aux_selector_key:
+        st.markdown("**<span style='font-size:1.5em;'>Auxiliary Support</span>**", unsafe_allow_html=True)
         st.selectbox(
             "Auxiliary support",
             list(aux_options.keys()),
             format_func=lambda key: aux_options[key],
             key=aux_selector_key,
+            label_visibility="collapsed",
         )
 
     with st.expander(
