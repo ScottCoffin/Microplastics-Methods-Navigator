@@ -63,3 +63,4 @@
 [  452427ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ about:srcdoc:0
 [  471341ms] [ERROR] Unsafe attempt to initiate navigation for frame with URL 'http://localhost:8501/' from frame with URL 'about:srcdoc'. The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
  @ :0
+[ 1115644ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17

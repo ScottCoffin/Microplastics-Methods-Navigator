@@ -260,6 +260,19 @@ def _filter_doc_type(df, dt):
     return df[df[col].astype(str).str.contains(dt, case=False, na=False)]
 
 
+def _doc_type_options(df):
+    col = _find_col(df, ["Document Type"])
+    if col is None:
+        return []
+    values = (
+        df[col]
+        .dropna()
+        .astype(str)
+        .map(str.strip)
+    )
+    return sorted(value for value in values.unique() if value and value.lower() != "nan")
+
+
 def _filter_keywords(df, kws):
     col = _find_col(df, ["Key Notes"])
     if col is None:
@@ -1382,28 +1395,29 @@ def render_decision_tree(df, tree=None):
         "Tier 3 gold, Tier 4 gray; red means no matching references."
     )
 
-    path_parts = ["📋 Problem Formulation", domain]
-    if matrix_key:
-        matrix_info = MATRICES[matrix_key]
-        path_parts.append(f'{matrix_info["icon"]} {matrix_info["label"]}')
-    if receptor_key:
-        receptor_info = RECEPTORS[receptor_key]
-        path_parts.append(f'{receptor_info["icon"]} {receptor_info["label"]}')
-    if core_label:
-        path_parts.append(core_label)
-    if instrument_key and instrument_key in INSTRUMENTS:
-        path_parts.append(INSTRUMENTS[instrument_key]["label"])
-
-    st.markdown("---")
-    st.markdown(f"**📍 Core Path:** {' → '.join(path_parts)}")
-    if aux_label:
-        st.markdown(f"**🔧 Auxiliary Support:** {aux_label}")
-
+    st.markdown("**<span style='font-size:1.5em;'>Problem Formulation</span>**", unsafe_allow_html=True)
+    problem_doc_types = _doc_type_options(problem_result_df)
+    selected_problem_doc_types = st.multiselect(
+        "Problem Formulation document type",
+        problem_doc_types,
+        default=problem_doc_types,
+        key="tree_problem_doc_types",
+    )
+    if selected_problem_doc_types:
+        doc_type_col = _find_col(problem_result_df, ["Document Type"])
+        if doc_type_col:
+            problem_display_df = problem_result_df[
+                problem_result_df[doc_type_col].astype(str).isin(selected_problem_doc_types)
+            ]
+        else:
+            problem_display_df = problem_result_df
+    else:
+        problem_display_df = problem_result_df.iloc[0:0]
     with st.expander(
-        f"Problem Formulation references ({len(problem_result_df)})",
+        f"Problem Formulation references ({len(problem_display_df)})",
         expanded=problem_selected,
     ):
-        _display_compact_results(problem_result_df, tier_expanders=False)
+        _display_compact_results(problem_display_df, tier_expanders=False)
 
     if core_selector_key:
         core_control_cols = st.columns([1.5, 1.2]) if detail_selector else [st.container()]
@@ -1432,7 +1446,7 @@ def render_decision_tree(df, tree=None):
 
     with st.expander(
         f"Core Workflow references: {core_label} ({len(core_result_df)})",
-        expanded=True,
+        expanded=False,
     ):
         _display_compact_results(
             core_result_df,

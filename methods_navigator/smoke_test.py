@@ -30,6 +30,7 @@ from visual_tree_tab import (
     TOX_AUXILIARY,
     TOX_CORE,
     _apply_step_filters,
+    _doc_type_options,
     _filter_domain,
     _filter_matrix,
     _filter_particle_types,
@@ -207,7 +208,7 @@ def main():
         visual_tree_source = (base_dir / "visual_tree_tab.py").read_text(encoding="utf-8")
         check(
             "components.html" not in visual_tree_source,
-            "Zoomable diagram avoids deprecated st.components.v1.html",
+            "Zoomable diagram avoids deprecated HTML component API",
             errors,
         )
 
@@ -407,6 +408,13 @@ def main():
         check(
             len(_filter_problem_formulation(df)) > 0,
             "Problem Formulation interactive node returns cross-cutting rows",
+            errors,
+        )
+        problem_doc_types = _doc_type_options(_filter_problem_formulation(df))
+        check(
+            "Method / Protocol" in problem_doc_types
+            and "Guideline / Best Practice" in problem_doc_types,
+            "Problem Formulation document type selector has expected options",
             errors,
         )
         dot_with_problem = build_graphviz(
