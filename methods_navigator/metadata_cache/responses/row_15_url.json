@@ -1,0 +1,14 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "California State Water Resources Control Board resolution adopting a regulatory definition of microplastics in drinking water. This document establishes the official state definition for microplastics as synthetic polymer particles that are less than or equal to 5 millimeters in length, insoluble in water, and persistent in the environment. The resolution provides the foundational regulatory framework for microplastics monitoring and management in California's drinking water systems.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "Resolution No. 2020-0021: Adoption of Definition of 'Microplastics in Drinking Water'",
+      "Document establishes regulatory definition for microplastics in drinking water context"
+    ]
+  }
+}

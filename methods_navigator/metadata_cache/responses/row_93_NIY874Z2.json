@@ -1,0 +1,20 @@
+{
+  "scope": "soil microplastics extraction and purification for spectroscopic analysis",
+  "particle_size_range": "10–400 μm",
+  "key_metrics_output": "polymer type, particle number, shape, size; mineral mass removal (>99.9%), organic fraction reduction (77%); recovery of fibers and fragments",
+  "abstract": "Microplastic pollution in soils is an emerging topic in the scientiﬁc community, with researchers striving to determine the occurrence and the impact of microplastics on soil health, ecology, and functionality. However, information on the microplastic contamination of soils is limited because of a lack of suitable analytical methods. Because micro‐Fouriertransform infrared spectroscopy (µ‐FTIR), next to Raman spectroscopy, is one of the few methods that allows the determination of the number, polymer type, shape, and size of microplastic particles, the present study addresses the challenge of purifying soil samples sufﬁciently to allow a subsequent µ‐FTIR analysis. A combination of freeze‐drying, sieving, density separation, and a sequential enzymatic‐oxidative digestion protocol enables removal of the mineral mass (>99.9% dry wt) and an average reduction of 77% dry weight of the remaining organic fraction. In addition to visual integrity, attenuated total reﬂectance FTIR, gel permeation chromatography, and differential scanning calorimetry showed that polyamide, polyethylene, polyethylene terephthalate, and polyvinyl chloride in the size range of 100 to 400 µm were not affected by the approach. However, biodegradable polylactic acid showed visible signs of degradation and reduced molecular weight distribution after protease treatment. Nevertheless, the presented puriﬁcation protocol is a reliable and robust method to purify relatively large soil samples of approximately 250 g dry weight for spectroscopic analysis in microplastic research and has been shown to recover various microplastic ﬁbers and fragments down to a size of 10 µm from natural soil samples. Environ Toxicol Chem 2022;41:844–857. © 2021 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals LLC on behalf of SETAC.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "polyamide, polyethylene, polyethylene terephthalate, and polyvinyl chloride in the size range of 100 to 400 µm",
+      "recover various microplastic ﬁbers and fragments down to a size of 10 µm from natural soil samples"
+    ],
+    "key_metrics_output": [
+      "determination of the number, polymer type, shape, and size of microplastic particles",
+      "removal of the mineral mass (>99.9% dry wt) and an average reduction of 77% dry weight of the remaining organic fraction"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

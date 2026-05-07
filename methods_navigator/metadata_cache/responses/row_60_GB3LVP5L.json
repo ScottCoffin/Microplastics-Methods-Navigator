@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "particle properties, biological properties, risk assessment frameworks, impact assessment",
+  "abstract": "To avoid confusion about the risks of microplastics in the public domain, it is crucial that differences in terminology and approach within existing risk assessment frameworks are clear to risk managers. In this article, we discuss key concepts and recent literature on the risk assessment of microplastics and provide a shortlist of crucial elements to consider. Furthermore, we compare and contrast two approaches that have been published but have not yet been compared in detail. One method uses categories of particle properties, does not include an impact assessment, and is limited to the risk of particles in a sample. The other method uses continuums of particle properties, incorporates biological properties into an impact assessment, and focuses on the risk of all particles in the system. We discuss both approaches in light of existing disciplinary scientific knowledge, risk assessment science, and their relevance to risk managers.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "One method uses categories of particle properties, does not include an impact assessment",
+      "The other method uses continuums of particle properties, incorporates biological properties into an impact assessment"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

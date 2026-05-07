@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Ashta et al., 2026
+Year: 2026
+Full Title: Atmospheric deposition of microplastics: a sampling and analytical method including the associated measurement uncertainties
+DOI/URL: https://doi.org/10.5194/amt-19-371-2026
+Existing Particle Size Range: Any (bulk Py-GC-MS; no particle size threshold — reports total polymer mass in blood)
+Existing Key Metrics / Output: Mass concentration (µg/mL) by polymer type in human blood; full method validation provided
+
+Zotero metadata:
+Title: Atmospheric deposition of microplastics: a sampling and analytical method including the associated measurement uncertainties
+DOI: 10.5194/amt-19-371-2026
+Date: 2026-01-19 2026-1-19
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Abstract. Microplastics (MPs) are environmental contaminants of global concern, and the atmosphere may play an important role in their environmental distribution. In this study, we developed a tailored analytical chain – including sample collection, processing, and analysis based on optical microscopy and focal plane array μ-Fourier transform infrared spectroscopy (FPA-μ-FTIR) – to quantify 20–215 µm MPs (excluding tire wear particles) in wet and dry atmospheric deposition samples. We present a novel sampling setup to collect particulate wet deposition, which consists of an on-site precipitation filtration device. Validation of the sampling setup via spike-recovery experiments using surrogate standards resulted in average recoveries of approximately 90 %, suggesting limited MP losses. Additionally, we developed a custom software platform that combines the results from optical microscopy and chemical imaging obtained through FPA-μ-FTIR. Furthermore, an assessment of the total measurement uncertainty was made by addressing each step of the analytical chain individually. The resulting total expanded uncertainty was approximately 90 % for determining MP numbers in a single wet or dry deposition sample. The conversion of MP numbers and associated size information into MP mass was estimated to generate an additional systematic error of 50 %. Based on analyses of blanks, the critical level and the limit of detection, number-based thresholds for minimizing false positives and false negatives, were 29 and 58 MPs per analyzed subsample, respectively. The analytical chain was applied to quantify the MP content in wet and dry atmospheric deposition samples collected at a suburban site in Switzerland. The principles and methodology used in this study to calculate the uncertainties, recoveries and limits of detection are transferrable to other analytical methods intended for MP analysis. Such an assessment of method-specific uncertainties is an important step towards enhancing the comparability of MP (monitoring) data.
+
+Context source: zotero_abstractNote
+
+Source context:
+Abstract. Microplastics (MPs) are environmental contaminants of global concern, and the atmosphere may play an important role in their environmental distribution. In this study, we developed a tailored analytical chain – including sample collection, processing, and analysis based on optical microscopy and focal plane array μ-Fourier transform infrared spectroscopy (FPA-μ-FTIR) – to quantify 20–215 µm MPs (excluding tire wear particles) in wet and dry atmospheric deposition samples. We present a novel sampling setup to collect particulate wet deposition, which consists of an on-site precipitation filtration device. Validation of the sampling setup via spike-recovery experiments using surrogate standards resulted in average recoveries of approximately 90 %, suggesting limited MP losses. Additionally, we developed a custom software platform that combines the results from optical microscopy and chemical imaging obtained through FPA-μ-FTIR. Furthermore, an assessment of the total measurement uncertainty was made by addressing each step of the analytical chain individually. The resulting total expanded uncertainty was approximately 90 % for determining MP numbers in a single wet or dry deposition sample. The conversion of MP numbers and associated size information into MP mass was estimated to generate an additional systematic error of 50 %. Based on analyses of blanks, the critical level and the limit of detection, number-based thresholds for minimizing false positives and false negatives, were 29 and 58 MPs per analyzed subsample, respectively. The analytical chain was applied to quantify the MP content in wet and dry atmospheric deposition samples collected at a suburban site in Switzerland. The principles and methodology used in this study to calculate the uncertainties, recoveries and limits of detection are transferrable to other analytical methods intended for MP analysis. Such an assessment of method-specific uncertainties is an important step towards enhancing the comparability of MP (monitoring) data.

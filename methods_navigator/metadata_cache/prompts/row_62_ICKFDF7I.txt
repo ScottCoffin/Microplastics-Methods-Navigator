@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 22638:2024
+        Year: 2024
+        Full Title: ISO 22638:2024 Rubber — Generation and collection of tyre and road wear particles (TRWP) — Road simulator laboratory method
+        DOI/URL: https://www.iso.org/standard/84313.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ISO 22638:2024 Rubber — Generation and collection of tyre and road wear particles (TRWP) — Road simulator laboratory method
+        DOI: 
+        Date: 2024-00-00 2024
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Rubber — Generation and collection of tyre and road wear particles (TRWP) — Road simulator laboratory method
+
+Abstract This document specifies a method for the generation of tyre and road wear particles (TRWP) in a road simulator laboratory that is representative of actual driving conditions. Guidance is provided for the road simulator system, test pavement and tyres, vacuum collection system, monitoring and reporting. This method is applicable for the collection of TRWP from a known pavement and tyre type under realistic driving conditions without the inference of road surface contaminants (e.g. brake dust, exhaust, grease). There is a possibility that this method is not relevant for studded tyres. General information Status Published Publication date 2024-07 Stage : International Standard published [ 60.60 Edition : 1 Number of pages : 7 Technical Committee : ISO/TC 45 ICS 83.060 13.020.40 83.160.01 RSS updates Life cycle Previously Withdrawn ISO/TS 22638:2018 Now Published ISO 22638:2024 Stage: 60.60 Preliminary Proposal 10.99 2021-12-01 New project approved Preparatory Committee 30.00 2021-12-01 Committee draft (CD) registered 30.20 2022-06-01 CD consultation initiated 30.60 2022-07-28 Close of comment period 30.99 2022-11-30 CD approved for registration as DIS Enquiry 40.00 2023-03-29 DIS registered 40.20 2023-05-30 DIS ballot initiated: 12 weeks 40.60 2023-08-23 Close of voting 40.99 2023-11-15 Full report circulated: DIS approved for registration as FDIS Approval 50.00 2024-04-22 Final text received or FDIS registered for formal approval 50.20 2024-05-14 Proof sent to secretariat or FDIS ballot initiated: 8 weeks 50.60 2024-07-10 Close of voting. Proof returned by secretariat Publication 60.00 2024-07-10 International Standard under publication 60.60 2024-07-31 International Standard published Review 90.20 International Standard under systematic review 90.60 Close of review 90.92 International Standard to be revised 90.93 International Standard confirmed 90.99 Withdrawal of International Standard proposed by TC or SC Withdrawal 95.99 Withdrawal of International Standard This standard contributes to the following Sustainable Development Goals Responsible Consumption and Production Industry, Innovation and Infrastructure Got a question? Check out our Help and Support Store Store ICS 83.060 ISO 22638:2024 Sitemap Standards Benefits Popular standards Conformity assessment SDGs Sectors Health IT & related technologies Management & services Security, safety & risk Transport Energy Environmental sustainability Materials About ISO What we do Structure Members Events Strateg

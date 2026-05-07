@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Wardani et al., 2024
+Year: 2024
+Full Title: Nano- and microplastic PBK modeling in the context of human exposure and risk assessment
+DOI/URL: https://doi.org/10.1016/j.envint.2024.108504
+Existing Particle Size Range: Not specified (QA framework for biota biomonitoring; method-agnostic)
+Existing Key Metrics / Output: Quality score rubric (0–100 scale); 18 criteria for biota biomonitoring study quality
+
+Zotero metadata:
+Title: Nano- and microplastic PBK modeling in the context of human exposure and risk assessment
+DOI: 10.1016/j.envint.2024.108504
+Date: 2024-04-00 04/2024
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Insufficient data on nano- and microplastics (NMP) hinder robust evaluation of their potential health risks. Methodological disparities and the absence of established toxicity thresholds impede the comparability and practical application of research findings. The diverse attributes of NMP, such as variations in sizes, shapes, and compositions, complicate human health risk assessment. Although probability density functions (PDFs) show promise in capturing this diversity, their integration into risk assessment frameworks is limited. Physiologically based kinetic (PBK) models offer a potential solution to bridge the gap between external exposure and internal dosimetry for risk evaluation. However, the heterogeneity of NMP poses challenges for accurate biodistribution modeling.
+
+Context source: zotero_abstractNote
+
+Source context:
+Insufficient data on nano- and microplastics (NMP) hinder robust evaluation of their potential health risks. Methodological disparities and the absence of established toxicity thresholds impede the comparability and practical application of research findings. The diverse attributes of NMP, such as variations in sizes, shapes, and compositions, complicate human health risk assessment. Although probability density functions (PDFs) show promise in capturing this diversity, their integration into risk assessment frameworks is limited. Physiologically based kinetic (PBK) models offer a potential solution to bridge the gap between external exposure and internal dosimetry for risk evaluation. However, the heterogeneity of NMP poses challenges for accurate biodistribution modeling.

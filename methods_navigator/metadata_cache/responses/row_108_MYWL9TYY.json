@@ -1,0 +1,21 @@
+{
+  "scope": "Nanoplastics in marine organisms (salt-water mussels); complex biological matrices",
+  "particle_size_range": "sub-micron (exact range not specified)",
+  "key_metrics_output": "Particle size, polymer type (Raman spectroscopy), particle isolation and spatial distribution",
+  "abstract": "Nanoplastic particulates (pNP) are widely considered as being potentially harmful to the environment and living organisms while also being technically difficult to detect and identify in the presence of biological matrices. In this study, we describe a method for the extraction and subsequent Raman analysis of pNP present in the tissues of salt-water mussels. The process combines a step of enzymatic digestion/filtering to eliminate the biological matrix with a detection/identification procedure, which uses a micro-machined surface, composed of arrays of cavities with well-defined sub-micron depths and diameters. This sensor surface, exploits capillary forces in a drying droplet of analyte solution to drive the self-assembly of suspended nanoparticles into the cavities leaving the individual particles isolated from each other over the surface. The resulting array, when analysed using confocal Raman microscopy, permits the size selective analysis of the individual sub-micron pNP trapped in the cavities structure.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "arrays of cavities with well-defined sub-micron depths and diameters",
+      "size selective analysis of the individual sub-micron pNP"
+    ],
+    "key_metrics_output": [
+      "Raman analysis of pNP",
+      "confocal Raman microscopy, permits the size selective analysis",
+      "detection/identification procedure"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

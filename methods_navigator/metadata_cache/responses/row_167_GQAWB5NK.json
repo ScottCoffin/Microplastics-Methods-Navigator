@@ -1,0 +1,18 @@
+{
+  "scope": "Micro- and nanoplastics toxicology; human exposure and bioaccumulation; consumer products, packaging, and food",
+  "particle_size_range": null,
+  "key_metrics_output": "Toxicological endpoints; physicochemical characteristics; polymer type; dosimetry; bioaccumulation in humans",
+  "abstract": "Abstract\n            Micro- and nanoplastic particles (MNP) are omnipresent as either pollution or intentionally used in consumer products, released from packaging or even food. There is an exponential increase in the production of plastics. With the realization of bioaccumulation in humans, toxicity research is quickly expanding. There is a rapid increase in the number of papers published on the potential implications of exposure to MNP which necessitates a call for quality criteria to be applied when doing the research. At present, most papers on MNP describe the effects of commercially available polymer (mostly polystyrene) beads that are typically not the MNP of greatest concern. This is not a fault of the research community, necessarily, as the MNPs to which humans are exposed are usually not available in the quantities needed for toxicological research and innovations are needed to supply environmentally-relevant MNP models. In addition, like we have learned from decades of research with particulate matter and engineered nanomaterials, sample physicochemical characteristics and preparation can have major impacts on the biological responses and interpretation of the research findings. Lastly, MNP dosimetry may pose challenges as (1) we are seeing early evidence that plastics are already in the human body at quite high levels that may be difficult to achieve in acute in vitro studies and (2) plastics are already in the diets fed to preclinical models. This commentary highlights the pitfalls and recommendations for particle and fibre toxicologists that should be considered when performing and disseminating the research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "sample physicochemical characteristics and preparation can have major impacts on the biological responses",
+      "MNP dosimetry",
+      "commercially available polymer (mostly polystyrene) beads"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

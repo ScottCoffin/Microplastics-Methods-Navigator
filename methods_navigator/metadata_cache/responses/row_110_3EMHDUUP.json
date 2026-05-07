@@ -1,0 +1,19 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "microplastic count, polymer type identification, recovery rate, contamination control",
+  "abstract": "A protocol for extracting and analyzing microplastics from freshwater, sediment, and fish digestive system samples. The method includes water collection via manta nets, sediment sampling with benthic grabs, fish dissection, chemical digestion, density separation, vacuum filtration, microscopic enumeration, and polymer identification using μ-Raman spectroscopy, with quality control steps to ensure high recovery and minimize contamination.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "microscopic enumeration",
+      "polymer identification using μ-Raman spectroscopy",
+      "Quality control steps ensure high recovery and minimize contamination"
+    ],
+    "abstract": [
+      "protocol for extracting microplastics from freshwater, sediment, and fish digestive system samples",
+      "chemical digestion, density separation, vacuum filtration, and microscopic enumeration, followed by polymer identification using μ-Raman spectroscopy",
+      "Quality control steps ensure high recovery and minimize contamination"
+    ]
+  }
+}

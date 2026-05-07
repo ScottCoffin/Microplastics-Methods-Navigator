@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: ASTM D883-25
+Year: 2025
+Full Title: Standard Terminology Relating to Plastics
+DOI/URL: https://store.astm.org/d0883-25.html
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+Overview Governance Governance ASTM President Board of Directors Senior Staff Global Cooperation Global Cooperation In-Residence Training Programs Online Training International Partners UAE Chapter Corporate Citizenship History History 125 Anniversary Case Studies Regional Offices and Support Diversity, Equity, Inclusion & Belonging Culture & Careers Membership & Participation Membership & Participation Overview Membership Membership Member Types Participating Members Organizational Members Informational Members Student Members Renew or Reinstate Membership Technical Committees Technical Committees View All Technical Committees Initiate a New Standards Activity Key Documents and Forms Interlaboratory Studies Program Honors and Awards Member Tools Member Tools New Member Orientation Virtual Classroom for Members ASTM101: Intro to Standards Meetings, Symposia, Workshops Meetings, Symposia, Workshops Upcoming Events Committee Meetings Propose a Symposia/Workshop Academic Outreach Academic Outreach For Students For Professors For Librarians For Members Student Chapters Emerging Professionals Publish with ASTM Publish with ASTM ASTM Digital Library Consumer Participation Consumer Participation Consumer Safety Standards How to Get Involved Training & Resources News & Events Standards & Solutions Standards & Solutions Overview Standards & Publications Standards & Publications Standards Products Catalogs ASTM Standards Tracker® Adjuncts and Reference Radiographs Selected Technical Papers (STPs) Manuals, Monographs, and Data Series Journals Technical Reports Research Reports Reading Room Book of Standards Book of Standards Standards by Section Enterprise Solutions Enterprise Solutions ASTM Compass® ASTM SpecBuilder Digital Library Digital Library Market Insights & Innovation Market Insights & Innovation Market Insights Market Innovation Standardization Impact Reports ASTM Xcellerate Centers of Excellence Advisory Services Market Intelligence Portfolio Laboratory Services Laboratory Services Proficiency Testing Program Reference Materials ASTM Insight SQC Cement and Concrete Reference Laboratory Training Courses Training Courses Accreditations International Training Certification Certification Products Personnel Safety Equipment Institute NCATT Environmental Product Declarations News News Standardization News Standardization News Editorial Calendar & Media Kit Español Issue Archive Press Releases Podcasts Help Help Overview Contact ASTM Locations FAQ Home Products & Services Scope 1.1 This terminology covers definitions of technical terms used in the plastics industry. Terms that are generally understood or adequately defined in other readily available sources are not included. 1.2 When a term is used in an ASTM document for which Committee D20 is responsible it is included only when judged, after review, by Subcommittee D20.92 to be a generally usable term. 1.3 Definitions that are identical to those published by another standards body are identified with the abbreviation of the name of the organization; for example, IUPAC is the International Union of Pure and Applied Chemistry. 1.4 A definition is a descriptive phrase or a single sentence with additional information included in discussion notes. Note 1: It is recommended that definitions be reviewed periodically. 1.4.1 When a new definition is added to this terminology standard, or the wording of a definition is revised, the date of the change shall be appended to the new or revised definition. 1.5 For literature related to plastics terminology, see Appendix X1 1.6 Subsections 1.6.1 – 1.6.5 contain references to specific terminology standards that are relevant to specific plastic products or applications. In case of conflict between a definition contained in Terminology D883 and one contained in another standard, the definition given in Terminology D883 shall prevail. 1.6.1 For terms related to thermal insulation, the applicable definitions are contained in Terminology C168 1.6.2 For terms related to electrical or electronic insulating materials, the applicable definitions are contained in Terminology D1711 1.6.3 For terms relating to fire, the applicable definitions are contained in Terminology E176 and ISO 13943. In case of conflict between Terminology E176 and ISO 13943, the definitions given in Terminology E176 shall prevail. 1.6.4 For terms relating to precision and bias and associated issues, the applicable definitions are contained in Terminology E456 1.6.5 For terms related to plastic piping systems, the applicable definitions are contained in Terminology F412 1.7 This international standard was developed in accordance with internationally recognized principles on standardization established in the Decision on Principles for the Development of International Standards, Guides and Recommendations issued by the World Trade Organization Technical Barriers to Trade (TBT) Committee. Version D0883-25 D0883-26 Active D0883-25B D0883-25A D0883-24B D0883-24A D0883-24 D0883-23 D0883

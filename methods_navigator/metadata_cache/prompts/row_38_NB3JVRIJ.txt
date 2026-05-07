@@ -1,0 +1,68 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Provencher et al., 2019
+        Year: 2019
+        Full Title: Recommended best practices for plastic and litter ingestion studies in marine birds
+        DOI/URL: https://doi.org/10.1139/facets-2018-0043
+        Existing Particle Size Range: 20–5000 µm (particles, area-equivalent diam.); 20–15000 µm (fibres, length); 5 size bins
+        Existing Key Metrics / Output: Count/m³ by polymer type; ≥1000 L sample; 10 procedural blanks; spike recovery 100±40%
+
+        Zotero metadata:
+        Title: Recommended best practices for plastic and litter ingestion studies in marine birds: Collection, processing, and reporting
+        DOI: 10.1139/facets-2018-0043
+        Date: 2019-06-01 June 1, 2019
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_abstract_section
+
+        Source context:
+        ## Abstract 
+
+## OPEN ACCESS 
+
+Citation: Provencher JF, Borrelle SB, Bond AL, Lavers JL, van Franeker JA, Kühn S, Hammer S, Avery-Gomm S, and Mallory ML. 2019. Recommended best practices for plastic and litter ingestion studies in marine birds: Collection, processing, and reporting. FACETS 4: 111–130. doi:10.1139/facets-2018-0043 
+
+Handling Editor: Brett Favaro 
+
+Received: October 29, 2018 Accepted: January 7, 2019 Published: May 9, 2019 
+
+Copyright: © 2019 Provencher et al. This work is licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author(s) and source are credited. 
+
+Published by: Canadian Science Publishing 
+
+Marine plastic pollution is an environmental contaminant of significant concern. There is a lack of consistency in sample collection and processing that continues to impede meta-analyses and largescale comparisons across time and space. This is true for most taxa, including seabirds, which are the most studied megafauna group with regards to plastic ingestion research. Consequently, it is difficult to evaluate the impacts and extent of plastic contamination in seabirds fully and accurately, and to make inferences about species for which we have little or no data. We provide a synthesized set of recommendations specific for seabirds and plastic ingestion studies that include best practices in relation to sample collection, processing, and reporting, as well as highlighting some “cross-cutting” methods. We include guidance for how carcasses, regurgitations, and pellets should be handled and treated to prevent cross-contamination, and a discussion of what size class of microplastics can be assessed in each sample type. Although we focus on marine bird samples, we also include standardized techniques to remove sediment and biological material that are generalizable to other taxa. Lastly, metrics and data presentation of ingested plastics are briefly reviewed in the context of seabird studies. 
+
+Key words: bird, bolus, diet analysis, marine debris, method standardization, necropsy, plastic debris, plastic ingestion

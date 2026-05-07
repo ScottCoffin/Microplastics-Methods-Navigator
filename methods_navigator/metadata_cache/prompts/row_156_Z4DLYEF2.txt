@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Prata et al., 2019
+Year: 2019
+Full Title: Methods for sampling and detection of microplastics in water and sediment: A critical review
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2022.137479
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Comparison of two procedures for microplastics analysis in sediments based on an interlaboratory exercise
+DOI: 10.1016/j.chemosphere.2022.137479
+Date: 2023-02-01 2023-02-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics (MP) are distributed throughout ecosystems and settle into sediments where they may threaten benthic communities; however, methods for quantifying MP in sediments have not been standardized. This study compares two methods for analyzing MP in sediments, including extraction and identification, and provides recommendations for improvement. Two laboratories processed sediment samples using two methods, referred to as “core” and “augmentation”, and identified particles with visual microscopy and spectroscopy. Using visual microscopy, the augmentation method yielded mean recoveries (78%) significantly greater than the core (47%) (p = 0.03), likely due to the use of separatory funnels in the former. Spectroscopic recovery of particles was lower at 42 and 54% for the core and augmentation methods, respectively. We suspect the visual identification recoveries are overestimations from erroneous identification of non-plastic materials persisting post-extraction, indicating visual identification alone is not an accurate method to identify MP, particularly in complex matrices like sediment. However, both Raman and FTIR proved highly accurate at identifying recovered MP, with 96.7% and 99.8% accuracy, respectively. Low spectroscopic recovery of spiked particles indicates that MP recovery from sediments is lower than previously assumed, and MP may be more abundant in sediments than current analyses suggest. To our knowledge, likely due to the excessive time/labor-intensity associated with MP analyses, this is the first interlaboratory study to quantify complete method performance (extraction, identification) for sediments, with regards to capabilities and limitations. This is essential as regulatory bodies move toward long-term environmental MP monitoring.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics (MP) are distributed throughout ecosystems and settle into sediments where they may threaten benthic communities; however, methods for quantifying MP in sediments have not been standardized. This study compares two methods for analyzing MP in sediments, including extraction and identification, and provides recommendations for improvement. Two laboratories processed sediment samples using two methods, referred to as “core” and “augmentation”, and identified particles with visual microscopy and spectroscopy. Using visual microscopy, the augmentation method yielded mean recoveries (78%) significantly greater than the core (47%) (p = 0.03), likely due to the use of separatory funnels in the former. Spectroscopic recovery of particles was lower at 42 and 54% for the core and augmentation methods, respectively. We suspect the visual identification recoveries are overestimations from erroneous identification of non-plastic materials persisting post-extraction, indicating visual identification alone is not an accurate method to identify MP, particularly in complex matrices like sediment. However, both Raman and FTIR proved highly accurate at identifying recovered MP, with 96.7% and 99.8% accuracy, respectively. Low spectroscopic recovery of spiked particles indicates that MP recovery from sediments is lower than previously assumed, and MP may be more abundant in sediments than current analyses suggest. To our knowledge, likely due to the excessive time/labor-intensity associated with MP analyses, this is the first interlaboratory study to quantify complete method performance (extraction, identification) for sediments, with regards to capabilities and limitations. This is essential as regulatory bodies move toward long-term environmental MP monitoring.

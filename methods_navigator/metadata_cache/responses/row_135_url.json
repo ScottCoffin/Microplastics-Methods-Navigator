@@ -1,0 +1,19 @@
+{
+  "particle_size_range": "micro- and nanoplastic range (specific size bounds not stated in landing page)",
+  "key_metrics_output": "manufacturer/supplier, price, MNP quantity in package, type of dispersion (suspension or powder), particle size, particle shape, polymer type, label information",
+  "abstract": "Comprehensive curated list of commercially available micro- and nanoplastic (MNP) test and reference materials. The dataset documents supplier information, pricing, package quantities, dispersion type, particle size and shape characteristics, polymer composition, and labeling for identified commercial MNP products.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [
+      "micro- and nanoplastic (MNP) test or reference materials",
+      "MNP particle size and shape"
+    ],
+    "key_metrics_output": [
+      "Information on the manufacturer/suplier, price, MNP quantity in the package, type of dispersion (suspension or powder), MNP particle size and shape, polymer type, and label"
+    ],
+    "abstract": [
+      "Comprehensive list of the commercially available micro- and nanoplastic (MNP) test or reference materials",
+      "Information on the manufacturer/suplier, price, MNP quantity in the package, type of dispersion (suspension or powder), MNP particle size and shape, polymer type, and label if there is one is included in the table"
+    ]
+  }
+}

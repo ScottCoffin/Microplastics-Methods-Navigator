@@ -1,0 +1,66 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Ho et al., 2024
+        Year: 2024
+        Full Title: Comparing the Definitions of Microplastics based on Size Range: Scientific and Policy Implications
+        DOI/URL: https://doi.org/10.1016/j.marpolbul.2024.116907
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Comparing the definitions of microplastics based on size range: Scientific and policy implications
+        DOI: 10.1016/j.marpolbul.2024.116907
+        Date: 2024-10-00 10/2024
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+        •
+the term microplastics (MP) can stir strong sentiments in some microplastic research and management circles
+•
+a consistent definition promotes more coherent discussion around the fate and adverse effects to human health and the environment
+•
+a definition should be agnostic to the analytical instrumentation, as these tools are rapidly becoming more sensitive and faster
+•
+lower size limits were selected, in part, to capture bioavailable particles which have greater ecological, and human health risks
+
+        Context source: zotero_abstractNote
+
+        Source context:
+        •
+the term microplastics (MP) can stir strong sentiments in some microplastic research and management circles
+•
+a consistent definition promotes more coherent discussion around the fate and adverse effects to human health and the environment
+•
+a definition should be agnostic to the analytical instrumentation, as these tools are rapidly becoming more sensitive and faster
+•
+lower size limits were selected, in part, to capture bioavailable particles which have greater ecological, and human health risks

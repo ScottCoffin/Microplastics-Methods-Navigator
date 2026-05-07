@@ -1,0 +1,16 @@
+{
+  "scope": "Nanoplastics and microplastics ecotoxicity studies; quality assessment criteria development",
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, chemical leaching; study quality assessment criteria",
+  "abstract": "It is becoming increasingly important to develop assessment criteria for the quality of nanoplastics studies. This study is an attempt to establish such criteria based on those developed for engineered nanomaterials, the GUIDEnano and DaNa criteria being two representatives. These criteria were applied to studies on polystyrene nanoparticles (PS NPs), which currently represent the majority of studies on nanoplastics. We compiled a list of existing nanomaterial-related criteria that are not fully relevant to PS NPs and propose additional nanoplastic-specific criteria targeting polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, and chemical leaching. For each criterion, scientific justification is provided. We conclude that the existing study quality assessments originally developed for nano(eco)toxicity studies can, through refinements, be applied to those dealing with nanoplastics studies, with a further outlook on microplastics. The final quality criteria catalogue presented here is intended as a starting point for further elaborations considering different purposes of an assessment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "propose additional nanoplastic-specific criteria targeting polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, and chemical leaching"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Reporting guidelines for microplastic identification, categorization, quantification, polymer type, morphology, color, density, size; quality assurance/quality control parameters; field sampling, sample preparation, and toxicology study considerations",
+  "abstract": "This paper presents harmonized reporting guidelines developed by 23 microplastic researchers to address reproducibility and comparability issues in microplastic research. The guidelines cover all steps of typical microplastic studies including materials, quality assurance/quality control, field sampling, sample preparation, microplastic identification, categorization, quantification, and toxicology considerations. The authors identify key problems with current method reporting—such as insufficient documentation of analytical procedures, sampling parameters, and data processing—that prevent cross-study comparison and meta-analysis. Three documents (detailed guideline, checklist, and mind map) were developed using an open science framework and released under CC BY 4.0 licensing to increase validity, reproducibility, and comparability of microplastic research globally.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "microplastic identification, microplastic categorization, microplastic quantification",
+      "morphology, chemical properties, texture, color, density, and size",
+      "polymer type",
+      "quality assurance/quality control"
+    ],
+    "abstract": [
+      "The ubiquitous pollution of the environment with microplastics - a diverse suite of contaminants - is of growing concern",
+      "Many diverse methods have been developed to answer different questions about microplastic pollution, from sources, transport, and fate in the environment, and about effects on humans and wildlife. These methods are often insufficiently described, making studies neither comparable nor reproducible.",
+      "reporting guidelines for microplastic studies in environmental and laboratory settings through all steps of a typical study, including best practices for reporting materials, quality assurance/quality control, data, field sampling, sample preparation, microplastic identification, microplastic categorization, microplastic quantification, and considerations for toxicology studies",
+      "increase the validity, reproducibility, and comparability of studies in this field"
+    ]
+  }
+}

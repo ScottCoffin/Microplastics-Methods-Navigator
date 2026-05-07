@@ -1,0 +1,15 @@
+{
+  "particle_size_range": "1 μm to 1 mm (microplastics); <1 μm (nanoplastics)",
+  "key_metrics_output": null,
+  "abstract": "The potential environmental and human health risks from microplastic (1 µm to 1 mm) and nanoplastic (<1 µm) particles (MNPs) is receiving increasing attention from scientists and the public [...]",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "microplastic (1 µm to 1 mm) and nanoplastic (<1 µm) particles"
+    ],
+    "key_metrics_output": [],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

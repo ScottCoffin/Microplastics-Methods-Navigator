@@ -1,0 +1,100 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ASTM D8333-20
+        Year: 2020
+        Full Title: Standard Practice for Preparation of Water Samples with High Medium or Low Suspended Solids for Identification and Quantification of Microplastic Particles and Fibers Using Raman Spectroscopy IR Spectroscopy or Pyrolysis-GC/MS
+        DOI/URL: https://doi.org/10.1520/D8332-20
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ASTM D8333-20: Standard Practice for Preparation of Water Samples with High Medium or Low Suspended Solids for Identification and Quantification of Microplastic Particles and Fibers Using Raman Spectroscopy IR Spectroscopy or Pyrolysis-GC/MS
+        DOI: 10.1520/d8332-20
+        Date: 2020-00-00 2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+        Significance and Use
+
+5.1 When significant quantities of inorganic or organic material are present in water samples (high suspended solids), microplastic particles/fibers can be masked and the ability to conduct reliable identification and quantification analyses of the plastic particles/fibers can be impeded.
+
+5.2 In order to quantify the occurrence of microplastic particles/fibers in wastewater influent (high suspended solids), the sampling procedure must be able to reliably collect samples at a constant flow over the desired 24-hour interval to reflect changes in diurnal flow. For wastewater influent the capture flow rate should be no less than 1 GPM over the 24-hour interval (approximately 1440 gal or 5450 L total) to minimize the problem with heterogeneity of the suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.3 In order to quantify the occurrence of microplastic particles/fibers in all other water samples with a lower content of inorganic or organic material present addressed by this practice (low to medium suspended solids), a minimum volume of 1500 L (approximately 400 gal) should be filtered through the appropriate filters or sieves to minimize potential issues with heterogeneity of suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.4 Microplastic particles/fibers retained on the sieves are suitable for characterization in terms of size, shape, quantity, and composition (polymer type), dependent upon the chosen analytical method.
+
+Scope
+
+1.1 This practice provides for the collection of water samples with high, medium, or low suspended solids to determine the presence, count, polymer type, and physical characteristics of microplastic particles and fibers. This collection practice has been validated for the collection of samples from drinking water, surface waters, wastewater influent and effluent (secondary and tertiary), and marine waters. This practice is not limited to these particular water matrices; however, the applicability of this practice to other aqueous matrices must be demonstrated.
+
+1.2 Water samples are passed through filters or sieves of adequate mesh size to enable capture of the smallest desired particle size. For waters with high or medium suspended solids content, a series of sieves with increasingly smaller mesh size should be used to prevent clogging and allow for the collection of desired particle size fractions.
+
+1.3 Subsequent sample preparation followed by analysis utilizing either Pyrolysis gas chromatography/mass spectrometry (Py-GC/MS), IR spectroscopy, or Raman spectroscopy may be used to identify the quantity (mass or number count) and composition (polymer type) of microplastic particles/fibers. The spectroscopic methods can provide a count of the number of particles and fibers present in a sample, and Py-GC/MS can provide the mass present in a sample. When desired, microplastic particle/fiber size, shape and surface characteristics can be ascertained with appropriate instruments such as a scanning electron microscope (SEM).
+
+1.4 Units—The values stated in SI units are to be regarded as the standard except where standard U.S. equipment is specified in imperial units, for example, inches and gallons. No other units of measurement are included in this standard.
+
+1.5 Standard Practice—This practice offers a set of instructions for performing one or more specific operations. This practice cannot replace education or experience and should be used in conjunction with professional judgment. Not all aspects of this practice may be applicable in all circumstances. This practice is not intended to represent or replace the standard of care by which the adequacy of a given professional service must be judged, nor should this practice be applied without consideration of a project’s many unique aspects.
+
+1.6 This standard does not purport to address all of the safety concerns, if any, associated with its use. It is the responsibility of the user of this standard to establish appropriate safety, health, and environmental practices and determine the applicability of regulatory limitations prior to use.
+
+1.7 This international standard was developed in accordance with internationally recognized principles on standardization established in the Decision on Principles for the Development of International Standards, Guides and Recommendations issued by the World Trade Organization Technical Barriers to Trade (TBT) Committee.
+
+        Context source: zotero_abstractNote
+
+        Source context:
+        Significance and Use
+
+5.1 When significant quantities of inorganic or organic material are present in water samples (high suspended solids), microplastic particles/fibers can be masked and the ability to conduct reliable identification and quantification analyses of the plastic particles/fibers can be impeded.
+
+5.2 In order to quantify the occurrence of microplastic particles/fibers in wastewater influent (high suspended solids), the sampling procedure must be able to reliably collect samples at a constant flow over the desired 24-hour interval to reflect changes in diurnal flow. For wastewater influent the capture flow rate should be no less than 1 GPM over the 24-hour interval (approximately 1440 gal or 5450 L total) to minimize the problem with heterogeneity of the suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.3 In order to quantify the occurrence of microplastic particles/fibers in all other water samples with a lower content of inorganic or organic material present addressed by this practice (low to medium suspended solids), a minimum volume of 1500 L (approximately 400 gal) should be filtered through the appropriate filters or sieves to minimize potential issues with heterogeneity of suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.4 Microplastic particles/fibers retained on the sieves are suitable for characterization in terms of size, shape, quantity, and composition (polymer type), dependent upon the chosen analytical method.
+
+Scope
+
+1.1 This practice provides for the collection of water samples with high, medium, or low suspended solids to determine the presence, count, polymer type, and physical characteristics of microplastic particles and fibers. This collection practice has been validated for the collection of samples from drinking water, surface waters, wastewater influent and effluent (secondary and tertiary), and marine waters. This practice is not limited to these particular water matrices; however, the applicability of this practice to other aqueous matrices must be demonstrated.
+
+1.2 Water samples are passed through filters or sieves of adequate mesh size to enable capture of the smallest desired particle size. For waters with high or medium suspended solids content, a series of sieves with increasingly smaller mesh size should be used to prevent clogging and allow for the collection of desired particle size fractions.
+
+1.3 Subsequent sample preparation followed by analysis utilizing either Pyrolysis gas chromatography/mass spectrometry (Py-GC/MS), IR spectroscopy, or Raman spectroscopy may be used to identify the quantity (mass or number count) and composition (polymer type) of microplastic particles/fibers. The spectroscopic methods can provide a count of the number of particles and fibers present in a sample, and Py-GC/MS can provide the mass present in a sample. When desired, microplastic particle/fiber size, shape and surface characteristics can be ascertained with appropriate instruments such as a scanning electron microscope (SEM).
+
+1.4 Units—The values stated in SI units are to be regarded as the standard except where standard U.S. equipment is specified in imperial units, for example, inches and gallons. No other units of measurement are included in this standard.
+
+1.5 Standard Practice—This practice offers a set of instructions for performing one or more specific operations. This practice cannot replace education or experience and should be used in conjunction with professional judgment. Not all aspects of this practice may be applicable in all circumstances. This practice is not intended to represent or replace the standard of care by which the adequacy of a given professional service must be judged, nor should this practice be applied without consideration of a project’s many unique aspects.
+
+1.6 This standard does not purport to address all of the safety concerns, if any, associated with its use. It is the responsibility of the user of this standard to establish appropriate safety, health, and environmental practices and determine the applicability of regulatory limitations prior to use.
+
+1.7 This international standard was developed in accordance with internationally recognized principles on standardization established in the Decision on Principles for the Development of International Standards, Guides and Recommendations issued by the World Trade Organization Technical Barriers to Trade (TBT) Committee.

@@ -1,0 +1,14 @@
+{
+  "scope": "drinking water",
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "This report focuses on the occurrence of microplastics in drinking-water and the potential risks to human health that may be associated with such exposure. The target audience includes drinking-water regulators, policy makers and water suppliers. The purpose of this report is to increase understanding on the issue of microplastics in drinking-water and to summarize how current knowledge might influence policy and management actions as well as research needs. Given the broad interest in plastic and microplastic pollution, this document may also be of interest to researchers, the public and civil society groups concerned with plastic pollution.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Bouftas & van Duursen, 2025
+Year: 2025
+Full Title: Enhanced H295R steroidogenesis assay and its predictive value for female reproductive toxicity
+DOI/URL: https://doi.org/10.1101/2025.08.22.671440
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Enhanced H295R steroidogenesis assay and its predictive value for female reproductive toxicity
+DOI: 10.1101/2025.08.22.671440
+Date: 2025-01-01 2025-01-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+There is a high need for accepted test methods for chemicals that affect the hormonal system, also known as endocrine disruptors (EDCs). The H295R adrenal cell line is considered the gold standard for investigating chemicals that can disrupt steroidogenesis. This method is described in test guideline 456, established by the Organisation for Economic Co-operation and Development (OECD), and currently focuses only on changes in testosterone (T) and estradiol (E2). However, the culture media from H295R cells contains a wide range of steroid hormones. To validate a more comprehensive H295R assay, we tested 15 blinded test substances in H295R cells and measured changes in the levels of 15 steroid hormones, as part of a ringtrial. The results showed that changes in the levels of the measured steroid hormones were robust and reproducible. The classification as disruptors of steroidogenesis for 14 test substances was the same based on changes in T or E2 alone, as it was based on changes in multiple steroid hormones. One test substance was negative based on changes in T and E2, but also showed changes in the alternative steroidogenesis pathway and would therefore be classified as positive. However, the relevance of this finding is difficult to determine, given the limited knowledge of the biological role of the alternative steroidogenesis pathway. While expanding the number of endpoint measurements in the H295R test method, thus measuring changes in multiple steroid hormones, does not appear to change the conclusion if a substance is (not) a steroidogenic disruptor, it may provide additional information that could help explain adverse health effects resulting from disrupted steroid hormone production. To investigate this further, an extensive literature review was conducted to evaluate the predictive value of the H295R test method for effects on female reproduction. This evaluation focused primarily on bisphenol A (BPA), BPS, BPF, and the plasticizer DEHP, as these were the areas where the most data were available for both the H295R test method and effects on female reproduction in animal studies. Although the evidence for disruption of steroidogenesis in the H295R test and the occurrence of some effects in animal studies (follicular and estrous cycle disruption) was overwhelming, establishing a direct link requires a detailed analysis. This could include examining altered levels of steroid hormones in the blood and using OECD-endorsed descriptions of mechanisms leading to adverse effects (so-called Adverse Outcome Pathways, AOPs). Based on our results, expanding the H295R assay does not appear to change the classification of steroidogenic disruptors, but could yield more mechanistic information. Combined with information from computer models, other cell-based tests, and/or animal experimental data, and supported by OECD-endorsed AOPs and AOP networks, this could contribute to clearer evidence for the link between endocrine disrupting effects of chemicals and female reproductive effects within European legislation.Competing Interest StatementThe authors have declared no competing interest.Dutch Ministry of Infrastructure and Water Management (IenW), case ID 31202726
+
+Context source: zotero_abstractNote
+
+Source context:
+There is a high need for accepted test methods for chemicals that affect the hormonal system, also known as endocrine disruptors (EDCs). The H295R adrenal cell line is considered the gold standard for investigating chemicals that can disrupt steroidogenesis. This method is described in test guideline 456, established by the Organisation for Economic Co-operation and Development (OECD), and currently focuses only on changes in testosterone (T) and estradiol (E2). However, the culture media from H295R cells contains a wide range of steroid hormones. To validate a more comprehensive H295R assay, we tested 15 blinded test substances in H295R cells and measured changes in the levels of 15 steroid hormones, as part of a ringtrial. The results showed that changes in the levels of the measured steroid hormones were robust and reproducible. The classification as disruptors of steroidogenesis for 14 test substances was the same based on changes in T or E2 alone, as it was based on changes in multiple steroid hormones. One test substance was negative based on changes in T and E2, but also showed changes in the alternative steroidogenesis pathway and would therefore be classified as positive. However, the relevance of this finding is difficult to determine, given the limited knowledge of the biological role of the alternative steroidogenesis pathway. While expanding the number of endpoint measurements in the H295R test method, thus measuring changes in multiple steroid hormones, does not appear to change the conclusion if a substance is (not) a steroidogenic disruptor, it may provide additional information that could help explain adverse health effects resulting from disrupted steroid hormone production. To investigate this further, an extensive literature review was conducted to evaluate the predictive value of the H295R test method for effects on female reproduction. This evaluation focused primarily on bisphenol A (BPA), BPS, BPF, and the plasticizer DEHP, as these were the areas where the most data were available for both the H295R test method and effects on female reproduction in animal studies. Although the evidence for disruption of steroidogenesis in the H295R test and the occurrence of some effects in animal studies (follicular and estrous cycle disruption) was overwhelming, establishing a direct link requires a detailed analysis. This could include examining altered levels of steroid hormones in the blood and using OECD-endorsed descriptions of mechanisms leading to adverse effects (so-called Adverse Outcome Pathways, AOPs). Based on our results, expanding the H295R assay does not appear to change the classification of steroidogenic disruptors, but could yield more mechanistic information. Combined with information from computer models, other cell-based tests, and/or animal experimental data, and supported by OECD-endorsed AOPs and AOP networks, this could contribute to clearer evidence for the link between endocrine disrupting effects of chemicals and female reproductive effects within European legislation.Competing Interest StatementThe authors have declared no competing interest.Dutch Ministry of Infrastructure and Water Management (IenW), case ID 31202726

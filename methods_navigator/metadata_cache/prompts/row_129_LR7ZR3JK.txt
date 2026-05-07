@@ -1,0 +1,162 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Provencher et al., 2020
+        Year: 2020
+        Full Title: Proceed with caution: The need to raise the publication bar for microplastics research
+        DOI/URL: https://doi.org/10.1016/j.scitotenv.2020.141426
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Proceed with caution: The need to raise the publication bar for microplastics research
+        DOI: 10.1016/j.scitotenv.2020.141426
+        Date: 2020-08-00 8/2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Science of the Total Environment 748 (2020) 141426 
+
+**==> picture [60 x 67] intentionally omitted <==**
+
+Contents lists available at ScienceDirect 
+
+## Science of the Total Environment 
+
+journal homepage: www.elsevier.com/locate/scitotenv 
+
+**==> picture [57 x 72] intentionally omitted <==**
+
+## Proceed with caution: The need to raise the publication bar for microplastics research 
+
+Jennifer F. Provencher[a][,] ⁎, Garth A. Covernton[b] , Rhiannon C. Moore[c] , Dorothy A. Horn[d] , Jeremy L. Conkle[e] , Amy L. Lusher[f] 
+
+> a Science and Technology Branch, Environment and Climate Change Canada, Ottawa, ON, Canada 
+
+> b Department of Biology, University of Victoria, Victoria, BC, Canada 
+
+> c Biological Sciences, Simon Fraser University, Burnaby, BC, Canada 
+
+> d Environmental Science and Management, Portland State University, OR, United States of America 
+
+> e Department of Physical & Environmental Sciences, Texas A&M University - Corpus Christi, Corpus Christi, TX, United States of America 
+
+> f Norwegian Institute for Water Research, Oslo, Norway 
+
+|a r t i c l e<br>i n f o<br>Article history:<br>Received 23 May 2020<br>Received in revised form 31 July 2020<br>Accepted 31 July 2020<br>Available online 8 August 2020<br>Editor: Kevin V. Thomas<br>Keywords:<br>Plastic pollution<br>Environmental contaminants<br>Standardization<br>Harmonization<br>Peer-review|a b s t r a c t|
+|---|---|
+||Plastic is a ubiquitous contaminant of the Anthropocene. The highly diverse nature of microplastic pollution<br>means it is not a single contaminant, but a suite of chemicals that include a range of polymers, particle sizes,<br>colors, morphologies, and associated contaminants. Microplastics research has rapidly expanded in recent<br>years and has led to an overwhelming consideration in the peer-reviewed literature. While there have been mul-<br>tiple calls for standardization and harmonization of the research methods used to study microplastics in the en-<br>vironment, the complexities of this emergingfeld have led to an exploration of many methods and tools. While<br>different research questions require different methods, making standardization often impractical, it remains im-<br>port to harmonize the outputs of these various methodologies. We argue here that in addition to harmonized<br>methods and quality assurance practices, journals, editors and reviewers must also be more proactive in ensuring<br>that scientifc papers have clear, repeatable methods, and contribute to a constructive and factual discourse on<br>plastic pollution. This includes carefully considering the quality of the manuscript submissions and how they<br>ft into the largerfeld of research. While comparability and reproducibility is critical in allfelds, we argue that<br>this is of utmost importance in microplastics research as policy around plastic pollution is being developed in<br>real time alongside this evolving scientifcfeld, necessitating the need for rigorous examination of the science<br>being published.<br>Crown Copyright © 2020 Published by Elsevier B.V. All rights reserved.|
+
+
+
+## 1. Introduction 
+
+Plastic pollution, because of its prevalence and persistence, is a defining pollutant of the Anthropocene. Plastic pollution, including microplastic, has been found from the Antarctic to the Arctic, and from urban landscapes to the deep sea (Cincinelli et al., 2017; Dris et al., 2015; Tekman et al., 2017; Woodall et al., 2014). Microplastics are most commonly defined as plastic particles >1 μm and <5 or 1 mm along their largest dimension (Hartmann et al., 2019; UNEP, 2014). We will use the <5 mm definition for our consideration of microplastics as this will include much of the literature. The number of peer-reviewed publications on microplastics has rapidly increased over the past decade (Cunningham and Sigwart, 2019), with studies finding microplastics 
+
+- ⁎ Corresponding author. 
+
+E-mail address: jennifer.provencher@canada.ca (J.F. Provencher). 
+
+across nearly all environmental systems (Guven et al., 2018), as well as in human food and beverages (Cox et al., 2019; Hernandez et al., 2019). While aquatic systems continue to be the most studied systems in terms of microplastics, studies in terrestrial systems are limited (de Souza Machado et al., 2018; Provencher et al., 2019; Rillig and Lehmann, 2020). The implications of microplastics in the environment, however are not clear, with some studies suggesting negative impacts to organisms, such as decreased growth rates, increased levels of contaminants, and deformities (Haegerbaeumer et al., 2019; Jeong and Choi, 2019), while others find neutral outcomes (Canniff and Hoang, 2018; Foley et al., 2018). This reported variability highlights the nature of microplastics as a diverse contaminant suite, with a range of polymers, particle sizes, colors, morphologies, and associated contaminants (Rochman et al., 2019). Coupled with the fact that microplastics often occur in patchy concentrations with complex mixtures of particle types, it is currently difficult to determine the ecological risk presented by microplastics in the environment (VKM et al., 2019). While further 
+
+https://doi.org/10.1016/j.scitotenv.2020.141426 0048-9697/Crown Copyright © 2020 Published by Elsevier B.V. All rights reserved. 
+
+J.F. Provencher et al. / Science of the Total Environment 748 (2020) 141426 
+
+2 
+
+research is undoubtedly required, it is imperative that this research is rigorously reviewed and vetted before publication to ensure reproducibility and applicability in the field, as well as appropriate interpretation by the non-scientist public. 
+
+The exponential increase in microplastic research and publications has generated attention by the media, NGOs, policy and decision makers and the public, leading to a growing number of strategies and policies to address plastic pollution (Connors et al., 2017). This has resulted in plastic pollution being recognized as a globally important contaminant by the United Nations Environment Program (UNEP), as a threat to biodiversity by the Convention on Biological Diversity (CBD), and as an emerging pollutant by the Arctic Council (AMAP, 2017; UNEP, 2014). This global recognition of the scale and potential impacts of plastic pollution is resulting in increased calls for research by regional and national funding bodies. For example, Canada has recently stated its intentions to create a regulatory framework for plastics by declaring them to be a toxic substance (ECCC, 2019, 2020). Because of this attention, microplastics research must continue, but evolve to answer major questions about environmental and toxicological impacts. 
+
+Early microplastics research focused primarily on its environmental presence, especially in the marine environment and marine biota. This work was vital to establishing the extent of contamination and was critical to the foundation of our understanding of microplastics in the environment. Early microplastics studies could only hypothesize about the potential impacts of microplastics on environmental health, such as the potential accumulation of particles in food webs and by concentrating pollutants from the environment (Cole et al., 2011; Teuten et al., 2007). In some cases, these hypotheses are stated as facts by both popular media and scientific experts despite a lack of rigorous evidence, such as microplastic accumulation and magnification in food webs, or conflicting evidence and ongoing debate, as in the case of the complexities associated with the bioavailability and toxicity of polymers, monomers, additives, and sorbed chemicals associated with microplastics (Rochman et al., 2019). As the field of microplastics has moved beyond ‘first time reported’ papers, and further develops while continuing to shape policy, it must also be improved through more rigorous vetting by researchers, manuscript reviewers and journal editors. 
+
+There is a lack of quality assurance and quality control protocols for microplastics in this developing field (Cowger et al., 2020), but we argue that this also extends into the statements used by authors in their publications in relation to environmental and human health risks. This problem has developed due to the lack of a standard framework to ensure the findings and statements of studies are peer-reviewed in the context of what we know, and what we can know, rather than past unproven speculation. For example, some peer-reviewed studies lack field and laboratory blanks needed to identify the occurrence of sample contamination (VKM et al., 2019). Other studies overstate their conclusions about widespread presence, absence, or effects of microplastics when their experimental design and resulting data do not support such interpretations. This has subsequently resulted in misleading headlines in the press that are accurate based on the language used in the article, but factually inaccurate relative to the data presented. Examples such as this are detrimental to the progress and reputation of microplastics research, and can negatively impact the credibility of the microplastics research field. 
+
+Our knowledge of environmental impacts is further limited by variation in research methods and quality of reporting that have been adapted for a variety of research questions, yet often lack harmonization and comparable outputs (Brander et al., 2011; Hermsen et al., 2018; Renner et al., 2018). With rapid growth in this field generating a variety of methods, it is imperative that robust quality assurance/quality control and reporting criteria are included with each newly published study (Cowger et al., 2020; Dehaut et al., 2019). Microplastic researchers must continue to explore techniques and tools to quantify microplastics in the environment and answer a range of questions, but as this field evolves the rigor of research and the manuscript review 
+
+process must improve with it. This requires that researchers, coauthors, manuscript reviewers, and editors are aware of the ongoing evolution of this research field and are also willing to hold each other accountable to the most recent advances that ensure only scientifically sound research is published. In addition, when editors are not knowledgeable, editors must ensure that a manuscript is allocated to a knowledgeable person who is familiar with the current field, who can hold authors to the standards of the field. Some examples would be requirements for the use of standard nomenclature, method validation, contamination control, inclusion of standard protocols (if available), thorough reporting of all methods and techniques used, and clear and explicit discussion of the studies limitations (Cowger et al., 2020). Importantly, given the public interest, press, and rapid growth of policies based on published science, authors, peer-reviewers and editors must ensure that the language, especially in titles and abstracts, accurately reflects the work done, data generated and the broader literature in this field. Collectively, as a field of researchers, reviewers, editors, and publishers, we must lift the entire field to ensure that sound science is available to inform decision makers on plastic pollution policy. This paper provides recommendations to guide and improve the review and publication process for microplastic pollution research. 
+
+## 2. Words matter 
+
+While standardized methodology may not be necessary for the harmonization of microplastics research, standardization of reporting and terminology is essential. For every emerging field the development of suitable, common nomenclatures is critical in order to promote constructive and productive scientific discourse. Clear, accurate, consistent, and specific language is essential in science. Firstly, for the work to be interpreted correctly by those in the field who are looking to test the ideas presented and build on the work published (Hartmann et al., 2019). Secondly, for non-expert readers who are trying to expand the work on microplastics to other biota or compartments. And lastly, for scientific papers to be interpreted correctly by non-researchers such as policy makers and the media who are often tasked with summarising complex science findings in only a few lines. 
+
+There have been many discussions by experts over the last few years about microplastic terminology relating to size classes (Hartmann et al., 2019) and microplastics (GESAMP, 2019). Given the legislated definition of microplastics in some regions, and the ongoing discussion about the size classes, it is imperative when researching microplastics that manuscripts define microplastics, explicitly stating numeric size classes. This enables the media, and more importantly researchers, to integrate and synthesize data from a variety of studies across disciplines and publishing eras - regardless of the terms used for plastic pollution. 
+
+As the field currently lacks standardized definitions, studies should clearly define all terms that they use that could be misinterpreted by readers less familiar with the field. Recently, there have been calls for applying a more ecotoxicological framework of terminology when referring to plastic pollution in biota (Provencher et al., 2019). This includes the difference between the intake (ingestion) of microplastics, and the accumulation (when ingestion exceeds the rate of excretion) of microplastics. Furthermore, while plastic pollution has been shown to accumulate in the gastro-intestinal tract of animals, there is little evidence to date demonstrating that the most commonly measured sizes of microplastics (>100 μm) accumulate in the tissues of animals as traditionally defined by ecotoxicology. Therefore, additional terms or qualifiers may need to be established traditional toxicological frameworks to account for accumulation in different compartments of the body (Lusher et al., 2017; Provencher et al., 2019). Synchronization and consistent terminology use are essential to compiling the most robust data available on microplastics; therefore, authors, editors and reviewers must critically assess manuscript submissions to ensure accurate reporting so that results can be meaningfully interpreted in the correct context. 
+
+J.F. Provencher et al. / Science of the Total Environment 748 (2020) 141426 
+
+3 
+
+Most importantly, studies must explicitly report all the details of the methodologies they have used and clearly present any limitations (Dehaut et al., 2019; Hermsen et al., 2018). These limitations should also be evident in the titles and abstracts of published studies, such as the size range and types of particles detected by the study. For example, reporting that no plastics are found in an organism or habitat is very different from reporting no plastics over a certain size (i.e. >50 μm or >425 μm). While these differences can be difficult to state clearly in a title, the abstract of a paper should be as specific as possible so that even those skimming the abstract do not come away with the wrong conclusions (i.e. Bourdages et al., 2019). Another avenue that should be taken with caution for microplastics research is the use of beach survey data, and other data sets collected by volunteers. While we are supportive of citizen science, and the strength of citizen science has a very strong place in plastic pollution science, the role of citizen science in microplastic research needs to be critically considered. The limitations for citizen science needs to be recognized as cross-contamination of samples for microplastics <1 mm is common and occurs easily (Connors et al., 2017; Hermsen et al., 2018). 
+
+These issues of language and reporting presented above may seem pedantic, but they are important to the integrity of the field, and the fast-evolving policies that are drawing on the published research. Global policy makers are looking to researchers to answer health related questions regarding microplastics, and we must have reliable data to answer with. Given that sampling in remote areas, such as the polar regions, is extremely difficult and repeat sampling may not occur for almost a decade in these regions (i.e. Baak et al., 2020; Poon et al., 2017; Provencher et al., 2009), it is extra critical that rigorous protocols, reporting and terminology are used. 
+
+## 3. Quality matters 
+
+In a growing field such as that of microplastics, there is a need to balance novelty and innovation in methodology against accessibility to a wide diversity of traditional and citizen scientists, and at the same time meet a necessary standard of reporting, reproducibility and quality of methodology. According to a recent assessment by the Norwegian Scientific Committee for Food and Environment (VKM et al., 2019), which reviewed the state of knowledge on microplastics (less than 1 mm), in relation to environmental and human health (n = 171 publications from 33 journals from 2016 to 2018), a large proportion (60%) of the scientific microplastic papers in the peer-reviewed literature were not of sufficient quality to include in the data analysis review. A closer look at the data, specifically related to environmental levels of microplastics revealed that the two most highly cited journals, Marine Pollution Bulletin and Environmental Pollution, are also responsible for a large proportion of the poor quality publications (both journals had over 30% poor quality publications). Of the 33 journals examined in this review, 12 failed to publish any articles that received acceptable scores (VKM et al., 2019). None of the top three journals with the most publications (Marine Pollution Bulletin, Environmental Pollution, and Science of the Total Environment) had any publications that ranked excellent quality condition (VKM et al., 2019). 
+
+This indicates that there is widespread publication of poor-quality research in the field of microplastics. While some of these exclusions may be due to changes in methodologies as the field has progressed, the number of recent publications excluded, indicate a contemporary lack of rigorous scientific method and protocols being applied (Fig. 1). This lack of quality in peer-reviewed microplastic publications is leading to the exclusion of many of these papers from synthesis assessments (VKM et al., 2019), as well as making it difficult to make firm conclusions based on these assessments. While we recognize that the field is emerging, and harmonization is not always going to be possible, the lack of an increase in excellent papers in the last few years is concerning (Fig. 1). Given the challenges recognized in science with repeatability and standard reporting, it is the synthesis of data from many 
+
+**==> picture [244 x 140] intentionally omitted <==**
+
+Fig. 1. Rating of the quality of microplastics (poor, acceptable, good, excellent) publications over a three-year period in peer-reviewed journals (source of data VKM 2019). 
+
+publications that are the most useful in making evidence-based decisions (Roche et al., 2019). To ensure that peer-reviewed publications meet their full potential in contributing to informing our understanding of microplastics it is critical that microplastic papers are reviewed with a critical eye to methods, findings and conclusions. We discuss each and how they can be improved in publications below. 
+
+## 4. Inter-comparability matters 
+
+One of the fundamental needs in the study of any environmental contaminant is the inter-comparability of findings across studies (Cowger et al., 2020). The above examples highlight the confusion related to this that currently exist in the field of microplastics. Moving forward, we suggest that these issues can be solved through a better understanding and application of some key ideas and how they work together, including standardization, harmonization, validation, and optimization. 
+
+In general, methods in peer-reviewed publications must first be optimized via development and fine-tuning to make them as effective as possible for the type of sample at hand. These methods assist in producing high quality results but require validation in order to ensure them. For example, methods with KOH have been fine tuned to work with blue mussels (Thiele et al., 2019). A method can be considered validated when there have been sufficient QA/QC procedures implemented to ensure the results generated meet predefined quality criteria. These methods produce high quality data but may be different from other approaches that have been used in the field. For example, with microplastics, methods are tested for extraction efficiencies, and recovery of spiked polymers, the impact on polymers, as well as potential for background contamination (Hurley et al., 2018). Specifically, validation of applied methods must be included in all research outputs. Method validation, such as extraction efficiencies, must be performed for all studies and include a variety of microplastic morphologies and polymers reflecting those previously observed in the target matrix. Variable recovery rates have been reported in the literature (e.g. Hurley et al., 2018; Jung et al., 2018) which may need to be adjusted for in order to prevent false estimation of microplastic quantities. 
+
+Once methods have been optimized and validated for specific samples types, the gold standard for the study of contaminants would generally require standardization. Standardization refers to the application of certain methods according to robust criteria, with limited flexibility, to allow for comparability between laboratories. This has the significant limitation of restricting the scientific freedom of method development, but is commonly applied for standard analytical procedures, such as the International Organization for Standardization (ISO) and General Laboratory Practices (GLP) ecotoxicological approaches. While the benefits of standardization are clear, we suggest that in its current state, microplastics research does not require, and would in fact be 
+
+J.F. Provencher et al. / Science of the Total Environment 748 (2020) 141426 
+
+4 
+
+hindered by, standardization, but would rather benefit the most from harmonization. 
+
+Harmonization occurs when the methods used by different studies have been rigorously tested to the point that results can be viewed as comparable despite differences in methodologies. In this sense, harmonization is possible through standardization, but standardization is not a requirement. For the case of microplastics, methods -optimized and validated- can be compared to ensure they work the same or in a similar manner in different institutions so that the outcome can be used together more easily. This means that data can be generated across institutions using different, but similar, methods. The limitations of each method are known, comparison coefficients can be defined, and the different activities/data generated can be combined. Importantly, instead of requiring standard methodology, harmonization includes a diverse suite of investigatory techniques, and for reports to be comparable a minimum list of reportable metrics (i.e. size, polymer type, etc.) as well as complete/exact methods reporting must be presented in comparison to other studies. 
+
+Examples already exist where harmonization rather than standardization has led to useful information about microplastic contamination of the environment. For example, in the North Sea, the northern fulmar (Fulmarus glacialis), a common seabird, is used as a biological indicator of plastic pollution levels in the environment (Provencher et al., 2017). Throughout the North Sea, the Convention for the Protection of the Marine Environment of the North-East Atlantic (the OSPAR Convention) has a standard protocol for the collection and examination of fulmars to track trends in environmental plastic pollution (> 1 mm) in the region (van Franeker et al., 2011). The North Sea protocol is based on beached birds being examined for ingested plastics pollution (van Franeker et al., 2011). Since the early 2000s, the protocol has been applied to regions outside of the OSPAR, but often in regions where beached bird surveys are not possible (Provencher et al., 2017). In regions such as Arctic Canada, collections depend on local Inuit hunters to collect carcasses from local colonies or on fishers submitting fulmar incidentally caught in their nets. While the collection methods are different, researchers in the region have worked with international colleagues to ensure the methods are harmonized, and thus can contribute to reporting standardized data that can be compared across the northern hemisphere (Provencher et al., 2017). Similar approaches are now emerging for invertebrates, such as the investigation of 100 sites in the Nordic countries looking at microplastic presence in bivalves (Bråte et al., 2020). 
+
+## 5. Conclusions matter 
+
+Alongside the vocabulary of microplastics, there is the terminology of reporting new information. Wording

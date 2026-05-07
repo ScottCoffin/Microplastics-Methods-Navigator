@@ -1,0 +1,19 @@
+{
+  "particle_size_range": ">10 μm (majority of studies); recommendation for <10 μm",
+  "key_metrics_output": "microplastic particle concentration, particle size, polymer type, contamination assessment, method recovery efficiency, QA/QC protocol compliance",
+  "abstract": "Over the last several years there has been an increase in studies reporting the presence of microplastic particles (MPs) in both indoor and outdoor air. Data reported reflect a variety of different types of air samples, which have helped to demonstrate the ubiquity of MPs in the atmosphere and their potential contribution to atmospheric particulate matter (PM). The relative quality of the data reporting on MPs in air has not been evaluated, but represents an important step towards improving our overall understanding of the human health implications in relation to inhalation exposure to MPs. Adopting recent approaches that have been proposed to assess the quality of data for those studies reporting concentrations in biota and water samples, we identify a suite of criteria used to screen studies reporting MPs in air for the purposes of evaluating their usefulness in assessing human exposure. Here we review and summarize data from 27 studies reporting MPs in various types of air samples and evaluate each of the studies against 11 separate criteria representing four main categories (sampling; contamination mitigation; sample purification / handling; characterization and application towards assessing human exposure). On average, studies scored 48.6% (range 18.2–81.8%) of the maximum score. Only one study received a positive score for all criteria, implying that there remains a need for future studies to consider strengthening implementation and reporting of QA/QC protocol. The most urgent areas requiring attention relate to the need for studies to avoid and verify background contamination and to strengthen the quantification of method recovery efficiencies. The majority of studies report data for particulates > 10 μm. Due to the associations between exposure to particles < 10 μm and human health effects, we recommend that prioritization efforts that develop standard protocols, based on existing air sampling methods capable of characterizing MPs < 10 μm are progressed.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "The majority of studies report data for particulates > 10 μm",
+      "Due to the associations between exposure to particles < 10 μm and human health effects, we recommend that prioritization efforts that develop standard protocols, based on existing air sampling methods capable of characterizing MPs < 10 μm are progressed"
+    ],
+    "key_metrics_output": [
+      "evaluate each of the studies against 11 separate criteria representing four main categories (sampling; contamination mitigation; sample purification / handling; characterization and application towards assessing human exposure)",
+      "The most urgent areas requiring attention relate to the need for studies to avoid and verify background contamination and to strengthen the quantification of method recovery efficiencies"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

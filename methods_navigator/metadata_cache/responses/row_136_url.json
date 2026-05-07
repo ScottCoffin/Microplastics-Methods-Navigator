@@ -1,0 +1,23 @@
+{
+  "particle_size_range": "nanoscale",
+  "key_metrics_output": "size, charge, biologic effects assessment",
+  "abstract": "NPPP-1 is a certified reference material consisting of a dispersion of nanoscale polypropylene particles in pH 8 water. It is intended for assessing biologic effects of nanoscale plastics, calibrating procedures, and developing methods for determining the size and charge of nanoscale materials. Each vial contains a minimum of 5 mL of dispersion.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "nanoscale polypropylene (PP) in water",
+      "nanoscale plastics",
+      "nanoscale materials"
+    ],
+    "key_metrics_output": [
+      "assessing the biologic effects of nanoscale plastics",
+      "calibrating procedures",
+      "developing methods for determining the size and charge of nanoscale materials"
+    ],
+    "abstract": [
+      "NPPP-1 Reference Material (RM) is a dispersion of nanoscale polypropylene (PP) in water",
+      "It is intended for use in assessing the biologic effects of nanoscale plastics, calibrating procedures, and developing methods for determining the size and charge of nanoscale materials",
+      "A single vial contains minimum 5 mL of nanoscale PP dispersion in pH 8 water"
+    ]
+  }
+}

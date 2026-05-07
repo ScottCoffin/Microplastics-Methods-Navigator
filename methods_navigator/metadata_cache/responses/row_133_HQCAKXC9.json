@@ -1,0 +1,19 @@
+{
+  "particle_size_range": ">1 μm",
+  "key_metrics_output": "microplastics contamination levels, blank control usage frequency, controlled air environment usage, sample preparation method comparison (fume hood vs. laboratory bench vs. laminar flow)",
+  "abstract": "Recent years have seen considerable scientific attention devoted towards documenting the presence of microplastics (MPs) in environmental samples. Due to omnipresence of environmental microplastics, however, disentangling environmental MPs from sample contamination is a challenge. Hence, the environmental (collection site and laboratory) microplastics contamination of samples during processing is a reality that we must address, in order to generate reproducible and reliable data. Here we investigated published literature and have found that around 1/5 of studies failed to use blank controls in their experiments. Additionally, only 34% of the studies used a controlled air environment for their sample processing (laminar flow, fume hood, closed laboratory, clean room, etc.). In that regard, we have also shown that preparing samples in the fume hood, leads to more microplastics > 1 μm) contamination than preparing it in the laboratory bench and the laminar flow. Although it did not completely prevent microplastics contamination, the processing of sample inside the laminar flow is the best option to reduce sample contamination during processing. Overall, we showed that blank controls are a must in microplastics sample preparation, but it is often overlooked by researchers.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "microplastics > 1 μm) contamination"
+    ],
+    "key_metrics_output": [
+      "around 1/5 of studies failed to use blank controls",
+      "only 34% of the studies used a controlled air environment",
+      "preparing samples in the fume hood, leads to more microplastics > 1 μm) contamination than preparing it in the laboratory bench and the laminar flow"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Langknecht et al., 2023
+Year: 2023
+Full Title: Comparison of two procedures for microplastics analysis in sediments based on an interlaboratory exercise
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2025.144325
+Existing Particle Size Range: ≥0.3 mm (storm-petrels); ≥1 mm (most species); ≥5 mm (mesoplastics); sieve stack 0.3/1/5 mm
+Existing Key Metrics / Output: Frequency of occurrence; count and mass/individual; GIT compartment-specific; size class and shape
+
+Zotero metadata:
+Title: Postprocessing methods based on minimum detectable amount and method blank for data reporting of particle count and refining estimation of matrix spike recovery in environmental microplastics analysis
+DOI: 10.1016/j.chemosphere.2025.144325
+Date: 2025-05-01 2025-05-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Data handling that converts the raw data into a deliverable dataset is a necessary step in any analytical work. This procedure involves applying detection limits to shaping the raw data to form a deliverable dataset. The detection limit for microplastics analysis is the minimum detectable amount (MDA) that can be calculated from the particle counts of procedural blank samples following the rules of the Poisson distribution. Currently, there is a lack of adequate data reporting guidance encompassing the MDA for microplastics analysis. The goal of this study was to establish a robust protocol for processing count-based raw data using the particle counts of the MDA and the procedural blank. Utilizing the dataset of an interlaboratory comparison exercise, effectiveness of the protocol was elaborated to generate a deliverable dataset and to accurately define the matrix spiking recoveries. The guidance was applied to the raw data of all size fractions (1 - >500 μm), four individual size fractions (>500, 212–500, 20–212, 1–20 μm), and two morphologies (fiber and non-fiber). Six possible data reporting scenarios were identified, with the raw data ranging well above the MDA to below the critical value. One-third (12 of 34) of the raw data for all size fractions needed blank-MDA corrections. The mean values of the spiking recoveries decreased by up to 10 % after performing the data reporting guidance. Application of this suggested data reporting guidance may be beneficial for high quality data for microplastics analysis.
+
+Context source: zotero_abstractNote
+
+Source context:
+Data handling that converts the raw data into a deliverable dataset is a necessary step in any analytical work. This procedure involves applying detection limits to shaping the raw data to form a deliverable dataset. The detection limit for microplastics analysis is the minimum detectable amount (MDA) that can be calculated from the particle counts of procedural blank samples following the rules of the Poisson distribution. Currently, there is a lack of adequate data reporting guidance encompassing the MDA for microplastics analysis. The goal of this study was to establish a robust protocol for processing count-based raw data using the particle counts of the MDA and the procedural blank. Utilizing the dataset of an interlaboratory comparison exercise, effectiveness of the protocol was elaborated to generate a deliverable dataset and to accurately define the matrix spiking recoveries. The guidance was applied to the raw data of all size fractions (1 - >500 μm), four individual size fractions (>500, 212–500, 20–212, 1–20 μm), and two morphologies (fiber and non-fiber). Six possible data reporting scenarios were identified, with the raw data ranging well above the MDA to below the critical value. One-third (12 of 34) of the raw data for all size fractions needed blank-MDA corrections. The mean values of the spiking recoveries decreased by up to 10 % after performing the data reporting guidance. Application of this suggested data reporting guidance may be beneficial for high quality data for microplastics analysis.

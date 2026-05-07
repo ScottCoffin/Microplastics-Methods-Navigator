@@ -1,0 +1,294 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: SAM, 2016
+        Year: 2016
+        Full Title: A scientific perspective on microplastics in nature and society – Scientific Advice Mechanism
+        DOI/URL: https://scientificadvice.eu/advice/a-scientific-perspective-on-microplastics-in-nature-and-society/
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: A scientific perspective on microplastics in nature and society – Scientific Advice Mechanism
+        DOI: 
+        Date: 2018-00-00 2018
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        **Science Advice for Policy by European Academies** 
+
+**A SCIENTIFIC PERSPECTIVE ON MICROPLASTICS** 
+
+**==> picture [162 x 53] intentionally omitted <==**
+
+Evidence Review Report No. 4 
+
+4 
+
+This Evidence Review Report has been produced under the auspices of the SAPEA Consortium, as a deliverable under Grant Agreement 737432 “Science Advice for Policy by European Academies” (SAPEA) that was signed by the Consortium and the European Commission on 22 November 2016. 
+
+The text of this work is licensed under the terms of the Creative Commons Attribution licence which permits unrestricted use, provided the original author and source are credited.   The licence is available at: http://creativecommons.org/licenses/by/4.0. 
+
+Images are not covered by this licence. 
+
+A list of the experts who contributed to the report is available in Annex 1. 
+
+In accordance with Article 35, paragraph 1 of the aforementioned Grant Agreement, the Consortium identified all relevant interests of the experts requested to contribute to the Evidence Review Report, assessed whether an interest constituted a conflict of interests, and took — where relevant — measures to exclude that an interest could compromise or be reasonably perceived as compromising the impartiality or objectivity of the report. Further information about SAPEA’s working processes are available at www.sapea.info/guidelines. 
+
+The information, facts and opinions set out in this report are those of the authors and do not necessarily reflect the opinion of the European Commission. The SAPEA Consortium is not responsible for the use which may be made of the information contained in this report by anyone, including the European Union institutions and bodies or any person acting on their behalf. 
+
+This report can be viewed online at: www.sapea.info/microplastics 
+
+ISBN 978-3-9820301-0-4 DOI 10.26356/microplastics 
+
+SAPEA, Science Advice for Policy by European Academies. (2018). _A Scientific Perspective on Microplastics in Nature and Society._ Berlin: SAPEA.  https://doi.org/10.26356/microplastics 
+
+version 2019.1.0 
+
+## **PUBLISHER** 
+
+SAPEA c/o acatech Pariser Platz 4a 10117 Berlin | Germany 
+
+## **CONTACT** 
+
+SAPEA Communications Office 13 Rue d’Egmont Brussels 1000 | Belgium contact@sapea.info 
+
+**==> picture [118 x 42] intentionally omitted <==**
+
+# A Scientific Perspective on Microplastics in Nature and Society 
+
+Informs the forthcoming Scientific Opinion of the European Commission Group of Chief Scientific Advisors 
+
+## About SAPEA 
+
+Spanning the disciplines of engineering, humanities, medicine, natural sciences and social sciences, SAPEA — Science Advice for Policy by European Academies — brings together outstanding knowledge and expertise from over 100 academies, young academies, and learned societies in over 40 countries across Europe. 
+
+SAPEA is part of the European Commission’s Scientific Advice Mechanism, which provides independent, interdisciplinary, and evidence-based scientific advice on policy issues to the European Commission. SAPEA works closely with the European Commission’s Group of Chief Scientific Advisors. 
+
+This Evidence Review Report will inform the GCSA’s Scientific Opinion on the topic, which will be available in Spring 2019. 
+
+Funded through the EU’s Horizon 2020 programme, the SAPEA consortium comprises Academia Europaea (AE), All European Academies (ALLEA), the European Academies’ Science Advisory Council (EASAC), the European Council of Academies of Applied Sciences, Technologies and Engineering (Euro-CASE), and the Federation of European Academies of Medicine (FEAM). 
+
+For further information about SAPEA, visit www.sapea.info 
+
+3 
+
+Table of Contents 
+
+## **07** 
+
+FOREWORD BY SAPEA 
+
+FOREWORD BY THE WORKING GROUP CHAIRS **09** 
+
+**10** EXECUTIVE SUMMARY **16** Chapter 1. INTRODUCTION 
+
+**21** Chapter 2. THE NATURAL SCIENCE PERSPECTIVES 
+
+**21** 2.1 Introduction **23** 2.2 Basics, definitions, polymer introductions **24** 2.3 Exposure **28** 2.4 Occurence **37** 2.5 Hazards of nano- and microplastic particles 2.6 Risks **48 51** 2.7 Modelling 2.8 Conclusions **58** 
+
+**62** Chapter 3. SOCIAL AND BEHAVIOURAL SCIENCES PERSPECTIVES 
+
+**62** 3.1 Introduction **69** 3.2 The changing role of the media **67** 3.3 Knowledge and risk perception **77** 3.4 Decisions and behaviour **87** 3.5 What is unknown **88** 3.6 Conclusions 
+
+Chapter 4. REGULATORY AND LEGISLATIVE ASPECTS **90** 
+
+**90** 4.1 Introduction **90** 4.2 The current policy landscape **91** 4.3 The three governing principles **95** 4.4 Scientific underpinning of current legislation **99** 4.5 Current directives/conventions **100** 4.6 Implementation and enforcement **103** 4.7 Voluntary arrangements **104** 4.8 Governance **105** 4.9 Conclusions 
+
+**107** Chapter 5. CONCLUSIONS AND OPTIONS 
+
+4 
+
+Table of Contents 
+
+## **118** 
+
+## ANNEX 1 
+
+Working Group Members 
+
+**120** 
+
+## ANNEX 2 
+
+External Contributing Experts and Workshop Participants 
+
+**121** ANNEX 3 
+
+Acknowledgements 
+
+**122** ANNEX 4 
+
+Glossary of Terms 
+
+**126** ANNEX 5 
+
+List of Abbreviations 
+
+**128** ANNEX 6 
+
+Systematic Literature Search Method Report 
+
+## LIST OF FIGURES 
+
+**20** 
+
+## FIGURE 1 
+
+Summary of what this report aims to review 
+
+**44** 
+
+## FIGURE 2 
+
+Reported impacts of nano- and microplastics on biota 
+
+**63** FIGURE 3 
+
+How plastic moves from the economy into the environment 
+
+**65** FIGURE 4Scientific publications 
+
+**65** FIGURE 5 
+
+Monthly number of news items 
+
+5 
+
+6 
+
+## Foreword by SAPEA 
+
+_A Scientific Perspective on Microplastics in Nature and Society_ is the fourth Evidence Review Report to be published by the SAPEA consortium. In this report, we were asked to review the current evidence on health, environmental and societal impacts of nano- and microplastic pollution. The interest, concern and uncertainties surrounding nano- and microplastics and the heightened media attention on plastic pollution, coupled with the many unknowns, make the project very timely. The broad scope and complexity of the issue have presented many challenges, while the topicality of the subject makes it especially important. 
+
+SAPEA is an integral part of the European Commission’s Scientific Advice Mechanism. This Evidence Review Report is presented to the European Group of Chief Scientific Advisors (GCSA), informing the GCSA’s Scientific Opinion, which will be published in 2019. The Scientific Opinion is delivered directly to the College of Commissioners. Both documents will be used by the European Commission for planning and policymaking. By such means, the best available science, distilled and analysed by the leading experts in Europe, should have a direct and tangible impact on decisions taken by the European Commission which influences the lives of some 500 million people across our continent. 
+
+In this project, SAPEA assembled a large multi-disciplinary working group, with world-leading expertise in the natural, behavioural and political sciences. The Network FEAM led the project. The working group provided specialist knowledge on subjects ranging from nanoand microplastics, polymer science, marine pollution, ecology, toxicology, risk assessment, human health, computer modelling, regulatory processes, behavioural sciences, media and communication, risk perception and attitude and behaviour research, and more. The resulting report reflects not only the outstanding knowledge of the experts, but also their exemplary commitment to the voluntary task of collaborating in an interdisciplinary way and bringing the best and latest scientific knowledge into policymaking. 
+
+We would like to thank everyone involved in making it a success and express our sincere gratitude to those who have contributed, especially the working group members and excellent Chairs. 
+
+**==> picture [101 x 62] intentionally omitted <==**
+
+Professor George Griffin President of FEAM, 2018–2020 
+
+**==> picture [100 x 63] intentionally omitted <==**
+
+Professor Sierd Cloetingh Chair of SAPEA Board, 2018–2019 President of Academia Europaea, 2014–2020 
+
+7 
+
+8 
+
+## Foreword by the Working Group Chairs 
+
+As  scientists deeply involved in the broad topic of plastic debris in the environment, we were both happy to accept the invitation by SAPEA to summarise the evidence base with respect to nano and microplastics in nature and society. Nano- and microplastics (NMPs) are tiny plastic particles of mixed shapes and sizes, which have been found in air, soil, freshwater, seas, in biota, and in several components of our diet. This is a fast-moving science and policy area, and here we offer our scientific perspective on the current state-of-the-art knowledge about NMPs and highlight the features and complexities of the topic. 
+
+Traditionally, the topic of NMPs has been addressed within separate scientific disciplines, but the consensus is increasingly that we need multidisciplinary approaches to understand the impacts and implications of pollutants such as microplastics for the environment and society and to understand how to use this complex evidence base better, to help define policy and find solutions. This is what we consider to be the unique aspect of this report: it reviews relevant evidence from the social and behavioural sciences (e.g. on behaviour change, risk perception, media coverage), in conjunction with the current natural sciences evidence (e.g. on sources, occurrence, hazards, risks), which is crucial to designing effective policies. Evidence from the environmental, computer modelling, social, behavioural and political sciences are reviewed and presented from an interdisciplinary perspective. 
+
+We would like to thank the working group. The project had a very tight time schedule, and each of the members made an impressive contribution by offering their precious time, by interacting as a team in a positive atmosphere, and by the willingness to learn from and build on each other’s diverse views and insights. Analysing and solving the societal issue of NMP is unfinished business and we can imagine the relationships here formed may find ways to continue and further what has been achieved already. 
+
+We would like to thank SAPEA for the opportunity and support. Some special and personal thanks from both of us goes to our project manager and contributing science writer Dr Jackie Whyte. We look forward to the next steps and hope that by informing the forthcoming Scientific Opinion by the European Commission’s Group of Chief Scientific Advisors, we have applied our current knowledge and contributed to good policy recommendations and a better future. 
+
+**==> picture [101 x 55] intentionally omitted <==**
+
+Professor Bart Koelmans Wageningen University The Netherlands 
+
+**==> picture [141 x 32] intentionally omitted <==**
+
+Dr Sabine Pahl University of Plymouth United Kingdom 
+
+9 
+
+## Executive Summary 
+
+## _**Scope and Objective**_ 
+
+Microplastics are **plastic particles of mixed shape** that are present in air, soil, freshwater, seas, in biota, and in several components of our diet. Because of fragmentation and degradation of larger plastic items and of microplastics, it is plausible that nanoplastics will be formed. Scientists, policy-makers and the public are becoming increasingly concerned about both the ubiquity of nano- and microplastics and the uncertainties surrounding their impacts, hazards and risks to our environment and to human health. Heightened media attention on plastic pollution is observed. In this report, we discuss nano- and microplastics separately in some cases, and in other cases together as ‘NMPs’ representing both nano- and microplastics. 
+
+NMPs are below 5 mm in size (Arthur, 2009; Thompson et al., 2004) and come from **a variety of sources** , including fisheries, products and textiles (use and breakdown), agriculture, industry, waste, litter and others. If the occurrence and concentrations of NMPs continue to rise, either from intentionally produced NMPs or NMPs formed by the degradation of larger plastic items, what can science tell us about the risks and what sense can be made of this complex evidence base? 
+
+The scientific evidence base and policy context are being reviewed by the European Commission’s Scientific Advice Mechanism. As part of this mechanism, this Evidence Review Report (ERR) offers a scientific perspective on the state-of-the-art knowledge about the implications of NMPs **in nature and society** and highlights the unique features and complexities of the topic. In this report, a SAPEA working group rapidly reviews the current knowledge about NMPs and offer their conclusions on that knowledge as it stands today. They also highlight uncertainties and knowledge gaps in order to inform appropriate future actions. 
+
+Many agencies, groups and discussion forums bring together experts specialising in macro-, micro- and nanoplastics to share their perspectives on microplastics pollution and to look at potential policy needs. Both the scientific evidence base and the policy context is evolving quickly. What is unique about this report is that it is an interdisciplinary analysis by independent scientists, free from political institutional influences, coordinated by the European Scientific Academies, and focused on nanoand microplastics, not the large plastics. This ERR provides the first step in a two-step process that feeds into a Scientific Opinion on the subject in 2019, which will be written by the European Commission’s Group of Chief Scientific Advisors (GCSA). Currently, a systematic overview of policy options and their predicted efficiency and relevance to 
+
+10 
+
+reduce current and future risks of NMPs in Europe is not available and so this initiative is welcomed by the working group. 
+
+This report distinguishes clearly between what is known, what is partially known and what is not known where possible. The broad scope for it is outlined in a statement that was issued by the GCSA in July 2018 (GCSA, 2018). NMPs in the environment (as reviewed in Chapter 2) are solely the result of human activity, and it is essential to understand the contributing factors of society within the system. A unique aspect of this report is that it reviews evidence from the social and behavioural sciences (in Chapter 3) in conjunction with the natural sciences evidence, which is crucial to designing effective policies. The working group also reviews current computer modelling performed on the topic (Chapter 2) and briefly reviews plastic-related policies. In chapter 4, a review of the scientific underpinnings to current policies is given, and it is noted where they do or (as in most cases) do not include NMPs. 
+
+This report is the result of discussions at two physical meetings, held in Brussels and Amsterdam, and one workshop held in Berlin. The authors worked remotely and wrote this report within twelve weeks, from September to November 2018. For the specialised reader, the detailed evidence that underpins this report can be found within the sections of each chapter and more information can be found in the over 450 references cited. The main conclusions reached by the working group can be found at the end of each chapter. A digest and combined summary can be found in Chapter 5, which also presents some solutions for society, as potential options for the GCSA to consider for their subsequent Opinion, derived from this scientific evidence. 
+
+## _**Conclusions**_ 
+
+The number of papers is growing exponentially in this field, but knowledge is not growing at the same rate — there is some redundancy and marginality in the papers. The SAPEA working group concludes that a lot is already known about nano- and microplastics, and more knowledge is being acquired, but some of the evidence remains uncertain and it is by its nature, complex (for instance, differences in size, shape, chemical additives, concentrations, measurements, fates, unknowns, human factors, media influences, actions and behaviours, as reviewed in the report). While members of the working group have diverging interpretations of some of the evidence, they review and present their views in a non-biased way, also presenting where they found consensus. 
+
+They conclude that there is a need for improved quality and international harmonisation of the methods used to assess exposure, fates and effects of NMPs on biota and humans. We have a fair knowledge of microplastics concentrations for freshwaters 
+
+11 
+
+and the ocean surface, but little is known about air and soil compartments and about concentrations and implications of NMPs below the ocean surface. The working group concludes from this evidence that, while ecological risks are very rare at present for NMPs (plastics of sizes below 5mm), there are at least some locations in coastal waters and sediments where ecological risks might currently exist. If future emissions to the environment remain constant, or increase, the ecological risks may be widespread within a century. Little is known with respect to the human health risks of NMPs, and what is known is surrounded by considerable uncertainty (Section 2.6); however, the relevant conclusion of this working group is that we have no evidence of widespread risk to human health from NMPs at present. 
+
+Most microplastics go in and out of most organisms, and as with many chemicals, ‘the poison is in the dose’.  It has been demonstrated in the laboratory that, at high exposure concentrations and under specific circumstances, NMPs can induce physical and chemical toxicity. This can result in physical injuries, inducing inflammation and stress, or it can result in a blockage of the gastrointestinal tract and a subsequent reduced energy intake or respiration. Sections 2.5 and 2.6 of this report review evidence of studies in several aquatic organisms, where, for example, researchers conclude that exposure to microplastics in the laboratory has a significant, negative effect on food consumption, growth, reproduction and survival, once effect thresholds are exceeded. But we have no evidence that this happens in nature, and a lack of data to say whether individuals shown to contain plastics in nature are affected. 
+
+Most of these effect studies, however, are performed using concentrations that are much higher than those currently reported in the environment, or using very small microplastics for which limited exposure data exists, or using spherical ones which are not representative of real-world types of particles, or using relatively short exposure times. Currently, it is not known to what extent these conditions apply to the natural environment. This limits the reliability of the risk assessment for nano- and microplastic. 
+
+While inflammatory evidence is seen in animal models, we do not know if this translates to humans or not. In humans, occupational exposure by workers to microplastics can lead to granulomatous lesions, causing respiratory irritation, functional abnormalities and other conditions such as flock worker’s lung. The chemicals associated with microplastics can have additional (and difficult to assess) human health effects, such as reproductive toxicity and carcinogenicity. However, the relative contribution to chemical exposure of NMPs among the mix of chemicals is probably small at present (see section 2.5.6 for ecological implications), although the number of assessments remains limited.  Therefore, the degree of this toxicity and impacts for environmental 
+
+12 
+
+NMPs remain uncertain. For example, with respect to exposure to microplasticassociated chemicals in humans, EFSA (EFSA, 2016) estimated that the consumption of around one portion of mussels would, even under worst case assumptions, contribute less than 0.2% to the dietary exposure of three well-known toxic chemicals (Bisphenol A, PCBs and PAHs) (see section 2.5.6). In summary, with or without chemicals associated, the evidence base for both dietary and airborne microplastic concentrations is so sparse (especially concerning the inhalable size fraction) that it is unclear what the human daily intake of NMPs is; yet this knowledge would be essential for estimating health effects. 
+
+There is a need to understand the potential modes of toxicity for different sizeshape-type NMP combinations in carefully selected human models, before robust conclusions about ‘real’ human risks can be made, though the occurrence and impacts are beginning to be measured. Meanwhile, very little is known about nanoplastics (as opposed to microplastics), and this should be addressed before any pertinent assessment can be made about their impacts and risks. 
+
+The currently known detail about environmental and health impacts to date, sources, occurrences, fates, hazards and risks, can be found in Chapter 2 and the full list of conclusions of the chapter can be found in Section 2.7. 
+
+There is considerable influence on the public discourse about NMPs from the media and politics in parallel to scientific communications. Chapter 3 of this report highlights how insights from sociology, psychology, media and communication studies and organisational studies have an important role to play in understanding the interplay between natural science insights and the planning of effective societal responses. These disciplines are necessary in the design of successful policies and interventions and in societal engagement to reduce NMP pollution (and macroplastic pollution, as contributors to NMP, although they are not the focus of this review). A conclusion of this working group is that communicating transparently about the uncertainties in the scientific evidence is a safer approach than assuming a lack of risk, especially in sensitive domains such as food and human health. 
+
+Human decisions and behaviours are the reason why plastics exist in our environment. It is the economy that drives emission to the environment, and behaviours of citizens and other stakeholders that put them there, and which could ultimately change that. The uses of plastic posing the highest risks in the future will be those related to high volumes, high emission profiles, and/or intrinsic hazardous properties of the materials. If NMP pollution is to be reduced, societal understanding and risk 
+
+13 
+
+perception of the issue, together with motivations and behaviour change principles, need to be considered for lasting change. While NMPs have hardly been addressed to date by the social and behavioural sciences, the group draws on literature from other environmental issues and puts forward ideas about what can be inferred from them in relation to the NMP topic. Chapters 3 and 4 indicate that interventions will be accepted by the public if linked to relevant values and perceptions, with transparent communication and implementation, which then may lead to a significant reduction in the current and future risks of NMP. The authors conclude that there is consensus and momentum for action and no evidence of ‘plastic denial’ (as opposed to climate change denial); see Section 3.7 for the full list of conclusions. 
+
+The evidence reviewed within Chapters 3 and 4 indicates that a large array of measures is useful for addressing and reducing plastic pollution, such as fees, bans, Environmental Protection Regulations and voluntary agreements. However, it is not feasible to distinguish between NMPs and larger macroplastics when reviewing and defining regulations (with exception of those scenarios where primary microplastics are regulated). Legislation addressing plastic pollution can mainly be grouped into measures that aim to protect the marine environment (such as the EU Marine Strategy Framework Directive) and those that are focused on waste (such as the EU’s Waste Directive). The scientific basis for these groups of legislation are somewhat different. Environmental legislation is based on only a few (albeit comprehensive) reports and monitoring studies, as reviewed in Chapter 4. Due to the lack of scientific understanding, the precautionary principle has been part of the foundation for current regulations. Notably, NMPs are not mentioned explicitly, nor is monitoring required specifically for NMPs at present. The precautionary principle enables decision-makers to adopt precautionary measures when scientific evidence is uncertain, and when the possible consequences of not acting are high. 
+
+## _**Options and Next Steps**_ 
+
+Close interdisciplinary collaboration between the natural, social and behavioural and regulatory sciences is the way forward for addressing the complex issue of plastic waste and pollution. The absence of concrete evidence of microplastic risks at present does not allow us to conclude with sufficient certainty either that risk is present or that it is absent in nature. It will thus take some time before more reliable conclusions on risks become available for the various environmental compartments and for public health assessment. 
+
+As socioeconomic developments increase, and if plastic use continues as ‘bus

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Thornton Hampton et al., 2022b
+Year: 2022
+Full Title: Characterizing microplastic hazards: which concentration metrics and particle characteristics are most informative for understanding toxicity in aquatic organisms?
+DOI/URL: https://doi.org/10.1186/s43591-022-00040-4
+Existing Particle Size Range: <5 mm
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Characterizing microplastic hazards: which concentration metrics and particle characteristics are most informative for understanding toxicity in aquatic organisms?
+DOI: 10.1186/s43591-022-00040-4
+Date: 2022-08-06 2022-08-06
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+There is definitive evidence that microplastics, defined as plastic particles less than 5 mm in size, are ubiquitous in the environment and can cause harm to aquatic organisms. These findings have prompted legislators and environmental regulators to seek out strategies for managing risk. However, microplastics are also an incredibly diverse contaminant suite, comprising a complex mixture of physical and chemical characteristics (e.g., sizes, morphologies, polymer types, chemical additives, sorbed chemicals, and impurities), making it challenging to identify which particle characteristics might influence the associated hazards to aquatic life. In addition, there is a lack of consensus on how microplastic concentrations should be reported. This not only makes it difficult to compare concentrations across studies, but it also begs the question as to which concentration metric may be most informative for hazard characterization. Thus, an international panel of experts was convened to identify 1) which concentration metrics (e.g., mass or count per unit of volume or mass) are most informative for the development of health-based thresholds and risk assessment and 2) which microplastic characteristics best inform toxicological concerns. Based on existing knowledge, it is recommended that microplastic concentrations in toxicity tests are calculated from both mass and count at minimum, though ideally researchers should report additional metrics, such as volume and surface area, which may be more informative for specific toxicity mechanisms. Regarding particle characteristics, there is sufficient evidence to conclude that particle size is a critical determinant of toxicological outcomes, particularly for the mechanisms of food dilution and tissue translocation .
+
+Context source: zotero_abstractNote
+
+Source context:
+There is definitive evidence that microplastics, defined as plastic particles less than 5 mm in size, are ubiquitous in the environment and can cause harm to aquatic organisms. These findings have prompted legislators and environmental regulators to seek out strategies for managing risk. However, microplastics are also an incredibly diverse contaminant suite, comprising a complex mixture of physical and chemical characteristics (e.g., sizes, morphologies, polymer types, chemical additives, sorbed chemicals, and impurities), making it challenging to identify which particle characteristics might influence the associated hazards to aquatic life. In addition, there is a lack of consensus on how microplastic concentrations should be reported. This not only makes it difficult to compare concentrations across studies, but it also begs the question as to which concentration metric may be most informative for hazard characterization. Thus, an international panel of experts was convened to identify 1) which concentration metrics (e.g., mass or count per unit of volume or mass) are most informative for the development of health-based thresholds and risk assessment and 2) which microplastic characteristics best inform toxicological concerns. Based on existing knowledge, it is recommended that microplastic concentrations in toxicity tests are calculated from both mass and count at minimum, though ideally researchers should report additional metrics, such as volume and surface area, which may be more informative for specific toxicity mechanisms. Regarding particle characteristics, there is sufficient evidence to conclude that particle size is a critical determinant of toxicological outcomes, particularly for the mechanisms of food dilution and tissue translocation .

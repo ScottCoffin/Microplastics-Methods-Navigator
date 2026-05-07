@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "distribution and abundance of plastic litter; sampling programme design; sample indicators; material characterisation; data analysis and reporting",
+  "abstract": "Guidelines document providing recommendations and practical guidance for establishing programmes to monitor and assess the distribution and abundance of plastic litter and debris in the ocean. Promotes harmonised approaches to sampling programme design, indicator selection, sample collection and observation, material characterisation, uncertainty handling, data analysis, and results reporting to inform national and regional field monitoring programmes.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "recommendations, advice and practical guidance, for the establishment of programmes to monitor and assess the distribution and abundance of plastic litter",
+      "design of sampling programmes, the selection of appropriate indicators (i.e. type of sample), the collection of samples or observations, the characterisation of sampled material, dealing with uncertainties, data analysis and reporting the results"
+    ],
+    "abstract": [
+      "The principle purpose of this report is to provide recommendations, advice and practical guidance, for the establishment of programmes to monitor and assess the distribution and abundance of plastic litter, also referred to as plastic debris, in the ocean.",
+      "The intention is to promote a more harmonised approach to the design of sampling programmes, the selection of appropriate indicators (i.e. type of sample), the collection of samples or observations, the characterisation of sampled material, dealing with uncertainties, data analysis and reporting the results and also to inform the establishment of national and regional field monitoring programmes."
+    ]
+  }
+}

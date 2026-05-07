@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Primpke et al., 2020
+        Year: 2020
+        Full Title: Critical Assessment of Analytical Methods for the Harmonized and Cost Efficient Analysis of Microplastics
+        DOI/URL: https://doi.org/10.1177/0003702820921465
+        Existing Particle Size Range: ≥10 µm (FPA-µFTIR; wet deposition filter samples)
+        Existing Key Metrics / Output: Count and polymer type; ~90% spike-recovery; deposition flux (particles/m²/event or /day)
+
+        Zotero metadata:
+        Title: Critical Assessment of Analytical Methods for the Harmonized and Cost Efficient Analysis of Microplastics
+        DOI: 10.1177/0003702820921465
+        Date: 2020-04-06 2020-04-06
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_abstract_section
+
+        Source context:
+        ## Abstract 
+
+Microplastics are of major concerns for society and is currently in the focus of legislators and administrations. A small number of measures to reduce or remove primary sources of microplastics to the environment are currently coming into effect. At the moment, they have not yet tackled important topics such as food safety. However, recent developments such as the 2018 bill in California are requesting the analysis of microplastics in drinking water by standardized operational protocols. Administrations and analytical labs are facing an emerging field of methods for sampling, extraction, and analysis of microplastics, which complicate the establishment of standardized operational protocols. In this review, the state of the currently applied identification and quantification tools for microplastics are evaluated providing a harmonized guideline for future standardized operational protocols to cover these types of bills. The main focus is on the naked eye detection, general optical microscopy, the application of dye staining, flow cytometry, Fourier transform infrared spectroscopy (FT-Ir) and microscopy, Raman spectroscopy and microscopy, thermal degradation by pyrolysis–gas chromatography–mass spectrometry (py-GC-MS) as well as thermo-extraction and desorption gas chromatography–mass spectrometry (TED-GCMS). Additional techniques are highlighted as well as the combined application of the analytical techniques suggested. An outlook is given on the emerging aspect of nanoplastic analysis. In all cases, the methods were screened for limitations, field work abilities and, if possible, estimated costs and summarized into a recommendation for a workflow covering the demands of society, legislation, and administration in cost efficient but still detailed manner.

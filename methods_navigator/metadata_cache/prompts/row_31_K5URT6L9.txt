@@ -1,0 +1,297 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Wong & Coffin, 2022
+        Year: 2022
+        Full Title: SWB-MP1-rev1. Standard Operating Procedures for Extraction and Measurement by Infrared Spectroscopy of Microplastic Particles in Drinking Water
+        DOI/URL: https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/microplastics/swb-mp1-rev1.pdf
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: SWB-MP1-rev1. Standard Operating Procedures for Extraction and Measurement by Infrared Spectroscopy of Microplastic Particles in Drinking Water
+        DOI: 
+        Date: 2022-00-00 2022
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        # **SWB-MP2-rev1 Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+## **Revised version May 27, 2022** 
+
+Questions concerning this document should be addressed to: 
+
+Charles S. Wong, Ph.D. Southern California Coastal Water Research Project Authority 3535 Harbor Blvd. Suite 110 Costa Mesa CA 92626 714-355-3239 charlesw@sccwrp.org 
+
+and 
+
+Scott Coffin, Ph.D. State Water Resources Control Board 1001 I St. Sacramento, CA 95814 scott.coffin@waterboards.ca.gov 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+## **1.0 Scope and Application** 
+
+- 1.1 This method is for the determination of microplastics (State Water Resources Control Board, 2020) greater than 20 µm in size in treated drinking water using visual microscopy for particle counts, and Raman spectroscopy for chemical identification of counted particles. This method is for use in treated drinking water, as per the California EPA’s data gathering and monitoring programs and Section 116376 of the California Health and Safety Code. The method is based on peer-reviewed literature and the results and recommendations from an international microplastic method evaluation study carried out by the Southern California Coastal Water Research Project Authority (SCCWRP). 
+
+- 1.2 Sample collection protocols are not within the scope of this method.  Example procedures for sampling drinking water are available (ASTM, 2020), e.g., volumes that can range up to 1,500 L collected by inline sieving in which water is passed through sieves directly from the site sampled.  This protocol presumes that samples are in a form amenable to sieving and filtration in the laboratory (i.e., relatively low volumes of up to 20 L, including those in samples collected from inline sieving into collection containers that can then be processed by this method). 
+
+- 1.3 The lowest particle size reliably detected by this method is 20 µm, with a maximum size of 5,000 µm (i.e., the State definition of microplastics, State Water Resources Control Board, 2020) based on the sieves specified in the method. While the extraction procedures in this method have been applied to particles <20 µm (De Frond et al., 2022), this method has not been validated for this size fraction. 
+
+- 1.4 The Minimum Reporting Level (MRL) is the lowest analyte concentration that meets Data Quality Objectives (DQOs) that are developed based on the intended use of this method. The MRL for this method is the minimum detectable amount (MDA), which is the minimum number of microplastic particles that must present in a sample to give a specified power, 1- β , of 0.95, for Type II errors (false negatives, MARLAP, 2004). MDA values for microplastics using this method, based on analysis of 0.450 L interlaboratory comparison single-concentration blank samples (De Frond et al., 2022) ranges from 47 to 88 particles for the sizes of particles covered by this method, and is dependent on the size fraction.  More MDA data by various size fractions and blank levels is listed in Table 1. These values are independent of the extracted water volume.  Each laboratory must establish its own MDA values, which may differ from the values noted here from the SCCWRP interlaboratory evaluation study (De Frond et al., 2022).  A batch detection limit for individual batches of samples can also be computed with a single laboratory blank sample for use in quality assurance/quality control. 
+
+- 1.5 Microplastics are present in indoor air, and it is impossible to eliminate background contamination from airborne particles, plastic or otherwise, within the laboratory. This method includes suggestions for improvements in facilities and analytical techniques to maximize the ability of the laboratory to report reliable microplastic particle counts and minimize particle contamination throughout 
+
+2 
+
+## **Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+sample processing and analysis (Section 4.0). 
+
+- 1.6 This method shall be used only by analysts who are experienced in the use of microscopic and spectroscopic techniques and who are thoroughly trained in the sample handling and instrumental techniques described in this method. Each analyst who uses this method must demonstrate the ability, using this procedure as detailed in Section 11.0, to generate acceptable results as noted in the quality assurance in Section 9.0. 
+
+## **2.0 Summary of Method** 
+
+This method extracts microplastic particles from drinking water samples, and other water samples with low levels of suspended particulate matter and organic material, using sieving and vacuum filtration. Each sample is split into size fractions with separation at 500 µm, 212 µm and 20 µm (to maintain consistency between Raman and IR methods), and particles are collected onto filters or into glass containers prior to microscopic and spectroscopic analysis. Processed samples are viewed using stereomicroscopy and particles are counted.  For the identification of material type, a representative set of subsamples of particles is selected and prepared for Raman spectroscopy by presentation either on a filter surface or on a glass slide.  Each subsampled particle is measured and photographed to make a permanent record of the sample, then chemically identified individually using Raman spectroscopy. The instrument is calibrated and run through performance checks prior to use, and spectra are matched using relevant spectral reference libraries.  The proportion of particles confirmed to be microplastics via Raman spectroscopy is applied to total counts from microscopy to provide an estimate of microplastic particles per liter. This method can reliably detect microplastic particles down to 20 µm in size. 
+
+## **3.0 Definitions** 
+
+**Air blank** – A sample of airborne particles collected within the laboratory to determine airborne laboratory background levels, with units of flux i.e., counts/(collection area × collection time). The air blank is taken by passively collecting airborne particles with an appropriate apparatus such as a petri dish, a filter or a slide. Collected particles are counted using microscopy. One or more air blanks must be present during sample processing and analysis to assess background levels during these procedures. The duration for collecting an air blank can vary depending on laboratory conditions, e.g., daily or weekly collection. 
+
+**Analysis batch** – A set of samples, excluding QC samples, extracted together by the same person during a workday (e.g., 8 hours) using the same lot of solvents, reagents, and consumables.  An analysis batch can consist of 20 field samples at maximum. Samples collected from the same sampling event, with the same field blank, must be put in a same analysis batch. 
+
+**Batch spectroscopy** – Spectroscopy done on an area defined by the analyst, in which spectra of all particles in the area are taken, and particles in the area are counted by instrumental software. 
+
+3 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+**Field blank (FB)** – An aliquot of MAG water that is placed in a sample container in the laboratory and treated as a sample in all respects, including shipment to the sampling site, exposure to sampling site conditions, storage, preservation, and all analytical procedures. The purpose of the FB is to determine if method analytes or other interferences are introduced into the samples during shipment and collection. At least one FB must be sent out for each sampling event and analyzed with the samples from the analysis batch.  The volume of the FB must be similar to that of actual samples collected and processed by this method.  FBs differ from trip blanks in that the FB evaluates contamination during both shipment and collection, while the trip blank only accounts for contamination during shipment. 
+
+**HEPA filter** – High-efficiency particle absorbing filter, capable of removing 99.97% of atmospheric particles of 0.3 m m diameter or greater. 
+
+**Laboratory Reagent Fortified Blank (LRFB)** – Sample of MAG water of a similar volume as test samples, to which known quantities and types of microplastic particles have been added. The LRFB is analyzed in the same manner as a sample, including the preservation procedures in Section 8. The LRFB is used during the Initial Demonstration of Capability to verify method performance for precision and accuracy. 
+
+**Laboratory Reagent Blank (LRB)** - Sample of MAG water of a similar volume as test samples that is run through the same laboratory procedures as the test samples. The LRB is used to monitor particles that may be introduced via procedural contamination and to calculate MDA. 
+
+**Match score** – The quality of a particle’s spectrum compared to library reference spectra for materials it is suspected to be, as determined by the library search functions and software of a spectroscopic instrument.  The higher a match score, the closer the measured spectrum is to the material’s spectrum, with 100% being an absolute match. 
+
+**Minimum detectable amount (MDA)** – The MDA is the minimum number of microplastic particles that must present in a sample to give a specified power, 1- β , where β is the probability of a Type II error (false negative). The MDA is calculated with β = α = 0.05, where α is the significance level (i.e., the probability of a Type I error or false positive) (MARLAP, 2004). The use of these standard values for α and β allows for meaningful comparison of analytical procedures. The MDA may be calculated with replicated LRB measurements (Section 9.2.1.2), and a batch detection limit can be computer with a single LRB measurement (Section 9.3.1.1) 
+
+4 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+**Microplastics** - Solid 0F0F[1] polymeric materials 1F1F[2] to which chemical additives or other substances may have been added, which are particles which have at least three dimensions that are greater than 1 nm and less than 5,000 µm. Polymers that are derived in nature that have not been chemically modified (other than by hydrolysis) are excluded (State Water Resources Control Board, 2020). 
+
+**Microplastics-analysis-grade (MAG) water** – Water that has been filtered through a filter with pore-size of 1µm or smaller, of any appropriate material that does not shed particles, and used as reagent water and to rinse apparatus in this procedure. Appropriate sources of water to generate MAG water are deionized water, reverse osmosis water, or 18 M W cm water (e.g., nanopure/MilliQ water). 
+
+**Minimum Reporting Level (MRL)** – The minimum concentration that can be reported by a laboratory as a quantified value in a sample following analysis.  The MRL for this method is the MDA, except as noted (Section 9.2.4). 
+
+**Single particle spectroscopy** – Spectroscopy done manually by the analyst on a single particle at a time. 
+
+**Trip Blank** – A sample of MAG water of a similar volume as test samples, taken from the laboratory to the sampling site and returned without having been exposed to sampling procedures and the environment outside of the lab.  The trip blank is to assess contamination introduced during shipping and storage only and must be present for each set of field samples from a sample collection period. 
+
+1 ‘Solid’ means a substance or mixture which does not meet the definitions of liquid or gas. ‘Liquid’ means a substance or mixture which (i) at 50 degrees Celsius (˚C) has a vapor pressure less than or equal to 300 kPa; (ii) is not completely gaseous at 20 ˚C and at a standard pressure of 101.3 kPa; and (iii) which has a melting point or initial melting point of 20 ˚C or less at a standard pressure of 101.3 kPa. 
+
+‘Gas’ means a substance which (i) at 50 ˚C has a vapor pressure greater than 300 kPa (absolute); or (ii) is completely gaseous at 20 ˚C at a standard pressure of 101.3 kPa. 
+
+> 2 ‘Polymeric material’ means either (i) a particle of any composition with a continuous polymer surface coating of any thickness, or (ii) a particle of any composition with a polymer content of greater than or equal to 1% by mass. ‘Particle’ means a minute piece of matter with defined physical boundaries; a defined physical boundary is an interface. ‘Polymer’ means a substance consisting of molecules characterized by the sequence of one or more types of monomer units. Such molecules must be distributed over a range of molecular weights wherein differences in the molecular weight are primarily attributable to differences in the number of monomer units. A polymer comprises the following: (a) a simple weight majority of molecules containing at least three monomer units which are covalently bound to at least one other monomer unit or other reactant; (b) less than a simple weight majority of molecules of the same molecular weight. ‘Monomer unit’ means the reacted form of a monomer substance in a polymer. ‘Monomer’ means a substance which is capable of forming covalent bonds with a sequence of additional like or unlike molecules under the conditions of the relevant polymerforming reaction used for the particular process. 
+
+5 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+## **4.0 Interferences** 
+
+## **4.1 Physical interferences** 
+
+- 4.1.1 Preventing water samples from becoming contaminated during the sampling and analysis process constitutes one of the greatest difficulties encountered in quantifying microplastics within drinking water samples. It is not possible to confidently eliminate all contamination from samples during laboratory processing. It is imperative that extreme care be taken to minimize contamination when collecting and analyzing water samples for microplastics. Controlling particle contamination during sample processing requires strict adherence to protocols for contamination control as outlined below in Section 4.2. 
+
+- 4.1.2 Major sources of particle contamination within the laboratory include, but are not limited to: fibers from clothing and textiles (including lab coats, apparel worn by lab personnel, carpets, and furniture), particles deposited from the air within the laboratory environment, particles settled on equipment prior to or during use, non-MAG water, water used to clean equipment prior to use, sponges or brushes used to clean equipment prior to use, synthetic polymer gloves, and plastic sample container lids . 
+
+## **4.2 Contamination Control** 
+
+- 4.2.1 Laboratories must use as much plastic-free equipment as possible, except where allowed as noted in Sections 4.2.1.3 to 4.2.1.7. 
+
+   - 4.2.1.1 Laboratory personnel must use equipment throughout the process composed of glass (e.g., beakers, petri dishes) or metal (e.g., foil, forceps), except as noted in Sections 4.2.1.3 to 4.2.1.7. 
+
+   - 4.2.1.2 All materials used for cleaning of equipment prior to use must be made of natural/non-plastic materials (e.g., natural-based material sponge). 
+
+   - 4.2.1.3 If plastic materials are used, inspect their integrity.  LRBs exist to help account for any procedural contamination from plastics used during processing. Examples of plastics commonly used in microplastics analysis that are acceptable as they do not shed polymer particles are listed in Sections 4.2.1.4 and 4.2.1.5. 
+
+   - 4.2.1.4 Use of hard plastic tubing (e.g., Tygon® or clear PVC tubing) to dispense water used to make MAG water is acceptable. 
+
+   - 4.2.1.5 Typical laboratory-grade solvent squeeze bottle (e.g., Teflon or polyethylene) are also suitable to dispense MAG water for the rinsing of sieves, filters, and equipment as long as they are used similarly for QA/QC samples.  Minimal contamination has been attributed to these sources. 
+
+   - 4.2.1.6 Purple nitrile gloves (e.g., Kimtech®) have minimal contamination potential and their purple color makes it easy to distinguish if any contamination can be attributed to them. 
+
+   - 4.2.1.7 All plastic apparatus shall be evaluated on a monthly basis for potential to shed microplastics by the procedures noted in Section 9. 
+
+- 4.2.2 Keep a clean environment. 
+
+6 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+   - 4.2.2.1 Wipe surfaces down before and after use with MAG water and a towel made from low-shedding natural fibers that do not meet the definition of ‘microplastics’ (e.g., cotton or paper towels). 
+
+   - 4.2.2.2 Clean laboratory floors daily when microplastics analysis is being done, and maintain a record of cleaning frequency.  Cleaning can be done by mopping with clean water (does not need to be MAG water) and mops made of natural-fiber materials.  Ideally, a HEPA filter vacuum cleaner can also be used to clean floors at the end of each working day to minimize interference from the possible resuspension of particles into the air. 
+
+   - 4.2.2.3 Clean all labware thoroughly with low-foam soap and water, and triplerinse with MAG water before use.  Dry-ashing  glassware (except volumetric flasks) and metal items at ≥ 450 °C for at least 1 hour is acceptable. 
+
+   - 4.2.2.4 Installing a HEPA filtration system in your laboratory is recommended to minimize airborne particulates. Be sure to change the HEPA filter regularly based on manufacturer recommendations. 
+
+- 4.2.3 Minimize use of synthetic textiles in the laboratory 
+
+   - 4.2.3.1 Do not wear synthetic clothing when processing samples. Wear cotton lab coats, ideally of a noticeable color not commonly found in environmental samples (e.g., pink) to allow clear identification within samples as contamination. 
+
+   - 4.2.3.2 Remove furniture (e.g., chairs, stools, carpets) with padding or fabric. If removal is not possible, then synthetic surfaces may be covered with natural materials, or a material that does not shed plastic particles. 
+
+- 4.2.4 Clean all equipment thoroughly before use. 
+
+   - 4.2.4.1 Before using any glassware or tools, and between processing individual samples, wash with low-foam soap and hot water (surfactant helps to remove contaminant microplastics). Rinse three times with tap water and then three times with MAG water. 
+
+   - 4.2.4.2 Heavy-duty aluminum foil can be used to cover cleaned apparatuses and tools such as forceps to protect from airborne particulate contamination. Foil may be pre- ashed at ≥ 450 °C for at least 1 hour before use to destroy all organic material, then stored in a covered nonplastic container. Ash heavy-duty foil only, as the lightweight foil will disintegrate at high temperatures.  Discard foil after use. 
+
+   - 4.2.4.3 Cover all equipment when not in use with glass or clean aluminum foil or store it upside down. 
+
+   - 4.2.4.4 Pressurized air can be used to remove possible contamination on the surface of equipment prior to use. If compressed gas is used to blow-dry equipment or samples for microplastics, ensure that the air is clean (e.g., put a 1 µm metal filter between the source and the outlet). 
+
+- 4.2.5 Recommend working in a covered environment. 
+
+   - 4.2.5.1 Process samples in a biosafety cabinet, laminar flow hood, a clean cabinet, or other fully enclosed space.  A covered environment, even without active air convection, helps to reduce airborne particulate contamination.  While chemical fume hoods can reduce airborne 
+
+7 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+particulate contamination by up to 50%, a laminar flow hood, clean cabinet, or enclosed space can reduce contamination by 95% (Brander et al., 2020).  Caution and characterization of blank levels (Section 9) is needed with the use of only a chemical fume hood unless its air source is filtered, as it will continuously move air, and any suspended particulates present, up and across all surfaces in the hood. 
+
+## **5.0 Safety** 
+
+- 5.1 No analytes or reagents of concern are used within this method. 
+
+- 5.2 The following Personal Protective Equipment (PPE) are mandatory for method Sections 11.1 and 11.2 to minimize contamination from analysts: 
+
+   - a. Cotton lab coat 
+
+   - b. Nitrile gloves 
+
+   - c. Safety glasses or goggles. 
+
+- 5.3 Raman instruments have lasers emitting visible and/or invisible continuous laser radiation, and have electromagnetic fields (EMFs) around them. 
+
+   - a. Avoid exposure of eyes to laser beam. 
+
+   - b. Place sample horizontally on stage to avoid reflecting laser beam around microscope. 
+
+   - c. Keep instrument doors closed when laser is on. 
+
+   - d. People with implanted medical devices should stay >10 cm from areas with EMF-dedicated labels. 
+
+## **6.0 Equipment and Supplies** 
+
+References to specific brands or catalogue numbers are included as examples only and do not imply endorsement of the product. Such reference does not preclude the use of other vendors or suppliers. 
+
+## **6.1 Cleaning** 
+
+|**Item**|**Suggested Materials**|
+|---|---|
+|Low-foam dish<br>soap|Alcojet, Fisher Catalog no. 16-000-110|
+|Sponge made of<br>natural materials|Loofah, cellulose, natural sponge.  Amazon "Natural sea<br>sponge, 6-7in"|
+|Cotton cloths and<br>paper towels|-|
+|Mop with natural-<br>fiber head or<br>HEPA-filter<br>vacuum cleaner<br>(consumer-grade<br>is ok)|-|
+
+
+
+8 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+|**Item**|**Suggested Materials**|
+|---|---|
+|Surface mat for<br>doors|ULINE no. H-15678BLU|
+
+
+
+## **6.2 Sieving** 
+
+|**Item**|**Suggested Materials or equivalent**|
+|---|---|
+|Heavy-duty aluminum foil|-|
+|Laboratory labelling tape|Fisher Catalog no. 15901A|
+|Squirt bottle (Teflon,<br>polypropylene or LDPE)|VWR no. 16651-904|
+|Metal sieve (8” diameter)|Hogentogler Catalog no. 5202 (500 µm mesh size)<br>Hogentogler Catalog no. 5207 (212 µm mesh size)<br>Hogentogler Catalog no. 5257 (20 µm mesh size)|
+|Metal sieve pan|Same diameter as sieve|
+|Glass beakers or jars|> 500 mL size, ULINE, glass canning jars (32 Ounce).<br>Non-plastic lids (e.g., metal) are preferred (use<br>aluminum foil to cover containers that do not have lids,<br>such as beakers)|
+
+
+
+## **6.3 Vacuum filtration** 
+
+|**Item**|**Suggested Materials or**<br>**equivalent**|
+|---|---|
+|1 µm pore-size filters|47 mm diameter, Sterlitech<br>Polycarbonate Track Etch<br>(PCTE) membrane filters,<br>Catalog no. PCT1047100|
+|20 µm pore-size filters|47 mm diameter, Sterlitech<br>PCTE membranes filters,<br>Catalog no. 1270175|
+|Vacuum filtration system (without rubber or<br>plastic parts exposed to sample water; Teflon<br>O-rings are acceptable).  The following<br>describes typical systems for sample sizes of<br>1-2 L.  Different sizes of funnels and flasks may<br>be used for other sample sizes as appropriate.<br>Systems typically consist of:<br>1  Vacuum pump<br>2  Lengths of plastic tubing<br>2  1000 mL Glass filtering flasks<br>1  filtering funnel<br>1  filter holder with stainless steel support<br>screen<br>1  metal clamp<br>1 venting valve or T-adapter with shut-off valve<br>that connects tubing between the filtering flask<br>and vacuum pump (or laboratory bench-<br>vacuum valve).|Vacuum pump: GAST model<br>DOA-P704-AA or an equivalent<br>vacuum system<br>Plastic tubing: Tygon® S3™<br>Laboratory Tubing, VWR<br>Catalog no. 89403-878<br>Filtration Apparatus includes<br>300mL graduated funnel,<br>aluminum clamp, support base,<br>removable 47mm stainless steel<br>support screen, and 1000 mL<br>filtering flask:<br>VWR Catalog no. 89426-770|
+
+
+
+9 
+
+**Standard Operating Procedures for Extraction and Measurement by Raman Spectroscopy of Microplastic Particles in Drinking Water** 
+
+|**Item**|**Suggested Materials or**<br>**equivalent**|
+|---|---|
+|Glass Petri dish(es) (55 mm bottom diameter)|VWR Catalog no. 25354-025<br>_(For use with a 47 mm diameter_<br>_filter)_|
+
+
+
+## **6.4 Visual Microscopy** 
+
+|**Item**|**Suggested Materials or equivalent**|
+|---|---|
+|Glass Petri dishes<br>(95 mm bottom<br>diameter)|VWR Catalog no. 25354-069|
+|Superfine-tip forceps|VWR Catalog no. 63042-688|
+|Petri dish grid<br>stickers|Amazon - “Diversified Biotech PetriStickers PSTK-1070<br>Square Grid Label for Petri Dish, 70 Square Grid (Pack of<br>36)”<br>_Suggested item for systematic counting_|
+|Glass microscope<br>slides|VWR Catalog no. 48300-026|
+|Metal teaspoon|Amazon- “4.5"Stainless Steel Teaspoon, Set of 6”|
+|Stereoscope|With interchangeable black and white base, and/or variable<br>color/intensity selection of light source. Eyepiece<br>magnification typically 10×, and objective magnification<br>typically 4.5×.|
+
+
+
+## **6.5 Image

@@ -1,0 +1,21 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "microplastic ingestion by marine species, contaminant uptake by organisms, oceanography impacts, persistent organic pollutants in marine plastic debris",
+  "abstract": "Proceedings from an international research workshop held September 9-11, 2008, bringing together 32 environmental research scientists to discuss microplastic interactions, ingestion by marine species, contaminant uptake mechanisms, and future research directions. The workshop included 14 oral presentations covering topics including North Pacific oceanography, microplastic ingestion by marine invertebrates, and persistent organic pollutants associated with marine plastic debris.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "impacts of microplastic interactions and ingestion to marine species",
+      "connection with contaminant uptake by organisms",
+      "oceanography of the North Pacific",
+      "ingestion of microplastics by marine invertebrates",
+      "persistent organic pollutants in marine plastic debris"
+    ],
+    "abstract": [
+      "The purpose of the workshop was to bring together environmental research scientists from around the world to discuss the impacts of microplastic interactions and ingestion to marine species, the connection with contaminant uptake by organisms, and to outline the potential next steps in microplastic research",
+      "Thirty two individuals participated in the workshop",
+      "Fourteen oral presentations included research on such broad-ranging topics as the oceanography of the North Pacific, the ingestion of microplastics by marine invertebrates, and persistent organic pollutants in marine plastic debris"
+    ]
+  }
+}

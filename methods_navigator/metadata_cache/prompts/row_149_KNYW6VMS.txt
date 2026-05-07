@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Waldschläger et al., 2022
+Year: 2022
+Full Title: Learning from natural sediments to tackle microplastics challenges: A multidisciplinary perspective
+DOI/URL: https://doi.org/10.1016/j.earscirev.2022.104021
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Learning from natural sediments to tackle microplastics challenges: A multidisciplinary perspective
+DOI: 10.1016/j.earscirev.2022.104021
+Date: 2022-04-00 4/2022
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Although the study of microplastics in the aquatic environment incorporates a diversity of research fields, it is still in its infancy in many aspects while comparable topics have been studied in other disciplines for decades. In particular, extensive research in sedimentology can provide valuable insights to guide future microplastics research. To advance our understanding of the comparability of natural sediments with microplastics, we take an interdisciplinary look at the existing literature describing particle properties, transport processes, sampling techniques and ecotoxicology. Based on our analysis, we define seven research goals that are essential to improve our understanding of microplastics and can be tackled by learning from natural sediment research, and identify relevant tasks to achieve each goal. These goals address (1) the description of microplastic particles, (2) the interaction of microplastics with environmental substances, (3) the vertical distribution of microplastics, (4) the erosion and deposition behaviour of microplastics, (5) the impact of biota on microplastic transport, (6) the sampling methods and (7) the microplastic toxicity. When describing microplastic particles, we should specifically draw from the knowledge of natural sediments, for example by using shape factors or applying methods for determining the principal dimensions of non-spherical particles. Sediment transport offers many fundamentals that are transferable to microplastic transport, and could be usefully applied. However, major knowledge gaps still exist in understanding the role of transport modes, the influence of biota on microplastic transport, and the importance and implementation of the dynamic behaviour of microplastics as a result of time-dependent changes in particle properties in numerical models. We give an overview of available sampling methods from sedimentology and discuss their suitability for microplastic sampling, which can be used for creating standardised guidelines for future application with microplastics. In order to comprehensively assess the ecotoxicology of microplastics, a distinction must be made between the effects of the polymers themselves, their physical form, the plastic-associated chemicals and the attached pollutants. This review highlights areas where we can rely on understanding and techniques from sediment research - and areas where we need new, microplastic-specific knowledge - and synthesize recommendations to guide future, interdisciplinary microplastic research.
+
+Context source: zotero_abstractNote
+
+Source context:
+Although the study of microplastics in the aquatic environment incorporates a diversity of research fields, it is still in its infancy in many aspects while comparable topics have been studied in other disciplines for decades. In particular, extensive research in sedimentology can provide valuable insights to guide future microplastics research. To advance our understanding of the comparability of natural sediments with microplastics, we take an interdisciplinary look at the existing literature describing particle properties, transport processes, sampling techniques and ecotoxicology. Based on our analysis, we define seven research goals that are essential to improve our understanding of microplastics and can be tackled by learning from natural sediment research, and identify relevant tasks to achieve each goal. These goals address (1) the description of microplastic particles, (2) the interaction of microplastics with environmental substances, (3) the vertical distribution of microplastics, (4) the erosion and deposition behaviour of microplastics, (5) the impact of biota on microplastic transport, (6) the sampling methods and (7) the microplastic toxicity. When describing microplastic particles, we should specifically draw from the knowledge of natural sediments, for example by using shape factors or applying methods for determining the principal dimensions of non-spherical particles. Sediment transport offers many fundamentals that are transferable to microplastic transport, and could be usefully applied. However, major knowledge gaps still exist in understanding the role of transport modes, the influence of biota on microplastic transport, and the importance and implementation of the dynamic behaviour of microplastics as a result of time-dependent changes in particle properties in numerical models. We give an overview of available sampling methods from sedimentology and discuss their suitability for microplastic sampling, which can be used for creating standardised guidelines for future application with microplastics. In order to comprehensively assess the ecotoxicology of microplastics, a distinction must be made between the effects of the polymers themselves, their physical form, the plastic-associated chemicals and the attached pollutants. This review highlights areas where we can rely on understanding and techniques from sediment research - and areas where we need new, microplastic-specific knowledge - and synthesize recommendations to guide future, interdisciplinary microplastic research.

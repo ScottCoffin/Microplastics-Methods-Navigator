@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "microplastics and nanoplastics (MNPs) - specific size range not quantified in provided context",
+  "key_metrics_output": "polymer identity, size and shape distribution, surface chemistry, additive content, dispersion behaviour, background contamination control, study reliability and relevance evaluation",
+  "abstract": "This paper reviews physicochemical parameters and experimental considerations critical to evaluating the regulatory adequacy of microplastics and nanoplastics (MNPs) (eco)toxicity studies. The authors adapted existing evaluation frameworks (SciRAP and CRED) to address MNP-specific challenges, identifying key assessment criteria including polymer identity, size and shape distribution, surface chemistry, additive content, dispersion behaviour, and test material characterization. The resulting frameworks, SciRAPplastic and plasticCRED, are designed to strengthen reporting practices and support structured evaluation of study reliability and relevance for environmental and health risk assessments of MNPs.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "microplastics and nanoplastics (MNPs)",
+      "no specific numerical size bounds provided in abstract or introduction"
+    ],
+    "key_metrics_output": [
+      "polymer identity, size and shape distribution, surface chemistry, additive content, dispersion behaviour, background contamination control, description of sample preparation, and characterization of the test item",
+      "supporting structured evaluation of study reliability and relevance"
+    ],
+    "abstract": [
+      "review and synthesize the state of knowledge regarding key physicochemical parameters and experimental considerations critical to evaluating the regulatory adequacy",
+      "adapted or extended and built into the SciRAP and CRED frameworks, to address the specific challenges of MNP research",
+      "strengthen the scientific foundation for environmental and health risk assessments of MNPs"
+    ]
+  }
+}

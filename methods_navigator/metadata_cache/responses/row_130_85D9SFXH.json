@@ -1,0 +1,23 @@
+{
+  "particle_size_range": "<5 mm (with no defined lower limit; nano-sized plastics <0.1 mm often included)",
+  "key_metrics_output": "particle count, shape/morphology (fiber, fiber bundle, fragment, sphere, pellet, film, foam), color, size, polymer type, chemical additives (plasticizers, colorants, flame retardants, stabilizers), sorbed pollutants (persistent organic pollutants, trace metals)",
+  "abstract": "This focus article argues for reconceptualizing microplastics as a diverse contaminant suite rather than a single material, analogous to how pesticides or flame retardants are treated. Microplastics vary widely in polymer composition (polypropylene, polyethylene, PET, polystyrene, PVC, polyurethane, and others), size (<5 mm), morphology (fibers, fragments, spheres, pellets, films, foams), color, and chemical additives. The paper emphasizes that this diversity necessitates tailored sampling and analytical methods, robust quality assurance/quality control protocols, standardized reporting practices (count, shape, color, size, material type), and source apportionment strategies. The authors recommend adopting best practices from environmental chemistry monitoring to advance microplastics research and inform effective mitigation policies.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "plastic particles <5 mm in one dimension as defined by the National Oceanographic and Atmospheric Association",
+      "there is generally no lower limit, and nano-sized plastics (<0.1 mm) are often included in this definition"
+    ],
+    "key_metrics_output": [
+      "When reporting microplastics in samples, it is important to report the count, shape, color, size, and material type (if possible)",
+      "microplastics are composed of a diverse suite of polymer types",
+      "chemical additives are added to the polymers during production...categories of additives, including plasticizers, colorants, reinforcements or fillers, flame retardants, and stabilizers",
+      "Microplastics accumulate organic chemicals and trace metals from the surrounding environment"
+    ],
+    "abstract": [
+      "Microplastics are diverse; they come from many different product types; incorporate a broad range of sizes, colors, and morphologies; are composed of various polymers; and include a broad array of chemical additives",
+      "we make the case that it is necessary to rethink microplastics...and consider them a suite or class of contaminants, in the same way we do for pesticides, trace metals, or flame retardants",
+      "The methods used to monitor microplastics in the environment should be developed with careful consideration of this diversity"
+    ]
+  }
+}

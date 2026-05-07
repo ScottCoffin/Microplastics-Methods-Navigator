@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Möller et al., 2022
+Year: 2022
+Full Title: Tackling the Challenge of Extracting Microplastics from Soils: A Protocol to Purify Soil Samples for Spectroscopic Analysis
+DOI/URL: https://doi.org/10.1002/etc.5024
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Tackling the Challenge of Extracting Microplastics from Soils: A Protocol to Purify Soil Samples for Spectroscopic Analysis
+DOI: 10.1002/etc.5024
+Date: 2022-04-00 04/2022
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastic pollution in soils is an emerging topic in the scientiﬁc community, with researchers striving to determine the occurrence and the impact of microplastics on soil health, ecology, and functionality. However, information on the microplastic contamination of soils is limited because of a lack of suitable analytical methods. Because micro‐Fouriertransform infrared spectroscopy (µ‐FTIR), next to Raman spectroscopy, is one of the few methods that allows the determination of the number, polymer type, shape, and size of microplastic particles, the present study addresses the challenge of purifying soil samples sufﬁciently to allow a subsequent µ‐FTIR analysis. A combination of freeze‐drying, sieving, density separation, and a sequential enzymatic‐oxidative digestion protocol enables removal of the mineral mass (>99.9% dry wt) and an average reduction of 77% dry weight of the remaining organic fraction. In addition to visual integrity, attenuated total reﬂectance FTIR, gel permeation chromatography, and differential scanning calorimetry showed that polyamide, polyethylene, polyethylene terephthalate, and polyvinyl chloride in the size range of 100 to 400 µm were not affected by the approach. However, biodegradable polylactic acid showed visible signs of degradation and reduced molecular weight distribution after protease treatment. Nevertheless, the presented puriﬁcation protocol is a reliable and robust method to purify relatively large soil samples of approximately 250 g dry weight for spectroscopic analysis in microplastic research and has been shown to recover various microplastic ﬁbers and fragments down to a size of 10 µm from natural soil samples. Environ Toxicol Chem 2022;41:844–857. © 2021 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals LLC on behalf of SETAC.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastic pollution in soils is an emerging topic in the scientiﬁc community, with researchers striving to determine the occurrence and the impact of microplastics on soil health, ecology, and functionality. However, information on the microplastic contamination of soils is limited because of a lack of suitable analytical methods. Because micro‐Fouriertransform infrared spectroscopy (µ‐FTIR), next to Raman spectroscopy, is one of the few methods that allows the determination of the number, polymer type, shape, and size of microplastic particles, the present study addresses the challenge of purifying soil samples sufﬁciently to allow a subsequent µ‐FTIR analysis. A combination of freeze‐drying, sieving, density separation, and a sequential enzymatic‐oxidative digestion protocol enables removal of the mineral mass (>99.9% dry wt) and an average reduction of 77% dry weight of the remaining organic fraction. In addition to visual integrity, attenuated total reﬂectance FTIR, gel permeation chromatography, and differential scanning calorimetry showed that polyamide, polyethylene, polyethylene terephthalate, and polyvinyl chloride in the size range of 100 to 400 µm were not affected by the approach. However, biodegradable polylactic acid showed visible signs of degradation and reduced molecular weight distribution after protease treatment. Nevertheless, the presented puriﬁcation protocol is a reliable and robust method to purify relatively large soil samples of approximately 250 g dry weight for spectroscopic analysis in microplastic research and has been shown to recover various microplastic ﬁbers and fragments down to a size of 10 µm from natural soil samples. Environ Toxicol Chem 2022;41:844–857. © 2021 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals LLC on behalf of SETAC.

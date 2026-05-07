@@ -1,0 +1,20 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "physicochemical characterization, inhalative exposure assessment, toxicological hazard assessment, polymer type, particle shape and morphology",
+  "abstract": "Abstract Background Human exposure to micro- and nanoplastic particles (MNPs) is inevitable but human health risk assessment remains challenging for several reasons. MNPs are complex mixtures of particles derived from different polymer types, which may contain plenty of additives and/or contaminants. MNPs cover broad size distributions and often have irregular shapes and morphologies. Moreover, several of their properties change over time due to aging/ weathering. Case-by-case assessment of each MNP type does not seem feasible, more straightforward methodologies are needed. However, conceptual approaches for human health risk assessment are rare, reliable methods for exposure and hazard assessment are largely missing, and meaningful data is scarce. Methods Here we reviewed the state-of-the-art concerning risk assessment of chemicals with a specific focus on polymers as well as on (nano-)particles and fibres. For this purpose, we broadly screened relevant knowledge including guidance documents, standards, scientific publications, publicly available reports. We identified several suitable concepts such as: (i) polymers of low concern (PLC), (ii) poorly soluble low toxicity particles (PSLT) and (iii) fibre pathogenicity paradigm (FPP). We also aimed to identify promising methods, which may serve as a reasonable starting point for a test strategy. Results and conclusion Here, we propose a state-of-the-art modular risk assessment framework for MNPs, focusing primarily on inhalation as a key exposure route for humans that combines several integrated approaches to testing and assessment (IATAs). The framework starts with basic physicochemical characterisation (step 1), followed by assessing the potential for inhalative exposure (step 2) and includes several modules for toxicological assessment (step 3). We provide guidance on how to apply the framework and suggest suitable methods for characterization of physicochemical properties, exposure and hazard assessment. We put special emphasis on new approach methodologies (NAMs) and included grouping, where adequate. The framework has been improved in several iterative cycles by taking into account expert feedback and is currently being tested in several case studies. Overall, it can be regarded as an important step forward to tackle human health risk assessment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "basic physicochemical characterisation (step 1)",
+      "assessing the potential for inhalative exposure (step 2)",
+      "several modules for toxicological assessment (step 3)",
+      "characterization of physicochemical properties, exposure and hazard assessment",
+      "MNPs are complex mixtures of particles derived from different polymer types",
+      "MNPs cover broad size distributions and often have irregular shapes and morphologies"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

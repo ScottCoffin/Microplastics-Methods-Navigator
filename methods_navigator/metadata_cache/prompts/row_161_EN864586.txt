@@ -1,0 +1,139 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Gouin et al., 2022a
+        Year: 2022
+        Full Title: Dietary and inhalation exposure to nano-and microplastic particles and potential implications for human health
+        DOI/URL: https://www.who.int/publications/i/item/9789240054608
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Dietary and inhalation exposure to nano-and microplastic particles and potential implications for human health
+        DOI: 
+        Date: 2022-00-00 2022
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+**==> picture [146 x 4] intentionally omitted <==**
+
+**==> picture [20 x 6] intentionally omitted <==**
+
+**==> picture [219 x 35] intentionally omitted <==**
+
+**==> picture [99 x 22] intentionally omitted <==**
+
+**==> picture [216 x 59] intentionally omitted <==**
+
+**==> picture [128 x 44] intentionally omitted <==**
+
+**==> picture [138 x 136] intentionally omitted <==**
+
+**==> picture [141 x 40] intentionally omitted <==**
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+**==> picture [141 x 40] intentionally omitted <==**
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+ISBN 978-92-4-005460-8 (electronic version) ISBN 978-92-4-005461-5 (print version) 
+
+## **© World Health Organization 2022** 
+
+Some rights reserved. This work is available under the Creative Commons AttributionNonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/ licenses/by-nc-sa/3.0/igo). 
+
+Under the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: _“_ This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition”. Any mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/amc/en/ mediation/rules/). 
+
+**Suggested citation.** Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health. Geneva: World Health Organization; 2022. Licence: CC BYNC-SA 3.0 IGO. 
+
+**Cataloguing-in-Publication (CIP) data.** CIP data are available at http://apps.who.int/iris. 
+
+**Sales, rights and licensing.** To purchase WHO publications, see http://apps.who.int/bookorders. To submit requests for commercial use and queries on rights and licensing, see https://www.who. int/copyright. 
+
+**Third-party materials.** If you wish to reuse material from this work that is attributed to a third party, such as tables, figures or images, it is your responsibility to determine whether permission is needed for that reuse and to obtain permission from the copyright holder. The risk of claims resulting from infringement of any third-party-owned component in the work rests solely with the user. 
+
+**General disclaimers.** The designations employed and the presentation of the material in this publication do not imply the expression of any opinion whatsoever on the part of WHO concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Dotted and dashed lines on maps represent approximate border lines for which there may not yet be full agreement. 
+
+The mention of specific companies or of certain manufacturers’ products does not imply that they are endorsed or recommended by WHO in preference to others of a similar nature that are not mentioned. Errors and omissions excepted, the names of proprietary products are distinguished by initial capital letters. 
+
+All reasonable precautions have been taken by WHO to verify the information contained in this publication. However, the published material is being distributed without warranty of any kind, either expressed or implied. The responsibility for the interpretation and use of the material lies with the reader. In no event shall WHO be liable for damages arising from its use. 
+
+## CONTENTS 
+
+|CONTENTS|CONTENTS||
+|---|---|---|
+|Acknowledgements||v|
+|Abbreviations and acronyms||vii|
+|Executive summary||viii|
+|**1. Introduction**||**1**|
+||1.1 Background and scope|1|
+||1.2 Defnitions|3|
+||1.3 Composition and properties of particles|5|
+|**2. Human exposure**||**13**|
+||2.1 Occurrence in drinking-water|13|
+||2.2 Occurrence in air|20|
+||2.3 Dermal exposure|26|
+||2.4 Occurrence in food|28|
+||2.5 Summary and recommendations|43|
+|**3. Observations from epidemiology**||**45**|
+||3.1 Summary and recommendations|47|
+|**4. Dosimetry and biokinetics**||**49**|
+||4.1 Dosimetry: extrapolation from external to internal exposure|49|
+||4.2 Biokinetics|57|
+||4.3 Biokinetics: summary and recommendations|64|
+|**5. Toxicological effects**||**67**|
+||5.1 Literature review and experimental study evaluation|68|
+||5.2 Nano- and microplastics as vectors of chemical exposure|84|
+||5.3 Summary and recommendations|88|
+|**6. Nano-**|**and microplastics as vectors of pathogens**|**91**|
+||6.1 Microplastic-associated bioflms in water|91|
+||6.2 Microplastic-associated bioflms in food|93|
+|**7. Summary and research topics**||**95**|
+||7.1 Summary|95|
+||7.2 Options for curbing exposure|98|
+||7.3 Key messages and research topics|98|
+|**References**||101|
+|**Annex**Quality assurance and quality control scoring for studies reporting|||
+|microplastic particles in air samples||137|
+|FIGURES|||
+|Fig. 1.|Attributes of nano- and microplastics to be considered in||
+||assessing both exposure and hazard|6|
+|Fig. 2.|Classifcations of manufactured and commonly encountered||
+||plastic materials|7|

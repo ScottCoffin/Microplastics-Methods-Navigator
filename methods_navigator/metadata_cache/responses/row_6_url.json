@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "microplastic particle reference samples for calibration and proficiency evaluation; particle shape characterization (irregularly shaped particles); polymer type identification",
+  "abstract": "This standard practice describes manufacturing methods to create microplastic particles from polymer pellets and the preparation of microplastic reference samples for calibration and proficiency evaluation of microplastic collection practices, preparation practices, and identification methods in all types of water matrices. The procedures yield irregularly shaped particles to remove analytical bias from using distinctive manufactured spherical beads.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "describes manufacturing methods to create microplastic particles from pellets of common polymers and the preparation of microplastic reference samples for calibration and proficiency evaluation of microplastic collection practices, preparation practices, and identification methods",
+      "procedures have been observed to yield irregularly shaped particles"
+    ],
+    "abstract": [
+      "This practice describes manufacturing methods to create microplastic particles from pellets of common polymers and the preparation of microplastic reference samples for calibration and proficiency evaluation of microplastic collection practices, preparation practices, and identification methods",
+      "The procedures have been observed to yield irregularly shaped particles, the use of which in many cases will serve to remove the analytical bias inherent with using distinctive manufactured spherical beads"
+    ]
+  }
+}

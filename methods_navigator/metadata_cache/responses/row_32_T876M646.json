@@ -1,0 +1,17 @@
+{
+  "scope": "Global microplastics monitoring across environmental samples; international laboratory network for Global South countries",
+  "particle_size_range": null,
+  "key_metrics_output": "Comparable baseline and monitoring assessments; quality-controlled outputs from harmonised protocols",
+  "abstract": "Infrastructure is often a limiting factor in microplastics research impacting the production of scientific outputs and monitoring data. International projects are therefore required to promote collaboration and development of national and regional scientific hubs. The Commonwealth Litter Programme and the Ocean Country Partnership Programme were developed to support Global South countries to take actions on plastics entering the oceans. An international laboratory network was developed to provide the infrastructure and in country capacity to conduct the collection and processing of microplastics in environmental samples. The laboratory network was also extended to include a network developed by the University of East Anglia, UK. All the laboratories were provided with similar equipment for the collection, processing and analysis of microplastics in environmental samples. Harmonised protocols and training were also provided in country during laboratory setup to ensure comparability of quality-controlled outputs between laboratories. Such large networks are needed to produce comparable baseline and monitoring assessments.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Such large networks are needed to produce comparable baseline and monitoring assessments",
+      "ensure comparability of quality-controlled outputs between laboratories"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ASTM 87463
+        Year: 2023
+        Full Title: ASTM WK87463 New Test Method for Spectroscopic Identification and Quantification of Microplastic Particles in Water Using Infrared (IR) Spectroscopy
+        DOI/URL: https://www.astm.org/membership-participation/technical-committees/workitems/workitem-wk87463
+        Existing Particle Size Range: 20 µm-5 mm
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ASTM WK87463: New Test Method for Spectroscopic Identification and Quantification of Microplastic Particles in Water Using Infrared (IR) Spectroscopy
+        DOI: 
+        Date: 2023-00-00 2023
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        ASTM International - Standards Worldwide
+
+Scope 1.1 This test method provides for the identification and quantification of microplastic particles in municipal raw wastewater influent, treated effluent from a wastewater treatment plant, ambient waters, finished drinking water, and bottled water. 1.2 This test method is designed to distinguish plastic particles in water that range in size from 20 µm-5 mm and index particle types using visual microscopy for particle counts and infrared (IR) spectroscopy for chemical identification of counted particles. IR spectroscopy can include, but is not limited to, Fourier transform IR (FTIR), laser direct infrared (LDIR) imaging, and other techniques capable of measuring IR spectra from particles in this size range. 1.3 This test method applies to all microplastic particles that exhibit absorption and reflection of light applicable for FTIR microscopy. Keywords IR Spectroscopy Rationale The title is changed from the previous work item title to only include IR. Raman will be handled in a second work item. This text represents an almost complete rewrite compared to the initial ballot several years ago. Therefore, because the title change changes the scope of the method, we are balloting this as if it has never been balloted before (no track changes). This new draft attempts to harmonize the ASTM method with the California SOPs already in CA regulation. Details Developed by Subcommittee: D19.06 Committee: D19 Staff Manager: Brian Milewski Related Copyright/Permissions Citing ASTM Standards

@@ -1,0 +1,243 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Ciornii et al., 2025
+        Year: 2025
+        Full Title: Interlaboratory Comparison Reveals State of the Art in Microplastic Detection and Quantification Methods
+        DOI/URL: https://doi.org/10.1021/acs.analchem.4c05403
+        Existing Particle Size Range: 1–20, 20–212, 212–500, >500 µm (four fractions spiked; 22-lab ILC)
+        Existing Key Metrics / Output: Recovery 76±10% SE (≥20 µm: 92±12%); FTIR accuracy 95%, Raman 91%; blank 91±141 particles
+
+        Zotero metadata:
+        Title: Interlaboratory Comparison Reveals State of the Art in Microplastic Detection and Quantification Methods
+        DOI: 10.1021/acs.analchem.4c05403
+        Date: 2025-04-29 2025-04-29
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        This article is licensed under CC-BY 4.0 
+
+pubs.acs.org/ac 
+
+Article 
+
+**==> picture [177 x 69] intentionally omitted <==**
+
+**==> picture [40 x 10] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+## **Interlaboratory Comparison Reveals State of the Art in Microplastic Detection and Quantification Methods** 
+
+Dmitri Ciornii,* Vasile-Dan Hodoroaba,* Nizar Benismail, Alina Maltseva, Juan F. Ferrer, Jiamin Wang, Raquel Parra, Ronan Jézéquel, Justine Receveur, Dina Gabriel, Andreas Scheitler, Christa van Oversteeg, Jorg Roosma, Alex van Renesse van Duivenbode, Tim Bulters, Michela Zanella, Alessandro Perini, Federico Benetti, Dora Mehn, Georg Dierkes, Michael Soll, Takahisa Ishimura, Marius Bednarz, Guyu Peng, Lars Hildebrandt, Mathias Peters, Seung-Kyu Kim, Jochen Turk, Felix Steinfeld, Jaehak Jung, Sanghee Hong, Eun-Ju Kim, Hye-Weon Yu, Sven Klockmann, Christoph Krafft, Julia Sussmann, Shan Zou, Alexandra ter Halle, Andrea M. Giovannozzi, Alessio Sacco, Marta Fadda, Mara Putzu, Dong-Hoon Im, Nontete Nhlapo, Priscilla Carrillo-Barragán, Natascha Schmidt, Dorte Herzke, Alessio Gomiero, Adrián Jaén-Gil, Damien J. E. Cabanes, Martin Doedt, Vitor Cardoso, Antje Schmitz, Moritz Hawly, Huajuan Mo, Justine Jacquin, Andy Mechlinski, Gbotemi A. Adediran, Jose Andrade, Soledad Muniategui-Lorenzo, Anja Ramsperger, Martin G. J. Löder, Christian Laforsch, Tanja Cirkovic Velickovic, Daniele Fabbri, Irene Coralli, Stefania Federici, Barbara M. Scholz-Böttcher, Jacopo la Nasa, Greta Biale, Cassandra Rauert, Elvis D. Okoffo, Anna Undas, Lihui An, Volker Wachtendorf, Petra Fengler, and Korinna Altmann* 
+
+**Cite This:** _Anal. Chem._ 2025, 97, 8719−8728 **Read Online** 
+
+ACCESS Metrics & More Article Recommendations * **sı** Supporting Information 
+
+ABSTRACT: In this study, we investigate the current accuracy of widely used microplastic (MP) detection methods through an interlaboratory comparison (ILC) involving ISO-approved techniques. The ILC was organized under the prestandardization platform of VAMAS (Versailles Project on Advanced Materials and Standards) and gathered a large number (84) of analytical laboratories across the globe. The aim of this ILC was (i) to test and to compare two thermo-analytical and three spectroscopical methods with respect to their suitability to identify and quantify microplastics in a water-soluble matrix and (ii) to test the suitability of the microplastic test materials to be used in ILCs. Two reference materials (RMs), polyethylene terephthalate (PET) and polyethylene (PE) as powders with rough size ranges between 10 and 200 _μ_ m, were used to press tablets for the ILC. The following parameters 
+
+**==> picture [211 x 134] intentionally omitted <==**
+
+had to be assessed: polymer identity, mass fraction, particle number concentration, and particle size distribution. The reproducibility, SR, in thermo-analytical experiments ranged from 62%−117% (for PE) and 45.9%−62% (for PET). In spectroscopical experiments, the SR varied between 121% and 129% (for PE) and 64% and 70% (for PET). Tablet dissolution turned out to be a very challenging step and should be optimized. Based on the knowledge gained, development of guidance for improved tablet filtration is in progress. Further, in this study, we discuss the main sources of uncertainties that need to be considered and minimized for preparation of standardized protocols for future measurements with higher accuracy. 
+
+Microplastic pollution has become a matter of high concern in recent years and, despite being studied for about 20 years now,[1] continues to hold a special place in political debates on all levels.[2] To date, several prevention and monitoring measures from regulatory bodies have been undertaken. The first regulatory achievement was SB 1422: California Safe Drinking Water Act: microplastics, undertaken in 2018 and accompanied by a laboratory accreditation study.[3][,][4] Another 
+
+Received: October 7, 2024 Revised: April 4, 2025 Accepted: April 8, 2025 Published: April 17, 2025 
+
+**==> picture [39 x 59] intentionally omitted <==**
+
+© 2025 The Authors. Published by American Chemical Society **8719** 
+
+https://doi.org/10.1021/acs.analchem.4c05403 _Anal. Chem._ 2025, 97, 8719−8728 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+initiative was the Single-Use Plastics Directive of 2021[5] which included a ban on marketing of drinking straws or nonreusable tableware within the EU. Moreover, monitoring initiative for MPs >20 _μ_ m was adopted within the Drinking Water Framework Directive.[6] This was followed in April 2024 by the EU Urban Wastewater Directive (UWWTD).[7] On January 1, 2025, the directive entered into force. The UWWTD does not explicitly outline specific methodologies for MP analysis; however, it requires member states to monitor water quality, develop and implement monitoring programs, and utilize the best available science and technology for analysis of micropollutants, to which MP also belongs. In March 2024, the European Commission adopted a decision on methodology to measure microplastics in water intended for human consumption.[8] 
+
+Data collected on microplastic load in the environment is often ambiguous, and transport pathways into water (limnic and marine ecosystems), air, and soil compartments are not well understood. Different analytical laboratories across the world are using different sampling protocols, sampling seasons, and sample preparation procedures to collect microplastics, etc. Similarly, analysis of microplastic samples occurs with different analytical methods and instrumental setups, e.g., size threshold, leading to poorly comparable results. Currently, there is an urgent need for harmonization of methodology and standard operating procedures (SOPs) as well as the elaboration of minimum requirements for profound data. 
+
+Parameters to be assessed during microplastic analysis are specified in ISO 24187:2023, where “The amount of microplastics in a given matrix can be measured in different ways, i.e., as the number (of particles) or mass content/fraction in relation to the sample’s quantity, which itself can be based on various units (volume, weight, etc.)”.[9] Based on this, traditional microplastic analysis includes polymer type identification, particle number concentration, size distribution, and particle mass in a sample. Many methods have been successfully used in microplastic analysis so far;[10][−][14] however, most used methods for particle number counting and polymer identity are micro-Fourier-transform infrared spectroscopy ( _μ_ - FTIR)[15][−][19] and micro-Raman spectroscopy ( _μ_ -Raman).[20][−][22] Lowest limits for identification, depending on the instrument, lie within 10−20 _μ_ m (for _μ_ -FTIR spectroscopy) and around 0.5−5 _μ_ m (for _μ_ -Raman spectroscopy). The lower limit of identification for the _μ_ -Raman technique is due to a laser of a short wavelength used in this technique, whereas in _μ_ -FTIR spectroscopy, an infrared source is used. Therefore, with _μ_ - Raman spectroscopy in the imaging mode, higher spatial resolution can be obtained than with _μ_ -FTIR spectroscopy in the imaging mode. For mass content and polymer identity, the most common methods are pyrolysis gas chromatography mass spectrometry (Py-GC/MS),[23][−][27] and thermal extraction desorption gas chromatography mass spectrometry (TEDGC/MS).[28][−][31] In this ILC, the four above-mentioned methods were employed: _μ_ -FTIR and _μ_ -Raman spectroscopies, Py-GC/ MS, and TED-GC/MS. Additionally, a variety of infrared spectroscopy, quantum-cascade laser infrared reflectance spectrometry (QCL-IRRAS), also known under the commercial acronym as Laser Direct Infrared (LDIR) spectroscopy, has been used by some participants. Since this name is more recognizable, we will use this acronym. 
+
+Thermo-analytical methods are generally less time-consuming in terms of sample preparation, but experiments may take up to 1 h per sample. Shortcomings in thermoanalytics are the 
+
+limit of detection, no analysis of a single particle, sample destruction, and no information on the size and shape of particles. Spectroscopical techniques are often more timeconsuming due to the intense need for sample preparation and measurement times but are nondestructive, and, when applied in imaging mode, can give information about the size and shape of a single particle. 
+
+Despite a variety of available methods and many decades of development in microplastic analytics, reliable microplastic analysis remains a very difficult task and requires various microplastic (certified) reference materials (CRMs), extensive funding, and laboratories with proven expertise in the field. With the provided set of microplastic RMs for the present ILC, operating protocols for tablet filtration, measurement, and data reporting, and with the use of a variety of analytical techniques by over 50 laboratories worldwide, we expected valuable statistical data. The obtained results as well as test materials will be transferred into the ISO standardization body ISO/TC 147/SC 2 to the documents ISO/DIS 16094-2 and ISO/DIS 16094-3, helping to create standards and achieve comparable results worldwide. 
+
+To date, many ILCs on the analysis of microplastics have been carried out (Table S1, Supporting Information), creating a solid basis and delivering valuable findings but also revealing challenges in method harmonization and microplastics RM development. In the present study, evaluation of particles in a smaller size range is addressed: 1−100 _μ_ m for PET and 1−250 _μ_ m for aged PE films (Figure 1). To resemble environmental 
+
+**==> picture [239 x 83] intentionally omitted <==**
+
+Figure 1. SEM micrographs of microplastic particles (a) PET and (b) aged PE. 
+
+MP samples and mimic an aged PE material, the PE film was preweathered. Furthermore, microplastic samples were prepared as RMs embedded in a food matrix (to be possibly considered as a suitable RM for drinking water framework directive monitoring). 
+
+## **2. EXPERIMENTAL SECTION** 
+
+**2.1. Preparation of Microplastic Materials.** For this ILC, BAM (Bundesanstalt fur Materialforschung und -prufung) provided microplastic RMs, PET, and aged PE. Further information on preparation is available in the BAM webshop (https://webshop.bam.de/webshop_en/reference-material/ polymeric-materials/microplastics.html). The property of interest for both RMs is the _D_ 50 value ( _D_ 50 value describes the particle diameter of the measured volume below which 50% of particles fall). The shape of microplastic powders was assessed by means of scanning electron microscopy (SEM), see Figure 1. PET RM had a nominal _D_ 50 value of 42.45 ± 0.17 _μ_ m, and aged PE had a nominal _D_ 50 value of 61.18 ± 1.30 _μ_ m, see Figure S2. _D_ 50 values were determined by means of a laser diffraction system (Sympatec, Clausthal-Zellerfeld, Germany) 
+
+**8720** 
+
+https://doi.org/10.1021/acs.analchem.4c05403 _Anal. Chem._ 2025, 97, 8719−8728 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+consisting of a RODOS-L dry dispersion unit, an ASPIROS-L micro dosing unit, and a HELOS-BR sensor. The RMs used and their properties are summarized in Table 
+
+1. 
+
+Table 1. Summary of Properties of Microplastic Materials Used in the ILC 
+
+||polymer #1|polymer #2|
+|---|---|---|
+|polymer|PET|PE|
+|_D_50 (_μ_m)|42.45|61.18|
+|pristine polymer density (g/cm3)<br>particle shape<br>starting material|1.38<br>irregular<br>PET granulate|0.93−0.97<br>irregular<br>PE flm|
+
+
+
+To achieve an easy way of transportation of microplastic polymers, both obtained microplastic powders (either PET or aged PE) were mixed with a water-soluble matrix containing polyethylene glycol (6.4% w/w) and lactose (93.3% w/w) and were pressed to tablets with a defined mass of polymer (see Figure S4). Tablets were pressed with a dedicated press machine (TDP 5 Desktop Tablet Press, LFA Machines, UK) at a 50 kN pressure. The hardness of tablets was adjusted such that they dissolved quickly but withstood physical stress during transportation. The tablets’ weight was 250 ± 5 mg (Mettler Toledo AT DeltaRange analytical balance), and tablets, varying by more than ±5 mg, were discarded. The expected polymer mass per tablet was empirically calculated from the mass of the polymer (weighed mass for approximately 1000 tablets) in a defined mass of matrix. Assuming a ±5 mg tablet mass uncertainty, the mass fraction of PET/tablets for thermoanalytical experiments was expected to be 556 ± 11.12 _μ_ g (equivalent to 2.22 ± 0.04 _μ_ g/mg) and that of aged PE: 265 ± 5.3 _μ_ g (equivalent to 1.06 ± 0.02 _μ_ g/mg). To simplify counting of particles, tablets for spectroscopic methods contained a reduced amount of the polymer: either 27.6 ± 0.55 _μ_ g of PET (equivalent to 0.11 _μ_ g/mg) or 17.6 ± 0.35 _μ_ g of aged PE (equivalent to 0.07 _μ_ g/mg). All participants were provided with 6 tablets containing aged PE, 6 tablets containing PET, and 6 blank samples (not containing the polymer of interest) along with an SOP to prepare polymer mixed samples. Participants working with thermo-analytical methods were provided with an additional 1 g of pure aged PE and PET polymer for calibration purposes. 
+
+**2.2. Homogeneity Studies.** An internal homogeneity study was performed to ensure that tablets contained a desired amount (mass fraction and particle number concentration) of polymer microparticles. For a homogeneity study regarding mass fraction, a batch of 19 tablets containing one polymer type was measured with two thermo-analytical methods, i.e., TED-GC/MS and thermogravimetric analysis (TGA). Prior to measurements, polymer tablets were dissolved with Milli-Q water and filtered (see Figure S5) according to a filtration protocol developed at BAM. Tablets were filtered in a special crucible (see Figure S5a).[32] 
+
+Regarding the particle number concentration, a batch of 20 tablets containing one polymer type were analyzed with SEM by counting all particles left on the substrate (CSP Si-filter, 9 _μ_ m pores, SmartMembranes GmbH) after a tablet filtration process. In our case, samples did not contain any intentionally added adventitious particles but solely lactose and PEG, which are both well soluble in water. Therefore, assuming that only plastic particles were left on the filter after filtration, we 
+
+counted polymer particles based on their shape and corresponding contrast in electron micrographs. Particle size distribution was determined by using ImageJ[33] software by measuring Feretmax values, with particle counting being performed manually. 
+
+Besides the studies conducted internally, we investigated the homogeneity of the microplastic tablets with respect to the particle number. An accredited institution supported us with a set of data on microplastic particle numbers in tablets ( _μ_ -FTIR and _μ_ -Raman data). All samples were prepared under the same conditions and on same day according to a previously validated method, in agreement with Schymanski publication requirements and precautions[34] and in agreement with ISO CD 16094-2.[35] After the addition of 1 L of pure water on tablets for reconstitution, samples were passed through silicon filters (5 _μ_ m pore size). Once dried, the filters were analyzed with _μ_ - FTIR (Thermo Nicolet iN10) and Raman (HORIBA Labram HR evolution) systems. The whole surface of the filter was screened, and each particle was analyzed for identification. Two blank tablets and one blank water were filtered and analyzed the same day, following exactly the same steps and the same process as with all samples. The blank water sample demonstrated good results, inferior to the limit of reporting of the laboratory, allowing validation of a series of samples. Raw data were categorized by the type of polymers and size class (Feretmax) without any blank subtraction. 
+
+## **3. RESULTS** 
+
+**3.1. Homogeneity Studies.** Results obtained in thermoanalytical experiments expressed as _μ_ g polymer per mg tablet varied in an acceptable range (see Table S2). Results on the particle number carried out by an accredited laboratory with both methods, _μ_ -FTIR and _μ_ -Raman spectroscopies, are summarized in Tables S3 and S4, respectively. 
+
+SEM is a powerful method for visualization of small particles down to several nm; however, manual counting of hundreds/ thousands of particles is quite a challenging task. Particles <10 _μ_ m could hardly be assigned due to poor contrast and slurry particle boundaries. The drawback of SEM analysis is, furthermore, that the chemical identity of the material remains uncertain. Besides, agglomerates of particles can sometimes provide difficulties in size assessment. Table S5 summarizes results from SEM experiments. A direct comparison of the results measured with different methods is a challenging task without knowing the “true” values of mass fraction and particle numbers. For this reason, we used data from a homogeneity study conducted at BAM (for thermo-analytical methods) and from a homogeneity study for spectroscopical methods as reference values for the mass fraction (see Table S2) and particle number (see Tables S3 and S4). 
+
+**3.2. Data Evaluation.** Out of 84 registered laboratories, only 56 reported their results. Results obtained from ILC participants were evaluated at BAM using software ProLab Standard[36] that works in compliance with ISO 5725-2:2019 Accuracy (trueness and precision) of measurement methods and results.[37] Data from each laboratory are presented as bar plots. All values obtained from ILC participants were normalized to reference values; i.e., each value was divided by the reference value and multiplied by 100. In the following calculation, we will explain data treatment on a concrete example: 
+
+Reference values for aged PE and PET as obtained from the BAM homogeneity study: PE → 0.83 ± 0.15 _μ_ g/mg. These are 
+
+**8721** 
+
+https://doi.org/10.1021/acs.analchem.4c05403 _Anal. Chem._ 2025, 97, 8719−8728 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+absolute values. We then divided them by themselves (we normalized them against themselves) to obtain PE → 1 ± 0.1807. To represent this as “%”, we multiplied everything by 100%: PE → 100% ± 18.07%. So, in all graphs, the reader will find the reference value at 100% (the _y_ -axis is represented here always in “%”). The confidence interval shows the range between ±2 standard deviations corresponding to a reference value. For our example, it means that the confidence interval for PE = ± 2(18.07%) = ± 36.14%; i.e., on the graph, it will appear as a filled region of width 63.88% to 136.14%. The same calculation applies for PET. A participant X delivers absolute values v1−v6: 0.951, 0.927, 0.920, 0.850, 0.841, and 0.897 ( _μ_ g/mg), respectively. We divide these by 0.83 _μ_ g/mg to obtain 1.144, 1.114, 1.106, 1.022, 1.011, and 1.078 and then multiply them by 100% → 114.4%, 111.4%, 110.6%, 102.2%, 101.1%, and 107.8%, respectively. These values are then plotted in the graph (see Figure 2, Lab 1). 
+
+**==> picture [79 x 22] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+0.83 0.15<br>PE ±<br>0.83 0.83<br>**----- End of picture text -----**<br>
+
+
+**==> picture [241 x 99] intentionally omitted <==**
+
+Figure 2. Normalized aged PE mass fraction. Red and green bars� standard deviations of intralaboratory results (repeatability). 
+
+**3.3. ILC Results from Thermo-analytical Methods.** Data from both thermo-analytical methods (Py-GC/MS and TED-GC/MS) were normalized against reference values obtained from TED-GC/MS results (homogeneity study conducted at BAM, see Table S2). For both thermo-analytical methods, Py-GC/MS and TED-GC/MS, the confidence interval refers to TED-GC/MS data from the homogeneity study since reference values for Py-GC/MS were not measured. Table 2 shows mass fractions in absolute values. It 
+
+Table 2. Mass Fraction for Both Polymers and Both Methods (in _**μ**_ g/mg) 
+
+|||TED-GC/MS (_μ_g/mg)|Py-GC/MS (_μ_g/mg)|
+|---|---|---|---|
+|PET||1.69 ± 0.67|1.67 ± 0.81|
+|aged|PE|1.14 ± 0.33|1.11 ± 0.64|
+
+
+
+is noticeable that both thermo-analytical methods are in high agreement with each other (see Table 2) regarding mean values for both polymer types. Figures 2 and 3 display normalized mass fraction values. 
+
+The relative standard deviations (RSD) for PET were below 30% for both methods, except for particles >500 _μ_ m, which could be agglomerates. In contrast, RSD values for aged PE were higher, probably due to irregular shape and possible sticking between PE fragments. 
+
+All participants correctly identified both polymer types. It is worth mentioning that three laboratories reported relative standard deviations as low as ∼4%, and three other laboratories 
+
+**==> picture [240 x 101] intentionally omitted <==**
+
+Figure 3. Normalized PET mass fraction. Red and green bars� standard deviations of intralaboratory results (repeatability). 
+
+reported >100%. Many participants reported saturation of the detector when measuring PET (default mass content: 556 _μ_ g per tablet). To circumvent this issue, some participants cut the filters into smaller pieces and measured them one by one and/ or elevated the split ratio of the injector extremely. This point needs to be considered in future ILCs. 
+
+**3.4. ILC Results from Spectroscopical Methods.** For determination of particle size distribution, participants were asked to group particles according to the longest distance (maximum Feret diameter) into following categories, as required by ISO 24187:2023 “Principles for the analysis of microplastics present in the environment”: (1) 500−100 _μ_ m, (2) 100−50 _μ_ m, (3) 50−10 _μ_ m, (4) 10−5 _μ_ m, and (5) 5−1 _μ_ m.[38] We decided to include an additional size class “>500 _μ_ m” to check how efficient the sieving process was (during preparation of microplastic powder) and whether possible agglomerates were formed. 
+
+_3.4.1. Total Particle Numbers per Tablet._ Whereas _μ_ - Raman spectroscopy theoretically allows particle dimension measurement down to 0.5−5 _μ_ m, IR spectroscopy is generally not so sensitive, and its limit of reliable detection often, but not always, lies above 20 _μ_ m. Due to differences in the limit of detection, we decided to display results for total particle number separately for _μ_ -Raman spectroscopy (Figures 4 and 5) and in a combined form for _μ_ -FTIR and LDIR spectroscopies (Figures 6 and 7) since the latter two methods are variations of IR spectroscopy. 
+
+**==> picture [240 x 100] intentionally omitted <==**
+
+Figure 4. Total normalized aged PE particle numbers per tablet derived from _μ_ -Raman spectroscopy measurements. Blue bars� standard deviations of intralaboratory results (repeatability). 
+
+_μ_ -Raman spectroscopy results were normalized against reference values obtained from _μ_ -Raman spectroscopy measurements (see Table S4). In the following graphs, letters “A” and “B” in the _X_ -axis “Laboratory #” denote _μ_ -FTIR and _μ_ - Raman spectroscopy, respectively. Noticeably, many laboratories using the _μ_ -Raman spectroscopy technique achieved results lying within the confidence interval (see Figure 4). Some participants, however, reported that they did not 
+
+**8722** 
+
+https://doi.org/10.1021/acs.analchem.4c05403 _Anal. Chem._ 2025, 97, 8719−8728 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+**==> picture [241 x 100] intentionally omitted <==**
+
+Figure 5. Total normalized PET particle numbers per tablet derived from _μ_ -Raman spectroscopy measurements. Blue bars�standard deviations of intralaboratory results (repeatability). 
+
+**==> picture [241 x 99] intentionally omitted <==**
+
+Figure 6. Total normalized aged PE particle numbers per tablet derived from _μ_ -FTIR and LDIR spectroscopy measurements. Red, green, orange, and dark-green bars�standard deviations of intralaboratory results (repeatability). 
+
+**==> picture [241 x 100] intentionally omitted <==**
+
+Figure 7. Total normalized PET particle numbers per tablet derived from _μ_ -FTIR and LDIR spectroscopy measurements. Red, green, orange, and dark-green bars�standard deviations of intralaboratory results (repeatability). 
+
+measure the whole filter (results were extrapolated). Data from _μ_ -FTIR and LDIR spectroscopies were normalized against reference values obtained from the _μ_ -FTIR homogeneity study; see Table S3. The confidence interval refers here to _μ_ - FTIR data (Table S3). Figures 6 and 7 display total particle numbers obtained from _μ_ -FTIR and LDIR spectroscopy as measured for aged PE and PET, respectively. Due to different instrument abilities among IR users, we decided to group results as follows: (i) _μ_ -FTIR and LDIR referring to those who measured >10 _μ_ m and (ii) FTIR20 and LDIR20, referring to those who measured >20 _μ_ m. 
+
+_3.4.2. Particle Numbers in the Size Class >500 μm._ Whereas

@@ -1,0 +1,14 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "ISO 5667-27:2025 provides guidance on sampling procedures for microplastics in water as part of the ISO 5667 water quality sampling standards series. The standard addresses methodological approaches for collecting water samples intended for microplastics analysis.",
+  "confidence": "low",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "Water quality — Sampling — Part 27: Guidance on sampling for microplastics in water",
+      "ISO 5667-27:2025 - Water quality — Sampling — Part 27: Guidance on sampling for microplastics in water"
+    ]
+  }
+}

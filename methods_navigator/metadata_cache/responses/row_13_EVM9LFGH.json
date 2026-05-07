@@ -1,0 +1,22 @@
+{
+  "particle_size_range": "1 µm - 5 mm",
+  "key_metrics_output": "Quality assessment scores for effect studies (20 criteria across 4 categories: particle characterization, experimental design, applicability in risk assessment, ecological relevance); weight of evidence for effect mechanisms; effect thresholds (LCx, ECx, LOEC, NOEC)",
+  "abstract": "This critical review assessed the quality of 105 microplastic effect studies with aquatic biota by developing 20 quality criteria across four main categories: particle characterization, experimental design, applicability in risk assessment, and ecological relevance. Studies scored an average of 44.6% of maximum quality score (range 20-77.5%), with no study meeting all criteria. Key findings indicate urgent need for improved background contamination control and environmentally relevant exposure conditions. While 86.7% of studies adequately characterized particles, a mismatch existed between tested and environmentally targeted particle sizes. Of 17 proposed effect mechanisms, only 3 remained well-supported when accounting for study quality: inhibition of food assimilation/decreased nutritional value, internal physical damage, and external physical damage. The review provides quality assessment methodology and guidance protocol for future microplastic effect studies to support risk assessment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "plastic particles 1 µm - 5 mm",
+      "Studies were only included when at least one type of MP tested had a diameter between 1 µm and 5 mm"
+    ],
+    "key_metrics_output": [
+      "developed 20 quality criteria in four main criteria categories (particle characterization, experimental design, applicability in risk assessment, and ecological relevance)",
+      "Effect threshold when reported (as either LCx, ECx, LOEC or NOEC)",
+      "weight of evidence with respect to demonstrated effect mechanisms"
+    ],
+    "abstract": [
+      "reviewed 105 microplastic effect studies with aquatic biota, provided a systematic overview of their characteristics, developed 20 quality criteria",
+      "On average, studies scored 44.6% (range 20-77.5%) of the maximum score",
+      "three of these mechanisms remained. These are inhibition of food assimilation and/or decreased nutritional value of food, internal physical damage and external physical damage"
+    ]
+  }
+}

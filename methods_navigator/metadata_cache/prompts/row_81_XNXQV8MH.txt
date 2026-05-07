@@ -1,0 +1,56 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Duemichen et al., 2019
+        Year: 2019
+        Full Title: Automated thermal extraction-desorption gas chromatography mass spectrometry: A multifunctional tool for comprehensive characterization of polymers and their degradation products
+        DOI/URL: https://doi.org/10.1016/j.chroma.2019.01.033
+        Existing Particle Size Range: ≥5 µm (µFTIR; California DW extraction SOP)
+        Existing Key Metrics / Output: Count/L by polymer/size/morphology; blank-corrected; LOD = mean(blanks) + 3 SD
+
+        Zotero metadata:
+        Title: Automated thermal extraction-desorption gas chromatography mass spectrometry: A multifunctional tool for comprehensive characterization of polymers and their degradation products
+        DOI: 10.1016/j.chroma.2019.01.033
+        Date: 2019-05-00 05/2019
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+        The TED-GC–MS analysis is a two-step method. A sample is first decomposed in a thermogravimetric analyzer (TGA) and the gaseous decomposition products are then trapped on a solid-phase adsorber. Subsequently, the solid-phase adsorber is analyzed with thermal desorption gas chromatography mass spectrometry (TDU-GC–MS). This method is ideally suited for the analysis of polymers and their degradation processes. Here, a new entirely automated system is introduced which enables high sample throughput and reproducible automated fractioned collection of decomposition products.
+The fractionated collection together with low temperatures reduces the risk of contamination, improves instrumental stability and minimizes maintenance efforts. Through variation of the two main parameters (purge gas flow and heating rate) it is shown how the extraction process can be optimized. By measuring the decomposition products of polyethylene it is demonstrated that compounds with masses of up to 434 Da can be detected. This is achieved despite the low temperature (˜40 °C) of the solid-phase adsorber and the low thermal desorption temperature of 200 °C in the TDU unit.
+It is now shown that automated TED-GC–MS represents a new flexible multi-functional method for comprehensive polymer analyses. Comparable polymer characterization was previously only achievable through a combination of multiple independent analytical methods. This is demonstrated by three examples focused on practical challenges in materials analysis and identification: The first one is the analysis of wood plastic composites for which the decomposition processes of the polymer and the bio polymer (wood) could be clearly distinguished by fractionated collection using sequential adsorbers. Secondly, a fast quantitative application is shown by determining the weight concentrations of an unknown polyolefin blend through comparison with a reference material. Additionally, the determination of microplastic concentrations in environmental samples is becoming an increasingly important analytical necessity. It is demonstrated that with TED-GC–MS calibration curves showing good linearity for the most important precursors for microplastic, even complex matrix materials (suspended particulate matter) can be successfully analyzed.
+
+        Context source: zotero_abstractNote
+
+        Source context:
+        The TED-GC–MS analysis is a two-step method. A sample is first decomposed in a thermogravimetric analyzer (TGA) and the gaseous decomposition products are then trapped on a solid-phase adsorber. Subsequently, the solid-phase adsorber is analyzed with thermal desorption gas chromatography mass spectrometry (TDU-GC–MS). This method is ideally suited for the analysis of polymers and their degradation processes. Here, a new entirely automated system is introduced which enables high sample throughput and reproducible automated fractioned collection of decomposition products.
+The fractionated collection together with low temperatures reduces the risk of contamination, improves instrumental stability and minimizes maintenance efforts. Through variation of the two main parameters (purge gas flow and heating rate) it is shown how the extraction process can be optimized. By measuring the decomposition products of polyethylene it is demonstrated that compounds with masses of up to 434 Da can be detected. This is achieved despite the low temperature (˜40 °C) of the solid-phase adsorber and the low thermal desorption temperature of 200 °C in the TDU unit.
+It is now shown that automated TED-GC–MS represents a new flexible multi-functional method for comprehensive polymer analyses. Comparable polymer characterization was previously only achievable through a combination of multiple independent analytical methods. This is demonstrated by three examples focused on practical challenges in materials analysis and identification: The first one is the analysis of wood plastic composites for which the decomposition processes of the polymer and the bio polymer (wood) could be clearly distinguished by fractionated collection using sequential adsorbers. Secondly, a fast quantitative application is shown by determining the weight concentrations of an unknown polyolefin blend through comparison with a reference material. Additionally, the determination of microplastic concentrations in environmental samples is becoming an increasingly important analytical necessity. It is demonstrated that with TED-GC–MS calibration curves showing good linearity for the most important precursors for microplastic, even complex matrix materials (suspended particulate matter) can be successfully analyzed.

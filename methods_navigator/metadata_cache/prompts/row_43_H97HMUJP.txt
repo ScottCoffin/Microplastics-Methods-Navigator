@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: De Ruijter et al., 2025a
+Year: 2025
+Full Title: Microplastics versus natural mineral particles: How to create and test them while maintaining environmental relevance
+DOI/URL: https://doi.org/10.1016/j.jhazmat.2024.136538
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Microplastics versus natural mineral particles. How to create and test them while maintaining environmental relevance
+DOI: 10.1016/j.jhazmat.2024.136538
+Date: 2025-01-00 01/2025
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Whether microplastics cause different effects than inert natural particles, and how to create relevant testing materials, are key questions in microplastics research. We prepared Environmentally Relevant Microplastic (ERMP) and Mineral Microparticle (ERMS) mixtures with similar levels of polydispersity and tested their 28-day chronic effects on the reproduction and growth of L. variegatus at two different organic matter (OM) contents (average and enriched). Additionally L. variegatus was exposed to ERMP and ERMS to study the particle egestion for 14 days. We observed no differences in growth or reproduction between ERMP and ERMS at particle concentrations of up to 10 % (v/v). In contrast, organisms exposed to enriched OM content increased their growth with 30 % and increased reproduction with 20 %. For ERMP with an enriched OM content, reproduction was reduced with an effect threshold EC50 of 13.68 ± 5.54 % (v/v). After 14 days of exposure to 5 % ERMP, the egestion of faecal pellets was higher compared to exposure to 5 % ERMS, suggesting that in order to acquire the same amount of nutrition, L. variegatus is spending more energy. With this study, we demonstrate that refinements in the manufacturing of environmentally diverse particle mixtures can contribute to a more realistic testing of particle effects.
+
+Context source: zotero_abstractNote
+
+Source context:
+Whether microplastics cause different effects than inert natural particles, and how to create relevant testing materials, are key questions in microplastics research. We prepared Environmentally Relevant Microplastic (ERMP) and Mineral Microparticle (ERMS) mixtures with similar levels of polydispersity and tested their 28-day chronic effects on the reproduction and growth of L. variegatus at two different organic matter (OM) contents (average and enriched). Additionally L. variegatus was exposed to ERMP and ERMS to study the particle egestion for 14 days. We observed no differences in growth or reproduction between ERMP and ERMS at particle concentrations of up to 10 % (v/v). In contrast, organisms exposed to enriched OM content increased their growth with 30 % and increased reproduction with 20 %. For ERMP with an enriched OM content, reproduction was reduced with an effect threshold EC50 of 13.68 ± 5.54 % (v/v). After 14 days of exposure to 5 % ERMP, the egestion of faecal pellets was higher compared to exposure to 5 % ERMS, suggesting that in order to acquire the same amount of nutrition, L. variegatus is spending more energy. With this study, we demonstrate that refinements in the manufacturing of environmentally diverse particle mixtures can contribute to a more realistic testing of particle effects.

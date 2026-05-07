@@ -1,0 +1,21 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Material loss mass from fabrics during laundering; fibre fragment collection and quantification",
+  "abstract": "ISO 4484-1:2023 describes a standardized method for systematically collecting material loss from fabrics under controlled laundering test conditions to achieve comparable and accurate results. The method is designed to assess material loss of all types from textiles during washing, with collected debris assumed to be fibre fragments. The standard does not establish direct correlation to material loss during domestic and commercial laundering. Identification of the nature and composition of collected debris can be performed using ISO 4484-2.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "method for systematically collecting material loss from fabrics under laundering test conditions",
+      "any collected debris is assumed to be fibre fragments",
+      "method is designed to assess material loss of all types"
+    ],
+    "abstract": [
+      "describes a method for systematically collecting material loss from fabrics under laundering test conditions to achieve comparable and accurate results",
+      "There is no direct correlation to material loss during domestic and commercial laundering",
+      "The method is designed to assess material loss of all types",
+      "any collected debris is assumed to be fibre fragments",
+      "For the identification of the nature/composition of this debris, the method described in ISO 4484-2 can be used"
+    ]
+  }
+}

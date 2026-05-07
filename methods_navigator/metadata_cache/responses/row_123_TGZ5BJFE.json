@@ -1,0 +1,21 @@
+{
+  "scope": "Human placenta tissue",
+  "particle_size_range": "5–10 μm",
+  "key_metrics_output": "Particle morphology (spheric or irregular shape), chemical composition (polymer type: polypropylene identified; pigment composition), particle count, distribution across placental compartments (fetal side, maternal side, chorioamniotic membranes)",
+  "abstract": "Microplastics are particles smaller than five millimeters deriving from the degradation of plastic objects present in the environment. Microplastics can move from the environment to living organisms, including mammals. In this study, six human placentas, collected from consenting women with physiological pregnancies, were analyzed by Raman Microspectroscopy to evaluate the presence of microplastics. In total, 12 microplastic fragments (ranging from 5 to 10 μm in size), with spheric or irregular shape were found in 4 placentas (5 in the fetal side, 4 in the maternal side and 3 in the chorioamniotic membranes); all microplastics particles were characterized in terms of morphology and chemical composition. All of them were pigmented; three were identified as stained polypropylene a thermoplastic polymer, while for the other nine it was possible to identify only the pigments, which were all used for man-made coatings, paints, adhesives, plasters, finger paints, polymers and cosmetics and personal care products.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "12 microplastic fragments (ranging from 5 to 10 μm in size)"
+    ],
+    "key_metrics_output": [
+      "spheric or irregular shape",
+      "characterized in terms of morphology and chemical composition",
+      "three were identified as stained polypropylene",
+      "5 in the fetal side, 4 in the maternal side and 3 in the chorioamniotic membranes"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

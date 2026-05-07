@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 5667-27:2025
+        Year: 2025
+        Full Title: ISO 5667-27:2025 Water quality — Sampling. Part 27: Guidance on sampling for microplastics in water
+        DOI/URL: https://www.iso.org/es/contents/data/standard/08/26/82612.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ISO 5667-27:2025 Water quality — Sampling. Part 27: Guidance on sampling for microplastics in water
+        DOI: 
+        Date: 2023-00-00 2023
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Water quality — Sampling — Part 27: Guidance on sampling for microplastics in water
+
+ISO 5667-27:2025 - Water quality — Sampling — Part 27: Guidance on sampling for microplastics in water Ir directamente al contenido principal Aplicaciones OBP español English français русский Menú Normas Sectores Salud Tecnologías de la información y afines Gestión y servicios Seguridad, protección y gestión de riesgos Transporte Energía Diversidad e inclusión Sostenibilidad ambiental Alimentos y agricultura Materiales Edificación y construcción Ingeniería Sobre nosotros Perspectivas y actualidad Perspectivas Todos los artículos Salud Inteligencia artificial Cambio climático Transporte Ciberseguridad Gestión de la calidad Energías renovables Seguridad y salud en el trabajo Computación cuántica Actualidad Opinión de expertos El mundo de las normas Kit de prensa Resources ISO 22000 explained ISO 9001 explained ISO 14001 explained ISO 42001 explained ISO 45001 explained Participar Tienda Buscar Carrito International Standard ISO 5667-27:2025 Water quality — Sampling — Part 27: Guidance on sampling for microplastics in water Reference number ISO 5667-27:2025 Edition 1 2025-03 © ISO 2026 Preview ISO 5667-27:2025 82612 ISO 5667-27:2025 Water quality — Sampling Part 27: Guidance on sampling for microplastics in water No disponible en español Publicado (Edición 1, 2025) ISO 5667-27:2025 ISO 5667-27:2025 82612 Idioma Inglés Formato PDF + ePub Papel CHF 159 Añadir al carrito * Gastos de envío no incluidos Convertir Franco suizo (CHF) a

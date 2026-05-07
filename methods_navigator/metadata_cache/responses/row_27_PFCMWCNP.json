@@ -1,0 +1,19 @@
+{
+  "particle_size_range": "10 nm to 200 μm (majority < 5 μm)",
+  "key_metrics_output": "Toxicity study assessment tool (NMP-TSAT) scores, particle characterization (size, shape, polymer type), in vivo and in vitro hazard endpoints, human health risk assessment applicability",
+  "abstract": "Concern regarding the human health implications that exposure to nano- and microplastic particles (NMPs) potentially represents is increasing. While there have been several years of research reporting on the ecotoxicological effects of NMPs, human health toxicology studies have only recently emerged. The available human health hazard data are thus limited, with potential concern regarding the relevance and reliability for understanding the potential human health implications. In this study we develop and apply a NMP toxicity screening assessment tool (NMP-TSAT) for evaluating human health effects studies against a suite of quality assurance and quality control (QA/QC) criteria for both in vivo and in vitro studies. A total of 74 studies representing either inhalation or oral exposure pathways were identified and evaluated. Assessment categories include particle characterization, experimental design, and applicability for risk assessment; with critical and non-critical criteria organized to allow screening and prioritization. It is observed that the majority of studies evaluated using the NMP-TSAT have been performed on monodisperse particles, predominately spheres (≈60%), consisting of polystyrene (≈46%). The majority of studies have tested particles < 5 μm, with a minimal particle size of 10 nm and a maximum particle size of about 200 μm. The total assessment score (TAS) possible for in vivo studies is 52, whereas for in vitro studies it is 46, which is based on receiving a maximum score of 2 against 26 and 23 criteria, respectively. The evaluated TAS ranged from between 12 and 44 and 16–34, for in vivo and in vitro studies, respectively. Given the challenges associated with prioritizing studies based on ranking them according to their TAS we propose a Tiered approach, whereby studies are initially screened based on how they score against various critical criteria, which have been defined for their relevance for assessing the hazards and risks for human health. In this instance, studies that score a minimum of ‘1’ against each of the critical criteria, regardless of how they rank according to their TAS, are prioritized as part of a Tier 1 screening and prioritization phase, which would then be followed by an expert evaluation, representing a Tier 2 level of assessment. Using this approach we identify 10 oral ingestion and 2 inhalation studies that score at least 1 against all critical criteria. Lastly, several key observations for strengthening future effects studies are identified, these include a need for the generation and access to standard reference materials representative of human exposure to NMPs for use in toxicity test systems and/or the improved characterization and verification of test particle characteristics, and the adoption of study design guidance, such as recommended by OECD, when conducting either in vivo inhalation or oral ingestion toxicity tests.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "The majority of studies have tested particles < 5 μm, with a minimal particle size of 10 nm and a maximum particle size of about 200 μm"
+    ],
+    "key_metrics_output": [
+      "Assessment categories include particle characterization, experimental design, and applicability for risk assessment",
+      "The majority of studies evaluated using the NMP-TSAT have been performed on monodisperse particles, predominately spheres (≈60%), consisting of polystyrene (≈46%)",
+      "The total assessment score (TAS) possible for in vivo studies is 52, whereas for in vitro studies it is 46"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

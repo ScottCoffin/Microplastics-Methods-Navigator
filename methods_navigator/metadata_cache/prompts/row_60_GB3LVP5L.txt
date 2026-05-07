@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Koelmans et al., 2023
+Year: 2023
+Full Title: Towards a rational and efficient risk assessment for microplastics
+DOI/URL: https://doi.org/10.1016/j.trac.2023.117142
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Towards a rational and efficient risk assessment for microplastics
+DOI: 10.1016/j.trac.2023.117142
+Date: 2023-08-00 08/2023
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+To avoid confusion about the risks of microplastics in the public domain, it is crucial that differences in terminology and approach within existing risk assessment frameworks are clear to risk managers. In this article, we discuss key concepts and recent literature on the risk assessment of microplastics and provide a shortlist of crucial elements to consider. Furthermore, we compare and contrast two approaches that have been published but have not yet been compared in detail. One method uses categories of particle properties, does not include an impact assessment, and is limited to the risk of particles in a sample. The other method uses continuums of particle properties, incorporates biological properties into an impact assessment, and focuses on the risk of all particles in the system. We discuss both approaches in light of existing disciplinary scientific knowledge, risk assessment science, and their relevance to risk managers.
+
+Context source: zotero_abstractNote
+
+Source context:
+To avoid confusion about the risks of microplastics in the public domain, it is crucial that differences in terminology and approach within existing risk assessment frameworks are clear to risk managers. In this article, we discuss key concepts and recent literature on the risk assessment of microplastics and provide a shortlist of crucial elements to consider. Furthermore, we compare and contrast two approaches that have been published but have not yet been compared in detail. One method uses categories of particle properties, does not include an impact assessment, and is limited to the risk of particles in a sample. The other method uses continuums of particle properties, incorporates biological properties into an impact assessment, and focuses on the risk of all particles in the system. We discuss both approaches in light of existing disciplinary scientific knowledge, risk assessment science, and their relevance to risk managers.

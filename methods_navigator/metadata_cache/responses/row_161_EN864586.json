@@ -1,0 +1,32 @@
+{
+  "particle_size_range": "nano- and microplastic particles (no specific bounds provided in excerpt)",
+  "key_metrics_output": "exposure assessment, occurrence in drinking water, air, food, dermal exposure, dosimetry, biokinetics, toxicological effects, chemical vectors, pathogen vectors",
+  "abstract": "WHO report assessing dietary and inhalation exposure to nano- and microplastic particles and their potential health implications. The document reviews occurrence of nano- and microplastics in drinking water, air, food, and dermal exposure pathways; examines dosimetry and biokinetics; evaluates toxicological effects; and considers nano- and microplastics as vectors for chemical and pathogenic exposure.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Dietary and inhalation exposure to nano- and microplastic particles",
+      "1.2 Definitions",
+      "1.3 Composition and properties of particles"
+    ],
+    "key_metrics_output": [
+      "2.1 Occurrence in drinking-water",
+      "2.2 Occurrence in air",
+      "2.3 Dermal exposure",
+      "2.4 Occurrence in food",
+      "4.1 Dosimetry: extrapolation from external to internal exposure",
+      "4.2 Biokinetics",
+      "5.1 Literature review and experimental study evaluation",
+      "5.2 Nano- and microplastics as vectors of chemical exposure",
+      "6. Nano- and microplastics as vectors of pathogens"
+    ],
+    "abstract": [
+      "Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health",
+      "2. Human exposure",
+      "3. Observations from epidemiology",
+      "4. Dosimetry and biokinetics",
+      "5. Toxicological effects",
+      "6. Nano- and microplastics as vectors of pathogens"
+    ]
+  }
+}

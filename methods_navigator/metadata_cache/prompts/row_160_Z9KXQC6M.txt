@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Vanavermaete et al., 2024
+Year: 2024
+Full Title: Plastics in biota: technological readiness level of current methodologies
+DOI/URL: https://doi.org/10.1186/s43591-024-00083-9
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Plastics in biota: technological readiness level of current methodologies
+DOI: 10.1186/s43591-024-00083-9
+Date: 2024-03-15 2024-03-15
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Plastics are persistent in the environment and may be ingested by organisms where they may cause physical harm or release plastic additives. Monitoring is a crucial mechanism to assess the risk of plastics to the marine and terrestrial ecosystem. Unfortunately, due to unharmonised procedures, it remains difficult to compare the results of different studies. This publication, as part of the Horizon project EUROqCHARM, aims to identify the properties of the available analytical processes and methods for the determination of plastics in biota. Based on a systematic review, reproducible analytical pipelines were examined and the technological readiness levels were assessed so that these methods may eventually (if not already) be incorporated into (harmonised) monitoring programs where biota are identified as indicators of plastic pollution.
+
+Context source: zotero_abstractNote
+
+Source context:
+Plastics are persistent in the environment and may be ingested by organisms where they may cause physical harm or release plastic additives. Monitoring is a crucial mechanism to assess the risk of plastics to the marine and terrestrial ecosystem. Unfortunately, due to unharmonised procedures, it remains difficult to compare the results of different studies. This publication, as part of the Horizon project EUROqCHARM, aims to identify the properties of the available analytical processes and methods for the determination of plastics in biota. Based on a systematic review, reproducible analytical pipelines were examined and the technological readiness levels were assessed so that these methods may eventually (if not already) be incorporated into (harmonised) monitoring programs where biota are identified as indicators of plastic pollution.

@@ -1,0 +1,243 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Lenz et al., 2024
+        Year: 2024
+        Full Title: What Goes Around Should Not Move Around: Immobilizing Microplastics as a New Approach for Analytical Ring Trials
+        DOI/URL: https://doi.org/10.1021/acs.est.4c09427
+        Existing Particle Size Range: Not specified (TRL assessment; technology readiness evaluation, not primary methods paper)
+        Existing Key Metrics / Output: Technology readiness levels (TRL 1–9) for biota monitoring methods
+
+        Zotero metadata:
+        Title: What Goes Around Should Not Move Around: Immobilizing Microplastics as a New Approach for Analytical Ring Trials
+        DOI: 10.1021/acs.est.4c09427
+        Date: 2024-12-03 2024-12-3
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        This article is licensed under CC-BY 4.0 
+
+**==> picture [177 x 69] intentionally omitted <==**
+
+pubs.acs.org/est 
+
+**==> picture [40 x 10] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+Article 
+
+## **What Goes Around Should Not Move Around: Immobilizing Microplastics as a New Approach for Analytical Ring Trials** 
+
+Robin Lenz,* Kristina Enders, Eva Cseperke Vizsolyi, Mareike Schumacher, Julia Lötsch, Martin G. J. Löder, Gabriele Eder, Yuliya Voronko, José Manuel Andrade-Garda, Soledad Muniategui-Lorenzo, Christian Laforsch, Dieter Fischer,* and Matthias Labrenz* 
+
+**Cite This:** _Environ. Sci. Technol._ 2024, 58, 22224−22234 **Read Online** ACCESS Metrics & More Article Recommendations * **sı** Supporting Information 
+
+ABSTRACT: Microplastics have gained importance as pervasive environmental particulate pollutants. Their analysis demands precise quantification methods, with interlaboratory comparisons (ILCs) being crucial for performance assessment. Typically, ILCs follow a parallel design: participants each analyze their own sample specimen, often with significant variability due to challenges in producing identical subsamples of the particulate analyte, inseparably masking the relevant uncertainty sources the ILC intends to measure. We provide a filtration-immobilization approach for particles ≤100 _μ_ m, creating permanently immobilized microplastics samples. This enables serial ILC designs where participants sequentially measure the same sample. Demonstrating the concept using 5 polymers immobilized on 10 _μ_ m pore-sized 
+
+**==> picture [239 x 133] intentionally omitted <==**
+
+silicon filters, we expose the specific measurement uncertainty being 77% lower than the total combined uncertainty observed in a parallel ILC (relative standard deviations: 5 and 23%, respectively). Particle immobilization opens further applications in sample archiving and creation of durable reference samples also for other fields of particulate matter research beyond microplastics. KEYWORDS: _spectroscopy, microscopy, particles, colloid, proficiency, validation, round robin, fixation_ 
+
+## ■ **[INTRODUCTION]** 
+
+The contamination of the environment with microplastics (MPs), i.e., synthetic polymer particles commonly accepted to be between 1 and 1000 _μ_ m,[1] has created a need for reliable data on the characteristics and quantities of MPs. This has led to a wide variety of methodological developments. The resulting significant differences in resolution and quality of analyses are impeding the comparability of data between studies[2][−][4] and more comprehensive environmental risk assessments.[5] 
+
+To solve this issue, interlaboratory comparisons (ILCs) play a crucial role in evaluating the reliability and accuracy of methods for the characterization and quantification of MP particles in various samples,[6] including environmental, food, and tissue matrices. Several ILC studies aimed at MP-analytical proficiency can be found in the recent literature[6][−][14] using different sample types such as environmental matrices spiked with specific MP types,[13] artificial samples such as suspensions,[12] or MP particles in solid media like tablets or ice cubes.[6][,][11] These studies typically follow a parallel design, where each participant receives and analyzes their own sample specimen, assuming equality in MP numbers and composition. This design, based on reporting guidelines like DIN 3840245:2014-06, as cited by ref 12, ISO 13528,[15] or the IUPAC 
+
+technical report,[16] resembles established procedures for soluble analytes, where homogeneity issues are less of a concern and accurate reference measurements are available. As particulate pollutants, MPs pose significant challenges to this equality assumption, especially for particle sizes in the lower micrometer range where individual handling of particles is impractical.[17] 
+
+The need for comparable and reliable MP quantification led to innovations in creating homogeneous sample specimens for ILCs and reference materials,[11][,][18][−][20] as well as assessment and correction methods[8][,][21] and reporting guidelines.[22][,][23] Their perpetual integration in new ILCs can improve precision and reduce the uncertainty of the true MP content, gradually making the determination of analytical proficiency more reliable. However, the fundamental problem remains: parallel ILC designs capture compounded effects caused by a range of 
+
+**==> picture [39 x 59] intentionally omitted <==**
+
+Received: September 5, 2024 Revised: October 25, 2024 Accepted: October 25, 2024 Published: December 3, 2024 
+
+© 2024 The Authors. Published by American Chemical Society **22224** 
+
+https://doi.org/10.1021/acs.est.4c09427 _Environ. Sci. Technol._ 2024, 58, 22224−22234 
+
+**Environmental Science & Technology pubs.acs.org/est** 
+
+Article 
+
+**==> picture [490 x 287] intentionally omitted <==**
+
+Figure 1. Uncertainties propagating through the pipeline of MP quantification. Colored areas enclose the shares captured by parallel (beige) and serial (mint) ILC design concepts. The relevance of the uncertainty contributors with regard to field samples is shown to the right of the pyramid. It is highlighted that uncertainties arising from the way in which the parallel ILC sample is produced (L0) are irrelevant to real samples and should therefore preferably be excluded by an ILC design. Other uncertainty sources (L1 and L2) can be relevant, but because they depend on the sample conditions, they should be addressed separately from an ILC estimating the specific measurement uncertainty. 
+
+uncertainty sources whose contributions cannot be further decomposed (Figure 1). At this point, it is important to emphasize the principles of metrology, such as uncertainty propagation according to the “Guide to the expression of uncertainty in measurement” (GUM)[24] by the Joint Committee for Guides in Metrology (JCGM) whose terminology we apply here to the field of MP analysis. 
+
+All steps from planning the sampling to evaluating and reporting the final data contribute to the combined uncertainty in the MP-analytical chain. Therefore, any uncertainties intrinsic to the production of the parallel sample specimens, e.g., from splitting or weighing, are included at the base of the final result (Figure 1). Here, we use the term “specific measurement uncertainty” to describe the combined uncertainty associated with the chemical measurement acquisitions (e.g., microspectroscopy), data evaluation, manual result − control, and reporting (Figure 1, L3 L5). In parallel ILCs, the specific measurement uncertainty is inseparable from uncertainty contributions of production and distribution of sample specimens (Figure 1, L0), sample treatments like purification and measurement preparations (Figure 1, L1), and subsampling (Figure 1, L2). The first is specific to the ILC design itself and, as such, not informative about a participant’s proficiency to quantify MP field samples (compare Figure 1, “Relevance for field samples”). The latter two are of potential relevance when considering field samples but may vary depending on the pretreatment requirements of the matrix such as sediments, biota, or food samples. They should, therefore, be addressed by separate QA/QC measures[25] or a posteriori data alignments.[5] 
+
+Currently there is no approach available to investigate the specific measurement uncertainty in ILCs to build the basis for a subsequent evaluation of the total combined uncertainty of the whole sample preparation and analysis process. To address this gap, we adapt the concept of MP particle immobilizations, first described for experiments in the ≤100 _μ_ m size fraction,[17][,][26] to the requirements of ILCs using an inorganic adhesive. For two common spectroscopic substrate types, porous Si wafers and alumina membranes, we describe an immobilization-by-filtration approach, leading to a permanent fixation of particles on the surface of the carrier. It can be measured sequentially by all ILC participants, with each laboratory measuring the same filter and passing it onto the next participant in the ILC consortium. This methodological paradigm shift renders the ILC literally a “ring trial”, or “roundrobin test” as it is also often called, relating to its historic meaning of an institution of coordinated collective activity.[27][,][28] We refer to this concept as the serial design to distinguish it from the parallel ILC design. It eliminates the unwanted uncertainty sources introduced by the repetitive sample specimen creation in the parallel design approach. Therefore, the observed variance of the results represents a more accurate magnitude of the specific measurement uncertainty. 
+
+## ■ **[METHODS]** 
+
+We conducted a comparison between a parallel design ILC where participants received independent sample specimens of − samples P1 P3 and serial ILCs where participants received the same specimens of three different sample types subsequently: S1−S3 (Table 1). 
+
+**22225** 
+
+https://doi.org/10.1021/acs.est.4c09427 _Environ. Sci. Technol._ 2024, 58, 22224−22234 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Article 
+
+Table 1. Sample Names and Their Poolings (Pool) that Were Prepared for the Parallel and Serial ILC Designs Are Listed with Their Key Specifications 
+
+**==> picture [234 x 185] intentionally omitted <==**
+
+To encourage broader adoption, we emphasize that the proposed serial ILCs using immobilized particle samples can be conducted using standard laboratory equipment. Any special or custom-made devices, although detailed here for possible replication, can be replaced by commercially available alternatives without compromising the immobilization’s success. 
+
+**Sample Preparation.** Sample preparation steps were conducted in specialized MP-analytical laboratories under laminar flow benches. As an exception, steps involving handling of dry MP powders such as grinding, mixing, or adding powders to suspension media were conducted outside the laminar flow bench to avoid workplace contamination. White cotton lab coats were used during all procedures. 
+
+We obtained the MP particles by sieving five previously cryo-milled (Cryomill, Retsch, Germany) environmentally relevant polymers. The resulting particle shapes were irregular (see also Figure SI5.2). Fibers were not included in this study. We used low-density polyethylene (LDPE), polyamide 12 (PA12), polyethylene terephthalate (PET), polypropylene (PP), and polystyrene (PS). The raw materials and grinding and sieving procedures were identical as reported by a previous study.[17] 
+
+The creation of the aqueous suspension samples P1−P3 and the adhesive particle suspension for the immobilized samples S1 and S2 is described in full detail in SI1. In the samples of the serial ILC design (S1−S3), the homogeneity of particle distribution on the filters was not assumed or required, as all participants measured the same defined area of each sample. The selected measurement areas were chosen based on their representativeness of the overall particle immobilization. 
+
+_Immobilization on Si Wafers._ Porous silicon wafers were inserted in the precleaned filtration apparatus,[29] connected to an adjustable vacuum pump (SC920, KNF Neuberger). The device contained red PTFE discs for sealing. For sample S1, a silicon wafer was used (11 mm length and width and 250 _μ_ m thickness) with conical pores (15/8 _μ_ m terminal diameters and 55 _μ_ m interpore distance) supplied by Fraunhofer Institute for Reliability and Microintegration, Moritzburg, 
+
+Germany; for more details, see ref 30. We refer to it as a nominal 10 _μ_ m filter. 
+
+For S2, we used a nominal 1 _μ_ m pore size filter (Si wafer: 10 mm length and width, 200 _μ_ m thickness, cylindrical 1 _μ_ m pore diameter, 1.5 _μ_ m interpore distance, from SmartMembranes GmbH, Halle, Germany). 
+
+The prepared potassium silicate adhesive particle suspension (SI1) was placed on top of a high-frequency excentrical shaker for homogenization, while volumes were being extracted for filtration using 1 mL Pasteur glass pipettes. We applied 2 and 6 mL for S1 and S2, respectively, where particle coverage was found to be suitable on visual inspection. Filtration was conducted at approximately 100 mbar. After curing in a vacuum drying oven (40 °C, 100 mbar, 12 h), filters were flushed with running MP-free water and compressed air to remove any loose particles. This rinsing process was repeated three times. Dark field microscopic images were acquired after each iteration to evaluate the removal of loose material. It was considered complete as no substantial further changes in the particle amounts could be manually observed between the images taken after the second and third rinse. 
+
+_Immobilization on Alumina Filters._ The dry powder mixture of MP particles was suspended in MP-free water and filtered onto an Al2O3 membrane (Anodisc, Whatman, polypropylene outer ring support, 45 _μ_ m height, 25 mm diameter, 60 _μ_ m membrane thickness, 0.2 _μ_ m pore size). The filter was then placed inside a glass Petri dish on top of a droplet of the potassium silicate adhesion medium (SI1), which was allowed to soak through the filter material by capillary rising, wetting the particles from below. Two filters of this type were created and measured, S3.1 and S3.2, with different amounts of MP particles. 
+
+_Target Area Definition._ Measuring the entire filter area was not a viable approach for several participants in terms of measurement time and amount of data produced. Instead, rectangular areas of approximately 2 by 2 mm were defined for measurement by each participant. Three approaches to marking the specific target areas were investigated, coordinate definition, laser engraving, and color markings, for samples S1−S3, respectively (see also Table 1 and Figure 2 as well as details and dimensions provided in SI2). 
+
+_Serial ILC Round Trip._ The filters were sent to the participants in custom-made filter holders (Figure SI3) by standard mail. In the case of Si filter samples (S1 and S2), participants were advised to rinse the sample with MP-free water and dry it with compressed air prior to measurement to avoid contamination. For the Al2O3 membrane sample S3, this was not possible due to the fragile nature of the substrate. Al2O3 membranes provide a less smooth and less even surface than the samples prepared on Si filters. Hence, participants were advised to use adhesive tape on the outer ring support to improve surface flatness during measurement. Participants measured the samples using the method of their choice before repackaging them and sending them onto the next participant. Finally, the samples were received and remeasured by the host participant to assess potential particle losses from the repetitive handling and transport. 
+
+**Sample Analysis.** The samples from the parallel and serial ILCs were analyzed individually by each participant with no further requirements other than using their laboratory’s stateof-the-art MP analysis techniques and parameters like they would use to analyze field samples. A total of eight participants were involved in the measurements; however, due to the 
+
+**22226** 
+
+https://doi.org/10.1021/acs.est.4c09427 _Environ. Sci. Technol._ 2024, 58, 22224−22234 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Article 
+
+**==> picture [241 x 238] intentionally omitted <==**
+
+Figure 2. Approaches to defining the measurement area. (a) Dark field image of sample S1 with visual guidelines (green) provided to the participants for manual targeting. (b) Laser-engraved frame and resulting target areas A1−A4 of sample S2 shown as a dark field overview with insets showing SEM images of the area boundaries and the square 1 _μ_ m pores. (c) Bright field overview of the Al2O3 membrane sample S3 with the target area defined by a black marker. 
+
+developmental character of this study, not every participant measured every sample and the order of participants varied between samples. Table 2 details the chosen techniques and key parameters of the participants, as well as the samples they measured. A participant in the context of this study is a unique constellation of an institute, an analyst, a measurement instrument, and an analysis software. Participants A−D and G were located all at the same institute and differed only in the technical and analytical choices as described in Table 2. 
+
+_Common Area Correction._ The target area definition of samples S1 and S3 (compare Figure 2a and Figure 2c) resulted in slightly different areas measured by each participant. This was partly due to different rotation angles of the sample on the 
+
+instrument stages, different image acquisition modes of the instruments, and/or manual inaccuracies. To evaluate results from the same area only, the largest common area was defined by superimposing the obtained particle distribution images in the GNU image manipulation software (https://gimp.org). All images were manually registered to a common coordinate system. A rectangle contained within each image was then defined graphically as the common measurement area. Particles completely outside this common area were counted for each image and polymer type, and their numbers were subsequently subtracted from the original particle counts reported by each participant. The definition of the target area by laser engraving for sample S2 made such a correction unnecessary. The areas were sharply defined and macroscopically visible. As particles in the interstices were burnt off by the laser, a simple measurement of a slightly larger area gave the same particle numbers as measuring an area to its exact extent. 
+
+**Statistical Analysis.** Results were reported by participants as numbers of particles per polymer type, size range, and sample. Total MPs (TMPs) were calculated as the sum of particles of the five added polymers. We use the terms P, S2, and S3 to refer to mean aggregated results from samples P1− − − P3, S2.1 S2.4, and S3.1 S3.2, respectively. For results derived from Raman spectroscopy, only size classes ≥10 _μ_ m were considered to increase comparability to FTIR results, which were left untruncated. 
+
+In the absence of an unbiased reference value for the MP particle numbers in the samples, we used the arithmetic mean and standard deviation between participants as measures of centrality and agreement. To evaluate the deviation of the _i_[th] participant’s result ( _Pi_ ) obtained for a sample from the overall mean of the results reported by all participants for that sample, we calculated a “relative deviation from the mean” (RMD, eq 1) where _P_ denotes the overall sample mean. 
+
+**==> picture [229 x 25] intentionally omitted <==**
+
+Using the relative standard deviation among participants (RSD, eq 2), we compare the dispersion of reported results between the different ILC design concepts. 
+
+Table 2. ILC Participants with Spectroscopic Techniques and Measured Samples 
+
+|||||||analyzed|
+|---|---|---|---|---|---|---|
+|||technique|instrument|measurement parameters|software|samples|
+|participant|A|Raman|WITec|20× objective, 532 nm, 10 mW, 10 × 0.5 s acquisitions|Gepard31|all|
+||B|microscopy|alpha300R||Witec ParticleScout + Gepard31|S1, S2, S3|
+||C||||Gepard31 + ML-prototype|S1|
+||||||Raman_a_||
+||D<br>E|micro-FTIR<br>imaging|PerkinElmer<br>Spotlight400|transmission, IR range of 4000−650, 8 cm−1 resolution, 4<br>scans/pixel (6.25 _μ_m)|ML-prototype FTIR_a_|all|
+||F||Bruker Lumos II|transmission, IR range of 3600−1250, 8 cm−1 resolution,<br>2 scans/pixel (5.7 _μ_m)|Bruker Opus v7.5 +<br>BayreuthMicroplasticsFinder32|P1, P2, P3,<br>S2, S3|
+||G|Raman|Renishaw inVia|20×objective, 633 nm, 50% power, 7×0.5 s acquisitions|Gepard31|S1, S2, S3|
+|||microscopy|Qontor||||
+||H|LDIR<br>imaging|Agilent<br>8700LDIR|quantum-cascade laser IR source, IR range of 1800−975,<br>8 cm−1 resolution, 1 scan/particle|Agilent Clarity software v1.5|S2|
+
+
+
+> _a_ Machine learning-based prototypes for MP quantification developed by Purency GmbH, Vienna, Austria. 
+
+**22227** 
+
+https://doi.org/10.1021/acs.est.4c09427 _Environ. Sci. Technol._ 2024, 58, 22224−22234 
+
+**pubs.acs.org/est** 
+
+Article 
+
+## **Environmental Science & Technology** 
+
+**==> picture [229 x 34] intentionally omitted <==**
+
+Due to the low number of participants using Raman ( _N_ ≤ 4) and FTIR ( _N_ ≤ 3) spectroscopy, mean differences between these groups were evaluated by one-sided, nonpaired, exact permutation tests[33] and accepted as statistically significant for _p_ ≤ 0.05, i.e., the proportion where the mean of values assigned to the lower group was greater than the mean of values assigned to the higher group in not more than 5% of all possible permutations. 
+
+Results were regarded as statistical outliers where experimental values were more than 1.5 times the interquartile range below the first or above the third quartile of all participants. They were excluded where technically justified, i.e., where a limited compatibility between the properties of a certain ILC sample and the applied measurement technique was identified. 
+
+The stability of a sample was evaluated by comparing the TMP measurements, conducted by the same participant, at the beginning _x_ pre and at the end _x_ post of the serial ILC. We used a stability criterion _c_ (eq 4) in adaptation from ISO 13528.[15] Here, we used the ratio between the “two-sided” relative pre/ postdeviation Δrel (eq 3) and the RSD among the participants as a stability criterion, accounting for the fact that samples with multiple measurement areas may not have comparable absolute MP particle numbers. “Two-sided” here indicates that we take the double of the difference from the mean as the expected deviation range would be centered around the mean going into positive and negative directions. 
+
+**==> picture [222 x 40] intentionally omitted <==**
+
+**==> picture [229 x 23] intentionally omitted <==**
+
+Acceptable stability was expected when _c_ ≤ 0.3. When the calculated stability was only marginally above this threshold, _c_ had to be corrected to include the measurement uncertainty ( _u_ ) according to eq 6 as recommended for testing against the same threshold.[15] We determined _u_ as the average relative distance of _r_ replicate postmeasurements from their mean (eq 5). 
+
+**==> picture [229 x 70] intentionally omitted <==**
+
+A spreadsheet file that was used for the calculations and figure generations and a Jupyter notebook containing the calculations of the permutation tests are provided in the data deposit.[34] 
+
+## ■ **[RESULTS][AND][DISCUSSION]** 
+
+We report on a novel immobilization technique for MPs and its application in serial ILCs compared to parallel ILCs. As absolute numbers of particles varied significantly between samples, we show the numbers of MP particles reported by the participants here relative to their mean (Figure 3), but raw 
+
+count data are presented as bar charts in the Supporting Information (Figure SI4.1). 
+
+**==> picture [142 x 143] intentionally omitted <==**
+
+**==> picture [48 x 85] intentionally omitted <==**
+
+**==> picture [40 x 33] intentionally omitted <==**
+
+Figure 3. Particle numbers shown as percentage deviation from the participant mean per sample (RMD). Large symbols show the most important results per sample type. These are the pooled results for P and S2 where multiple sample parts were available and the single sample results S1 and S3.2. Sample S3.1 needed to be excluded for lack of stability. Small symbols indicate the RMDs for the constituting sample parts. Asterisks indicate significant differences between the subgroups’ mean RMDs (Raman vs IR, see also Table 2 for references of the techniques used by each participant). Participant F’s result for sample S1 was excluded as a statistically and technically justified outlier, and it is shown here semitransparently for reference only (not included in the mean calculation). Key data of the samples are provided below the horizontal axis. Sample name: terminology used according to Table 1 (P: samples used in parallel ILCs; S: samples used in serial ILCs). _N_ parts: number of parts that were pooled under this sample name. _N_ reports: number of reports returned by participants (for brevity showing the sum of reports in multipart samples). _N_ TMP: reported particle numbers of TMP as mean over participants (polymer and participant-specific results are provided in the data deposit[34] ). Absolute particle numbers are shown in Figure SI4.1. 
+
+The serial ILC design, by isolating the specific measurement uncertainty, significantly reduces observed variation among participants compared to the parallel ILC, with a 77% lower RSD in the small-scale ILC comparison we conducted here (Figure 4). 
+
+**Isolation of the Specific Measurement Uncertainty by MP Immobilization.** The parallel ILCs resulte

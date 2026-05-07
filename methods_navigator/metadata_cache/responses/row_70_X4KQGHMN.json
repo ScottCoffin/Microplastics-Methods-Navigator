@@ -1,0 +1,19 @@
+{
+  "particle_size_range": "500 nm to 5 μm",
+  "key_metrics_output": "particle quantification, particle sorting, sorting efficiency (>90%), multiplexed detection, particle populations",
+  "abstract": "Sensitive high-throughput analytic methodologies are needed to quantify microplastic particles (MPs) and thereby enable routine monitoring of MPs to ultimately secure animal, human, and environmental health. Here we report a multiplexed analytical and flow cytometry-based high-throughput methodology to quantify MPs in aqueous suspensions. The developed analytic MPs-quantification platform provides a sensitive as well as high-throughput detection of MPs that relies on the material binding peptide Liquid Chromatography Peak I (LCI) conjugated to Alexa-fluorophores (LCIF16C-AF488, LCIF16C-AF594, and LCIF16C-AF647). These fluorescent material-binding peptides (also termed plastibodies) were used to fluorescently label polystyrene MPs, whereas Alexa-fluorophores alone exhibited a negligible background fluorescence. Mixtures of polystyrene MPs that varied in size (500 nm to 5 μm) and varied in labeled populations were analyzed and sorted into distinct populations reaching sorting efficiencies >90 % for 1 × 106 sorted events. Finally, a multiplexed quantification and sorting with up to three plastibodies was successfully achieved to validate that the combination of plastibodies and flow cytometry is a powerful and generally applicable methodology for multiplexed analysis, quantification, and sorting of microplastic particles.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "polystyrene MPs that varied in size (500 nm to 5 μm)"
+    ],
+    "key_metrics_output": [
+      "multiplexed analytical and flow cytometry-based high-throughput methodology to quantify MPs",
+      "sorting efficiencies >90 % for 1 × 106 sorted events",
+      "multiplexed quantification and sorting with up to three plastibodies"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

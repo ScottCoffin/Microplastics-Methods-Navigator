@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "polymer identification, internal biota concentrations, relationships between external and internal MNP concentrations, species and regional differences, biomonitor utility",
+  "abstract": "A large body of literature exists demonstrating the exposure, uptake, and presence of micro- and nanoplastic particles (MNPs) within marine biota. Despite this, there remain challenges in synthesizing these studies in a consistent and reliable manner which can support technology, regulatory, and policy decision-making. The most significant challenge is a lack of guidance to assess and integrate study reliability (objective quality) and relevance (ability to answer a specific question). The purpose of this study is twofold – first, to critically review and apply existing frameworks to an expanded body of literature. Second, to propose meaningful criteria to further assess study utility as it applies to the use of biomonitoring data to reliably quantitate (1) relationships between external and internal (biota) concentrations of MNPs, (2) differences among organisms, species, and/or regions, and (3) utility of species as effective biomonitors for MNPs in the marine environment. A critical screening of 409 biomonitoring studies published between 2017 and 2022 was carried out using previously established reliability criteria. Studies included 1243 unique species and 1954 distinct research units. Two gateway criteria were proposed to assess the relevance and utility for biomonitoring and risk assessment: polymer identification and the inclusion of an environmental sample (water or sediment). In comparison to previously published systematic reviews, the general quality of study design is improving with time. Nonetheless, deficiencies impacting the relevance and reliability are still common. In total, only 8 % of all studies passed the screening and gateway criteria, and scored ≥50 % in reliability, suggesting that studies which provide sufficient rigor and data to support confident quantitative analysis and decision-making remain limited. A series of recommendations for journals, reviewers, and researchers are proposed to increase the utility and impact of future studies, particularly as they are applied within the context of ecological risk assessment and decision-making.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Two gateway criteria were proposed to assess the relevance and utility for biomonitoring and risk assessment: polymer identification and the inclusion of an environmental sample",
+      "biomonitoring data to reliably quantitate (1) relationships between external and internal (biota) concentrations of MNPs, (2) differences among organisms, species, and/or regions, and (3) utility of species as effective biomonitors"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

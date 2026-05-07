@@ -1,0 +1,19 @@
+{
+  "particle_size_range": "20 µm – 5 mm (particles); 20 µm – 15 mm (fibers)",
+  "key_metrics_output": "Particle count, relative standard deviation (RSD), polymer type identification, analytical precision/repeatability, Poisson counting error comparison",
+  "abstract": "The need for improved microplastic (MP) data accuracy has been widely reported, but MP precision issues have been investigated less thoroughly. This work demonstrates how initial and continuing assessments of a laboratory's analytical precision can be used for establishing laboratory repeatability for MP analyses. These precision estimates can be reported along with MP results to ensure their quality and compare them meaningfully to other data. Re-analyses of reference MP samples can be used to assess and compare precision between different laboratories. A multi-lab precision exercise was demonstrated using infrared (IR) standard test methods performed on reference samples consisting of low-concentration MP spikes in both clean water and wastewater matrices. Each lab repeated their IR analyses 7 times and calculated relative standard deviations (RSD) for each detected polymer type using a standardized template. All labs' MP methods yielded generally repeatable results, though RSDs were consistently higher for lower MP counts. The reported range of total MP counts per sample was 8–33 particles, and the observed RSDs were 0.1–0.6. These RSDs were the same or lower than the expected imprecision due to random (Poisson) counting error alone, suggesting that these automated methods did not contribute any additional variability, and had slightly better reproducibility than expected for independent recounts. The wastewater matrix exhibited numerous interfering particles but did not yield more variability than the clean water matrix. The low-count design is a worst case for precision but is appropriate for some real-world sample concentrations. In practice, labs could generate separate references for precision assessment at multiple MP ranges (e.g., high, medium, and low.) The RSDs obtained from this data can be used to generate QC charts, detect changes in analyst performance, compare to Poisson error to identify additional sources of imprecision, and determine target filtration and instrumental parameters for MP analyses.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "20 µm – 5 mm (particles); 20 µm – 15 mm (fibers) from existing metadata"
+    ],
+    "key_metrics_output": [
+      "calculated relative standard deviations (RSD) for each detected polymer type",
+      "The reported range of total MP counts per sample was 8–33 particles, and the observed RSDs were 0.1–0.6",
+      "RSDs obtained from this data can be used to generate QC charts, detect changes in analyst performance, compare to Poisson error"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

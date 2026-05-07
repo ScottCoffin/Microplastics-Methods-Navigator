@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "tyre and road wear particles (TRWP) generation and collection; particle mass; pavement and tyre type characterization",
+  "abstract": "ISO 22638:2024 specifies a laboratory method for generating and collecting tyre and road wear particles (TRWP) using a road simulator under conditions representative of actual driving. The standard provides guidance on road simulator systems, test pavement and tyres, vacuum collection systems, monitoring, and reporting. The method is designed to collect TRWP from known pavement and tyre types under realistic driving conditions while excluding road surface contaminants such as brake dust, exhaust, and grease. The method may not be applicable to studded tyres.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "specifies a method for the generation of tyre and road wear particles (TRWP)",
+      "Guidance is provided for the road simulator system, test pavement and tyres, vacuum collection system, monitoring and reporting"
+    ],
+    "abstract": [
+      "specifies a method for the generation of tyre and road wear particles (TRWP) in a road simulator laboratory that is representative of actual driving conditions",
+      "collection of TRWP from a known pavement and tyre type under realistic driving conditions without the inference of road surface contaminants",
+      "There is a possibility that this method is not relevant for studded tyres"
+    ]
+  }
+}

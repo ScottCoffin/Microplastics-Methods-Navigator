@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Ponti et al., 2025
+Year: 2025
+Full Title: Representative Test Material for Validation of Density Separation as Part of Microplastic Quantification in Drinking Water
+DOI/URL: https://doi.org/10.3390/polym17040526
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Representative Test Material for Validation of Density Separation as Part of Microplastic Quantification in Drinking Water
+DOI: 10.3390/polym17040526
+Date: 2025-00-00 2025
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+The evolving regulatory landscape for microplastics—including the European Union’s Drinking Water Directive—underscores the importance of addressing the analytics of emerging contaminants in water, ensuring public health protection, and fostering scientific advancements in environmental monitoring. This work aims to contribute to these advancements by sharing the strategy of test material selection and characterisation for the validation of sample treatment protocols. The article describes a PVC-based representative test material of industrial origin, its physicochemical characterisation, and its application in density separation procedure evaluation, compatibly with the European Commission’s recommendations for quantifying microplastics in water for human consumption. The work shares our protocol for the durable fluorescent labelling of microplastic particles and for the centrifugal density separation of microplastics from other particulate contaminants in drinking water samples. It reports density and viscosity values for the zinc chloride solutions used to feed the theoretical calculations and recovery values achieved with the presented density separation protocol.
+
+Context source: zotero_abstractNote
+
+Source context:
+The evolving regulatory landscape for microplastics—including the European Union’s Drinking Water Directive—underscores the importance of addressing the analytics of emerging contaminants in water, ensuring public health protection, and fostering scientific advancements in environmental monitoring. This work aims to contribute to these advancements by sharing the strategy of test material selection and characterisation for the validation of sample treatment protocols. The article describes a PVC-based representative test material of industrial origin, its physicochemical characterisation, and its application in density separation procedure evaluation, compatibly with the European Commission’s recommendations for quantifying microplastics in water for human consumption. The work shares our protocol for the durable fluorescent labelling of microplastic particles and for the centrifugal density separation of microplastics from other particulate contaminants in drinking water samples. It reports density and viscosity values for the zinc chloride solutions used to feed the theoretical calculations and recovery values achieved with the presented density separation protocol.

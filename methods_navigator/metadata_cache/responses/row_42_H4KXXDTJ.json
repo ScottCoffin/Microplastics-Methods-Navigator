@@ -1,0 +1,17 @@
+{
+  "scope": "Benthic invertebrate ecotoxicity testing; sediment-based chronic exposure; 16 species; risk assessment framework development",
+  "particle_size_range": null,
+  "key_metrics_output": "Chronic dose-effect relationships; adverse effect thresholds (EC10) in % sediment dry weight; species-specific endpoints (growth, reproduction, mortality); environmentally relevant microplastic (ERMP) standard material characterization",
+  "abstract": "Microplastics require a risk assessment framework that takes their multidimensionality into account while exclusively considering robust data. Therefore, effect tests should use a diverse, environmentally relevant microplastic (ERMP) standard material that adheres to high-quality requirements. In this study, we provide chronic dose−effect relationships and effect thresholds for 16 benthic species exposed to ERMP. The ERMP was created from plastic items collected from natural sources and cryogenically milled to represent the diversity of microplastics. The test design met 20 previously published quality assurance and quality control criteria. Adverse effect thresholds (EC10) were determined at ERMP concentrations of 0.11 ± 0.17% sediment dry weight (Gammarus pulex, growth), 0.49 ± 0.68% sediment dry weight (Lumbriculus variegatus, growth), and 1.90 ± 1.08% sediment dry weight (L. variegatus, reproduction). A positive effect of microplastics, such as decreased mortality, was observed for Cerastoderma edule (EC10 = 0.021 ± 0.027% sediment dry weight) and Sphaerium corneum (EC10 = 7.67 ± 3.41% sediment dry weight), respectively. Several of these laboratory-based single-species effect thresholds for ERMP occurred at concentrations lower than those found in the environment. For other species, no significant effects were detected up to an ERMP dose of 10% dry weight.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "chronic dose−effect relationships and effect thresholds for 16 benthic species",
+      "Adverse effect thresholds (EC10) were determined at ERMP concentrations of 0.11 ± 0.17% sediment dry weight (Gammarus pulex, growth), 0.49 ± 0.68% sediment dry weight (Lumbriculus variegatus, growth), and 1.90 ± 1.08% sediment dry weight (L. variegatus, reproduction)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

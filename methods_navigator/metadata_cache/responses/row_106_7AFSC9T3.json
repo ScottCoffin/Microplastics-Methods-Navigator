@@ -1,0 +1,20 @@
+{
+  "scope": "Arable soils and eroded sediments; microplastics transport and redistribution processes",
+  "particle_size_range": "125–150 μm, 250–300 μm, 425–500 μm",
+  "key_metrics_output": "Recovery rates (%), reliability, precision, F-scores, detectability retention, polymer type (PE, PLA), particle shape (spherical, irregular)",
+  "abstract": "Understanding microplastics' (MPs) transport from soils to aquatic ecosystems is challenging due to labor-intensive detection methods, especially in large-scale plot experiments analyzing surface runoff and soil erosion. To address this, we used fluorescent MPs as tracers and developed a cost-effective protocol to detect them in dry soils and eroded sediments. We analyzed spherical polyethylene (PE: 125–150 μm; 425–500 μm) and irregular polylactic acid (PLA: 125–150 μm; 250–300 μm). Sample assays were prepared primarily based on dry and wet sieving. Subsequent darkroom photography under 365 nm illumination, and thresholding and segmentation-based image analysis were done. The developed protocol demonstrates high reliability, precision, and F-scores of 88.7 % ± 2.9 %, 85.2 % ± 3.1 %, and 86.9 % ± 2.8 %. PE exhibited slightly higher recovery rates (85 % ± 5 %) than PLA (79 % ± 8 %). Particle size influenced recovery, with larger MPs achieving significantly higher recovery. Smaller particles showed slightly lower recovery under dry soil conditions, but their recovery improved under sediment conditions facilitated by wet sieving and ultrasonication. All fluorescent MPs retained >95 % detectability after three months of storage, highlighting marker temporal stability. Compared to existing methods, this protocol eliminates complex digestion steps, reduces costs, and ensures minimal contamination, providing a robust framework for MP transport studies. It offers potential for enhancement through advanced imaging and machine learning, enabling more efficient and accessible detection in environmental research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "spherical polyethylene (PE: 125–150 μm; 425–500 μm) and irregular polylactic acid (PLA: 125–150 μm; 250–300 μm)"
+    ],
+    "key_metrics_output": [
+      "F-scores of 88.7 % ± 2.9 %, 85.2 % ± 3.1 %, and 86.9 % ± 2.8 %",
+      "PE exhibited slightly higher recovery rates (85 % ± 5 %) than PLA (79 % ± 8 %)",
+      "All fluorescent MPs retained >95 % detectability after three months of storage"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

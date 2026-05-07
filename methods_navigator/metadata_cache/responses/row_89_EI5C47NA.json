@@ -1,0 +1,18 @@
+{
+  "particle_size_range": "0.02–0.25 mm (20–250 μm)",
+  "key_metrics_output": "MP particle count (items/kg), morphology, polymer type (PE, PP, PET, PAN), fiber identification via μ-FTIR",
+  "abstract": "Soil and sludge are important pools for microplastics (MPs), however standard separation methods for MPs from these pools are still missing. We tested the widely used methods for MPs extraction from water and sediment to six agriculture surface soils and three sewage sludges from municipal wastewater treatment plants and included an additional pre-digestion procedure with 30% H2O2 before floatation to remove soil or sludge organic matter (OM). Extraction efficiency of MPs were evaluated under different separation conditions, including floatation solution (NaCl, ZnCl2, and NaI), filtration membrane, and oxidation solution. Results showed that H2O2 pre-digestion significantly increased MPs extraction in soil and sludge, especially the samples with high OM contents, particularly sludge. Floatation solution with higher densities recovered more MPs. The extra released MPs were mainly small fibrous MPs, probably because they are easily retained by aggregates. Our results provide an feasible separation method for MPs in soil and sludge, i.e., pre-digestion with 30% H2O2 at 70 °C, floatation with NaI solution, filtration through nylon membrane, and further oxidation with 30% H2O2 + H2SO4 or 30% H2O2 at 70 °C. About 420–1290 MP items/kg soil were detected in soil samples, while much higher numbers (5553–13460 MP items/kg) were found in sludge samples. The dominate morphology of MPs was white fiber with a size of 0.02–0.25 mm, while the main types of MPs, identified by a micro-Fourier transformed infrared spectroscopy (μ-FTIR), were polyethylene and polypropylene in soil samples and polyethylene, polyethylene terephthalate, and polyacrylonitrile in sludge samples.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "The dominate morphology of MPs was white fiber with a size of 0.02–0.25 mm"
+    ],
+    "key_metrics_output": [
+      "About 420–1290 MP items/kg soil were detected in soil samples, while much higher numbers (5553–13460 MP items/kg) were found in sludge samples",
+      "The main types of MPs, identified by a micro-Fourier transformed infrared spectroscopy (μ-FTIR), were polyethylene and polypropylene in soil samples and polyethylene, polyethylene terephthalate, and polyacrylonitrile in sludge samples"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Petersen et al., 2022b
+        Year: 2022
+        Full Title: Potential Artifacts and Control Experiments in Toxicity Tests of Nanoplastic and Microplastic Particles
+        DOI/URL: https://doi.org/10.1021/acs.est.2c04929
+        Existing Particle Size Range: MP: 1 µm – 5 mm; NP: <1 µm
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Potential Artifacts and Control Experiments in Toxicity Tests of Nanoplastic and Microplastic Particles
+        DOI: 10.1021/acs.est.2c04929
+        Date: 2022-11-15 2022-11-15
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        This article is licensed under CC-BY-NC-ND 4.0 
+
+Critical Review 
+
+**==> picture [177 x 69] intentionally omitted <==**
+
+**==> picture [40 x 10] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+pubs.acs.org/est 
+
+## **Potential Artifacts and Control Experiments in Toxicity Tests of Nanoplastic and Microplastic Particles** 
+
+Elijah. J. Petersen,* Ana C. Barrios, Theodore B. Henry, Monique E. Johnson, Albert A. Koelmans, Antonio R. Montoro Bustos, Joanna Matheson, Matthias Roesslein, Jian Zhao, and Baoshan Xing 
+
+**Cite This:** _Environ. Sci. Technol._ 2022, 56, 15192−15206 **Read Online** 
+
+ACCESS Metrics & More Article Recommendations 
+
+**==> picture [379 x 136] intentionally omitted <==**
+
+ABSTRACT: To fully understand the potential ecological and human health risks from nanoplastics and microplastics (NMPs) in the environment, it is critical to make accurate measurements. Similar to past research on the toxicology of engineered nanomaterials, a broad range of measurement artifacts and biases are possible when testing their potential toxicity. For example, antimicrobials and surfactants may be present in commercially available NMP dispersions, and these compounds may account for toxicity observed instead of being caused by exposure to the NMP particles. Therefore, control measurements are needed to assess potential artifacts, and revisions to the protocol may be needed to eliminate or reduce the artifacts. In this paper, we comprehensively review and suggest a next generation of control experiments to identify measurement artifacts and biases that can occur while performing NMP toxicity experiments. This review covers the broad range of potential NMP toxicological experiments, such as _in vitro_ studies with a single cell type or complex 3-D tissue constructs, _in vivo_ mammalian studies, and ecotoxicity experiments testing pelagic, sediment, and soil organisms. Incorporation of these control experiments can reduce the likelihood of false positive and false negative results and more accurately elucidate the potential ecological and human health risks of NMPs. KEYWORDS: _microplastics, nanoplastics, measurement quality, artifacts, control experiments_ 
+
+## ■ **[INTRODUCTION]** 
+
+There has been increasing research interest in recent years on the potential adverse effects of nanoplastics (<1 _μ_ m) and microplastics (between 1 _μ_ m and 5 mm) (NMPs) on ecosystems and human health.[1][−][13] NMPs are often categorized as primary particles, when a consumer product is designed to contain such particles, or as secondary particles, when the particles are produced by the weathering and degradation of larger pieces of plastic.[14] It is critical to have accurate and reliable measurements to understand potential risks that NMPs pose.[2][,][3] 
+
+Many standardized toxicity methods are designed to test dissolved substances (e.g., organic chemicals or metals).[15][,][16] Guidance on the use of some of these methods has the deliberate aim to remove particles so that the dissolved fraction alone can be tested.[15][,][16] As such, modifications to test methods 
+
+have been required to evaluate particulate contaminants, such as engineered nanomaterials (ENMs) or NMPs.[15][,][17] It is broadly recognized that particulate substances may lead to artifacts in many assays and that control experiments are needed.[18][−][22] Moreover, there is also a possibility for misinterpretations if the toxicity is attributed to particulate contaminants, namely NMPs, and control measurements are not performed to determine whether the toxicity is from the particles themselves or substances released from them (i.e., 
+
+**==> picture [39 x 59] intentionally omitted <==**
+
+Received: July 8, 2022 Revised: September 29, 2022 Accepted: September 29, 2022 Published: October 14, 2022 
+
+https://doi.org/10.1021/acs.est.2c04929 _Environ. Sci. Technol._ 2022, 56, 15192−15206 
+
+© 2022 American Chemical Society 
+
+**15192** 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Critical Review 
+
+Table 1. Potential Biases in the Exposure Concentration for Tests with Different Exposure Systems 
+
+**==> picture [325 x 601] intentionally omitted <==**
+
+Figures created with biorender.com. 
+
+substances bound to or leached from the NMPs). While these issues have been previously discussed for ENMs,[18] a comprehensive evaluation of the relevant control experiments for NMPs for the broad range of ecological and human health 
+
+assays in use is not yet available (although quality criteria have been suggested for ecotoxicity testing[23] and human health related assays[24] ). While these previous reviews motivate screening criteria for the use of data in risk assessment in a 
+
+**15193** 
+
+https://doi.org/10.1021/acs.est.2c04929 _Environ. Sci. Technol._ 2022, 56, 15192−15206 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Critical Review 
+
+broad sense, this review goes much deeper by focusing solely on the dimension of the control experiments. In addition, many artifacts and biases observed during testing of ENMs have not yet been reported in the NMP literature. Borrowing these lessons learned from previous ENM studies can help raise the quality of future NMP studies. 
+
+It is critical to differentiate between operator mistakes, artifacts from testing particles, and uncertainty in experimental measurements. All measurements contain some amount of uncertainty that is often expressed through, for example, standard deviation values or 95% confidence intervals. This is distinct from operator mistakes in the performance of an assay (e.g., pipetting twice the intended volume), and from artifacts that arise from testing particles in assays originally designed to evaluate dissolved substances. For example, if a specific type of NMP has an absorbance signal similar to that being measured in a plate reader to assess a change in cell viability,[25] that could be a potential artifact in the assay that, if it is not accounted for, could cause a false positive or a false negative result. In this case, the false positive or false negative result would be an example of a misinterpretation. Misinterpretations can also occur when the mechanism of toxicity is misassigned such as when toxicity caused by impurities present in a mixture is attributed to plastic particles. This could then hinder comparisons among studies using particles that contain different impurities, or could result in misleading perceptions about the risks of plastic toxicity given that different impurities may be present in mixtures tested in laboratory studies versus actual products. Overall, it is critical that protocols include the right control measurements to ensure that operator mistakes and artifacts from the NMPs have been avoided. It should be noted that the magnitude of biases from operator mistakes and artifacts varies among experiments. Some biases (i.e., deviations from the value that would have been obtained in the absence of operator mistakes and artifacts) may be so small that they cannot be separated from typical experimental uncertainty, while others may be so large that they invalidate the measurement and could lead to a misinterpretation. 
+
+The aim of this paper is to help raise the quality of NMP research by systematically describing potential artifacts, biases, and misinterpretations that can occur during NMP research, as well as control measurements to identify, and, when possible, strategies to minimize them; no previous reviews have focused specifically on control experiments during NMP testing. While some of these topics are similar to those described for ENMs, there are also many unique issues for NMPs that require different considerations (e.g., the larger size of microplastics can limit ingestion by multicellular organisms). Issues can occur throughout NMP toxicity measurements from sample handling to performing the experiments. One overarching issue that is beyond the scope of this paper is evaluating the environmental relevance of NMPs used in toxicity experiments. There are several recent developments that allow us to better understand the distributions of the properties of environmentally relevant microplastic particles.[26][,][27] Aged and weathered particles of various shapes and polymer types can be mixed to approximate these characteristics as much as possible. Nevertheless, this is a complicated topic, especially for nanoplastics, which have rarely been isolated from environmental matrices.[28] A consensus has not yet been reached in the field regarding what particles to test, although some suggestions have recently been published for microplastics.[29] 
+
+## ■ **[SAMPLE][HANDLING]**[�] **[PROCUREMENT,][STORAGE,] AND DISPERSION PRIOR TO CELL OR ORGANISM EXPOSURE** 
+
+Depending upon the origin of the NMPs, potentially toxic impurities may be present. For example, antimicrobial compounds may be present for primary NMPs such as polystyrene (PS) spheres.[30][,][31] In the absence of antimicrobials, it is possible that biofilms may form on particles especially during long-term storage. This could change the NMPs’ surface and their toxicity. The presence of plasticizers is common among a range of plastic particles and may elicit toxicity depending upon the assay and released plasticizer concentration.[32][,][33] Heavy metals, such as lead, have also been shown to be released from NMPs and may have been used in the polymerization process.[34][,][35] Endotoxins may also become associated with the NMPs during sample preparation, such as the dilution in the test media, or during the production of secondary NMPs.[18] This is especially important when testing for inflammation-related end points.[18][,][36][,][37] It is important to monitor physicochemical changes (e.g., degradation, release of additives) to the NMPs and to the media for those NMPs stored in aqueous media during long-term storage because increased release of toxic compounds could occur. 
+
+Most studies conducted on the toxicity of NMPs use PS spheres that may contain surfactants in the formulation or have surface modifications to support their stability. For these particles, dispersion in the test media is relatively straightforward because only dilution is typically required. If sonication is used with these particles or with the secondary NMPs formed from the degradation of larger pieces of plastic, it is important to ensure that this process does not produce unintended changes to the particles (e.g., degradation of the NMPs themselves or of other substances that may be bound to the NMPs or freely available in the media). Extended probe sonication of carbon nanotubes has been shown to substantially degrade them,[38][,][39] and a similar effect would likely occur for NMPs. When testing secondary NMPs that contain a heterogeneous mixture of particles, consistently producing dispersions with similar concentrations and size distributions among batches may be challenging. Therefore, additional methodological development may be needed in this area, potentially including the use of natural organic matter to facilitate dispersion. 
+
+## ■ **[DOSIMETRY][ISSUES][DURING][TOXICITY][TESTS]** 
+
+One challenge in summarizing the potential for biases from dosing is the huge variability among model systems, which vary from simple 2-D adherent cell models to microphysiological devices and sediment exposures. Based on the exposure system, there are different potential sources of bias (Table 1). Nevertheless, the potential for adsorption to the sidewalls of test containers,[40][,][41] pipettes, or syringes would influence most exposure systems. If this is observed, using other items (e.g., a different kind of test container) can be evaluated to assess if losses decrease. It should be noted that these losses are also often observed in experiments with dissolved substances. In addition, care is required to minimize atmospheric deposition of plastic particles during the experiments, and the appropriate blanks should be used to evaluate this possibility.[23][,][42][,][43] 
+
+For exposure systems where exposure occurs to organisms with suspended particles in the test media (e.g., algae, fish), potential sources of bias include adsorption to sidewalls of the 
+
+**15194** 
+
+https://doi.org/10.1021/acs.est.2c04929 _Environ. Sci. Technol._ 2022, 56, 15192−15206 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Critical Review 
+
+||Test modifcations to avoid or minimize artifacts|Change to a diferent test method|||Change probe (e.g., MTS to MTT) or switch to a|similar assay (e.g., LDH release instead of MTS);|add control measurements to quantify amount of|interference; add steps to remove particles after|exposure period|Dialyze particles or wash them with alcohol to<br>remove dissolved substances|When cells are used as a food source, it may be<br>possible to add the cells and particles at diferent|times|Dialyze the particles prior to the experiment, change<br>the analytical technique, use a technique that can|diferentiate between freely available dye versus|dye bound to a particle|Increase the nutrient concentration to counteract<br>the loss of nutrients from sorption to the particles||Perform a density gradient centrifugation||||Modifcations are not needed since only the|interpretation of the toxicity mechanism is|changed||Perform steps to remove particles after the exposure|period||If biomarkers are also evaluated, it may be helpful to|include a NMP only control; it may also be|important to confrm uptake of the NMP|Perform steps to remove particles after the exposure<br>period|||||
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Potential control ex-<br>Examples of rele-|periments<br>Method to perform control experiment<br>Purpose(s)<br>vant _in vitro_ assays|Bioavailability control58<br>Perform the assay and then investigate the distribution<br>Some cell measurements require that the substance can enter the cells prior to<br>Ames assay|of the NMPs in the cells<br>causing toxic efects. If the NMPs do not enter the cells, there may be a false|negative result|Cell-free control25,64<br>Add the NMPs only to the test media and perform the<br>Assess if NMPs themselves, in the absence of cells, produce or inhibit a signal<br>All absorbance and|analytical method, or add the NMPs with the assay’s<br>(e.g., absorbance, fuorescence) or interact with assay reagents in a way that<br>fuorescence-|reagents and then perform the assay<br>could produce or inhibit the production of a signal similar to the assay<br>based assays;|measurement. This will identify interferences and potential false positive or<br>DCFDA assay|false negative results|Filtrate only con-<br>trol68,137<br>Filter the NMP suspension and then perform assay<br>with the fltrate<br>Assess potential toxicity of additives, contaminants, and leachates<br>All assays|Heteroagglomeration<br>control50,68<br>Incubate the NMP suspension with cells and observe if<br>heteroagglomeration occurs<br>Evaluate if heteroagglomeration could occur between cells designed as a food<br>source for larger organisms and the NMPs. This could lead to indirect<br>All assays with cells<br>as a food source|toxicity from starvation|Fluorescent dye con-<br>trol104−106<br>Quantify if dye has been leached from a fuorescently<br>labeled NMP during a bioaccumulation experiment,<br>Assess if freely available fuorescent dye has been released from the NMP and<br>could confound bioaccumulation experiments<br>All bioaccumula-<br>tion experiments|and assess the bioaccumulation of the freely available|dye in separate experiments|Nutrient depletion con-<br>trol138,139<br>Incubate NMPs with assay medium for the duration of<br>the assay, remove NMPs such as by using fltration,<br>Assess the extent to which adsorption of media constituents by NMPs could<br>have an indirect toxicity efect on end points<br>All assays with nu-<br>trients in the test|and perform assay with the medium<br>media|Rinsing control111−113<br>Add the NMPs to the test species and then<br>Simple rinsing procedures may be insufcient to separate NMPs from small<br>Bioaccumulation|immediately perform the rinsing procedure<br>organisms or cells<br>experiments with|_C. elegans_ or|algae|Shading control86−88<br>Quantity the amount of decreased light transmission in<br>Assess if the toxicity mechanism is from decreased light transmission due to<br>Algae toxicity ex-|wells with algae and NMPs, or use a special testing<br>shading<br>periments|set up that has the light pass through wells with only|NMPs and then to the wells with only algae|Positive spiked control<br>Perform the assay exposure period with the positive<br>Assess if the presence of NMPs may inhibit/enhance the signal of cells that<br>Flow cytometry as-|(inhibition/enhance-<br>ment control)20,22,91<br>control. Then, add the NMPs to the positive control<br>wells and perform subsequent analysis steps<br>would otherwise have a positive response in the assay<br>says, absorbance<br>and fuorescence|assays|Vector efect control117<br>Test the bioaccumulation of a contaminant in the<br>By comparing the bioaccumulation of a contaminant in the presence and<br>All co-contaminant|absence of the NMP<br>absence of the NMP, it is possible to assess if there is a vector efect<br>bioaccumulation|studies|Zero-hour con-<br>trol64,92,93<br>Add the NMPs at a certain step of the assay and then<br>immediately perform the remainder of the assay<br>without modifcation; this difers from the typical<br>approach in that there is no exposure period after the<br>NMPs are added<br>Test if NMPs:<br>Comet assay,<br>DCFDA stress<br>assay<br>Cause a toxicological efect (e.g., DNA damage) during processing<br>steps after conclusion of exposure period by evaluating if efects could<br>be observed during the processing steps after the assay is fnished<br>Would interact with test reagents or biomolecules and cause a false|negative or false positive result|May cause a change in the cell stability for suspended cells through|heteroagglomeration|This table has been modifed and edited with permission from ref 140. _a_Abbreviation: DCFDA, 2′,7′-dichlorodihydrofuorescein diacetate.|
+
+
+
+**15195** 
+
+https://doi.org/10.1021/acs.est.2c04929 _Environ. Sci. Technol._ 2022, 56, 15192−15206 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Critical Review 
+
+**==> picture [479 x 266] intentionally omitted <==**
+
+Figure 1. Schematic illustration on indirect interferences/misinterpretations caused by adsorption, leaching/desorption, and attachment processes of NMPs. Initially, all of the particles, cells, and molecules are evenly dispersed (A). Then, processes, such as adsorption, occur that influence the distribution of the different elements (B). This could lead to artifacts and biases (C). 
+
+**==> picture [301 x 245] intentionally omitted <==**
+
+Figure 2. Illustration of different potential artifacts during NMP testing. The NMPs are shown to span a range of sizes and shapes as would be expected in the environment. Created with Biorender.com. 
+
+container,[44] flotation on the air−water interface,[45][,][46] and sedimentation of the particles out of the suspension after homo- or heteroagglomeration.[47][,][48] Sedimentation can potentially be accelerated in the presence of test organisms by agglomeration during passage through the organism or by attachment to suspended cells (e.g., algae, bacteria).[40][,][49][,][50] For other types of exposure systems, the size of the particles can impact function of the exposure test method. For example, 
+
+microplastic particles could potentially clog the channels in microphysiological devices, which often have cross-channels smaller than 1 mm, or flow-through systems with aerosolized particles.[51] In addition, some types of plastic particles (e.g., poly(vinyl alcohol)) can form an amorphous mass after dissolution, a process that can hinder making a uniform concentration in many test systems.[52] The density of the plastic particles can also impact exposure for some test 
+
+**15196** 
+
+https://doi.org/10.1021/acs.est.2c04929 _Environ. Sci. Technol._ 2022, 56, 15192−15206 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Critical Review 
+
+systems: for example, for less dense particles or particle − agglomerates, only a minimal concentration (6 19% in a study with 60 nm PS spheres)[25] may reach 2-D adherent cells at the bottom of the wells in a microplate. This can be estimated using dosimetry models, such as the _in vitro_ sedimentation, diffusion, and dosimetry model (ISDD).[53][,][54] Some plastic particles have a sufficiently low density that they are buoyant in many test media (e.g., expanded PS floats) and this can impact the ability to generate homogeneous exposure preparations for ecotoxicity testing (to some extent mitigated by extensive stirring). This would impact most exposure systems, except for soil or sediment exposures. One challenge in exposures with soils and sediments is that extraction and quantification methods are still under development.[55][,][56] This can hinder evaluating the uniformity of the sample throughout the test container after mixing and ensuring that the test concentration remains constant during the exposure period. 
+
+## ■ **[POTENTIAL][ARTIFACTS][AND][CONTROL] EXPERIMENTS DURING TOXICITY TESTS** 
+
+Potential control experiments for NMP toxicity studies are listed in Table 2 including their purpose, their methodology, and strategies to minimize artifacts or biases. It should be noted though that some of the issues being tested in these experiments (e.g., nutrient depletion, shading) could occur at environmental hot spots with elevated plastic concentrations or for specific organisms (e.g., corals). While some of these control experiments are similar to those for ENMs, there are also many important nuances that are specific to NMP toxicity testing. In any aqueous test media, NMPs will undergo adsorption, leaching/desorption, and attachment processes (Figure 1). All these processes could lead to unexpected artifacts and misinterpretations in toxicity assessments if they are not fully understood (Figure 1C). A graphical depiction of selected artifacts and biases is provided in Figure 2. In this section, a set of proposed controls are discussed below to elucidate their importance in toxicity testing to identify potential artifacts. 
+
+**Bioavailability Control.** Substance bioavailability, defined as the extent to which the substance enters a tissue and reacts with biological molecules,[57] is an important aspect of toxicological tests with NMPs. Some assays require that the toxicants are able to reach a particular location (e.g., the nucleus) to assess certain end points. For example, measuring genotoxicity using the Ames test requires that a particle can travel across the bacterial cell membrane and interact with the nucleus. However, this is not guaranteed to occur and was not observed in studies on ENMs.[58] In these cases, there is the potential for false negative results. A similar issue is relevant for studies with multicellular organisms. It is important for the NMPs to be distributed to the organ of interest (e.g., the brain)[59] to cause a toxicological effect there, unless there is a reasonable alternative mechanistic explanation. Given that there is uncertainty in the ability for NMPs to cross epithelial barriers for some organisms as is discussed in more detail in the Potential Artifacts and Control Experiments during Bioaccumulation Tests section, measurements need to be made to confirm that the NMPs can be transported to the tissue of interest. Moreover, the large size of some microplastics (up to 1 mm) limits their ingestion by many species (maximum ingestible size for selected species ranges from 36 to 400 _μ_ m).[60] Currently, it is not possible to advocate for a single analytical method to be used for this purpose, because 
+
+the maturity of quantitation methods varies substantially between microplastic and nanoplastic methods, with microplastic methods being substantially more advanced.[61][,][62] Nonetheless, NMPs can potentially induce negative effects in tissues independent of whether they are ingested or internalized, for example if the NMPs accumulate on and occlude tissue surfaces and impact photosynthesis.[63] 
+
+**Cell-Free Control.** This control measurement is relevant for cell-based (e.g., mammalian, bacteria, algae) toxicity experiments. Many cell-based toxicity experiments assess changes to the cells using probes with absorbance or fluorescence at particular wavelengths. However, the NMPs tested may also have a signal at the same wavelengths and th

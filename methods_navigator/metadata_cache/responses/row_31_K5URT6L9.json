@@ -1,0 +1,28 @@
+{
+  "particle_size_range": "20–5,000 μm",
+  "key_metrics_output": "Particle counts, polymer type identification, particle size, match score (spectral quality), minimum detectable amount (MDA), microplastic concentration per liter",
+  "abstract": "Standard operating procedures for extraction and measurement of microplastic particles in treated drinking water using sieving, vacuum filtration, visual microscopy for particle counting, and Raman spectroscopy for chemical identification. The method reliably detects microplastic particles ≥20 μm in size, with a maximum size of 5,000 μm. Samples are separated into size fractions (500 μm, 212 μm, 20 μm), and a representative subset of particles is chemically identified using Raman spectroscopy. The proportion of particles confirmed as microplastics is applied to total microscopic counts to estimate microplastic concentration per liter. Minimum detectable amounts range from 47–88 particles depending on size fraction.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "greater than 20 µm in size",
+      "maximum size of 5,000 µm",
+      "The lowest particle size reliably detected by this method is 20 µm, with a maximum size of 5,000 µm"
+    ],
+    "key_metrics_output": [
+      "particles are counted",
+      "chemically identified individually using Raman spectroscopy",
+      "Each subsampled particle is measured and photographed",
+      "spectra are matched using relevant spectral reference libraries",
+      "MDA values for microplastics using this method...ranges from 47 to 88 particles",
+      "estimate of microplastic particles per liter"
+    ],
+    "abstract": [
+      "This method extracts microplastic particles from drinking water samples...using sieving and vacuum filtration",
+      "particles are collected onto filters...prior to microscopic and spectroscopic analysis",
+      "Processed samples are viewed using stereomicroscopy and particles are counted",
+      "chemically identified individually using Raman spectroscopy",
+      "This method can reliably detect microplastic particles down to 20 µm in size"
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Athey & Erdle, 2021
+        Year: 2021
+        Full Title: Are We Underestimating Anthropogenic Microfiber Pollution? A Critical Review of Occurrence, Methods, and Reporting
+        DOI/URL: https://doi.org/10/gnbjqq
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Are We Underestimating Anthropogenic Microfiber Pollution? A Critical Review of Occurrence, Methods, and Reporting
+        DOI: 
+        Date: 2021-09-02 2021-09-02
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Environmental Toxicology and Chemistry—Volume 00, Number 00—pp. 1–16, 2021 Received: 30 March 2021 | Revised: 17 May 2021 | Accepted: 14 July 2021 
+
+1 
+
+## Critical Review 
+
+## Are We Underestimating Anthropogenic Microfiber Pollution? A Critical Review of Occurrence, Methods, and Reporting 
+
+Samantha N. Athey[a][,] *[,1] and Lisa M. Erdle[b,c][,1] 
+
+> aDepartment of Earth Sciences, University of Toronto, Toronto, Ontario, Canada 
+
+> bDepartment of Ecology and Evolutionary Biology, University of Toronto, Toronto, Ontario, Canada 
+
+> cThe 5 Gyres Institute, Santa Monica, California, USA 
+
+Abstract: Anthropogenic microfibers, a ubiquitous environmental contaminant, can be categorized as synthetic, semisynthetic, or natural according to material of origin and production process. Although natural fibers, such as cotton and wool, originated from natural sources, they often contain chemical additives, including colorants (e.g., dyes, pigments) and finishes (e.g., flame retardants, antimicrobial agents, ultraviolet light stabilizers). These additives are applied to textiles during production to give textiles desired properties like enhanced durability. Anthropogenically modified “natural” and semisynthetic fibers are sufficiently persistent to undergo long‐range transport and accumulate in the environment, where they are ingested by biota. Although most research and communication on microfibers have focused on the sources, pathways, and effects of synthetic fibers in the environment, natural and semisynthetic fibers warrant further investigation because of their abundance. Because of the challenges in enumerating and identifying natural and semisynthetic fibers in environmental samples and the focus on microplastic or synthetic fibers, reports of anthropogenic microfibers in the environment may be underestimated. In this critical review, we 1) report that natural and semisynthetic microfibers are abundant, 2) highlight that some environmental compartments are relatively understudied in the microfiber literature, and 3) report which methods are suitable to enumerate and characterize the full suite of anthropogenic microfibers. We then use these findings to 4) recommend best practices to assess the abundance of anthropogenic microfibers in the environment, including natural and semisynthetic fibers. By focusing exclusively on synthetic fibers in the environment, we are neglecting a major component of anthropogenic microfiber pollution. Environ Toxicol Chem 2021;00:1–16. © 2021 SETAC 
+
+Keywords: Contaminants; Microplastics; Marine plastics; Microfibers; Textile fibers; Microplastic fibers 
+
+## INTRODUCTION 
+
+Microfibers are a widespread environmental contaminant, which originate from textiles, (e.g., clothing) and personal care products, such as wet wipes, cigarette filters, and other fibrous materials. Textiles shed fibers throughout their life cycle, from production (Chan et al., in press; Zhou et al., 2020) to normal use (De Falco et al., 2020), including during washing (Athey et al., 2020; Cai et al., 2020; De Falco et al., 2020; Napper & Thompson, 2016) and drying (Kapp & Miller, 2020; Pirc et al., 2016). Textiles then continue to release fibers after disposal (Gavigan et al., 2020; Sun et al., 2021). Although textiles are currently the best‐studied source of microfibers to the 
+
+This article includes online‐only Supporting Information. 
+
+> 1These authors contributed equally to this work. * Address correspondence to sam.athey@mail.utoronto.ca Published online 21 July 2021 in Wiley Online Library (wileyonlinelibrary.com). 
+
+DOI: 10.1002/etc.5173 
+
+environment (Carr, 2017; Gavigan et al., 2020), recent studies show personal care products (e.g., wet wipes, face masks), carpeting, and cigarette filters also release microfibers (Alipour et al., in press; Belzagui et al., 2021; Fadare & Okoffo, 2020; Ó Briain et al., 2020; Saliu et al., 2021; Shruti et al., 2020; Soltani et al., 2021). Preliminary estimates suggest that microfiber inputs from other sources, collectively, may rival those of textiles (see Belzagui et al., 2021). 
+
+The widespread contamination of microfibers in the environment is well documented and has fostered much research in recent years. Many studies, across environmental compartments, have reported microfibers as the most common anthropogenic microparticles in samples, including wastewater (Gies et al., 2018; Grbic´ et al., 2020), stormwater runoff (F. Liu et al., 2019; Piñon‐Colin et al., 2020), rivers (Avio et al., 2020; Warrack et al., 2017), lakes (Grbic´ et al., 2020; Wang et al., 2017; Whitaker et al., 2019), estuaries (Bessa et al., 2018; Bikker et al., 2020; Naidoo et al., 2020), marine waters (Barrows et al., 2018; Suaria et al., 2020), and wildlife (Athey et al., 2020; Kühn 
+
+wileyonlinelibrary.com/ETC 
+
+© 2021 SETAC 
+
+2 
+
+Environmental Toxicology and Chemistry, 2021;00:1–16—S.N. Athey and L.M. Erdle 
+
+et al., 2020; Waddell et al., 2020; Xu et al., 2020). Recent studies have found that microfibers from urbanized environments may undergo long‐range atmospheric transport (Cai et al., 2017; Dris et al., 2016) to farmland (Klein & Fischer, 2019) and remote regions including the Arctic (Athey et al., 2020; Huntington et al., 2020; Ross et al., 2021) and mountain summits (Allen et al., 2019; Napper et al., 2020). Because of their prevalence in the environment and documented ingestion by a variety of biota (Avio et al., 2020; Lourenço et al., 2017; Savoca et al., 2019; Waddell et al., 2020), microfibers are a growing concern globally. 
+
+Studies report a diverse mixture of microfibers in the environment, which contain a variety of materials and chemicals. Approximately 60% of textiles are produced from synthetic materials (e.g., nylon, polyester; Carr, 2017). Semisynthetic fibers (sometimes called “artificial fibers”) include regenerated cellulose fibers used in clothing (e.g., rayon, modal, lyocell; De Falco et al., 2019), personal care products (e.g., viscose; Ó Briain et al., 2020), and cigarette filters (e.g., cellulose acetate; Belzagui et al., 2021). Although derived from natural materials, semisynthetic fibers undergo chemical processing and are extruded into filaments, similar to synthetic fibers. Natural fibers, on the other hand, are not extruded and retain morphological characteristics of their source material. Natural fibers have been used for thousands of years, and today they are commonly used in textile production (De Falco et al., 2019; Zambrano, Pawlak, Daystar, Ankeny, Goller, & Venditti, 2020), as well as the production of personal care products, such as wet wipes (Ó Briain et al., 2020). Because the sources of natural fibers vary, they are often classified depending on the material of origin as cellulosic (plant‐based; e.g., cotton), proteinaceous (animal‐based; e.g., wool), or mineral (e.g., asbestos; Figure 1). Despite being derived from natural materials, “natural” fibers often contain a suite of chemical additives, dyes, and finishing agents added during production. Chemical additives can include toxic compounds, such as bisphenols, azo dyes, polyfluorinated alkyl compounds (PFAS), and formaldehyde (Lacasse & Baumann, 2004; Ladewig et al., 2015; Schellenberger et al., 2019; Sørensen et al., 2020; Xue et al., 2017; Zambrano, Pawlak, Daystar, Ankeny, & Venditti, 2020). Exposure to leachates from both synthetic and “natural” textiles has been shown to cause adverse effects in aquatic organisms (Belzagui et al., 2021; Carney Almroth 
+
+et al., 2021). Further, the ingestion of microfibers may exacerbate the adverse effects of these toxic chemicals (Belzagui et al., 2021). 
+
+Laboratory studies show that synthetic microfibers have a range of toxicological effects (Kutralam‐Muniasamy et al., 2020), from no effects to effects at the cellular level (Qiao et al., 2019; Song et al., 2019) to organism‐level effects (reduced energy reserves and/or reduced feeding; Au et al., 2015; Cole et al., 2019; Jemec et al., 2016; Selonen et al., 2020; Setyorini et al., 2021; Watts et al., 2015; Welden & Cowie, 2016). Despite the documentation of ingested semisynthetic and natural fibers in a variety of biota (Athey et al., 2020; Bessa et al., 2018; Savoca et al., 2019), most microfiber toxicity studies have investigated the effects of synthetic microfibers. The effects of anthropogenically modified natural and semisynthetic fibers remain understudied. Thus, it is still generally unknown whether the toxicological effects of nonsynthetic microfibers differ from those of synthetic fibers. However, two recent studies show that nonsynthetic and synthetic microfibers cause similar impacts in freshwater and marine invertebrates (Kim et al., 2021; Mateos‐Cárdenas et al., 2021). 
+
+Research on the fate of synthetic microfibers overshadows research on natural and semisynthetic microfibers. However, many recent studies report semisynthetic and anthropogenically modified natural fibers in a range of environmental compartments (Grbic´ et al., 2020; Sanchez‐Vidal et al., 2018; Stanton, Johnson, Nathanail, MacNaughtan, et al., 2019; Suaria et al., 2020), including biota and human tissues (Athey et al., 2020; Pauly et al., 1998). Natural and semisynthetic microfibers have often been excluded from studies with the assumption that nonplastic fibers are readily biodegradable and/or harmless in the environment (Ladewig et al., 2015; Re, 2019; Wiesheu et al., 2016). Although natural and semisynthetic fibers can break down more quickly than synthetic polymers, these fibers can persist from months to decades in aquatic systems depending on the microfiber type and environmental factors (Belzagui et al., 2021; Puls et al., 2011; Turner et al., 2019; Zambrano, Pawlak, Daystar, Ankeny, Goller, Venditti, 2020). Anthropogenic modification (e.g., dyes, treatments) may also prolong fiber persistence in the environment (Park et al., 2004; Sait et al., 2021; Sørensen et al., 2020). Given their widespread occurrence, persistence in the environment, and potential impacts on biota, anthropogenically modified natural 
+
+**==> picture [505 x 131] intentionally omitted <==**
+
+FIGURE 1: Overview of anthropogenic microfibers. 
+
+wileyonlinelibrary.com/ETC 
+
+© 2021 SETAC 
+
+3 
+
+Microfiber occurrence, methods, and reporting—Environmental Toxicology and Chemistry, 2021;00:1–16 
+
+and semisynthetic fibers warrant further attention from the microfiber research community. 
+
+However, studying natural and semisynthetic microfibers in environmental matrices offers a unique set of challenges compared to synthetic fibers. Because the methods used to enumerate and characterize microfibers in the environment were originally designed for the recovery of synthetic materials, not all methods are suitable for natural and semisynthetic fibers. For example, certain chemical digestants used to isolate microfibers from organic‐rich environmental matrices may result in the partial or complete degradation of nonsynthetic fibers (Dehaut et al., 2016; Treilles et al., 2020). While techniques that identify the material or chemical composition of microfibers (e.g., Raman and Fourier transform infrared [FTIR] spectroscopy) are commonly used, spectroscopic analysis of natural and semisynthetic microfibers can be more challenging compared to that of synthetic fibers. For example, one particular challenge is the low spectral signal intensities of natural materials, which make nonsynthetic fibers more prone to dye interference and reduced hit quality index values (Lenz et al., 2015; Zhu et al., 2019). 
+
+Given the historic focus on synthetic fibers and the challenges of studying natural and semisynthetic fibers, the goal of the present study was to determine if current methods for detecting and reporting anthropogenic microfibers in environmental compartments comprehensively capture and document the occurrence of semisynthetic and natural microfibers. Our objectives were to 1) identify the frequency and relative abundance of natural and semisynthetic microfibers reported in the literature compared to synthetic fibers, 2) identify environmental compartments and geographic regions that are relatively understudied in the microfiber literature, and 3) assess methods employed for capturing, enumerating, and characterizing the full suite of anthropogenic microfibers. Finally, we 4) recommend best practices to assess the 
+
+abundance of anthropogenic microfibers in the environment, including natural and semisynthetic fibers. 
+
+## METHODS 
+
+A systematic literature review was conducted of citations documenting microfibers in the environment published online from 2011 (the earliest publication identified) through October 2020. Our search included keyword searches with the following terms: “microfibers” AND “microplastic”; “anthropogenic fibers”; “microplastic” AND “fibers”; “microplastic” AND “threads”; “plastic microfibers”; “microplastic” AND “lines”; “microplastic fibers”; “synthetic fibers” AND “microplastic”; “textile fibers” AND “microplastic” using Web of Science (Core Collection database), SCOPUS, and Google Scholar (Figure 2). The protocol follows the guidelines set by the Preferred Reporting Items for Systematic Reviews and Meta‐Analyses protocols (Moher et al., 2015). Although there is no standard definition for microfibers in an environmental context, most studies refer to textile fibers as “microfibers,” “fibers,” and “threads,” while “lines” and “filaments” typically refer to the remnants of fishing gear (Avio et al., 2020; Murray & Cowie, 2011). Because of the lack of standardized terminology and range of sources in the literature, we included “lines,” “fibers,” and “threads” in our analyses. Most studies define microfibers in terms of their length, with an upper limit of either 1000 µm (Browne et al., 2011) or 5000 µm (Dris et al., 2016; Hartline et al., 2016; Kosuth et al., 2018). Inconsistencies in size classification stem from debate over the formal size bins defining microplastic pollution (Hartmann et al., 2019). Given the ongoing debate, we did not define an upper size limit. For all citations identified through keyword searching, the title and abstract were further screened to exclude those deemed irrelevant to the present study. For the citations deemed 
+
+**==> picture [33 x 202] intentionally omitted <==**
+
+**==> picture [260 x 196] intentionally omitted <==**
+
+FIGURE 2: Preferred Reporting Items for Systematic Reviews and Meta‐Analyses (PRISMA) diagram. The diagram presents the results and screening from the original literature searches and the return of these searches. 
+
+wileyonlinelibrary.com/ETC 
+
+© 2021 SETAC 
+
+4 
+
+Environmental Toxicology and Chemistry, 2021;00:1–16—S.N. Athey and L.M. Erdle 
+
+relevant during the first screening, the full text was reviewed in the second screening (Figure 2). We included only citations presenting original research published in peer‐reviewed journals that document the abundance of microfibers in environmental compartments. Reviews, toxicity testing and laboratory studies, as well as studies documenting microfiber abundance in products sold for human consumption, aqua‐cultured biota, and human tissues were not included. Further, because of our interest in natural and semisynthetic fibers, we only included citations that confirmed the material composition of fibers using confident identification methods, including Raman spectroscopy, FTIR spectroscopy, and pyrolysis gas chromatography‐mass spectrometry (pyr‐GC‐MS). 
+
+We investigated microfiber abundance in the following environmental compartments: terrestrial soils, marine and freshwater sediments, indoor and outdoor air, indoor and outdoor dust, ice and snow, marine and fresh subsurface and surface waters, wastewater‐treatment plant influent and effluent, sewage sludge and biosolids, as well as marine, freshwater, and terrestrial biota. When there were multiple environmental compartments examined for a single publication (e.g., the authors assessed microfibers in biota and sediment), we included each environmental compartment as an independent data point (or row in our database). Hereafter, we refer to each data point as a separate environmental “study,” and we refer to each whole published work as a “publication.” For example, Athey et al. (2020) investigated the occurrence of microfibers in freshwater sediments, marine sediments, freshwater biota, and wastewater; therefore, this publication encompassed four rows and was treated as four studies. 
+
+For each study, the following information was extracted (when available): the geographic location where samples were collected and the year(s) of collection, type of environmental media investigated, methods used for sample collection and enumeration, intermediate screening steps applied (if applicable), technique for the identification of the material composition of fibers, proportion of fibers present, and type(s) and proportions of materials identified (including synthetic, natural, and semisynthetic). These details were recorded in Microsoft Excel (Ver 16.44). In some cases, unit conversion using reported values was required to compare mean particle abundances (including microfibers) across studies. Descriptive statistics were completed in R (Ver 3.6.1). 
+
+## RESULTS 
+
+## Study selection and trends in the literature 
+
+A total of 1913 peer‐reviewed publications were identified through keyword searches using the Web of Science (20%) and SCOPUS (79%) databases and Google Scholar (1%; Figure 2), after removing duplicate entries. Next, 1275 citations were dismissed in the first screening based on the title and abstract. These citations either 1) were not in a peer‐reviewed journal, 2) did not present original research, or 3) did not meet inclusion criteria. During the second screening of the full text, 315 citations were excluded for the following reasons: 1) insufficient microfiber data (i.e., quantitative or spectral information on 
+
+microfibers not included), 2) insufficient explanation of method, 3) microfibers were excluded from analysis (e.g., because of concern over airborne microfiber contamination of environmental samples; Besseling et al., 2015; Bosshart et al., 2020; Compa et al., 2020), or 4) material composition did not include a reliable technique such as Raman/FTIR spectroscopy or pyr‐GC‐MS. Over half of the citations (n = 191) included in our second screening were excluded because material composition was not confidently identified, which in part reflects a shift in expectations in the literature over time because material composition is common in current studies. A total of 308 publications were included in this systematic review (10% of papers originally identified). Because nearly one‐third of the publications (n = 97) that we included in our final analyses assessed more than one environmental compartment and each compartment was treated as an independent data point or study (see Methods), we included a total of 465 data points or studies in our analysis. 
+
+Browne et al. (2011) published the first study on microfibers in environmental samples with material composition analysis (e.g., spectroscopy). Their study was also the first to apply the term “microfiber” to contaminant fibers found in environmental samples (Browne et al., 2011). While studies dating back to the early 2000s documented the presence of microfibers in environmental compartments (Habib et al., 1998; Zubris & Richards, 2005), they were not included because they did not analyze the material composition of the fibers. Since 2011, monitoring and reporting microfiber contamination in the environment has grown (see Supporting Information, Figure S1). The increase in the number of studies was observed both for studies that include natural and/or semisynthetic microfibers and for studies that only present synthetic microfibers. 
+
+Generally, the number of studies reporting nonsynthetic fibers has increased over time, with a sharp increase around 2017 (Supporting Information, Figure S1). Early studies tended to report synthetic or semisynthetic microfibers. Recent studies have more frequently reported natural and semisynthetic microfibers. Ladewig et al. (2015) highlighted the potential for natural fibers as vectors for toxic compounds in aquatic ecosystems and the need to study natural fibers in the environment, which may have initiated a shift in the literature. 
+
+## Occurrence of natural and semisynthetic microfibers 
+
+Most studies (58%) report finding natural and/or semisynthetic fibers in environmental samples. The earliest reports of natural and semisynthetic microfibers in environmental compartments were of regenerated cellulose fibers (e.g., rayon) found in sea ice collected in the Arctic Ocean in 2005 and 2010 (Obbard et al., 2014), as well the gastrointestinal tracts of fish collected in 2010 in the English Channel (Lusher et al., 2013). Rayon fibers were also dominant in deep‐sea sediment samples collected between 2001 and 2012 in the Atlantic Ocean, the Indian Ocean, and the Mediterranean Sea (Woodall et al., 2014). Rayon (sometimes called “cellophane,” 
+
+wileyonlinelibrary.com/ETC 
+
+© 2021 SETAC 
+
+5 
+
+Microfiber occurrence, methods, and reporting—Environmental Toxicology and Chemistry, 2021;00:1–16 
+
+“modal,” “lyocell,” or “viscose”) is made of semisynthetic fibers used in the production of clothing, cigarette filters, and personal care products (Belzagui et al., 2021; Bredereck & Hermanutz, 2008; Fadare & Okoffo, 2020; Ó Briain et al., 2020; Zambrano et al., 2019). Despite being derived from natural materials, rayon fibers have been classified as “microplastic” by some authors because of the addition of chemical additives (Peng et al., 2020; Qu et al., 2018). 
+
+Of those studies that reported the presence of natural/ semisynthetic fibers, 43% (n = 116) reported the proportion of fibers that were natural/semisynthetic. The remaining studies (n = 225) generally described finding natural/semisynthetic microfibers but did not indicate the abundance of these fibers in relation to synthetic fibers. Approximately half (46%) of studies that report the proportion and/or abundance of natural/ semisynthetic fibers found nonsynthetic fibers to be more abundant that synthetic fibers. The most common nonsynthetic materials were cellulosic fibers (e.g., cotton and rayon) and wool fibers. Six studies purposely stated that they excluded cellulosic and other natural materials from their analyses. Some studies included cellophane and rayon fibers as synthetic materials but excluded natural fibers such as cotton and wool (Deng et al., 2020; Neves et al., 2015; Wright et al., 2020). 
+
+## Understudied environmental compartments and geographic regions 
+
+Natural and semisynthetic microfibers have been reported across the world, including in most of the locations where 
+
+synthetic fibers have been reported. The 465 studies investigated in the present study were distributed between 61 different countries and seven major oceans and seas. Although the two most heavily studied continents were Asia (40%; 187 studies) and Europe (31%; 144 studies), anthropogenic microfibers, including natural and semisynthetic fibers, have been reported in every continent and ocean. As a single country, China has produced the most studies investigating the occurrence of microfibers with 121 studies, followed by England with 24 studies. Most studies in China have focused on marine and freshwater environments with samples from major rivers (e.g., Yangtze River, Qin River, Pearl River) and seas (e.g., Bohai Sea, Yellow Sea, South China Sea). We found only three studies investigating anthropogenic microfibers on the African continent, making it the most understudied continent on the planet (followed by Antarctica with four studies). Coordinated efforts and networks between research groups can be important to support microplastics and microfiber research in understudied regions and could address some of the data gaps highlighted ‐ in the present review (Nel et al., 2021; Pan African Micro[Nano] Plastic Research Network, n.d.; Waller et al., 2017). 
+
+We found that the indoor environment is relatively understudied in the microfiber literature compared to the outdoor environment. Only four studies documenting anthropogenic microfibers in indoor compartments (e.g., air and dust) were identified, which is nearly two orders of magnitude lower than the number of studies on microfiber contamination in outdoor environmental compartments (Figure 3). Research on the indoor environment is relatively new (first published in 2016), 
+
+**==> picture [505 x 284] intentionally omitted <==**
+
+FIGURE 3: Number of studies that report only synthetic fibers (dashed outline) and number of studies that report natural and/or semisynthetic microfibers (solid outline) conducted on different environmental compartments. 
+
+wileyonlinelibrary.com/ETC 
+
+© 2021 SETAC 
+
+6 
+
+Environmental Toxicology and Chemistry, 2021;00:1–16—S.N. Athey a

@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "15 nm to micron-sized",
+  "key_metrics_output": "particle number concentration, surface area concentration, cellular dose, diffusional and gravitational particle delivery rates, particle potency",
+  "abstract": "The rapid growth in the use of in vitro methods for nanoparticle toxicity assessment has proceeded with limited consideration of the unique kinetics of these materials in solution. Particles in general and nanoparticles specifically, diffuse, settle, and agglomerate in cell culture media as a function of systemic and particle properties: media density and viscosity and particle size, shape, charge and density, for example. Cellular dose then is also a function of these factors as they determine the rate of transport of nanoparticles to cells in culture. Here we develop and apply the principles of dosimetry in vitro and outline an approach for simulation of nanoparticle particokinetics in cell culture systems. We illustrate that where equal mass concentrations (μg/ml) imply equal doses for dissimilar materials, the corresponding particle number or surface area concentration doses differ by orders of magnitude. More importantly, when rates of diffusional and gravitational particle delivery are accounted for, trends and magnitude of the cellular dose as a function of particle size and density differ significantly from those implied by “concentration” doses. For example, 15-nm silver nanoparticles appear ∼4000 times more potent than micron-sized cadmium oxide particles on a cm2/ml media basis, but are only ∼50 times more potent when differences in delivery to adherent cells are considered. We conclude that simple surrogates of dose can cause significant misinterpretation of response and uptake data for nanoparticles in vitro. Incorporating particokinetics and principles of dosimetry would significantly improve the basis for nanoparticle toxicity assessment, increasing the predictive power and scalability of such assays.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "15-nm silver nanoparticles",
+      "micron-sized cadmium oxide particles"
+    ],
+    "key_metrics_output": [
+      "particle number or surface area concentration doses",
+      "rates of diffusional and gravitational particle delivery",
+      "cellular dose as a function of particle size and density",
+      "mass concentrations (μg/ml)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

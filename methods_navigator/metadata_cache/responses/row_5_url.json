@@ -1,0 +1,18 @@
+{
+  "particle_size_range": "≥10 μm",
+  "key_metrics_output": "particle count, polymer type identification, particle size distribution, morphology classification",
+  "abstract": null,
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [
+      "The document title indicates focus on synthetic particles in marine waters and sediments with recommendations for quantification"
+    ],
+    "key_metrics_output": [
+      "Laboratory methods for analysis of microplastics",
+      "quantifying synthetic particles in waters and sediments"
+    ],
+    "abstract": [
+      "No formal abstract visible in provided context; Zotero abstractNote field is empty"
+    ]
+  }
+}

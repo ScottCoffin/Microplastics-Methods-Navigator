@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Wright et al., 2021
+Year: 2021
+Full Title: Development of screening criteria for microplastic particles in air and atmospheric deposition: critical review and applicability towards assessing human exposure
+DOI/URL: https://doi.org/10.1186/s43591-021-00006-y
+Existing Particle Size Range: ≤5 mm (or ≤15 mm fibers)
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Development of screening criteria for microplastic particles in air and atmospheric deposition: critical review and applicability towards assessing human exposure
+DOI: 10.1186/s43591-021-00006-y
+Date: 2021-12-00 12/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Over the last several years there has been an increase in studies reporting the presence of microplastic particles (MPs) in both indoor and outdoor air. Data reported reflect a variety of different types of air samples, which have helped to demonstrate the ubiquity of MPs in the atmosphere and their potential contribution to atmospheric particulate matter (PM). The relative quality of the data reporting on MPs in air has not been evaluated, but represents an important step towards improving our overall understanding of the human health implications in relation to inhalation exposure to MPs. Adopting recent approaches that have been proposed to assess the quality of data for those studies reporting concentrations in biota and water samples, we identify a suite of criteria used to screen studies reporting MPs in air for the purposes of evaluating their usefulness in assessing human exposure. Here we review and summarize data from 27 studies reporting MPs in various types of air samples and evaluate each of the studies against 11 separate criteria representing four main categories (sampling; contamination mitigation; sample purification / handling; characterization and application towards assessing human exposure). On average, studies scored 48.6% (range 18.2–81.8%) of the maximum score. Only one study received a positive score for all criteria, implying that there remains a need for future studies to consider strengthening implementation and reporting of QA/QC protocol. The most urgent areas requiring attention relate to the need for studies to avoid and verify background contamination and to strengthen the quantification of method recovery efficiencies. The majority of studies report data for particulates > 10 μm. Due to the associations between exposure to particles < 10 μm and human health effects, we recommend that prioritization efforts that develop standard protocols, based on existing air sampling methods capable of characterizing MPs < 10 μm are progressed.
+
+Context source: zotero_abstractNote
+
+Source context:
+Over the last several years there has been an increase in studies reporting the presence of microplastic particles (MPs) in both indoor and outdoor air. Data reported reflect a variety of different types of air samples, which have helped to demonstrate the ubiquity of MPs in the atmosphere and their potential contribution to atmospheric particulate matter (PM). The relative quality of the data reporting on MPs in air has not been evaluated, but represents an important step towards improving our overall understanding of the human health implications in relation to inhalation exposure to MPs. Adopting recent approaches that have been proposed to assess the quality of data for those studies reporting concentrations in biota and water samples, we identify a suite of criteria used to screen studies reporting MPs in air for the purposes of evaluating their usefulness in assessing human exposure. Here we review and summarize data from 27 studies reporting MPs in various types of air samples and evaluate each of the studies against 11 separate criteria representing four main categories (sampling; contamination mitigation; sample purification / handling; characterization and application towards assessing human exposure). On average, studies scored 48.6% (range 18.2–81.8%) of the maximum score. Only one study received a positive score for all criteria, implying that there remains a need for future studies to consider strengthening implementation and reporting of QA/QC protocol. The most urgent areas requiring attention relate to the need for studies to avoid and verify background contamination and to strengthen the quantification of method recovery efficiencies. The majority of studies report data for particulates > 10 μm. Due to the associations between exposure to particles < 10 μm and human health effects, we recommend that prioritization efforts that develop standard protocols, based on existing air sampling methods capable of characterizing MPs < 10 μm are progressed.

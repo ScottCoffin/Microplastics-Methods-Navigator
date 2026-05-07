@@ -1,0 +1,174 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Cowger et al., 2025
+        Year: 2025
+        Full Title: Open Specy 1.0: Automated (Hyper)spectroscopy for Microplastics
+        DOI/URL: https://doi.org/10.1021/acs.analchem.5c00962
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Open Specy 1.0: Automated (Hyper)spectroscopy for Microplastics
+        DOI: 10.1021/acs.analchem.5c00962
+        Date: 2025-08-19 2025-08-19
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        pubs.acs.org/ac 
+
+Article 
+
+**==> picture [177 x 69] intentionally omitted <==**
+
+## **Open Specy 1.0: Automated (Hyper)spectroscopy for Microplastics** 
+
+Win Cowger,* Aleksandra Karapetrova, Clarissa Lincoln, Ali Chamas, Hannah Sherrod, Nicholas Leong, Katherine S. Lasdin, Christine Knauss, Vesna Teofilovic, Monica M. Arienzo, Zacharias Steinmetz, Sebastian Primpke, Lindsay Darjany, Clare Murphy-Hagan, Shelly Moore, Charles Moore, Gwen Lattin, Andrew Gray, Rachel Kozloski, Jeremiah Bryksa, and Benjamin Maurer 
+
+**Cite This:** _Anal. Chem._ 2025, 97, 17345−17356 **Read Online** 
+
+ACCESS Metrics & More Article Recommendations * **sı** Supporting Information 
+
+ABSTRACT: Microplastic spectral analysis is one of the most timeconsuming processes in studying microplastic pollution, often requiring days per sample. Researchers are transitioning to automated batch and hyperspectral image analysis techniques to enhance efficiency. Open Specy, initially aimed at manual single-spectrum analysis, has now integrated automated methods. This updated version, Open Specy 1.0, introduces several new features, including two algorithms for automated processing (smoothing and particle compression), an extensive library containing over 40,000 open-source Raman and FTIR spectra, and two machine learning classifiers (logistic regression and k medoids) developed from this library. Furthermore, it includes a revamped user interface, an R package, and a 
+
+**==> picture [201 x 109] intentionally omitted <==**
+
+benchmark data set for testing future advancements in automated techniques. Researchers evaluated various configurations for hyperspectral smoothing, particle identification, compression, and splitting, to achieve combined recovery rates between 50 and 150% particle counts, identities, and sizes with a coefficient of variation (CV) of less than 40% (the accredited standard). Mean absorbance times the standard deviation provided a consistent particle identification. Hyperspectral smoothing led to a 96% combined recovery rate and reduced variability (CV = 38%) compared to the 86% recovery (CV = 83%) of nonsmoothed controls. Additionally, compressing spectra for particles was significantly faster (>3×) and showed similar accuracy but with reduced variability than processing each pixel individually. Key challenges persist in automating spectral analysis, particularly in refining particle splitting algorithms, and improving identification routines to minimize false positives and negatives. New methods in sample preparation for better stabilization and dispersion of particles could overcome some of these issues. 
+
+## ■ **[INTRODUCTION]** 
+
+Microplastics, tiny plastic fragments less than 5 mm in size,[1] are pervasive in oceans,[2] rivers,[3] soil,[4] and even the air we breathe.[5] They threaten marine life, ecosystems, and potentially human health.[6][,][7] Microplastic’s persistence, slow degradation, and the high rate of plastic production and pollution make them accumulate in the environment.[8] To adequately address microplastic pollution, the world needs accurate automated techniques for microplastic analysis. 
+
+Traditional methods of detecting and analyzing microplastics are resource-intensive, time-consuming, and prone to human error.[9] At the time of writing, most laboratories use manual approaches combining visual microscopy (accurate for particles >200 _μ_ m)[10] for preliminary identification, followed by manual particle-by-particle spectroscopic (typically Raman or FTIR) analysis of a subsample of particles (∼100),[11] which requires days of effort per sample.[12] Collecting more spectral data using this approach is not feasible for most studies; however, some groups are overcoming this barrier using plate readers.[9] Automated spectroscopy offers a robust solution by providing accurate and reproducible analysis,[9][,][13][,][14] ultimately 
+
+contributing to more effective environmental protection and public health measures. 
+
+Hyperspectral imaging is an automated spectroscopy technique often used to assess particles smaller than 500 _μ_ m in size.[15] Midinfrared (FTIR) (covered here) and Raman hyperspectral imaging are common hyperspectral imaging modes for microplastics, while SWIR, NIR, visible, and fluorescence imaging have also been explored to a lesser extent.[16][−][19] This approach collects many (typically >10,000) spatially referenced spectra of samples at small spatial scales (<50 _μ_ m) through “imaging” a predefined area.[20] Collection of the hyperspectral image is faster (∼30 min total) for the instrument operator than manual particle-by-particle spectroscopic analysis. Even though an image could take many hours 
+
+**==> picture [39 x 59] intentionally omitted <==**
+
+Received: February 13, 2025 Revised: July 29, 2025 Accepted: August 5, 2025 Published: August 11, 2025 
+
+https://doi.org/10.1021/acs.analchem.5c00962 _Anal. Chem._ 2025, 97, 17345−17356 
+
+© 2025 American Chemical Society 
+
+**17345** 
+
+**Analytical Chemistry** 
+
+Article 
+
+**==> picture [56 x 8] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+pubs.acs.org/ac<br>**----- End of picture text -----**<br>
+
+
+**==> picture [349 x 307] intentionally omitted <==**
+
+Figure 1. Workflow diagram of automated analysis components and variables. Batch analysis deals with more than one spectrum at a time. Domain alignment involves converting collected spectra into the same transformation as the reference library. Spectral identification involves comparing reference and unknown spectra to identify them and typically involves correlation between paired absorbance values shown here. Thresholds of the identification match values can be used to differentiate confident from unconfident identifications; shown here is the use of a 0.7 threshold to relabel spectra <0.7 as unknown. Top matches can be pooled to determine an identification. Shown here is a simple pooling where the percent of the class labels in the top 3 matches is used to identify the spectra instead of the top correlation threshold alone. Hyperspectral analysis is a type of batch analysis where the spectra also have a spatial coordinate system. During hyperspectral smoothing, spectra from nearby cells are averaged to reduce noise. Particle locations can be identified using a thresholding of basic spectral statistics. All spectra for individual particles can be compressed to one to get a single representative spectrum for each particle. Merged particles can be split based on their classes. Particle regions can be measured by their shape and size. 
+
+to collect, the instrument operator only needs to set up the sample and the machine automates the rest. However, once hyperspectral data are collected, traditional spectral analysis would involve manual preprocessing and spectral library similarity search at a rate of one spectrum or particle at a time. This is unattainable for hyperspectral images and timeconsuming, up to several days, for typical particle-by-particle analysis with 100 spectra per sample. Hyperspectral image analysis is very data-intensive (>1 GB per sample) and often requires several hours of computation and high-performance computers to run.[14] No manual or automated analysis procedure is perfect, and all will have biases in identification, particle counts, or sizes.[21][,][22] There is a need to create benchmarks for testing automated analysis methods to inform quantitative (accuracy and speed) improvements in this field. 
+
+Open Specy is an extensively documented[23] open-source platform designed to facilitate microplastics’ identification and spectroscopic analysis. Open Specy v0.8.2 was first released in 2021 and primarily focused on manual spectral analysis for individual Raman and FTIR spectra. It provides researchers and scientists with comprehensive tools for managing, sharing, and interpreting spectroscopic data through an R package[24] and a Web interface (www.openspecy.org). Open Specy enables users to differentiate natural and synthetic materials 
+
+with high accuracy and efficiency using cutting-edge analysis approaches. Since 2021, its user base has grown substantially and is one of the most widely used spectroscopy software products in the microplastic research field. While the first version of Open Specy provided a large advance, it did not have automated spectroscopy models for batch or hyperspectral image analysis. In 2023, Open Specy v1.0.0 was released with this support, and the underlying scientific advancements are presented here. 
+
+Open Specy is currently used by one of the few Environmental Lab Accreditation Program accredited microplastics laboratories in the world (Moore Institute for Plastic Pollution Research) and is part of their accredited workflow. An automated method is necessary for accredited laboratories to scale and decrease costs while providing data to meet the increasing demand from clients to analyze microplastic samples. The Environmental Lab Accreditation Program has recovery limits (50−150% and CV <40%) that all methods must meet to be accredited.[25] These limits apply to the count recovery from spiked samples, where a known number of microplastic particles are added to samples. Furthering this objective, the authors aimed to develop an automated method that could reach the recovery limits for particle count, material type, and particle size simultaneously. 
+
+**17346** 
+
+https://doi.org/10.1021/acs.analchem.5c00962 _Anal. Chem._ 2025, 97, 17345−17356 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+In this work, we advance automated spectral analysis for microplastic research, milestones of which have already been published in field research.[26][−][28] We describe the major updates in Open Specy v1.0, the theories behind them, knowledge gaps, and known limitations. We create a new benchmark hyperspectral image data set and use it to validate the Open Specy v1.0 automated analysis procedure within accredited recovery limits. Hyperspectral smoothing, particle identification, and particle compression techniques have not been previously explored for microplastic research nor have the medoid or multinomial logistic regression models. Lastly, we compare these updates to other automated analysis software and discuss future work needed to advance automated spectroscopy. 
+
+## ■ **[METHODS]** 
+
+**Theory.** Since varying spectral measurement or automation parameters can result in different conclusions, the microplastic research field is cautiously optimistic about automated methods.[29] For example, Moses et al.[21] and Corradini et al.[30] separately found that automated analysis models could result in orders of magnitude of differences in particle counts and polymer distributions depending on the automation parameters. However, automated methods are highly reproducible (5% CV) across devices when sample preparation and automation parameters have been standardized.[31] 
+
+Automated analysis begins by aligning unknown spectra to the known reference model that will be used to identify it by material type (e.g., polymeric, organic, inorganic/mineral)[20][,][32] (Table S1). For example, if using a first derivative transformed spectral library for spectral identification, then collected spectra must undergo the same transformation before being assessed for similarity. If the spectral ranges of the unknown and known spectra do not match, one should insert the mean intensity values to replace the missing data. This artificial lengthening of the spectra is necessary to assess confidence in identifications because the mean value will weigh down the scaled and centered confidence metrics (e.g., correlation coefficient), giving preference to identifications with greater amounts of observed information. Traditional spectral library search is a “machine learning” algorithm, typically using a _k_ -nearest neighbors algorithm with a Pearson correlation coefficient as the similarity metric. The number ( _k_ ) of top similar matches to assess for identification is a critical parameter, often set to 1 (the most similar match). If _k_ exceeds 1, the top matches and/ or their weights must be compiled to determine the identity (Table S3: _K_ Weighting). A match threshold is used (or set to the minimum) to differentiate known from unknown identifications and reduce false positives. Match thresholds should be empirically decided.[27] Any identifications below the match threshold must be relabeled (commonly as “unknown”)[33] (Table S3: Label Unknown), or removed (Table S3: Remove Unknown), which indicates that they need additional lines of evidence (e.g., Visual, Raman, PyGCMS) to determine the material identity. 
+
+Batch analysis allows for simultaneous analysis of many spectra and can be applied to hyperspectral images or compilations of point-and-shoot measurements. When hyperspectral images are the subject of batch analysis, researchers typically want to derive information about the particles’ count, size, morphology, and polymer types (Figure 1). A series of spatial analysis techniques, such as smoothing, identification, particle compression, splitting, and sizing, can be used to 
+
+generate this information. Smoothing averages spectra in each pixel using spectra in adjacent pixels. Identification uses spectral statistics (e.g., mean intensity or standard deviation) to infer which pixels belong to the background and which belong to the particles (Figures 1 and S1) and can either precede[13] or follow spectral identification.[14] The benefit of identifying particle locations before spectral identification is that it reduces the number of spectra requiring identification (the most computationally demanding step) to only pixels within particle boundaries.[13] Additionally, particle spectra can be compressed to one spectrum per particle by averaging intensity values for each particle’s spectra, reducing the computational burden required to identify and process to just the number of particles instead of the number of spectra. There is an inherent assumption with hyperspectral analysis that adjoining pixels of the same particle-classified regions are of the same particle (Figure S1). In many cases, regions identified as particles are several particles that are touching each other (particle 4 in Figure S1). These regions can be split by identifying each pixel in the particle and reattributing particle identities to isolated regions with unique material types unless the material type of the particles is identical.[14] Lastly, identified particles can be given a unique identifier and characterized by shape and size using standard image analysis techniques, such as calculations made from the convex hull (points at the edge of the particle) (Figure 1). 
+
+**Open Specy Development.** _Database Development._ Open Specy v1.0 includes an expanded open-access library from the previously published version (11 databases and 5,416 spectra). The updated library now contains 34 databases and over 40,000 spectra (∼20,000 for FTIR and Raman). In this round of database development, we collated a spectral data set by extracting data from a diverse array of plastic, nonplastic, virgin, and environmental spectra from peer-reviewed studies, online open data repositories, and personal communication from Open Specy community members (including Horiba, Thermo Fisher Scientific, Jennifer Lynch, Dora Mehn, Claudia Cella, Aline Carvalho, and National Renewable Energy Laboratory).[9][,][27][,][33][−][52] Data were combined into a single format by conducting intensity unit conversions to make all spectra in absorbance units and linear interpolation to ensure the same 6 wavenumber resolution, which was shown to be ideal for FTIR identification.[53] Metadata from all libraries were extracted and normalized, resulting in 140 unique metadata fields. This data set will be referred to as the “raw” data set and serves as the basis for all subsequent classes and transformed data sets. 
+
+_Harmonizing Microplastic-Relevant Classes._ Researchers often have unique naming conventions for material classes. Unstandardized categories can cause classification errors in machine learning and should be set to what spectroscopy can confidently differentiate[54] which may not be identical to standard material classifications like CAS numbers. We merged all 11,000 unique unstandardized material descriptors to a standardized system of 34 unique classes, similar to Primpke et al.[37] (Table S1). A significant distinction between this classification system and Primpke et al.[37] is that we lumped all organic and mineral material types. This is convenient because the presence of organics and minerals can be reduced by digestion[55] or density separation,[56] respectively. Therefore, quickly identifying their abundances in extracted samples can be useful. 
+
+_Derivative Data Set._ Next, we processed the raw data set to develop an identification and modeling ready data set. The 
+
+**17347** 
+
+https://doi.org/10.1021/acs.analchem.5c00962 _Anal. Chem._ 2025, 97, 17345−17356 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+derivative library was created by taking the first derivative using the Savitzky and Golay[57] filter (90 wavenumber window) and its absolute value. This approach amplifies the importance of sharp peaks (likely signal) and minimizes the importance of small peaks (likely baseline). It also performs a moderate smoothing to the spectra (which reduces noise) and makes spectra appear similar to absorbance spectra with peaks pointing upward to aid in visual inspection. The CO2 region from 2200 to 2420 cm[−][1] was removed from further analysis because it was inconsistent and can confound identification due to its strong signal. Automated reclassification of any vague descriptors (e.g., other plastic or nonplastic material) was done by running a correlation-based _k_ -nearest neighbors to find the most similar nonvague spectrum and reassigning the class to that. Outliers and poor quality spectra were identified using _k_ - nearest neighbors to determine the most similar other spectrum in the data set. If the material class of the nearest neighbor disagreed about the class of the material, the spectrum was removed from the data set. This library was used as the basis for the training data in developing the K medoid and Logistic Regression models described below. _K Medoid._ The derivative data set is quite large (>40,000 spectra) and it is likely that some of the spectra are redundant, do not provide additional information, and slow down the computation time of the analysis without improving accuracy. Spectrum representatives for each class of spectra within the derivative data set were identified using a spectral implementation of K medoid cluster analysis.[58] The algorithm identified data points (spectra) that reduce the average distance from other data points in the same category to identify reliable representatives for each group. The distance metric in the K medoids algorithm can be any metric; here, we used the inverse of Pearson correlation, i.e., 1-correlation. For each material-class-organization-spectrum type (e.g., MineralRUFF-Raman, Polyolefins-Thermo-FTIR) combination, we created a distance matrix by correlating all spectra in the group. Next, the PAM K medoid algorithm in the cluster library[59] was used to identify up to 50 spectra that best represented the group. The end result removed redundant spectra and outliers and reduced the size of very large data sets but maintained any classes smaller than 50 spectra. The result reduced the full derivative data set by 90% to just the spectra identified by the K medoids search to 4,000 spectra (2,000 for FTIR and Raman each). Since correlation based search operates on generating arrays of the size of the reference library times size of the experimental data set, this reduction could theoretically lead to exponential increases in speed and memory efficiency. Using the medoid library to identify the original derivative data set resulted in 96% identification accuracy, demonstrating high goodness of fit to the full data set. We tested this in the benchmark analysis as Medoid (Table S3). 
+
+_Logistic Regression._ We created a multinomial logistic regression for material identification using the glmnet package.[60] The K medoid library was used to train the regression because it more evenly weighted the material classes than the derivative library. Each wavenumber was attributed to a variable in the model. We fitted the multinomial without a _y_ - intercept (for easy interpretation of model weights), standardized the variables, weighed the classes based on their frequency in the training data set, and allowed for variable deletion through ridge regression. An alpha weight of 0.1 was used for the ridge regression because spectral intensities are 
+
+highly correlated, and it ensured fewer variables would be removed. Models were trained for the full FTIR and Raman data set and individual models on Raman and FTIR separately, which performed better. The FTIR model fitness to the classes in the full FTIR derivative data set was 96%. We tested this in the benchmark analysis as Model (Table S3). 
+
+_Hyperspectral Smoothing._ Hyperspectral smoothing can confer a truer signal at each location by incorporating spectra from nearby locations.[61] Any unevenness of a sample surface will generate noise due to differences in the focus on the particles and the reflective surface,[62] which we theorized could be corrected with hyperspectral smoothing. We used a Gaussian smoothing algorithm from the mmand package,[61] where the smoothing parameter (sigma) was the standard deviation of the smoothing window to weigh the neighboring cell spectra on the result. We tested variation in the impact of the sigma parameter by varying it to 0.5, 1, and 2 (Table S3). 
+
+_Particle Identification._ We predicted that we could identify the particle locations in hyperspectral images using thresholding of spectral statistics. The ideal absorption law states that particle thickness will correlate to the absorbance intensity of the particle spectra, with larger particles having higher absorbance intensity in general.[62] Hyperspectral pixels of particles should have a larger mean absorbance intensity than the background reflective material. Although deviations from the ideal absorption are significant for real signals and high absorbance can happen without particles during hyperspectral imaging,[62] these high-absorbance signals typically produce flat lines with a low standard deviation because they are flat. However, high noise signals can also have a high standard deviation with a lower absorbance than particle spectra. We expected that the absorbance standard deviation, mean, or a combination of the two would produce a reliable metric that could be used to differentiate particles from the background. To combine the mean and standard deviation metrics, we multiplied them by each other, which has the effect of squaring the influence of the mean and adding the influence of variability, as the mean is also used to calculate the standard deviation (Figure S2). We tested the impact of the metric and threshold values on quantified particle recoveries. 
+
+_Compressing._ After identifying particle locations, each particle can have many spectra attributed to it (e.g., particle 2 in Figure S1 would have >6 spectra). This presents an important question: which spectrum should one choose to identify the particle material type? If every spectrum is identified for the particle, false material identification can happen, especially near the edges of particles, where mixtures of background and particle spectra are present, creating severe distortions. Absorbance saturation may occur near the center of the particle, which causes poor identification accuracy, especially for very large particles. Even points between the center and the edge may not be in good focus due to their surface geometry (e.g., they are angled facing away from the detector). We hypothesized that averaging all the spectra for each particle to a single spectrum (Figure 1) could produce a representative spectrum that was accurately identifiable for that particle. Additionally, we hypothesized that this would improve computational time by reducing the number of correlations to check (the most computationally expensive step) to the number of particles instead of the number of spectra and increase accuracy by avoiding spurious false pixel identifications due to poor signal. We tested the Mean, Median, and Geometric Mean for their ability to compress particle spectra 
+
+**17348** 
+
+https://doi.org/10.1021/acs.analchem.5c00962 _Anal. Chem._ 2025, 97, 17345−17356 
+
+**Analytical Chemistry** 
+
+**pubs.acs.org/ac** 
+
+Article 
+
+accurately (Table S3). Alternatively, all spectra could be identified individually, and their identities could be pooled to d

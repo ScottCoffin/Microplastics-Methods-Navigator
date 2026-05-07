@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: GESAMP, 2015
+        Year: 2015
+        Full Title: Sources fate and effects of microplastics in the marine environment: a global assessment (Part 1)
+        DOI/URL: http://www.gesamp.org/publications/reports-and-studies-no-90
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Plastics have become indispensable in many areas of modern life, used for clothing, storage, transportation, packaging, construction and a host of consumer goods. One of plastics greatest properties, its durability, is also one of the main reasons that plastics present a threat to the marine environment. To understand this issue better, GESAMP was tasked to conduct a global assessment, based on published information, of the sources, fate and effects of microplastics in the marine environment. GESAMP Reports & Studies No.90 presents the full assessment carried out by GESAMP, through Working Group 40.
+
+Sources, fate and effects of microplastics in the marine environment (Part 1) | GESAMP GESAMP Publications You are now on: Home Publications Sources, fate and effects of mic… Sources, fate and effects of microplastics in the marine environment (Part 1) Plastics have become indispensable in many areas of modern life, used for clothing, storage, transportation, packaging, construction and a host of consumer goods. One of plastics greatest properties, its durability, is also one of the main reasons that plastics present a threat to the marine environment. To understand this issue better, GESAMP was tasked to conduct a global assessment, based on published information, of the sources, fate and effects of microplastics in the marine environment. GESAMP Reports & Studies No.90 presents the full assessment carried out by GESAMP, through Working Group 40. 2015 #90 (98p.) Author(s): GESAMP Publisher(s): IMO Journal Series GESAMP Reports and Studies Downloads Sources, fate and effects of microplastics in the marine environment - Part 1 (English) (5,744 kB) Back to Search Related Publications Sources, Fate and Effects of Microplastics in the Marine Environment (Part 2) Proceedings of the GESAMP Workshop on Microplastic particles View all Publications 50th Anniversary About History Objectives Members Executive Committee Our Work Work Programme Working Groups Task Teams Scoping Activities Publications Meetings News Contact Sign up to our latest news & activities Sign Up Terms & Conditions Privacy Policy Disclaimer Copyright © 2017 - 2026 International Maritime Organization (IMO). All rights reserved. International Maritime Organization (IMO) 4 Albert Embankment London SE1 7SR United Kingdom Tel: +44 (0) 20 7735 7611 Fax: +44 (0) 20 7735 7611

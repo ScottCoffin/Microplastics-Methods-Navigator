@@ -1,0 +1,23 @@
+{
+  "particle_size_range": "1 μm – 5 mm (microplastics); <1 μm (nanoplastics)",
+  "key_metrics_output": "Toxicity endpoints, measurement artifacts, control experiment protocols, bioavailability, cell-free assay interference, filtrate toxicity, heteroagglomeration, fluorescent dye leaching, nutrient depletion, shading effects, positive control inhibition/enhancement, vector effects, zero-hour controls",
+  "abstract": "This critical review systematically describes potential artifacts, biases, and misinterpretations that can occur during nanoplastic and microplastic (NMP) toxicity testing, and proposes control experiments to identify and minimize them. The paper covers in vitro studies (single cell types and 3-D tissue constructs), in vivo mammalian studies, and ecotoxicity experiments with pelagic, sediment, and soil organisms. Key issues addressed include sample handling and impurities (antimicrobials, surfactants, heavy metals, endotoxins), dosimetry biases (adsorption to container walls, flotation, sedimentation, heteroagglomeration), and assay-specific artifacts (optical interference, nutrient depletion, bioavailability limitations). The review provides comprehensive control experiment protocols to reduce false positive and false negative results and improve accuracy of NMP risk assessment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "nanoplastics (<1 μm) and microplastics (between 1 μm and 5 mm)",
+      "MP: 1 µm – 5 mm; NP: <1 µm"
+    ],
+    "key_metrics_output": [
+      "Table 2 including their purpose, their methodology, and strategies to minimize artifacts or biases",
+      "potential control experiments for NMP toxicity studies are listed in Table 2",
+      "Potential control experiments for NMP toxicity studies...bioavailability control, cell-free control, filtrate only control, heteroagglomeration control, fluorescent dye control, nutrient depletion control, rinsing control, shading control, positive spiked control, vector effect control, zero-hour control"
+    ],
+    "abstract": [
+      "To fully understand the potential ecological and human health risks from nanoplastics and microplastics (NMPs) in the environment, it is critical to make accurate measurements",
+      "control measurements are needed to assess potential artifacts, and revisions to the protocol may be needed to eliminate or reduce the artifacts",
+      "comprehensively review and suggest a next generation of control experiments to identify measurement artifacts and biases",
+      "Incorporation of these control experiments can reduce the likelihood of false positive and false negative results and more accurately elucidate the potential ecological and human health risks of NMPs"
+    ]
+  }
+}

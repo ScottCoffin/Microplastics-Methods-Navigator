@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Wright et al., 2024
+Year: 2024
+Full Title: Micro- and nanoplastics concepts for particle and fibre toxicologists
+DOI/URL: https://doi.org/10.1186/s12989-024-00581-x
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Micro- and nanoplastics concepts for particle and fibre toxicologists
+DOI: 10.1186/s12989-024-00581-x
+Date: 2024-04-02 2024-04-02
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Abstract
+    Micro- and nanoplastic particles (MNP) are omnipresent as either pollution or intentionally used in consumer products, released from packaging or even food. There is an exponential increase in the production of plastics. With the realization of bioaccumulation in humans, toxicity research is quickly expanding. There is a rapid increase in the number of papers published on the potential implications of exposure to MNP which necessitates a call for quality criteria to be applied when doing the research. At present, most papers on MNP describe the effects of commercially available polymer (mostly polystyrene) beads that are typically not the MNP of greatest concern. This is not a fault of the research community, necessarily, as the MNPs to which humans are exposed are usually not available in the quantities needed for toxicological research and innovations are needed to supply environmentally-relevant MNP models. In addition, like we have learned from decades of research with particulate matter and engineered nanomaterials, sample physicochemical characteristics and preparation can have major impacts on the biological responses and interpretation of the research findings. Lastly, MNP dosimetry may pose challenges as (1) we are seeing early evidence that plastics are already in the human body at quite high levels that may be difficult to achieve in acute in vitro studies and (2) plastics are already in the diets fed to preclinical models. This commentary highlights the pitfalls and recommendations for particle and fibre toxicologists that should be considered when performing and disseminating the research.
+
+Context source: zotero_abstractNote
+
+Source context:
+Abstract
+    Micro- and nanoplastic particles (MNP) are omnipresent as either pollution or intentionally used in consumer products, released from packaging or even food. There is an exponential increase in the production of plastics. With the realization of bioaccumulation in humans, toxicity research is quickly expanding. There is a rapid increase in the number of papers published on the potential implications of exposure to MNP which necessitates a call for quality criteria to be applied when doing the research. At present, most papers on MNP describe the effects of commercially available polymer (mostly polystyrene) beads that are typically not the MNP of greatest concern. This is not a fault of the research community, necessarily, as the MNPs to which humans are exposed are usually not available in the quantities needed for toxicological research and innovations are needed to supply environmentally-relevant MNP models. In addition, like we have learned from decades of research with particulate matter and engineered nanomaterials, sample physicochemical characteristics and preparation can have major impacts on the biological responses and interpretation of the research findings. Lastly, MNP dosimetry may pose challenges as (1) we are seeing early evidence that plastics are already in the human body at quite high levels that may be difficult to achieve in acute in vitro studies and (2) plastics are already in the diets fed to preclinical models. This commentary highlights the pitfalls and recommendations for particle and fibre toxicologists that should be considered when performing and disseminating the research.

@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 4484-1:2023
+        Year: 2023
+        Full Title: ISO 4484-1:2023 Textiles and textile products — Microplastics from textile sources. Part 1: Determination of material loss from fabrics during washing
+        DOI/URL: https://www.iso.org/standard/82238.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ISO 4484-1:2023 Textiles and textile products — Microplastics from textile sources. Part 1: Determination of material loss from fabrics during washing
+        DOI: 
+        Date: 2023-00-00 2023
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Textiles and textile products — Microplastics from textile sources — Part 1: Determination of material loss from fabrics during washing
+
+Abstract This document describes a method for systematically collecting material loss from fabrics under laundering test conditions to achieve comparable and accurate results. There is no direct correlation to material loss during domestic and commercial laundering. The method is designed to assess material loss of all types. NOTE In this document, any collected debris is assumed to be fibre fragments. For the identification of the nature/composition of this debris, the method described in ISO 4484-2 can be used. General information Status Published Publication date 2023-02 Stage : International Standard published [ 60.60 Edition : 1 Number of pages : 11 Technical Committee : ISO/TC 38 ICS 13.020.40 59.080.01 RSS updates Life cycle Now Published ISO 4484-1:2023 Stage: 60.60 Preliminary Proposal 10.99 2021-03-01 New project approved Preparatory Committee 30.99 2021-08-24 CD approved for registration as DIS Enquiry 40.00 2021-08-27 DIS registered 40.20 2021-10-29 DIS ballot initiated: 12 weeks 40.60 2022-01-22 Close of voting 40.99 2022-01-22 Full report circulated: DIS approved for registration as FDIS Approval 50.00 2022-08-15 Final text received or FDIS registered for formal approval 50.20 2022-09-30 Proof sent to secretariat or FDIS ballot initiated: 8 weeks 50.60 2022-11-26 Close of voting. Proof returned by secretariat Publication 60.00 2022-11-26 International Standard under publication 60.60 2023-02-10 International Standard published Review 90.20 International Standard under systematic review 90.60 Close of review 90.92 International Standard to be revised 90.93 International Standard confirmed 90.99 Withdrawal of International Standard proposed by TC or SC Withdrawal 95.99 Withdrawal of International Standard This standard contributes to the following Sustainable Development Goals Good Health and Well-being Clean Water and Sanitation Industry, Innovation and Infrastructure Responsible Consumption and Production Climate Action Life Below Water Got a question? Check out our Help and Support Store Store ICS 13.020 13.020.40 ISO 4484-1:2023 Sitemap Standards Benefits Popular standards Conformity assessment SDGs Sectors Health IT & related technologies Management & services Security, safety & risk Transport Energy Environmental sustainability Materials About ISO What we do Structure Members Events Strategy Insights & news Insights All insights Healthcare Artificial intelligence Climate change Transport News Expert talk Standards world Media kit Resources ISO 220

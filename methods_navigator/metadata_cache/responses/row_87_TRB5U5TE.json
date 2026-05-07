@@ -1,0 +1,28 @@
+{
+  "particle_size_range": "≤100 μm (particles immobilized); analysis includes size classes ≥10 μm for Raman spectroscopy",
+  "key_metrics_output": "Particle counts per polymer type, relative standard deviation (RSD), relative deviation from mean (RMD), measurement uncertainty, polymer identification (LDPE, PA12, PET, PP, PS), particle numbers per sample",
+  "abstract": "This study presents a filtration-immobilization approach for creating permanently fixed microplastic samples on silicon wafers and alumina membranes for use in interlaboratory comparisons (ILCs). The method enables serial ILC designs where participants sequentially measure the same immobilized sample, eliminating variability from repetitive sample preparation. Demonstration with five polymers on 10 μm pore-sized silicon filters showed specific measurement uncertainty 77% lower than parallel ILC designs (relative standard deviations of 5% vs 23%). The approach isolates measurement-specific uncertainty from sample preparation and subsampling uncertainties, providing more accurate proficiency assessment. The immobilization technique uses standard laboratory equipment and potassium silicate adhesive, with applications extending to sample archiving and reference material creation for particulate matter research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "particles ≤100 μm",
+      "For results derived from Raman spectroscopy, only size classes ≥10 μm were considered",
+      "nominal 10 μm filter",
+      "nominal 1 μm pore size filter"
+    ],
+    "key_metrics_output": [
+      "Results were reported by participants as numbers of particles per polymer type, size range, and sample",
+      "Total MPs (TMPs) were calculated as the sum of particles of the five added polymers",
+      "relative standard deviations: 5 and 23%, respectively",
+      "relative deviation from the mean (RMD)",
+      "relative standard deviation among participants (RSD)"
+    ],
+    "abstract": [
+      "filtration-immobilization approach for particles ≤100 μm, creating permanently immobilized microplastics samples",
+      "serial ILC designs where participants sequentially measure the same sample",
+      "specific measurement uncertainty being 77% lower than the total combined uncertainty observed in a parallel ILC (relative standard deviations: 5 and 23%, respectively)",
+      "five polymers immobilized on 10 μm pore-sized silicon filters",
+      "Particle immobilization opens further applications in sample archiving and creation of durable reference samples"
+    ]
+  }
+}

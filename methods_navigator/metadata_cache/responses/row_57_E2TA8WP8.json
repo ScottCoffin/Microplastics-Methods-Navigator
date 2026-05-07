@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "Below 5 mm (nano- and microplastics)",
+  "key_metrics_output": "Occurrence and concentrations in air, soil, freshwater, seas, biota, and diet; sources; fates; hazards; risks; exposure; toxicity; ecological and human health impacts",
+  "abstract": "This Evidence Review Report by the SAPEA consortium provides a comprehensive scientific perspective on nano- and microplastics (NMPs) in nature and society. The report reviews current knowledge on NMP sources, occurrence, exposure, hazards, and risks across environmental compartments and human health. It integrates evidence from natural sciences (polymer science, marine pollution, ecology, toxicology, risk assessment), social and behavioral sciences (risk perception, media influence, behavior change), and regulatory/legislative aspects. Key findings indicate that while microplastic concentrations are relatively well-characterized in freshwaters and ocean surface, knowledge gaps exist for air, soil, and subsurface compartments. Ecological risks are currently rare but may become widespread if emissions continue. Human health risks remain uncertain due to sparse dietary and airborne exposure data. The report emphasizes the need for improved methodological harmonization, transparent communication about scientific uncertainties, and interdisciplinary approaches combining natural and social sciences to design effective policies for reducing NMP pollution.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "NMPs are below 5 mm in size",
+      "nano- and microplastics (NMPs) are tiny plastic particles of mixed shapes and sizes"
+    ],
+    "key_metrics_output": [
+      "plastic particles of mixed shape that are present in air, soil, freshwater, seas, in biota, and in several components of our diet",
+      "sources, occurrences, fates, hazards and risks",
+      "exposure, fates and effects of NMPs on biota and humans",
+      "concentrations for freshwaters and the ocean surface"
+    ],
+    "abstract": [
+      "reviews the current evidence on health, environmental and societal impacts of nano- and microplastic pollution",
+      "reviews relevant evidence from the social and behavioural sciences in conjunction with the current natural sciences evidence",
+      "Evidence from the environmental, computer modelling, social, behavioural and political sciences are reviewed and presented from an interdisciplinary perspective",
+      "there is a need for improved quality and international harmonisation of the methods used to assess exposure, fates and effects of NMPs"
+    ]
+  }
+}

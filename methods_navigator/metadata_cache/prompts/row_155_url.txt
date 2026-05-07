@@ -1,0 +1,56 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Löder & Gerdts, 2015
+        Year: 2015
+        Full Title: Methodology Used for the Detection and Identification of Microplastics — A Critical Appraisal
+        DOI/URL: https://doi.org/10.1007/978-3-319-16510-3_8
+        Existing Particle Size Range: >10 µm (majority of 27 reviewed studies); recommends prioritizing <10 µm for human health
+        Existing Key Metrics / Output: Count/m³ or deposition rate (particles/m²/day); 11-criterion QA/QC score; mean 48.6% across studies
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Microplastics in aquatic ecosystems and especially in the marine environment represent a pollution of increasing scientific and societal concern, thus, recently a substantial number of studies on microplastics were published. Although first steps towards a...
+
+Microplastics in aquatic ecosystems and especially in the marine environment represent a pollution of increasing scientific and societal concern, thus, recently a substantial number of studies on microplastics were published. Although first steps towards a standardization of methodologies used for the detection and identification of microplastics in environmental samples are made, the comparability of data on microplastics is currently hampered by a huge variety of different methodologies, which result in the generation of data of extremely different quality and resolution. This chapter reviews the methodology presently used for assessing the concentration of microplastics in the marine environment with a focus on the most convenient techniques and approaches. After an overview of non-selective sampling approaches, sample processing and treatment in the laboratory, the reader is introduced to the currently applied techniques for the identification and quantification of microplastics. The subsequent case study on microplastics in sediment samples from the North Sea measured with focal plane array (FPA)-based micro-Fourier transform infrared (micro-FTIR) spectroscopy shows that only 1.4 % of the particles visually resembling microplastics were of synthetic polymer origin. This finding emphasizes the importance of verifying the synthetic polymer origin of potential microplastics. Thus, a burning issue concerning current microplastic research is the generation of standards that allow for the assessment of reliable data on concentrations of microscopic plastic particles and the involved polymers with analytical laboratory techniques such as micro-FTIR or micro-Raman spectroscopy.
+
+Abstract Microplastics in aquatic ecosystems and especially in the marine environment represent a pollution of increasing scientific and societal concern, thus, recently a substantial number of studies on microplastics were published. Although first steps towards a standardization of methodologies used for the detection and identification of microplastics in environmental samples are made, the comparability of data on microplastics is currently hampered by a huge variety of different methodologies, which result in the generation of data of extremely different quality and resolution. This chapter reviews the methodology presently used for assessing the concentration of microplastics in the marine environment with a focus on the most convenient techniques and approaches. After an overview of non-selective sampling approaches, sample processing and treatment in the laboratory, the reader is introduced to the currently applied techniques for the identification and quantification of microplastics. The subsequent case study on microplastics in sediment samples from the North Sea measured with focal plane array (FPA)-based micro-Fourier transform infrared (micro-FTIR) spectroscopy shows that only 1.4 % of the particles visually resembling microplastics were of synthetic polymer origin. This finding emphasizes the importance of verifying the synthetic polymer origin of potential microplastics. Thus, a burning issue concerning current microplastic research is the generation of standards that allow for the assessment of reliable data on concentrations of microscopic plastic particles and the involved polymers with analytical laboratory techniques such as micro-FTIR or micro-Raman spectroscopy. You have full access to this open access chapter, Download chapter PDF Similar content being viewed by others Microplastics and Nanoplastics Chapter © 2023 Microplastics in the Azov Sea Chapter © 2025 Analysis, Occurrence, and Degradation of Microplastics in the Aqueous Environment Chapter © 2018 Explore related subjects Discover the latest articles, books and news in related subjects, suggested using machine learning. Materials Characterization Technique Microbiology Techniques Methodology of Political Science Mixed Methods Ethnographic Methods Solid-phase microextraction Microplastic Pollution in Aquatic Ecosystems 8.1 Introduction Since the middle of the 20th century, the increasing global production of plastics is accompanied by an accumulation of plastic litter in the marine envir

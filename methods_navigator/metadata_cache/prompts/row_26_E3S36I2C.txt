@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Noventa et al., 2021
+Year: 2021
+Full Title: Paradigms to assess the human health risks of nano- and microplastics
+DOI/URL: https://doi.org/10.1186/s43591-021-00011-1
+Existing Particle Size Range: Any (bulk pyrolysis; no particle size threshold — reports total polymer mass)
+Existing Key Metrics / Output: Mass/L by polymer type (µg/L); 92–99% removal in drinking water treatment demonstrated
+
+Zotero metadata:
+Title: Paradigms to assess the human health risks of nano- and microplastics
+DOI: 10.1186/s43591-021-00011-1
+Date: 2021-12-00 12/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Human exposure to nano- and microplastics (NMPs) has raised major societal concerns, yet no framework to assess the risks of NMPs for human health exists. A substantial proportion of plastic produced worldwide is not properly disposed and persists in the environment for decades while degrading. Plastic degradation generates a size continuum of fragments, including nano- and microplastic particles, with numerous associated environmental pollutants and plastic additives, and microbial communities colonising their surfaces. The ubiquitous presence of NMPs, their availability for uptake by organisms and their potential to act as vectors for toxicants and pathogens render risk assessment a priority on the political agenda at the global level. We provide a new, fully integrated risk assessment framework tailored to the specificities of NMPs, enabling an assessment of current and future human health risks from NMPs. The framework consists of four novel paradigms to the traditional risk assessment methodology. These paradigms deal with techniques in NMP analysis, gaps in empirical data, theoretical and modelling approaches and stakeholder engagement. Within the proposed framework, we propose how we can use research experiences gained so far to carry out the different steps of the assessment process, and we define priorities for further research.
+
+Context source: zotero_abstractNote
+
+Source context:
+Human exposure to nano- and microplastics (NMPs) has raised major societal concerns, yet no framework to assess the risks of NMPs for human health exists. A substantial proportion of plastic produced worldwide is not properly disposed and persists in the environment for decades while degrading. Plastic degradation generates a size continuum of fragments, including nano- and microplastic particles, with numerous associated environmental pollutants and plastic additives, and microbial communities colonising their surfaces. The ubiquitous presence of NMPs, their availability for uptake by organisms and their potential to act as vectors for toxicants and pathogens render risk assessment a priority on the political agenda at the global level. We provide a new, fully integrated risk assessment framework tailored to the specificities of NMPs, enabling an assessment of current and future human health risks from NMPs. The framework consists of four novel paradigms to the traditional risk assessment methodology. These paradigms deal with techniques in NMP analysis, gaps in empirical data, theoretical and modelling approaches and stakeholder engagement. Within the proposed framework, we propose how we can use research experiences gained so far to carry out the different steps of the assessment process, and we define priorities for further research.

@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "<200 µm (with sample preparation to <0.2 mm)",
+  "key_metrics_output": "Polymer type identification, mass quantitation, polymer composition",
+  "abstract": "ASTM D8401-24 describes a pyrolysis-gas chromatography/mass spectrometry (Py-GC/MS) test method for identification and quantitation of organic polymer particles and fibers in water samples with high to low suspended solids. The method applies to treated drinking water, surface waters, wastewater (influent and effluent), and marine waters. Microgram quantities of samples containing microplastics are pyrolyzed at 600 °C, with pyrolyzates separated by gas chromatography and detected by 70-eV electron impact mass spectrometry. Ion ratios at predetermined retention times facilitate polymer identification. The method is applicable to microplastic fibers and particles including nanoparticles, with sample preparation reducing particle size to less than 0.2 mm diameter.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "applicable to microplastic fibers and particles, including sizes defined as a nanoparticle",
+      "samples with microplastics should be reduced to a fine powder with the final particle size diameter on the order of less than 0.2 mm"
+    ],
+    "key_metrics_output": [
+      "identification and simultaneous quantitation of organic polymer particles and fibers in water",
+      "ion ratios at predetermined retention times to facilitate the identification of each polymer present"
+    ],
+    "abstract": [
+      "an analytical protocol validated specifically for the analysis of water with high to low suspended solids is described",
+      "Microgram quantities of a sample containing microplastics are pyrolyzed (Py) at 600 °C. The pyrolyzates are separated on an analytical column (GC) and detected using a 70-eV electron impact mass spectrometer (MS)",
+      "applies to all microplastic particles and fibers, and is intended for use with treated drinking water, surface waters, wastewater influent and effluent (secondary and tertiary), and marine waters"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "1000 µm to 5000 µm (upper limits used in literature; no standardized lower limit defined)",
+  "key_metrics_output": "Fiber abundance, material composition (synthetic, semisynthetic, natural), fiber type (cellulosic, proteinaceous, mineral), chemical additives (dyes, flame retardants, PFAS, formaldehyde), proportion of fiber types, geographic distribution, environmental compartment occurrence",
+  "abstract": "This critical review examines anthropogenic microfiber pollution across environmental compartments, with emphasis on natural and semisynthetic fibers that are often underestimated in research. The authors conducted a systematic literature review of 308 peer-reviewed publications (465 studies) documenting microfibers in environmental samples from 2011-2020. Key findings include: (1) 58% of studies report natural and/or semisynthetic fibers, with 46% of quantified studies finding nonsynthetic fibers more abundant than synthetic fibers; (2) significant geographic and compartmental gaps exist, particularly in Africa and indoor environments; (3) current methods designed for synthetic fibers may inadequately capture natural and semisynthetic fibers due to chemical degradation and spectroscopic challenges; (4) natural and semisynthetic fibers persist in the environment for months to decades despite assumptions of rapid biodegradation. The review recommends best practices for comprehensive assessment of all anthropogenic microfiber types and highlights that exclusive focus on synthetic fibers neglects a major component of microfiber pollution.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Most studies define microfibers in terms of their length, with an upper limit of either 1000 µm (Browne et al., 2011) or 5000 µm (Dris et al., 2016; Hartline et al., 2016; Kosuth et al., 2018). Inconsistencies in size classification stem from debate over the formal size bins defining microplastic pollution",
+      "Given the ongoing debate, we did not define an upper size limit"
+    ],
+    "key_metrics_output": [
+      "For each study, the following information was extracted (when available): the geographic location where samples were collected and the year(s) of collection, type of environmental media investigated, methods used for sample collection and enumeration, intermediate screening steps applied (if applicable), technique for the identification of the material composition of fibers, proportion of fibers present, and type(s) and proportions of materials identified (including synthetic, natural, and semisynthetic)",
+      "Studies report a diverse mixture of microfibers in the environment, which contain a variety of materials and chemicals",
+      "Chemical additives can include toxic compounds, such as bisphenols, azo dyes, polyfluorinated alkyl compounds (PFAS), and formaldehyde"
+    ],
+    "abstract": [
+      "Anthropogenic microfibers, a ubiquitous environmental contaminant, can be categorized as synthetic, semisynthetic, or natural according to material of origin and production process",
+      "Most studies (58%) report finding natural and/or semisynthetic fibers in environmental samples",
+      "Approximately half (46%) of studies that report the proportion and/or abundance of natural/semisynthetic fibers found nonsynthetic fibers to be more abundant that synthetic fibers",
+      "Although natural and semisynthetic fibers can break down more quickly than synthetic polymers, these fibers can persist from months to decades in aquatic systems depending on the microfiber type and environmental factors",
+      "By focusing exclusively on synthetic fibers in the environment, we are neglecting a major component of anthropogenic microfiber pollution"
+    ]
+  }
+}

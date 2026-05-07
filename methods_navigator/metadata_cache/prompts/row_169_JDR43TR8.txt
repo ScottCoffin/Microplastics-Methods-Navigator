@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Kooi & Koelmans, 2019
+Year: 2019
+Full Title: Simplifying Microplastic via Continuous Probability Distributions for Size, Shape, and Density
+DOI/URL: https://doi.org/10.1021/acs.estlett.9b00379
+Existing Particle Size Range: 0.1 µm – 5 mm (MP); 1–100 nm (NP)
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Simplifying Microplastic via Continuous Probability Distributions for Size, Shape, and Density
+DOI: 10.1021/acs.estlett.9b00379
+Date: 2019-09-10 2019-09-10
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Because of their diverse sizes, shapes, and densities, environmental microplastics are often perceived as complex. Many studies struggle with this complexity and either address only a part of this diversity or present data using discrete classiﬁcations for sizes, shapes, and densities. We argue that such classiﬁcations will never be fully satisfactory, as any deﬁnition using classes does not capture the essentially continuous nature of environmental microplastic. Therefore, we propose to simplify microplastics by fully deﬁning them through a three-dimensional (3D) probability distribution, with size, shape, and density as dimensions. In addition to introducing the concept, we parametrize these probability distributions, using empirical data. This parametrization results in an approximate yet realistic representation of “true” environmental microplastic. This approach to simplifying microplastic could be applicable to exposure measurements, eﬀect studies, and fate modeling. Furthermore, it allows for easy comparison between studies, irrespective of sampling or laboratory setup. We demonstrate how the 3D probability distribution of environmental versus ingested microplastic can be helpful in understanding the bioavailability of and exposure to microplastic. We argue that the concept of simpliﬁed microplastic will also be helpful in probabilistic risk modeling, which would greatly enhance our understanding of the risk that microplastics pose to the environment.
+
+Context source: zotero_abstractNote
+
+Source context:
+Because of their diverse sizes, shapes, and densities, environmental microplastics are often perceived as complex. Many studies struggle with this complexity and either address only a part of this diversity or present data using discrete classiﬁcations for sizes, shapes, and densities. We argue that such classiﬁcations will never be fully satisfactory, as any deﬁnition using classes does not capture the essentially continuous nature of environmental microplastic. Therefore, we propose to simplify microplastics by fully deﬁning them through a three-dimensional (3D) probability distribution, with size, shape, and density as dimensions. In addition to introducing the concept, we parametrize these probability distributions, using empirical data. This parametrization results in an approximate yet realistic representation of “true” environmental microplastic. This approach to simplifying microplastic could be applicable to exposure measurements, eﬀect studies, and fate modeling. Furthermore, it allows for easy comparison between studies, irrespective of sampling or laboratory setup. We demonstrate how the 3D probability distribution of environmental versus ingested microplastic can be helpful in understanding the bioavailability of and exposure to microplastic. We argue that the concept of simpliﬁed microplastic will also be helpful in probabilistic risk modeling, which would greatly enhance our understanding of the risk that microplastics pose to the environment.

@@ -1,0 +1,128 @@
+**==> picture [140 x 35] intentionally omitted <==**
+
+## _Review_ 
+
+## **Microplastics, Endocrine Disruptors, and Oxidative Stress: Mechanisms and Health Implications** 
+
+**Kalman Kovacs[1,2,3,] * , Jozsef Bodis[1,2,3] and Reka A. Vass[1,2,3]** 
+
+- 1 Department of Obstetrics and Gynecology, Medical School, University of Pécs, 7624 Pécs, Hungary; bodis.jozsef@pte.hu (J.B.); vass.reka@pte.hu (R.A.V.) 
+
+- 2 MTA-PTE Human Reproduction Scientific Research Group, University of Pécs, 7624 Pécs, Hungary 3 National Laboratory on Human Reproduction, University of Pécs, 7624 Pécs, Hungary 
+
+- Correspondence: kovacs.kalman@pte.hu; Tel.: +36-72536000 
+
+## **Abstract** 
+
+Microplastics and nanoplastics (<5 mm and <1 µm, respectively) are emerging contaminants now ubiquitous across environmental matrices and increasingly recognized for their impacts on human health. These particles commonly adsorb or contain endocrinedisrupting chemicals—such as bisphenol-A and phthalate additives—that together trigger complex biological responses. This review examines the central role of oxidative stress in mediating the toxicity of microplastics and associated endocrine disruptors across multiple organ systems. We discuss mechanisms including cellular uptake, reactive oxygen species generation, mitochondrial dysfunction, impairment of antioxidant defenses, and activation of key signaling pathways. Organ-specific effects on reproductive health, cardiovascular function, hepatic metabolism, gut barrier integrity, and neurological systems are highlighted. Current evidence strongly supports oxidative stress as a pivotal mechanism linking microplastic exposure to systemic toxicity, underscoring important implications for public health policy and clinical intervention strategies. 
+
+**Keywords:** microplastics; nanoplastics; oxidative stress; endocrine disruptors; ROS; mitochondrial dysfunction; bioaccumulation; reproductive toxicity 
+
+## **1. Introduction** 
+
+**==> picture [89 x 17] intentionally omitted <==**
+
+Academic Editor: Guan-Jhong Huang Received: 5 December 2025 Revised: 23 December 2025 Accepted: 29 December 2025 Published: 30 December 2025 **Copyright:** © 2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. 
+
+Microplastics (MP)—plastic fragments less than 5 mm in diameter, including nanoscale particles under 1 µm—have emerged as pervasive environmental pollutants detected across terrestrial, aquatic, and atmospheric systems. Human exposure is now well established, with microplastics identified in the placenta, blood, lung tissue, and breast milk [1–4]. These particles frequently adsorb or incorporate endocrine-disrupting chemicals (EDCs) such as bisphenol A (BPA) and phthalates, which can leach readily from polymer matrices. Acting as vectors, microplastics can also accumulate additional environmental contaminants, including heavy metals and persistent organic pollutants, thereby amplifying their toxic potential [5–7]. Nanoplastics (NP), due to their small size and high surface reactivity, are particularly concerning, as they have demonstrated the ability to cross critical biological barriers—including the intestinal epithelium, placental barrier, and blood–brain barrier—raising concerns about systemic distribution and long-term bioaccumulation [8,9]. 
+
+Among the diverse biological effects associated with microplastic exposure, oxidative stress has emerged as a central and unifying mechanism of toxicity. Excessive generation of reactive oxygen species (ROS), combined with impairment of endogenous antioxidant 
+
+_Int. J. Mol. Sci._ **2026** , _27_ , 399 
+
+https://doi.org/10.3390/ijms27010399 
+
+_Int. J. Mol. Sci._ **2026** , _27_ , 399 
+
+2 of 17 
+
+defenses, can initiate a cascade of cellular dysfunctions, including lipid peroxidation, mitochondrial damage, inflammation, and genomic instability. Importantly, many microplasticassociated EDCs—including BPA and phthalates—can independently induce oxidative stress and disrupt hormonal homeostasis, suggesting potential synergistic or additive effects that may exacerbate microplastic-induced toxicity. Additionally, nanoparticles and polymer degradation products may further intensify redox imbalance through catalytic surface reactions and altered mitochondrial electron flow. 
+
+Given the increasing detection of microplastics in human tissues and their persistence in the environment, understanding the molecular interplay between microplastics, EDCs, and oxidative stress is critical. This is particularly relevant because oxidative stress not only contributes to organ-specific toxicity but also plays a mechanistic role in endocrine disruption, metabolic dysfunction, immune dysregulation, and reproductive impairment [10–12]. Despite growing evidence, the pathways linking microplastic exposure to oxidative and endocrine disturbance remain incompletely understood. Therefore, a comprehensive synthesis of current findings is urgently needed to clarify mechanisms, identify biomarkers of exposure and effect, and guide future research toward assessing human health risks and developing targeted interventions. 
+
+Microplastics—plastic fragments less than 5 mm in diameter, including nanoscale particles under 1 µm—have emerged as pervasive environmental pollutants detected across terrestrial, aquatic, and atmospheric systems. Human exposure is now well established, with microplastics identified in the placenta, blood, lung tissue, and breast milk [1–4]. These particles frequently adsorb or incorporate EDCs such as BPA and phthalates, which can leach readily from polymer matrices. Acting as vectors, microplastics can also accumulate additional environmental contaminants, including heavy metals and persistent organic pollutants, thereby amplifying toxic potential [5–7]. NPs, due to their small size and high surface reactivity, are particularly concerning as they have demonstrated the ability to cross critical biological barriers, including the intestinal epithelium, placental barrier, and blood–brain barrier [8,9]. 
+
+Among the diverse biological effects linked to microplastic exposure, oxidative stress has emerged as a central mechanism of toxicity. Excessive generation of ROS and the concomitant impairment of antioxidant defenses can lead to lipid peroxidation, mitochondrial dysfunction, inflammation, and genomic instability. Notably, many associated EDCs—including BPA and phthalates—can independently induce oxidative stress and disrupt hormonal homeostasis, suggesting potential synergistic or additive effects when combined with microplastic exposure. Given their environmental persistence and documented presence in human tissues, elucidating how microplastics and their chemical constituents trigger oxidative stress is essential [10–12]. To address the possibility that oxidative stress is a downstream consequence rather than a primary driver of microplastic-induced toxicity, several studies have employed oxidative stress inhibition approaches. Experimental evidence shows that pharmacological antioxidants, particularly N-acetylcysteine (NAC), significantly attenuate micro- and nanoplastic–induced reactive oxygen species generation, lipid peroxidation, mitochondrial dysfunction, and inflammatory responses, thereby reducing cellular injury and apoptosis [13,14]. Importantly, NAC intervention has been shown to partially or completely restore antioxidant enzyme activity and suppress activation of redox-sensitive pathways such as NF-κB and MAPKs following microplastic exposure, supporting a causal role for oxidative stress in mediating toxicity rather than a purely secondary effect [14,15]. These findings provide mechanistic validation that oxidative stress functions as an upstream trigger of cellular damage in microplastic exposure models and highlight antioxidant modulation as a useful experimental strategy to confirm causality. 
+
+https://doi.org/10.3390/ijms27010399 
+
+_Int. J. Mol. Sci._ **2026** , _27_ , 399 
+
+3 of 17 
+
+MPs/NPs and plastic additives (e.g., bisphenols and phthalates) are distinct exposure agents—MPs/NPs are particulate polymers, whereas additives are low-molecular-weight chemicals blended into plastics—but they are mechanistically linked because many additives are not covalently bound to the polymer matrix and can therefore migrate/leach from plastics and from fragmented MPs/NPs [16,17]. Fragmentation into smaller particles can increase release potential by increasing surface area and shortening diffusion distances, while environmental aging (e.g., UV/oxidation) can enhance surface cracking and chemical mobility [17]. In vivo, desorption remains plausible because physiological media (gastric acidity, bile salts/lipids in the intestine, proteins forming a “corona,” and pulmonary surfactants) can promote partitioning of hydrophobic additives into biological phases, enabling bioavailability even after ingestion or inhalation of MPs/NPs [17]. Once released, endocrine-active additives can interact with hormone receptors and endocrine pathways, providing a plausible route to endocrine disruption and downstream hormonal imbalance [16,18]. However, the quantitative contribution of MP/NP-bound additives to overall internal BPA/phthalate dose relative to other dominant sources (e.g., food-contact materials, dust, consumer products) is still uncertain, supporting the need for mass-balance and tracer-based studies under environmentally relevant chronic low-dose conditions [17]. 
+
+Across polymer types, microplastics share common downstream toxicological pathways (e.g., oxidative stress, inflammation, and mitochondrial dysfunction), but the most important differences arise from (i) additive/leachate chemistry, (ii) surface–biomolecule interactions (protein corona), and (iii) aging-dependent changes in surface reactivity and contaminant binding. PVC microplastics are often distinguished by their high plasticizer content, and multiple studies show that endocrine-active additives (notably phthalates and sometimes BPA) can leach/desorb from PVC microplastics, with weathering/photoaging further increasing leaching rates—supporting a stronger “chemical-driven” component to toxicity compared with more additive-lean polymers [19–22]. In contrast, relatively inert PE/PP particles may show weaker intrinsic reactivity but can still contribute substantially via physical irritation (size/shape-dependent) and by acting as sorbents for hydrophobic pollutants, with polymer- and aging-dependent differences in adsorption capacity that can shift observed effects toward a “vector” mechanism [8,23,24]. PS is frequently used in toxicology studies and tends to show pronounced cell interactions that are strongly modulated by protein corona composition, which can alter uptake routes and inflammatory signaling—highlighting that surface chemistry (not only the polymer backbone) drives potency differences [25,26]. Finally, PET (often present as fibers) can differ in airway deposition/clearance due to morphology, and it also forms dynamic coronas in gastrointestinal conditions that can modify surface properties and bio-interactions, underscoring how “polymer type effects” often reflect a combination of formulation, aging, and corona-mediated biology rather than a single polymer-specific pathway [23,27]. 
+
+This review aims to synthesize current evidence on how microplastics and associated endocrine-disrupting chemicals contribute to oxidative stress and disrupt endocrine signaling, highlighting the molecular pathways that link exposure to cellular damage and hormonal imbalance. It further evaluates the resulting multisystem health implications—particularly for metabolic, reproductive, cardiovascular, and neurobiological outcomes—and identifies key research gaps needed to improve human risk assessment. 
+
+## **2. Presence of Micro- and Nanoplastics in Human Tissues** 
+
+Recent analytical advances have provided direct evidence that MPs and NPs are present in multiple human tissues. Using pyrolysis–GC/MS and Raman microspectroscopy, MPs have been detected in human whole blood, confirming that ingested or inhaled particles can cross epithelial barriers and enter systemic circulation [2]. The first demonstration 
+
+https://doi.org/10.3390/ijms27010399 
+
+_Int. J. Mol. Sci._ **2026** , _27_ , 399 
+
+4 of 17 
+
+of MPs in human placentas showed particles embedded on both the maternal and fetal sides, indicating potential transplacental transfer during pregnancy [1]. Subsequent work has identified MPs in lung tissue, where they were found in 11 of 13 surgical specimens, supporting inhalation as a major exposure route [28]. MPs have also been detected in human breast milk, suggesting early-life exposure in infants [29]. More recently, postmortem analyses have confirmed MPs and NPs in multiple organs, including the liver, kidney, thyroid gland, and even the human brain, which in one study showed higher concentrations than other tissues examined [30,31]. Autopsy-based studies also report the presence of MPs in cardiovascular structures, including carotid artery atherosclerotic plaques, where their presence was associated with a higher risk of major cardiovascular events [32]. Taken together, these findings demonstrate that MPs are not restricted to the gastrointestinal tract but can translocate through biological barriers, circulate in the bloodstream, and accumulate in diverse organs. Their widespread presence across human tissues raises significant concerns about long-term health implications, particularly given their links to oxidative stress, inflammation, and endocrine disruption [33] (Table 1). Although daily human exposure to microplastics is increasingly documented, the absence of standardized exposure metrics and human-relevant toxicity thresholds currently precludes a direct quantitative correlation, particularly under conditions of chronic low-dose exposure and cumulative bioaccumulation [17]. 
+
+**Table 1.** Proven micro- and nanoplastic components in human tissues and samples. 
+
+|**Human**<br>**Sample/Tissue**|**Polymer Types**<br>**Identifed**|**Particle Size Range**|**Detection**<br>**Method**|**Key Findings**|**Reference**|
+|---|---|---|---|---|---|
+|Whole blood|PET, PE, “polymers<br>of styrene” (e.g.,<br>PS-related), PMMA<br>(PP below LOQ)|_≥_700 nm (method<br>cut-off)|Double-shot<br>Py–GC/MS|Plastics quantifed in<br>whole blood of<br>healthy donors;<br>demonstrates systemic<br>internal exposure.|[2]|
+|Placenta|PP (some particles<br>identifed by<br>pigment only)|5–10µm|Raman mi-<br>crospectroscopy|Microplastic fragments<br>found in fetal/maternal<br>sides and membranes in<br>a subset of placentas.|[1]|
+|||||Demonstrated perinatal||
+|Placenta,<br>meconium, infant<br>feces, breast milk,<br>infant formula|PE, PP, PS, PU<br>and other<br>common polymers|Mostly 5–500µm|µFTIR, Raman|exposure: MPs in<br>placenta and early-life<br>matrices (meconium,<br>infant stool,|[34]|
+|||||milk, formula).||
+|Breast milk|Mainly PE, PVC, PP;<br>pigmented<br>fragments|~2–12µm<br>(many 4–9µm)|Raman mi-<br>crospectroscopy|MPs found in 26/34<br>samples; mostly<br>irregular pigmented<br>fragments.|[29,31]|
+|||||Polymeric||
+|||||particles/fbers||
+|Lung tissue<br>(autopsy)|Mainly PE, PP|Particles < 5.5µm;<br>fbers 8.12–16.8µm|Raman mi-<br>crospectroscopy|observed in most<br>samples examined,<br>supporting|[35]|
+|||||inhalation-linked||
+|||||deposition.||
+
+
+
+https://doi.org/10.3390/ijms27010399 
+
+_Int. J. Mol. Sci._ **2026** , _27_ , 399 
+
+5 of 17 
+
+**Table 1.** _Cont._ 
+
+|**Human**<br>**Sample/Tissue**|**Polymer Types**<br>**Identifed**|**Particle Size Range**|**Detection**<br>**Method**|**Key Findings**|**Reference**|
+|---|---|---|---|---|---|
+||||Digestion + Nile|MPs detected in||
+|Liver (cirrhosis case|“Six different MP||Red stain-|cirrhotic tissues but not||
+|series), plus kidney|polymers” (not all|4–30µm|ing/fuorescence|in controls without|[36]|
+|and spleen|specifed in abstract)||microscopy +|underlying liver disease||
+||||Raman|(within detection limits).||
+|Carotid<br>atherosclerotic<br>plaque (atheroma)|PE; PVC (subset)|Not size-resolved in<br>abstract (micro- and<br>nanoplastics<br>assessed)|Py–GC/MS +<br>stable isotope<br>analysis +<br>electron<br>microscopy|MNPs detected in<br>plaque; presence<br>associated with higher<br>risk of subsequent<br>MI/stroke/death in<br>follow-up cohort.|[32]|
+|||||Confrms MNPs in||
+|Brain, liver, kidney<br>(decedent tissues)|Primarily PE; other<br>polymers present<br>(lesser amounts)|EM verifed<br>nanoscale shard-like<br>fragments in brain;<br>full size distribution<br>not limited to >5µm<br>due to multi-method<br>approach|Py–GC/MS +<br>ATR–FTIR +<br>EM/EDS|organs; brain shows<br>higher PE proportion<br>and higher<br>concentrations;<br>dementia cohort<br>showed greater<br>accumulation and<br>cerebrovascular/immune-|[31]|
+|||||cell deposition.||
+|||||MPs detected in all bone||
+|Bone marrow|PE, PS, PVC, PA66,<br>PP (plus additional<br>polymers by LD-IR)|Majority <100µm<br>(LD-IR); morphology<br>assessed by SEM|Py–GC/MS +<br>LD-IR + SEM|marrow samples;<br>provides evidence of<br>deep-tissue presence in<br>hematopoietic|[37]|
+|||||compartment.||
+||12 polymer types|||||
+||quantifed; PE|||MPs detected in all||
+|Testis (human; plus<br>canine comparison)|dominant (PVC/PET<br>showed negative<br>correlations with|Not size-resolved by<br>Py–GC/MS|Py–GC/MS|tested human testes;<br>exploratory associations<br>with reproductive|[38]|
+||normalized testis|||parameters reported.||
+||weight in analyses)|||||
+|Colon tissue<br>(colectomy<br>specimens)|Polycarbonate,<br>polyamide, PP<br>(subset of analyzed<br>flaments)|Not reported in<br>abstract (reported as<br>flaments/fbers;<br>length characterized<br>in study)|Digestion/fltration<br>+ stereo<br>microscopy +<br>micro-FTIR|MPs detected in all<br>colectomy specimens;<br>fbers dominated.|[39]|
+|||||MPs reported in most||
+|Saphenous vein<br>tissue (pilot)|Alkyd resin, PVAc,<br>nylon–EVA tie layer<br>(others)|_≥_5µm (µFTIR size<br>limitation)|µFTIR|samples, but an<br>Expression of Concern<br>was issued; interpret|[40]|
+|||||cautiously.||
+||LD-IR: multiple|||||
+||types (e.g., CPE,|||MPs detected in||
+|Follicular fuid<br>(human; ART<br>patients)|fuorosilicone rubber,<br>PVC, etc.);<br>Py–GC/MS<br>confrmed|20–100µm (LD-IR);<br>Py–GC/MS not<br>size-resolved|LD-IR +<br>Py–GC/MS|follicular fuid; study<br>also tested fuorescent<br>MP beads in vitro and<br>reported impaired|[41]|
+||PE/PP/PS/PVC in|||oocyte maturation.||
+||subset|||||
+
+
+
+https://doi.org/10.3390/ijms27010399 

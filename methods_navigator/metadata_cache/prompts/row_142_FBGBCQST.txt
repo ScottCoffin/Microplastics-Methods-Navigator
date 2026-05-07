@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Devriese et al., 2025
+Year: 2025
+Full Title: Setting the course: aligning European Union marine pollution policy ambitions with environmental realities
+DOI/URL: https://doi.org/10.3389/fmars.2025.1586918
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Setting the course: aligning European Union marine pollution policy ambitions with environmental realities
+DOI: 10.3389/fmars.2025.1586918
+Date: 2025-06-16 2025-06-16
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Pollution in coastal and marine waters is a global challenge that transcends national boundaries, affecting interconnected seas, the ocean and broader ecosystems. Addressing marine pollution requires policies that encompass not only the marine domain but the entire ecosystem, including human societies. Therefore, a comprehensive and integrated governance approach, linking land-based sources to marine environments, is essential for effective pollution management and mitigation. This study assesses the current environmental status of persistent, long-lasting and emerging pollutants (PCBs, excess nutrients, microplastics, PFAS, and underwater noise) and cumulative effects of pollution, and compares these with the set European Union (EU) environmental goals and ambitions. A systematic review of EU policy documents reveals that several targets are unclear, arbitrary, and often unattainable, limiting the effectiveness of current strategies. This paper presents five actionable recommendations to strengthen marine environmental policy, emphasizing the need for better alignment between EU ambitions and environmental realities. To enhance EU pollution policies, it is crucial to reinforce regulatory frameworks, ensure the effective enforcement of existing legislation, foster collaboration across sectors, and empower citizens and NGOs. Additionally, integrating health and pollution policies, ensuring public access to pollution data and knowledge, and establishing international leadership in pollution efforts are key for making informed decisions and achieving ambitious pollution reduction targets.
+
+Context source: zotero_abstractNote
+
+Source context:
+Pollution in coastal and marine waters is a global challenge that transcends national boundaries, affecting interconnected seas, the ocean and broader ecosystems. Addressing marine pollution requires policies that encompass not only the marine domain but the entire ecosystem, including human societies. Therefore, a comprehensive and integrated governance approach, linking land-based sources to marine environments, is essential for effective pollution management and mitigation. This study assesses the current environmental status of persistent, long-lasting and emerging pollutants (PCBs, excess nutrients, microplastics, PFAS, and underwater noise) and cumulative effects of pollution, and compares these with the set European Union (EU) environmental goals and ambitions. A systematic review of EU policy documents reveals that several targets are unclear, arbitrary, and often unattainable, limiting the effectiveness of current strategies. This paper presents five actionable recommendations to strengthen marine environmental policy, emphasizing the need for better alignment between EU ambitions and environmental realities. To enhance EU pollution policies, it is crucial to reinforce regulatory frameworks, ensure the effective enforcement of existing legislation, foster collaboration across sectors, and empower citizens and NGOs. Additionally, integrating health and pollution policies, ensuring public access to pollution data and knowledge, and establishing international leadership in pollution efforts are key for making informed decisions and achieving ambitious pollution reduction targets.

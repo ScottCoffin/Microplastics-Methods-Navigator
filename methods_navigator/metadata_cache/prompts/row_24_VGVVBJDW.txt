@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: EFSA CONTAM Panel, 2016
+Year: 2016
+Full Title: Presence of microplastics and nanoplastics in food with particular focus on seafood
+DOI/URL: https://doi.org/10.2903/j.efsa.2016.4501
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Presence of microplastics and nanoplastics in food, with particular focus on seafood
+DOI: 10.2903/j.efsa.2016.4501
+Date: 2016-00-00 2016
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Following a request from the German Federal Institute for Risk Assessment (BfR), the EFSA Panel for Contaminants in the Food Chain was asked to deliver a statement on the presence of microplastics and nanoplastics in food, with particular focus on seafood. Primary microplastics are plastics originally manufactured to be that size, while secondary microplastics originate from fragmentation. Nanoplastics can originate from engineered material or can be produced during fragmentation of microplastic debris. Microplastics range from 0.1 to 5,000 lm and nanoplastics from approximately 1 to 100 nm (0.001–0.1 lm). There is no legislation for microplastics and nanoplastics as contaminants in food. Methods are available for identiﬁcation and quantiﬁcation of microplastics in food, including seafood. Occurrence data are limited. In contrast to microplastics no methods or occurrence data in food are available for nanoplastics. Microplastics can contain on average 4% of additives and the plastics can adsorb contaminants. Both additives and contaminants can be of organic as well of inorganic nature. Based on a conservative estimate the presence of microplastics in seafood would have a small effect on the overall exposure to additives or contaminants. Toxicity and toxicokinetic data are lacking for both microplastics and nanoplastics for a human risk assessment. It is recommended that analytical methods should be further developed for microplastics and developed for nanoplastics and standardised, in order to assess their presence, identity and to quantify their amount in food. Furthermore, quality assurance should be in place and demonstrated. For microplastics and nanoplastics, occurrence data in food, including effects of food processing, in particular, for the smaller sized particles (< 150 lm) should be generated. Research on the toxicokinetics and toxicity, including studies on local effects in the gastrointestinal (GI) tract, are needed as is research on the degradation of microplastics and potential formation of nanoplastics in the human GI tract.
+
+Context source: zotero_abstractNote
+
+Source context:
+Following a request from the German Federal Institute for Risk Assessment (BfR), the EFSA Panel for Contaminants in the Food Chain was asked to deliver a statement on the presence of microplastics and nanoplastics in food, with particular focus on seafood. Primary microplastics are plastics originally manufactured to be that size, while secondary microplastics originate from fragmentation. Nanoplastics can originate from engineered material or can be produced during fragmentation of microplastic debris. Microplastics range from 0.1 to 5,000 lm and nanoplastics from approximately 1 to 100 nm (0.001–0.1 lm). There is no legislation for microplastics and nanoplastics as contaminants in food. Methods are available for identiﬁcation and quantiﬁcation of microplastics in food, including seafood. Occurrence data are limited. In contrast to microplastics no methods or occurrence data in food are available for nanoplastics. Microplastics can contain on average 4% of additives and the plastics can adsorb contaminants. Both additives and contaminants can be of organic as well of inorganic nature. Based on a conservative estimate the presence of microplastics in seafood would have a small effect on the overall exposure to additives or contaminants. Toxicity and toxicokinetic data are lacking for both microplastics and nanoplastics for a human risk assessment. It is recommended that analytical methods should be further developed for microplastics and developed for nanoplastics and standardised, in order to assess their presence, identity and to quantify their amount in food. Furthermore, quality assurance should be in place and demonstrated. For microplastics and nanoplastics, occurrence data in food, including effects of food processing, in particular, for the smaller sized particles (< 150 lm) should be generated. Research on the toxicokinetics and toxicity, including studies on local effects in the gastrointestinal (GI) tract, are needed as is research on the degradation of microplastics and potential formation of nanoplastics in the human GI tract.

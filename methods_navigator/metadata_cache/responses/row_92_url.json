@@ -1,0 +1,20 @@
+{
+  "particle_size_range": "down to a few micrometres",
+  "key_metrics_output": "particle count, particle size, particle identification, plastic categorization based on surface polarity characteristics",
+  "abstract": null,
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "allowing particles down to a few micrometres to be detected",
+      "Microplastics of different sizes could be detected and counted"
+    ],
+    "key_metrics_output": [
+      "Image-analysis allows fluorescent particles to be identified and counted",
+      "The solvatochromic nature of Nile Red also offers the possibility of plastic categorisation based on surface polarity characteristics",
+      "Microplastics of different sizes could be detected and counted in marine sediment samples"
+    ],
+    "abstract": [
+      "Zotero abstractNote is populated in source context"
+    ]
+  }
+}

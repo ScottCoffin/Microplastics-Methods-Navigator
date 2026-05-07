@@ -1,0 +1,19 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Mass of collected material released from textile end products during domestic washing",
+  "abstract": "ISO 4484-3:2023 specifies a method for measuring the collected material mass released from the outlet hose of a standard washing machine during the washing process of textile end products. The standard applies to consumer textile products (clothing made of fleece, shirts, trousers, blouses, etc.) and home textile end products (blankets, rugs, curtains, etc.) composed of natural fibers, man-made fibers, or fiber mixtures that can be washed in domestic washing machines. The method references ISO 6330 for the standard washing machine and ISO 3758 for care labeling conditions. The standard does not apply to fabrics and cut textile products, nor does it cover testing of washing machines and detergents.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Measurement of collected material mass released from the outlet hose of a standard washing machine",
+      "Existing Key Metrics / Output: Mass"
+    ],
+    "abstract": [
+      "specifies a method for measuring the collected material mass released from the outlet hose of a standard washing machine, described in ISO 6330, through the washing process",
+      "applicable to textile end products (including consumer textile products, such as clothing made of fleece, shirts, trousers, blouse, etc.) and home textile end products (such as, blankets, rugs, curtains, etc.)",
+      "composed of all fibres such as natural fibres, and man-made fibres, including mixture of the fibres that can be washed in a domestic washing machine",
+      "not applicable to fabrics and cut textile products. It does not cover the test for washing machines and detergents"
+    ]
+  }
+}

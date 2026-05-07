@@ -1,0 +1,158 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Sutton et al., 2019
+        Year: 2019
+        Full Title: Understanding microplastic levels, pathways, and transport in the San Francisco Bay region
+        DOI/URL: https://www.sfei.org/documents/understanding-microplastics
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Understanding microplastic levels, pathways, and transport in the San Francisco Bay region.
+        DOI: 
+        Date: 2019-00-00 2019
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        ## **Understanding Microplastic Levels, Pathways, and Transport** in the San Francisco Bay Region 
+
+## **Authors** 
+
+Rebecca Sutton, SFEI Amy Franz, SFEI Alicia Gilbreath, SFEI Diana Lin, SFEI Liz Miller, SFEI Meg Sedlak, SFEI Adam Wong, SFEI 
+
+Carolynn Box, 5 Gyres 
+
+Rusty Holleman, University of California-Davis Center for Watershed Science 
+
+Keenan Munno, University of Toronto Xia Zhu, University of Toronto Chelsea Rochman, University of Toronto 
+
+## **Design and Layout** 
+
+Ruth Askevold, SFEI Ila Shimabuku, SFEI 
+
+## **Funded By** 
+
+The Gordon and Betty Moore Foundation 
+
+## **With Additional Support From** 
+
+Patagonia City of Palo Alto East Bay Municipal Utility District Virginia Wellington Cabot Foundation California Ocean Protection Council San Francisco Bay Regional Monitoring Program for Water Quality 
+
+**==> picture [298 x 296] intentionally omitted <==**
+
+**October 2019 SFEI-ASC Publication #950** 
+
+## **Acknowledgements** 
+
+The San Francisco Bay Microplastics Project would not have been possible without the enthusiastic support of many people. We are grateful to all who provided insights, advice, and funding in support of this effort, and would especially like to thank the following individuals and agencies: 
+
+The Regional Monitoring Program for Water Quality in San Francisco Bay (RMP) for providing a foundation for much of this work, and Jay Davis (RMP Director), Melissa Foley (RMP Manager), and Don Yee (RMP Quality Assurance Officer) for their guidance and review of this document; 
+
+The RMP Microplastic Workgroup participants and its expert advisors: Anna-Marie Cook, Kara Lavender Law, and Chelsea Rochman; 
+
+RMP Emerging Contaminants Workgroup expert advisor: Kelly Moran; 
+
+The RMP Small Tributaries Loading Strategy team: Jim Scanlin (Alameda Countywide Clean Water Program), Bonnie de Berry (San Mateo Countywide Water Pollution Prevention Program), Lisa Sabin (Santa Clara Valley Urban Runoff Pollution Prevention Program), Lucile Paquette (Contra Costa Clean Water Program), Chris Sommers (EOA, Inc.), and Richard Looker and Jan O’Hara (San Francisco Bay Regional Water Quality Control Board); 
+
+Wastewater agencies and staff: Karin North, Jim Stuart, Dominic Hoang, Kyle Carbajal, Robert Hara, and the City of Palo Alto; Simret Yigzaw, Eric Dunlavey, and the City of San Jose; Cameron Kostigen-Mumper and the City of Sunnyvale; Autumn Cleave, Stephen Navarra, Laura Pagano, Karrie Ving, and the San Francisco Public Utilities Commission; Jason Mitchell and the East Bay Municipal Utility District; Shahed Abbasi, Angie Barumen, Jackie Zipkin, and the East Bay Dischargers Authority; Tri Nguyen, Mary Lou Esparza, Douglas Little, Melody LaBella, Lori Schectel, and Central Contra Costa Sanitary District; and Giti Heravian and Fairfield-Suisun Sewer District; 
+
+The captains and sailors of the Derek M. Baylis and the San Francisco Baykeeper vessel, as well as Jody Watt (Wylie Charters), and Ian Wren, Sienna Courter, and Geoff Potter (San Francisco Baykeeper), all instrumental in surface water sample collection (authorized by California Department of Fish and Wildlife Scientific Collection Permit SCP-12364); 
+
+ii 
+
+National Oceanic and Atmospheric Administration staff including Max Delaney, Sophie De Beukelaer, Lilli Ferguson, and Kate Bimrose; 
+
+Moss Landing Marine Laboratories scientists who collected sediment and prey fish, Rusty Fairey and Marco Sigala (Scientific Collection Permit SC-008521); 
+
+All who assisted in the project's field work, with special thanks to Steph Whyte (formerly 5 Gyres), Erika Delemarre (5 Gyres), Doug George (UC Davis), and Jane Sedlak for their assistance with completion of surface water sampling; additional thanks to Erika Delemarre for her support on data organization and writing related to the Surface Water Chapter; 
+
+The microplastics analytical team at the Rochman Laboratory at the University of Toronto, under the supervision of Chelsea Rochman, Xia (Alice) Zhu, and Keenan Munno: Hannah DeFrond, Jelena Grbic, Edie Guo, Lara Werbowski, Jacqueline Bikker, Aimee Huntington, Brenda Lim, Hayley McIlwraith, Annissa Ho, Cassandra Sherlock, Natasha Klasios, Cole Brookson, Antonino Calarco, Charlotte Hung, Anna Lisa, Tina Wu, Lauren Ead, and Maheen Arshad; 
+
+Edward Gross for extensive assistance in particle tracking simulations and discussions of hydrodynamics, and John Largier for guidance on coastal dynamics in the San Francisco Bight; 
+
+Shira Bezalel (SFEI), and Andy Miller and Robin Moore (Plus M Productions) for expert photographs; and 
+
+The Gordon and Betty Moore Foundation program officers: Rachel Strader (former), Genny Biggs, and Sara Bender. 
+
+The San Francisco Bay Microplastics Project was primarily funded by the Gordon and Betty Moore Foundation, with additional financial support from the Regional Monitoring Program for Water Quality in San Francisco Bay, Patagonia, the Virginia Wellington Cabot Foundation, East Bay Municipal Utility District, the City of Palo Alto, and the California Ocean Protection Council. 
+
+iii 
+
+_Executive Summary_ 
+
+## **Executive Summary** 
+
+## _**The San Francisco Bay Microplastics Project**_ 
+
+Microplastics (particles less than 5 mm) are ubiquitous and persistent pollutants in the ocean and a pervasive and preventable threat to the health of marine ecosystems. Microplastics come in a wide variety of shapes, sizes, and plastic types, each with unique physical and chemical properties and toxicological impacts. Understanding the magnitude of the microplastics problem and determining the highest priorities for mitigation require accurate measures of microplastic occurrence in the environment and identification of likely sources. 
+
+To develop critical baseline data and inform solutions, the San Francisco Estuary Institute and the 5 Gyres Institute have completed the first comprehensive regional study of microplastic pollution in a major estuary. This project supported multiple scientific components to develop improved knowledge about and characterization of microparticles and microplastics in San Francisco Bay and adjacent National Marine Sanctuaries, with the following objectives: 
+
+1. Contribute to the development and standardization of sample collection and analysis methodology for microplastic research. 
+
+2. Determine a baseline for future monitoring of microplastics in San Francisco Bay surface water, sediment, and fish, and in ocean waters outside the Golden Gate. 
+
+3. Characterize pathways by which microplastics enter the Bay, including urban stormwater and treated wastewater effluent. 
+
+4. Investigate the contribution of Bay microplastics to the adjacent National Marine Sanctuaries through computer simulations. 
+
+5. Communicate to regional stakeholders and the general public through meetings and educational materials. 
+
+6. Facilitate evaluation of policy options for San Francisco Bay, with recommendations on source reduction. 
+
+This document presents the findings of this three-year project. A companion document, “San Francisco Bay Microplastics Project: Science-Supported Solutions and Policy Recommendations,” has been developed by 5 Gyres using the findings of this study (Box and Cummins, 2019). 
+
+iv 
+
+_Executive Summary_ 
+
+## _**Our findings**_ 
+
+In this report, we have distinguished between microparticles , which are small particles (less than 5 mm) that are visually identified as potentially plastic, and microplastics , which are confirmed to be plastic through Raman or Fourier Transform Infrared (FTIR) spectroscopy. This distinction is necessary because it was not possible to examine every microparticle via spectroscopy to confirm particle composition. Moreover, for some particles, clear spectra were not easy to obtain. 
+
+Microparticles and microplastics come in a range of sizes, and the lower size limit of microplastics within a sample is operationally defined by the mesh, sieve, or filter pore size used in sample collection and analysis. We quantified microparticles using sieves with a mesh size of 0.125 mm for stormwater, wastewater, and sediment. For surface water, the standard manta trawl sample collection method typically captures particles greater than 0.355 mm, whereas for prey fish, it is possible to collect far smaller particles. When smaller size fractions are included, the overall number of microparticles and microplastics in a sample can increase significantly. To facilitate comparisons among these different types of samples, particles were grouped into uniform size categories during laboratory analysis. 
+
+## **STORMWATER** 
+
+We measured microparticles and microplastics in stormwater from 12 small tributaries comprising 11% of the watershed drainage area to San Francisco Bay (6% of total flow to Bay). These tributaries varied in urban and non-urban land uses and were distributed across the region. Microparticles were identified in stormwater from all 12 small tributaries, which discharged between 1.3 and 30 microparticles per liter. Fragments (59%) and fibers (39%) constituted nearly all microparticles sampled. 
+
+Nearly half of the particles from field samples were black fragments that had a distinctive rubbery texture when handled with tweezers. Spectroscopic analysis and secondary characteristics suggested these particles may be synthetic or natural rubber. This identification is not definitive, as other techniques beyond the scope of this project are needed to confirm the particle composition. For purposes of this report, these polymers are considered a type of plastic, a common approach in the field of microplastics. The literature suggests that one potential source of these particles is vehicle tire wear. 
+
+Using an existing stormwater model developed for other contaminants, we estimated the annual discharge of microparticles via stormwater from small tributaries to be 11 trillion microparticles to the Bay. Approximately two thirds of these microparticles were estimated to be plastic, yielding an estimated annual discharge of 7 trillion microplastics per year. This 
+
+v

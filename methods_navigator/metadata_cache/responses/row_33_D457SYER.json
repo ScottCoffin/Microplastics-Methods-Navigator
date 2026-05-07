@@ -1,0 +1,20 @@
+{
+  "particle_size_range": "1 μm–5 mm (micro); 1–1000 nm (nano)",
+  "key_metrics_output": "KOH digestion recovery 96.7%; H₂O₂ recovery 88.8%; interlaboratory coefficient of variation <11%; polymer identification (3 polymers); 4 laboratories; contamination control across matrices",
+  "abstract": "Plastic pollution is documented across aquatic and terrestrial ecosystems, with the majority of debris in the micro (1 μm–5 mm) or nano (1–1000 nm) size range from primary and secondary sources. This guide addresses challenges in isolating and analyzing microplastics reproducibly and controlling background contamination across matrices (sediment, tissue, water, air). The manuscript outlines quality assurance and quality control steps for general and matrix-specific sampling, reviews current findings across matrices, and provides guidance for sampling regime design, with attention to pollution sources and contamination pathways.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "The majority of this plastic debris falls into the micro (1 lm–5 mm) or nano (1–1000 nm) size range"
+    ],
+    "key_metrics_output": [
+      "KOH digestion recovery 96.7%; H₂O₂ recovery 88.8%; interlaboratory CV <11%; 3 polymers; 4 labs",
+      "quality assurance and quality control based on sample type"
+    ],
+    "abstract": [
+      "Plastic pollution is a defining environmental contaminant and is considered to be one of the greatest environmental threats of the Anthropocene, with its presence documented across aquatic and terrestrial ecosystems",
+      "The majority of this plastic debris falls into the micro (1 lm–5 mm) or nano (1–1000 nm) size range",
+      "Its small size makes it cumbersome to isolate and analyze reproducibly, and its ubiquitous distribution creates numerous challenges when controlling for background contamination across matrices"
+    ]
+  }
+}

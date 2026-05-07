@@ -1,0 +1,20 @@
+{
+  "scope": "Environmental microplastics; exposure measurements, effect studies, and fate modeling",
+  "particle_size_range": "0.1 µm – 5 mm",
+  "key_metrics_output": "Size, shape, density; probability distributions; bioavailability; exposure characterization",
+  "abstract": "Because of their diverse sizes, shapes, and densities, environmental microplastics are often perceived as complex. Many studies struggle with this complexity and either address only a part of this diversity or present data using discrete classiﬁcations for sizes, shapes, and densities. We argue that such classiﬁcations will never be fully satisfactory, as any deﬁnition using classes does not capture the essentially continuous nature of environmental microplastic. Therefore, we propose to simplify microplastics by fully deﬁning them through a three-dimensional (3D) probability distribution, with size, shape, and density as dimensions. In addition to introducing the concept, we parametrize these probability distributions, using empirical data. This parametrization results in an approximate yet realistic representation of “true” environmental microplastic. This approach to simplifying microplastic could be applicable to exposure measurements, eﬀect studies, and fate modeling. Furthermore, it allows for easy comparison between studies, irrespective of sampling or laboratory setup. We demonstrate how the 3D probability distribution of environmental versus ingested microplastic can be helpful in understanding the bioavailability of and exposure to microplastic. We argue that the concept of simpliﬁed microplastic will also be helpful in probabilistic risk modeling, which would greatly enhance our understanding of the risk that microplastics pose to the environment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Existing Particle Size Range: 0.1 µm – 5 mm (MP)"
+    ],
+    "key_metrics_output": [
+      "three-dimensional (3D) probability distribution, with size, shape, and density as dimensions",
+      "exposure measurements, eﬀect studies, and fate modeling",
+      "bioavailability of and exposure to microplastic"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

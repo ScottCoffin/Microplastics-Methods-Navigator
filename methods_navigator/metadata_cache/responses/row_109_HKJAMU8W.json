@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "polymer type, particle number, size, size distribution, particle shape; spectroscopic identification and quantification",
+  "abstract": "Microplastics are a widespread contaminant found not only in various natural habitats but also in drinking waters. With spectroscopic methods, the polymer type, number, size, and size distribution as well as the shape of microplastic particles in waters can be determined, which is of great relevance to toxicological studies. Methods used in studies so far show a huge diversity regarding experimental setups and often a lack of certain quality assurance aspects. To overcome these problems, this critical review and consensus paper of 12 European analytical laboratories and institutions, dealing with microplastic particle identification and quantification with spectroscopic methods, gives guidance toward harmonized microplastic particle analysis in clean waters. The aims of this paper are to (i) improve the reliability of microplastic analysis, (ii) facilitate and improve the planning of sample preparation and microplastic detection, and (iii) provide a better understanding regarding the evaluation of already existing studies. With these aims, we hope to make an important step toward harmonization of microplastic particle analysis in clean water samples and, thus, allow the comparability of results obtained in different studies by using similar or harmonized methods. Clean water samples, for the purpose of this paper, are considered to comprise all water samples with low matrix content, in particular drinking, tap, and bottled water, but also other water types such as clean freshwater.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "the polymer type, number, size, and size distribution as well as the shape of microplastic particles in waters can be determined",
+      "dealing with microplastic particle identification and quantification with spectroscopic methods"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

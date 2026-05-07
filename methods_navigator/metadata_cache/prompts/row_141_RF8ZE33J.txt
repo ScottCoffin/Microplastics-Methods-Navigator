@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Gouin et al., 2019
+Year: 2019
+Full Title: Toward the Development and Application of an Environmental Risk Assessment Framework for Microplastic
+DOI/URL: https://doi.org/10.1002/etc.4529
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Toward the Development and Application of an Environmental Risk Assessment Framework for Microplastic
+DOI: 10.1002/etc.4529
+Date: 2019-10-00 10/2019
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Emissions of plastic waste to the environment and the subsequent degradation into microplastic particles that have the potential to interact with biological organisms represent a concern for global society. Current understanding of the potential impacts on aquatic and terrestrial population stability and ecosystem structure and function associated with emissions of microplastic particles is limited and insufﬁcient to fully assess environmental risks. Multistakeholder discussions can provide an important element in helping to identify and prioritize key knowledge gaps in assessing potential risks. In the present review, we summarize multistakeholder discussions from a 1‐d International Council of Chemical Associations–sponsored symposium, which involved 39 scientists from 8 countries with representatives from academia, industry, and government. Participants were asked to consider the following: discuss the scientiﬁc merits and limitations of applying a proposed conceptual environmental risk assessment (ERA) framework for microplastic particles and identify and prioritize major research needs in applying ERA tools for microplastic particles. Multistakeholder consensus was obtained with respect to the interpretation of the current state of the science related to effects and exposure to microplastic particles, which implies that it is unlikely that the presence of microplastic in the environment currently represents a risk. However, the quality and quantity of existing data require substantial improvement before conclusions regarding the potential risks and impacts of microplastic particles can be fully assessed. Research that directly addresses the development and application of methods that strengthen the quality of data should thus be given the highest priority. Activities aimed at supporting the development of and access to standardized reference material were identiﬁed as a key research need. Environ Toxicol Chem 2019;38:2087–2100. © 2019 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals, Inc. on behalf of SETAC.
+
+Context source: zotero_abstractNote
+
+Source context:
+Emissions of plastic waste to the environment and the subsequent degradation into microplastic particles that have the potential to interact with biological organisms represent a concern for global society. Current understanding of the potential impacts on aquatic and terrestrial population stability and ecosystem structure and function associated with emissions of microplastic particles is limited and insufﬁcient to fully assess environmental risks. Multistakeholder discussions can provide an important element in helping to identify and prioritize key knowledge gaps in assessing potential risks. In the present review, we summarize multistakeholder discussions from a 1‐d International Council of Chemical Associations–sponsored symposium, which involved 39 scientists from 8 countries with representatives from academia, industry, and government. Participants were asked to consider the following: discuss the scientiﬁc merits and limitations of applying a proposed conceptual environmental risk assessment (ERA) framework for microplastic particles and identify and prioritize major research needs in applying ERA tools for microplastic particles. Multistakeholder consensus was obtained with respect to the interpretation of the current state of the science related to effects and exposure to microplastic particles, which implies that it is unlikely that the presence of microplastic in the environment currently represents a risk. However, the quality and quantity of existing data require substantial improvement before conclusions regarding the potential risks and impacts of microplastic particles can be fully assessed. Research that directly addresses the development and application of methods that strengthen the quality of data should thus be given the highest priority. Activities aimed at supporting the development of and access to standardized reference material were identiﬁed as a key research need. Environ Toxicol Chem 2019;38:2087–2100. © 2019 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals, Inc. on behalf of SETAC.

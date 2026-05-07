@@ -1,0 +1,17 @@
+{
+  "particle_size_range": "Not specified",
+  "key_metrics_output": null,
+  "abstract": null,
+  "confidence": "low",
+  "evidence": {
+    "particle_size_range": [
+      "PDF content is heavily corrupted/unreadable; no clear particle size range text visible"
+    ],
+    "key_metrics_output": [
+      "Document appears to be a staff report on proposed definition but readable content is insufficient"
+    ],
+    "abstract": [
+      "PDF is corrupted with garbled text streams; no coherent abstract or summary text extractable"
+    ]
+  }
+}

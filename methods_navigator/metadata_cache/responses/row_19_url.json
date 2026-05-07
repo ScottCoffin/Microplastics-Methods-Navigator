@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "sources, fate, effects of microplastics",
+  "abstract": "Global assessment of microplastics in the marine environment based on published information, examining sources, fate, and effects. The report addresses how plastic durability, while advantageous for consumer applications (clothing, storage, transportation, packaging, construction), contributes to persistent threats in marine ecosystems.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "sources, fate and effects of microplastics in the marine environment"
+    ],
+    "abstract": [
+      "Plastics have become indispensable in many areas of modern life, used for clothing, storage, transportation, packaging, construction and a host of consumer goods",
+      "One of plastics greatest properties, its durability, is also one of the main reasons that plastics present a threat to the marine environment",
+      "GESAMP was tasked to conduct a global assessment, based on published information, of the sources, fate and effects of microplastics in the marine environment"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Lusher et al., 2021
+Year: 2021
+Full Title: Moving forward in microplastic research: A Norwegian perspective
+DOI/URL: https://doi.org/10/gmdm6b
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Moving forward in microplastic research: A Norwegian perspective
+DOI: 
+Date: 2021-12-00 12/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Given the increasing attention on the occurrence of microplastics in the environment, and the potential envi­ ronmental threats they pose, there is a need for researchers to move quickly from basic understanding to applied science that supports decision makers in finding feasible mitigation measures and solutions. At the same time, they must provide sufficient, accurate and clear information to the media, public and other relevant groups (e.g., NGOs). Key requirements include systematic and coordinated research efforts to enable evidence-based decision making and to develop efficient policy measures on all scales (national, regional and global). To achieve this, collaboration between key actors is essential and should include researchers from multiple disciplines, policy­ makers, authorities, civil and industry organizations, and the public. This further requires clear and informative communication processes, and open and continuous dialogues between all actors. Cross-discipline dialogues between researchers should focus on scientific quality and harmonization, defining and accurately communi­ cating the state of knowledge, and prioritization of topics that are critical for both research and policy, with the common goal to establish and update action plans for holistic benefit. In Norway, cross-sectoral collaboration has been fundamental in supporting the national strategy to address plastic pollution. Researchers, stakeholders and the environmental authorities have come together to exchange knowledge, identify knowledge gaps, and set targeted and feasible measures to tackle one of the most challenging aspects of plastic pollution: microplastic. In this article, we present a Norwegian perspective on the state of knowledge on microplastic research efforts. Norway’s involvement in international efforts to combat plastic pollution aims at serving as an example of how key actors can collaborate synergistically to share knowledge, address shortcomings, and outline ways forward to address environmental challenges.
+
+Context source: zotero_abstractNote
+
+Source context:
+Given the increasing attention on the occurrence of microplastics in the environment, and the potential envi­ ronmental threats they pose, there is a need for researchers to move quickly from basic understanding to applied science that supports decision makers in finding feasible mitigation measures and solutions. At the same time, they must provide sufficient, accurate and clear information to the media, public and other relevant groups (e.g., NGOs). Key requirements include systematic and coordinated research efforts to enable evidence-based decision making and to develop efficient policy measures on all scales (national, regional and global). To achieve this, collaboration between key actors is essential and should include researchers from multiple disciplines, policy­ makers, authorities, civil and industry organizations, and the public. This further requires clear and informative communication processes, and open and continuous dialogues between all actors. Cross-discipline dialogues between researchers should focus on scientific quality and harmonization, defining and accurately communi­ cating the state of knowledge, and prioritization of topics that are critical for both research and policy, with the common goal to establish and update action plans for holistic benefit. In Norway, cross-sectoral collaboration has been fundamental in supporting the national strategy to address plastic pollution. Researchers, stakeholders and the environmental authorities have come together to exchange knowledge, identify knowledge gaps, and set targeted and feasible measures to tackle one of the most challenging aspects of plastic pollution: microplastic. In this article, we present a Norwegian perspective on the state of knowledge on microplastic research efforts. Norway’s involvement in international efforts to combat plastic pollution aims at serving as an example of how key actors can collaborate synergistically to share knowledge, address shortcomings, and outline ways forward to address environmental challenges.

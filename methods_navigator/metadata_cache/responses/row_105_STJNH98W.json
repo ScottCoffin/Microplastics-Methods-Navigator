@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "30–200 μm",
+  "key_metrics_output": "Particle number concentration (particles/L), particle mass (μg), particle size distribution, particle shape, polymer identity (PET), homogeneity (RSD), inter-laboratory comparison metrics",
+  "abstract": "Validation of analytical methods for measurements of microplastics (MP) is severely hampered because of a general lack of reference materials, RM. There is a great need to develop such reference materials. This study presents a concept of three-component kit with immobilised MP in solid NaCl, a surfactant and clean water that can be applied for the production of many types of MP RMs. As proof of concept, an RM for polyethylene terephthalate (PET) particles in water was prepared and evaluated for its homogeneity. The particles ranged from 30 μm (Feretmin) to about 200 μm adapted by wet sieving. A specific number of PET particles were immobilized in about 0.29 g of solid NaCl by freeze-drying 1 mL of a NaCl suspension. By using manual and automated counting, twenty reconstituted 1-L water samples were evaluated for homogeneity with respect to number of PET particles from 30 μm to > 200 μm/L of water. The number of particles was 730 ± 120 (mean ± one standard deviation (SD); n = 10) and 865 ± 155 particles (n = 10) obtained by optical microscopy in two independent laboratories. This corresponded to relative SDs of 16.4 and 17.9% and a mean of 797 ± 151 particles (18.9% RSD, for n = 20). Homogeneity studies of the NaCl carrier without reconstitution resulted in 794 ± 60 particles (7.5% RSD). The homogeneity of PET in the salt carrier was also evaluated directly with respect to mass of PET per vial using an ultra-micro balance. An average mass of 293 ± 41 μg of PET was obtained (14, % RSD for n = 14). Micrographs were recorded to demonstrate the absence of major sources of contamination of the RM components. Information about the particle size distribution and particle shapes was obtained by laser diffraction (LD) and dynamic image analysis (DIA). In addition, the identity of the PET polymer was confirmed by Raman and FT-IR spectroscopy. The RM was developed for a large-scale inter-laboratory comparison of PET particles in water (ILC). Based on the homogeneity results, the material was found to be sufficiently homogeneous to be of meaningful use in the ILC. In a 3-day process, more than 500 samples of PET particles in the NaCl carrier were prepared with good potential for further upscaling with respect to the number of vials or with other kinds of polymers. The stability of PET was not evaluated but it was deemed to be stable for the duration of the ILC.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "The particles ranged from 30 μm (Feretmin) to about 200 μm adapted by wet sieving",
+      "number of PET particles from 30 μm to > 200 μm/L of water"
+    ],
+    "key_metrics_output": [
+      "The number of particles was 730 ± 120 (mean ± one standard deviation (SD); n = 10) and 865 ± 155 particles",
+      "An average mass of 293 ± 41 μg of PET was obtained (14, % RSD for n = 14)",
+      "Information about the particle size distribution and particle shapes was obtained by laser diffraction (LD) and dynamic image analysis (DIA)",
+      "the identity of the PET polymer was confirmed by Raman and FT-IR spectroscopy"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

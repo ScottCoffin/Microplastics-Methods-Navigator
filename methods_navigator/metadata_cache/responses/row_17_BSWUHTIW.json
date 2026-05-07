@@ -1,0 +1,16 @@
+{
+  "scope": "Plastic debris definition and categorization framework for microplastics across natural environments",
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer composition, solid state, solubility, size, shape, color, origin",
+  "abstract": "The accumulation of plastic litter in natural environments is a global issue. Concerns over potential negative impacts on the economy, wildlife, and human health provide strong incentives for improving the sustainable use of plastics. Despite the many voices raised on the issue, we lack a consensus on how to deﬁne and categorize plastic debris. This is evident for microplastics, where inconsistent size classes are used and where the materials to be included are under debate. While this is inherent in an emerging research ﬁeld, an ambiguous terminology results in confusion and miscommunication that may compromise progress in research and mitigation measures. Therefore, we need to be explicit on what exactly we consider plastic debris. Thus, we critically discuss the advantages and disadvantages of a uniﬁed terminology, propose a deﬁnition and categorization framework, and highlight areas of uncertainty. Going beyond size classes, our framework includes physicochemical properties (polymer composition, solid state, solubility) as deﬁning criteria and size, shape, color, and origin as classiﬁers for categorization. Acknowledging the rapid evolution of our knowledge on plastic pollution, our framework will promote consensus building within the scientiﬁc and regulatory community based on a solid scientiﬁc foundation.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "our framework includes physicochemical properties (polymer composition, solid state, solubility) as defining criteria and size, shape, color, and origin as classifiers for categorization"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

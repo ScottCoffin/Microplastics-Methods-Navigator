@@ -1,0 +1,27 @@
+{
+  "particle_size_range": "0.5–1 mm (large microplastics) and 5–250 μm (small microplastics)",
+  "key_metrics_output": "Recovery percentage of microplastic particles by polymer type; particle identification and quantification; polymer type identification (HDPE, LDPE, PP, PS, PA, PET, PVC, PBAT/PLA); detection sensitivity comparison across methods; limits of detection; mass quantification for biodegradable polymers",
+  "abstract": "This comparative assessment evaluated seven analytical protocols for microplastic (MiP) quantification in soils with different textures and organic carbon contents. Protocols combined extraction procedures (density separation, enzymatic/oxidative digestion, solvent extraction) with detection techniques including digital microscopy, fluorescence microscopy, ATR-FTIR, FPA-µFTIR, µ-Raman spectroscopy, Pyrolysis-GC-MS, and ¹H NMR spectroscopy. Eight polymer types (HDPE, LDPE, PP, PS, PA, PET, PVC, and biodegradable PBAT/PLA) were tested as large particles (0.5–1 mm) and small particles (5–250 μm). Fluorescence microscopy achieved the highest recovery of large MiPs (88%), while Soxhlet extraction coupled with ¹H NMR provided the most reliable quantification for small biodegradable particles. Method performance varied significantly by polymer type and soil texture, with Raman spectroscopy most sensitive to soil organic matter interference. Results indicate that different methods have distinct sensitivities for different materials in different soils, requiring careful consideration when comparing MiP loads across methodologies.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "large MiPs (500–1000 µm)",
+      "small MiPs (5–250 µm)",
+      "LDPE was specified to be 10–150 µm",
+      "PBAT/ PLA was sieved to 100–250 µm"
+    ],
+    "key_metrics_output": [
+      "protocols for Digital, Fluorescence, and ATR-FTIR microscopy recovered 74–98 % of the large MiPs",
+      "Fluorescence staining with subsequent Fluorescence microscopy detection effectively recovered most small-sized LDPE-MiP but missed 56– 93 % of small PBAT/ PLA particles",
+      "Soxhlet extraction combined with ¹H NMR spectroscopic quantification",
+      "Pyrolysis-GC-MS showed intermediate results",
+      "different methods have different sensitivities for different MiP materials in different soils"
+    ],
+    "abstract": [
+      "We compared analytical protocols for MiP quantification in soil, consisting of Digital, Fluorescence, Fourier-transform infrared (FTIR), and Raman Microscopy as well as Conventional synthetic and biodegradable quantitative Pyrolysis-Gas Chromatography-Mass Spectroscopy (Py-GC-MS) and ¹H NMR spectroscopy",
+      "eight types of large MiPs (0.5–1 mm) – high- and low-density polyethylene (HDPE and LDPE), polypropylene (PP), polystyrene (PS), polyamide (PA), polyethylene terephthalate (PET), polyvinyl chloride (PVC), and a biodegradable mulch film product",
+      "two types of small MiPs (20–250 µm) composed of either LDPE or PBAT/ PLA",
+      "protocols for Digital, Fluorescence, and ATR-FTIR microscopy recovered 74–98 % of the large MiPs, with fluorescence yielding the highest recoveries"
+    ]
+  }
+}

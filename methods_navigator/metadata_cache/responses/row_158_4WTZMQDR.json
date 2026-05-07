@@ -1,0 +1,28 @@
+{
+  "particle_size_range": "Less than 5 mm (operationally defined by collection method: 0.125 mm mesh for stormwater/wastewater/sediment; >0.355 mm for surface water manta trawl)",
+  "key_metrics_output": "Microparticle and microplastic abundance (particles per liter), particle morphology (fragments, fibers), polymer type (confirmed via Raman or FTIR spectroscopy), particle size distribution, annual discharge estimates (trillions of particles), source characterization (stormwater, wastewater, sediment, fish)",
+  "abstract": "The San Francisco Bay Microplastics Project is a comprehensive regional study of microplastic pollution in a major estuary. The project developed baseline data on microplastic occurrence in surface water, sediment, and fish, characterized pathways of microplastic entry (urban stormwater and treated wastewater), and investigated transport to adjacent National Marine Sanctuaries. Microparticles were distinguished from confirmed microplastics via spectroscopy. Stormwater from 12 small tributaries contained 1.3–30 microparticles per liter, with fragments (59%) and fibers (39%) predominating. Black fragments potentially from tire wear were identified. Annual stormwater discharge to the Bay was estimated at approximately 7 trillion microplastics per year.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics (particles less than 5 mm)",
+      "lower size limit of microplastics within a sample is operationally defined by the mesh, sieve, or filter pore size",
+      "sieves with a mesh size of 0.125 mm for stormwater, wastewater, and sediment",
+      "standard manta trawl sample collection method typically captures particles greater than 0.355 mm"
+    ],
+    "key_metrics_output": [
+      "microparticles and microplastics in stormwater...discharged between 1.3 and 30 microparticles per liter",
+      "Fragments (59%) and fibers (39%) constituted nearly all microparticles",
+      "Spectroscopic analysis...Raman or Fourier Transform Infrared (FTIR) spectroscopy",
+      "estimated annual discharge of microparticles via stormwater from small tributaries to be 11 trillion microparticles to the Bay",
+      "estimated annual discharge of 7 trillion microplastics per year"
+    ],
+    "abstract": [
+      "first comprehensive regional study of microplastic pollution in a major estuary",
+      "Determine a baseline for future monitoring of microplastics in San Francisco Bay surface water, sediment, and fish",
+      "Characterize pathways by which microplastics enter the Bay, including urban stormwater and treated wastewater effluent",
+      "Microparticles and microplastics come in a range of sizes",
+      "Microparticles were identified in stormwater from all 12 small tributaries, which discharged between 1.3 and 30 microparticles per liter"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "soil microplastics; sample preparation techniques for terrestrial microplastic analysis",
+  "particle_size_range": null,
+  "key_metrics_output": "microplastic identification and quantification; polymer type; sample preparation efficiency (separation, preconcentration, digestion)",
+  "abstract": "Although most plastic pollution originates on land, current research largely remains focused on aquatic ecosystems. Studies pioneering terrestrial microplastic research have adapted analytical methods from aquatic research without acknowledging the complex nature of soil. Meanwhile, novel methods have been developed and further refined. However, methodical inconsistencies still challenge a comprehensive understanding of microplastic occurrence and fate in and on soil. This review aims to disentangle the variety of state-of-the-art sample preparation techniques for heterogeneous solid matrices to identify and discuss best-practice methods for soil-focused microplastic analyses. We show that soil sampling, homogenization, and aggregate dispersion are often neglected or incompletely documented. Microplastic preconcentration is typically performed by separating inorganic soil constituents with high-density salt solutions. Not yet standardized but currently most used separation setups involve overflowing beakers to retrieve supernatant plastics, although closed-design separation funnels probably reduce the risk of contamination. Fenton reagent may be particularly useful to digest soil organic matter if suspected to interfere with subsequent microplastic quantification. A promising new approach is extraction of target polymers with organic solvents. However, insufficiently characterized soils still impede an informed decision on optimal sample preparation. Further research and method development thus requires thorough validation and quality control with well-characterized matrices to enable robust routine analyses for terrestrial microplastics.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "soil sampling, homogenization, and aggregate dispersion",
+      "microplastic preconcentration by separating inorganic soil constituents with high-density salt solutions",
+      "separation setups (overflowing beakers, closed-design separation funnels)",
+      "Fenton reagent to digest soil organic matter",
+      "extraction of target polymers with organic solvents"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

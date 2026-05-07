@@ -1,0 +1,22 @@
+{
+  "particle_size_range": "≥10 µm",
+  "key_metrics_output": "Particle count, polymer type identification, spike recovery (~90%), deposition flux (particles/m²/event or /day)",
+  "abstract": "Critical assessment of analytical methods for microplastics analysis covering sampling, extraction, and identification techniques including optical microscopy, dye staining, flow cytometry, FT-IR, Raman spectroscopy, and py-GC-MS. The review evaluates methods for limitations, field applicability, and cost-efficiency to establish harmonized standardized operational protocols for microplastics monitoring in drinking water and environmental samples, with consideration of nanoplastic analysis.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "≥10 µm (FPA-µFTIR; wet deposition filter samples)"
+    ],
+    "key_metrics_output": [
+      "Count and polymer type",
+      "~90% spike-recovery",
+      "deposition flux (particles/m²/event or /day)"
+    ],
+    "abstract": [
+      "state of the currently applied identification and quantification tools for microplastics",
+      "naked eye detection, general optical microscopy, dye staining, flow cytometry, FT-Ir and microscopy, Raman spectroscopy and microscopy, py-GC-MS, TED-GCMS",
+      "methods were screened for limitations, field work abilities and costs",
+      "recommendation for a workflow covering the demands of society, legislation, and administration"
+    ]
+  }
+}

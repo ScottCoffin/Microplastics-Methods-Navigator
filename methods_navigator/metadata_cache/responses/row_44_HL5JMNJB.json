@@ -1,0 +1,18 @@
+{
+  "scope": "Microplastics effect testing; freshwater benthic communities; single species and community-level risk assessment",
+  "particle_size_range": null,
+  "key_metrics_output": "Effect thresholds, risk assessment endpoints, MP characteristics, adverse effect mechanisms, toxicity",
+  "abstract": "Numerous reviews have consistently highlighted the shortcomings of studies evaluating the effects of microplastics (MP), with many of the issues identified in 2016 still relevant in 2024. Here, we summarize the current knowledge on MP effect testing, compare guidelines, and provide an overview of risk assessments conducted at both single species and community levels. We discuss standard test materials, MP characteristics, and mechanisms explaining effects. We have observed that the quality of MP effect studies is gradually improving, and knowledge on enhancing these studies is available. Recommendations include data rescaling and alignment for ecological risk assessment, with preference for using environmentally relevant MPs. A step-by-step protocol for creating polydisperse test materials is provided. Most risk assessments indicate that concentrations observed in ecosystems globally exceed the effect thresholds measured in the laboratory. However, using a higher-tier approach, no risks are expected for freshwater benthic communities at current MP exposure concentrations. Evidence on the mechanisms behind adverse effects is growing; however, more well-designed experiments are needed. A potential solution might involve comparing natural particles with MPs that are as similar in dimensions as possible, providing insight into the mechanisms of food dilution where volume is a critical determinant of toxicity.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "standard test materials, MP characteristics, and mechanisms explaining effects",
+      "effect thresholds measured in the laboratory",
+      "food dilution where volume is a critical determinant of toxicity"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

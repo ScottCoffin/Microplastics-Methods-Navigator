@@ -1,0 +1,251 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Mehinto et al., 2022
+        Year: 2022
+        Full Title: Risk-based management framework for microplastics in aquatic ecosystems
+        DOI/URL: https://doi.org/10.1186/s43591-022-00033-3
+        Existing Particle Size Range: MP: 1 µm – 5 mm; NP: <1 µm
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Risk-based management framework for microplastics in aquatic ecosystems
+        DOI: 
+        Date: 2022-00-00 2022
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ https://doi.org/10.1186/s43591-022-00033-3 
+
+Microplastics and Nanoplastics 
+
+## **RESEARCH** 
+
+## Risk-based management framework for microplastics in aquatic ecosystems 
+
+## **Open Access** 
+
+**==> picture [29 x 29] intentionally omitted <==**
+
+Alvine C. Mehinto[1*] , Scott Coffin[2] , Albert A. Koelmans[3] , Susanne M. Brander[4] , Martin Wagner[5] , Leah M. Thornton Hampton[1] , Allen G. Burton Jr[6] , Ezra Miller[7] , Todd Gouin[8] , Stephen B. Weisberg[1] and Chelsea M. Rochman[9] 
+
+## **Abstract** 
+
+Microplastic particles (MPs) are ubiquitous across a wide range of aquatic habitats but determining an appropriate level of risk management is hindered by a poor understanding of environmental risk. Here, we introduce a risk management framework for aquatic ecosystems that identifies four critical management thresholds, ranging from low regulatory concern to the highest level of concern where pollution control measures could be introduced to mitigate environmental emissions. The four thresholds were derived using a species sensitivity distribution (SSD) approach and the best available data from the peer-reviewed literature. This included a total of 290 data points extracted from 21 peer-reviewed microplastic toxicity studies meeting a minimal set of pre-defined quality criteria. The meta-analysis resulted in the development of critical thresholds for two effects mechanisms: food dilution with thresholds ranging from ~ 0.5 to 35 particles/L, and tissue translocation with thresholds ranging from ~ 60 to 4100 particles/L. This project was completed within an expert working group, which assigned high confidence to the management framework and associated analytical approach for developing thresholds, and very low to high confidence in the numerical thresholds. Consequently, several research recommendations are presented, which would strengthen confidence in quantifying threshold values for use in risk assessment and management. These recommendations include a need for high quality toxicity tests, and for an improved understanding of the mechanisms of action to better establish links to ecologically relevant adverse effects. 
+
+**Keywords:** Microplastics, Ecotoxicology, Risk thresholds, Risk management, Aquatic health 
+
+## **Introduction** 
+
+Microplastic particles (MPs; < 5000 μm) are pervasive in the aquatic environment, including ocean surface waters [54], deep ocean trenches [1], wetlands [36], lakes [13, 14] and the Arctic [20]. Exposure to MPs has been associated with various types of biological responses, including disruption of feeding [61], decreases in growth [48], tissue inflammation [43], changes in gene expression [42, 66], and decreases in reproductive success [55]. The observed adverse effects have resulted in increasing concern 
+
+*Correspondence:  alvinam@sccwrp.org 
+
+1 Southern California Coastal Water Research Project Authority, 3535 Harbor Blvd, Costa Mesa, CA 92626, USA Full list of author information is available at the end of the article 
+
+regarding the environmental risks of MPs, thus requiring the development and application of appropriate risk assessment and management tools [21]. 
+
+In order to appropriately inform MPs management decisions, there is a need to establish critical threshold values at which adverse effects are likely to occur (Coffin and Weisberg, [11]). However, the development and application of such risk management framework is currently limited because MPs are a diverse class of pollutants with varying properties (i.e., different sizes, shapes, polymer types, and chemical additives) that can influence the toxicity outcome in aquatic organisms [37, 49]. For instance, several laboratory-based studies have documented chemical effects of MPs from additives or other sorbed contaminants [17, 31, 38, 70]. Others have 
+
+> © The Author(s) 2022. **Open Access** This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http:// creat iveco mmons. org/ licen ses/ by/4. 0/. 
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 2 of 10 
+
+reported physical effects of MPs as a result of food dilution where the volume of ingested particles creates a false sense of satiation and reduces nutrient intake [12, 47, 53], or as a result of translocation of MPs across epithelial barriers, leading to tissue inflammation and oxidative stress [39, 64]. 
+
+Further complicating the development of thresholds are the discrepancies between laboratory-based exposures and environmentally relevant exposure scenarios. Most toxicity studies are using monodispersed MPs (e.g., single-sized virgin beads or fragments of one polymer type) [21, 32], while ambient exposures are to a mixture of particle sizes, shapes and chemistries [7], including a high proportion of microfibers [4], and other chemical contaminants from different parallel exposure pathways. Moreover, accurate estimates of environmental concentrations for smaller MPs (< 300 μm) remain sparse [9], and particles < 1 μm can be difficult to detect in environmental samples [50]. However, recent studies have proposed an alignment strategy to extrapolate laboratory results of varying levels of polydispersity and facilitate comparisons with the polydispersity of MPs in the environment [33, 34]. This represents a promising advancement to improve environmental risk assessments for MPs. 
+
+Here, we report the outcome of an expert workshop that aimed to develop and apply a risk management framework for MPs in aquatic ecosystems. The framework was populated using a meta-analysis of the 
+
+peer-reviewed literature to estimate threshold values for two different effect mechanisms, food dilution and translocation. The workshop addresses the State of California legislative mandates for enhanced MPs management [63] and advances risk assessment analysis by introducing a tiered management framework that defines four thresholds based on varying levels of MPs in surface waters and corresponding to different levels of concern and management responses. Finally, the level of confidence in the framework and each of the threshold values was evaluated along with research needs to improve confidence in these thresholds in future iterations. 
+
+## **Proposed microplastics management framework** 
+
+The proposed framework developed for water discharge management consists of five levels of risk management concern, with four hazard thresholds based on different levels of confidence that MPs can cause an adverse effect to aquatic life (Fig. 1). Threshold 1 defines the level below which managers should be confident in the absence of biological effects and is limited to decisions related to monitoring needs. In contrast, Threshold 4 corresponds to a level of concern where managers can be more confident that ecosystem level effects manifest. Thus, observations of MPs in aquatic systems in exceedance of Threshold 4 would require the implementation of stringent and potentially expensive management actions, such as limiting uses of a waterbody (e.g., fishing restrictions) or source controls (e.g., regulation of local point 
+
+**==> picture [484 x 266] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Fig. 1  Proposed tiered management framework to implement health-based thresholds for microplastics<br>**----- End of picture text -----**<br>
+
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 3 of 10 
+
+sources). Workshop participants recommended that Threshold 1 be implemented to establish a “protective” level below which environmental risks are low, minimizing Type I errors. The more “predictive” Threshold 4 is based on high quality and reliable toxicity data reporting significant effects of MPs exposures. This minimizes Type II error to ensure that the associated management actions are appropriately justified. Thresholds 2 and 3 represent a gradation in management decisions and associated thresholds between Thresholds 1 and 4. Although the development of a risk management framework fills a critical gap to address MP pollution in aquatic environments, other precautionary measures to reduce sources of MPs (e.g., product bans) should be conducted in parallel for effective MPs management. 
+
+## **Methods** 
+
+## **Approach to derive health‑based thresholds** 
+
+The approach developed and applied here to calculate the four thresholds is based on the use of a species sensitivity distribution (SSD) [3, 51, 59]. This probabilistic approach, often used to develop water quality criteria, summarizes ecotoxicological data for various species and taxa in order to compare interspecies sensitivity to a specific contaminant [16, 44]. Because they integrate a large set of toxicity data for all species exposed to a contaminant of interest, SSDs and the derivation of hazard concentration (HC) levels protective of aquatic communities are considered a pragmatic approach that is not without limitations but the best available tool so far [16]. 
+
+To establish threshold values reflective of the proposed “protective-to-predictive” tiered-management framework, workshop participants agreed on a suite of SSD parameters representing an increased level of confidence in ecologically relevant effects (Table 1). Parameters include the use of an appropriate data collapsing method, a percentage of species affected (HC), model point estimate, and the level of biological organization of the endpoints considered. To estimate the lower thresholds values (#1 and #2), experts recommended the inclusion of endpoints at all levels of biological organization and use of the 1st quartile to summarize the data for each species. 
+
+Threshold 1 (Investigative monitoring) is based on the lower 95% confidence level of the HC5, while Threshold 2 (Discharge monitoring) is based on the median HC5. For the higher “predictive” thresholds, (i.e., Threshold 3 and 4), the recommended SSD parameters include the use of organismal and population level endpoints only, summarized using the median data collapsing method. Threshold 3 (Management planning) is set at the median HC5 and Threshold 4 (Source control measures) is set at the median HC10. 
+
+## **Analyses to populate the thresholds** 
+
+Effect-concentration data were collected using the Toxicity of Microplastics Explorer (ToMEx) database, built to gather peer-reviewed literature on the biological effects of different shapes and polymer types of MPs ranging between 0.001–5000 μm (Hampton et al. A, [23]). Due to uncertainties in environmental distributions for MPs smaller than 1 μm, only toxicity data between 1 and 5000 μm were included in our analysis. Each study was evaluated against a pre-defined set of 14 quality criteria for experimental set up, particle characterization and dose-response. Our criteria were adapted from those described in de Ruijter et al. [12], with some modifications (see Table S1A for more details). Out of the 162 peer-reviewed toxicity studies representing 5871 datapoints and 109 species included in the database, only 21 studies met our pre-defined set of quality criteria. A total of 290 datapoints was extracted using the following dose descriptors: no observed effect concentration (NOEC), lowest observed effect concentration (LOEC), lethal effect concentration (LCx), and percent effect concentration (ECx). Highest observed no effect concentrations (HONEC) were excluded from our analyses due to their limited reliability [2]. 
+
+SSDs were constructed using the SSDTools package in R as described by Thorley and Schwarz [56]. The analyses were performed using NOECs for chronic exposures. To do so, effect metrics (i.e., LOECs and EC50/ LC50) values were converted using assessment factors of 2 and 10, respectively. For the conversion of acute to chronic data, an assessment factor of 10 was applied 
+
+**Table 1** Species sensitivity distribution (SSD) parameters and data filters used to derive multiple thresholds as part of the tiered framework 
+
+|**Threshold**|**description**|**Hazard**|**Data collapsing**|**Point estimate**|**Biological scale of endpoints**|
+|---|---|---|---|---|---|
+|||**concentration (HC)**|**method**|||
+|**Threshold**|**1‑ “Investigative monitoring”**|HC5|1st quartile|lower 95%|molecular to population|
+|**Threshold**|**2‑ “Discharge monitoring”**|HC5|1st quartile|median|molecular to population|
+|**Threshold**|**3‑ “Management planning”**|HC5|median|median|organismal and population|
+|**Threshold**|**4‑ “Source control measures”**|HC10|median|median|organismal and population|
+
+
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 4 of 10 
+
+[62]. The basis for the assessment factors applied is provided in Tables S1B and S1C. Raw data used in the SSDs are provided in Table S1D. Separate SSDs were developed for two different hypothesized mechanisms of toxicity. To identify the dataset relevant to food dilution, species-dependent ingestible size ranges based on mouth opening were used as the upper limits. Studies using algal species were excluded as ingestion is not a plausible mechanism. For tissue translocation, preliminary results of a binomial logistic regression model (using 27 studies for 19 species) suggested that particles shorter than 83 μm were most relevant to trigger this effect mechanism (supplemental information S2). 
+
+Prior to incorporation of data into the SSD, data were aligned and rescaled to 1–5000 μm for two size-related dose metrics, volume for food dilution and surface area for tissue translocation, following the methods by Koelmans et al. [33] and Kooi et al. [35]. This data alignment resolved an inconsistency in available toxicity data of different levels of polydispersity, including monodisperse (i.e., same size and/or shape versus polydisperse MPs). This approach also allowed correction for bioavailability of particles for food dilution and tissue translocation. A detailed description of the data alignment approach used can be found in the supplemental information S3. 
+
+## **Sensitivity analyses** 
+
+Three types of sensitivity analyses were conducted, focused on the alignment procedure, endpoints selection, and studies selection. The first one examined the variability associated with various assumptions used in the alignment method proposed by Koelmans et al. [33]. Specifically, we assessed the influence of alpha values proposed in Kooi et al. [35] and used these to convert effects data from particles used in the laboratory to effects data for polydisperse particles as seen in the environment. We also examined the influence of the assumed limitation in bioavailability of particles (i.e., estimated range for width and length for each particle type) for food dilution and tissue translocation. The second type of sensitivity analysis examined the importance of endpoints selection (all endpoints vs. fitness vs. mortality) in the SSDs to calculate threshold values. The third type of analysis used the leave-oneout method to remove individual studies and assess the variability in the underlying data [57]. For all three types of sensitivity analyses, the specific parameter examined was modified one-at-a-time and their impact on the resulting SSDs was evaluated. Additional details on the different sensitivity analyses are provided in Supplemental Information S3. 
+
+## **Expert’s confidence in the outcomes** 
+
+Experts were asked to describe their relative confidence level in the decision framework and analytical process adopted. Workshop participants engaged in critical discussions on the suitability of a tiered-management construct with four thresholds. The relative level of confidence in the calculated threshold values was also evaluated based on the amount, quality, and consistency of data. As part of this process, experts conducted a detailed review of five studies that were driving the outcome of the SSDs to ensure that data were correctly entered in the database and aligned. The confidence vote was achieved using a semi-quantitative approach similar to that used by the Intergovernmental Panel on Climate Change (IPCC [41]). Each expert anonymously rated their confidence level on a scale from 1 to 5 (very low, low, medium, high, very high). Once the votes were tallied, the experts discussed the outcome, and shared their perspectives on the appropriateness and quality of the data. 
+
+## **Results** 
+
+## **Thresholds** 
+
+SSD-derived thresholds were calculated using toxicity data for 14–16 species from 6 or 7 taxonomic groups, depending on the threshold level and effect mechanism (Figure S1). The estimated threshold values for food dilution ranged between 0.3 and 34 particles/L (mass equivalent of 0.05 to 6 mg/L), with 95% confidence interval (CI) spanning over two orders of magnitude (Table 2). Results of these SSDs identified the marine bivalve _Pinctada margaritifera_ (black lip pearl oyster) and estuarine fish _Oryzias melastigma_ (marine medaka) as the two most sensitive species (Figure S1). For tissue translocation, estimated threshold values ranged between 60 and 4110 particles/L (mass equivalent between 10 and 676 mg/L), with wide 95% CI (Table 3). _P. margaritifera_ deemed to be 
+
+**Table 2** Proposed microplastics toxicity thresholds for food dilution, relevant for particle sizes between 1 and 5000 μm 
+
+|**Threshold**|**Particles/L (95% CI)**|**Mass (mg)/L (95% CI)**|
+|---|---|---|
+|**Threshold 1‑**|0.3a|0.05a|
+|**“Investigative monitor‑**|||
+|**ing”**|||
+|**Threshold 2‑**|3 (0.3 to 66)|0.4 (0.05 to 11)|
+|**“Discharge monitoring”**|||
+|**Threshold 3‑**|5 (0.4 to 219)|0.9 (0.07 to 36)|
+|**“Management plan‑**|||
+|**ning”**|||
+|**Threshold 4‑**|34 (3 to 859)|6 (0.4 to 141)|
+|**“Source control meas‑**|||
+|**ures”**|||
+
+
+
+a Threshold 1 is the lower 95% CI of the HC5 calculated for Threshold 2, therefore confidence intervals cannot be reported for this threshold 
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 5 of 10 
+
+**Table 3** Proposed microplastics toxicity thresholds for tissue translocation, relevant for particle sizes between 1 and 83 μm 
+
+|**Threshold**|**Particles/L (95% CI)**|**Mass (mg)/L (95% CI)**|
+|---|---|---|
+|**Threshold 1‑**|60a|10a|
+|**“Investigative monitor‑**|||
+|**ing”**|||
+|**Threshold 2‑**|312 (57 to 4680)|51 (10 to 770)|
+|**“Discharge monitoring”**|||
+|**Threshold 3‑**|890 (118 to 19,000)|146 (19 to 3120)|
+|**“Management plan‑**|||
+|**ning”**|||
+|**Threshold 4‑**|4110 (493 to 69,100)|676 (81 to 11,400)|
+|**“Source control meas‑**|||
+|**ures”**|||
+
+
+
+a Threshold 1 is the lower 95% CI of the HC5 calculated for Threshold 2, therefore confidence intervals cannot be reported for this threshold 
+
+the most sensitive, was reported to have reduced assimilation efficiency and altered energy balance upon exposure to polystyrene microbeads (6–10 μm) for 2 months [18]. In Wang et al., [60], _O. melastigma_ exposed to 10 μm polystyrene spheres for 2 months had altered antioxidant enzyme expression and lowered circulating concentrations of sex steroids. _O. melastigma_ , was also identified as the most sensitive to potential tissue translocationrelated effects, together with the freshwater crustacean _Ceriodaphnia dubia_ . Studies included in the SSDs for _C. dubia_ showed that acute exposure to MP polyethylene particles (2–5 μm) had a significant impact on reproduction and survival [27, 28, 69]. 
+
+While the studies used for thresholds derivatization met all our pre-defined quality standards, it should be noted that none of them met all 20 quality criteria considered necessary for risk assessment by de Ruijter et al. [12]. For example, most studies used virgin MPs, did not verify background contamination, and did not confirm actual exposure concentrations (i.e., nominal concentrations reported). Moreover, the in-depth review of the 
+
+studies driving the lower portion of the SSD curves also indicated that some of these studies poorly described MP sample preparation and may have used unreliable quantification methods. 
+
+## **Sensitivity analysis** 
+
+The results of the sensitivity analyses revealed that assumed distribution values for polydisperse laboratory experiments were of negligible impact to the resulting thresholds (− 15 to + 5%; Table 4 and supplemental information S4). The assumed values used for bioaccessibility based on shape and for estimating environmental MP polydispersity distribution had moderate impacts on the thresholds (− 89 to + 32% and − 87 to 289%, respectively). The results of the leave-one-out analysis implied the most sensitive study used to derive the SSD also had a moderate influence on the thresholds calculated (− 47 to + 300% difference) (Figure S4). For both tissue translocation and food dilution-based thresholds, endpoint selection had the largest impact on the resulting thresholds (Table 4). When comparing SSD-derived thresholds based on all endpoints to those calculated using fitness or mortality, thresholds values varied between − 38 and 628,000%, with the influence largely due to using only mortality as an endpoint (supplemental information S4). 
+
+## **Expert’s confidence in the outcomes** 
+
+Overall, workshop participants expressed high confidence in the proposed multi-tiered management framework and the use of SSDs and data alignment calculations to derive hazard threshold values. The experts’ scores ranged between 3.0 and 5.0 for both with mean score of 4.2 (high) for the framework and 3.9 (high) for analytical approach (Fig. 2A). The confidence level in the threshold values for food dilution and tissue translocation were highly variable among experts, with individual scores ranging from 1.0 (very low) to 4.0 (high). Thus, mean 
+
+**Table 4** Sensitivity analyses to assess the impact of alignment method, endpoint selection and individual studies, on the threshold values calculated 
+
+|**Parameter**|**Food dilution**<br>**Max increase(%**<br>**diference)**<br>**Max decrease(%**<br>**diference)**|**Tissue translocation**|
+|---|---|---|
+|||**Max increase(%**<br>**diference)**<br>**Max**<br>**decrease(%**<br>**diference)**|
+|**Polydisperse laboratory assumptions**(mass, volume,<br>surface area)<br>**Bioaccessible assumptions**(length, width)<br>**Environmental MPs polydispersity distribution**<br>(length, volume, surface area)<br>**Endpoint selection**(all vs. ftness vs. mortality)<br>**Study infuence**(leave-one-out method)|+5%<br>−2%<br>+31%<br>−53%<br>NA<br>−87%<br>+628,000%<br>NA<br>+300%<br>−26%|+5%<br>−15%<br>+32%<br>−89%<br>+285%<br>−31%<br>+2511%<br>−38%<br>+275%<br>−47%|
+
+
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 6 of 10 
+
+**==> picture [483 x 527] intentionally omitted <==**
+
+**Fig. 2** Mean confidence scores for ( **A** ) the management framework and ( **B** ) threshold values. Whiskers represent the range of experts’ votes. Scoring scale: 1- very low, 2- low, 3- medium, 4- high and 5- very high 
+
+scores for individual thresholds ranged between 2.4 and 3.0, with slightly higher scores for food dilution-related thresholds (Fig. 2B). 
+
+## **Discussion** 
+
+The tiered-management framework presented here is an enhancement of an approach used by the California State Water Resources Control Board to monitor other emerging contaminants [40]. The key to the 
+
+Mehinto _et al. Microplastics and Nanoplastics            (2022) 2:17_ 
+
+Page 7 of 10 
+
+framework is a recognition that there is not a single threshold that can be adopted to manage the potential environmental risks of MPs, but rather a need for multiple tiers representing varying levels of management decisions. Tiers 1–3 promote incremental information gathering needed to better understand the issue prior to implementing costly regulations in Tiers 4 and 5. The proposed strategy is focused on decisions regarding water quality management in aquatic habitats and is not intended to discourage upstream pollution control measures such as reduction. The same approach could also be applied to other types of MP management concerns, such as the presence of MPs in tissues and food. 
+
+The SSD approach used here has considerable precedent for toxicity threshold development and risk assessment for chemical contaminants [6, 16,

@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type identification; particle number; particle mass; extraction efficiency by matrix; method comparison; interlaboratory performance metrics (identification success rates 53-100%; quantification variability 29-91%)",
+  "abstract": "To survey the conformity and quality of results among laboratories for microplastics determination worldwide, an international laboratory intercomparison and development exercise was organized. The 34 participants were requested to determine the polymer type and number or mass of polymer particles in 12 samples, i.e. six samples containing of pre-production pellets, ﬁve dissolvable soda tablets containing different (smaller) polymer particles and one blank soda tablet. A novel method for providing the test materials in aluminium strips was used. Thirty laboratories (88%) submitted data using their own method of choice, resulting in a variety of identiﬁcation and quantiﬁcation methods (n = 7). The majority of the labs (53–100%) correctly identiﬁed the type of polymer in all samples but one. The performance of the laboratories in quantifying and weighing the pellets was very good. The analysis of the number of the particles in the soda tablets varied considerably between laboratories (29–91%). The results of this study highlight the complexity of microplastics analysis and the need for harmonization of both reporting format and methods. Continued development and assessment of the comparability among analytical methods and laboratories are urgently needed to support monitoring programmes, research and decision-making.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "determine the polymer type and number or mass of polymer particles",
+      "The majority of the labs (53–100%) correctly identified the type of polymer",
+      "The performance of the laboratories in quantifying and weighing the pellets was very good",
+      "The analysis of the number of the particles in the soda tablets varied considerably between laboratories (29–91%)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

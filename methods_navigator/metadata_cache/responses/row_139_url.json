@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "0.1 μm to 5 mm",
+  "key_metrics_output": "Restriction on intentionally added synthetic polymer microparticles; regulatory compliance metrics; particle size classification; polymer type identification",
+  "abstract": "Commission Regulation (EU) 2023/2055 amends Annex XVII to REACH to restrict the placing on the market of synthetic polymer microparticles. The regulation establishes restrictions on intentionally added microplastics in products, with specific size thresholds and exemptions for certain applications. The regulation applies to synthetic polymer particles and sets out compliance requirements for manufacturers and importers.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [
+      "synthetic polymer microparticles",
+      "particles with a size of less than 5 mm"
+    ],
+    "key_metrics_output": [
+      "restriction of synthetic polymer microparticles",
+      "intentionally added microparticles",
+      "placing on the market",
+      "polymer type classification"
+    ],
+    "abstract": [
+      "Commission Regulation (EU) 2023/2055 amending Annex XVII to REACH",
+      "restriction of synthetic polymer microparticles",
+      "intentionally added",
+      "synthetic polymer particles"
+    ]
+  }
+}

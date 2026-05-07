@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type identification; plastic composition determination",
+  "abstract": "ISO 6775:2024 specifies procedures using Raman spectroscopic methods for qualitative analysis and identification of plastic materials in their original form, including general plastics and multi-layer film plastics composition analysis.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "qualitative analysis of plastic materials",
+      "determine the composition of unknown general plastics and multi-layer film plastics"
+    ],
+    "abstract": [
+      "applicable to the qualitative analysis of plastic materials in their original form by Raman spectroscopy",
+      "describes procedures to determine the composition of unknown general plastics and multi-layer film plastics"
+    ]
+  }
+}

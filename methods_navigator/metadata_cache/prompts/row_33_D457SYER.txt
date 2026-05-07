@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Brander et al., 2020
+        Year: 2020
+        Full Title: Sampling and quality assurance and quality control: a guide for scientists investigating the occurrence of microplastics across matrices
+        DOI/URL: https://doi.org/10.1177/0003702820945713
+        Existing Particle Size Range: PE/PP/PET spike particles (µm range); fish GIT and mussel tissue matrices
+        Existing Key Metrics / Output: KOH digestion recovery 96.7%; H₂O₂ recovery 88.8%; interlaboratory CV <11%; 3 polymers; 4 labs
+
+        Zotero metadata:
+        Title: Sampling and quality assurance and quality control: a guide for scientists investigating the occurrence of microplastics across matrices
+        DOI: 
+        Date: 2020-00-00 2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_abstract_section
+
+        Source context:
+        ## Abstract 
+
+Plastic pollution is a defining environmental contaminant and is considered to be one of the greatest environmental threats of the Anthropocene, with its presence documented across aquatic and terrestrial ecosystems. The majority of this plastic debris falls into the micro (1 lm–5 mm) or nano (1–1000 nm) size range and comes from primary and secondary sources. Its small size makes it cumbersome to isolate and analyze reproducibly, and its ubiquitous distribution creates numerous challenges when controlling for background contamination across matrices (e.g., sediment, tissue, water, air). Although research on microplastics represents a relatively nascent subfield, burgeoning interest in questions surrounding the fate and effects of these debris items creates a pressing need for harmonized sampling protocols and quality control approaches. For results across laboratories to be reproducible and comparable, it is imperative that guidelines based on vetted protocols be readily available to research groups, many of which are either new to plastics research or, as with any new subfield, have arrived at current approaches through a process of trial-and-error rather than in consultation with the greater scientific community. The goals of this manuscript are to (i) outline the steps necessary to conduct general as well as matrix-specific quality assurance and quality control based on sample type and associated constraints, (ii) briefly review current findings across matrices, and (iii) provide guidance for the design of sampling regimes. Specific attention is paid to the source of microplastic pollution as well as the pathway by which contamination occurs, with details provided regarding each step in the process from generating appropriate questions to sampling design and collection.

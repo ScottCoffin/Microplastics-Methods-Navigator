@@ -1,0 +1,13 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": null,
+  "confidence": "low",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Mass concentration (μg/g) of tire and road wear particles (TRWP); polymer mass; TRWP basis mass; tire rubber polymer mass; tire tread mass",
+  "abstract": "ISO/TS 21396:2017 specifies a pyrolysis-GC/MS method for determining the mass concentration of tire and road wear particles (TRWP) in soil and sediment samples. The standard establishes principles for sample collection, generation of pyrolysis fragments, and quantification of polymer fragments to calculate TRWP concentration expressed on a TRWP basis (including tire tread and road wear encrustations) or on a tire rubber polymer or tire tread basis.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "determination of the soil or sediment mass concentration (μg/g) of tyre and road wear particles (TRWP)",
+      "The quantified polymer mass is used to calculate the concentration of TRWP",
+      "expressed on a TRWP basis, which includes the mass of tyre tread and mass of road wear encrustations, and can also be expressed on a tyre rubber polymer or tyre tread basis"
+    ],
+    "abstract": [
+      "specifies a method for the determination of the soil or sediment mass concentration (μg/g) of tyre and road wear particles (TRWP) in environmental samples",
+      "establishes principles for soil or sediment sample collection, the generation of pyrolysis fragments from the sample, and the quantification of the generated polymer fragments"
+    ]
+  }
+}

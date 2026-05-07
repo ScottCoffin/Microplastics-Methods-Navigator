@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Tsering et al., 2022
+Year: 2022
+Full Title: The assessment of particle selection and blank correction to enhance the analysis of microplastics with Raman microspectroscopy
+DOI/URL: https://doi.org/10.1016/j.scitotenv.2022.156804
+Existing Particle Size Range: >1 nm to <5,000 µm
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: The assessment of particle selection and blank correction to enhance the analysis of microplastics with Raman microspectroscopy
+DOI: 10.1016/j.scitotenv.2022.156804
+Date: 2022-10-10 2022-10-10
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Although microplastics research has received enormous attention in the last decade, both the research practices and the quality of produced data should still be improved. In this study, the identification process of microplastics with Raman imaging microscope was improved by decreasing the time needed for the analysis. To do that, new features, including terrain mosaic and automatic particle selection, were utilized and various ways of handling the produced microplastics data were implemented and discussed. Furthermore, blank correction of microplastic concentrations was demonstrated and its effects on the recovery of spiked microplastics was assessed with aqueous and solid samples. Six types of microplastics, including fragments and fibers, were spiked in triplicates of ultra-pure water and reference sediment samples. The spiked samples were pretreated by a modified method of the universal enzymatic purification protocol. Microplastics were analyzed with Raman imaging microscope, using terrain mosaic combined with automatic particle selection. The microplastics data were subjected to different identification steps to estimate the potential overestimation and underestimation of microplastics counts. With the complete correction of Raman-based data, the average recovery rates of fragments (77–80%) were higher than fibers (20–33%). The decrease in recovery rates of spiked microplastics (49–57%) were observed when blank correction was applied (28–47%). The impact of the blank correction depended on the polymer, causing exclusion of PE, PET, and PP from sediment samples. For the completely corrected Raman-based data, the average recovery rates of microplastics were higher for water than sediment samples both with and without blank correction. The results demonstrated the impact of blank correction on the microplastics recovery rates. To our knowledge, this is the first study to explore the use of automatic particle selection of Raman imaging microscope for microplastics analysis. Hence, potential drawbacks and advantages of the new features of Raman imaging microscope were explicitly discussed.
+
+Context source: zotero_abstractNote
+
+Source context:
+Although microplastics research has received enormous attention in the last decade, both the research practices and the quality of produced data should still be improved. In this study, the identification process of microplastics with Raman imaging microscope was improved by decreasing the time needed for the analysis. To do that, new features, including terrain mosaic and automatic particle selection, were utilized and various ways of handling the produced microplastics data were implemented and discussed. Furthermore, blank correction of microplastic concentrations was demonstrated and its effects on the recovery of spiked microplastics was assessed with aqueous and solid samples. Six types of microplastics, including fragments and fibers, were spiked in triplicates of ultra-pure water and reference sediment samples. The spiked samples were pretreated by a modified method of the universal enzymatic purification protocol. Microplastics were analyzed with Raman imaging microscope, using terrain mosaic combined with automatic particle selection. The microplastics data were subjected to different identification steps to estimate the potential overestimation and underestimation of microplastics counts. With the complete correction of Raman-based data, the average recovery rates of fragments (77–80%) were higher than fibers (20–33%). The decrease in recovery rates of spiked microplastics (49–57%) were observed when blank correction was applied (28–47%). The impact of the blank correction depended on the polymer, causing exclusion of PE, PET, and PP from sediment samples. For the completely corrected Raman-based data, the average recovery rates of microplastics were higher for water than sediment samples both with and without blank correction. The results demonstrated the impact of blank correction on the microplastics recovery rates. To our knowledge, this is the first study to explore the use of automatic particle selection of Raman imaging microscope for microplastics analysis. Hence, potential drawbacks and advantages of the new features of Raman imaging microscope were explicitly discussed.

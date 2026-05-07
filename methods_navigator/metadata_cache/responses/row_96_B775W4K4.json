@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "nanoscale",
+  "key_metrics_output": "particle size, particle shape, chemical fingerprints, cell viability, inflammatory pathway activation",
+  "abstract": "Plastic particles are pervasive across all environments, yet quantifying their total abundance remains challenging—especially for nanoplastics, which are problematic to separate and detect efficiently. This challenge is further exacerbated by the heterogeneous nature of environmental nanoplastics, making it difficult to determine their biological impacts. Despite these limitations, correlational studies implicate that nanoplastics may pose potential health concerns for both wildlife and humans. Metrological reference materials can be used to address this gap; these standardized plastics enable validation of detection technologies and support biological investigations. One such material has recently been made available (NPPP-1, National Research Council of Canada) with more to follow in the future. These materials are produced using ultrashort laser pulses for laser ablation, a versatile approach for the high-throughput production of nanoplastics. The resulting nanoplastics resemble those found in the environment, exhibiting heterogeneous sizes and shapes, as well as modified chemical fingerprints associated with environmental weathering, while remaining stable in different media, allowing their use in biological and ecotoxicology testing. In both two-dimensional cell culture and three-dimensional organoid models, nanoplastics are shown to have limited effects on cell viability at relatively high number concentrations while activating inflammatory pathways in biological systems. Taken together, it is demonstrated that nanoscale plastics produced using ultrashort laser ablation are fit for purpose for both validating quantification methods and assessing biological activity.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "nanoplastics",
+      "nanoscale plastics produced using ultrashort laser ablation",
+      "heterogeneous sizes and shapes"
+    ],
+    "key_metrics_output": [
+      "exhibiting heterogeneous sizes and shapes, as well as modified chemical fingerprints",
+      "nanoplastics are shown to have limited effects on cell viability at relatively high number concentrations while activating inflammatory pathways",
+      "validating quantification methods and assessing biological activity"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

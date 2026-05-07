@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Cohen et al., 2014
+Year: 2014
+Full Title: An integrated approach for the in vitro dosimetry of engineered nanomaterials
+DOI/URL: https://doi.org/10.1186/1743-8977-11-20
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: An integrated approach for the in vitro dosimetry of engineered nanomaterials
+DOI: 10.1186/1743-8977-11-20
+Date: 2014-05-01 2014-05-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+There is a great need for screening tools capable of rapidly assessing nanomaterial toxicity. One impediment to the development of reliable in vitro screening methods is the need for accurate measures of cellular dose. We present here a methodology that enables accurate determination of delivered to cell dose metrics. This methodology includes (1) standardization of engineered nanomaterial (ENM) suspension preparation; (2) measurement of ENM characteristics controlling delivery to cells in culture; and (3) calculation of delivered dose as a function of exposure time using the ISDD model. The approach is validated against experimentally measured doses, and simplified analytical expressions for the delivered dose (Relevant In Vitro Dose (RID)f function) are derived for 20 ENMs. These functions can be used by nanotoxicologists to accurately calculate the total mass (RIDM), surface area (RIDSA), or particle number (RIDN) delivered to cells as a function of exposure time.
+
+Context source: zotero_abstractNote
+
+Source context:
+There is a great need for screening tools capable of rapidly assessing nanomaterial toxicity. One impediment to the development of reliable in vitro screening methods is the need for accurate measures of cellular dose. We present here a methodology that enables accurate determination of delivered to cell dose metrics. This methodology includes (1) standardization of engineered nanomaterial (ENM) suspension preparation; (2) measurement of ENM characteristics controlling delivery to cells in culture; and (3) calculation of delivered dose as a function of exposure time using the ISDD model. The approach is validated against experimentally measured doses, and simplified analytical expressions for the delivered dose (Relevant In Vitro Dose (RID)f function) are derived for 20 ENMs. These functions can be used by nanotoxicologists to accurately calculate the total mass (RIDM), surface area (RIDSA), or particle number (RIDN) delivered to cells as a function of exposure time.

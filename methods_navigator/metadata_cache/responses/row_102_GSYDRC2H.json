@@ -1,0 +1,27 @@
+{
+  "particle_size_range": ">300 nm to <5 mm (nanoplastics and microplastics)",
+  "key_metrics_output": "Polymer type identification, extraction recovery (%), detection limits (MDL, LOQ, RDL), matrix interferences (false positives), quantification by Py-GC-MS/MS",
+  "abstract": "This study assessed the efficacy of pyrolysis–gas chromatography–mass spectrometry (Py-GC-MS) for quantification of polymers in human blood. An extraction protocol was developed and validated to reduce matrix interferences of polyethylene (PE) and polyvinyl chloride (PVC). Extraction recoveries ranged 7–109%, with surface-modified polystyrene improving nanoparticle recoveries from 17 to 52%. Realistic detection limits were calculated accounting for matrix suppression and extraction recovery, up to 20 times higher than nominal limits in pure water. A pilot study of Australian population blood samples showed PE interferences persisted and no other polymers exceeded detection limits. The study concluded that Py-GC-MS is currently unsuitable for PE and PVC analysis in biological matrices due to interferences and nonspecific pyrolysis products, and estimated exposure concentrations needed approach the detection limits of the technique.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "plastics >300 nm can be identified confidently",
+      "nanosphere (NS) solutions of polystyrene (200, 300, 400, 500, 700, 1000 nm)",
+      "Existing Particle Size Range: <5 mm (no lower bound)"
+    ],
+    "key_metrics_output": [
+      "Extraction recoveries ranged 7−109%",
+      "Realistic detection limits were calculated for each polymer",
+      "identification and quantification of target polymers",
+      "Limits of quantification (LOQ) were calculated as the concentration of a peak with a signal:noise ratio of 10:1",
+      "method detection limits (MDLs)",
+      "recovery detection limit (RDL)"
+    ],
+    "abstract": [
+      "assessed the appropriateness of pyrolysis−gas chromatography− mass spectrometry (Py-GC-MS) analysis for the quantification of a range of polymers in human blood",
+      "An extraction protocol that reduced matrix interferences (false positives) of polyethylene (PE) and polyvinyl chloride (PVC) was developed and validated",
+      "Extraction recoveries ranged 7−109%, although surface-modified polystyrene (carboxylated) increased nanoparticle recoveries from 17 to 52%",
+      "Py-GC-MS is currently not a suitable analysis method for PE and PVC in biological matrices due to the presence of interferences and nonspecific pyrolysis products"
+    ]
+  }
+}

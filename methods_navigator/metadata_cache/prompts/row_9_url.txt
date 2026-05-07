@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 24187:2023
+        Year: 2023
+        Full Title: Principles for the analysis of microplastics present in the environment
+        DOI/URL: https://www.iso.org/standard/78033.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Principles for the analysis of microplastics present in the environment
+
+Abstract This document describes the principles to be followed in the analysis of microplastics in various environmental matrices. This includes the unique particle size classification of plastics, the use of certain apparatus with regard to sampling, sample preparation, and the determination of representative sample quantities. The purpose of this document is to specify minimum requirements until specific standards for the different case situations are available. This is important to ensure that the development of the specific standards is done on a consistent basis to ensure that comparison or correlation of results is possible. This document does not include requirements for monitoring actions. General information Status Published Publication date 2023-09 Stage : International Standard published [ 60.60 Edition : 1 Number of pages : 21 Technical Committee : ISO/TC 61/SC 14 ICS 13.020.01 83.080.01 RSS updates Life cycle Now Published ISO 24187:2023 Stage: 60.60 Preliminary Proposal 10.99 2019-06-06 New project approved Preparatory 20.00 2019-06-06 New project registered in TC/SC work programme 20.99 2019-09-26 WD approved for registration as CD Committee 30.00 2020-02-03 Committee draft (CD) registered 30.20 2020-02-03 CD consultation initiated 30.60 2020-03-31 Close of comment period 30.92 2020-05-04 CD referred back to Working Group 30.00 2020-11-18 Committee draft (CD) registered 30.20 2021-01-20 CD consultation initiated 30.60 2021-03-18 Close of comment period 30.99 2021-10-05 CD approved for registration as DIS Enquiry 40.00 2021-10-06 DIS registered 40.20 2021-12-08 DIS ballot initiated: 12 weeks 40.60 2022-03-12 Close of voting 40.99 2022-12-07 Full report circulated: DIS approved for registration as FDIS Approval 50.00 2023-03-17 Final text received or FDIS registered for formal approval 50.20 2023-04-27 Proof sent to secretariat or FDIS ballot initiated: 8 weeks 50.60 2023-06-23 Close of voting. Proof returned by secretariat Publication 60.00 2023-06-23 International Standard under publication 60.60 2023-09-20 International Standard published Review 90.20 International Standard under systematic review 90.60 Close of review 90.92 International Standard to be revised 90.93 International Standard confirmed 90.99 Withdrawal of International Standard proposed by TC or SC Withdrawal 95.99 Withdrawal of International Standard This standard contributes to the following Sustainable Development Goals Good Health and Well-being Clean Water and Sanitation Industry,

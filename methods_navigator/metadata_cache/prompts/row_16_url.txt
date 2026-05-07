@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 1043-1:2011
+        Year: 2011
+        Full Title: ISO 1043-1:2011/Amd 1:2016 Plastics — Symbols and abbreviated terms. Part 1: Basic polymers and their special characteristics
+        DOI/URL: https://www.iso.org/standard/65280.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Plastics — Symbols and abbreviated terms — Part 1: Basic polymers and their special characteristics — Amendment 1: New symbol ST for syndiotactic
+
+ISO 1043-1:2011/Amd 1:2016 - Plastics — Symbols and abbreviated terms — Part 1: Basic polymers and their special characteristics — Amendment 1: New symbol ST for syndiotactic Skip to main content Applications OBP English español français русский Menu Standards Sectors Health IT & related technologies Management & services Security, safety & risk Transport Energy Diversity & inclusion Environmental sustainability Food & agriculture Materials Building & construction Engineering About ISO Insights & news Insights All insights Healthcare Artificial intelligence Climate change Transport Cybersecurity Quality management Renewable energy Occupational health and safety Quantum computing News Expert talk Standards world Media kit Resources ISO 22000 explained ISO 9001 explained ISO 14001 explained ISO 42001 explained ISO 45001 explained Taking part Store Search Cart Reference number ISO 1043-1:2011/Amd 1:2016 © ISO 2026 Amendment International Standard ISO 1043-1:2011/Amd 1:2016 Plastics — Symbols and abbreviated terms — Part 1: Basic polymers and their special characteristics — Amendment 1: New symbol ST for syndiotactic Edition 4 2016-04 Read sample ISO 1043-1:2011/Amd 1:2016 65280 ISO 1043-1:2011/Amd 1:2016 Plastics — Symbols and abbreviated terms — Part 1: Basic polymers and their special characteristics Amendment 1: New symbol ST for syndiotactic Published (Edition 4, 2016) This amendment applies to ISO 1043-1:2011 ISO 1043-1:2011/Amd 1:2016 ISO 1043-1:2011/Amd 1:2016 65280 Language English French Format PDF Paper PDF Paper

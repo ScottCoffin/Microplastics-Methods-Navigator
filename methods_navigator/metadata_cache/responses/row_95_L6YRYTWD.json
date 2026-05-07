@@ -1,0 +1,21 @@
+{
+  "scope": "Quality assurance and quality control (QA/QC) procedures for microplastics analysis; procedural blank contamination assessment across multiple laboratories",
+  "particle_size_range": "20–212 μm (most common size fraction reported); particles <20 μm rarely reported",
+  "key_metrics_output": "Particle count (7–511 particles per blank sample, mean 80 ±SD 134), particle color, morphology (fibers most common), size fraction, blank subtraction methods, QA/QC technique effectiveness",
+  "abstract": "Quality assurance and quality control (QA/QC) techniques are critical to analytical chemistry, and thus the analysis of microplastics. Procedural blanks are a key component of QA/QC for quantifying and characterizing background contamination. Although procedural blanks are becoming increasingly common in microplastics research, how researchers acquire a blank and report and/or use blank contamination data varies. Here, we use the results of laboratory procedural blanks from a method evaluation study to inform QA/QC procedures for microplastics quantification and characterization. Suspected microplastic contamination in the procedural blanks, collected by 12 participating laboratories, had between 7 and 511 particles, with a mean of 80 particles per sample (±SD 134). The most common color and morphology reported were black fibers, and the most common size fraction reported was 20–212 μm. The lack of even smaller particles is likely due to limits of detection versus lack of contamination, as very few labs reported particles <20 μm. Participating labs used a range of QA/QC techniques, including air filtration, filtered water, and working in contained/‘enclosed’ environments. Our analyses showed that these procedures did not significantly affect blank contamination. To inform blank subtraction, several subtraction methods were tested. No clear pattern based on total recovery was observed. Despite our results, we recommend commonly accepted procedures such as thorough training and cleaning procedures, air filtration, filtered water (e.g., MilliQ, deionized or reverse osmosis), non-synthetic clothing policies and ‘enclosed’ air flow systems (e.g., clean cabinet). We also recommend blank subtracting by a combination of particle characteristics (color, morphology and size fraction), as it likely provides final microplastic particle characteristics that are most representative of the sample. Further work should be done to assess other QA/QC parameters, such as the use of other types of blanks (e.g., field blanks, matrix blanks) and limits of detection and quantification.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "the most common size fraction reported was 20–212 μm",
+      "very few labs reported particles <20 μm"
+    ],
+    "key_metrics_output": [
+      "had between 7 and 511 particles, with a mean of 80 particles per sample (±SD 134)",
+      "The most common color and morphology reported were black fibers",
+      "blank subtracting by a combination of particle characteristics (color, morphology and size fraction)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

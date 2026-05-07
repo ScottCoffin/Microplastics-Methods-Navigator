@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Teeguarden et al., 2007
+Year: 2007
+Full Title: Particokinetics In Vitro: Dosimetry Considerations for In Vitro Nanoparticle Toxicity Assessments
+DOI/URL: https://doi.org/10.1093/toxsci/kfl165
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Particokinetics In Vitro: Dosimetry Considerations for In Vitro Nanoparticle Toxicity Assessments
+DOI: 10.1093/toxsci/kfl165
+Date: 2007-02-00 2/2007
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+The rapid growth in the use of in vitro methods for nanoparticle toxicity assessment has proceeded with limited consideration of the unique kinetics of these materials in solution. Particles in general and nanoparticles specifically, diffuse, settle, and agglomerate in cell culture media as a function of systemic and particle properties: media density and viscosity and particle size, shape, charge and density, for example. Cellular dose then is also a function of these factors as they determine the rate of transport of nanoparticles to cells in culture. Here we develop and apply the principles of dosimetry in vitro and outline an approach for simulation of nanoparticle particokinetics in cell culture systems. We illustrate that where equal mass concentrations (μg/ml) imply equal doses for dissimilar materials, the corresponding particle number or surface area concentration doses differ by orders of magnitude. More importantly, when rates of diffusional and gravitational particle delivery are accounted for, trends and magnitude of the cellular dose as a function of particle size and density differ significantly from those implied by “concentration” doses. For example, 15-nm silver nanoparticles appear ∼4000 times more potent than micron-sized cadmium oxide particles on a cm2/ml media basis, but are only ∼50 times more potent when differences in delivery to adherent cells are considered. We conclude that simple surrogates of dose can cause significant misinterpretation of response and uptake data for nanoparticles in vitro. Incorporating particokinetics and principles of dosimetry would significantly improve the basis for nanoparticle toxicity assessment, increasing the predictive power and scalability of such assays.
+
+Context source: zotero_abstractNote
+
+Source context:
+The rapid growth in the use of in vitro methods for nanoparticle toxicity assessment has proceeded with limited consideration of the unique kinetics of these materials in solution. Particles in general and nanoparticles specifically, diffuse, settle, and agglomerate in cell culture media as a function of systemic and particle properties: media density and viscosity and particle size, shape, charge and density, for example. Cellular dose then is also a function of these factors as they determine the rate of transport of nanoparticles to cells in culture. Here we develop and apply the principles of dosimetry in vitro and outline an approach for simulation of nanoparticle particokinetics in cell culture systems. We illustrate that where equal mass concentrations (μg/ml) imply equal doses for dissimilar materials, the corresponding particle number or surface area concentration doses differ by orders of magnitude. More importantly, when rates of diffusional and gravitational particle delivery are accounted for, trends and magnitude of the cellular dose as a function of particle size and density differ significantly from those implied by “concentration” doses. For example, 15-nm silver nanoparticles appear ∼4000 times more potent than micron-sized cadmium oxide particles on a cm2/ml media basis, but are only ∼50 times more potent when differences in delivery to adherent cells are considered. We conclude that simple surrogates of dose can cause significant misinterpretation of response and uptake data for nanoparticles in vitro. Incorporating particokinetics and principles of dosimetry would significantly improve the basis for nanoparticle toxicity assessment, increasing the predictive power and scalability of such assays.

@@ -1,0 +1,57 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 4484-2:2023
+        Year: 2023
+        Full Title: ISO 4484-2:2023 Textiles and textile products — Microplastics from textile sources. Part 2: Qualitative and quantitative analysis of microplastics
+        DOI/URL: https://www.iso.org/standard/80011.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: —     particle number;
+—     morphology (morphological characteristics);
+—     dimensional distribution;
+—     the type, chemical origin or nature of polymers and their colour, if present.
+
+        Zotero metadata:
+        Title: ISO 4484-2:2023 Textiles and textile products — Microplastics from textile sources. Part 2: Qualitative and quantitative analysis of microplastics
+        DOI: 
+        Date: 2023-00-00 2023
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Textiles and textile products — Microplastics from textile sources — Part 2: Qualitative and quantitative analysis of microplastics
+
+Abstract This document establishes a qualitative-quantitative analytical evaluation (i.e. determination) of microplastics to be able to define their: particle number; morphology (morphological characteristics); dimensional distribution; the type, chemical origin or nature of polymers and their colour, if present. This document is applicable to the determination of microplastics (from the textile sector) collected in various matrices (for example textile process wastewater, clothes washing water, textile process air emissions, textile process solid waste). This document specifies expression of results in terms of estimated surface area and mass of microplastics (MPs) per unit sample. It enables the expression of the results of the quantification of microplastics (MPs) from various sources, including samples related to the production, processing, treatment and use of textiles (raw material, manufacturing process, sample like wastewater from washing clothes, air, and industrial process water). This document applies to textile sector samples of matrices of different physical states (solid, liquid or aeriform), for example: solid samples from textile production processes; water samples from the textile production process and/or from the washing of clothing (e.g. garments or other textiles, ISO 4484-1 or ISO 4484-3 can be applied in order to prepare a liquid to be tested); air samples to test the air quality in the workplace of textile companies. This document, being able to provide information such as size, shape, surface and mass (estimated), enables the transfer of useful information for ecotoxicological assessments to specialists. General information Status Published Publication date 2023-09 Stage : International Standard published [ 60.60 Edition : 1 Number of pages : 34 Technical Committee : ISO/TC 38 ICS 13.020.40 59.080.01 RSS updates Life cycle Now Published ISO 4484-2:2023 Stage: 60.60 Preliminary Proposal 10.99 2020-07-30 New project approved Preparatory Committee 30.99 2021-03-30 CD approved for registration as DIS Enquiry 40.00 2021-04-08 DIS registered 40.20 2021-06-10 DIS ballot initiated: 12 weeks 40.60 2021-09-03 Close of voting 40.93 2022-07-11 Full report circulated: decision for new DIS ballot 40.00 2022-09-29 DIS registered 40.20 2022-10-21 DIS ballot initiated: 12 weeks 40.60 2022-12-17 Close of voting 40.99 2023-05-11 Full report circulated: DIS approved for registration as FDIS Approval 50.00 2023-05-19 Final text received or FDIS registered for f

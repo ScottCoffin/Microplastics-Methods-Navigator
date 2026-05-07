@@ -1,0 +1,192 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Rauert et al., 2025
+        Year: 2025
+        Full Title: Assessing the Efficacy of Pyrolysis–Gas Chromatography–Mass Spectrometry for Nanoplastic and Microplastic Analysis in Human Blood
+        DOI/URL: https://doi.org/10.1021/acs.est.4c12599
+        Existing Particle Size Range: <5 mm (no lower bound)
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Assessing the Efficacy of Pyrolysis–Gas Chromatography–Mass Spectrometry for Nanoplastic and Microplastic Analysis in Human Blood
+        DOI: 10.1021/acs.est.4c12599
+        Date: 2025-02-04 2025-02-04
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        This article is licensed under CC-BY 4.0 
+
+**==> picture [177 x 69] intentionally omitted <==**
+
+pubs.acs.org/est 
+
+**==> picture [40 x 10] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [11 x 12] intentionally omitted <==**
+
+**==> picture [37 x 12] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Article<br>**----- End of picture text -----**<br>
+
+
+## − − **Assessing the Efficacy of Pyrolysis Gas Chromatography Mass Spectrometry for Nanoplastic and Microplastic Analysis in Human Blood** 
+
+Cassandra Rauert,* Nathan Charlton, Angus Bagley, Sarah A. Dunlop, Christos Symeonides, and Kevin V. Thomas 
+
+**Cite This:** _Environ. Sci. Technol._ 2025, 59, 1984−1994 **Read Online** 
+
+ACCESS Metrics & More Article Recommendations * **sı** Supporting Information 
+
+ABSTRACT: Humans are constantly exposed to micro- and nanosized plastics (MNPs); however, there is still limited understanding of their fate within the body, partially due to limitations with current analytical techniques. The current study assessed the appropriateness of pyrolysis−gas chromatography− mass spectrometry (Py-GC-MS) analysis for the quantification of a range of polymers in human blood. An extraction protocol that reduced matrix interferences (false positives) of polyethylene (PE) and polyvinyl chloride (PVC) was developed and validated. Extraction recoveries ranged 7−109%, although surface-modified polystyrene (carboxylated) increased nanoparticle recoveries from 17 to 52%. Realistic detection limits were calculated for each polymer, accounting for matrix suppression and extraction 
+
+**==> picture [240 x 129] intentionally omitted <==**
+
+recovery. These were up to 20 times higher than nominal detection limits calculated with Milli-Q water. Finally, the method was tested with a pilot study of the Australian population. PE interferences were reduced but still present, and no other polymers were above detection limits. It was concluded that Py-GC-MS is currently not a suitable analysis method for PE and PVC in biological matrices due to the presence of interferences and nonspecific pyrolysis products. Furthermore, while it is plausible to detect some polymers in blood, the estimated exposure concentrations needed are approaching the detection limits of the technique. KEYWORDS: _microplastics, nanoplastics, pyrolysis_ − _gas chromatography_ − _mass spectrometry, matrix interferences, human exposure studies_ 
+
+## **1. INTRODUCTION** 
+
+Humans are continuously exposed to micro and nanosized plastics (MNPs) through everyday activities. These exposure pathways include ingestion, inhalation, and potentially dermal exposure for nanosized particles[1][,][2] although current understanding on the fate of plastic particles within the body, such as residence time in the circulatory system, uptake in organs, or elimination pathways are still limited. Recently, an increasing number of human biomonitoring studies on MNPs have been reported, aiming to address these knowledge gaps. However, there is a lack of standardization in the field with a range of methods and analytical techniques used. This has resulted in a wide range of reported concentrations and particle sizes which may lack biologically plausibility. 
+
+Previous studies on nanosized particles (e.g., particulate matter or particles engineered for pharmaceutical purposes such as drug delivery) can provide some insight on the potential fate of MNPs within the body (Figure 1). Once ingested, particles smaller than 2.5 _μ_ m can enter the gastrointestinal tract through endocytosis and enter the 
+
+circulatory system.[2][,][3] Airborne particles smaller than 10 _μ_ m can be inhaled through to the terminal branches and alveolar air sacs of human airways[3] and particles smaller than 1 _μ_ m (nanoparticles) have the potential to cross lung tissue barriers and also enter the circulatory system.[2] As the smallest internal diameter of capillaries are typically ∼7−17 _μ_ m,[4] only very small micron or nanosized particles can be transported through the body. Once in the bloodstream, particles smaller than ∼6 nm are rapidly eliminated through the kidneys via urinary excretion[5][,][6] while larger particles can be cleared from circulation by the mononuclear phagocyte system (MPS)[7] through sequestration in the liver and spleen.[5] The majority of particle clearance occurs within the liver with an estimated 
+
+**==> picture [39 x 59] intentionally omitted <==**
+
+Received: November 15, 2024 Revised: January 14, 2025 Accepted: January 15, 2025 Published: January 24, 2025 
+
+© 2025 The Authors. Published by American Chemical Society **1984** 
+
+https://doi.org/10.1021/acs.est.4c12599 _Environ. Sci. Technol._ 2025, 59, 1984−1994 
+
+**Environmental Science & Technology pubs.acs.org/est** 
+
+Article 
+
+**==> picture [365 x 249] intentionally omitted <==**
+
+Figure 1. Schematic of biological fate of nanosized and small micron-sized particles. Created in BioRender. [Angus Bagley] (2025) https:// BioRender.com/x63r090. 
+
+removal of 30−99% of nanoparticles in the bloodstream[5] although this is dependent on particle properties such as size and charge. Particles that are not taken up by the liver may be cleared by the liver during subsequent passes.[8] Within the liver, particles >100 nm can be retained long-term within Kupffer cells[6] whereas smaller particles[5] can pass into the space of Disse for excretion via the biliary pathway for eventual elimination in the feces.[6] The spleen is the largest blood filtering organ in the body, eliminating particles >150 nm[9] with splenic uptake increasing with particle size.[9] Uptake to spleen macrophages is significantly reduced as compared to Kupffer cells.[8] Certain medical conditions can increase the presence of barrier cells which work in conjunction with macrophages to increase clearance[9] or create leaky barriers allowing increased migration.[10] 
+
+The uptake and retention of nanoparticles in the body has been shown to be strongly correlated with surface charge, ligand chemistry and size. Nanoparticles used in drug delivery are often coated with polyethylene glycol (PEG) to increase hydrophilicity and neutral surface chemistry, increasing blood circulation half-lives.[7] Highly cationic/anionic surface charges can absorb proteins to form a protein corona which increases interaction with macrophages,[5][,][8] and certain nanoparticles have demonstrated clearance from the bloodstream within a few hours post injection.[7] Therefore, it is expected that only particles in the small micron or nanosize range will cross biological barriers, and are expected to be cleared from the circulatory system rapidly. These mechanisms will be dependent on health and disease states of the person, and the characteristics of the particle (e.g., size, shape, charge, corona). It is still largely unknown how these factors affect the migration of polymer nanoparticles (nanoplastics) following exposure. 
+
+Current human biomonitoring studies that aim to provide information in this area use a range of analytical techniques with the most used being vibrational spectroscopy-based methods. These techniques are marketed to reliably identify 
+
+particles larger than ∼20 _μ_ m in size, or ∼1−5 _μ_ m for _μ_ -FTIR and _μ_ -Raman. Therefore, detecting particles that are expected to cross biological barriers is challenging and pushes the detection limits of these instruments. Regardless, recent studies have used these techniques to report MP particles in the human circulatory system ranging in size from 20−184 _μ_ m[11] to 7−3000 _μ_ m[12] and in clearance organs (the liver) from 4−30 _μ_ m,[13] sizes that are often larger than those realistically expected to cross biological barriers into these matrices or even have the ability to circulate through capillary beds. Mass spectrometry-based techniques improve on these size limitations but lose some of the characterization information obtained from spectroscopy-based techniques. Leslie et al.[14] was the first to use pyrolysis−gas chromatography−mass spectrometry (Py-GC-MS) to report polymers >700 nm in human blood. Since this first study, there has been an exponential increase in the number in human exposure studies on MNPs using thermal decomposition mass spectrometry techniques. Py-GC-MS has been used to report polymers in venous blood, feces, urine, semen, placenta, arterial tissue, arterial plaque, thrombi, gallstone, tumors, bone marrow, testes and vitreous humor (Table S11).[14][−][29] 
+
+However, the use of Py-GC-MS, even as an environmental monitoring tool for MNP pollution, is still in its infancy and these techniques are employed without fully understanding, or assessing, their uncertainties. For example, both spectroscopy and thermal degradation techniques can suffer from interferences within a complex sample,[30][−][34] leading to false positives. For Py-GC-MS this uncertainty stems from the method being an indirect analysis technique, as thermal decomposition products (small organic molecules) of a polymer are analyzed, not the polymer itself. This provides the opportunity for endogenous compounds of similar structures to decompose into the same molecules. For example, lipids are a significant matrix interference in the analysis of polyethylene (PE),[31] thermally decomposing into the same series of alkanes, alkenes 
+
+**1985** 
+
+https://doi.org/10.1021/acs.est.4c12599 _Environ. Sci. Technol._ 2025, 59, 1984−1994 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Article 
+
+and alkadienes as PE, hence will provide a false positive PE detection in samples. These matrix interferences cannot be completely removed during analysis[31] and need to be assessed and removed during the sample workup stages. Additionally, some polymers such as polyvinyl chloride (PVC) break down into nonspecific molecules, forming a range of common polycyclic aromatic hydrocarbons during pyrolysis. Without a selective pyrolysis product to analyze, the uncertainty around confident identification and quantification increases. 
+
+Human exposure studies are the backbone for understanding fate and persistence of target chemicals of concern (including MNPs) within the body. Therefore, it is paramount that robust and reliable biomonitoring data are produced to aid with understanding fate and toxicology and development of wellinformed regulations. To this end, the aim of this study was to build on the previous pioneering work in this area and assess the appropriateness of using Py-GC-MS as an analysis technique for identification and quantification of a range of polymers in human blood. Three extraction protocols were assessed for removal of matrix interferences and the final developed method validated against recovery of both nanoand micron-sized polymers, with realistic detection limits determined and the biological plausibility of mass-based concentrations that can be confidently reported with this methodology discussed. Finally, the methodology was tested with a pilot study of blood samples from the Australian population, using the strict QA/QC criteria developed to determine if plastics >300 nm can be identified confidently. 
+
+## **2. MATERIALS AND METHODS** 
+
+**2.1. Chemicals.** Liquid chromatography grade dichloromethane (DCM, LiChrosolv), gradient grade methanol (LiChrosolv) and Proteinase K (lyophilized, 30 mAnson-U/ mg) were purchased from Merck Pty Ltd. (Bayswater, VIC, Australia). Hydrogen peroxide (H2O2, Emsure, 30%), calcium chloride dihydrate (ReagentPlus grade, ≥99.0%) and tris hydrochloride (reagent grade, ≥99.0%) were purchased from Sigma-Aldrich (Bayswater, VIC). Analytical reagent grade ethanol (100%, undenatured), calcium chloride (fused dihydrate) and sodium carbonate (anhydrous) were purchased through ChemSupply Australia (Gillman, SA). Where possible, reagents were purchased in glass bottles. CREON 10,000 (Abbott Laboratories GmbH, Germany, Mylan), an over the counter pancreatic enzyme replacement medication containing lipase, amylase and protease (10,000, 8000, and 600 Ph Eur units, respectively), was purchased from a local pharmacy in Brisbane, Australia. 
+
+Ultrapure water was purified with a Milli-Q system (Millipore, Bedford, USA) and again filtered through a furnaced (500 °C) 0.3 _μ_ m glass fiber filter (Advantec, 47 mm GF-75, Labtek, Brendale, QLD) prior to use. Aqueous solutions of reagents were prepared in filtered Milli-Q water as required. Reagents also underwent an additional 0.3 _μ_ m filtering step following preparation and before use. Adjustment of all sample and reagent pH was achieved with a saturated sodium carbonate solution and monitored through an OHAUS Starter 300 pH Meter with an attached ST320 pH probe (OHAUS, Melbourne, Victoria). 
+
+Nanosphere (NS) solutions of polystyrene (200, 300, 400, 500, 700, 1000 nm) and poly(methyl methacrylate) (400, 740, and 1100 nm) were purchased from Bangs Laboratories, Inc. (Fishers, USA) and nanosphere solutions of carboxylated polystyrene (COOH-PS) were purchased from PolySciences 
+
+(Taipei, Taiwan). Specific details of the NS solutions are listed in Table S2. Powdered standards of polyethylene terephthalate (PET), polycarbonate (PC), deuterated polystyrene ( _d_ 5-PS), 4-fluorinated polystyrene (4-FlPS) and deuterated polyethylene ( _d_ 4-PE) were purchased from Polymer Source, Inc. (Dorval, Canada). Polystyrene (PS) and poly(methyl methacrylate) (PMMA) were purchased from Sigma-Aldrich (St. Louis, MO, USA), low-density polyethylene (PE) was purchased from Thermo Fisher Scientific (Scoresby, VIC) and polypropylene (PP) was donated by a plastic manufacturer from Melbourne, Australia (LyondellBasell, VIC). 
+
+Glass fiber filters (21 mm, 0.3 _μ_ m and 20 mm, 1.0 _μ_ m pore size from Advantec (Osaka, Japan) and 47 mm, 0.7 _μ_ m pore size from Whatman (Seoul, South Korea)) were furnaced (Nabertherm Muffle Furnace, Model LT 40/11m, Nabertherm GmbH, Lilienthal, Germany) at 500 °C for 8 h prior to use. The 47 mm filters were precut into 21 mm circles with furnaced and DCM rinsed stainless-steel surgical scissors prior to furnacing and use. 
+
+**2.2. Samples.** Human ethics for collection of blood for method development and the population pilot study was obtained from the UQ Human Ethics Research Committee (HE001017). Blood used for method development was donated from one participant and this blood was used throughout the method development process for consistency. The pilot study saw collection from 8 participants with samples collected twice: early morning before food intake (fasting) and within an hour after consuming a large meal (nonfasting). One participant donated samples in fasting and nonfasting conditions for 4 days to assess interday variability. Samples were collected in glass 8.5 mL vacutainer tubes containing the anticoagulant acid citrate dextrose, with an eclipse 21G needle (McFarlane Medical and Scientific, Ringwood VIC) creating a direct connection from the draw site to the collection vial, thus avoiding the use of plastic tubing. All samples were stored at −20 °C until analysis. Sampling blanks were prepared by drawing prefiltered Milli-Q water into a glass vacutainer tube (using the 21G needle), storing with the samples, and subsampling for analysis with every batch of blood samples. 
+
+**2.3. Sample Extraction (Final Method).** The final method was chosen after comparison of 3 extraction methods (Section 2.4), with Method 3 chosen due to reduced matrix interferences and improved ease of use (Section 3.1). Frozen blood samples were thawed and mixed via manual agitation of the vacutainer for 30 s. One mL of whole blood was transferred to a 400 mL tall form beaker via a graduated glass pipet. The beaker was immediately capped with a thick aluminum foil lid to minimize potential contamination from atmospheric deposition. Following aliquoting, 10 mL of tris hydrochloride solution (Tris-HCl, 400 mM, 0.3 _μ_ m filtered, pH 8) was added, and samples were heated at 60 °C for 1 h to aid denaturing of proteins. After cooling to room temperature, 100 _μ_ L of proteinase K solution (1 mg/mL in Milli-Q water, prepared fresh each batch) and 1 mL of calcium chloride solution (5 mM in Milli-Q, filtered at 0.3 _μ_ m) was added, and samples were incubated in a Thermoline Orbital Incubator shaker (Thermoline Scientific, Wetherill Park, NSW) at 38 °C for 2 h. 
+
+A freshly made 2.5% w/v CREON enzyme (pancrelipase) solution[31] was prepared with Milli-Q water and pH adjusted to between 8−10. The samples were adjusted to pH 10, 2 mL of the enzyme solution added, and incubated for 3 h at 38 °C. Following incubation, 10 mL of H2O2 was carefully added in 1 
+
+**1986** 
+
+https://doi.org/10.1021/acs.est.4c12599 _Environ. Sci. Technol._ 2025, 59, 1984−1994 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Article 
+
+mL aliquots over 8 h (while keeping the pH between 8−10) and the samples allowed to digest at room temperature for a total of 48 h. 
+
+Following the digestion, samples were heated to 60 °C on a hot plate and samples were filtered hot using a 13 mm AllGlass Microanalysis Filter Holder with 100 mL reservoir capacity (Micro-Analytix Pty. Ltd., Taren Point, Australia) attached to a 125 mL Vacuum Filtering Side-Arm Flask with threaded side arm (Merck, Bayswater, VIC, Australia). Samples were filtered through a 0.7 _μ_ m glass fiber filter, with the beaker rinsed with Milli-Q water and added to the filtering apparatus. The filtrate was then transferred to a fresh, furnaced and solvent rinsed beaker. Ten mL of H2O2 was added to the reservoir and left in place for 10 min for an additional digestion of the collected particulates on the filter. After H2O2 removal the filter was then rinsed with 15 mL of water and 15 mL of ethanol with the washes added to the filtrate. The vacuum was left on until the filter was dry and the filter was transferred to an aluminum foil pocket for storage. The filtering process was repeated with the filtrate using a 0.3 _μ_ m filter. The filters were inserted to individual 80 _μ_ L pyrolysis cups and spiked with 0.1 _μ_ g of _d_ 5-PS and 4-FlPS internal standard solutions prior to analysis by Py-GC-MS/MS. 
+
+**2.4. Comparison of Three Extraction Protocols.** Initially, three extraction protocols were compared to determine their suitability for ease of use and in removing potential interferences (false positives) from the blood matrix. In Method 1, samples were digested with a mix of CREON enzymes[31] and H2O2 before subsequent filtering through 0.7 and 0.3 _μ_ m filters. Full method details are described in Text S1. In Method 2, an adaption of the method from Leslie et al.[14] was trialed which included a proteinase K enzyme digestion before filtration through 0.7 and 0.3 _μ_ m filters and a short H2O2 digestion within the filtering apparatus (Text S2). Thirdly a method that combined the best attributes of the above two methods was developed and is described above (Section 2.3). Unlike Method 2, sodium dodecyl sulfate (SDS) was not added to the Tris-HCl buffer in Method 3 as there was no observed difference in either ease of filtering or level of interferences with or without it. Optimized parameters, such as % ethanol end wash, protein denaturation temperature, and assessment of interferences with and without the CREON enzyme digestion are described in Text S3. To compare the three extraction methods, five 1 mL aliquots of the method development blood and 2 sampling blanks (Milli-Q water) were extracted following each of the three protocols. 
+
+**2.5. Analysis.** Identification and quantification of target polymers was performed with a multishot microfurnace pyrolyzer (EGA/PY-3030D) equipped with an autoshot sampler (AS-1020E) (Frontier Lab Ltd., Fukushima, Japan) and coupled to a GC-MS/MS (GC-2030 coupled to a TQ8050 NX MS/MS) (Shimadzu Corporation, Japan), as previously published.[35] The pyrolyzer unit was operated in double shot mode, utilizing a thermal desorption step where the sample is heated to 300 °C as a first analysis or “shot” to remove the more volatile interferences. The sample was then pyrolyzed at 650 °C to decompose the remaining polymers into their respective pyrolysis products for GC-MS/MS separation and detection. The MS/MS functionality was utilized to reduce background signal and improve detection limits. This was achieved through monitoring the same _m_ / _z_ ions in each quadrupole with a low energy set for the collision cell (3 eV) to remove background ions (e.g., air and water). The MS/MS 
+
+was operated in full scan and MRM mode concurrently to retain sample information.[35] Pyrolysis and GC-MS/MS details are listed in Tables S3 and S4. 
+
+Calibration curves were prepared using a low concentration microplastics calibration standard set in CaCO3 diluent and containing 12 common polymers (Frontier Laboratories Ltd., Fukushima, Japan). Eight different masses of the calibration powder were weighed into pyrolysis cups, spiked with 0.1 _μ_ g of _d_ 5-PS and 4-FlPS internal standards and analyzed. Due to the low concentrations of polystyrene (PS), poly(methyl methacrylate) (PMMA) and polycarbonate (PC) in these calibration standard sets, a second calibration curve was prepared from a 2 mg/mL dissolved solution of these polymers in DCM. Both sets of standards were overlaid to ensure linearity which was deemed acceptable (R[2] of 0.993−0.999). 
+
+**2.6. Cryomilled Standards.** Small particle size polymer standards were prepared from powdered micron-sized standards. Aliquots of each standard were cryomilled (SPEX SamplePrep 6775, Metuchen, NJ) using 4 consecutive runs consisting of 3 cycles of 2 min grinding, 2 min cool time at 10 counts per second. The samples were then sieved through a 25 _μ_ m stainless steel mesh using a purpose-built stainless-steel holder with removable mesh disks, and the <25 _μ_ m and >25 _μ_ m particle size fractions collected. The <25 _μ_ m fraction was retained for PS, PMMA, PVC, PC, Nylon-6 and Nylon-6,6. However, PE, _d_ 4-PE, PP and PET could not be cryomilled to particle sizes <25 _μ_ m and the >25 _μ_ m fraction was retained for these plastics. 
+
+**2.7. QA/QC.** All sample preparation was completed within the _Minderoo Plastics and Human Health plastics-minimized laboratory_ in a stainless steel biosafety cabinet and stainless steel fume cupboard to minimize background contamination from the laboratory environment.[35] Cotton lab coats were always worn and the coats were dyed a jade green for visibility of any fibers. Glassware and metalware were subjected to stringent cleaning conditions prior to use. Labware was washed in a laboratory grade Miele Lab Washer PG8583 SS (Thermo Fisher Scientific, Scoresby, VIC) under alkaline conditions at 93 °C. Glassware and glass fiber filters were also furnaced at 500 °C for 5 h in a Nabertherm Muffle Furnace (John Morris Group, Chatswood, NSW). Glassware was wrapped in foil until use where they were rinsed with DCM prior to use. All samples, solvents and other containers were covered with furnaced aluminum foil when not directly used to minimize contamination from atmospheric deposition during sample processing and reagents were prefiltered through a furnaced 0.3 _μ_ m filter before use. 
+
+Sampling blanks (Milli-Q water subsampled from the glass vacutainer tube) were processed with each batch of samples. Limits of quantification (LOQ) were calculated as the concentration of a peak with a signal:noise ratio of 10:1. Where a polymer analyte was detected in sampling blanks, method detection limits (MDLs) were calculated as the average concentration in the blanks plus three times the standard deviation. If an analyte was not detected in the blanks the LOQ was used in place of the MDL. For comparison, a recovery detection limit (RDL) was also calculated as the LOQ of an extracted blood sample (to include matrix suppression) times the % recovery of that polymer from the recovery tests (Section 3.2) and represents a realistic detection limit of the final method. MDLs, LOQs and RDLs are listed in Table S5. All concentrations in samples were blank corrected (sub- 
+
+**1987** 
+
+https://doi.org/10.1021/acs.est.4c12599 _Environ. Sci. Technol._ 2025, 59, 1984−1994 
+
+**Environmental Science & Technology** 
+
+**pubs.acs.org/est** 
+
+Article 
+
+traction of mean concentration from the sampling blanks) and all analyte concentrations were internal standard corrected. 
+
+## **3. RESULTS AND DISCUSSION** 
+
+**3.1. Performance Comparison of Three Extraction Protocols.** It was observed that Method 1 (CREON only) was difficult to filter, blocking both pore size filters quickly even though the sample was visibly clear following the H2O2 digestion. Method 2 (proteinase K only) was easier to filter and after the H2O2 digestion within the filtering apparatus the filter looked visibly clear. Method 3 was the fastest to filter and the addition of the Tris-HCl buffer assi

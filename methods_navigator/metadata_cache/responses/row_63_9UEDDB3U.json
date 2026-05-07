@@ -1,0 +1,18 @@
+{
+  "scope": "Marine and freshwater surface water, sediments, wastewater effluents, and freshwater organisms",
+  "particle_size_range": null,
+  "key_metrics_output": "Particle length, width, width-to-length ratio, area, specific surface area, volume, mass, polymer type; probability density functions (PDFs) and power law distribution slopes",
+  "abstract": "Understanding the multidimensionality of microplastics is essential for a realistic assessment of the risks these particles pose to the environment and human health. Here, we capture size, shape, area, polymer, volume and mass characteristics of >60,000 individual microplastic particles as continuous distributions. Particles originate from samples taken from different aquatic compartments, including surface water and sediments from the marine and freshwater environment, waste water effluents, and freshwater organisms. Data were obtained using state-ofthe-art FTIR-imaging, using the same automated imaging post-processing software. We introduce a workflow with two quality criteria that assure minimum data quality loss due to volumetric and filter area subsampling. We find that probability density functions (PDFs) for particle length follow power law distributions, with median slopes ranging from 2.2 for marine surface water to 3.1 for biota samples, and that these slopes were compartment-specific. Polymer-specific PDFs for particle length demonstrated significant differences in slopes among polymers, hinting at polymer specific sources, removal or fragmentation processes. Furthermore, we provide PDFs for particle width, width to length ratio, area, specific surface area, volume and mass distributions and propose how these can represent the full diversity of toxicologically relevant dose metrics required for the assessment of microplastic risks.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "capture size, shape, area, polymer, volume and mass characteristics of >60,000 individual microplastic particles",
+      "probability density functions (PDFs) for particle length follow power law distributions",
+      "PDFs for particle width, width to length ratio, area, specific surface area, volume and mass distributions"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

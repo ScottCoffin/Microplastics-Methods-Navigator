@@ -1,0 +1,18 @@
+{
+  "particle_size_range": "nanoplastic size range (specific bounds not provided)",
+  "key_metrics_output": "environmental hazard assessment, metal-doped nanoplastic synthesis and characterization",
+  "abstract": "The ability to synthesize metal-doped nanoplastic opens windows to accurately assess the potential environmental hazards that nanoplastic poses.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [
+      "nanoplastic"
+    ],
+    "key_metrics_output": [
+      "synthesize metal-doped nanoplastic",
+      "assess the potential environmental hazards"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

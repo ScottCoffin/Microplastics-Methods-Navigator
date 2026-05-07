@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Schymanski et al., 2021
+Year: 2021
+Full Title: Analysis of microplastics in drinking water and other clean water samples with micro-Raman and micro-infrared spectroscopy: minimum requirements and best practice guidelines
+DOI/URL: https://doi.org/10.1007/s00216-021-03498-y
+Existing Particle Size Range: ≥330 µm (manta net, surface water); ≥1.2 µm (GF/C filter, sediment & fish GIT)
+Existing Key Metrics / Output: Count/m³ (water), /g dw (sediment), /fish; 12-polymer library; µRaman 785 nm; recovery ≥80%
+
+Zotero metadata:
+Title: Analysis of microplastics in drinking water and other clean water samples with micro-Raman and micro-infrared spectroscopy: minimum requirements and best practice guidelines
+DOI: 10.1007/s00216-021-03498-y
+Date: 2021-10-01 2021-10-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics are a widespread contaminant found not only in various natural habitats but also in drinking waters. With spectroscopic methods, the polymer type, number, size, and size distribution as well as the shape of microplastic particles in waters can be determined, which is of great relevance to toxicological studies. Methods used in studies so far show a huge diversity regarding experimental setups and often a lack of certain quality assurance aspects. To overcome these problems, this critical review and consensus paper of 12 European analytical laboratories and institutions, dealing with microplastic particle identification and quantification with spectroscopic methods, gives guidance toward harmonized microplastic particle analysis in clean waters. The aims of this paper are to (i) improve the reliability of microplastic analysis, (ii) facilitate and improve the planning of sample preparation and microplastic detection, and (iii) provide a better understanding regarding the evaluation of already existing studies. With these aims, we hope to make an important step toward harmonization of microplastic particle analysis in clean water samples and, thus, allow the comparability of results obtained in different studies by using similar or harmonized methods. Clean water samples, for the purpose of this paper, are considered to comprise all water samples with low matrix content, in particular drinking, tap, and bottled water, but also other water types such as clean freshwater.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics are a widespread contaminant found not only in various natural habitats but also in drinking waters. With spectroscopic methods, the polymer type, number, size, and size distribution as well as the shape of microplastic particles in waters can be determined, which is of great relevance to toxicological studies. Methods used in studies so far show a huge diversity regarding experimental setups and often a lack of certain quality assurance aspects. To overcome these problems, this critical review and consensus paper of 12 European analytical laboratories and institutions, dealing with microplastic particle identification and quantification with spectroscopic methods, gives guidance toward harmonized microplastic particle analysis in clean waters. The aims of this paper are to (i) improve the reliability of microplastic analysis, (ii) facilitate and improve the planning of sample preparation and microplastic detection, and (iii) provide a better understanding regarding the evaluation of already existing studies. With these aims, we hope to make an important step toward harmonization of microplastic particle analysis in clean water samples and, thus, allow the comparability of results obtained in different studies by using similar or harmonized methods. Clean water samples, for the purpose of this paper, are considered to comprise all water samples with low matrix content, in particular drinking, tap, and bottled water, but also other water types such as clean freshwater.

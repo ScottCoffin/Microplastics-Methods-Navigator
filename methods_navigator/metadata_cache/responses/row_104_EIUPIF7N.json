@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "digestion efficiency (99.74–100.01%), particle mass recovery (81.4–110.7%), particle number recovery (80–108%), limit of detection (LOD), polymer type identification (PE, PP, PTFE, PET, PMMA), polymer physicochemical characteristics via DSC, TGA, DLS, and Raman analysis",
+  "abstract": "Growing concern over the presence of microplastics in food has led to the development of numerous methods for their extraction and analysis. However, many of these methods are time-consuming and limited to specific food types. In this study, we present a novel and quick approach involving microwave-assisted acid extraction of microplastics from food, followed by Raman microscopy analysis. The method’s performance was evaluated through determination of its digestion efficiency, particle mass and number recovery, limit of detection (LOD), and the digestion protocol’s effect on polymer physicochemical characteristics. The extraction protocol achieved 99.74–100.01% digestion of four different food matrices within 2 h, with 81.4–110.7% mass and 80–108% number recoveries of added polymer particles, both being within the 80–120% range. Importantly, DSC, TGA, DLS and Raman analyses of added particle polymers showed no significant change in PE, PP and PTFE polymer structure, while some structural changes were found for PET and PMMA. This method’s good analytical performance, high throughput and suitability for quick digestion of several different food matrices make it a promising step towards reliable monitoring of microplastics in food.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "digestion efficiency, particle mass and number recovery, limit of detection (LOD), and the digestion protocol's effect on polymer physicochemical characteristics",
+      "99.74–100.01% digestion of four different food matrices within 2 h, with 81.4–110.7% mass and 80–108% number recoveries",
+      "DSC, TGA, DLS and Raman analyses of added particle polymers"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

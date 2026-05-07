@@ -1,0 +1,21 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "occurrence of macroplastics and microplastics; sampling methods from various environmental matrices; sample preparation and analysis; chemical and physical testing methods for identification and quantification of plastics",
+  "abstract": "This technical report summarizes current scientific literature on the occurrence of macroplastics and microplastics in the environment and biota. It provides an overview of testing methods including sampling from various environmental matrices, sample preparation, and analysis procedures. The document describes chemical and physical testing methods for identification and quantification of plastics and gives recommendations for standardization of sampling, sample preparation, and analysis procedures. Indoor and health-related aspects are excluded from scope.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "summarizes current scientific literature on the occurrence of macroplastics and microplastics",
+      "overview of testing methods, including sampling from various environmental matrix, sample preparation and analysis",
+      "chemical and physical testing methods for the identification and quantification of plastics"
+    ],
+    "abstract": [
+      "summarizes current scientific literature on the occurrence of macroplastics and microplastics, in the environment and biota",
+      "overview of testing methods, including sampling from various environmental matrix, sample preparation and analysis",
+      "chemical and physical testing methods for the identification and quantification of plastics",
+      "recommendations for three steps necessary for the standardization of methods towards harmonized procedures for sampling, sample preparation and analysis",
+      "does not apply indoor and health related aspects"
+    ]
+  }
+}

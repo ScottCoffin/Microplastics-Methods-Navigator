@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Leso et al., 2023
+Year: 2023
+Full Title: The endocrine disrupting effects of nanoplastic exposure: A systematic review
+DOI/URL: https://doi.org/10.1177/07482337231203053
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: The endocrine disrupting effects of nanoplastic exposure: A systematic review
+DOI: 10.1177/07482337231203053
+Date: 2023-11-01 2023-11-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Good mechanical properties and low costs have led to a global expansion of plastic production and use. Unfortunately, much of this material can be released into the environment as a waste product and cleaved into micro- and nanoplastics (NPs) whose impact on the environment and human health is still largely unknown. Considering the growing worldwide awareness on exposure to chemicals that can act as endocrine disruptors, a systematic review was performed to assess the impact of NPs on the endocrine function of in vitro and in vivo models. Although a limited number of investigations is currently available, retrieved findings showed that NPs may induce changes in endocrine system functionality, with evident alterations in reproductive and thyroid hormones and gene expression patterns, also with a trans-generational impact. Nanoplastic size, concentration, and the co-exposure to other endocrine disrupting pollutants may have an influencing role on these effects. Overall, although it is still too early to draw conclusions regarding the human health risks derived from NPs, these preliminary results support the need for further studies employing a wider range of plastic polymer types, concentrations, and time points as well as species and life stages to address a great variety of endocrine outcomes and to achieve a broader and shared consensus on the role of NPs as endocrine disruptors.
+
+Context source: zotero_abstractNote
+
+Source context:
+Good mechanical properties and low costs have led to a global expansion of plastic production and use. Unfortunately, much of this material can be released into the environment as a waste product and cleaved into micro- and nanoplastics (NPs) whose impact on the environment and human health is still largely unknown. Considering the growing worldwide awareness on exposure to chemicals that can act as endocrine disruptors, a systematic review was performed to assess the impact of NPs on the endocrine function of in vitro and in vivo models. Although a limited number of investigations is currently available, retrieved findings showed that NPs may induce changes in endocrine system functionality, with evident alterations in reproductive and thyroid hormones and gene expression patterns, also with a trans-generational impact. Nanoplastic size, concentration, and the co-exposure to other endocrine disrupting pollutants may have an influencing role on these effects. Overall, although it is still too early to draw conclusions regarding the human health risks derived from NPs, these preliminary results support the need for further studies employing a wider range of plastic polymer types, concentrations, and time points as well as species and life stages to address a great variety of endocrine outcomes and to achieve a broader and shared consensus on the role of NPs as endocrine disruptors.

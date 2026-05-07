@@ -1,0 +1,26 @@
+{
+  "particle_size_range": ">1 μm to <5 mm (microplastics); <1 μm (nanoplastics)",
+  "key_metrics_output": "particle count, polymer type (PA, PET, PP, PVF, PE, PS, fiberglass), particle shape (film, fragment, fiber, granule, foam), color, size distribution, deposition rate (particles/m²/day for passive sampling; particles/m³ for active sampling)",
+  "abstract": "This critical review analyzes atmospheric microplastics (MPs) sampling methods and standardization requirements based on 92 articles published between 2015 and 2023. The review examines passive and active sampling approaches, comparing sampling tools, time settings, locations, sources, and intake flow rates. Key findings indicate that atmospheric MPs pose serious threats to ecosystems and human health through inhalation exposure and long-distance atmospheric transport. The review emphasizes that non-standardized sampling methods significantly limit data comparability and credibility, and calls for establishment of globally standardized sampling protocols to ensure accuracy and consistency in atmospheric MPs research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "MPs as plastic particles with a diameter of less than 5 mm",
+      "recognized definition of plastic size classes: macroplastics(> 5 mm), MPs (> 1 µm, < 5 mm) and nanoplastics(< 1 µm)",
+      "NPs is a relatively new term...how to classify NPs(< 1000 nm or < 100 nm)"
+    ],
+    "key_metrics_output": [
+      "sampling tools, time settings, sampling locations, sources, and intake flow rates",
+      "polymer types...PA, PET, PP, and PVF...fiberglass, PE, PET, PA, and recycled cellulose",
+      "shapes include film, fragment, fiber, granule and foam",
+      "The deposition rate of MPs is expressed as the number of particles per m² per day. Active sampling is represented by the number of particles per m³",
+      "polymer type, shape, color, and size distribution"
+    ],
+    "abstract": [
+      "reviews the sampling methods used to collect atmospheric MPs in 92 articles published between 2015 and 2023",
+      "The inconsistency of sampling strategies and the non standardized sampling process limit the comparability and credibility of relevant research data",
+      "it is urgent to establish standardized sampling methods to ensure the accuracy and comparability of data",
+      "Especially MPs suspended in the atmosphere, which humans continuously inhale during daily breathing"
+    ]
+  }
+}

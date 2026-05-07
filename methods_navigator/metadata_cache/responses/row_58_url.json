@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "< 5 mm (microplastics); nanoplastics also addressed",
+  "key_metrics_output": "Presence/distribution across environmental compartments (air, soil, sediment, freshwaters, seas, oceans, plants, animals, human diet); physical harm endpoints (inflammation, stress); concentration levels relative to effect thresholds",
+  "abstract": "A scientific perspective on microplastics in nature and society examines the best available evidence on microplastics and nanoplastics across natural sciences, computer modelling, and social/political/behavioural sciences. The report concludes that microplastics (particles < 5 mm) are present across air, soil, sediment, freshwaters, seas, oceans, plants, animals, and human diet from sources including plastic products, textiles, fisheries, agriculture, industry, and waste. While controlled experiments show high concentrations cause physical harm (inflammation, stress), measured concentrations in many real-world locations are below effect thresholds. Evidence limitations exist, particularly for nanoplastics which are difficult to measure. The report suggests microplastics and nanoplastics do not pose widespread risk to humans or environment except in small pockets, though evidence is limited and the situation could change with continued pollution.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics -- tiny particles under 5mm in length",
+      "This is true especially of nanoplastics, which are very difficult to measure and evaluate"
+    ],
+    "key_metrics_output": [
+      "Microplastics and nanoplastics do not pose a widespread risk to humans or the environment, except in small pockets",
+      "high concentrations of these particles have been shown to cause physical harm to the environment and living creatures, including inducing inflammation and stress",
+      "the concentration levels measured in many real-world locations are well below this threshold"
+    ],
+    "abstract": [
+      "Our advice comprehensively examines the best available evidence from the natural sciences and computer modelling, as well as social, political and behavioural sciences",
+      "Microplastics and nanoplastics do not pose a widespread risk to humans or the environment, except in small pockets. But that evidence is limited, and the situation could change if pollution continues at the current rate"
+    ]
+  }
+}

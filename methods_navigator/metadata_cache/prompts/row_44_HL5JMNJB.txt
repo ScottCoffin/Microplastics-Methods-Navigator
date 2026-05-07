@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: De Ruijter et al., 2025b
+Year: 2025
+Full Title: A brief history of microplastics effect testing: Guidance and prospect
+DOI/URL: https://doi.org/10.1016/j.envpol.2025.125711
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: A brief history of microplastics effect testing: Guidance and prospect
+DOI: 10.1016/j.envpol.2025.125711
+Date: 2025-03-00 03/2025
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Numerous reviews have consistently highlighted the shortcomings of studies evaluating the effects of microplastics (MP), with many of the issues identified in 2016 still relevant in 2024. Here, we summarize the current knowledge on MP effect testing, compare guidelines, and provide an overview of risk assessments conducted at both single species and community levels. We discuss standard test materials, MP characteristics, and mechanisms explaining effects. We have observed that the quality of MP effect studies is gradually improving, and knowledge on enhancing these studies is available. Recommendations include data rescaling and alignment for ecological risk assessment, with preference for using environmentally relevant MPs. A step-by-step protocol for creating polydisperse test materials is provided. Most risk assessments indicate that concentrations observed in ecosystems globally exceed the effect thresholds measured in the laboratory. However, using a higher-tier approach, no risks are expected for freshwater benthic communities at current MP exposure concentrations. Evidence on the mechanisms behind adverse effects is growing; however, more well-designed experiments are needed. A potential solution might involve comparing natural particles with MPs that are as similar in dimensions as possible, providing insight into the mechanisms of food dilution where volume is a critical determinant of toxicity.
+
+Context source: zotero_abstractNote
+
+Source context:
+Numerous reviews have consistently highlighted the shortcomings of studies evaluating the effects of microplastics (MP), with many of the issues identified in 2016 still relevant in 2024. Here, we summarize the current knowledge on MP effect testing, compare guidelines, and provide an overview of risk assessments conducted at both single species and community levels. We discuss standard test materials, MP characteristics, and mechanisms explaining effects. We have observed that the quality of MP effect studies is gradually improving, and knowledge on enhancing these studies is available. Recommendations include data rescaling and alignment for ecological risk assessment, with preference for using environmentally relevant MPs. A step-by-step protocol for creating polydisperse test materials is provided. Most risk assessments indicate that concentrations observed in ecosystems globally exceed the effect thresholds measured in the laboratory. However, using a higher-tier approach, no risks are expected for freshwater benthic communities at current MP exposure concentrations. Evidence on the mechanisms behind adverse effects is growing; however, more well-designed experiments are needed. A potential solution might involve comparing natural particles with MPs that are as similar in dimensions as possible, providing insight into the mechanisms of food dilution where volume is a critical determinant of toxicity.

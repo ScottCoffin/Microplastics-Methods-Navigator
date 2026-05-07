@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "Micro- and nanoplastics (MNPs); specific size ranges not quantified in provided context",
+  "key_metrics_output": "Risk assessment framework evaluation; hazard identification; exposure assessment; risk characterization; toxicologically relevant metrics; weight of evidence approach",
+  "abstract": "This perspective evaluates six established human health risk assessment frameworks (RAFs) for micro- and nanoplastics (MNPs) to assess their technological and regulatory readiness. The authors propose nine technical criteria that RAFs should meet to inform policy, including quantifiability of outputs, systematic evaluation of input data quality, consistency between exposure and effect data, addressing complexity and diversity of environmentally realistic microplastics, readiness for integration into existing regulatory approaches, and real-world implementation status. The paper discusses strengths of each framework and recommends combining them into a single overarching framework that integrates these strengths to support comprehensive human health risk assessment and governance of MNPs.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Micro- and nanoplastic particles (MNPs) have emerged as pollutants",
+      "exposure to micro- and nanoplastics (MNPs) via drinking water, food, and air"
+    ],
+    "key_metrics_output": [
+      "risk framing, scientifically sound risk assessment that accounts for human and environmental safety, evaluation, and risk management",
+      "nine technical criteria that a risk-assessment framework should meet to inform policy and action. These include the degree of quantifiability of outputs; the provision for systematic evaluation of the quality of input data; the consistency between exposure and effect data",
+      "hazard identification, hazard characterization, exposure assessment, and risk characterization",
+      "toxicologically relevant metrics; weight of evidence"
+    ],
+    "abstract": [
+      "Assessing and managing the risks of these particles remains challenging",
+      "develop a comprehensive human health risk assessment framework (RAF)",
+      "we discuss six established frameworks to assess their technological and regulatory readiness",
+      "recommend combining them into a single overarching framework that integrates these strengths"
+    ]
+  }
+}

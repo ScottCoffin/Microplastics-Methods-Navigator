@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: National Research Council Canada, 2025
+Year: 2025
+Full Title: NPPP-1: Nanoscale Polypropylene Reference Material
+DOI/URL: https://nrc.canada.ca/en/certifications-evaluations-standards/certified-reference-materials/list/191
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+Description NPPP-1 Reference Material (RM) is a dispersion of nanoscale polypropylene (PP) in water. It is intended for use in assessing the biologic effects of nanoscale plastics, calibrating procedures, and developing methods for determining the size and charge of nanoscale materials. A single vial contains minimum 5 mL of nanoscale PP dispersion in pH 8 water. Application field(s) Environment, Food & Water Safety, Nanomaterials Analyte group(s) Contaminants, Nanoparticles Unit 5 mL Footnote Ships from Ottawa Product documentation for NPPP-1 NPPP-1 Date of Issue 2025-11-05 Footnotes Footnote 1 The reference materials are packaged in approximate quantities. Please check quarantine restrictions in your country to ensure smooth transfer of the reference materials from Canada to the destination. Return to footnote referrer Purchase Quantity Add to cart Order by credit card through the Virtual store Contact us Ottawa CRM Sales Office Metrology Research Centre 1200 Montreal Road Building M36, Room 1029 Ottawa, Ontario K1A 0R6 Telephone: 613-993-2359 Fax: 613-993-8915 Email: CRM-MRCOttawa@nrc-cnrc.gc.ca From: National Research Council Canada Date modified: 2025-09-01 About this site Government of Canada All Contacts Departments and agencies About government Themes and topics Jobs Immigration and citizenship Travel and tourism Business Benefits Health Taxes Environment and natural resources National security and defence Culture, history and sport Policing, justice and emergencies Transport and infrastructure Canada and the world Money and finance Science and innovation Indigenous peoples Veterans and military Youth Manage life events Government of Canada Corporate Social media Mobile applications About Canada.ca Terms and conditions Privacy

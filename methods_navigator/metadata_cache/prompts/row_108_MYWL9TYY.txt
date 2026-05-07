@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Valsesia et al., 2021
+Year: 2021
+Full Title: Combining microcavity size selection with Raman microscopy for the characterization of Nanoplastics in complex matrices
+DOI/URL: https://doi.org/10.1038/s41598-020-79714-z
+Existing Particle Size Range: >1 nm to <5,000 µm
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Combining microcavity size selection with Raman microscopy for the characterization of Nanoplastics in complex matrices
+DOI: 10.1038/s41598-020-79714-z
+Date: 2021-01-11 2021-01-11
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Nanoplastic particulates (pNP) are widely considered as being potentially harmful to the environment and living organisms while also being technically difficult to detect and identify in the presence of biological matrices. In this study, we describe a method for the extraction and subsequent Raman analysis of pNP present in the tissues of salt-water mussels. The process combines a step of enzymatic digestion/filtering to eliminate the biological matrix with a detection/identification procedure, which uses a micro-machined surface, composed of arrays of cavities with well-defined sub-micron depths and diameters. This sensor surface, exploits capillary forces in a drying droplet of analyte solution to drive the self-assembly of suspended nanoparticles into the cavities leaving the individual particles isolated from each other over the surface. The resulting array, when analysed using confocal Raman microscopy, permits the size selective analysis of the individual sub-micron pNP trapped in the cavities structure.
+
+Context source: zotero_abstractNote
+
+Source context:
+Nanoplastic particulates (pNP) are widely considered as being potentially harmful to the environment and living organisms while also being technically difficult to detect and identify in the presence of biological matrices. In this study, we describe a method for the extraction and subsequent Raman analysis of pNP present in the tissues of salt-water mussels. The process combines a step of enzymatic digestion/filtering to eliminate the biological matrix with a detection/identification procedure, which uses a micro-machined surface, composed of arrays of cavities with well-defined sub-micron depths and diameters. This sensor surface, exploits capillary forces in a drying droplet of analyte solution to drive the self-assembly of suspended nanoparticles into the cavities leaving the individual particles isolated from each other over the surface. The resulting array, when analysed using confocal Raman microscopy, permits the size selective analysis of the individual sub-micron pNP trapped in the cavities structure.

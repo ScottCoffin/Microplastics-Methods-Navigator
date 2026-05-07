@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Wagner et al., 2022
+Year: 2022
+Full Title: Analytical precision assessment for microplastic analyses
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2022.135295
+Existing Particle Size Range: 20 µm – 5 mm (particles); 20 µm – 15 mm (fibers)
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Analytical precision assessment for microplastic analyses
+DOI: 10.1016/j.chemosphere.2022.135295
+Date: 2022-10-00 10/2022
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+The need for improved microplastic (MP) data accuracy has been widely reported, but MP precision issues have been investigated less thoroughly. This work demonstrates how initial and continuing assessments of a laboratory's analytical precision can be used for establishing laboratory repeatability for MP analyses. These precision estimates can be reported along with MP results to ensure their quality and compare them meaningfully to other data. Re-analyses of reference MP samples can be used to assess and compare precision between different laboratories. A multi-lab precision exercise was demonstrated using infrared (IR) standard test methods performed on reference samples consisting of low-concentration MP spikes in both clean water and wastewater matrices. Each lab repeated their IR analyses 7 times and calculated relative standard deviations (RSD) for each detected polymer type using a standardized template. All labs' MP methods yielded generally repeatable results, though RSDs were consistently higher for lower MP counts. The reported range of total MP counts per sample was 8–33 particles, and the observed RSDs were 0.1–0.6. These RSDs were the same or lower than the expected imprecision due to random (Poisson) counting error alone, suggesting that these automated methods did not contribute any additional variability, and had slightly better reproducibility than expected for independent recounts. The wastewater matrix exhibited numerous interfering particles but did not yield more variability than the clean water matrix. The low-count design is a worst case for precision but is appropriate for some real-world sample concentrations. In practice, labs could generate separate references for precision assessment at multiple MP ranges (e.g., high, medium, and low.) The RSDs obtained from this data can be used to generate QC charts, detect changes in analyst performance, compare to Poisson error to identify additional sources of imprecision, and determine target filtration and instrumental parameters for MP analyses.
+
+Context source: zotero_abstractNote
+
+Source context:
+The need for improved microplastic (MP) data accuracy has been widely reported, but MP precision issues have been investigated less thoroughly. This work demonstrates how initial and continuing assessments of a laboratory's analytical precision can be used for establishing laboratory repeatability for MP analyses. These precision estimates can be reported along with MP results to ensure their quality and compare them meaningfully to other data. Re-analyses of reference MP samples can be used to assess and compare precision between different laboratories. A multi-lab precision exercise was demonstrated using infrared (IR) standard test methods performed on reference samples consisting of low-concentration MP spikes in both clean water and wastewater matrices. Each lab repeated their IR analyses 7 times and calculated relative standard deviations (RSD) for each detected polymer type using a standardized template. All labs' MP methods yielded generally repeatable results, though RSDs were consistently higher for lower MP counts. The reported range of total MP counts per sample was 8–33 particles, and the observed RSDs were 0.1–0.6. These RSDs were the same or lower than the expected imprecision due to random (Poisson) counting error alone, suggesting that these automated methods did not contribute any additional variability, and had slightly better reproducibility than expected for independent recounts. The wastewater matrix exhibited numerous interfering particles but did not yield more variability than the clean water matrix. The low-count design is a worst case for precision but is appropriate for some real-world sample concentrations. In practice, labs could generate separate references for precision assessment at multiple MP ranges (e.g., high, medium, and low.) The RSDs obtained from this data can be used to generate QC charts, detect changes in analyst performance, compare to Poisson error to identify additional sources of imprecision, and determine target filtration and instrumental parameters for MP analyses.

@@ -1,0 +1,21 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "plastic quantification, particle identification, regulatory compliance, QA/QC metrics, data comparability",
+  "abstract": "This article examines regulatory measures and methodological challenges for microplastics analysis in soils across agricultural, roadside, urban, natural, and forest environments. It critically reviews existing legal regulations and regional best-practice examples, highlighting how methodological discrepancies hinder data comparability and risk assessments. The paper provides a QA/QC-focused framework to improve reliability and comparability of plastic analysis in soil, addressing contamination risks and analytical standardization to support method harmonization and inform soil protection strategies.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "comprehensive quantification of plastics",
+      "identification of plastic entry routes and pollution hotspots",
+      "quality assurance and quality control (QA/QC)",
+      "reliability and comparability of plastic analysis"
+    ],
+    "abstract": [
+      "Plastic pollution is increasingly recognized as a threat to terrestrial environments, particularly soil. As plastics enter agricultural, roadside, urban, natural, and forest soil",
+      "The absence of harmonized methodologies challenges the comprehensive quantification of plastics, hinders data comparability",
+      "A QA/QC-focused framework is provided to improve the reliability and comparability of plastic analysis in soil",
+      "method harmonization, credibility, and scientific maturity"
+    ]
+  }
+}

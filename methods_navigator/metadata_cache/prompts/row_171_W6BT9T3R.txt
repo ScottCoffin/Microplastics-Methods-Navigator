@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Sherrod et al., 2024
+Year: 2024
+Full Title: One4All: An Open Source Portal to Validate and Share Microplastics Data and Beyond
+DOI/URL: https://doi.org/10.21105/joss.06715
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: One4All: An Open Source Portal to Validate and ShareMicroplastics Data and Beyond
+DOI: 10.21105/joss.06715
+Date: 2024-07-16 2024-07-16
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics are a diverse suite of contaminants (Rochman et al., 2019) requiring a variety of data types to capture particle characteristics and study methodologies (Division of Drinking Water, State Water Resources Control Board, State of California, 2022; Jenkins et al., 2022). Data sharing is critical to advance science and policy (Coffin, 2023). The One4All portal was created to harmonize and share structured and unstructured microplastic data (and beyond) through validation. Validated data can be automatically uploaded to the following cloud services: Amazon S3, CKAN, and/or MongoDB. One4All is both a graphical user interface (GUI) and an R package. The tools are general-purpose and can be used for applications outside of microplastics. This manuscript provides information about the usage, workflow, and configuration of One4All, emphasizing its adaptability for diverse purposes.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics are a diverse suite of contaminants (Rochman et al., 2019) requiring a variety of data types to capture particle characteristics and study methodologies (Division of Drinking Water, State Water Resources Control Board, State of California, 2022; Jenkins et al., 2022). Data sharing is critical to advance science and policy (Coffin, 2023). The One4All portal was created to harmonize and share structured and unstructured microplastic data (and beyond) through validation. Validated data can be automatically uploaded to the following cloud services: Amazon S3, CKAN, and/or MongoDB. One4All is both a graphical user interface (GUI) and an R package. The tools are general-purpose and can be used for applications outside of microplastics. This manuscript provides information about the usage, workflow, and configuration of One4All, emphasizing its adaptability for diverse purposes.

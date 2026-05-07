@@ -1,0 +1,17 @@
+{
+  "scope": "Marine litter monitoring in European seas across multiple compartments (beach, water column, seafloor, biota) under MSFD Descriptor 10, including microparticles",
+  "particle_size_range": null,
+  "key_metrics_output": "Litter categories and items for assessment across beach, water column, seafloor, and biota compartments; microparticle characterization",
+  "abstract": "The MSFD Technical Subgroup on Marine Litter was tasked to deliver guidance so that European Member States could initiate programmes for monitoring of Descriptor 10 of the MSFD. The present document provides the recommendations and information needed to commence the monitoring required for marine litter, including methodological protocols and categories of items to be used for the assessment of litter on the beach, water column, seafloor and biota, including a special section on microparticles.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "methodological protocols and categories of items to be used for the assessment of litter on the beach, water column, seafloor and biota",
+      "special section on microparticles"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Koelmans et al., 2019a
+Year: 2019
+Full Title: Microplastics in freshwaters and drinking water: Critical review and assessment of data quality
+DOI/URL: https://doi.org/10.1016/j.watres.2019.02.054
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Microplastics in freshwaters and drinking water: Critical review and assessment of data quality
+DOI: 10.1016/j.watres.2019.02.054
+Date: 2019-05-15 May 15, 2019
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics have recently been detected in drinking water as well as in drinking water sources. This presence has triggered discussions on possible implications for human health. However, there have been questions regarding the quality of these occurrence studies since there are no standard sampling, extraction and identification methods for microplastics. Accordingly, we assessed the quality of fifty studies researching microplastics in drinking water and in its major freshwater sources. This includes an assessment of microplastic occurrence data from river and lake water, groundwater, tap water and bottled drinking water. Studies of occurrence in wastewater were also reviewed. We review and propose best practices to sample, extract and detect microplastics and provide a quantitative quality assessment of studies reporting microplastic concentrations. Further, we summarize the findings related to microplastic concentrations, polymer types and particle shapes. Microplastics are frequently present in freshwaters and drinking water, and number concentrations spanned ten orders of magnitude (1 × 10−2 to 108 #/m3) across individual samples and water types. However, only four out of 50 studies received positive scores for all proposed quality criteria, implying there is a significant need to improve quality assurance of microplastic sampling and analysis in water samples. The order in globally detected polymers in these studies is PE ≈ PP > PS > PVC > PET, which probably reflects the global plastic demand and a higher tendency for PVC and PET to settle as a result of their higher densities. Fragments, fibres, film, foam and pellets were the most frequently reported shapes. We conclude that more high quality data is needed on the occurrence of microplastics in drinking water, to better understand potential exposure and to inform human health risk assessments.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics have recently been detected in drinking water as well as in drinking water sources. This presence has triggered discussions on possible implications for human health. However, there have been questions regarding the quality of these occurrence studies since there are no standard sampling, extraction and identification methods for microplastics. Accordingly, we assessed the quality of fifty studies researching microplastics in drinking water and in its major freshwater sources. This includes an assessment of microplastic occurrence data from river and lake water, groundwater, tap water and bottled drinking water. Studies of occurrence in wastewater were also reviewed. We review and propose best practices to sample, extract and detect microplastics and provide a quantitative quality assessment of studies reporting microplastic concentrations. Further, we summarize the findings related to microplastic concentrations, polymer types and particle shapes. Microplastics are frequently present in freshwaters and drinking water, and number concentrations spanned ten orders of magnitude (1 × 10−2 to 108 #/m3) across individual samples and water types. However, only four out of 50 studies received positive scores for all proposed quality criteria, implying there is a significant need to improve quality assurance of microplastic sampling and analysis in water samples. The order in globally detected polymers in these studies is PE ≈ PP > PS > PVC > PET, which probably reflects the global plastic demand and a higher tendency for PVC and PET to settle as a result of their higher densities. Fragments, fibres, film, foam and pellets were the most frequently reported shapes. We conclude that more high quality data is needed on the occurrence of microplastics in drinking water, to better understand potential exposure and to inform human health risk assessments.

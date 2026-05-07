@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: De Frond et al., 2023
+Year: 2023
+Full Title: What determines accuracy of chemical identification when using microspectroscopy for the analysis of microplastics?
+DOI/URL: https://www.sciencedirect.com/science/article/pii/S0045653522037936
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: What determines accuracy of chemical identification when using microspectroscopy for the analysis of microplastics?
+DOI: 10.1016/j.chemosphere.2022.137300
+Date: 2023-02-00 02/2023
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Fourier transform infrared (FTIR) and Raman microspectroscopy are methods applied in microplastics research to determine the chemical identity of microplastics. These techniques enable quantification of microplastic particles across various matrices. Previous work has highlighted the benefits and limitations of each method and found these to be complimentary. Within this work, metadata collected within an interlaboratory method validation study was used to determine which variables most influenced successful chemical identification of un-weathered microplastics in simulated drinking water samples using FTIR and Raman microspectroscopy. No variables tested had a strong correlation with the accuracy of chemical identification (r = ≤0.63). The variables most correlated with accuracy differed between the two methods, and include both physical characteristics of particles (color, morphology, size, polymer type), and instrumental parameters (spectral collection mode, spectral range). Based on these results, we provide technical recommendations to improve capabilities of both methods for measuring microplastics in drinking water and highlight priorities for further research. For FTIR microspectroscopy, recommendations include considering the type of particle in question to inform sample presentation and spectral collection mode for sample analysis. Instrumental parameters should be adjusted for certain particle types when using Raman micro­ spectroscopy. For both instruments, the study highlighted the need for harmonization of spectral reference libraries among research groups, including the use of libraries containing reference materials of both weathered plastic and natural materials that are commonly found in environmental samples.
+
+Context source: zotero_abstractNote
+
+Source context:
+Fourier transform infrared (FTIR) and Raman microspectroscopy are methods applied in microplastics research to determine the chemical identity of microplastics. These techniques enable quantification of microplastic particles across various matrices. Previous work has highlighted the benefits and limitations of each method and found these to be complimentary. Within this work, metadata collected within an interlaboratory method validation study was used to determine which variables most influenced successful chemical identification of un-weathered microplastics in simulated drinking water samples using FTIR and Raman microspectroscopy. No variables tested had a strong correlation with the accuracy of chemical identification (r = ≤0.63). The variables most correlated with accuracy differed between the two methods, and include both physical characteristics of particles (color, morphology, size, polymer type), and instrumental parameters (spectral collection mode, spectral range). Based on these results, we provide technical recommendations to improve capabilities of both methods for measuring microplastics in drinking water and highlight priorities for further research. For FTIR microspectroscopy, recommendations include considering the type of particle in question to inform sample presentation and spectral collection mode for sample analysis. Instrumental parameters should be adjusted for certain particle types when using Raman micro­ spectroscopy. For both instruments, the study highlighted the need for harmonization of spectral reference libraries among research groups, including the use of libraries containing reference materials of both weathered plastic and natural materials that are commonly found in environmental samples.

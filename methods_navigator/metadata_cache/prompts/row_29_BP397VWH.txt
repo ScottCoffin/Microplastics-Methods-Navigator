@@ -1,0 +1,182 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: SCCWRP, 2025
+        Year: 2025
+        Full Title: Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota (Technical Report 1410.A)
+        DOI/URL: https://opc.ca.gov/wp-content/uploads/2025/04/5_Technical-Report_Sediment_Biota_1410.A_3725-508.pdf
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota: Technical Report #1410.A.
+        DOI: 
+        Date: 2025-00-00 2025
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        **Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota** 
+
+**==> picture [202 x 181] intentionally omitted <==**
+
+**==> picture [203 x 181] intentionally omitted <==**
+
+**SOUTHERN CALIFORNIA COASTAL WATER RESEARCH PROJECT** Technical Report #1410.A 
+
+**==> picture [187 x 778] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Leah M. Thornton Hampton<br>Alvine C. Mehinto<br>Stephen B. Weisberg<br>**----- End of picture text -----**<br>
+
+
+## **Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota** 
+
+## Leah M. Thornton Hampton, Alvine C. Mehinto, Stephen B. Weisberg 
+
+_Southern California Coastal Water Research Project, Costa Mesa, CA_ 
+
+## **March 2025** 
+
+Technical Report #1410.A 
+
+## **ACKNOWLEDGEMENTS** 
+
+The authors wish to acknowledge all those who have contributed to the effort to produce these standard operating procedures for the collection of surface sediment and aquatic biota, particularly the technical experts who participated in the initial workshop and subsequent working groups thereafter: 
+
+- Andrew B. Gray, University of California Riverside 
+
+- Danny Tang, Orange County Sanitation District 
+
+- Elizabeth Minor, University of Minnesota Duluth 
+
+- Jennifer Provencher, Environment and Climate Change Canada, National Wildlife Research Centre, Carleton University 
+
+- Karen Kidd, McMaster University 
+
+- Kay T. Ho, United States Environmental Protection Agency 
+
+- Ken Sakamoto, Orange County Sanitation District 
+
+- Rae McNeish, California State University Bakersfield 
+
+- Scott Coffin, California State Water Resources Control Board 
+
+- Susanne M. Brander, Oregon State University 
+
+- Violet Renick, City of San Diego 
+
+Prepared for: 
+
+As a Deliverable for the California Ocean Protection Council 
+
+“Microplastics Sample Collection Method Evaluation and Standardization” 
+
+(Agreement No. C0223005) 
+
+This report should be cited as: 
+
+Thornton Hampton, L.M., A.C. Mehinto, S.B. Weisberg. 2025. Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota. Technical Report 1410.A. Southern California Coastal Water Research Project. Costa Mesa, CA. 
+
+Keywords: 
+
+Microplastics; sediment; biota; sample collection; methods 
+
+i 
+
+## **EXECUTIVE SUMMARY** 
+
+The California Statewide Microplastics Strategy emphasizes the need to better understand the extent and magnitude of microplastics contamination in the coastal environment to inform potential solutions and management decisions. Consequently, a Statewide Plastics Monitoring Strategy and Multi-Year Plan is under development to build a statewide monitoring network by leveraging existing monitoring programs across the state. Method standardization is a key part of this plan to ensure that samples are collected and analyzed in a consistent manner and generate meaningful, comparable, and high-quality data. Analytical methods for the analysis of microplastics in drinking water have already been adopted by the State Water Board, and methods for the extraction and analysis of microplastics from sediment, biological tissues, and water containing organic material have undergone a multi-laboratory performance evaluation in preparation for potential adoption. Efforts to evaluate collection methods for drinking water are currently underway, but there are no standardized sample collection methods available for other environmental media. Though sample collection for microplastics analysis is similar to methods used for other contaminants, there are some key differences to mitigate sample contamination and ensure that samples are accurate, precise, and representative. Therefore, the goal of this project is to produce standardized collection methods for surface sediments, aquatic biota, and stormwater flows. On March 8-9[th] , 2023, technical experts across a variety of sectors attended a two-day in-person workshop at the Southern California Coastal Water Research Project headquarters in Costa Mesa, California to select collection methods for microplastics ready for evaluation and create a plan for developing standardized protocols. For each matrix, experts identified method parameters most likely to influence microplastics analysis results and designed and prioritized evaluation studies for each. Sampling depth and the sampling device used were identified as the most important variables for surface sediment collection whereas taxa selection, sample size, and the total biomass amount were identified as the most important for aquatic biota. Experts agreed that there was enough reliable data already available in the scientific literature to proceed with drafting standard operating procedures without experimental evaluation. In addition to providing specific guidance for the variables identified above, each protocol also details specific guidance for the mitigation and characterization of background contamination (i.e., microplastic particles inadvertently introduced during sample collection) that may occur during sampling, a well-known challenge in microplastic research. Experts agreed that sample collection methods for stormwater flows required experimental evaluation studies prior to developing standardized protocols. Therefore, the evaluation of sample collection methods for stormwater flows will be presented in a second technical report (Part 2). 
+
+ii 
+
+## **TABLE OF CONTENTS** 
+
+Acknowledgements ....................................................................................................... i Executive Summary ......................................................................................................ii Table of Contents ......................................................................................................... iii Introduction .................................................................................................................. 1 Approach...................................................................................................................... 3 Results & Discussion ................................................................................................... 3 Surface Sediment ..................................................................................................... 3 Aquatic Biota............................................................................................................. 5 Considerations for Surface Sediment and Aquatic Biota .......................................... 6 References ................................................................................................................... 8 Appendix A: Standard Operating Procedures for the Collection of Surface Sediment Samples for Microplastics Analysis ............................................................................ 12 1.0 Scope and Application ...................................................................................... 12 2.0 Summary of Method ......................................................................................... 13 3.0 Definitions ......................................................................................................... 13 4.0 Interferences ..................................................................................................... 15 5.0 Safety ............................................................................................................... 18 6.0 Sample Size and Material Amount Recommendations ..................................... 18 7.0 Equipment and Supplies ................................................................................... 18 8.0 Reagents and Standards .................................................................................. 22 9.0 Quality Control .................................................................................................. 22 10.0 Procedure ....................................................................................................... 23 11.0 Sampling Acceptability Criteria ....................................................................... 26 12.0 Sample Preservation and Storage .................................................................. 27 13.0 Field Data Reporting Requirements ................................................................ 28 14.0 Waste Management ........................................................................................ 29 15.0 References ..................................................................................................... 30 Appendix B: Standard Operating Procedures for the Collection of Aquatic Biota Samples for Microplastics Analysis ............................................................................ 32 1.0 Scope and Application ...................................................................................... 32 2.0 Summary of Method ......................................................................................... 33 
+
+iii 
+
+3.0 Definitions ......................................................................................................... 33 4.0 Interferences ..................................................................................................... 35 5.0 Safety ............................................................................................................... 38 6.0 Taxa Selection .................................................................................................. 38 7.0 Sample Size and Tissue Mass Recommendations ........................................... 39 8.0 Bivalve Collection: Equipment, Supplies, and Procedures ............................... 40 9.0 Fish Collection: Equipment, Supplies, and Procedures .................................... 45 10.0 Reagents and Standards ................................................................................ 50 11.0 Quality Control ................................................................................................ 50 12.0 Sample Preservation and Storage .................................................................. 51 13.0 Field Data Reporting Requirements ................................................................ 52 14.0 Waste Management ........................................................................................ 52 
+
+iv 
+
+## **INTRODUCTION** 
+
+The California Statewide Microplastics Strategy outlines a two-track approach to take immediate action to mitigate plastic pollution while simultaneously conducting research to inform future management actions (OPC 2022). The research-track describes the need to initiate a statewide monitoring network by leveraging existing monitoring programs such as the Surface Water Ambient Monitoring Program (SWAMP), the San Francisco Bay Regional Monitoring Program, and the Southern California Bight Regional Program to gain a comprehensive view of microplastic contamination across the state. Existing programs can provide infrastructure for the coordinated collection and analysis of samples. This vision is currently being enacted through the development of a Statewide Plastics Monitoring Strategy and Multi-Year Plan led by the San Francisco Estuary Institute (SFEI). This plan will be informed by a federal and state advisory group, technical experts, tribes, and the public (SFEI 2024). Standardized methodologies for the collection and analysis of microplastics samples represent a critical part of this plan to ensure that the data collected are useful, comparable, and meet essential data quality objectives. Analytical methods for microplastics quantification and characterization have been evaluated for drinking water, water containing organic material (e.g., ambient water), sediment, and biota (De Frond et al. 2022; Thornton Hampton et al. 2023), and standardized protocols for the analysis of microplastics in drinking water have been adopted by the California State Water Resources Control Board (SWRCB 2022a; 2002b). Laboratories may also receive accreditation for these methods through the Environmental Laboratory Accreditation Program (ELAP) (Wong & Weisberg 2024). Efforts to evaluate and standardize collection methods for drinking water are currently underway as outlined in the Policy Handbook Establishing a Standard Method of Testing and Reporting of Microplastics in Drinking Water (SWRCB 2022c). 
+
+Collection methods for matrices beyond drinking water have not been evaluated or standardized. This represents a critical need for microplastic monitoring efforts in aquatic ecosystems. Sample collection for microplastics is partly unique from other contaminants due to the challenges associated with the mitigation and characterization of background contamination. For example, microplastics are ubiquitous in the ambient environment, and samples may be contaminated during collection from aerial deposition, equipment shedding, or synthetic clothing (Brander et al. 2020). Specialized procedures (e.g., regular and thorough cleaning of equipment with microplastic-free water, wearing of cotton lab coats or clothing) must be implemented to mitigate contamination as much as possible. However, it is often impractical, if not impossible, to completely eliminate background contamination throughout the collection and analytical process. Background contamination rates must be quantified and characterized to establish analytical limits of detection and quantification and ensure 
+
+1 
+
+confidence in the accuracy of results (Lao & Wong 2023). A series of methodological blanks are used to track background contamination throughout sample collection and analysis. Data collected from these blanks may also be used to identify and eliminate potential sources of contamination if necessary. 
+
+The heterogenous nature of particulates also requires special consideration to ensure that collected samples are accurate, precise, and representative (Brander et al. 2020). As insoluble particles, microplastics are not evenly distributed within a matrix and may aggregate or disperse in unpredictable and complex ways (He et al. 2021; Li et al. 2023; Li et al. 2024). This behavior depends on the matrix and particle characteristics such as morphology, size, weathering, and density and may cause high levels of variability among replicate samples. Variability challenges may be overcome by increasing the amount of material or number of replicate samples collected, but there are practical and logistical limitations to be considered (e.g., It is not typically feasible to transport hundreds of liters of water). Many factors including, but not limited to, the matrix, the habitat, the predicted level of contamination and variability, the sampling device, the extraction method, the analytical method, and the background contamination rate inform the number of samples, and the amount of material collected. Most importantly, the sampling design and collection method used must consider the acceptable level of variability for the research or management questions to be addressed. 
+
+Background contamination and challenges associated with heterogeneity and high variability cut across matrices, but there are also matrix-specific considerations for sample collection. Sediment sampling techniques for any contaminant differ based on logistics and the research or management question at hand. Microplastics are no exception. For example, a sampling depth of 5 cm at one site may not be directly comparable to another due to differences in deposition rates, and the vertical distribution of microplastics in the sediment may be influenced by particle characteristics such as size (Waldschläger et al. 2022). There is often also a need to use different sampling devices for different habitats and sampling situations. A coring device may be used in areas where the sediment is exposed or in wadable conditions whereas a Van Veen sampler must be used in deeper waters. There are a different set of considerations for aquatic biota. Different taxa or tissues may be targeted for sample collection for microplastic analysis. These samples will likely exhibit different concentrations of microplastics per tissue mass due to inherit biological differences such as habitat and life history (McNeish et al. 2018; Piarulli et al. 2020). Tissue isolation may also require the use of additional background contamination precautions and procedural blanks during dissection. 
+
+There is a need to develop matrix-specific guidance and collection procedures to ensure that samples are collected in a manner that will generate accurate and reliable results to address the research and management questions at hand and inform the California Statewide Plastics 
+
+2 
+
+Monitoring Strategy. The goal of this project was to produce standardized sample collection protocols for monitoring environmental microplastics in stormwater flows, sediment, and biota. To do this, a group of international experts in microplastic sample collection and analysis were convened to identify appropriate collection methods for each matrix and draft study designs to evaluate their performance. Protocols for the collection of surface sediments and aquatic biota are addressed in the current report (Part 1) whereas sample collection for stormwater flows will be addressed in a future report (Part 2). 
+
+## **APPROACH** 
+
+A two-day workshop was held at the Southern California Coastal Water Research Project headquarters in Costa Mesa, California March 8-9, 2023, to convene an expert working group to develop standardized protocols for microplastics sample collection. Fifteen technical experts in microplastics sampling and analysis were invited to the working group. Technical experts included representatives from academia, government, wastewater management, industry, and non-governmental organizations. The workshop began with a series of presentations outlining the workshop process and goals. This was followed by a series of technical presentations for each matrix on the current state of the science for sample collection. Experts were then divided into breakout groups by matrix and tasked with selecting collection methods ready for evaluation, creating a prioritized list of key variables influencing sample collection methods, and drafting a study design for evaluating methods. Each working group presented their findings and proposed study design to the entire working group. To reach consensus, working group members voted on the proposed studies to identify which studies and matrices were the highest priority for experimental evaluation for the development of standardized protocols. 
+
+Following the workshop, sub-working groups were formed for each matrix to further develop proposed collection method evaluation studies and draft standard operating procedure (SOP) documents. This included informal literature searches to inform study designs and to determine if similar experiments had already been conducted. Sub-working groups met virtually over the next six months. A workplan was then drafted to outline a path forward for selecting and/or evaluating methods and drafting SOP documents. 
+
+## **RESULTS & DISCUSSION** 
+
+## **Surface Sediment** 
+
+Expert evaluation during the workshop identified sampling depth as having the greatest effect on the overall results when sampling sediment for microplastics analysis. Sampling depth is an 
+
+3 
+
+important factor to consider as many previous studies have found that concentrations generally decreased with sampling depth. This relationship has been observed in the ocean (Martin et al. 2017; Kukkola et al. 2022), bays (Zheng et al. 2020), estuaries (Fan et al. 2019), and other aquatic habitats (Yu et al. 2023). The relationship between sampling depth and microplastic concentration can be influenced by habitat, sediment deposition rates, as well as a variety of other factors (Yuan et al. 2023), but the majority of studies consistently report the highest concentrations in the top 2.5-5 cm of sediment (Martin et al. 2017; Fan et al. 2019; Zheng et al. 2020; Kukkola et al. 2022; Yu et al. 2023; Yuan et al. 2023). Monitoring programs often target the top 5 cm of sediment for sampling for other contaminants with the rationale being that most benthic organisms dwell in this layer (USEPA 2020). This sampling depth is also the most reported amongst microplastics occurrence studies (Hidalgo-Ruz et al. 2012) and has been recommended for other microplastic monitoring frameworks including, the European Marine Strategy Framework Directive, the Oslo Paris Convention, and method standardization efforts for microplastics (JRC 2013; Gerdts 2019; Bäuerlein et al. 2023). Sub-working group members agreed that 5 cm was a reasonable and technically sound sampling depth for routine monitoring of microplastics given that this depth typically represents the greatest concentration of microplastics by count, the sediment layer in which most aquatic benthic organisms reside and is consistent with previous recommendations and methods being employed around the world. This will ensure that microplastics are consistently detectable, informative of potential exposures and impacts to aquatic organisms, and that data are comparable to other microplastic monitoring programs. 
+
+In addition to sampling depth, experts identified the sampling device as another key variable for sediment sample collection. The primary concern amongst experts was that some sampling devices would excessively disturb sediments and cause microplastic loss. For example, if a spade is used to collect sediment and brought upward through the water column, both sediment and microplastic particles may wash from the sides during this maneuver. This effect is demonstrated when comparing spiked microplastic recovery rates using a Van Veen, a traditional sediment corer, a freeze corer, and a shovel with two different types of sediment under 20 cm of water under flow conditions (i.e., medium quartz sand and fine gravel) (Adomat et al. 2022). Though the diversity of spiked microplastics was limited (i.e., spherical microplastics ≥1 mm of four different polymer types), low recovery was observed for fine and low-density microplastic particles for the shovel (40-64%). The shovel was deemed unreliable for sampling as a general loss of microplastics was observed depending on the flow velocity of the water and the angle at which the shovel was held as it passed through the water column. The freeze core demonstrated greater recoveries (57-146%). However, rapid cooling may damage microplastics and cause fragmentation. Though recoveries varied based on the polymer and sediment type, grab samples using the Van Veen ranged from 39-87%. The sediment corer demonstrated the highest performance recovering 73-85% of microplastics. 
+
+4 
+
+Though the sediment corer outperformed the other devices, sampling device selection is partially dependent on sampling conditions and accessibility (e.g., wadeable versus unwadeable), and there are conditions where a corer may not be practical to use. Sub-working group experts agreed with the conclusions of the authors of this study that grab samplers, and coring devices were suitable for microplastics sampling depending on conditions and accessibility. Specifically, experts agreed that a Van Veen sampler is acceptable for nonwadeable conditions whereas a coring device is preferred in wadeable conditions. These sampling devices are also commonly used across monitoring programs, allowing microplastics sampling to be easily integrated in future surveys (USEPA 2020). 
+
+Surface sediment SOPs for microplastics sample collection prescribe the use of a Van Veen sampler or a sediment corer in non-wadeable and wadable conditions, respectively, at a sampling depth of 5 cm. Experts agreed that these sampling devices recover microplastics from sediment at a reasonable rate and have the advantage of being commonly used to collect sediments for environmental monitoring. Sampling at a depth of 5 cm can also inform microplastic exposure in benthic aquatic organisms given that most organisms reside in this layer of the sediment. Surface sediment collection SOPs are included in this report in Appendix A. 
+
+## **Aquatic Biota** 
+
+The collection of aquatic biota for microplastics analysis is very similar to other environmental contaminants, but experts agreed that the target taxa and tissues selected should be carefully considered early in the planning stages for monitoring. It is recognized that taxa and species selection may be partly driven by availability, feasibility, and logistics. However, target species and tissue selection should be primarily driven by specific questions and objectives defined early on in the monitoring planning process (de Jourdan et al. 2024). For instance, if a monitoring program seeks to est

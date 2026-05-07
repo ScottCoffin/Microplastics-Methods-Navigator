@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Cowger et al., 2024b
+Year: 2024
+Full Title: Generation of macro- and microplastic databases by high-throughput FTIR analysis with microplate readers
+DOI/URL: https://doi.org/10.1007/s00216-024-05127-w
+Existing Particle Size Range: Various (sediment transport theory applied to MPs; size-dependent settling velocity)
+Existing Key Metrics / Output: Settling velocity; density-based fractionation; methodological context for MP behavior in sediment
+
+Zotero metadata:
+Title: Generation of macro- and microplastic databases by high-throughput FTIR analysis with microplate readers
+DOI: 10.1007/s00216-024-05127-w
+Date: 2024-03-00 03/2024
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+FTIR spectral identification is today’s gold standard analytical procedure for plastic pollution material characterization. High-throughput FTIR techniques have been advanced for small microplastics (10–500 µm) but less so for large microplastics (500–5 mm) and macroplastics (> 5 mm). These larger plastics are typically analyzed using ATR, which is highly manual and can sometimes destroy particles of interest. Furthermore, spectral libraries are often inadequate due to the limited variety of reference materials and spectral collection modes, resulting from expensive spectral data collection. We advance a new high-throughput technique to remedy these problems using FTIR microplate readers for measuring large particles (>500 µm). We created a new reference database of over 6000 spectra for transmission, ATR, and reflection spectral collection modes with over 600 plastic, organic, and mineral reference materials relevant to plastic pollution research. We also streamline future analysis in microplate readers by creating a new particle holder for transmission measurements using off-the-shelf parts and fabricating a nonplastic 96-well microplate for storing particles. We determined that particles should be presented to microplate readers as thin as possible due to thick particles causing poor-quality spectra and identifications. We validated the new database using Open Specy and demonstrated that additional transmission and reflection spectra reference data were needed in spectral libraries.
+
+Context source: zotero_abstractNote
+
+Source context:
+FTIR spectral identification is today’s gold standard analytical procedure for plastic pollution material characterization. High-throughput FTIR techniques have been advanced for small microplastics (10–500 µm) but less so for large microplastics (500–5 mm) and macroplastics (> 5 mm). These larger plastics are typically analyzed using ATR, which is highly manual and can sometimes destroy particles of interest. Furthermore, spectral libraries are often inadequate due to the limited variety of reference materials and spectral collection modes, resulting from expensive spectral data collection. We advance a new high-throughput technique to remedy these problems using FTIR microplate readers for measuring large particles (>500 µm). We created a new reference database of over 6000 spectra for transmission, ATR, and reflection spectral collection modes with over 600 plastic, organic, and mineral reference materials relevant to plastic pollution research. We also streamline future analysis in microplate readers by creating a new particle holder for transmission measurements using off-the-shelf parts and fabricating a nonplastic 96-well microplate for storing particles. We determined that particles should be presented to microplate readers as thin as possible due to thick particles causing poor-quality spectra and identifications. We validated the new database using Open Specy and demonstrated that additional transmission and reflection spectra reference data were needed in spectral libraries.

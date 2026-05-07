@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "0.1 μm – 5 mm (microplastics); <1 μm (nanoplastics)",
+  "key_metrics_output": "Particle morphology, chemical composition, physicochemical characteristics, particle size, number, mass, polymer type; confidence levels for plastic particle identification (unequivocal, indicative, presumptive)",
+  "abstract": "This perspective addresses the critical challenge of reliably identifying and quantifying micro- and nanoplastics in human tissues and biological fluids for health risk assessment. The authors propose a framework integrating orthogonal analytical techniques to enhance data reliability and introduce a hierarchical confidence matrix for reporting plastic particle identification. The framework categorizes analytical techniques (A, B, C) by selectivity and specificity, with minimum data requirements for four confidence levels: unequivocal identification, indicative, presumptive, and morphological-only detection. Key challenges discussed include sample contamination, spectral interference in vibrational microspectroscopy, matrix interference in pyrolysis-GC/MS, and the absence of standardized reference materials and uncertainty quantification methods. The authors emphasize the importance of transparent reporting of methodological limitations, rigorous study design, and the universal adoption of harmonized confidence criteria for reporting plastics in humans.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "0.1 µm – 5 mm (MP); 1–100 nm (NP)",
+      "Detection of small plastics (<10 μm), including submicron and nanoscale particles",
+      "accurately detecting nanosized plastics (<1 μm) and even particles <10 μm is a major analytical challenge"
+    ],
+    "key_metrics_output": [
+      "data on particle size, number or mass, and chemical composition (i.e., toxicologically relevant metrics)",
+      "evidence provided for morphology, chemical composition AND physicochemical characteristics",
+      "particle-size information is not provided directly; it is instead inferred from the sample preparation steps applied"
+    ],
+    "abstract": [
+      "Accurately quantifying and characterizing human internal exposure to micro- and nanoplastics are critical for assessing potential health risks",
+      "we propose a framework that integrates orthogonal analytical techniques to enhance the data reliability",
+      "we present a structured approach to support this. We emphasize the importance of scientific integrity, rigorous study design, and transparent reporting in health research",
+      "we call for the universal adoption of harmonized confidence criteria for reporting the presence of plastics in humans"
+    ]
+  }
+}

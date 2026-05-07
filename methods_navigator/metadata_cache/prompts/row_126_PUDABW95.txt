@@ -1,0 +1,190 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Wright et al., 2025b
+        Year: 2025
+        Full Title: A new screening framework to support the identification of exogenous particles and suspect microplastics in situ in pathological tissue samples
+        DOI/URL: https://doi.org/10.1016/j.ebiom.2025.105984
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: A new screening framework to support the identification of exogenous particles and suspect microplastics in situ in pathological tissue samples
+        DOI: 10.1016/j.ebiom.2025.105984
+        Date: 2025-11-00 2025-11
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        ## **Articles** 
+
+## **A new screening framework to support the identification of exogenous particles and suspect microplastics** in situ **in pathological tissue samples** 
+
+_Stephanie L. Wright,[a][,][b][,]_[∗] _Claire Gwinnett,[c] Ian S. Mudway,[a][,][b] Yukari Ishikawa,[a][,][b] Henry Blake,[a][,][b] James M. Kinross,[d] Frank J. Kelly,[a][,][b] and Jon Salisbury[e]_ 
+
+aEnvironmental Research Group, School of Public Health, Imperial College London, London, United Kingdom bMedical Research Council Centre for Environment and Health, School of Public Health, Imperial College London, London, United Kingdom 
+
+cCriminal Justice and Forensic Science Department, School of Law, Policing and Forensic Science, Staffordshire University, Stoke-onTrent, United Kingdom dDepartment of Surgery & Cancer, Imperial College London, London, United Kingdom 
+
+eDepartment of Histopathology, King’s College Hospital, London, United Kingdom 
+
+## **Summary** 
+
+**Background Microplastics are ubiquitous environmental pollutants that have been detected in various human tissues. Often the particle sizes reported challenge established theory in toxicokinetics, and fundamental data on whether exogenous microparticles can enter tissues (and which tissues) is needed. This observational and method validation study aimed to develop a screening framework to determine whether particles including microplastics can access tissues using human ileal tissue sections and to investigate the presence of exogenous particles within the subepithelial mucosa.** 
+
+**eBioMedicine 2025;121: 105984** Published Online 3 November 2025 https://doi.org/10. 1016/j.ebiom.2025. 105984 
+
+**Methods As proof of concept that exogenous particles may translocate into tissues, a screening framework was established using polarised light microscopy (PLM), to identify birefringent particles in ileal tissue sections from 101 subjects. The population included adults who had undergone endoscopy and biopsy for the investigation of bowel symptoms at King’s College Hospital. Exclusion criteria were applied to differentiate between true particles and procedural contaminants. The remaining particles were analysed for their morphology and size. To further illustrate the potential for plastic to access intestinal tissue, a bulk intestinal tissue sample underwent a basic digestion, filtration, and analysis using pyrolysis gas chromatography mass spectrometry.** 
+
+**Findings Results revealed the presence of subepithelial birefringent particles in a small number of ileal tissue sections. However, of the 35 samples containing sub-epithelial particles, 31 (i.e., 91% of observations) were concluded to be due to procedural contamination. Of the ‘true’ observations, some of these particles, which include starch, likely entered the tissue via persorption. Additionally, a single viscose fibre was observed within the lumen of the small intestine. Supplemental chemical data finding signatures of polypropylene and polyvinylchloride demonstrate how the framework would fit in a wider analytical pipeline.** 
+
+**Interpretation This study highlights the importance of a robust screening framework for the identification of particles and suspect microplastics in human tissues. While the frequency of particles like microplastics in the subepithelial mucosa was low, the findings suggest that microplastics could indeed penetrate the intestinal epithelium and this was supplemented with example chemical data. Further research is needed to investigate the distribution, accumulation, and potential health effects of microplastics in human tissues.** 
+
+**Funding Medical Research Council.** 
+
+**Copyright © 2025 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).** 
+
+**Keywords: Particles; Microplastics; Pathology; Methodological framework; Gastrointestinal tract; Polarised light microscopy** 
+
+- *Corresponding author. Environmental Research Group, School of Public Health, Imperial College London, London, United Kingdom. _E-mail address:_ s.wright19@imperial.ac.uk (S.L. Wright). 
+
+**www.thelancet.com Vol 121 November, 2025** 
+
+**1** 
+
+**Articles** 
+
+## **Research in context** 
+
+## **Evidence before this study** 
+
+Populations are exposed to a variety of exogenous particles, including microplastics. Microplastics have been detected in a variety of human tissue samples, although the sizes of these particles often contradict established theories of particle biokinetics. Furthermore, most studies analyse digested bulk tissue, removing any biological context with respect to tissue localisation. Pathological tissue sections provide a valuable resource from which to explore whether exogenous particles, such as microplastics, can access specific anatomical regions or are linked with pathologies, prior to more in-depth characterisation studies. 
+
+## **Added value of this study** 
+
+By employing a rigorous suspect screening framework, including expert histopathological input, we have determined that a significant proportion of exogenous particles observed in tissue sections are likely procedural contaminants. This finding carries implications for past, present, and future studies investigating microplastics or 
+
+## **Introduction** 
+
+Through pollution, additives and nano-enabled products, and some occupations such as construction, mining, and agriculture, humans are exposed to a variety of micro- and nanosized particles daily. Some source-specific particle/fibre exposures, such as trafficrelated air pollution,[1 ] asbestos,[2 ] and wood smoke,[3 ] are known to drive adverse pathophysiology. An important step in establishing the potential hazard, and ultimately the risk of any particulate exposure to human health, requires a comprehensive understanding of their absorption, distribution, metabolism, and excretion (ADME) behaviour _in vivo_ , prior to an evaluation of whether the tissue doses are sufficient to induce adverse biological responses.[4][,][5 ] Given the recent interest in microplastics amongst the particle and fibre toxicology, clinical, and epidemiological research communities, this particle class will form the focus of this paper, although the principles are applicable to any tissue-borne particle. 
+
+Microplastics encompass a heterogenous mixture of particles spanning different shapes, and degradation states across several orders of magnitude in size, originating from a range of commonly used plastic polymer-based materials.[6 ] Humans are largely exposed to microplastics via ingestion and inhalation routes. This is supported by numerous studies reporting on the presence of microplastic in different environmental and dietary media (reviewed by[7] ). The first point of contact between any particle inhaled in air, or consumed within food stuffs, are the mucosal membranes of the lung 
+
+other solid particles in pathological tissue sections. We have also observed large microparticles in the gut mucosa, suggesting that microplastics could indeed penetrate the intestinal epithelium. Considering the rapid growth of microplastic research specifically, especially in clinical settings, we believe that this knowledge will enhance the scientific rigour of future studies. 
+
+## **Implications of all the available evidence** 
+
+Collectively, these findings aim to highlight critical issues and promote the adoption of robust research practices when investigating pathological tissue sections for exogenous particles, including microplastics, which is gaining significant attention in the medical community. This foundational work informs a broader research pipeline, demonstrating the presence of particles as a prerequisite for more detailed characterisation. We believe that this will contribute to the accuracy and reliability of future studies and ultimately deepen our understanding of the potential health effects of microplastic exposure. 
+
+and gut, respectively.[8 ] These barriers are complex environments of extracellular fluids, including mucus, overlaying structural and immune cells that function to exclude foreign material from being taken up into the body, across the exposed epithelium (gastrointestinal or airway) to reach the circulation prior to distribution to other organs. 
+
+To evaluate microplastic uptake into the body, numerous groups have examined specimens of different human organs to determine the presence of microplastic particles (including fibres), to demonstrate that absorption, distribution, and potentially accumulation has occurred. Publications have reported on the discovery of microplastic particles in a range of digested human tissues, including distal organs such as placenta,[9 ] liver,[10 ] and testes.[11 ] This indicates that both absorption across an epithelial barrier and subsequent distribution, either via the vasculature or lymphatic system, has occurred. However, the particle sizes reported in these tissues (often in excess of 20 μm) and their distribution throughout the body challenge established theory in particle biokinetics,[7 ] where restrictions are placed on which particle sizes can cross epithelial barriers and cell walls or be transported via capillary and lymphatic networks.[12 ] Additionally, without the context of the surrounding tissue structure, whether the particles are truly incorporated in tissue, i. e., intra-cellularly or interstitially, are mobilised in biofluids (blood or lymph), or are an artefact due to procedural contamination cannot be determined. For accumulation to occur, there must be incorporation 
+
+**www.thelancet.com Vol 121 November, 2025** 
+
+**2** 
+
+**Articles** 
+
+into cells and/or tissues. Distinguishing where this happens is important as it represents a site where the dose is likely to increase over a chronic exposure, potentially to harmful levels, and thus highlights sensitive target organs or systems. Furthermore, discriminating artefacts is paramount, as the contemporary laboratory environment is subject to high levels of background microplastic contamination[13 ] and given the ethical issues to consider when reporting on findings with implications to human health, the level of confidence in the data must be unequivocal.[14] 
+
+Pathological tissue archives present a resource from which to identify exogenous particles _in situ_ in the context of the surrounding tissue, indicating internal exposure and through correlation with histopathological features and biomarkers, their relation to adverse responses.[15 ] However, there are few published studies on microplastic particles in intact human tissue _in situ_ .[16 ] Before the onset of resource intensive research adopting both imaging and chemical analysis of particles in human bulk tissue or sections, a priori evidence regarding whether exogenous particles are at all observed beyond the epithelial point of entry is needed as justification for further work. 
+
+As mentioned previously, both the airway and gastrointestinal epithelium are considered points of entry for particles due to their exposure to the external environment. Of the two, larger particles (>1 μm) are known to cross the GI mucosa.[17 ] Chemical analysis to confirm the composition of particles of this size is theoretically possible with microspectroscopy without the need for further advanced techniques, as would be required for sub-micron particles. Regions of the gut— the Peyer’s patches—host M-cells, which specialise in particle uptake, whilst persorption (the mechanical translocation of non-digestible particles up to 130 μm across the epithelium) can also occur along the small intestine.[18 ] If microplastic uptake across the gut were to occur, then the ileum would represent an ideal target tissue to begin assessment. Here we establish a methodology for investigating particle and fibre penetration into tissues and present an exemplar study using human ileum pathological samples. This initial ‘suspect screening’—demonstrating the presence of exogenous particles, which could include microplastics, but also other particle types, is essential in justifying more targeted, time and resource intensive research. 
+
+Within any analytical pipeline, an initial screen using a relatively quick technique would clearly be advantageous in building evidence of the presence of subepithelial microparticles to justify the need for more time intensive research including chemical analysis of bulk tissue via pyrolysis gas chromatography mass spectrometry (Py-GCMS) or tissue sections via vibrational microspectroscopy. Polarised light microscopy (PLM) has been used for more than seventy years to identify plastic particles in histological specimens,[19 ] 
+
+where strongly birefringent particles were likely shed from prosthetic implants. Whilst difficult to discern whether birefringent particles are microplastics in the absence of a clear source, the technique presents a first step in identifying exogenous particulate matter and could be adopted as an initial screening step: a) to provide evidence supporting the need for further research, and b) for reducing the sample number for more time-intensive analytical techniques. 
+
+Quality Assurance/Quality Control (QAQC) frameworks are in place for microplastic analysis techniques (e.g.,[20] ), however, none have been prescribed for analysing microplastic directly in tissue sections and thus there is still a need for these to be developed. The combination of both a screening framework for assessing whether observed particles and microplastic are true positives (or artefacts) and preliminary evidence on microparticle absorption in epithelial tissues will pave the way for robust microplastic research _in situ_ in human tissues. The current study therefore proposes and applies a screening framework to increase the level of confidence in _in situ_ particle and microplastic data from pathological tissue sections. Additional to this, it acts as a proof of principal in determining whether there are discriminate birefringent foreign particles embedded in ileal tissue. Thus, this work should be viewed as a suspect screening method for particles and fibres in tissue mucosa, serving as a foundation for designing and justifying future studies that incorporate chemical analysis. This foundational work informs a broader research pipeline, demonstrating the presence of particles as a prerequisite for more detailed characterisation. This is timely as publications and research on microplastic biomonitoring continues to increase (e.g.,[16][,][21][,][22] ), often with significant debate about the authenticity of identification.[23 ] With the increased media interest in the topic the field needs to ensure that headline findings do not lose sight of fundamental metrological principles, pathological context and plausibility required to inform evidence-based policy in this area. 
+
+## **Methods** 
+
+## **Study design** 
+
+To achieve the aim of designing and applying a screening framework to increase the level of confidence in _in situ_ particle and microplastic data from pathological tissue sections, archived Haematoxylin and Eosin (H and E) ileum tissue sections were used and screened. The findings act as a proof of principal in whether discriminate (birefringent) foreign particles gain access to this tissue and the framework can be applied to other tissues more widely. Whilst not the focus, to merely demonstrate how this would proceed to future research should the appropriate tissue be available/procured, an example colon tissue sample underwent processing and chemical analysis. 
+
+**www.thelancet.com Vol 121 November, 2025** 
+
+**3** 
+
+**Articles** 
+
+## **Ethics** 
+
+Ileal tissue: The study was approved by the Research Ethics Committee and NHS Health Research Authority and sponsored by King’s College Hospital NHS Foundation Trust (18/EE/0186, 2018). The ethics did not cover demographic information, as the study was about proof of concept that particles gain access to tissues using a developed screening framework. Written informed consent had been obtained from all patients for the original diagnostic biopsies. The hospital ethics committee deemed that written informed consent not necessary for this specific research because the samples were anonymised. 
+
+Colon tissue: The colon tissue used in this research project were obtained from the Imperial College Healthcare Tissue Bank (ICHTB). ICHTB is supported by the National Institute for Health Research (NIHR) Biomedical Research Centre based at Imperial College Healthcare NHS Trust and Imperial College London. ICHTB is approved by Wales REC3 to release human material for research (17/WA/0161), and the samples for this project (R21058) were issued from subcollection reference number 17/WA/0161. 
+
+## **Tissue procurement** 
+
+Ileal tissue: The screening framework was developed and validated on ileal tissue that had already been taken for diagnostic purposes. Ileal (small intestine) mucosal samples were obtained from 101 adult patients who had undergone endoscopy and biopsy for the investigation of bowel symptoms at King’s College Hospital, London. All biopsies had been fixed in 10% formal saline and embedded in paraffin wax. Three-micron thick sections were cut at three different levels through each biopsy (30 μm between each level) and stained with haematoxylin and eosin for light microscopy. Each biopsy was reported previously by a consultant gastrointestinal histopathologist as showing normal morphology with no evidence of disease and was anonymised prior to being used for the study. No other information was accessed and used for the purpose of this study. 
+
+Colon tissue: An exemplary colon tissue sample (large intestine) was analysed for its plastic content as particle uptake can happen across this region.[24 ] This specimen was obtained prospectively during routine excision of bowel surgery for colon and rectal cancer. The fresh colonic sample was opened in the operating room and sampled using a sterilised steel blade, 10 cm proximal and distal to the target lesion and from the cancer or polyp itself. The specimen was carefully transferred to an aluminium specimen jar with an aluminium screw cap, which had undergone the precleaning procedure (see QA/QC Statement below), and was stored at −80[◦] C until analysis. 
+
+was identified by the presence of villi and lymphoid aggregations (Peyer’s patches). The **first tier** in the framework consists of an optical microscopy screen using a mode of microscopy which maximises the contrast of potential microplastic and exogenous particles from tissue. In this instance, we used PLM to screen for the presence/absence of birefringent particles. Screening was performed by orientating the slides with their sample label to the right under an Olympus BX51 microscope using 40× magnification and brightfield to navigate across sections. Once an ileal section was intercepted, the whole section was Z-screened at 200× magnification under crossed-polar conditions with polarised light for the presence of birefringent particles. 
+
+The **second tier** of the framework was to further screen these sections with subepithelial birefringent particles according to exclusion criteria. The tissue surrounding birefringent particles was inspected at 400× magnification, switching between polarised light and crossed polar conditions. The screening resolution with this set-up was limited by what is distinguishable by eye at this magnification (1–2 μm) during the screen. Particles were excluded based on the following criteria: 1) proximity to clusters of red blood cells, indicative or trauma during sampling, as the particle may have been introduced into the tissue as an artefact; 2) proximity to the base of the tissue section, as the particle may be an artefact of contaminated adhesive tape on which the tissue was placed; 3) presence of tissue overlaid on the particle, as this may be an artefact of a contaminated slide on which the section was mounted; 4) distorted tissue/cell structures surrounding the particle, as this implies forced intrusion, likely an artefact of the sampling process/preparation; and 5) the particle being in a different focal plane to the tissue section, as this also implies procedural contamination by being deposited on top of the section rather than being within. 
+
+After applying exclusion criteria, remaining tissue sections containing birefringent particles were imaged using an Olympus BX51 microscope with an Olympus UC30 camera (resolution 3.2 megapixels) and Olympus Standard CellSens software program (Version: Standard 1.16, build no. 15404, copyright 2009–2016) for further scrutiny by a pathologist, **tier 3** of the framework. The pathologist further distinguished tissue sections containing birefringent particles which could not be confidently attributed to procedural contamination as per the exclusion criteria and were therefore considered an observation (included). The subepithelial birefringent particles in the remaining tissue sections were approximately sized using Image J software 1.52j.[25] 
+
+## **Fibre identification** 
+
+In situ **particle screening framework (ileal tissue)** A maximum of three slides per subject were examined, depending on how many contained ileal tissue, which 
+
+A tissue section from one subject contained a suspicious birefringent fibre in the lumen. The observed microfibre was further examined under two high 
+
+**www.thelancet.com Vol 121 November, 2025** 
+
+**4** 
+
+**Articles** 
+
+powered microscopes; the optical properties (birefringence and sign of elongation) of the fibre were analysed under a binocular James Swift polarising light microscope at 400× magnification and the width and thickness measurements (for birefringence calculation) were measured at 400× magnification using a calibrated Olympus BX51 microscope with an Olympus UC30 camera and Olympus Standard CellSens software program (as above). Five width measurements were taken along the length of the fibre including both ends. The presence of any inclusions and the cross-sectional shape of the fibre were also observed under both microscopes. The Optical Path Difference (OPD), also known as retardation, was identified using a James Swift quartz wedge and Michel Levy chart (University of Liverpool printed version).[26] 
+
+## **Chemical analysis (colon tissue)** 
+
+Should the above screening framework establish the presence of particles and fibres in tissues, this would provide justification for the design and conduct of futures studies that incorporate chemical analysis in a step towards identification. Thus, the above framework informs a broader research pipeline, demonstrating the presence of particles as a prerequisite for more detailed characterisation. To further illustrate the pipeline’s functionality, representative Py-GCMS data demonstrating the presence of plastic polymers in digested bulk gut tissue has been included. This strengthens the argument for the utility of this tiered approach, enabling researchers to prioritise samples and justify more resource-intensive chemical analyses. This is detailed in the following subsections. 
+
+## **QAQC statement for chemical analysis** 
+
+To minimise background microplastic contamination from the sampling, storage, and laboratory procedures, only stainless steel, aluminium and glass items were used. All items underwent a rigorous washing procedure. First, they were washed with washing detergent, then rinsed with running tap water and soaked in alkaline laboratory detergent overnight. The next day, items were rinsed thoroughly with running tap water, rinsed with MilliQ water and then dried in an enclosed temperature controlled drying cabinet dedicated to microplastic analysis workflows. Glass fibre filters (Whatman GF/F, 47 and 25 mm, 0.7 μm) were first conditioned in a muffle furnace at 600[◦] C for 1 h. All reagents used (KOH, EtOH etc) were filtered to 0.7 μm, the same pore size as samples were filtered to. During sample collection, the operating theatre was previously an orthopaedic theatre, and thus had a HEPA filtered air system. Sample preparation was conducted in an ISO Class 5 clean hood within an ISO Class 8 clean laboratory dedicated to microplastic research. Clean room protocols were followed in relation to putting on PPE and conducting work within the environment. 
+
+Operators wore a no-shed laboratory coat, and clean room gloves. Any activity conducted in the main laboratory (incubations, freeze-drying) were done using covered samples or within enclosed environments. A procedural blank which underwent the whole process without a sample was processed and analysed in the same way. 
+
+## **Sample preparation for pyrolysis-GCxGC-TOFMS** 
+
+The colon tissue sample was allowed to thaw in its container in the clean lab. In the clean hood, the tissue sample was transferred to a new pre-weighed glass sample jar using stainless-steel forceps. It was roughly cut within the jar

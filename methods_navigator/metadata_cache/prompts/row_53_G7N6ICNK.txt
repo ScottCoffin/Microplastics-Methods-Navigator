@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Thornton Hampton et al., 2023
+Year: 2023
+Full Title: The influence of complex matrices on method performance in extracting and monitoring for microplastics
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2023.138875
+Existing Particle Size Range: >20 µm (density separation validation in DW matrix)
+Existing Key Metrics / Output: Extraction efficiency (spike-recovery); EURM-060 reference material validation
+
+Zotero metadata:
+Title: The influence of complex matrices on method performance in extracting and monitoring for microplastics
+DOI: 10.1016/j.chemosphere.2023.138875
+Date: 2023-09-00 09/2023
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Previous studies have evaluated method performance for quantifying and characterizing microplastics in clean water, but little is known about the efficacy of procedures used to extract microplastics from complex matrices. Here we provided 15 laboratories with samples representing four matrices (i.e., drinking water, fish tissue, sediment, and surface water) each spiked with a known number of microplastic particles spanning a variety of polymers, morphologies, colors, and sizes. Percent recovery (i.e., accuracy) in complex matrices was particle size dependent, with ~60–70% recovery for particles >212 μm, but as little as 2% recovery for particles <20 μm. Extraction from sediment was most problematic, with recoveries reduced by at least one-third relative to drinking water. Though accuracy was low, the extraction procedures had no observed effect on precision or chemical identification using spectroscopy. Extraction procedures greatly increased sample processing times for all matrices with the extraction of sediment, tissue, and surface water taking approximately 16, 9, and 4 times longer than drinking water, respectively. Overall, our findings indicate that increasing accuracy and reducing sample processing times present the greatest opportunities for method improvement rather than particle iden­ tification and characterization.
+
+Context source: zotero_abstractNote
+
+Source context:
+Previous studies have evaluated method performance for quantifying and characterizing microplastics in clean water, but little is known about the efficacy of procedures used to extract microplastics from complex matrices. Here we provided 15 laboratories with samples representing four matrices (i.e., drinking water, fish tissue, sediment, and surface water) each spiked with a known number of microplastic particles spanning a variety of polymers, morphologies, colors, and sizes. Percent recovery (i.e., accuracy) in complex matrices was particle size dependent, with ~60–70% recovery for particles >212 μm, but as little as 2% recovery for particles <20 μm. Extraction from sediment was most problematic, with recoveries reduced by at least one-third relative to drinking water. Though accuracy was low, the extraction procedures had no observed effect on precision or chemical identification using spectroscopy. Extraction procedures greatly increased sample processing times for all matrices with the extraction of sediment, tissue, and surface water taking approximately 16, 9, and 4 times longer than drinking water, respectively. Overall, our findings indicate that increasing accuracy and reducing sample processing times present the greatest opportunities for method improvement rather than particle iden­ tification and characterization.

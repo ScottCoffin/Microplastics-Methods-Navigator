@@ -1,0 +1,28 @@
+{
+  "particle_size_range": "1-130 μm (operational range; screening resolution 1-2 μm at 400× magnification; persorption up to 130 μm mentioned)",
+  "key_metrics_output": "Particle presence/absence, morphology, size, birefringence, polymer type (polypropylene, polyvinylchloride identified via Py-GCMS), fiber identification (viscose), exclusion of procedural contaminants",
+  "abstract": "This study develops and validates a tiered screening framework for identifying exogenous particles and suspect microplastics in situ in pathological tissue sections, using ileal tissue from 101 subjects who underwent endoscopy. Polarized light microscopy (PLM) was used to screen for birefringent particles, followed by exclusion criteria to distinguish true particles from procedural contaminants, and pathologist review. Of 35 samples with subepithelial particles, 91% were attributed to procedural contamination. True observations included starch particles likely entering via persorption and a single viscose fiber in the intestinal lumen. Supplemental pyrolysis gas chromatography mass spectrometry (Py-GCMS) analysis of colon tissue identified polypropylene and polyvinylchloride signatures. The framework demonstrates that while microplastic frequency in subepithelial mucosa was low, particles can penetrate the intestinal epithelium, and highlights the importance of rigorous screening to distinguish true tissue-resident particles from analytical artifacts.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "larger particles (>1 μm) are known to cross the GI mucosa",
+      "persorption (the mechanical translocation of non-digestible particles up to 130 μm across the epithelium)",
+      "screening resolution with this set-up was limited by what is distinguishable by eye at this magnification (1–2 μm)"
+    ],
+    "key_metrics_output": [
+      "birefringent particles",
+      "morphology and size",
+      "Supplemental chemical data finding signatures of polypropylene and polyvinylchloride",
+      "a single viscose fibre was observed",
+      "starch, likely entered the tissue via persorption"
+    ],
+    "abstract": [
+      "screening framework to determine whether particles including microplastics can access tissues using human ileal tissue sections",
+      "of the 35 samples containing sub-epithelial particles, 31 (i.e., 91% of observations) were concluded to be due to procedural contamination",
+      "some of these particles, which include starch, likely entered the tissue via persorption",
+      "a single viscose fibre was observed within the lumen of the small intestine",
+      "polypropylene and polyvinylchloride demonstrate how the framework would fit in a wider analytical pipeline",
+      "microplastics could indeed penetrate the intestinal epithelium"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "particle_size_range": "nano- and microplastic particles (NMP), with particular emphasis on particles < 10 μm",
+  "key_metrics_output": "Occurrence/concentration in drinking-water, air, food and beverages; particle size distribution; polymer composition; biokinetics; toxicological effects; particle properties (shape, density, surface chemistry); chemical and pathogen vectors; epidemiological observations",
+  "abstract": "WHO report assessing dietary and inhalation exposure to nano- and microplastic particles (NMP) and potential implications for human health. The report reviews literature on NMP occurrence in air, water, food and beverages; evaluates biokinetics and toxicological effects; assesses NMP as vectors of chemicals and pathogens; and summarizes occupational epidemiology observations. Key findings indicate NMP are ubiquitous in environmental media relevant to human exposure. Data limitations, particularly for particles < 10 μm and methodological heterogeneity, prevent full quantitative risk assessment. The report recommends development of standard methods for environmental monitoring and toxicity testing, generation of reference NMP materials, and further research on biokinetics, dosimetry, and effects of environmentally relevant NMP at relevant concentrations.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "nano- and microplastic particles (NMP)",
+      "particles measuring < 10 μm",
+      "particles measuring > 10 μm",
+      "monodisperse group of plastic particles, typically measuring < 10 µm"
+    ],
+    "key_metrics_output": [
+      "occurrence of NMP in air, water, food and beverages",
+      "particle size distribution, shape, density and surface chemistry",
+      "biokinetics and dosimetry",
+      "toxicological effects",
+      "NMP as vectors of chemicals and pathogens",
+      "occupational epidemiology observations",
+      "concentrations of microplastic particles in drinking-water",
+      "estimated daily and annual per capita ingestion of microplastic particles"
+    ],
+    "abstract": [
+      "MP have been detected in air, water, soil, food and beverages, indicating that exposure of humans to these particles is ubiquitous",
+      "literature reviews of studies published up to December 2021 in which original data on the occurrence of NMP in air, water, food and beverages were reported and also experimental studies on their toxicity",
+      "the available data are of only very limited use for assessing the risk of NMP to human health",
+      "standard methods be developed and adopted to ensure that the research community can reduce uncertainties"
+    ]
+  }
+}

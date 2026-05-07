@@ -1,0 +1,20 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Microplastic concentration; polymer identification and verification; synthetic polymer origin confirmation; particle count; analytical techniques (micro-FTIR, micro-Raman spectroscopy)",
+  "abstract": "This chapter reviews methodologies for detecting and identifying microplastics in marine environments, focusing on sampling approaches, laboratory processing, and identification techniques. A case study of North Sea sediment samples using focal plane array (FPA)-based micro-FTIR spectroscopy found that only 1.4% of particles visually resembling microplastics were confirmed as synthetic polymers, highlighting the critical importance of verifying synthetic polymer origin. The review emphasizes the need for standardized methodologies and analytical standards to improve data comparability and reliability in microplastic research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "identification and quantification of microplastics",
+      "assessment of reliable data on concentrations of microscopic plastic particles and the involved polymers",
+      "analytical laboratory techniques such as micro-FTIR or micro-Raman spectroscopy"
+    ],
+    "abstract": [
+      "reviews the methodology presently used for assessing the concentration of microplastics in the marine environment",
+      "overview of non-selective sampling approaches, sample processing and treatment in the laboratory",
+      "case study on microplastics in sediment samples from the North Sea measured with focal plane array (FPA)-based micro-FTIR spectroscopy shows that only 1.4 % of the particles visually resembling microplastics were of synthetic polymer origin",
+      "importance of verifying the synthetic polymer origin of potential microplastics"
+    ]
+  }
+}

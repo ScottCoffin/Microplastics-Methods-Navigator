@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type identification; decomposition product mass (up to 434 Da); weight concentrations; microplastic concentrations in environmental samples; calibration linearity for microplastic precursors",
+  "abstract": "The TED-GC–MS analysis is a two-step method. A sample is first decomposed in a thermogravimetric analyzer (TGA) and the gaseous decomposition products are then trapped on a solid-phase adsorber. Subsequently, the solid-phase adsorber is analyzed with thermal desorption gas chromatography mass spectrometry (TDU-GC–MS). This method is ideally suited for the analysis of polymers and their degradation processes. Here, a new entirely automated system is introduced which enables high sample throughput and reproducible automated fractioned collection of decomposition products.\nThe fractionated collection together with low temperatures reduces the risk of contamination, improves instrumental stability and minimizes maintenance efforts. Through variation of the two main parameters (purge gas flow and heating rate) it is shown how the extraction process can be optimized. By measuring the decomposition products of polyethylene it is demonstrated that compounds with masses of up to 434 Da can be detected. This is achieved despite the low temperature (˜40 °C) of the solid-phase adsorber and the low thermal desorption temperature of 200 °C in the TDU unit.\nIt is now shown that automated TED-GC–MS represents a new flexible multi-functional method for comprehensive polymer analyses. Comparable polymer characterization was previously only achievable through a combination of multiple independent analytical methods. This is demonstrated by three examples focused on practical challenges in materials analysis and identification: The first one is the analysis of wood plastic composites for which the decomposition processes of the polymer and the bio polymer (wood) could be clearly distinguished by fractionated collection using sequential adsorbers. Secondly, a fast quantitative application is shown by determining the weight concentrations of an unknown polyolefin blend through comparison with a reference material. Additionally, the determination of microplastic concentrations in environmental samples is becoming an increasingly important analytical necessity. It is demonstrated that with TED-GC–MS calibration curves showing good linearity for the most important precursors for microplastic, even complex matrix materials (suspended particulate matter) can be successfully analyzed.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "compounds with masses of up to 434 Da can be detected",
+      "determining the weight concentrations of an unknown polyolefin blend",
+      "determination of microplastic concentrations in environmental samples",
+      "calibration curves showing good linearity for the most important precursors for microplastic"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

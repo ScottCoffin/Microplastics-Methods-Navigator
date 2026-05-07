@@ -1,0 +1,18 @@
+{
+  "scope": "Aquatic microplastics in sediments; multidisciplinary review covering particle properties, transport processes, sampling techniques, and ecotoxicology",
+  "particle_size_range": null,
+  "key_metrics_output": "Particle shape factors, principal dimensions of non-spherical particles, vertical distribution, erosion and deposition behavior, transport modes, polymer type, physical form, plastic-associated chemicals, attached pollutants, toxicity",
+  "abstract": "Although the study of microplastics in the aquatic environment incorporates a diversity of research fields, it is still in its infancy in many aspects while comparable topics have been studied in other disciplines for decades. In particular, extensive research in sedimentology can provide valuable insights to guide future microplastics research. To advance our understanding of the comparability of natural sediments with microplastics, we take an interdisciplinary look at the existing literature describing particle properties, transport processes, sampling techniques and ecotoxicology. Based on our analysis, we define seven research goals that are essential to improve our understanding of microplastics and can be tackled by learning from natural sediment research, and identify relevant tasks to achieve each goal. These goals address (1) the description of microplastic particles, (2) the interaction of microplastics with environmental substances, (3) the vertical distribution of microplastics, (4) the erosion and deposition behaviour of microplastics, (5) the impact of biota on microplastic transport, (6) the sampling methods and (7) the microplastic toxicity. When describing microplastic particles, we should specifically draw from the knowledge of natural sediments, for example by using shape factors or applying methods for determining the principal dimensions of non-spherical particles. Sediment transport offers many fundamentals that are transferable to microplastic transport, and could be usefully applied. However, major knowledge gaps still exist in understanding the role of transport modes, the influence of biota on microplastic transport, and the importance and implementation of the dynamic behaviour of microplastics as a result of time-dependent changes in particle properties in numerical models. We give an overview of available sampling methods from sedimentology and discuss their suitability for microplastic sampling, which can be used for creating standardised guidelines for future application with microplastics. In order to comprehensively assess the ecotoxicology of microplastics, a distinction must be made between the effects of the polymers themselves, their physical form, the plastic-associated chemicals and the attached pollutants. This review highlights areas where we can rely on understanding and techniques from sediment research - and areas where we need new, microplastic-specific knowledge - and synthesize recommendations to guide future, interdisciplinary microplastic research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "shape factors or applying methods for determining the principal dimensions of non-spherical particles",
+      "the description of microplastic particles, (2) the interaction of microplastics with environmental substances, (3) the vertical distribution of microplastics, (4) the erosion and deposition behaviour",
+      "effects of the polymers themselves, their physical form, the plastic-associated chemicals and the attached pollutants"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

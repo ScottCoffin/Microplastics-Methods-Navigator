@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "1–20 μm, 20–212 μm, 212–500 μm, >500 μm",
+  "key_metrics_output": "Particle recovery (stereomicroscopy mean 76% ± 10% SE; >50 μm: 92% ± 12% SD); FTIR polymer identification accuracy 95%; Raman polymer identification accuracy 91%; laboratory contamination (blank samples: 91 ± 141 SD particles); FTIR analysis time 12 min ± 9 SD per particle",
+  "abstract": "California Senate Bill 1422 requires the development of State-approved standardized methods for quantifying and characterizing microplastics in drinking water. Accordingly, we led an interlaboratory microplastic method evaluation study, with 22 participating laboratories from six countries, to evaluate the performance of widely used methods: sample extraction via filtering/sieving, optical microscopy, FTIR spectroscopy, and Raman spectroscopy. Three spiked samples of simulated clean water and a laboratory blank were sent to each laboratory with a prescribed standard operating procedure for particle extraction, quantification, and characterization. The samples contained known amounts of microparticles within four size fractions (1–20 μm, 20–212 μm, 212–500 μm, >500 μm), four polymer types (PE, PS, PVC, and PET), and six colors (clear, white, green, blue, red, and orange). They also included false positives (natural hair, fibers, and shells) that may be mistaken for microplastics. Among laboratories, mean particle recovery using stereomicroscopy was 76% ± 10% (SE). For particles in the three largest size fractions, mean recovery was 92% ± 12% SD. On average, laboratory contamination from blank samples was 91 particles (± 141 SD). FTIR and Raman spectroscopy accurately identified microplastics by polymer type for 95% and 91% of particles analyzed, respectively. Per particle, FTIR spectroscopy required the longest time for analysis (12 min ± 9 SD). Participants demonstrated excellent recovery and chemical identification for particles greater than 50 μm in size, with opportunity for increased accuracy and precision through training and further method refinement. This work has informed methods and QA/QC for microplastics monitoring in drinking water in the State of California.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "samples contained known amounts of microparticles within four size fractions (1–20 μm, 20–212 μm, 212–500 μm, >500 μm)"
+    ],
+    "key_metrics_output": [
+      "mean particle recovery using stereomicroscopy was 76% ± 10% (SE)",
+      "For particles in the three largest size fractions, mean recovery was 92% ± 12% SD",
+      "laboratory contamination from blank samples was 91 particles (± 141 SD)",
+      "FTIR and Raman spectroscopy accurately identified microplastics by polymer type for 95% and 91% of particles analyzed, respectively",
+      "Per particle, FTIR spectroscopy required the longest time for analysis (12 min ± 9 SD)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

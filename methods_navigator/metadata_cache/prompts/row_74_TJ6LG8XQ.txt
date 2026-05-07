@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Dawson et al., 2023
+Year: 2023
+Full Title: Taking control of microplastics data: A comparison of control and blank data correction methods
+DOI/URL: https://doi.org/10.1016/j.jhazmat.2022.130218
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Taking control of microplastics data: A comparison of control and blank data correction methods
+DOI: 10.1016/j.jhazmat.2022.130218
+Date: 2023-02-00 02/2023
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Although significant headway has been achieved regarding method harmonisation for the analysis of micro­ plastics, analysis and interpretation of control data has largely been overlooked. There is currently no consensus on the best method to utilise data generated from controls, and consequently many methods are arbitrarily employed. This study identified 6 commonly implemented strategies: a) No correction; b) Subtraction; c) Mean Subtraction; d) Spectral Similarity; e) Limits of detection/ limits of quantification (LOD/LOQ) or f) Statistical analysis, of which many variations are possible. Here, the 6 core methods and 45 variant methods (n = 51) thereof were used to correct a dummy dataset using control data. Most of the methods tested were too inflexible to account for the inherent variation present in microplastic data. Only 7 of the 51 methods tested (six LOD/LOQ methods and one statistical method) showed promise, removing between 96.3 % and 100 % of the contamination data from the dummy set. The remaining 44 methods resulted in deficient corrections for background contamination due to the heterogeneity of microplastics. These methods should be avoided in the future to avoid skewed results, especially in low abundance samples. Overall, LOD/LOQ methods or statistical analysis comparing means are recommended for future use in microplastic studies.
+
+Context source: zotero_abstractNote
+
+Source context:
+Although significant headway has been achieved regarding method harmonisation for the analysis of micro­ plastics, analysis and interpretation of control data has largely been overlooked. There is currently no consensus on the best method to utilise data generated from controls, and consequently many methods are arbitrarily employed. This study identified 6 commonly implemented strategies: a) No correction; b) Subtraction; c) Mean Subtraction; d) Spectral Similarity; e) Limits of detection/ limits of quantification (LOD/LOQ) or f) Statistical analysis, of which many variations are possible. Here, the 6 core methods and 45 variant methods (n = 51) thereof were used to correct a dummy dataset using control data. Most of the methods tested were too inflexible to account for the inherent variation present in microplastic data. Only 7 of the 51 methods tested (six LOD/LOQ methods and one statistical method) showed promise, removing between 96.3 % and 100 % of the contamination data from the dummy set. The remaining 44 methods resulted in deficient corrections for background contamination due to the heterogeneity of microplastics. These methods should be avoided in the future to avoid skewed results, especially in low abundance samples. Overall, LOD/LOQ methods or statistical analysis comparing means are recommended for future use in microplastic studies.

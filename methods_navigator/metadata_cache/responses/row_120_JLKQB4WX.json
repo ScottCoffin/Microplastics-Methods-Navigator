@@ -1,0 +1,17 @@
+{
+  "scope": "Engineered nanomaterials (ENM) in vitro dosimetry and toxicity screening",
+  "particle_size_range": null,
+  "key_metrics_output": "Delivered dose metrics: total mass (RIDM), surface area (RIDSA), particle number (RIDN); ENM characteristics; cellular dose as function of exposure time",
+  "abstract": "There is a great need for screening tools capable of rapidly assessing nanomaterial toxicity. One impediment to the development of reliable in vitro screening methods is the need for accurate measures of cellular dose. We present here a methodology that enables accurate determination of delivered to cell dose metrics. This methodology includes (1) standardization of engineered nanomaterial (ENM) suspension preparation; (2) measurement of ENM characteristics controlling delivery to cells in culture; and (3) calculation of delivered dose as a function of exposure time using the ISDD model. The approach is validated against experimentally measured doses, and simplified analytical expressions for the delivered dose (Relevant In Vitro Dose (RID)f function) are derived for 20 ENMs. These functions can be used by nanotoxicologists to accurately calculate the total mass (RIDM), surface area (RIDSA), or particle number (RIDN) delivered to cells as a function of exposure time.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "calculate the total mass (RIDM), surface area (RIDSA), or particle number (RIDN) delivered to cells as a function of exposure time",
+      "measurement of ENM characteristics controlling delivery to cells in culture"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

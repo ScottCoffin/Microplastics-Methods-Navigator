@@ -1,0 +1,20 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "ROS production (DCF assay), IL-8 cytokine release (ELISA), cell viability and apoptosis/necrosis (Annexin V/PI flow cytometry), DNA damage quantification including % DNA in tail, tail length, and tail moment (Comet assay)",
+  "abstract": "This perspective describes the application of cause-and-effect (C&E) analysis to systematically identify sources of variability in four in vitro nanobioassays used to assess engineered nanomaterial (ENM) toxicity: the 2′,7′-dichlorofluorescein (DCF) assay for reactive oxygen species production, an enzyme-linked immunosorbent assay (ELISA) for interleukin-8 measurement, flow cytometry (Annexin V/propidium iodide) for cell viability assessment, and the Comet assay for DNA damage. C&E analysis reveals potential artifacts and biases specific to ENM testing and identifies control measurements to improve assay reproducibility within and among laboratories. The approach demonstrates how systematic evaluation of assay variability sources can support development of robust nanobioassays and reduce interlaboratory variability.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "DCF assay...measures production of ROS",
+      "ELISA...the release of cytokines...interleukin-8 (IL-8)",
+      "flow cytometry...evaluate the quantity of apoptotic and necrotic cells",
+      "Comet assay...assess the potential genotoxicity...measuring the degree of DNA damage...the length and quantity of DNA in the Comet tail relate to the extent of DNA damage"
+    ],
+    "abstract": [
+      "we use cause-and-effect analysis to systematically describe sources of variability in four key in vitro nanobioassays",
+      "These assays measure end points that can occur in cells impacted by ENMs through oxidative stress",
+      "identify control measurements to test for potential artifacts or biases that could occur during conduct of these assays with ENMs"
+    ]
+  }
+}

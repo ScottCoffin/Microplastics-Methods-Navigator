@@ -1,0 +1,20 @@
+{
+  "scope": "Microplastic fragments in the 20-53 µm size range using automated µ-Raman spectroscopy on polycarbonate filters",
+  "particle_size_range": "20–53 µm (validated range); tested up to 106 µm",
+  "key_metrics_output": "Particle count, polymer type identification (polyethylene, polystyrene, polyethylene terephthalate), recovery rate (69–77%), coefficient of variation (3–7% within-run, 18–35% between samples)",
+  "abstract": "Research on microplastics is developing rapidly, but methods for quantifying the smallest particles (1-100 µm) remain limited. Automated spectroscopic methods using µ-FTIR and µ-Raman spectroscopy have been developed, but these methods are often time-consuming, require expensive filters, or show poor recovery of smaller particles. To address these problems, and as part of a larger effort to develop a cost-effective method for the rapid quantification of microplastic particles, we developed and validated a method for quantifying 20 – 53 µm microplastic fragments using µ-Raman spectroscopy on polycarbonate filters. Our method is fast, reliable, and does not require expensive consumables. We validated a method for polyethylene, polystyrene, and polyethylene terephthalate fragments with good precision for one sample run multiple times (~3 – 7% coefficient of variation) and independent samples of the same mass (~18 – 35%, depending on polymer). Recovery, tested across a larger size range of particles (up to 106 µm), ranged from 69 – 77% across polymers. KOH treatment (10 or 20%) reduced the recovery of our small polyethylene terephthalate particles. Our method proves promising, and we will continue its development and validation across a greater diversity of polymers, sizes and shapes, as well as with weathered particles extracted from environmental matrices.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "quantifying 20 – 53 µm microplastic fragments",
+      "Recovery, tested across a larger size range of particles (up to 106 µm)"
+    ],
+    "key_metrics_output": [
+      "validated a method for polyethylene, polystyrene, and polyethylene terephthalate fragments with good precision for one sample run multiple times (~3 – 7% coefficient of variation) and independent samples of the same mass (~18 – 35%, depending on polymer)",
+      "Recovery, tested across a larger size range of particles (up to 106 µm), ranged from 69 – 77% across polymers"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

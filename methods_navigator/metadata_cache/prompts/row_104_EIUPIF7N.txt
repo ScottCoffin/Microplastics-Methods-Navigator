@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Šteković et al., 2026
+Year: 2026
+Full Title: Development of a Microwave-Assisted Digestion Procedure for Microplastics Extraction from Different Food Matrices with Subsequent Analysis Using Raman Microspectroscopy
+DOI/URL: https://www.mdpi.com/2673-8929/5/1/45
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Development of a Microwave-Assisted Digestion Procedure for Microplastics Extraction from Different Food Matrices with Subsequent Analysis Using Raman Microspectroscopy
+DOI: 10.3390/microplastics5010045
+Date: 2026-03-04 2026-03-04
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Growing concern over the presence of microplastics in food has led to the development of numerous methods for their extraction and analysis. However, many of these methods are time-consuming and limited to specific food types. In this study, we present a novel and quick approach involving microwave-assisted acid extraction of microplastics from food, followed by Raman microscopy analysis. The method’s performance was evaluated through determination of its digestion efficiency, particle mass and number recovery, limit of detection (LOD), and the digestion protocol’s effect on polymer physicochemical characteristics. The extraction protocol achieved 99.74–100.01% digestion of four different food matrices within 2 h, with 81.4–110.7% mass and 80–108% number recoveries of added polymer particles, both being within the 80–120% range. Importantly, DSC, TGA, DLS and Raman analyses of added particle polymers showed no significant change in PE, PP and PTFE polymer structure, while some structural changes were found for PET and PMMA. This method’s good analytical performance, high throughput and suitability for quick digestion of several different food matrices make it a promising step towards reliable monitoring of microplastics in food.
+
+Context source: zotero_abstractNote
+
+Source context:
+Growing concern over the presence of microplastics in food has led to the development of numerous methods for their extraction and analysis. However, many of these methods are time-consuming and limited to specific food types. In this study, we present a novel and quick approach involving microwave-assisted acid extraction of microplastics from food, followed by Raman microscopy analysis. The method’s performance was evaluated through determination of its digestion efficiency, particle mass and number recovery, limit of detection (LOD), and the digestion protocol’s effect on polymer physicochemical characteristics. The extraction protocol achieved 99.74–100.01% digestion of four different food matrices within 2 h, with 81.4–110.7% mass and 80–108% number recoveries of added polymer particles, both being within the 80–120% range. Importantly, DSC, TGA, DLS and Raman analyses of added particle polymers showed no significant change in PE, PP and PTFE polymer structure, while some structural changes were found for PET and PMMA. This method’s good analytical performance, high throughput and suitability for quick digestion of several different food matrices make it a promising step towards reliable monitoring of microplastics in food.

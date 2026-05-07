@@ -1,0 +1,18 @@
+{
+  "particle_size_range": "nano- and microplastics (size continuum, no specific bounds stated)",
+  "key_metrics_output": "Risk assessment framework; NMP analysis techniques; human health risk characterization; toxicant and pathogen vector potential",
+  "abstract": "Human exposure to nano- and microplastics (NMPs) has raised major societal concerns, yet no framework to assess the risks of NMPs for human health exists. A substantial proportion of plastic produced worldwide is not properly disposed and persists in the environment for decades while degrading. Plastic degradation generates a size continuum of fragments, including nano- and microplastic particles, with numerous associated environmental pollutants and plastic additives, and microbial communities colonising their surfaces. The ubiquitous presence of NMPs, their availability for uptake by organisms and their potential to act as vectors for toxicants and pathogens render risk assessment a priority on the political agenda at the global level. We provide a new, fully integrated risk assessment framework tailored to the specificities of NMPs, enabling an assessment of current and future human health risks from NMPs. The framework consists of four novel paradigms to the traditional risk assessment methodology. These paradigms deal with techniques in NMP analysis, gaps in empirical data, theoretical and modelling approaches and stakeholder engagement. Within the proposed framework, we propose how we can use research experiences gained so far to carry out the different steps of the assessment process, and we define priorities for further research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Plastic degradation generates a size continuum of fragments, including nano- and microplastic particles"
+    ],
+    "key_metrics_output": [
+      "The framework consists of four novel paradigms to the traditional risk assessment methodology. These paradigms deal with techniques in NMP analysis, gaps in empirical data, theoretical and modelling approaches and stakeholder engagement",
+      "their potential to act as vectors for toxicants and pathogens"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

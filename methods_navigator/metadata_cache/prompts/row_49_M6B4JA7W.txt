@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: De Frond et al., 2022
+Year: 2022
+Full Title: Monitoring microplastics in drinking water: An interlaboratory study to inform effective methods for quantifying and characterizing microplastics
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2022.134282
+Existing Particle Size Range: Spiked MPs (µm range, not precisely constrained); marine/estuarine sediment matrix
+Existing Key Metrics / Output: Extraction recovery: core 47%, augmented 78%; FTIR ID accuracy 99.8%; Raman 96.7%; 2-lab ILC
+
+Zotero metadata:
+Title: Monitoring microplastics in drinking water: An interlaboratory study to inform effective methods for quantifying and characterizing microplastics
+DOI: 10.1016/j.chemosphere.2022.134282
+Date: 2022-07-01 2022-07-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+California Senate Bill 1422 requires the development of State-approved standardized methods for quantifying and characterizing microplastics in drinking water. Accordingly, we led an interlaboratory microplastic method evaluation study, with 22 participating laboratories from six countries, to evaluate the performance of widely used methods: sample extraction via filtering/sieving, optical microscopy, FTIR spectroscopy, and Raman spectroscopy. Three spiked samples of simulated clean water and a laboratory blank were sent to each laboratory with a prescribed standard operating procedure for particle extraction, quantification, and characterization. The samples contained known amounts of microparticles within four size fractions (1–20 μm, 20–212 μm, 212–500 μm, >500 μm), four polymer types (PE, PS, PVC, and PET), and six colors (clear, white, green, blue, red, and orange). They also included false positives (natural hair, fibers, and shells) that may be mistaken for microplastics. Among laboratories, mean particle recovery using stereomicroscopy was 76% ± 10% (SE). For particles in the three largest size fractions, mean recovery was 92% ± 12% SD. On average, laboratory contamination from blank samples was 91 particles (± 141 SD). FTIR and Raman spectroscopy accurately identified microplastics by polymer type for 95% and 91% of particles analyzed, respectively. Per particle, FTIR spectroscopy required the longest time for analysis (12 min ± 9 SD). Participants demonstrated excellent recovery and chemical identification for particles greater than 50 μm in size, with opportunity for increased accuracy and precision through training and further method refinement. This work has informed methods and QA/QC for microplastics monitoring in drinking water in the State of California.
+
+Context source: zotero_abstractNote
+
+Source context:
+California Senate Bill 1422 requires the development of State-approved standardized methods for quantifying and characterizing microplastics in drinking water. Accordingly, we led an interlaboratory microplastic method evaluation study, with 22 participating laboratories from six countries, to evaluate the performance of widely used methods: sample extraction via filtering/sieving, optical microscopy, FTIR spectroscopy, and Raman spectroscopy. Three spiked samples of simulated clean water and a laboratory blank were sent to each laboratory with a prescribed standard operating procedure for particle extraction, quantification, and characterization. The samples contained known amounts of microparticles within four size fractions (1–20 μm, 20–212 μm, 212–500 μm, >500 μm), four polymer types (PE, PS, PVC, and PET), and six colors (clear, white, green, blue, red, and orange). They also included false positives (natural hair, fibers, and shells) that may be mistaken for microplastics. Among laboratories, mean particle recovery using stereomicroscopy was 76% ± 10% (SE). For particles in the three largest size fractions, mean recovery was 92% ± 12% SD. On average, laboratory contamination from blank samples was 91 particles (± 141 SD). FTIR and Raman spectroscopy accurately identified microplastics by polymer type for 95% and 91% of particles analyzed, respectively. Per particle, FTIR spectroscopy required the longest time for analysis (12 min ± 9 SD). Participants demonstrated excellent recovery and chemical identification for particles greater than 50 μm in size, with opportunity for increased accuracy and precision through training and further method refinement. This work has informed methods and QA/QC for microplastics monitoring in drinking water in the State of California.

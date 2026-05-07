@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Definition consistency, size range boundaries, bioavailability assessment, ecological and human health risk implications",
+  "abstract": "•\nthe term microplastics (MP) can stir strong sentiments in some microplastic research and management circles\n•\na consistent definition promotes more coherent discussion around the fate and adverse effects to human health and the environment\n•\na definition should be agnostic to the analytical instrumentation, as these tools are rapidly becoming more sensitive and faster\n•\nlower size limits were selected, in part, to capture bioavailable particles which have greater ecological, and human health risks",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "a consistent definition promotes more coherent discussion around the fate and adverse effects to human health and the environment",
+      "lower size limits were selected, in part, to capture bioavailable particles which have greater ecological, and human health risks"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

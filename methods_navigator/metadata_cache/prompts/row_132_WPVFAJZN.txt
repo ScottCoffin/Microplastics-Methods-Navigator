@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Xu et al., 2025
+Year: 2025
+Full Title: Are microplastics bad for your health? More rigorous science is needed
+DOI/URL: https://doi.org/10.1038/d41586-025-00702-2
+Existing Particle Size Range: 0.1–10 µm (NMPs; nano-range bioaccumulation modeling focus)
+Existing Key Metrics / Output: Tissue concentration estimates; bioaccumulation factors; organ clearance rates (PBK model)
+
+Zotero metadata:
+Title: Are microplastics bad for your health? More rigorous science is needed
+DOI: 10.1038/d41586-025-00702-2
+Date: 2025-03-00 2025-03
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Tiny plastic particles are being found everywhere, including in the human brain. But it is not yet clear which findings can be trusted and what they might mean.
+
+Context source: zotero_abstractNote
+
+Source context:
+Tiny plastic particles are being found everywhere, including in the human brain. But it is not yet clear which findings can be trusted and what they might mean.

@@ -1,0 +1,20 @@
+{
+  "scope": "Soil microplastics detection in different soil substrates (sandy, loam, and clay soils)",
+  "particle_size_range": "≥127 µm",
+  "key_metrics_output": "Microplastic quantity, recovery rate (96.4% average), polymer type identification, particle detection via stereo-microscopy and ImageJ analysis",
+  "abstract": "Microplastics (MPs) are emerging pollutants with widespread global distribution, continuously accumulating in soils and posing risks of cross-media pollution. Current soil MP detection methods lack unified standards, suffering from high inter-laboratory variability and cost, which become key bottlenecks limiting data comparability and global microplastics pollution control. Here, we systematically reviewed soil MPs studies (2020–2024) and based on stepwise verification, we established a standardized, reproducible detection method: soil samples were dried at 80 °C for 12 h; density separation was performed in Erlenmeyer flasks with decantation, 10 s glass rod stirring, and 12 h settling, repeated five times; digestion was conducted using a 1:2 volume ratio of H2O2 to supernatant at 80 °C for 8 h; and MPs were quantified via stereo-microscopy combined with ImageJ. It should be noted that the use of NaCl limits the recovery of high-density polymers (e.g., PVC, PET), and the minimum detectable particle size is approximately 127 µm. The method was validated in sandy, loam, and clay soils, achieving an average recovery rate of 96.4%, with a processing time of 68 h and a cost of USD 9.77 per sample. In contrast to previous fragmented, non-standardized protocols, this workflow synergistically optimizes high recovery efficiency, cost-effectiveness, and broad applicability, offering a low-cost, efficient, and widely applicable approach for soil MPs monitoring, supporting data comparability across studies and contributing to global pollution assessment and the United Nations 2030 Sustainable Development Goals.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "the minimum detectable particle size is approximately 127 µm"
+    ],
+    "key_metrics_output": [
+      "MPs were quantified via stereo-microscopy combined with ImageJ",
+      "achieving an average recovery rate of 96.4%",
+      "the use of NaCl limits the recovery of high-density polymers (e.g., PVC, PET)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

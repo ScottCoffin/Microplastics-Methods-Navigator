@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Ren et al., 2025
+Year: 2025
+Full Title: Separation and Identification of Conventional Microplastics from Farmland Soils
+DOI/URL: https://doi.org/10.3791/67064
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Separation and Identification of Conventional Microplastics from Farmland Soils
+DOI: 10.3791/67064
+Date: 2025-03-21 2025-3-21
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics (MPs) pollution in the terrestrial environment has received increasing attention over the last decade, with increasing studies describing the numbers and types of MPs in different soil systems and their impacts on soil and crop health. However, different MPs extraction and analytical methods are used, limiting opportunities to compare results and generate reliable evidence for industry advice and policymakers. Here, we present a protocol that describes the methodology for sampling, separation, and chemical identification of conventional MPs from soil. The method is low-cost, and the materials are readily available. This enhances operational ease and may help with widespread adoption. The protocol provides detailed information on sample collection from the top 0-30 cm of soil using plastic-free utensils; simulation of different soil types through the use of various solid media (such as bentonite clay, silicon dioxide, and non-contaminated soil), with the addition of the same mass of polyethylene(PE)-MPs for subsequent quantification; density separation of plastic particles utilizing saturated sodium chloride (NaCl) solution and digestion of organic impurities in the supernatant using 4 M sodium hydroxide (NaOH) solution; quantification of particles using fluorescent microscopy after Nile Red staining; and polymer identification using micro Fourier-Transform Infrared Spectroscopy (μ-FTIR) or Laser-Direct Infrared (LDIR) spectroscopy. The MPs recovery rate ranged from 83% - 90% for the abovementioned media. This protocol presents an efficient method for soil MPs analysis that is optimized for feasibility, applicability, and cost-effectiveness. Moreover, the video accompanied can guide the process of analyzing the soil MPs step-by-step virtually. This study is dedicated to standardizing the methods for soil MPs analysis, enhancing the connectivity and comparability of measurements, and establishing a foundation for more standardized and scientific research.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics (MPs) pollution in the terrestrial environment has received increasing attention over the last decade, with increasing studies describing the numbers and types of MPs in different soil systems and their impacts on soil and crop health. However, different MPs extraction and analytical methods are used, limiting opportunities to compare results and generate reliable evidence for industry advice and policymakers. Here, we present a protocol that describes the methodology for sampling, separation, and chemical identification of conventional MPs from soil. The method is low-cost, and the materials are readily available. This enhances operational ease and may help with widespread adoption. The protocol provides detailed information on sample collection from the top 0-30 cm of soil using plastic-free utensils; simulation of different soil types through the use of various solid media (such as bentonite clay, silicon dioxide, and non-contaminated soil), with the addition of the same mass of polyethylene(PE)-MPs for subsequent quantification; density separation of plastic particles utilizing saturated sodium chloride (NaCl) solution and digestion of organic impurities in the supernatant using 4 M sodium hydroxide (NaOH) solution; quantification of particles using fluorescent microscopy after Nile Red staining; and polymer identification using micro Fourier-Transform Infrared Spectroscopy (μ-FTIR) or Laser-Direct Infrared (LDIR) spectroscopy. The MPs recovery rate ranged from 83% - 90% for the abovementioned media. This protocol presents an efficient method for soil MPs analysis that is optimized for feasibility, applicability, and cost-effectiveness. Moreover, the video accompanied can guide the process of analyzing the soil MPs step-by-step virtually. This study is dedicated to standardizing the methods for soil MPs analysis, enhancing the connectivity and comparability of measurements, and establishing a foundation for more standardized and scientific research.

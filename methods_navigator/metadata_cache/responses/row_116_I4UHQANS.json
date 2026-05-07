@@ -1,0 +1,21 @@
+{
+  "particle_size_range": "nano- and microplastics (NMP); specific size range not specified",
+  "key_metrics_output": "internal dosimetry, biodistribution modeling, toxicity thresholds, risk assessment endpoints",
+  "abstract": "Insufficient data on nano- and microplastics (NMP) hinder robust evaluation of their potential health risks. Methodological disparities and the absence of established toxicity thresholds impede the comparability and practical application of research findings. The diverse attributes of NMP, such as variations in sizes, shapes, and compositions, complicate human health risk assessment. Although probability density functions (PDFs) show promise in capturing this diversity, their integration into risk assessment frameworks is limited. Physiologically based kinetic (PBK) models offer a potential solution to bridge the gap between external exposure and internal dosimetry for risk evaluation. However, the heterogeneity of NMP poses challenges for accurate biodistribution modeling.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Insufficient data on nano- and microplastics (NMP)",
+      "The diverse attributes of NMP, such as variations in sizes, shapes, and compositions"
+    ],
+    "key_metrics_output": [
+      "bridge the gap between external exposure and internal dosimetry for risk evaluation",
+      "biodistribution modeling",
+      "toxicity thresholds",
+      "Physiologically based kinetic (PBK) models"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

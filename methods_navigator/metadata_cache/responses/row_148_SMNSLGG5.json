@@ -1,0 +1,21 @@
+{
+  "scope": "freshwater ecosystems; rivers and lakes",
+  "particle_size_range": "<5 mm",
+  "key_metrics_output": "abundance, presence/absence, ingestion by freshwater invertebrates and fish, biological effects, sources, environmental fate, contaminant accumulation on microplastics",
+  "abstract": "Background: While the use of plastic materials has generated huge societal benefits, the ‘plastic age’ comes with downsides: One issue of emerging concern is the accumulation of plastics in the aquatic environment. Here, so-called microplastics (MP), fragments smaller than 5 mm, are of special concern because they can be ingested throughout the food web more readily than larger particles. Focusing on freshwater MP, we briefly review the state of the science to identify gaps of knowledge and deduce research needs. State of the science: Environmental scientists started investigating marine (micro)plastics in the early 2000s. Today, a wealth of studies demonstrates that MP have ubiquitously permeated the marine ecosystem, including the polar regions and the deep sea. MP ingestion has been documented for an increasing number of marine species. However, to date, only few studies investigate their biological effects. The majority of marine plastics are considered to originate from land-based sources, including surface waters. Although they may be important transport pathways of MP, data from freshwater ecosystems is scarce. So far, only few studies provide evidence for the presence of MP in rivers and lakes. Data on MP uptake by freshwater invertebrates and fish is very limited. Knowledge gaps: While the research on marine MP is more advanced, there are immense gaps of knowledge regarding freshwater MP. Data on their abundance is fragmentary for large and absent for small surface waters. Likewise, relevant sources and the environmental fate remain to be investigated. Data on the biological effects of MP in freshwater species is completely lacking. The accumulation of other freshwater contaminants on MP is of special interest because ingestion might increase the chemical exposure. Again, data is unavailable on this important issue. Conclusions: MP represent freshwater contaminants of emerging concern. However, to assess the environmental risk associated with MP, comprehensive data on their abundance, fate, sources, and biological effects in freshwater ecosystems are needed. Establishing such data critically depends on a collaborative effort by environmental scientists from diverse disciplines (chemistry, hydrology, ecotoxicology, etc.) and, unsurprisingly, on the allocation of sufficient public funding.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "fragments smaller than 5 mm, are of special concern"
+    ],
+    "key_metrics_output": [
+      "Data on their abundance is fragmentary",
+      "Data on MP uptake by freshwater invertebrates and fish is very limited",
+      "Data on the biological effects of MP in freshwater species is completely lacking",
+      "The accumulation of other freshwater contaminants on MP is of special interest"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 21960:2020
+        Year: 2020
+        Full Title: ISO/TR 21960:2020 Plastics — Environmental aspects — State of knowledge and methodologies
+        DOI/URL: https://www.iso.org/standard/72300.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: ISO/TR 21960:2020 Plastics — Environmental aspects — State of knowledge and methodologies
+        DOI: 
+        Date: 2020-00-00 2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Plastics — Environmental aspects — State of knowledge and methodologies
+
+Abstract This document summarizes current scientific literature on the occurrence of macroplastics and microplastics, in the environment and biota. It gives an overview of testing methods, including sampling from various environmental matrix, sample preparation and analysis. Further, chemical and physical testing methods for the identification and quantification of plastics are described. This document gives recommendations for three steps necessary for the standardization of methods towards harmonized procedures for sampling, sample preparation and analysis. This document does not apply indoor and health related aspects. NOTE The collection of plastics or microplastics in the environment by citizen social monitoring projects is not in the scope of this document. Although such projects can help sensitize the society to environmental problems and can even reduce the entry and presence of plastics in the environment, this monitoring concept is not considered suitable for a robustly representative and scientific analysis of microplastics in the environment via standardization. General information Status Published Publication date 2020-02 Stage : International Standard confirmed [ 90.93 Edition : 1 Number of pages : 41 Technical Committee : ISO/TC 61/SC 14 ICS 13.020.01 83.080.01 RSS updates Life cycle Now Published ISO/TR 21960:2020 A standard is reviewed every 5 years Stage: 90.93 (Confirmed) Preliminary Proposal 10.99 2018-04-18 New project approved Preparatory 20.00 2018-04-18 New project registered in TC/SC work programme 20.20 2018-06-26 Working draft (WD) study initiated 20.60 2018-09-28 Close of comment period 20.99 2018-09-28 WD approved for registration as CD Committee 30.00 2019-03-06 Committee draft (CD) registered 30.20 2019-03-07 CD consultation initiated 30.60 2019-05-03 Close of comment period 30.99 2019-05-22 CD approved for registration as DIS Enquiry Approval 50.00 2019-09-06 Final text received or FDIS registered for formal approval 50.20 2019-10-08 Proof sent to secretariat or FDIS ballot initiated: 8 weeks 50.60 2020-01-14 Close of voting. Proof returned by secretariat Publication 60.00 2020-01-14 International Standard under publication 60.60 2020-02-17 International Standard published Review 90.93 2025-11-20 International Standard confirmed 90.99 Withdrawal of International Standard proposed by TC or SC Withdrawal 95.99 Withdrawal of International Standard Got a question? Check out our Help and Support Store Store ICS 13.020 13.020.01 ISO/TR 219

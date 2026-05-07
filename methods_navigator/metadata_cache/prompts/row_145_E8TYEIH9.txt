@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Lusher & Primpke, 2023
+Year: 2023
+Full Title: Finding the Balance between Research and Monitoring: When Are Methods Good Enough to Understand Plastic Pollution?
+DOI/URL: https://doi.org/10.1021/acs.est.2c06018
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Finding the Balance between Research and Monitoring: When Are Methods Good Enough to Understand Plastic Pollution?
+DOI: 10.1021/acs.est.2c06018
+Date: 2023-04-18 2023-04-18
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Plastic pollution is an international environmental problem. Desire to act is shared from the public to policymakers, yet motivation and approaches are diverging. Public attention is directed to reducing plastic consumption, cleaning local environments, and engaging in citizen science initiatives. Policymakers and regulators are working on prevention and mitigation measures, while international, regional, and national bodies are defining monitoring recommendations. Research activities are focused on validating approaches to address goals and comparing methods. Policy and regulation are eager to act on plastic pollution, often asking questions researchers cannot answer with available methods. The purpose of monitoring will define which method is implemented. A clear and open dialogue between all actors is essential to facilitate communication on what is feasible with current methods, further research, and development needs. For example, some methods can already be used for international monitoring, yet limitations including target plastic types and sizes, sampling strategy, available infrastructure and analytical capacity, and harmonization of generated data remain. Time and resources to advance scientific understanding must be balanced against the need to answer pressing policy issues.
+
+Context source: zotero_abstractNote
+
+Source context:
+Plastic pollution is an international environmental problem. Desire to act is shared from the public to policymakers, yet motivation and approaches are diverging. Public attention is directed to reducing plastic consumption, cleaning local environments, and engaging in citizen science initiatives. Policymakers and regulators are working on prevention and mitigation measures, while international, regional, and national bodies are defining monitoring recommendations. Research activities are focused on validating approaches to address goals and comparing methods. Policy and regulation are eager to act on plastic pollution, often asking questions researchers cannot answer with available methods. The purpose of monitoring will define which method is implemented. A clear and open dialogue between all actors is essential to facilitate communication on what is feasible with current methods, further research, and development needs. For example, some methods can already be used for international monitoring, yet limitations including target plastic types and sizes, sampling strategy, available infrastructure and analytical capacity, and harmonization of generated data remain. Time and resources to advance scientific understanding must be balanced against the need to answer pressing policy issues.

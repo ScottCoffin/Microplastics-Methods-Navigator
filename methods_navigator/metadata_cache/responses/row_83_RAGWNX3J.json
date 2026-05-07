@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "polymer type identification, true positive rate (TP), false positive rate (FP), match algorithm threshold, Pearson's correlation coefficient, signal-to-noise ratio",
+  "abstract": "The assessment of the impact of microplastic contamination on the environment and human health requires a reliable identification of the polymer type of these particles. μ-Raman spectroscopy is a popular technique for identifying microplastics by comparing the reference spectra with those of the particles analysed. Automatic identification of microplastics requires defining an algorithm for the match between these spectra and setting a minimum match above which identification is performed with adequately high true and low false results rates. Ideally, the algorithm and match threshold should apply to different spectrometers and spectra collection parameters. This research presents a methodology to determine the best match algorithm for polymer identification using μ-Raman spectroscopy data collected on different instruments and laboratories, associated with a true positive rate (TP) of 95 % and a false positive rate (FP) lower than 5 %. Determining the match threshold (P5»P) by the bootstrap method does not require assumptions regarding match distribution. The normal distribution of the match between the reference and a particle's spectra from a different material allows FP determination. Identifying PET microparticles was optimal using Pearson's correlation coefficient (P5»P = 0.6244, TP = 95 %, FP = 4.9 × 10−7 %). Identification quality was tested based on three unweighted and three weighted correlation coefficients. Spectra with signal-to-noise ratios lower than 10 were forwarded to manual identifications. The MS Excel files used in the research are available as supporting information. The developed methodology for setting up identification criteria of microplastics by spectroscopy proved to be adequate for μ-Raman assessments and robust to different spectrometers and spectra collection conditions.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "true positive rate (TP) of 95 % and a false positive rate (FP) lower than 5 %",
+      "Identifying PET microparticles was optimal using Pearson's correlation coefficient (P5»P = 0.6244, TP = 95 %, FP = 4.9 × 10−7 %)",
+      "Spectra with signal-to-noise ratios lower than 10 were forwarded to manual identifications"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

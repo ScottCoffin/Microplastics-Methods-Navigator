@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: SAPEA, 2019
+Year: 2019
+Full Title: A Scientific Perspective on Microplastics in Nature and Society
+DOI/URL: https://scientificadvice.eu/advice/a-scientific-perspective-on-microplastics-in-nature-and-society/
+Existing Particle Size Range: Framework, not single range
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+A scientific perspective on microplastics in nature and society – Scientific Advice Mechanism Linkedin Instagram Threads Mastodon Youtube Podcast About us The Scientific Advice Mechanism provides independent scientific evidence and policy recommendations to the European institutions by request of the College of Commissioners. The Scientific Advice Mechanism to the European Commission Who we are Diversity and inclusiveness The Advisors About the Advisors Plenary meetings SAPEA Academies and networks Board and staff The SAM secretariat About the secretariat How we work We receive a request European Commissioners can ask us for advice on any topic. How we receive requests We review the evidence A SAPEA working group writes an evidence review report. How we gather evidence We make recommendations The Advisors write a Scientific Opinion based on the evidence. How we make recommendations We deliver our advice Our evidence and recommendations are both handed to the European Commission. Our impact Our advice News & events Podcast January 2019 A scientific perspective on microplastics in nature and society Key documents Evidence review report Scientific opinion The best available evidence suggests that microplastics and nanoplastics do not pose a widespread risk to humans or the environment, except in small pockets. But that evidence is limited, and the situation could change if pollution continues at the current rate. Our advice comprehensively examines the best available evidence from the natural sciences and computer modelling, as well as social, political and behavioural sciences. Our key conclusions are: Microplastics -- tiny particles under 5mm in length -- are already present across air, soil and sediment, freshwaters, seas and oceans, plants and animals, and in several components of the human diet. These particles come from a variety of sources, including plastic products, textiles, fisheries, agriculture, industry and general waste. In controlled experiments, high concentrations of these particles have been shown to cause physical harm to the environment and living creatures, including inducing inflammation and stress. However, the concentration levels measured in many real-world locations are well below this threshold -- though there are also limitations in the measurement methods currently available. Meanwhile, in other parts of the environment, there is no reliable evidence about the levels or effects of these particles. This is true especially of nanoplastics, which are very difficult to measure and evaluate. Scientific advice Delivery date 15 January 2019 Supports EU mission Restore our ocean and waters Supports UN sustainable development goals Good health and wellbeing Clean water and sanitation Sustainable cities and communities Life below water Resources Factsheet Scoping paper by the European Commission Evidence gathering by SAPEA Recommendations by the Advisors No scoping documents are available for this advice. Evidence review report SAPEA gathers the best available scientific evidence on the topic. The evidence gathered by SAPEA is used by the Group of Chief Scientific Advisors to make policy recommendations. Bibliographic information DOI 10.26356/microplastics ISBN 9783982030104 Licence Creative Commons Attribution Cite as

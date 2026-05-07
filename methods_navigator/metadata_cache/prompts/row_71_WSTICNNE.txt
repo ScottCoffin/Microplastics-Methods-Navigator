@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Covernton et al. (2026)
+Year: 2026
+Full Title: Advancing automated microplastic detection: validation of a method using particle detection software and µ-Raman spectroscopy for 20 – 53 µm particles
+DOI/URL: https://doi.org/10.26434/chemrxiv.15002539/v1
+Existing Particle Size Range: 20 µm – 53 µm 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Advancing automated microplastic detection: validation of a method using particle detection software and µ-Raman spectroscopy for 20 – 53 µm particles
+DOI: 10.26434/chemrxiv.15002539/v1
+Date: 2026-04-29 2026-04-29
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Research on microplastics is developing rapidly, but methods for quantifying the smallest particles (1-100 µm) remain limited. Automated spectroscopic methods using µ-FTIR and µ-Raman spectroscopy have been developed, but these methods are often time-consuming, require expensive filters, or show poor recovery of smaller particles. To address these problems, and as part of a larger effort to develop a cost-effective method for the rapid quantification of microplastic particles, we developed and validated a method for quantifying 20 – 53 µm microplastic fragments using µ-Raman spectroscopy on polycarbonate filters. Our method is fast, reliable, and does not require expensive consumables. We validated a method for polyethylene, polystyrene, and polyethylene terephthalate fragments with good precision for one sample run multiple times (~3 – 7% coefficient of variation) and independent samples of the same mass (~18 – 35%, depending on polymer). Recovery, tested across a larger size range of particles (up to 106 µm), ranged from 69 – 77% across polymers. KOH treatment (10 or 20%) reduced the recovery of our small polyethylene terephthalate particles. Our method proves promising, and we will continue its development and validation across a greater diversity of polymers, sizes and shapes, as well as with weathered particles extracted from environmental matrices.
+
+Context source: zotero_abstractNote
+
+Source context:
+Research on microplastics is developing rapidly, but methods for quantifying the smallest particles (1-100 µm) remain limited. Automated spectroscopic methods using µ-FTIR and µ-Raman spectroscopy have been developed, but these methods are often time-consuming, require expensive filters, or show poor recovery of smaller particles. To address these problems, and as part of a larger effort to develop a cost-effective method for the rapid quantification of microplastic particles, we developed and validated a method for quantifying 20 – 53 µm microplastic fragments using µ-Raman spectroscopy on polycarbonate filters. Our method is fast, reliable, and does not require expensive consumables. We validated a method for polyethylene, polystyrene, and polyethylene terephthalate fragments with good precision for one sample run multiple times (~3 – 7% coefficient of variation) and independent samples of the same mass (~18 – 35%, depending on polymer). Recovery, tested across a larger size range of particles (up to 106 µm), ranged from 69 – 77% across polymers. KOH treatment (10 or 20%) reduced the recovery of our small polyethylene terephthalate particles. Our method proves promising, and we will continue its development and validation across a greater diversity of polymers, sizes and shapes, as well as with weathered particles extracted from environmental matrices.

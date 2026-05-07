@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Pimentel et al., 1975
+Year: 1975
+Full Title: Respiratory disease caused by synthetic fibres: a new occupational disease
+DOI/URL: https://doi.org/10.1136/thx.30.2.204
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Respiratory disease caused by synthetic fibres: a new occupational disease.
+DOI: 10.1136/thx.30.2.204
+Date: 1975-04-01 1975-04-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Seven patients exposed to the inhalation of synthetic fibres presented with various bronchopulmonary diseases, such as asthma, extrinsic allergic alveolitis, chronic bronchitis with bronchiectasis, spontaneous pneumothorax, and chronic pneumonia. The histological features are described and an attempt has been made to set up immunological techniques for the diagnosis. A series of histochemical techniques, based on textile chemistry, are proposed for the identification of the inclusions found in bronchopulmonary lesions. The results of the experimental production of the disease in guinea-pigs by the inhalation of synthetic fibre dusts are presented. The prognosis of these cases is good in the acute or recently established cases but is poor when widespread and irreversible fibrosis has set in. The authors consider that pulmonary disease due to inhaled particles is probably set off by an individual factor, possibly immunological.
+
+Context source: zotero_abstractNote
+
+Source context:
+Seven patients exposed to the inhalation of synthetic fibres presented with various bronchopulmonary diseases, such as asthma, extrinsic allergic alveolitis, chronic bronchitis with bronchiectasis, spontaneous pneumothorax, and chronic pneumonia. The histological features are described and an attempt has been made to set up immunological techniques for the diagnosis. A series of histochemical techniques, based on textile chemistry, are proposed for the identification of the inclusions found in bronchopulmonary lesions. The results of the experimental production of the disease in guinea-pigs by the inhalation of synthetic fibre dusts are presented. The prognosis of these cases is good in the acute or recently established cases but is poor when widespread and irreversible fibrosis has set in. The authors consider that pulmonary disease due to inhaled particles is probably set off by an individual factor, possibly immunological.

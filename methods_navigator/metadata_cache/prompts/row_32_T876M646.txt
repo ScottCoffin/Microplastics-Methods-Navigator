@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Bakir et al., 2024
+Year: 2024
+Full Title: Creation of an international laboratory network towards global microplastics monitoring harmonisation
+DOI/URL: https://doi.org/10.1038/s41598-024-62176-y
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Creation of an international laboratory network towards global microplastics monitoring harmonisation
+DOI: 10.1038/s41598-024-62176-y
+Date: 2024-06-03 2024-06-03
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Infrastructure is often a limiting factor in microplastics research impacting the production of scientific outputs and monitoring data. International projects are therefore required to promote collaboration and development of national and regional scientific hubs. The Commonwealth Litter Programme and the Ocean Country Partnership Programme were developed to support Global South countries to take actions on plastics entering the oceans. An international laboratory network was developed to provide the infrastructure and in country capacity to conduct the collection and processing of microplastics in environmental samples. The laboratory network was also extended to include a network developed by the University of East Anglia, UK. All the laboratories were provided with similar equipment for the collection, processing and analysis of microplastics in environmental samples. Harmonised protocols and training were also provided in country during laboratory setup to ensure comparability of quality-controlled outputs between laboratories. Such large networks are needed to produce comparable baseline and monitoring assessments.
+
+Context source: zotero_abstractNote
+
+Source context:
+Infrastructure is often a limiting factor in microplastics research impacting the production of scientific outputs and monitoring data. International projects are therefore required to promote collaboration and development of national and regional scientific hubs. The Commonwealth Litter Programme and the Ocean Country Partnership Programme were developed to support Global South countries to take actions on plastics entering the oceans. An international laboratory network was developed to provide the infrastructure and in country capacity to conduct the collection and processing of microplastics in environmental samples. The laboratory network was also extended to include a network developed by the University of East Anglia, UK. All the laboratories were provided with similar equipment for the collection, processing and analysis of microplastics in environmental samples. Harmonised protocols and training were also provided in country during laboratory setup to ensure comparability of quality-controlled outputs between laboratories. Such large networks are needed to produce comparable baseline and monitoring assessments.

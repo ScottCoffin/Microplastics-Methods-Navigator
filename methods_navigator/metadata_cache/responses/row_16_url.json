@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type symbols and abbreviated terms; classification of basic polymers and their special characteristics",
+  "abstract": "ISO 1043-1:2011/Amd 1:2016 is an international standard that establishes symbols and abbreviated terms for plastics, specifically covering basic polymers and their special characteristics. Amendment 1:2016 introduces a new symbol (ST) for syndiotactic polymers.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Symbols and abbreviated terms",
+      "Basic polymers and their special characteristics",
+      "New symbol ST for syndiotactic"
+    ],
+    "abstract": [
+      "Plastics — Symbols and abbreviated terms — Part 1: Basic polymers and their special characteristics",
+      "Amendment 1: New symbol ST for syndiotactic"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Food samples with medium to high lipid content (>3%); polyethylene quantification",
+  "particle_size_range": null,
+  "key_metrics_output": "Polyethylene quantification; polymer type identification",
+  "abstract": "Assess the impact of medium to high lipid content (> 3%) food samples on the accurate quantification of polyethylene (PE), using pyrolysis-gas chromatography-mass spectrometry, and develop an alternative sample processing strategy.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "pyrolysis-gas chromatography-mass spectrometry",
+      "accurate quantification of polyethylene (PE)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

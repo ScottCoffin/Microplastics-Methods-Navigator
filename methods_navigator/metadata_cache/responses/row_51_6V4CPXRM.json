@@ -1,0 +1,22 @@
+{
+  "scope": "Sediment microplastics analysis; interlaboratory comparison exercise; data reporting and postprocessing methods",
+  "particle_size_range": "1 to >500 μm (all size fractions); individual fractions: >500 μm, 212–500 μm, 20–212 μm, 1–20 μm",
+  "key_metrics_output": "Particle count; minimum detectable amount (MDA); procedural blank corrections; matrix spike recovery; particle size fractions; morphology (fiber vs. non-fiber)",
+  "abstract": "Data handling that converts the raw data into a deliverable dataset is a necessary step in any analytical work. This procedure involves applying detection limits to shaping the raw data to form a deliverable dataset. The detection limit for microplastics analysis is the minimum detectable amount (MDA) that can be calculated from the particle counts of procedural blank samples following the rules of the Poisson distribution. Currently, there is a lack of adequate data reporting guidance encompassing the MDA for microplastics analysis. The goal of this study was to establish a robust protocol for processing count-based raw data using the particle counts of the MDA and the procedural blank. Utilizing the dataset of an interlaboratory comparison exercise, effectiveness of the protocol was elaborated to generate a deliverable dataset and to accurately define the matrix spiking recoveries. The guidance was applied to the raw data of all size fractions (1 - >500 μm), four individual size fractions (>500, 212–500, 20–212, 1–20 μm), and two morphologies (fiber and non-fiber). Six possible data reporting scenarios were identified, with the raw data ranging well above the MDA to below the critical value. One-third (12 of 34) of the raw data for all size fractions needed blank-MDA corrections. The mean values of the spiking recoveries decreased by up to 10 % after performing the data reporting guidance. Application of this suggested data reporting guidance may be beneficial for high quality data for microplastics analysis.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "all size fractions (1 - >500 μm)",
+      "four individual size fractions (>500, 212–500, 20–212, 1–20 μm)"
+    ],
+    "key_metrics_output": [
+      "particle counts of the MDA and the procedural blank",
+      "matrix spiking recoveries",
+      "two morphologies (fiber and non-fiber)",
+      "Six possible data reporting scenarios were identified"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

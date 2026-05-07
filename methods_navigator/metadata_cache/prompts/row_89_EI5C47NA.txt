@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Li et al., 2019
+Year: 2019
+Full Title: Separation and identification of microplastics from soil and sewage sludge
+DOI/URL: https://doi.org/10.1016/j.envpol.2019.113076
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Separation and identification of microplastics from soil and sewage sludge
+DOI: 10.1016/j.envpol.2019.113076
+Date: 2019-11-00 11/2019
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Soil and sludge are important pools for microplastics (MPs), however standard separation methods for MPs from these pools are still missing. We tested the widely used methods for MPs extraction from water and sediment to six agriculture surface soils and three sewage sludges from municipal wastewater treatment plants and included an additional pre-digestion procedure with 30% H2O2 before floatation to remove soil or sludge organic matter (OM). Extraction efficiency of MPs were evaluated under different separation conditions, including floatation solution (NaCl, ZnCl2, and NaI), filtration membrane, and oxidation solution. Results showed that H2O2 pre-digestion significantly increased MPs extraction in soil and sludge, especially the samples with high OM contents, particularly sludge. Floatation solution with higher densities recovered more MPs. The extra released MPs were mainly small fibrous MPs, probably because they are easily retained by aggregates. Our results provide an feasible separation method for MPs in soil and sludge, i.e., pre-digestion with 30% H2O2 at 70 °C, floatation with NaI solution, filtration through nylon membrane, and further oxidation with 30% H2O2 + H2SO4 or 30% H2O2 at 70 °C. About 420–1290 MP items/kg soil were detected in soil samples, while much higher numbers (5553–13460 MP items/kg) were found in sludge samples. The dominate morphology of MPs was white fiber with a size of 0.02–0.25 mm, while the main types of MPs, identified by a micro-Fourier transformed infrared spectroscopy (μ-FTIR), were polyethylene and polypropylene in soil samples and polyethylene, polyethylene terephthalate, and polyacrylonitrile in sludge samples.
+
+Context source: zotero_abstractNote
+
+Source context:
+Soil and sludge are important pools for microplastics (MPs), however standard separation methods for MPs from these pools are still missing. We tested the widely used methods for MPs extraction from water and sediment to six agriculture surface soils and three sewage sludges from municipal wastewater treatment plants and included an additional pre-digestion procedure with 30% H2O2 before floatation to remove soil or sludge organic matter (OM). Extraction efficiency of MPs were evaluated under different separation conditions, including floatation solution (NaCl, ZnCl2, and NaI), filtration membrane, and oxidation solution. Results showed that H2O2 pre-digestion significantly increased MPs extraction in soil and sludge, especially the samples with high OM contents, particularly sludge. Floatation solution with higher densities recovered more MPs. The extra released MPs were mainly small fibrous MPs, probably because they are easily retained by aggregates. Our results provide an feasible separation method for MPs in soil and sludge, i.e., pre-digestion with 30% H2O2 at 70 °C, floatation with NaI solution, filtration through nylon membrane, and further oxidation with 30% H2O2 + H2SO4 or 30% H2O2 at 70 °C. About 420–1290 MP items/kg soil were detected in soil samples, while much higher numbers (5553–13460 MP items/kg) were found in sludge samples. The dominate morphology of MPs was white fiber with a size of 0.02–0.25 mm, while the main types of MPs, identified by a micro-Fourier transformed infrared spectroscopy (μ-FTIR), were polyethylene and polypropylene in soil samples and polyethylene, polyethylene terephthalate, and polyacrylonitrile in sludge samples.

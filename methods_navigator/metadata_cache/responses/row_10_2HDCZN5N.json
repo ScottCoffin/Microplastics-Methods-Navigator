@@ -1,0 +1,23 @@
+{
+  "particle_size_range": "1 μm to 1 mm",
+  "key_metrics_output": "Polymer type identification, spectral matching accuracy (Pearson correlation coefficient), baseline correction, smoothing, reference library composition",
+  "abstract": "Open Specy is an open source software tool and community platform for spectral classification of microplastics using Raman and FTIR spectroscopy. The tool enables users to view, process, identify, and share spectra through smoothing (Savitzky-Golay filter) and baseline correction (IModPolyFit) techniques. Spectral identification uses correlation-based matching against a growing community-contributed reference library. Validation against 50 polymer standards showed Open Specy achieved 48/50 accuracy for Raman spectra (outperforming KnowItAll) and 48/50 for FTIR spectra (comparable to OMNIC Picta). Open Specy is distinguished as the only open source software with crowdsourced library functionality and includes weathered microplastic spectra to improve identification accuracy.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics are plastic particles between 1 mm and 1 μm in size"
+    ],
+    "key_metrics_output": [
+      "Users can upload and process their spectra using smoothing (Savitzky Golay filter) and polynomial baseline correction techniques (IModPolyFit)",
+      "identified using an onboard reference library and correlation-based matching criteria",
+      "The matching procedure consists of a Pearson correlation between the chosen reference spectra and test spectrum",
+      "polymer identification"
+    ],
+    "abstract": [
+      "Open Specy is on the web and in an R package. Open Specy is free and allows users to view, process, identify, and share their spectra to a community library",
+      "We found that Open Specy currently outperforms KnowItAll (correct: Open Specy = 48/50, KnowItAll = 44/50) for Raman spectra and slightly underperforms OMNIC Picta for FTIR spectra (correct: Open Specy = 48/50, OMNIC = 49/50)",
+      "Only siMPle and Open Specy provided documented validation of the entire software routine for accurately identifying spectra",
+      "None of the spectral tools, besides Open Specy, made their source code available or had a crowd sourced library"
+    ]
+  }
+}

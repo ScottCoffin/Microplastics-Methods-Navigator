@@ -1,0 +1,23 @@
+{
+  "particle_size_range": ">1 μm and <5 mm",
+  "key_metrics_output": "Standardization, harmonization, and validation of microplastics research methods; quality assurance/quality control protocols; reporting metrics including size, polymer type, morphology, color, and associated contaminants; method optimization and extraction efficiencies",
+  "abstract": "This paper argues for raising publication standards in microplastics research through improved peer review, standardized terminology, and harmonized reporting practices. The authors contend that while methodological standardization may be impractical given diverse research questions, harmonization of outputs and quality assurance protocols are essential. The paper reviews quality issues in published microplastics literature, noting that 60% of reviewed publications lacked sufficient quality for data synthesis, and emphasizes the importance of clear methodology reporting, explicit size range definitions, validation of extraction methods, and accurate language in titles and abstracts to ensure reproducibility and appropriate interpretation by policymakers and the public.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics are most commonly defined as plastic particles >1 μm and <5 or 1 mm along their largest dimension",
+      "We will use the <5 mm definition for our consideration of microplastics"
+    ],
+    "key_metrics_output": [
+      "a range of polymers, particle sizes, colors, morphologies, and associated contaminants",
+      "methods are tested for extraction efficiencies, and recovery of spiked polymers, the impact on polymers, as well as potential for background contamination",
+      "a minimum list of reportable metrics (i.e. size, polymer type, etc.) as well as complete/exact methods reporting must be presented"
+    ],
+    "abstract": [
+      "The highly diverse nature of microplastic pollution means it is not a single contaminant, but a suite of chemicals that include a range of polymers, particle sizes, colors, morphologies, and associated contaminants",
+      "it remains import to harmonize the outputs of these various methodologies",
+      "journals, editors and reviewers must also be more proactive in ensuring that scientifc papers have clear, repeatable methods",
+      "There is a lack of quality assurance and quality control protocols for microplastics in this developing field"
+    ]
+  }
+}

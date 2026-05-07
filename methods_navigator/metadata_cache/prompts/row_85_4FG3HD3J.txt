@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Kittner et al., 2023
+Year: 2023
+Full Title: Decomposability versus detectability: First validation of TED-GC/MS for microplastic detection in different environmental matrices
+DOI/URL: https://doi.org/10.1002/appl.202200089
+Existing Particle Size Range: 1 µm – 5 mm
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Decomposability versus detectability: First validation of TED‐GC/MS for microplastic detection in different environmental matrices
+DOI: 10.1002/appl.202200089
+Date: 2024-04-00 04/2024
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Abstract
+    A fast method for microplastic detection is thermal extraction desorption‐gas chromatography/mass spectrometry (TED‐GC/MS), which uses polymer‐specific thermal decomposition products as marker compounds to determine polymer mass contents in environmental samples. So far, matrix impacts of different environmental matrices on TED‐GC/MS performance had not yet been assessed systematically. Therefore, three solid freshwater matrices representing different aquatic bodies with varying organic matter contents were spiked with a total of eight polymers. Additionally, for the first time, the two biodegradable polymers polybutylene adipate terephthalate (PBAT) and polylactide (PLA) were analysed using TED‐GC/MS. The methodological focus of this work was on detectability, quality of signal formation as well as realisation of quantification procedures and determination of the limit of detection (LOD) values. Overall, TED‐GC/MS allowed the unambiguous detection of the environmentally most relevant polymers analysed, even at low mass contents: 0.02 wt% for polystyrene (PS), 0.04 wt% for the tyre component styrene butadiene rubber (SBR) and 0.2 wt% for polypropylene (PP), polyethylene (PE) and PBAT. Further, all obtained LOD values were increased in all matrices compared to the neat polymer without matrix. The LOD of the standard polymers were increased similarly (PS: 0.21–0.34 µg, SBR: 0.27–0.38 µg, PP: 0.32–0.36 µg, PMMA: 0.64–1.30 µg, PET: 0.90–1.37 µg, PE: 3.80–6.99 µg) and their decompositions by radical scission processes were not significantly influenced by the matrices. In contrast, matrix‐specific LOD increases of both biodegradable polymers PBAT (LOD: 1.41–7.18 µg) and PLA (0.84–20.46 µg) were observed, probably due to their hetero‐functional character and interactions with the matrices. In conclusion, the TED‐GC/MS performance is not solely determined by the type of the polymers but also by the composition of the matrix.
+
+Context source: zotero_abstractNote
+
+Source context:
+Abstract
+    A fast method for microplastic detection is thermal extraction desorption‐gas chromatography/mass spectrometry (TED‐GC/MS), which uses polymer‐specific thermal decomposition products as marker compounds to determine polymer mass contents in environmental samples. So far, matrix impacts of different environmental matrices on TED‐GC/MS performance had not yet been assessed systematically. Therefore, three solid freshwater matrices representing different aquatic bodies with varying organic matter contents were spiked with a total of eight polymers. Additionally, for the first time, the two biodegradable polymers polybutylene adipate terephthalate (PBAT) and polylactide (PLA) were analysed using TED‐GC/MS. The methodological focus of this work was on detectability, quality of signal formation as well as realisation of quantification procedures and determination of the limit of detection (LOD) values. Overall, TED‐GC/MS allowed the unambiguous detection of the environmentally most relevant polymers analysed, even at low mass contents: 0.02 wt% for polystyrene (PS), 0.04 wt% for the tyre component styrene butadiene rubber (SBR) and 0.2 wt% for polypropylene (PP), polyethylene (PE) and PBAT. Further, all obtained LOD values were increased in all matrices compared to the neat polymer without matrix. The LOD of the standard polymers were increased similarly (PS: 0.21–0.34 µg, SBR: 0.27–0.38 µg, PP: 0.32–0.36 µg, PMMA: 0.64–1.30 µg, PET: 0.90–1.37 µg, PE: 3.80–6.99 µg) and their decompositions by radical scission processes were not significantly influenced by the matrices. In contrast, matrix‐specific LOD increases of both biodegradable polymers PBAT (LOD: 1.41–7.18 µg) and PLA (0.84–20.46 µg) were observed, probably due to their hetero‐functional character and interactions with the matrices. In conclusion, the TED‐GC/MS performance is not solely determined by the type of the polymers but also by the composition of the matrix.

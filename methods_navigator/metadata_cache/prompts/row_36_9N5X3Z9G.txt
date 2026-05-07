@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: de Jourdan et al., 2024
+Year: 2024
+Full Title: Microplastic biomonitoring studies in aquatic species: A review & quality assessment framework
+DOI/URL: https://doi.org/10.1016/j.scitotenv.2024.177541
+Existing Particle Size Range: ≥5 µm (µFTIR/µRaman for in situ tissue identification; pathological sections)
+Existing Key Metrics / Output: In situ particle identification and polymer confirmation in human pathological tissue
+
+Zotero metadata:
+Title: Microplastic biomonitoring studies in aquatic species: A review & quality assessment framework
+DOI: 10.1016/j.scitotenv.2024.177541
+Date: 2024-12-20 2024-12-20
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+A large body of literature exists demonstrating the exposure, uptake, and presence of micro- and nanoplastic particles (MNPs) within marine biota. Despite this, there remain challenges in synthesizing these studies in a consistent and reliable manner which can support technology, regulatory, and policy decision-making. The most significant challenge is a lack of guidance to assess and integrate study reliability (objective quality) and relevance (ability to answer a specific question). The purpose of this study is twofold – first, to critically review and apply existing frameworks to an expanded body of literature. Second, to propose meaningful criteria to further assess study utility as it applies to the use of biomonitoring data to reliably quantitate (1) relationships between external and internal (biota) concentrations of MNPs, (2) differences among organisms, species, and/or regions, and (3) utility of species as effective biomonitors for MNPs in the marine environment. A critical screening of 409 biomonitoring studies published between 2017 and 2022 was carried out using previously established reliability criteria. Studies included 1243 unique species and 1954 distinct research units. Two gateway criteria were proposed to assess the relevance and utility for biomonitoring and risk assessment: polymer identification and the inclusion of an environmental sample (water or sediment). In comparison to previously published systematic reviews, the general quality of study design is improving with time. Nonetheless, deficiencies impacting the relevance and reliability are still common. In total, only 8 % of all studies passed the screening and gateway criteria, and scored ≥50 % in reliability, suggesting that studies which provide sufficient rigor and data to support confident quantitative analysis and decision-making remain limited. A series of recommendations for journals, reviewers, and researchers are proposed to increase the utility and impact of future studies, particularly as they are applied within the context of ecological risk assessment and decision-making.
+
+Context source: zotero_abstractNote
+
+Source context:
+A large body of literature exists demonstrating the exposure, uptake, and presence of micro- and nanoplastic particles (MNPs) within marine biota. Despite this, there remain challenges in synthesizing these studies in a consistent and reliable manner which can support technology, regulatory, and policy decision-making. The most significant challenge is a lack of guidance to assess and integrate study reliability (objective quality) and relevance (ability to answer a specific question). The purpose of this study is twofold – first, to critically review and apply existing frameworks to an expanded body of literature. Second, to propose meaningful criteria to further assess study utility as it applies to the use of biomonitoring data to reliably quantitate (1) relationships between external and internal (biota) concentrations of MNPs, (2) differences among organisms, species, and/or regions, and (3) utility of species as effective biomonitors for MNPs in the marine environment. A critical screening of 409 biomonitoring studies published between 2017 and 2022 was carried out using previously established reliability criteria. Studies included 1243 unique species and 1954 distinct research units. Two gateway criteria were proposed to assess the relevance and utility for biomonitoring and risk assessment: polymer identification and the inclusion of an environmental sample (water or sediment). In comparison to previously published systematic reviews, the general quality of study design is improving with time. Nonetheless, deficiencies impacting the relevance and reliability are still common. In total, only 8 % of all studies passed the screening and gateway criteria, and scored ≥50 % in reliability, suggesting that studies which provide sufficient rigor and data to support confident quantitative analysis and decision-making remain limited. A series of recommendations for journals, reviewers, and researchers are proposed to increase the utility and impact of future studies, particularly as they are applied within the context of ecological risk assessment and decision-making.

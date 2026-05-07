@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "particle characteristics, data validation, structured and unstructured microplastic data harmonization",
+  "abstract": "Microplastics are a diverse suite of contaminants (Rochman et al., 2019) requiring a variety of data types to capture particle characteristics and study methodologies (Division of Drinking Water, State Water Resources Control Board, State of California, 2022; Jenkins et al., 2022). Data sharing is critical to advance science and policy (Coffin, 2023). The One4All portal was created to harmonize and share structured and unstructured microplastic data (and beyond) through validation. Validated data can be automatically uploaded to the following cloud services: Amazon S3, CKAN, and/or MongoDB. One4All is both a graphical user interface (GUI) and an R package. The tools are general-purpose and can be used for applications outside of microplastics. This manuscript provides information about the usage, workflow, and configuration of One4All, emphasizing its adaptability for diverse purposes.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "requiring a variety of data types to capture particle characteristics and study methodologies",
+      "harmonize and share structured and unstructured microplastic data"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

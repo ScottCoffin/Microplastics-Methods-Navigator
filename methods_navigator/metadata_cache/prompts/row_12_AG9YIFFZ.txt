@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Lane et al., 2025
+Year: 2025
+Full Title: Exposure scenarios for human health risk assessment of nano- and microplastic particles
+DOI/URL: https://doi.org/10.1186/s43591-025-00134-9
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Exposure scenarios for human health risk assessment of nano- and microplastic particles
+DOI: 10.1186/s43591-025-00134-9
+Date: 2025-07-14 2025-07-14
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Evidence of nano- and microplastic particles being present in the human body has increased in recent years, yet there is no acceptable methodology to perform a human health risk assessment for these particles because of limitations in the exposure and hazard assessments. Exposure assessment can be improved by establishing comprehensive and justifiable exposure scenarios for a defined exposure demographic, thoroughly describing the relevant exposure pathways, and performing multidimensional data alignment, thereby facilitating probabilistic estimates of nanoand microplastic particle exposure. General considerations of exposure scenarios are outlined, along with specifics details on the complexity and prioritization for nine demographic groups: adults; women; the elderly; individuals with disease; individuals employed in high-hazard occupations; and children demographics, including early infants, toddlers, school children, and teenagers. Recommendations to advance exposure assessments and scenarios are also provided which suggest: i) the use of well-defined exposure scenarios for demographics that are prioritized according to their level of complexity and concern; ii) a thorough description of relevant activity factors (physiological parameters, behavioural traits) and exposure factors (duration, frequency, media characterization) for the chosen demographic; iii) thorough descriptions of exposure via ingestion and inhalation, and in the case of early infants, including exposure via maternal transfer; iv) multidimensional data alignment and probabilistic methods to enable credible comparisons of exposure data across studies and inform physiologically based toxicokinetic models to estimate internal exposure.
+
+Context source: zotero_abstractNote
+
+Source context:
+Evidence of nano- and microplastic particles being present in the human body has increased in recent years, yet there is no acceptable methodology to perform a human health risk assessment for these particles because of limitations in the exposure and hazard assessments. Exposure assessment can be improved by establishing comprehensive and justifiable exposure scenarios for a defined exposure demographic, thoroughly describing the relevant exposure pathways, and performing multidimensional data alignment, thereby facilitating probabilistic estimates of nanoand microplastic particle exposure. General considerations of exposure scenarios are outlined, along with specifics details on the complexity and prioritization for nine demographic groups: adults; women; the elderly; individuals with disease; individuals employed in high-hazard occupations; and children demographics, including early infants, toddlers, school children, and teenagers. Recommendations to advance exposure assessments and scenarios are also provided which suggest: i) the use of well-defined exposure scenarios for demographics that are prioritized according to their level of complexity and concern; ii) a thorough description of relevant activity factors (physiological parameters, behavioural traits) and exposure factors (duration, frequency, media characterization) for the chosen demographic; iii) thorough descriptions of exposure via ingestion and inhalation, and in the case of early infants, including exposure via maternal transfer; iv) multidimensional data alignment and probabilistic methods to enable credible comparisons of exposure data across studies and inform physiologically based toxicokinetic models to estimate internal exposure.

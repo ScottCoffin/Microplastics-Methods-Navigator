@@ -1,0 +1,29 @@
+{
+  "particle_size_range": "1–5000 μm for food dilution; 1–83 μm for tissue translocation",
+  "key_metrics_output": "Risk management thresholds (particles/L and mass mg/L) for two effect mechanisms: food dilution (0.3–34 particles/L; 0.05–6 mg/L) and tissue translocation (60–4110 particles/L; 10–676 mg/L); species sensitivity distribution (SSD) approach; hazard concentration (HC) levels; confidence assessments",
+  "abstract": "This study presents a tiered risk management framework for microplastics in aquatic ecosystems based on species sensitivity distribution analysis of peer-reviewed toxicity data. Four management thresholds were derived from 290 data points extracted from 21 quality-assessed studies, addressing two toxicity mechanisms: food dilution and tissue translocation. Thresholds range from investigative monitoring (Threshold 1) to source control measures (Threshold 4), with corresponding particle concentrations and confidence levels. Expert assessment indicated high confidence in the framework and analytical approach, but variable confidence in specific numerical threshold values, highlighting the need for improved toxicity testing and mechanistic understanding.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "toxicity data between 1 and 5000 μm were included in our analysis",
+      "particles shorter than 83 μm were most relevant to trigger this effect mechanism [tissue translocation]",
+      "relevant for particle sizes between 1 and 5000 μm [food dilution]",
+      "relevant for particle sizes between 1 and 83 μm [tissue translocation]"
+    ],
+    "key_metrics_output": [
+      "thresholds ranging from ~ 0.5 to 35 particles/L [food dilution]",
+      "thresholds ranging from ~ 60 to 4100 particles/L [tissue translocation]",
+      "estimated threshold values for food dilution ranged between 0.3 and 34 particles/L (mass equivalent of 0.05 to 6 mg/L)",
+      "estimated threshold values for tissue translocation ranged between 60 and 4110 particles/L (mass equivalent between 10 and 676 mg/L)",
+      "species sensitivity distribution (SSD) approach",
+      "hazard concentration (HC) levels"
+    ],
+    "abstract": [
+      "we introduce a risk management framework for aquatic ecosystems that identifies four critical management thresholds",
+      "The four thresholds were derived using a species sensitivity distribution (SSD) approach and the best available data from the peer-reviewed literature",
+      "This included a total of 290 data points extracted from 21 peer-reviewed microplastic toxicity studies",
+      "critical thresholds for two effects mechanisms: food dilution with thresholds ranging from ~ 0.5 to 35 particles/L, and tissue translocation with thresholds ranging from ~ 60 to 4100 particles/L",
+      "assigned high confidence to the management framework and associated analytical approach for developing thresholds, and very low to high confidence in the numerical thresholds"
+    ]
+  }
+}

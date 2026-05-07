@@ -1,0 +1,19 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "toxicity data, hazard characterization, risk assessment, ecological health-based thresholds, species sensitivity distributions, dose-response data, organism-level and molecular/cellular endpoints",
+  "abstract": "In 2021 the Toxicity of Microplastics Explorer (ToMEx, https://microplastics.sccwrp.org) was released as an open source, open access database and web application for microplastics toxicity. Since then, it has been utilized by the microplastic research community for the exploration, visualization, and analysis of toxicity data for both hazard characterization and risk assessment. The peer-reviewed literature has continued to grow exponentially, making ToMEx out-of-date. To ensure the continued utility of ToMEx, an international crowd-sourcing approach was utilized to update ToMEx by extracting data from additional studies published since the original release. Through this process, both the aquatic and human health ToMEx databases roughly doubled in size, and modest increases in data diversity (e.g., number of species represented, types of test particles) were observed in the aquatic organisms database. However, most trends (e.g., greater toxicities observed with smaller particle sizes, lack of dose–response data etc.) observed in the first iteration of ToMEx remained constant. A previously developed framework for deriving ecological health-based microplastic thresholds using species sensitivity distributions was reapplied to determine how thresholds and their associated uncertainty intervals would change following the database update. Twelve new studies passed minimum screening criteria and were deemed fit for the purpose of threshold derivation. The addition of new data allowed for the separation of freshwater and marine compartments which had previously been combined due to a lack of applicable toxicity data for freshwater species. When molecular and cellular level endpoints were included, freshwater thresholds were comparable or increased from values calculated using previous data (-5 to 2.5-fold change) whereas marine thresholds dramatically decreased (-5000 to -29-fold change). However, when endpoints were restricted to organism and above, marine and freshwater thresholds were comparable to those calculated previously (-20 to 14-fold change). Confidence intervals for both marine and freshwater thresholds remained wide. The doubling of the database increases the value of ToMEx for researchers, particularly those focused on characterizing hazards associated with microplastics. Its utility remains limited for environmental managers as 89% of studies in ToMEx 2.0 failed to meet minimum screening criteria for threshold derivation, highlighting the need to generate fit-for-purpose toxicity data for threshold development. However, ToMEx continues to be a useful research tool, and future iterations could become even more powerful through novel artificial intelligence applications to streamline data curation and even predict toxicological outcomes.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "exploration, visualization, and analysis of toxicity data for both hazard characterization and risk assessment",
+      "greater toxicities observed with smaller particle sizes, lack of dose–response data",
+      "deriving ecological health-based microplastic thresholds using species sensitivity distributions",
+      "molecular and cellular level endpoints",
+      "organism and above"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

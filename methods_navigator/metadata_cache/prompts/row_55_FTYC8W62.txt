@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: van Mourik et al., 2021
+Year: 2021
+Full Title: Results of WEPAL-QUASIMEME/NORMANs first global interlaboratory study on microplastics reveal urgent need for harmonization
+DOI/URL: https://doi.org/10.1016/j.scitotenv.2021.145071
+Existing Particle Size Range: Multiple size fractions tested across DW and SW matrices
+Existing Key Metrics / Output: Extraction efficiency by matrix; method comparison; background particle levels
+
+Zotero metadata:
+Title: Results of WEPAL-QUASIMEME/NORMANs first global interlaboratory study on microplastics reveal urgent need for harmonization
+DOI: 10.1016/j.scitotenv.2021.145071
+Date: 2021-06-00 06/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+To survey the conformity and quality of results among laboratories for microplastics determination worldwide, an international laboratory intercomparison and development exercise was organized. The 34 participants were requested to determine the polymer type and number or mass of polymer particles in 12 samples, i.e. six samples containing of pre-production pellets, ﬁve dissolvable soda tablets containing different (smaller) polymer particles and one blank soda tablet. A novel method for providing the test materials in aluminium strips was used. Thirty laboratories (88%) submitted data using their own method of choice, resulting in a variety of identiﬁcation and quantiﬁcation methods (n = 7). The majority of the labs (53–100%) correctly identiﬁed the type of polymer in all samples but one. The performance of the laboratories in quantifying and weighing the pellets was very good. The analysis of the number of the particles in the soda tablets varied considerably between laboratories (29–91%). The results of this study highlight the complexity of microplastics analysis and the need for harmonization of both reporting format and methods. Continued development and assessment of the comparability among analytical methods and laboratories are urgently needed to support monitoring programmes, research and decision-making.
+
+Context source: zotero_abstractNote
+
+Source context:
+To survey the conformity and quality of results among laboratories for microplastics determination worldwide, an international laboratory intercomparison and development exercise was organized. The 34 participants were requested to determine the polymer type and number or mass of polymer particles in 12 samples, i.e. six samples containing of pre-production pellets, ﬁve dissolvable soda tablets containing different (smaller) polymer particles and one blank soda tablet. A novel method for providing the test materials in aluminium strips was used. Thirty laboratories (88%) submitted data using their own method of choice, resulting in a variety of identiﬁcation and quantiﬁcation methods (n = 7). The majority of the labs (53–100%) correctly identiﬁed the type of polymer in all samples but one. The performance of the laboratories in quantifying and weighing the pellets was very good. The analysis of the number of the particles in the soda tablets varied considerably between laboratories (29–91%). The results of this study highlight the complexity of microplastics analysis and the need for harmonization of both reporting format and methods. Continued development and assessment of the comparability among analytical methods and laboratories are urgently needed to support monitoring programmes, research and decision-making.

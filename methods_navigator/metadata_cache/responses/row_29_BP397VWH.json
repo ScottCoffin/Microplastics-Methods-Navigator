@@ -1,0 +1,25 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Microplastic particle count, polymer type, morphology, size distribution, background contamination characterization, recovery rates by sampling device",
+  "abstract": "Standard operating procedures for the collection of surface sediment and aquatic biota samples for microplastics analysis. The document presents expert-consensus protocols developed through a workshop convening international microplastics experts. For surface sediment, a sampling depth of 5 cm is recommended using either a Van Veen sampler (non-wadeable conditions) or sediment corer (wadeable conditions), based on evidence that highest microplastic concentrations occur in the top 2.5-5 cm and this depth represents the zone where most benthic organisms reside. For aquatic biota, guidance addresses taxa selection, sample size, tissue mass recommendations, and collection procedures for bivalves and fish. Both protocols include detailed procedures for mitigation and characterization of background contamination, a critical challenge in microplastics research. The procedures were developed based on available scientific literature without requiring experimental evaluation for sediment and biota matrices, though stormwater collection methods require further evaluation.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "microplastic particles inadvertently introduced during sample collection",
+      "spiked microplastic recovery rates",
+      "polymer types",
+      "particle characteristics such as morphology, size, weathering, and density",
+      "background contamination rates must be quantified and characterized"
+    ],
+    "abstract": [
+      "Standard Operating Procedures for the Collection of Samples for Microplastics Analysis Part 1: Surface Sediment and Aquatic Biota",
+      "sampling depth of 5 cm",
+      "Van Veen sampler or sediment corer",
+      "highest concentrations in the top 2.5-5 cm of sediment",
+      "mitigation and characterization of background contamination",
+      "taxa selection, sample size, and tissue mass recommendations",
+      "Experts agreed that there was enough reliable data already available in the scientific literature to proceed with drafting standard operating procedures without experimental evaluation"
+    ]
+  }
+}

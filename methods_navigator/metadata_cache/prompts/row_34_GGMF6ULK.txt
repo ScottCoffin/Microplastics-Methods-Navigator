@@ -1,0 +1,350 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Cowger et al., 2020b
+        Year: 2020
+        Full Title: Reporting guidelines to increase the reproducibility and comparability of research on microplastics
+        DOI/URL: https://doi.org/10.1177/0003702820930292
+        Existing Particle Size Range: >0.3 mm (manta trawl); <0.3 mm (pump sampling)
+        Existing Key Metrics / Output: Count and polymer type in water column; multi-matrix comparison across SF Bay
+
+        Zotero metadata:
+        Title: Reporting guidelines to increase the reproducibility and comparability of research on microplastics
+        DOI: 
+        Date: 2020-00-00 2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/341322548 
+
+## Reporting Guidelines to Increase the Reproducibility and Comparability of Research on Microplastics 
+
+**Article** _in_ Applied Spectroscopy · May 2020 
+
+DOI: 10.1177/0003702820930292 
+
+**==> picture [403 x 166] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+CITATIONS READS<br>0 168<br>23 authors , including:<br>Win Colton Cowger Amy Lusher<br>University of California, Riverside Norwegian Institute for Water Research<br>9 PUBLICATIONS 3 CITATIONS 60 PUBLICATIONS 2,769 CITATIONS<br>SEE PROFILE SEE PROFILE<br>Hannah De Frond Susanne Brander<br>University of Toronto Oregon State University<br>6 PUBLICATIONS 64 CITATIONS 46 PUBLICATIONS 508 CITATIONS<br>SEE PROFILE SEE PROFILE<br>**----- End of picture text -----**<br>
+
+
+**Some of the authors of this publication are also working on these related projects:** 
+
+**==> picture [28 x 27] intentionally omitted <==**
+
+**==> picture [28 x 27] intentionally omitted <==**
+
+Identifying Sources of Plastic Pollution View project 
+
+Developing Web Tools to Support Anthropogenic Litter Research View project 
+
+All content following this page was uploaded by Win Colton Cowger on 13 May 2020. 
+
+The user has requested enhancement of the downloaded file. 
+
+1 **Title: Reporting guidelines to increase the** 
+
+## 2 **reproducibility and comparability of** 
+
+## 3 **research on microplastics** 
+
+4 
+
+## 5 
+
+## **Authors:** 
+
+- 6 Win Cowger[1] , Andy M. Booth[2] , Bonnie M. Hamilton[3] , Clara Thaysen[3] , Sebastian 
+
+- 7 Primpke[4] , Keenan Munno[3] , Amy L. Lusher[5] , Alexandre Dehaut[6] , Vitor P. Vaz[7] , Max 
+
+- 8 Liboiron[8] , Lisa I. Devriese[9] , Ludovic Hermabessiere[3] , Chelsea Rochman[3] , Samantha N. 
+
+- 9 Athey[3] , Jennifer M. Lynch[10,11] , Hannah De Frond[3] , Andrew Gray[1] , Oliver A.H. Jones[12] 
+
+- 10 Susanne Brander[13] , Clare Steele[14] , Shelly Moore[15] , Alterra Sanchez[16] , Holly Nel[17] . 
+
+- 11 1. University of California, Riverside, 900 University Ave, Riverside, California, 92521, United 12 States of America 
+
+- 13 2. SINTEF Ocean, SINTEF Sealab, Brattørkaia 17 C, 7010 Trondheim 
+
+- 14 3. University of Toronto, Department of Ecology and Evolutionary Biology, 25 Willcocks Street, 15 Toronto, Ontario, Canada M5S 3B2 
+
+- 16 4. Alfred-Wegener-Institute Helmholtz Centre for Polar and Marine Research, Biologische Anstalt 17 Helgoland, Kurpromenade 201, 27498 Helgoland, Germany. 
+
+- 18 5. Norwegian Institute for Water Research (NIVA), Gaustadalléen 21, Oslo, Norway, NO-0349 
+
+- 19 6. ANSES - Laboratoire de Sécurité des Aliments, Boulevard du Bassin Napoléon, 62200 Boulogne20 sur-Mer (France) 
+
+- 21 7. Federal University of Santa Catarina, Eng. Agronômico Andrei Cristian Ferreira St., Florianópolis, 22 Santa Catarina, 88040-900 
+
+- 23 8. Memorial University, IIC-3003. Memorial University of Newfoundland St. John's, NL, Canada A1C 24 5S7 
+
+- 25 9. Flanders Marine Institute (VLIZ), InnovOcean site, Wandelaarkaai 7, 8400 Ostend, Belgium 
+
+- 26 10. Chemical Sciences Division, National Institute of Standards and Technology, Waimanalo, HI 27 96795 
+
+- 28 11. Center for Marine Debris Research, Hawaii Pacific University, Center for Marine Debris 29 Research, 41-202 Kalanianaole Hwy Ste 9, Waimanalo, HI 96795 
+
+- 30 12. RMIT University, Australian Centre for Research on Separation Science (ACROSS), School of 31 Science, RMIT University, Bundoora West Campus, PO Box 71, Bundoora, Victoria 3083, 32 Australia 
+
+- 33 13. Oregon State University, 1007 Agricultural and Life Sciences Building 
+
+- 34 14. California State University, Channel Islands, 1 University Drive, California State University, 35 Channel Islands, Camarillo CA 93012 
+
+- 36 15. San Francisco Estuary Institute, 4911 Central Ave, Richmond, CA 94804 
+
+- 37 16. University of Maryland College Park, Civil and Environmental Engineering, 1173 Glenn L. Martin 38 Hall, 4298 Campus Dr. College Park, MD 20742 
+
+- 39 17. University of Birmingham, School of Geography, Earth and Environmental Sciences, University of 40 Birmingham, Birmingham, Edgbaston, B15 2TT, UK 
+
+41 
+
+- 42 
+
+- 43 
+
+44 **Visual Abstract:** 
+
+45 
+
+**==> picture [431 x 388] intentionally omitted <==**
+
+## 46 
+
+## **Abstract:** 
+
+- 47 The ubiquitous pollution of the environment with microplastics - a diverse suite of 
+
+- 48 contaminants - is of growing concern for science and currently receives considerable 
+
+- 49 public, political, and academic attention. The potential impact of microplastics in the 
+
+- 50 environment has prompted a great deal of research in recent years. Many diverse 
+
+- 51 methods have been developed to answer different questions about microplastic 
+
+- 52 pollution, from sources, transport, and fate in the environment, and about effects on 
+
+- 53 humans and wildlife. These methods are often insufficiently described, making studies 
+
+- 54 neither comparable nor reproducible. The proliferation of new microplastic investigations 
+
+- 55 and cross-study syntheses to answer larger scale questions are hampered. We - a 
+
+- 56 diverse group of 23 researchers - think these issues can begin to be overcome through 
+
+- 57 the adoption of a set of reporting guidelines. This collaboration was created using an 
+
+- 58 open science framework that we detail for future use. Here, we suggest harmonized 
+
+- 59 reporting guidelines for microplastic studies in environmental and laboratory settings 
+
+- 60 through all steps of a typical study, including best practices for reporting materials, 
+
+- 61 quality assurance/quality control, data, field sampling, sample preparation, microplastic 
+
+- 62 identification, microplastic categorization, microplastic quantification, and considerations 
+
+- 63 for toxicology studies. We developed three easy to use documents - a detailed 
+
+- 64 document, a checklist, and a mind map - that can be used to reference the reporting 
+
+- 65 guidelines quickly. We intend that these reporting guidelines support the annotation, 
+
+- 66 dissemination, interpretation, reviewing, and synthesis of microplastic research. 
+
+- 67 Through open access licensing (CC BY 4.0), these documents aim to increase the 
+
+- 68 validity, reproducibility, and comparability of studies in this field for the benefit of the 
+
+- 69 global community. 
+
+70 **Keywords** 
+
+- 71 Harmonization; Standardization; Plastic; Microplastic; Metadata; Reproducibility; Open 
+
+- 72 Science; Methods; Reporting guidelines; Comparability 
+
+## 73 **Introduction:** 
+
+- 74 The state of method reporting for investigations on microplastic pollution is currently at a 
+
+- 75 turning point.[1] As this new research field evolves, it is striving to establish a harmonized 
+
+- 76 community approach to developing, applying, and reporting methodologies. Two of the 
+
+- 77 main purposes for reporting scientific methods are to allow for their replication and 
+
+- 78 enable data to be directly comparable among studies. For example, in the 
+
+- 79 environmental sciences, data from studies might be compared during risk assessments, 
+
+- 80 synthesized for meta-analyses, or used to inform policy creation and monitoring 
+
+- 81 guidelines. Issues with reproducibility and comparability of both data and methods are 
+
+- 82 common across all scientific fields,[2–4] including microplastic research.[1,5,6] Here, we - a 
+
+- 83 diverse group of 23 microplastic researchers from around the world - present a 
+
+- 84 proposed step towards addressing this issue for microplastics, first by capturing what is 
+
+- 85 already in published literature, and then by prioritizing which types of information should 
+
+- 86 be included in research to reach this goal. Our four aims are to 1) review key 
+
+- 87 reproducibility and comparability problems and solutions for microplastic research; 2) 
+
+- 88 discuss the open science framework used to identify and prioritize key methodological 
+
+- 89 parameters suggested here; 3) develop reporting guidelines for researchers to use 
+
+- 90 when reporting, comparing, and developing methods; and 4) present our vision for 
+
+- 91 future microplastic research. 
+
+92 
+
+## 93 **The reproducibility and comparability** 
+
+## 94 **turning point in microplastics research** 
+
+- 95 It is well-known that microplastics have a ubiquitous presence in the environment,[7–10] 
+
+- 96 and the potential harm microplastics can cause to species across trophic levels has 
+
+- 97 been recently reviewed.[11,12] While there is mixed evidence for effects, a range of 
+
+- 98 suborganismal, organismal and population-level responses have been reported.[6,11,13] 
+
+- 99 These results have spurred substantial research activity, as evidenced by the continued 
+
+- 100 exponential growth in the published literature on the topic of microplastics (Figure 1). 
+
+101 
+
+102 
+
+**==> picture [461 x 345] intentionally omitted <==**
+
+- 103 Figure 1: Data acquired from Scopus on April 8th, 2020 using the search term "microplastic*" 
+
+- 104 and querying the field of Environmental Sciences. Publications are annual sums. The figure was 105 created using Python 3.6.9. 
+
+- 106 
+
+- 107 The rapid expansion of research activities and the resulting data generated in the field 
+
+- 108 of microplastics has resulted in a diverse suite of methods and non-standardized 
+
+- 109 approaches to reporting sample collection, extraction, and analysis.[1,14–21] Each method 
+
+- 110 has its strengths and weaknesses, and there are continued efforts to optimize existing 
+
+- 111 methods and develop new ones that may improve throughput, detection limit, and 
+
+- 112 reproducibility. The development of new methods continues because currently there is 
+
+- 113 no 'catch-all' combination of methods for sampling, extracting, analyzing, and reporting 114 microplastics that is capable of accurately characterizing and quantifying all 
+
+- 115 microplastics present in a sample.[22,23] This is because microplastics are a diverse suite 116 of contaminants that vary greatly in morphology, chemical properties, texture, color, 
+
+- 117 density, and size.[24] Moreover, environments and research goals are diverse and a 
+
+- 118 universal solution is unable to capture this diversity, especially as research matures in 
+
+- 119 this rapidly expanding field. With this in mind, methods should be chosen based on the 120 scientific question and reported with enough detail to be comparable and reproducible. 
+
+- 121 Comparability between studies facilitates meta-analysis,[25,26] which has been difficult for 122 microplastics due to the diversity of methods employed and study details reported.[17–21] 123 Incomparability is caused by studies published without documenting the elements 124 essential for translating units and metrics to others that are commonly used in the field. 
+
+- 125 For example, studies that employ Raman spectroscopy might not be comparable to 126 those that employ Fourier-transformed infrared (FTIR) spectroscopy if neither describes 127 their analysis and data transformation steps.[18,27] Additionally, aquatic studies that use 128 water volume grab sampling are not comparable to studies that use net sampling if the 129 studies do not describe the mesh size used, depth of sample collection, or the sample 130 volume.[28] In another example, ingestion studies on the same species of animal are not 131 comparable if they fail to mention which part of the gastrointestinal tract was analyzed 132 (e.g., just the gizzard or the gizzard and proventriculus of birds).[15,17] Moreover, a study 133 using different chemical digestion methods to measure ingestion may be incomparable 134 because some digestion procedures destroy certain plastics.[29] Regardless of diverse 135 methods and wherever possible, reporting raw - or less processed - data would allow 
+
+- 136 reverse engineering and harmonization of some techniques. Still, raw data are seldom 137 reported.[16,30] 
+
+- 138 Factors that cause incomparability can also hinder the reproducibility of research. 
+
+- 139 Irreproducible research occurs, in part, when the elements that are critical for 
+
+- 140 reproducing similar results are not elucidated. Reproducibility allows responsible 
+
+- 141 decision-making and expansion of protocols. For example, software names should be 
+
+- 142 reported when used because software often has proprietary algorithms and may not be 
+
+- 143 reproducible unless the same software is used. In another example, if a study that 
+
+- 144 employs organic matter digestion does not describe the chemical solution used, its 
+
+- 145 manufacturer, and concentration used to digest the sample, the study cannot be 146 reproduced. 
+
+- 147 Reporting guidelines provide a structured framework where method information critical 
+
+- 148 to comparing and reproducing research can be referenced. There is a critical need for 
+
+- 149 reporting guidelines in microplastic research as already initiated with the Minimum 
+
+- 150 Information for Microplastic Studies "MIMS" concept for the study of microplastics in 
+
+- 151 seafood,[1] the minimum information for publication of infrared-related data,[27] and other 
+
+- 152 works assessing data quality in microplastic studies.[31–33] The reporting guidelines we 
+
+- 153 developed attempt to build on previous work and expand the scope to more 
+
+- 154 methodological components in microplastic research. This study leverages the expertise 
+
+- 155 of a diverse group of researchers from around the world to cover the breadth of the 
+
+- 156 field. To be as transparent as possible, we elaborate on the reasons why each reporting 
+
+- 157 guideline is necessary, and provide examples for each. Other fields, like molecular 
+
+- 158 biology,[34] proteomics,[35] and transcriptomics,[36] already have highly successful examples 
+
+- 159 of reporting guidelines that have been widely adopted by their field, and we hope this 
+
+- 160 work serves a similar purpose in our field. 
+
+## 161 
+
+## **Methods:** 
+
+- 162 As a scientific community, we recognize that the need for reporting guidelines for 
+
+- 163 microplastic methods is best addressed through a collaborative open science

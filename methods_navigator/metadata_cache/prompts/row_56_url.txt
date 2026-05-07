@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: GESAMP, 2019
+Year: 2019
+Full Title: Guidelines for the monitoring and assessment of plastic litter and microplastics in the ocean
+DOI/URL: http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+Guidelines for the Monitoring and Assessment of Plastic Litter in the Ocean | GESAMP GESAMP Publications You are now on: Home Publications Guidelines for the Monitoring an… Guidelines for the Monitoring and Assessment of Plastic Litter in the Ocean 2019 #99 (123p.) Author(s): GESAMP Publisher(s): GESAMP Journal Series GESAMP Reports and Studies The principle purpose of this report is to provide recommendations, advice and practical guidance, for the establishment of programmes to monitor and assess the distribution and abundance of plastic litter, also referred to as plastic debris, in the ocean. The intention is to promote a more harmonised approach to the design of sampling programmes, the selection of appropriate indicators (i.e. type of sample), the collection of samples or observations, the characterisation of sampled material, dealing with uncertainties, data analysis and reporting the results and also to inform the establishment of national and regional field monitoring programmes. Downloads rs99e.pdf (5,732 kB) Back to Search Related Publications Sources, fate and effects of microplastics in the marine environment (Part 1) Sources, Fate and Effects of Microplastics in the Marine Environment (Part 2) View all Publications 50th Anniversary About History Objectives Members Executive Committee Our Work Work Programme Working Groups Task Teams Scoping Activities Publications Meetings News Contact Sign up to our latest news & activities Sign Up Terms & Conditions Privacy Policy Disclaimer Copyright © 2017 - 2026 International Maritime Organization (IMO). All rights reserved. International Maritime Organization (IMO) 4 Albert Embankment London SE1 7SR United Kingdom Tel: +44 (0) 20 7735 7611 Fax: +44 (0) 20 7735 7611

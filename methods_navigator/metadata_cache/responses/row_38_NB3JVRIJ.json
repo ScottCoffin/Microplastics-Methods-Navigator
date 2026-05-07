@@ -1,0 +1,24 @@
+{
+  "scope": "Marine bird plastic ingestion studies; collection, processing, and reporting of ingested plastic and litter in seabird samples (carcasses, regurgitations, pellets)",
+  "particle_size_range": "20–5000 µm (particles, area-equivalent diameter); 20–15000 µm (fibres, length)",
+  "key_metrics_output": "Particle count and characterization by polymer type; size class distribution; metrics for ingested plastics; standardized reporting of plastic debris in seabird samples",
+  "abstract": "Marine plastic pollution is a significant environmental contaminant. Lack of consistency in sample collection and processing impedes meta-analyses and large-scale comparisons in plastic ingestion research, particularly for seabirds. This paper provides synthesized best practice recommendations for seabird plastic ingestion studies, including guidance on sample collection (carcasses, regurgitations, pellets), processing to prevent cross-contamination, size class assessment, removal of sediment and biological material, and standardized metrics and data presentation. Techniques are generalizable to other taxa.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "20–5000 µm (particles, area-equivalent diam.); 20–15000 µm (fibres, length)",
+      "a discussion of what size class of microplastics can be assessed in each sample type"
+    ],
+    "key_metrics_output": [
+      "metrics and data presentation of ingested plastics are briefly reviewed",
+      "standardized techniques to remove sediment and biological material",
+      "polymer type characterization"
+    ],
+    "abstract": [
+      "Marine plastic pollution is an environmental contaminant of significant concern",
+      "lack of consistency in sample collection and processing that continues to impede meta-analyses",
+      "recommendations specific for seabirds and plastic ingestion studies that include best practices in relation to sample collection, processing, and reporting",
+      "guidance for how carcasses, regurgitations, and pellets should be handled"
+    ]
+  }
+}

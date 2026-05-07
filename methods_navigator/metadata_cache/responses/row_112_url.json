@@ -1,0 +1,19 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type (PE, PP, PS, PVC, PMMA, PC), mass concentration, analytical recovery (78.7–90.1%), quantification limits (0.014–0.29 µg)",
+  "abstract": "A pyrolysis-gas chromatography-mass spectrometry protocol was developed for monitoring six common polymers (polyethylene, polypropylene, polystyrene, polyvinyl chloride, polymethyl methacrylate, and polycarbonate) in environmental samples. Polymer-specific solvent systems were used for calibration. Testing on spiked soil matrices demonstrated analytical recovery of 78.7–90.1% with polymer quantification limits ranging from 0.014 to 0.29 µg.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "polymer quantification limits ranging from 0.014 µg to 0.29 µg",
+      "Results on spiked soil matrices showed 78.7–90.1% analytical recovery",
+      "monitoring of polyethylene, polypropylene, polystyrene, polyvinyl chloride, polymethyl methacrylate, and polycarbonate"
+    ],
+    "abstract": [
+      "The ubiquitous occurrence of microplastics in ecosystems and living organisms is an emerging issue of health concern, yet robust risk assessment is limited by the absence of standardized analytical methods.",
+      "We developed a pyrolysis-gas chromatography-mass spectrometry protocol for the monitoring of polyethylene, polypropylene, polystyrene, polyvinyl chloride, polymethyl methacrylate, and polycarbonate in environmental samples.",
+      "Results on spiked soil matrices showed 78.7–90.1% analytical recovery and polymer quantification limits ranging from 0.014 µg to 0.29 µg."
+    ]
+  }
+}

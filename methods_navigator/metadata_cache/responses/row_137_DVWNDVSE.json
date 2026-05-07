@@ -1,0 +1,18 @@
+{
+  "scope": "PET microplastic particles in water; certified reference material",
+  "particle_size_range": "~10 μm",
+  "key_metrics_output": "Certified count-based reference material for extraction and spectroscopy method validation",
+  "abstract": "EURM®-060 is a reference material (RM) that, upon reconstitution, provides polyethylene terephthalate (PET) microplastic particles in a water matrix. It was produced in accordance with ISO 17034:2016 [1] and ISO 33405:2024 [2].",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "~10 µm PET particles in water matrix (certified reference material EURM-060)"
+    ],
+    "key_metrics_output": [
+      "Certified count-based reference material for extraction/spectroscopy method validation"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

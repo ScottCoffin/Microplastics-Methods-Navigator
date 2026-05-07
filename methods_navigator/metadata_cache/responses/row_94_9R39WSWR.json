@@ -1,0 +1,20 @@
+{
+  "scope": "Microfilaments/microplastics from synthetic textiles; standard preparation and detection in aqueous matrices",
+  "particle_size_range": "0.2 mm (200 μm length)",
+  "key_metrics_output": "Microfilament count, detection probability, concentration (microfilaments/L), polymer type identification",
+  "abstract": "Synthetic clothing represents a primary source of environmental pollution because of shedding of microfilaments during laundry washing or in textile processes. Although many approaches can be used for the evaluation of microplastic, there are no precise guideline to follow for the analysis labs. Here, an accurate method for the preparation of microfilaments standard suspensions to facilitate lab tests and the monitoring of microplastic in different matrices was developed. Different standard suspensions were prepared by using five different synthetic threads consisting of a different number of filaments cut with a predetermined length of 0.2 mm suspended in three different volumes of water. The suspensions were filtered and the microfilaments were counted. The number of microfilaments for each polymer solution were statistically elaborated with a logit model and the results showed that the probability of detecting them is higher than 95% when the concentration of microfilaments/L is lower than 200. Moreover, a relationship between the theoretical microfilaments contained in the samples and the detection probability of the single microfilament, for each suspension volume was highlighted.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "filaments cut with a predetermined length of 0.2 mm"
+    ],
+    "key_metrics_output": [
+      "microfilaments were counted",
+      "probability of detecting them is higher than 95% when the concentration of microfilaments/L is lower than 200",
+      "relationship between the theoretical microfilaments contained in the samples and the detection probability"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

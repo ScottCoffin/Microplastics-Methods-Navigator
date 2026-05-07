@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Mossotti et al., 2021
+Year: 2021
+Full Title: Preparation and analysis of standards containing microfilaments/microplastic with fibre shape
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2020.129410
+Existing Particle Size Range: Not specified (risk assessment framework; no primary analytical SOP)
+Existing Key Metrics / Output: Qualitative risk characterization; exposure and hazard assessment framework
+
+Zotero metadata:
+Title: Preparation and analysis of standards containing microfilaments/microplastic with fibre shape
+DOI: 10.1016/j.chemosphere.2020.129410
+Date: 2021-05-01 2021-05-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Synthetic clothing represents a primary source of environmental pollution because of shedding of microfilaments during laundry washing or in textile processes. Although many approaches can be used for the evaluation of microplastic, there are no precise guideline to follow for the analysis labs. Here, an accurate method for the preparation of microfilaments standard suspensions to facilitate lab tests and the monitoring of microplastic in different matrices was developed. Different standard suspensions were prepared by using five different synthetic threads consisting of a different number of filaments cut with a predetermined length of 0.2 mm suspended in three different volumes of water. The suspensions were filtered and the microfilaments were counted. The number of microfilaments for each polymer solution were statistically elaborated with a logit model and the results showed that the probability of detecting them is higher than 95% when the concentration of microfilaments/L is lower than 200. Moreover, a relationship between the theoretical microfilaments contained in the samples and the detection probability of the single microfilament, for each suspension volume was highlighted.
+
+Context source: zotero_abstractNote
+
+Source context:
+Synthetic clothing represents a primary source of environmental pollution because of shedding of microfilaments during laundry washing or in textile processes. Although many approaches can be used for the evaluation of microplastic, there are no precise guideline to follow for the analysis labs. Here, an accurate method for the preparation of microfilaments standard suspensions to facilitate lab tests and the monitoring of microplastic in different matrices was developed. Different standard suspensions were prepared by using five different synthetic threads consisting of a different number of filaments cut with a predetermined length of 0.2 mm suspended in three different volumes of water. The suspensions were filtered and the microfilaments were counted. The number of microfilaments for each polymer solution were statistically elaborated with a logit model and the results showed that the probability of detecting them is higher than 95% when the concentration of microfilaments/L is lower than 200. Moreover, a relationship between the theoretical microfilaments contained in the samples and the detection probability of the single microfilament, for each suspension volume was highlighted.

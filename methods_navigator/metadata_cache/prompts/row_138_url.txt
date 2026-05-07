@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: EU DWD, 2020
+Year: 2020
+Full Title: Directive (EU) 2020/2184 on the quality of water intended for human consumption (recast Drinking Water Directive)
+DOI/URL: https://eur-lex.europa.eu/eli/dir/2020/2184/oj
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+overview Legal acts Consolidated texts International agreements Preparatory documents EFTA documents Lawmaking procedures Summaries of EU legislation Browse by EU institutions European Parliament European Council Council of the European Union European Commission Court of Justice of the European Union European Central Bank European Court of Auditors European Economic and Social Committee European Committee of the Regions Browse by EuroVoc EU case-law Case-law Reports of cases Directory of case-law Official Journal Access to the Official Journal Official Journal L series daily view Official Journal C series daily view Browse the Official Journal Legally binding printed editions Special edition National law and case-law National transposition National case-law JURE case-law Information Themes in focus EUR-Lex developments Statistics ELI register What is ELI? ELI background Why implement ELI? Countries implementing ELI Testimonials How to implement ELI Glossary EU budget online Quick search Use quotation marks to search for an "exact phrase". Append an asterisk ( ) to a search term to find variations of it (transp , 32019R ). Use a question mark ( ) instead of a single character in your search term to find variations of it (ca e finds case, cane, care). Search tips Need more search options? Use the Advanced search Document 32020L2184 Help Print Text Document information Procedure National transposition Document summary Up-to-date link Permanent link Download notice Save to My items Create an email alert Create an RSS alert Table of contents Hide table of contents All consolidated versions Hide consolidated versions 23/12/2020 Legal act Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast) (Text with EEA relevance) Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast) (Text with EEA relevance) Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast) (Text with EEA relevance) OJ L 435, 23.12.2020, pp. 1–62 (BG, ES, CS, DA, DE, ET, EL, EN, FR, GA, HR, IT, LV, LT, HU, MT, NL, PL, PT, RO, SK, SL, FI, SV) In force ELI: http://data.europa.eu/eli/dir/2020/2184/oj Expand all Collapse all Languages, formats and link to OJ Language HTML Toggle Dropdown PDF Toggle Dropdown Official Jour

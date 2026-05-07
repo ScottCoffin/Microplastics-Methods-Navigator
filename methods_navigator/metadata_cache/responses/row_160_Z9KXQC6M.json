@@ -1,0 +1,17 @@
+{
+  "scope": "marine and terrestrial biota; plastics monitoring methodologies",
+  "particle_size_range": null,
+  "key_metrics_output": "technological readiness level assessment, analytical pipeline reproducibility, method harmonization for plastic detection in biota",
+  "abstract": "Plastics are persistent in the environment and may be ingested by organisms where they may cause physical harm or release plastic additives. Monitoring is a crucial mechanism to assess the risk of plastics to the marine and terrestrial ecosystem. Unfortunately, due to unharmonised procedures, it remains difficult to compare the results of different studies. This publication, as part of the Horizon project EUROqCHARM, aims to identify the properties of the available analytical processes and methods for the determination of plastics in biota. Based on a systematic review, reproducible analytical pipelines were examined and the technological readiness levels were assessed so that these methods may eventually (if not already) be incorporated into (harmonised) monitoring programs where biota are identified as indicators of plastic pollution.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "identify the properties of the available analytical processes and methods for the determination of plastics in biota",
+      "reproducible analytical pipelines were examined and the technological readiness levels were assessed"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

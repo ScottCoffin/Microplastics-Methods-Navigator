@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Munno et al., 2023
+Year: 2023
+Full Title: Patterns of microparticles in blank samples: A study to inform best practices for microplastic analysis
+DOI/URL: https://doi.org/10.1016/j.chemosphere.2023.138883
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Patterns of microparticles in blank samples: A study to inform best practices for microplastic analysis
+DOI: 10.1016/j.chemosphere.2023.138883
+Date: 2023-08-01 2023-08-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Quality assurance and quality control (QA/QC) techniques are critical to analytical chemistry, and thus the analysis of microplastics. Procedural blanks are a key component of QA/QC for quantifying and characterizing background contamination. Although procedural blanks are becoming increasingly common in microplastics research, how researchers acquire a blank and report and/or use blank contamination data varies. Here, we use the results of laboratory procedural blanks from a method evaluation study to inform QA/QC procedures for microplastics quantification and characterization. Suspected microplastic contamination in the procedural blanks, collected by 12 participating laboratories, had between 7 and 511 particles, with a mean of 80 particles per sample (±SD 134). The most common color and morphology reported were black fibers, and the most common size fraction reported was 20–212 μm. The lack of even smaller particles is likely due to limits of detection versus lack of contamination, as very few labs reported particles <20 μm. Participating labs used a range of QA/QC techniques, including air filtration, filtered water, and working in contained/‘enclosed’ environments. Our analyses showed that these procedures did not significantly affect blank contamination. To inform blank subtraction, several subtraction methods were tested. No clear pattern based on total recovery was observed. Despite our results, we recommend commonly accepted procedures such as thorough training and cleaning procedures, air filtration, filtered water (e.g., MilliQ, deionized or reverse osmosis), non-synthetic clothing policies and ‘enclosed’ air flow systems (e.g., clean cabinet). We also recommend blank subtracting by a combination of particle characteristics (color, morphology and size fraction), as it likely provides final microplastic particle characteristics that are most representative of the sample. Further work should be done to assess other QA/QC parameters, such as the use of other types of blanks (e.g., field blanks, matrix blanks) and limits of detection and quantification.
+
+Context source: zotero_abstractNote
+
+Source context:
+Quality assurance and quality control (QA/QC) techniques are critical to analytical chemistry, and thus the analysis of microplastics. Procedural blanks are a key component of QA/QC for quantifying and characterizing background contamination. Although procedural blanks are becoming increasingly common in microplastics research, how researchers acquire a blank and report and/or use blank contamination data varies. Here, we use the results of laboratory procedural blanks from a method evaluation study to inform QA/QC procedures for microplastics quantification and characterization. Suspected microplastic contamination in the procedural blanks, collected by 12 participating laboratories, had between 7 and 511 particles, with a mean of 80 particles per sample (±SD 134). The most common color and morphology reported were black fibers, and the most common size fraction reported was 20–212 μm. The lack of even smaller particles is likely due to limits of detection versus lack of contamination, as very few labs reported particles <20 μm. Participating labs used a range of QA/QC techniques, including air filtration, filtered water, and working in contained/‘enclosed’ environments. Our analyses showed that these procedures did not significantly affect blank contamination. To inform blank subtraction, several subtraction methods were tested. No clear pattern based on total recovery was observed. Despite our results, we recommend commonly accepted procedures such as thorough training and cleaning procedures, air filtration, filtered water (e.g., MilliQ, deionized or reverse osmosis), non-synthetic clothing policies and ‘enclosed’ air flow systems (e.g., clean cabinet). We also recommend blank subtracting by a combination of particle characteristics (color, morphology and size fraction), as it likely provides final microplastic particle characteristics that are most representative of the sample. Further work should be done to assess other QA/QC parameters, such as the use of other types of blanks (e.g., field blanks, matrix blanks) and limits of detection and quantification.

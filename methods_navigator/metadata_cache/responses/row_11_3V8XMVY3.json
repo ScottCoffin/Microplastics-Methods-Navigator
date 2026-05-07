@@ -1,0 +1,23 @@
+{
+  "particle_size_range": "< 5 mm; particles smaller than 500 μm",
+  "key_metrics_output": "particle count, particle size, particle morphology, polymer type/material identity, particle shape, recovery rate (50-150%), coefficient of variation (CV < 40%), identification accuracy, absorbance intensity, standard deviation",
+  "abstract": "Open Specy 1.0 is an updated open-source platform for automated spectroscopic analysis of microplastics using Raman and FTIR hyperspectral imaging. The software integrates automated processing algorithms (smoothing, particle compression, splitting), an expanded library of over 40,000 open-source spectra, and two machine learning classifiers (logistic regression and k-medoids). Hyperspectral smoothing achieved 96% combined recovery rate with CV of 38%, compared to 86% recovery (CV = 83%) for non-smoothed controls. Particle compression was >3× faster with similar accuracy and reduced variability. The method meets accredited laboratory standards (50-150% recovery, CV < 40%) for particle count, material type, and size simultaneously.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics, tiny plastic fragments less than 5 mm in size",
+      "hyperspectral imaging is an automated spectroscopy technique often used to assess particles smaller than 500 μm in size"
+    ],
+    "key_metrics_output": [
+      "researchers typically want to derive information about the particles' count, size, morphology, and polymer types",
+      "combined recovery rates between 50 and 150% particle counts, identities, and sizes with a coefficient of variation (CV) of less than 40%",
+      "Mean absorbance times the standard deviation provided a consistent particle identification",
+      "identified particles can be given a unique identifier and characterized by shape and size"
+    ],
+    "abstract": [
+      "Open Specy 1.0, introduces several new features, including two algorithms for automated processing (smoothing and particle compression), an extensive library containing over 40,000 open-source Raman and FTIR spectra, and two machine learning classifiers (logistic regression and k medoids)",
+      "Hyperspectral smoothing led to a 96% combined recovery rate and reduced variability (CV = 38%) compared to the 86% recovery (CV = 83%) of nonsmoothed controls",
+      "compressing spectra for particles was significantly faster (>3×) and showed similar accuracy but with reduced variability than processing each pixel individually"
+    ]
+  }
+}

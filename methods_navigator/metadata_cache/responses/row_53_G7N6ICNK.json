@@ -1,0 +1,22 @@
+{
+  "scope": "Microplastics extraction method performance across complex matrices: drinking water, fish tissue, sediment, and surface water",
+  "particle_size_range": "<20 μm to >212 μm",
+  "key_metrics_output": "Percent recovery (extraction efficiency); particle size; polymer type; morphology; color; precision; chemical identification via spectroscopy; sample processing time",
+  "abstract": "Previous studies have evaluated method performance for quantifying and characterizing microplastics in clean water, but little is known about the efficacy of procedures used to extract microplastics from complex matrices. Here we provided 15 laboratories with samples representing four matrices (i.e., drinking water, fish tissue, sediment, and surface water) each spiked with a known number of microplastic particles spanning a variety of polymers, morphologies, colors, and sizes. Percent recovery (i.e., accuracy) in complex matrices was particle size dependent, with ~60–70% recovery for particles >212 μm, but as little as 2% recovery for particles <20 μm. Extraction from sediment was most problematic, with recoveries reduced by at least one-third relative to drinking water. Though accuracy was low, the extraction procedures had no observed effect on precision or chemical identification using spectroscopy. Extraction procedures greatly increased sample processing times for all matrices with the extraction of sediment, tissue, and surface water taking approximately 16, 9, and 4 times longer than drinking water, respectively. Overall, our findings indicate that increasing accuracy and reducing sample processing times present the greatest opportunities for method improvement rather than particle iden­ tification and characterization.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "particles <20 μm",
+      "particles >212 μm"
+    ],
+    "key_metrics_output": [
+      "Percent recovery (i.e., accuracy)",
+      "variety of polymers, morphologies, colors, and sizes",
+      "precision or chemical identification using spectroscopy",
+      "sample processing times"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

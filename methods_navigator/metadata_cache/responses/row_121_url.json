@@ -1,0 +1,19 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "size distribution, agglomerate effective density, dose metrics, particle kinetics",
+  "abstract": "This protocol provides standardized methodologies for dispersion and colloidal characterization of suspended engineered nanomaterials (ENMs), and computational fate and transport modeling to calculate accurate dose metrics for in vitro cellular nanotoxicology experiments. The integrated protocol includes procedures for: (i) generation of stable ENM suspensions in cell culture media; (ii) colloidal characterization of suspended ENMs, particularly size distribution and agglomerate effective density; and (iii) numerical fate and transport modeling for determination of ENM dose delivered to cells during in vitro exposure. The complete protocol requires approximately 6–12 hours.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "size distribution and formed agglomerate effective density",
+      "properties that determine particle kinetics in an in vitro system",
+      "dose metrics for in vitro cellular nanotoxicology experiments"
+    ],
+    "abstract": [
+      "This protocol provides details for dispersion and colloidal characterization of suspended engineered nanomaterials, and computational fate and transport modeling to accurately calculate dose metrics for in vitro cellular nanotoxicology experiments.",
+      "generation of stable ENM suspensions in cell culture media; (ii) colloidal characterization of suspended ENMs, particularly of properties that determine particle kinetics in an in vitro system (size distribution and formed agglomerate effective density); and (iii) robust numerical fate and transport modeling",
+      "The entire protocol requires ∼6–12 h to complete."
+    ]
+  }
+}

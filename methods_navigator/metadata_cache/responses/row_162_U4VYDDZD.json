@@ -1,0 +1,20 @@
+{
+  "particle_size_range": "nano- and microplastic particles (NMPs)",
+  "key_metrics_output": "physicochemical properties, toxicological effects, particle characterization",
+  "abstract": "There has been an exponential increase in the number of studies reporting on the toxicological effects associated with exposure to nano and microplastic particles (NMPs). The majority of these studies, however, have used monodispersed polystyrene microspheres (PSMs) as ‘model’ particles. Here we review the differences between the manufacture and resulting physicochemical properties of polystyrene used in commerce and the PSMs most commonly used in toxicity studies.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "nano and microplastic particles (NMPs)",
+      "monodispersed polystyrene microspheres (PSMs)"
+    ],
+    "key_metrics_output": [
+      "toxicological effects associated with exposure",
+      "physicochemical properties of polystyrene",
+      "manufacture and resulting properties"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

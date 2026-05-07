@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Recovery efficiency, polymer type identification, organic matter removal efficiency, density separation performance, ATR-FTIR spectroscopy analysis",
+  "abstract": null,
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Recovery efficiencies were calculated and the impact of the reagents on the microplastics was quantified using Attenuated Total Reflectance (ATR) Fourier Transform-Infrared (FTIR) spectroscopy",
+      "The efficiency of organic matter removal using hydrogen peroxide, potassium hydroxide and Fenton's reagent was measured",
+      "The recovery efficiency of microplastics was variable across polymer types"
+    ],
+    "abstract": [
+      "Zotero abstractNote is populated in source context"
+    ]
+  }
+}

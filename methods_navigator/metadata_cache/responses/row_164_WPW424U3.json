@@ -1,0 +1,31 @@
+{
+  "particle_size_range": "<5 mm (microplastics); <1 µm (nanoplastics); human tissue detection ranges from ≥700 nm to 5–500 µm depending on tissue and method",
+  "key_metrics_output": "Oxidative stress markers (ROS generation, lipid peroxidation, antioxidant enzyme activity), mitochondrial dysfunction, inflammatory responses, endocrine disruption (BPA, phthalate leaching), organ-specific toxicity (reproductive, cardiovascular, hepatic, neurological), bioaccumulation in human tissues",
+  "abstract": "This review synthesizes evidence on how microplastics and nanoplastics, along with associated endocrine-disrupting chemicals (BPA, phthalates), contribute to oxidative stress and endocrine disruption across multiple organ systems. Microplastics (<5 mm) and nanoplastics (<1 µm) are now ubiquitous environmental contaminants detected in human blood, placenta, lung tissue, breast milk, and multiple organs. The review examines oxidative stress as a central mechanism of toxicity, including cellular uptake, reactive oxygen species generation, mitochondrial dysfunction, and impairment of antioxidant defenses. Pharmacological antioxidant interventions (N-acetylcysteine) attenuate microplastic-induced toxicity, supporting oxidative stress as an upstream trigger. Organ-specific effects on reproductive health, cardiovascular function, hepatic metabolism, gut barrier integrity, and neurological systems are discussed. The review identifies research gaps needed to improve human risk assessment and develop targeted interventions.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics (MP)—plastic fragments less than 5 mm in diameter, including nanoscale particles under 1 µm",
+      "Whole blood: ≥700 nm (method cut-off)",
+      "Placenta: 5–10 µm",
+      "Breast milk: ~2–12 µm (many 4–9 µm)",
+      "Lung tissue: Particles < 5.5 µm; fibers 8.12–16.8 µm",
+      "Liver/kidney: 4–30 µm",
+      "Bone marrow: Majority <100 µm"
+    ],
+    "key_metrics_output": [
+      "oxidative stress has emerged as a central and unifying mechanism of toxicity",
+      "Excessive generation of reactive oxygen species (ROS), combined with impairment of endogenous antioxidant defenses",
+      "lipid peroxidation, mitochondrial damage, inflammation, and genomic instability",
+      "N-acetylcysteine (NAC), significantly attenuate micro- and nanoplastic–induced reactive oxygen species generation, lipid peroxidation, mitochondrial dysfunction, and inflammatory responses",
+      "antioxidant enzyme activity and suppress activation of redox-sensitive pathways such as NF-κB and MAPKs",
+      "Organ-specific effects on reproductive health, cardiovascular function, hepatic metabolism, gut barrier integrity, and neurological systems"
+    ],
+    "abstract": [
+      "Microplastics and nanoplastics (<5 mm and <1 µm, respectively) are emerging contaminants now ubiquitous across environmental matrices and increasingly recognized for their impacts on human health",
+      "These particles commonly adsorb or contain endocrine-disrupting chemicals—such as bisphenol-A and phthalate additives—that together trigger complex biological responses",
+      "This review examines the central role of oxidative stress in mediating the toxicity of microplastics and associated endocrine disruptors across multiple organ systems",
+      "Current evidence strongly supports oxidative stress as a pivotal mechanism linking microplastic exposure to systemic toxicity"
+    ]
+  }
+}

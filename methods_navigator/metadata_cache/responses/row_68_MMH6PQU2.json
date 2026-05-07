@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Polymer type (PET, PE, PVC, PP, PS, PC); mass concentration (μg/L); blank-corrected",
+  "abstract": "In recent times, the presence of microplastics (MPs) in rivers and groundwater has been widely reported. Even though the drinking water treatment process is effective, MPs can reach drinking water and compromise its safety. In this study, we determine the six main types of polymers (polyethylene terephthalate (PET), polyethylene (PE), polyvinyl chloride (PVC), polypropylene (PE), polystyrene (PS) and polycarbonate (PC)) in surface and drinking water. A previously developed and validated method based in pyrolysis-gas chromatography coupled to mass spectrometry (Py-GC-MS) was used. The study site is the Llobregat river basin (the main source of drinking water in Barcelona) and in 5 areas of the Barcelona drinking water distribution network. In the Llobregat river and its tributaries (n = 17 samples), ΣMPs increased downstream to 544 μg/L at the inlet of the Sant Joan Despí drinking water treatment plant (DWTP). Most of the MPs were eliminated during the water treatment process and were detected in drinking water at an average concentration of ΣMPs of 0.49 μg/L in 9 samples out of 21 analyzed. PE and PVC were the main polymers detected both in the surface water and in the drinking water supply network, followed by a punctual detection of PP in drinking water. The proposed strategy is in line with Decision (EU) 2024/1441 laying down the methodology to measure MPs in water intended for human consumption.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "determine the six main types of polymers (polyethylene terephthalate (PET), polyethylene (PE), polyvinyl chloride (PVC), polypropylene (PE), polystyrene (PS) and polycarbonate (PC))",
+      "ΣMPs increased downstream to 544 μg/L",
+      "average concentration of ΣMPs of 0.49 μg/L",
+      "PE and PVC were the main polymers detected"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

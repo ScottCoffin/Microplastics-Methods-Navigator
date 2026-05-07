@@ -1,0 +1,17 @@
+{
+  "scope": "EU drinking water monitoring; validation of density separation method for microplastic quantification",
+  "particle_size_range": null,
+  "key_metrics_output": "recovery values, density, viscosity, fluorescent labeling efficiency, separation efficiency from particulate contaminants",
+  "abstract": "The evolving regulatory landscape for microplastics—including the European Union’s Drinking Water Directive—underscores the importance of addressing the analytics of emerging contaminants in water, ensuring public health protection, and fostering scientific advancements in environmental monitoring. This work aims to contribute to these advancements by sharing the strategy of test material selection and characterisation for the validation of sample treatment protocols. The article describes a PVC-based representative test material of industrial origin, its physicochemical characterisation, and its application in density separation procedure evaluation, compatibly with the European Commission’s recommendations for quantifying microplastics in water for human consumption. The work shares our protocol for the durable fluorescent labelling of microplastic particles and for the centrifugal density separation of microplastics from other particulate contaminants in drinking water samples. It reports density and viscosity values for the zinc chloride solutions used to feed the theoretical calculations and recovery values achieved with the presented density separation protocol.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "It reports density and viscosity values for the zinc chloride solutions used to feed the theoretical calculations and recovery values achieved with the presented density separation protocol",
+      "protocol for the durable fluorescent labelling of microplastic particles and for the centrifugal density separation of microplastics from other particulate contaminants"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

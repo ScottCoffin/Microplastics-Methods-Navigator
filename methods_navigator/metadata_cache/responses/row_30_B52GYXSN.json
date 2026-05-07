@@ -1,0 +1,22 @@
+{
+  "particle_size_range": "5–20 µm",
+  "key_metrics_output": "Microplastic particle collection and characterization by Raman or FTIR spectroscopy; polymer type identification",
+  "abstract": "Standard operating procedure for collection of source and treated drinking water samples on-site at drinking water treatment facilities using enclosed in-line filtration with serially arranged membrane filters (20 µm and 5 µm pore sizes) for subsequent microplastic analysis by Raman or FTIR microscopy. The procedure describes equipment assembly, operation, and disassembly with emphasis on contamination control measures including use of Class II laminar flow hoods, microplastics analysis-grade water, and surfactant-based cleaning protocols.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "membrane filters of decreasing pore sizes (e.g., 20 µm followed by 5 µm)",
+      "20 µm pore size membrane filters",
+      "5 µm pore size membrane filter"
+    ],
+    "key_metrics_output": [
+      "samples should be collected on-site at drinking water treatment facilities for subsequent microplastic (MP) analysis using Raman or FTIR microscopy",
+      "characterization of polymer types and sizes"
+    ],
+    "abstract": [
+      "describe how source and treated drinking water samples should be collected on-site at drinking water treatment facilities for subsequent microplastic (MP) analysis using Raman or FTIR microscopy",
+      "Samples containing microplastics are collected using an enclosed, in-line filtration equipment whereby membrane filters of decreasing pore sizes (e.g., 20 µm followed by 5 µm) are arranged in-series",
+      "Assemble and disassemble in-line filter holders in a Class II laminar flow hood/BSC equipped with a HEPA filter"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Noonan et al., 2023
+Year: 2023
+Full Title: Microplastics analytics: why we should not underestimate the importance of blank controls
+DOI/URL: https://doi.org/10.1186/s43591-023-00065-3
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Microplastics analytics: why we should not underestimate the importance of blank controls
+DOI: 10.1186/s43591-023-00065-3
+Date: 2023-08-01 2023-08-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Recent years have seen considerable scientific attention devoted towards documenting the presence of microplastics (MPs) in environmental samples. Due to omnipresence of environmental microplastics, however, disentangling environmental MPs from sample contamination is a challenge. Hence, the environmental (collection site and laboratory) microplastics contamination of samples during processing is a reality that we must address, in order to generate reproducible and reliable data. Here we investigated published literature and have found that around 1/5 of studies failed to use blank controls in their experiments. Additionally, only 34% of the studies used a controlled air environment for their sample processing (laminar flow, fume hood, closed laboratory, clean room, etc.). In that regard, we have also shown that preparing samples in the fume hood, leads to more microplastics > 1 μm) contamination than preparing it in the laboratory bench and the laminar flow. Although it did not completely prevent microplastics contamination, the processing of sample inside the laminar flow is the best option to reduce sample contamination during processing. Overall, we showed that blank controls are a must in microplastics sample preparation, but it is often overlooked by researchers.
+
+Context source: zotero_abstractNote
+
+Source context:
+Recent years have seen considerable scientific attention devoted towards documenting the presence of microplastics (MPs) in environmental samples. Due to omnipresence of environmental microplastics, however, disentangling environmental MPs from sample contamination is a challenge. Hence, the environmental (collection site and laboratory) microplastics contamination of samples during processing is a reality that we must address, in order to generate reproducible and reliable data. Here we investigated published literature and have found that around 1/5 of studies failed to use blank controls in their experiments. Additionally, only 34% of the studies used a controlled air environment for their sample processing (laminar flow, fume hood, closed laboratory, clean room, etc.). In that regard, we have also shown that preparing samples in the fume hood, leads to more microplastics > 1 μm) contamination than preparing it in the laboratory bench and the laminar flow. Although it did not completely prevent microplastics contamination, the processing of sample inside the laminar flow is the best option to reduce sample contamination during processing. Overall, we showed that blank controls are a must in microplastics sample preparation, but it is often overlooked by researchers.

@@ -1,0 +1,726 @@
+confidence,context_source,doi_url,existing_abstract,existing_key_metrics_output,existing_particle_size_range,matched_item_id,matched_item_key,pdf,proposed_abstract,proposed_key_metrics_output,proposed_particle_size_range,proposed_pdf_available_zotero,proposed_reviewed,response_json,row,short_citation,source_url,status,url_cache,url_context_source
+,,https://doi.org/10.1021/es2031505,,,,,,,,,,,,,153,"Hidalgo-Ruz et al., 2012",https://doi.org/10.1021/es2031505,no_zotero_match,,url_scrape_failed: HTTP Error 403: Forbidden
+high,url_landing_page,https://www.iso.org/standard/72300.html,,,,58034,C23WVI5V,,"This technical report summarizes current scientific literature on the occurrence of macroplastics and microplastics in the environment and biota. It provides an overview of testing methods including sampling from various environmental matrices, sample preparation, and analysis procedures. The document describes chemical and physical testing methods for identification and quantification of plastics and gives recommendations for standardization of sampling, sample preparation, and analysis procedures. Indoor and health-related aspects are excluded from scope.",occurrence of macroplastics and microplastics; sampling methods from various environmental matrices; sample preparation and analysis; chemical and physical testing methods for identification and quantification of plastics,,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_154_C23WVI5V.json,154,ISO 21960:2020,https://www.iso.org/standard/72300.html,llm_ok,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_www_iso_org_standard_72300_html.txt,url_landing_page
+high,url_landing_page,https://doi.org/10.1007/978-3-319-16510-3_8,,Count/m³ or deposition rate (particles/m²/day); 11-criterion QA/QC score; mean 48.6% across studies,>10 µm (majority of 27 reviewed studies); recommends prioritizing <10 µm for human health,,,,"This chapter reviews methodologies for detecting and identifying microplastics in marine environments, focusing on sampling approaches, laboratory processing, and identification techniques. A case study of North Sea sediment samples using focal plane array (FPA)-based micro-FTIR spectroscopy found that only 1.4% of particles visually resembling microplastics were confirmed as synthetic polymers, highlighting the critical importance of verifying synthetic polymer origin. The review emphasizes the need for standardized methodologies and analytical standards to improve data comparability and reliability in microplastic research.","Microplastic concentration; polymer identification and verification; synthetic polymer origin confirmation; particle count; analytical techniques (micro-FTIR, micro-Raman spectroscopy)",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_155_url.json,155,"Löder & Gerdts, 2015",https://doi.org/10.1007/978-3-319-16510-3_8,llm_ok,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_doi_org_10_1007_978_3_319_16510_3_8.txt,url_landing_page
+,,https://doi.org/10.2788/99475,,,,,,,,,,,,,4,"Galgani et al., 2013",https://doi.org/10.2788/99475,no_zotero_match,,url_scrape_failed: <urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>
+,,https://doi.org/10.1520/D8402-23,,,,,,,,,,,,,6,ASTM D8402-23,https://doi.org/10.1520/d8402-23,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+,,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,161,K8JP8LP7,,,,,,,,7,ISO 16094-2:2025,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,no_pdf_attachment,,url_no_context
+,,https://doi.org/10.1021/es2031505,,,,,,,,,,,,,153,"Hidalgo-Ruz et al., 2012",https://doi.org/10.1021/es2031505,no_zotero_match,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://doi.org/10.1016/j.chemosphere.2022.137479,,,,239,Z4DLYEF2,C:\Users\Scott.Coffin\Zotero\storage\GKCCZADG\Langknecht et al. - 2023 - Comparison of two procedures for microplastics ana.pdf,"Microplastics (MP) are distributed throughout ecosystems and settle into sediments where they may threaten benthic communities; however, methods for quantifying MP in sediments have not been standardized. This study compares two methods for analyzing MP in sediments, including extraction and identification, and provides recommendations for improvement. Two laboratories processed sediment samples using two methods, referred to as “core” and “augmentation”, and identified particles with visual microscopy and spectroscopy. Using visual microscopy, the augmentation method yielded mean recoveries (78%) significantly greater than the core (47%) (p = 0.03), likely due to the use of separatory funnels in the former. Spectroscopic recovery of particles was lower at 42 and 54% for the core and augmentation methods, respectively. We suspect the visual identification recoveries are overestimations from erroneous identification of non-plastic materials persisting post-extraction, indicating visual identification alone is not an accurate method to identify MP, particularly in complex matrices like sediment. However, both Raman and FTIR proved highly accurate at identifying recovered MP, with 96.7% and 99.8% accuracy, respectively. Low spectroscopic recovery of spiked particles indicates that MP recovery from sediments is lower than previously assumed, and MP may be more abundant in sediments than current analyses suggest. To our knowledge, likely due to the excessive time/labor-intensity associated with MP analyses, this is the first interlaboratory study to quantify complete method performance (extraction, identification) for sediments, with regards to capabilities and limitations. This is essential as regulatory bodies move toward long-term environmental MP monitoring.","particle recovery rates (%), visual microscopy recovery, spectroscopic recovery, Raman and FTIR identification accuracy (%), extraction efficiency",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_156_Z4DLYEF2.json,156,"Prata et al., 2019",https://doi.org/10.1016/j.chemosphere.2022.137479,llm_ok,,
+high,pdf_first_300_lines,https://doi.org/10.1007/s11869-026-01886-w,,,,52337,RXPEWSMR,C:\Users\Scott.Coffin\Zotero\storage\C98GZ3SM\Ren et al. - 2026 - Microplastics sampling methods and standardization requirements in atmospheric environment—a critica.pdf,"This critical review analyzes atmospheric microplastics (MPs) sampling methods and standardization requirements based on 92 articles published between 2015 and 2023. The review examines passive and active sampling approaches, comparing sampling tools, time settings, locations, sources, and intake flow rates. Key findings indicate that atmospheric MPs pose serious threats to ecosystems and human health through inhalation exposure and long-distance atmospheric transport. The review emphasizes that non-standardized sampling methods significantly limit data comparability and credibility, and calls for establishment of globally standardized sampling protocols to ensure accuracy and consistency in atmospheric MPs research.","particle count, polymer type (PA, PET, PP, PVF, PE, PS, fiberglass), particle shape (film, fragment, fiber, granule, foam), color, size distribution, deposition rate (particles/m²/day for passive sampling; particles/m³ for active sampling)",>1 μm to <5 mm (microplastics); <1 μm (nanoplastics),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_157_RXPEWSMR.json,157,"Ren et al., 2026",https://doi.org/10.1007/s11869-026-01886-w,llm_ok,,
+high,pdf_first_300_lines,https://www.sfei.org/documents/understanding-microplastics,,,,256,4WTZMQDR,"C:\Users\Scott.Coffin\Zotero\storage\2K6KLQ72\Sutton et al. - 2019 - Understanding microplastic levels, pathways, and transport in the San Francisco Bay region..pdf","The San Francisco Bay Microplastics Project is a comprehensive regional study of microplastic pollution in a major estuary. The project developed baseline data on microplastic occurrence in surface water, sediment, and fish, characterized pathways of microplastic entry (urban stormwater and treated wastewater), and investigated transport to adjacent National Marine Sanctuaries. Microparticles were distinguished from confirmed microplastics via spectroscopy. Stormwater from 12 small tributaries contained 1.3–30 microparticles per liter, with fragments (59%) and fibers (39%) predominating. Black fragments potentially from tire wear were identified. Annual stormwater discharge to the Bay was estimated at approximately 7 trillion microplastics per year.","Microparticle and microplastic abundance (particles per liter), particle morphology (fragments, fibers), polymer type (confirmed via Raman or FTIR spectroscopy), particle size distribution, annual discharge estimates (trillions of particles), source characterization (stormwater, wastewater, sediment, fish)",Less than 5 mm (operationally defined by collection method: 0.125 mm mesh for stormwater/wastewater/sediment; >0.355 mm for surface water manta trawl),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_158_4WTZMQDR.json,158,"Sutton et al., 2019",https://www.sfei.org/documents/understanding-microplastics,llm_ok,,
+,,https://doi.org/10.3390/su12219074,,,,,,,,,,,,,159,"Thomas et al., 2020",https://doi.org/10.3390/su12219074,no_zotero_match,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://doi.org/10.1186/s43591-024-00083-9,,,,249,Z9KXQC6M,C:\Users\Scott.Coffin\Zotero\storage\YE6ZL5VV\Vanavermaete et al. - 2024 - Plastics in biota technological readiness level of current methodologies.pdf,"Plastics are persistent in the environment and may be ingested by organisms where they may cause physical harm or release plastic additives. Monitoring is a crucial mechanism to assess the risk of plastics to the marine and terrestrial ecosystem. Unfortunately, due to unharmonised procedures, it remains difficult to compare the results of different studies. This publication, as part of the Horizon project EUROqCHARM, aims to identify the properties of the available analytical processes and methods for the determination of plastics in biota. Based on a systematic review, reproducible analytical pipelines were examined and the technological readiness levels were assessed so that these methods may eventually (if not already) be incorporated into (harmonised) monitoring programs where biota are identified as indicators of plastic pollution.","technological readiness level assessment, analytical pipeline reproducibility, method harmonization for plastic detection in biota",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_160_Z9KXQC6M.json,160,"Vanavermaete et al., 2024",https://doi.org/10.1186/s43591-024-00083-9,llm_ok,,
+high,pdf_first_300_lines,https://www.who.int/publications/i/item/9789240054608,,,,283,EN864586,C:\Users\Scott.Coffin\Zotero\storage\9UM7ZD3J\Gouin et al. - 2022 - Dietary and inhalation exposure to nano-and microplastic particles and potential implications for hu.pdf,"WHO report assessing dietary and inhalation exposure to nano- and microplastic particles and their potential health implications. The document reviews occurrence of nano- and microplastics in drinking water, air, food, and dermal exposure pathways; examines dosimetry and biokinetics; evaluates toxicological effects; and considers nano- and microplastics as vectors for chemical and pathogenic exposure.","exposure assessment, occurrence in drinking water, air, food, dermal exposure, dosimetry, biokinetics, toxicological effects, chemical vectors, pathogen vectors",nano- and microplastic particles (no specific bounds provided in excerpt),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_161_EN864586.json,161,"Gouin et al., 2022a",https://www.who.int/publications/i/item/9789240054608,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1186/s12989-024-00599-1,,,,282,U4VYDDZD,"C:\Users\Scott.Coffin\Zotero\storage\ETSSBH3T\Gouin et al. - 2024 - Addressing the relevance of polystyrene nano- and microplastic particles used to support exposure, t.pdf","There has been an exponential increase in the number of studies reporting on the toxicological effects associated with exposure to nano and microplastic particles (NMPs). The majority of these studies, however, have used monodispersed polystyrene microspheres (PSMs) as ‘model’ particles. Here we review the differences between the manufacture and resulting physicochemical properties of polystyrene used in commerce and the PSMs most commonly used in toxicity studies.","physicochemical properties, toxicological effects, particle characterization",nano- and microplastic particles (NMPs),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_162_U4VYDDZD.json,162,"Gouin et al., 2024",https://doi.org/10.1186/s12989-024-00599-1,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1016/j.hazadv.2025.100942,,,,279,ESLWHWEW,C:\Users\Scott.Coffin\Zotero\storage\92AMXTDP\Kennedy et al. - 2026 - Trends in quality and risk assessment applicability of microplastic ecotoxicity studies.pdf,"The Toxicity of Microplastics Explorer 2.0 (ToMEx 2.0) aquatic organism database contains 286 microplastic ecotoxicity studies that have been scored for quality and applicability to risk assessment. The overall reporting quality of microplastic effects studies was assessed, and the relationships between quality scores and various factors, including time, taxonomic group were evaluated. Data uploaded into ToMEx were first evaluated against quality assurance and quality control criteria for the requirements of the database. Each study was given at least three total scores related to: technical quality, applicability to risk assessment, and overall study quality, which is the sum of scores for all criteria. While most studies reliably reported technical criteria, the majority of studies were not rated as applicable to risk assessment. Overall, study quality scores and reporting of technical criteria have not changed over time. However, a weak but significant decline in applicability to risk assessment was observed over time. Additionally, there was a weak, significant positive trend between study quality score and journal impact factors, but no significant correlation between study quality and whether a study found a significant effect. Quality scores varied significantly depending on species, with fish studies generally having lower risk applicability criteria scores and studies with crustaceans, molluscs, and annelids generally having higher scores. This analysis highlights uncertainties underlying the current state of knowledge regarding microplastic ecotoxicity, data gaps in the microplastic ecotoxicity literature, and provides a framework for assessing aggregated microplastic ecotoxicity data quality and their applicability to risk assessment.","technical quality scores, risk assessment applicability scores, overall study quality scores, taxonomic group comparisons, journal impact factor correlation",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_163_ESLWHWEW.json,163,"Kennedy et al., 2025",https://doi.org/10.1016/j.hazadv.2025.100942,llm_ok,,
+high,pdf_first_300_lines,https://doi.org/10.3390/ijms27010399,,,,274,WPW424U3,"C:\Users\Scott.Coffin\Zotero\storage\QKWXT4LB\Kovacs et al. - 2025 - Microplastics, Endocrine Disruptors, and Oxidative Stress Mechanisms and Health Implications.pdf","This review synthesizes evidence on how microplastics and nanoplastics, along with associated endocrine-disrupting chemicals (BPA, phthalates), contribute to oxidative stress and endocrine disruption across multiple organ systems. Microplastics (<5 mm) and nanoplastics (<1 µm) are now ubiquitous environmental contaminants detected in human blood, placenta, lung tissue, breast milk, and multiple organs. The review examines oxidative stress as a central mechanism of toxicity, including cellular uptake, reactive oxygen species generation, mitochondrial dysfunction, and impairment of antioxidant defenses. Pharmacological antioxidant interventions (N-acetylcysteine) attenuate microplastic-induced toxicity, supporting oxidative stress as an upstream trigger. Organ-specific effects on reproductive health, cardiovascular function, hepatic metabolism, gut barrier integrity, and neurological systems are discussed. The review identifies research gaps needed to improve human risk assessment and develop targeted interventions.","Oxidative stress markers (ROS generation, lipid peroxidation, antioxidant enzyme activity), mitochondrial dysfunction, inflammatory responses, endocrine disruption (BPA, phthalate leaching), organ-specific toxicity (reproductive, cardiovascular, hepatic, neurological), bioaccumulation in human tissues",<5 mm (microplastics); <1 µm (nanoplastics); human tissue detection ranges from ≥700 nm to 5–500 µm depending on tissue and method,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_164_WPW424U3.json,164,"Kovacs et al., 2025",https://doi.org/10.3390/ijms27010399,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1177/07482337231203053,,,,272,TJ7ZZFRU,,"Good mechanical properties and low costs have led to a global expansion of plastic production and use. Unfortunately, much of this material can be released into the environment as a waste product and cleaved into micro- and nanoplastics (NPs) whose impact on the environment and human health is still largely unknown. Considering the growing worldwide awareness on exposure to chemicals that can act as endocrine disruptors, a systematic review was performed to assess the impact of NPs on the endocrine function of in vitro and in vivo models. Although a limited number of investigations is currently available, retrieved findings showed that NPs may induce changes in endocrine system functionality, with evident alterations in reproductive and thyroid hormones and gene expression patterns, also with a trans-generational impact. Nanoplastic size, concentration, and the co-exposure to other endocrine disrupting pollutants may have an influencing role on these effects. Overall, although it is still too early to draw conclusions regarding the human health risks derived from NPs, these preliminary results support the need for further studies employing a wider range of plastic polymer types, concentrations, and time points as well as species and life stages to address a great variety of endocrine outcomes and to achieve a broader and shared consensus on the role of NPs as endocrine disruptors.","endocrine system functionality, reproductive hormones, thyroid hormones, gene expression patterns",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_165_TJ7ZZFRU.json,165,"Leso et al., 2023",https://doi.org/10.1177/07482337231203053,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1136/thx.30.2.204,,,,262,QHNQKVE7,,"Seven patients exposed to the inhalation of synthetic fibres presented with various bronchopulmonary diseases, such as asthma, extrinsic allergic alveolitis, chronic bronchitis with bronchiectasis, spontaneous pneumothorax, and chronic pneumonia. The histological features are described and an attempt has been made to set up immunological techniques for the diagnosis. A series of histochemical techniques, based on textile chemistry, are proposed for the identification of the inclusions found in bronchopulmonary lesions. The results of the experimental production of the disease in guinea-pigs by the inhalation of synthetic fibre dusts are presented. The prognosis of these cases is good in the acute or recently established cases but is poor when widespread and irreversible fibrosis has set in. The authors consider that pulmonary disease due to inhaled particles is probably set off by an individual factor, possibly immunological.","Histological features, immunological diagnosis techniques, histochemical identification of fibre inclusions in bronchopulmonary lesions, disease prognosis",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_166_QHNQKVE7.json,166,"Pimentel et al., 1975",https://doi.org/10.1136/thx.30.2.204,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1186/s12989-024-00581-x,,,,361,GQAWB5NK,C:\Users\Scott.Coffin\Zotero\storage\DNCCHMAD\Wright et al. - 2024 - Micro- and nanoplastics concepts for particle and fibre toxicologists.pdf,"Abstract
+            Micro- and nanoplastic particles (MNP) are omnipresent as either pollution or intentionally used in consumer products, released from packaging or even food. There is an exponential increase in the production of plastics. With the realization of bioaccumulation in humans, toxicity research is quickly expanding. There is a rapid increase in the number of papers published on the potential implications of exposure to MNP which necessitates a call for quality criteria to be applied when doing the research. At present, most papers on MNP describe the effects of commercially available polymer (mostly polystyrene) beads that are typically not the MNP of greatest concern. This is not a fault of the research community, necessarily, as the MNPs to which humans are exposed are usually not available in the quantities needed for toxicological research and innovations are needed to supply environmentally-relevant MNP models. In addition, like we have learned from decades of research with particulate matter and engineered nanomaterials, sample physicochemical characteristics and preparation can have major impacts on the biological responses and interpretation of the research findings. Lastly, MNP dosimetry may pose challenges as (1) we are seeing early evidence that plastics are already in the human body at quite high levels that may be difficult to achieve in acute in vitro studies and (2) plastics are already in the diets fed to preclinical models. This commentary highlights the pitfalls and recommendations for particle and fibre toxicologists that should be considered when performing and disseminating the research.",Toxicological endpoints; physicochemical characteristics; polymer type; dosimetry; bioaccumulation in humans,,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_167_GQAWB5NK.json,167,"Wright et al., 2024b",https://doi.org/10.1186/s12989-024-00581-x,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1021/acs.est.0c02982,,,,277,MHSJSZYU,C:\Users\Scott.Coffin\Zotero\storage\PLTKZBDE\Koelmans et al. - 2020 - Solving the Nonalignment of Methods and Approaches Used in Microplastic Research to Consistently Cha.pdf,"The lack of standard approaches in microplastic research limits progress in the abatement of plastic pollution. Here, we propose and test rescaling methods that are able to improve the alignment of methods used in microplastic research. We describe a method to correct for the differences in size ranges as used by studies reporting microplastic concentrations and demonstrate how this reduces the variation in aqueous-phase concentrations caused by method differences. We provide a method to interchange between number, volume, and mass concentrations using probability density functions that represent environmental microplastic. Finally, we use this method to correct for the incompatibility of data as used in current species sensitivity distributions (SSDs), caused by differences in the microplastic types used in effect studies and those in nature. We derived threshold effect concentrations from such a corrected SSD for freshwater species. Comparison of the rescaled exposure concentrations and threshold effect concentrations reveals that the latter would be exceeded for 1.5% of the known surface water exposure concentrations worldwide. Altogether, this toolset allows us to correct for the diversity of microplastic, to address it in a common language, and to assess its risks as one environmental material.","number, volume, and mass concentrations; threshold effect concentrations; species sensitivity distributions (SSDs); exposure concentrations",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_168_MHSJSZYU.json,168,"Koelmans et al., 2020",https://doi.org/10.1021/acs.est.0c02982,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1021/acs.estlett.9b00379,,,0.1 µm – 5 mm (MP); 1–100 nm (NP),7755,JDR43TR8,"C:\Users\Scott.Coffin\Zotero\storage\K8HHDI9D\Kooi and Koelmans - 2019 - Simplifying Microplastic via Continuous Probability Distributions for Size, Shape, and Density.pdf","Because of their diverse sizes, shapes, and densities, environmental microplastics are often perceived as complex. Many studies struggle with this complexity and either address only a part of this diversity or present data using discrete classiﬁcations for sizes, shapes, and densities. We argue that such classiﬁcations will never be fully satisfactory, as any deﬁnition using classes does not capture the essentially continuous nature of environmental microplastic. Therefore, we propose to simplify microplastics by fully deﬁning them through a three-dimensional (3D) probability distribution, with size, shape, and density as dimensions. In addition to introducing the concept, we parametrize these probability distributions, using empirical data. This parametrization results in an approximate yet realistic representation of “true” environmental microplastic. This approach to simplifying microplastic could be applicable to exposure measurements, eﬀect studies, and fate modeling. Furthermore, it allows for easy comparison between studies, irrespective of sampling or laboratory setup. We demonstrate how the 3D probability distribution of environmental versus ingested microplastic can be helpful in understanding the bioavailability of and exposure to microplastic. We argue that the concept of simpliﬁed microplastic will also be helpful in probabilistic risk modeling, which would greatly enhance our understanding of the risk that microplastics pose to the environment.","Size, shape, density; probability distributions; bioavailability; exposure characterization",0.1 µm – 5 mm,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_169_JDR43TR8.json,169,"Kooi & Koelmans, 2019",https://doi.org/10.1021/acs.estlett.9b00379,llm_ok,,
+high,pdf_first_300_lines,https://doi.org/10.2139/ssrn.5957574,,,,48258,IMZAL8Y8,C:\Users\Scott.Coffin\Zotero\storage\VJVZR5FH\Koelmans et al. - 2025 - Towards Regulatory Readiness Evaluating Frameworks for Microplastic Health Risk Assessment.pdf,"This perspective evaluates six established human health risk assessment frameworks (RAFs) for micro- and nanoplastics (MNPs) to assess their technological and regulatory readiness. The authors propose nine technical criteria that RAFs should meet to inform policy, including quantifiability of outputs, systematic evaluation of input data quality, consistency between exposure and effect data, addressing complexity and diversity of environmentally realistic microplastics, readiness for integration into existing regulatory approaches, and real-world implementation status. The paper discusses strengths of each framework and recommends combining them into a single overarching framework that integrates these strengths to support comprehensive human health risk assessment and governance of MNPs.",Risk assessment framework evaluation; hazard identification; exposure assessment; risk characterization; toxicologically relevant metrics; weight of evidence approach,Micro- and nanoplastics (MNPs); specific size ranges not quantified in provided context,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_170_IMZAL8Y8.json,170,"Koelmans et al., 2025a",https://doi.org/10.2139/ssrn.5957574,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.21105/joss.06715,,,,1239,W6BT9T3R,C:\Users\Scott.Coffin\Zotero\storage\JJNP4LCQ\Sherrod et al. - 2024 - One4All An Open Source Portal to Validate and ShareMicroplastics Data and Beyond.pdf,"Microplastics are a diverse suite of contaminants (Rochman et al., 2019) requiring a variety of data types to capture particle characteristics and study methodologies (Division of Drinking Water, State Water Resources Control Board, State of California, 2022; Jenkins et al., 2022). Data sharing is critical to advance science and policy (Coffin, 2023). The One4All portal was created to harmonize and share structured and unstructured microplastic data (and beyond) through validation. Validated data can be automatically uploaded to the following cloud services: Amazon S3, CKAN, and/or MongoDB. One4All is both a graphical user interface (GUI) and an R package. The tools are general-purpose and can be used for applications outside of microplastics. This manuscript provides information about the usage, workflow, and configuration of One4All, emphasizing its adaptability for diverse purposes.","particle characteristics, data validation, structured and unstructured microplastic data harmonization",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_171_W6BT9T3R.json,171,"Sherrod et al., 2024",https://doi.org/10.21105/joss.06715,llm_ok,,
+,,,,,,,,,,,,,,,172,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,173,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,174,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,175,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,176,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,177,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,178,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,179,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,180,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,181,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,182,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,183,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,184,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,185,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,186,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,187,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,188,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,189,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,190,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,191,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,192,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,193,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,194,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,195,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,196,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,197,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,198,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,199,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,200,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,201,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,202,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,203,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,204,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,205,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,206,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,207,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,208,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,209,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,210,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,211,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,212,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,213,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,214,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,215,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,216,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,217,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,218,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,219,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,220,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,221,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,222,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,223,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,224,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,225,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,226,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,227,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,228,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,229,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,230,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,231,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,232,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,233,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,234,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,235,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,236,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,237,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,238,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,239,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,240,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,241,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,242,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,243,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,244,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,245,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,246,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,247,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,248,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,249,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,250,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,251,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,252,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,253,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,254,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,255,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,256,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,257,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,258,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,259,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,260,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,261,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,262,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,263,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,264,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,265,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,266,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,267,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,268,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,269,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,270,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,271,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,272,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,273,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,274,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,275,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,276,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,277,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,278,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,279,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,280,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,281,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,282,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,283,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,284,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,285,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,286,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,287,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,288,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,289,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,290,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,291,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,292,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,293,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,294,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,295,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,296,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,297,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,298,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,299,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,300,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,301,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,302,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,303,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,304,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,305,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,306,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,307,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,308,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,309,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,310,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,311,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,312,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,313,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,314,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,315,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,316,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,317,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,318,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,319,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,320,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,321,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,322,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,323,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,324,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,325,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,326,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,327,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,328,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,329,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,330,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,331,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,332,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,333,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,334,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,335,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,336,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,337,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,338,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,339,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,340,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,341,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,342,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,343,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,344,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,345,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,346,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,347,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,348,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,349,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,350,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,351,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,352,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,353,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,354,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,355,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,356,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,357,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,358,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,359,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,360,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,361,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,362,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,363,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,364,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,365,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,366,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,367,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,368,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,369,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,370,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,371,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,372,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,373,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,374,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,375,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,376,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,377,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,378,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,379,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,380,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,381,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,382,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,383,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,384,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,385,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,386,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,387,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,388,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,389,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,390,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,391,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,392,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,393,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,394,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,395,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,396,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,397,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,398,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,399,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,400,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,401,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,402,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,403,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,404,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,405,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,406,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,407,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,408,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,409,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,410,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,411,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,412,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,413,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,414,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,415,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,416,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,417,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,418,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,419,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,420,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,421,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,422,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,423,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,424,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,425,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,426,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,427,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,428,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,429,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,430,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,431,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,432,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,433,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,434,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,435,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,436,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,437,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,438,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,439,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,440,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,441,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,442,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,443,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,444,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,445,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,446,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,447,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,448,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,449,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,450,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,451,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,452,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,453,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,454,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,455,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,456,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,457,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,458,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,459,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,460,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,461,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,462,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,463,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,464,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,465,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,466,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,467,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,468,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,469,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,470,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,471,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,472,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,473,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,474,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,475,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,476,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,477,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,478,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,479,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,480,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,481,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,482,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,483,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,484,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,485,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,486,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,487,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,488,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,489,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,490,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,491,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,492,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,493,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,494,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,495,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,496,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,497,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,498,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,499,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,500,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,501,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,502,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,503,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,504,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,505,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,506,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,507,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,508,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,509,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,510,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,511,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,512,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,513,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,514,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,515,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,516,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,517,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,518,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,519,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,520,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,521,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,522,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,523,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,524,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,525,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,526,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,527,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,528,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,529,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,530,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,531,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,532,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,533,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,534,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,535,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,536,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,537,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,538,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,539,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,540,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,541,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,542,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,543,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,544,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,545,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,546,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,547,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,548,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,549,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,550,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,551,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,552,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,553,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,554,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,555,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,556,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,557,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,558,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,559,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,560,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,561,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,562,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,563,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,564,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,565,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,566,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,567,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,568,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,569,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,570,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,571,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,572,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,573,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,574,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,575,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,576,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,577,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,578,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,579,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,580,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,581,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,582,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,583,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,584,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,585,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,586,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,587,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,588,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,589,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,590,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,591,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,592,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,593,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,594,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,595,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,596,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,597,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,598,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,599,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,600,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,601,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,602,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,603,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,604,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,605,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,606,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,607,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,608,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,609,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,610,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,611,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,612,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,613,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,614,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,615,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,616,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,617,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,618,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,619,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,620,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,621,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,622,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,623,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,624,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,625,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,626,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,627,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,628,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,629,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,630,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,631,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,632,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,633,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,634,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,635,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,636,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,637,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,638,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,639,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,640,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,641,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,642,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,643,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,644,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,645,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,646,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,647,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,648,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,649,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,650,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,651,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,652,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,653,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,654,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,655,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,656,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,657,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,658,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,659,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,660,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,661,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,662,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,663,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,664,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,665,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,666,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,667,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,668,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,669,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,670,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,671,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,672,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,673,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,674,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,675,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,676,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,677,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,678,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,679,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,680,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,681,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,682,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,683,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,684,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,685,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,686,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,687,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,688,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,689,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,690,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,691,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,692,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,693,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,694,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,695,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,696,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,697,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,698,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,699,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,700,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,701,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,702,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,703,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,704,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,705,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,706,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,707,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,708,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,709,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,710,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,711,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,712,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,713,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,714,,,no_zotero_match,,none
+,,,,,,,,,,,,,,,715,,,no_zotero_match,,none
+high,zotero_abstractNote,https://doi.org/10.2788/99475,,,,7015,UNLPPMUL,C:\Users\Scott.Coffin\Zotero\storage\Y7QBCJZK\European Commission et al_2013_Guidance on monitoring of marine litter in European seas.pdf,"The MSFD Technical Subgroup on Marine Litter was tasked to deliver guidance so that European Member States could initiate programmes for monitoring of Descriptor 10 of the MSFD. The present document provides the recommendations and information needed to commence the monitoring required for marine litter, including methodological protocols and categories of items to be used for the assessment of litter on the beach, water column, seafloor and biota, including a special section on microparticles.","Litter categories and items for assessment across beach, water column, seafloor, and biota compartments; microparticle characterization",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_4_UNLPPMUL.json,4,"Galgani et al., 2013",https://doi.org/10.2788/99475,llm_ok,,
+,,https://doi.org/10.1520/D8402-23,,,,,,,,,,,,,6,ASTM D8402-23,https://doi.org/10.1520/d8402-23,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+high,zotero_abstractNote,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,161,K8JP8LP7,,"This document establishes key principles for the investigation of microplastics in drinking water and water with low content of natural suspended solids using a microscopy technique coupled with vibrational spectroscopy.
+
+This method is applicable to:
+
+—    determine the size of microplastics [which range from 1 µm to 5 000 µm], count them and classify them by size range;
+
+—    identify the chemical composition of microplastics, the main ones (most used in industry and most abundant in the environment) being: polyethylene (PE), polypropylene (PP), polyethylene terephthalate (PET), polycarbonate (PC), polystyrene (PS), polytetrafluoroethylene (PTFE), polyvinyl chloride (PVC), polyamide (PA), polymethyl methacrylate (PMMA) and polyurethane (PU);
+
+This method is applicable to water with a low content of organic matter and other suspended matter as defined in ISO 6107 (1 mg/l to 100 mg/l or lower when interfering with the determination), i.e.,
+
+—    ultrapure water;
+
+—    water intended for human consumption;
+
+—    raw groundwaters.
+
+Given the very low concentrations of microplastics usually present in these waters, special attention needs to be paid to potential sources of contamination during sample preparation.
+
+This method is intended to determine and characterize large numbers of particles in the sample in automatic mode.
+
+This method can also identify the nature of the other particles that are outside the scope of this document, for example minerals, proteins, cellulose and pigments.
+
+This method does not apply to the characterization of substances intentionally added to or adsorbed on the surface of microplastics. This method does not apply to the determination of the geometric shape of microplastics.","particle size, particle count, size classification, chemical composition (polymer type: PE, PP, PET, PC, PS, PTFE, PVC, PA, PMMA, PU)","1–5,000 μm",No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_7_K8JP8LP7.json,7,ISO 16094-2:2025,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,llm_ok,,
+,,https://doi.org/10.1520/D8402-23,,,,,,,,,,,,,6,ASTM D8402-23,https://doi.org/10.1520/d8402-23,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+,,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,,,,,,,,,,8,ISO 16094-3 (DIS),https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,no_zotero_match,,url_no_context
+high,zotero_abstractNote,https://doi.org/10.2903/j.efsa.2016.4501,,,,3290,VGVVBJDW,"C:\Users\Scott.Coffin\Zotero\storage\HRZMXN4X\Presence of microplastics and nanoplastics in food, with particular focus on.pdf","Following a request from the German Federal Institute for Risk Assessment (BfR), the EFSA Panel for Contaminants in the Food Chain was asked to deliver a statement on the presence of microplastics and nanoplastics in food, with particular focus on seafood. Primary microplastics are plastics originally manufactured to be that size, while secondary microplastics originate from fragmentation. Nanoplastics can originate from engineered material or can be produced during fragmentation of microplastic debris. Microplastics range from 0.1 to 5,000 lm and nanoplastics from approximately 1 to 100 nm (0.001–0.1 lm). There is no legislation for microplastics and nanoplastics as contaminants in food. Methods are available for identiﬁcation and quantiﬁcation of microplastics in food, including seafood. Occurrence data are limited. In contrast to microplastics no methods or occurrence data in food are available for nanoplastics. Microplastics can contain on average 4% of additives and the plastics can adsorb contaminants. Both additives and contaminants can be of organic as well of inorganic nature. Based on a conservative estimate the presence of microplastics in seafood would have a small effect on the overall exposure to additives or contaminants. Toxicity and toxicokinetic data are lacking for both microplastics and nanoplastics for a human risk assessment. It is recommended that analytical methods should be further developed for microplastics and developed for nanoplastics and standardised, in order to assess their presence, identity and to quantify their amount in food. Furthermore, quality assurance should be in place and demonstrated. For microplastics and nanoplastics, occurrence data in food, including effects of food processing, in particular, for the smaller sized particles (< 150 lm) should be generated. Research on the toxicokinetics and toxicity, including studies on local effects in the gastrointestinal (GI) tract, are needed as is research on the degradation of microplastics and potential formation of nanoplastics in the human GI tract.","Presence, identity, and quantification of microplastics and nanoplastics in food; additive content (average 4%); contaminant adsorption; occurrence data; toxicity and toxicokinetic endpoints","Microplastics: 0.1–5,000 μm; Nanoplastics: 0.001–0.1 μm (1–100 nm)",Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_24_VGVVBJDW.json,24,"EFSA CONTAM Panel, 2016",https://doi.org/10.2903/j.efsa.2016.4501,llm_ok,,
+,,https://doi.org/10.1520/D8402-23,,,,,,,,,,,,,6,ASTM D8402-23,https://doi.org/10.1520/d8402-23,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+,,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,,,,,,,,,,8,ISO 16094-3 (DIS),https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,no_zotero_match,,url_no_context
+high,zotero_abstractNote,https://www.sciencedirect.com/science/article/pii/S0045653522037936,,,,1565,V7F839RR,C:\Users\Scott.Coffin\Zotero\storage\CG6LLAQU\De Frond et al. - 2023 - What determines accuracy of chemical identificatio.pdf,"Fourier transform infrared (FTIR) and Raman microspectroscopy are methods applied in microplastics research to determine the chemical identity of microplastics. These techniques enable quantification of microplastic particles across various matrices. Previous work has highlighted the benefits and limitations of each method and found these to be complimentary. Within this work, metadata collected within an interlaboratory method validation study was used to determine which variables most influenced successful chemical identification of un-weathered microplastics in simulated drinking water samples using FTIR and Raman microspectroscopy. No variables tested had a strong correlation with the accuracy of chemical identification (r = ≤0.63). The variables most correlated with accuracy differed between the two methods, and include both physical characteristics of particles (color, morphology, size, polymer type), and instrumental parameters (spectral collection mode, spectral range). Based on these results, we provide technical recommendations to improve capabilities of both methods for measuring microplastics in drinking water and highlight priorities for further research. For FTIR microspectroscopy, recommendations include considering the type of particle in question to inform sample presentation and spectral collection mode for sample analysis. Instrumental parameters should be adjusted for certain particle types when using Raman micro­ spectroscopy. For both instruments, the study highlighted the need for harmonization of spectral reference libraries among research groups, including the use of libraries containing reference materials of both weathered plastic and natural materials that are commonly found in environmental samples.","Chemical identification accuracy; polymer type; particle color, morphology, size; spectral collection mode; spectral range",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_35_V7F839RR.json,35,"De Frond et al., 2023",https://www.sciencedirect.com/science/article/pii/S0045653522037936,llm_ok,,
+medium,url_landing_page,https://doi.org/10.1520/D8402-23,,,,,,,"This standard practice describes manufacturing methods to create microplastic particles from polymer pellets and the preparation of microplastic reference samples for calibration and proficiency evaluation of microplastic collection practices, preparation practices, and identification methods in all types of water matrices. The procedures yield irregularly shaped particles to remove analytical bias from using distinctive manufactured spherical beads.",microplastic particle reference samples for calibration and proficiency evaluation; particle shape characterization (irregularly shaped particles); polymer type identification,,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_6_url.json,6,ASTM D8402-23,https://doi.org/10.1520/d8402-23,llm_ok,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_doi_org_10_1520_d8402_23.txt,url_landing_page
+,,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,,,,,,,,,,8,ISO 16094-3 (DIS),https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,no_zotero_match,,url_no_context
+high,zotero_abstractNote,https://doi.org/10.1016/j.jhazmat.2021.125751,,,,58062,2SKY8WSD,C:\Users\Scott.Coffin\Zotero\storage\FCQZAU3E\Kokalj et al. - 2021 - Quality of nanoplastics and microplastics ecotoxicity studies Refining quality criteria for nanomat.pdf,"It is becoming increasingly important to develop assessment criteria for the quality of nanoplastics studies. This study is an attempt to establish such criteria based on those developed for engineered nanomaterials, the GUIDEnano and DaNa criteria being two representatives. These criteria were applied to studies on polystyrene nanoparticles (PS NPs), which currently represent the majority of studies on nanoplastics. We compiled a list of existing nanomaterial-related criteria that are not fully relevant to PS NPs and propose additional nanoplastic-specific criteria targeting polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, and chemical leaching. For each criterion, scientific justification is provided. We conclude that the existing study quality assessments originally developed for nano(eco)toxicity studies can, through refinements, be applied to those dealing with nanoplastics studies, with a further outlook on microplastics. The final quality criteria catalogue presented here is intended as a starting point for further elaborations considering different purposes of an assessment.","Polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, chemical leaching; study quality assessment criteria",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_41_2SKY8WSD.json,41,"Jemec Kokalj et al., 2021",https://doi.org/10.1016/j.jhazmat.2021.125751,llm_ok,,
+high,pdf_first_300_lines,https://doi.org/10.1021/envhealth.5c00671,,,0.1 µm – 5 mm (MP); 1–100 nm (NP),254,5BAU3XQM,C:\Users\Scott.Coffin\Zotero\storage\287TQPSE\Thomas et al. - 2026 - Communicating Confidence in the Reliability of Micro- and Nanoplastic Identification in Human Health.pdf,"This perspective addresses the critical challenge of reliably identifying and quantifying micro- and nanoplastics in human tissues and biological fluids for health risk assessment. The authors propose a framework integrating orthogonal analytical techniques to enhance data reliability and introduce a hierarchical confidence matrix for reporting plastic particle identification. The framework categorizes analytical techniques (A, B, C) by selectivity and specificity, with minimum data requirements for four confidence levels: unequivocal identification, indicative, presumptive, and morphological-only detection. Key challenges discussed include sample contamination, spectral interference in vibrational microspectroscopy, matrix interference in pyrolysis-GC/MS, and the absence of standardized reference materials and uncertainty quantification methods. The authors emphasize the importance of transparent reporting of methodological limitations, rigorous study design, and the universal adoption of harmonized confidence criteria for reporting plastics in humans.","Particle morphology, chemical composition, physicochemical characteristics, particle size, number, mass, polymer type; confidence levels for plastic particle identification (unequivocal, indicative, presumptive)",0.1 μm – 5 mm (microplastics); <1 μm (nanoplastics),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_46_5BAU3XQM.json,46,"Thomas et al., 2026",https://doi.org/10.1021/envhealth.5c00671,llm_ok,,
+,zotero_abstractNote,https://doi.org/10.1186/s43591-025-00145-6,,,,238,Q7LKCP66,C:\Users\Scott.Coffin\Zotero\storage\Y8YZKC68\Hampton et al. - 2025 - The Toxicity of Microplastics Explorer (ToMEx) 2.0.pdf,,,,,,,47,"Thornton Hampton et al., 2025",https://doi.org/10.1186/s43591-025-00145-6,"llm_failed: Claude did not return valid JSON: ```json
+{
+  ""particle_size_range"": null,
+  ""key_metrics_output"": ""toxicity data, hazard characterization, risk assessment, ecological health-based thresholds, species sensitivity distributions, dose-response data, organism-level and molecular/cellular endpoints"",
+  ""abstract"": null,
+  ""confidence"": ""high"",
+  ""evidence"": {
+    ""particle_size_range"": [],
+    ""key_metrics_output"": [
+      ""exploration, visualization, and analysis of toxicity data for both hazard characterization and risk assessment"",
+      ""greater toxicities observed with smaller particle sizes, lack of dose–response data"",
+      ""deriving ecological health-based microplastic thresholds using species sensitivity distributions"",
+      ""molecular and cellular level endpoints"",
+      ""organism and above"" endpoints
+    ],
+    ""abstract"": [
+      ""Zotero abstractNote is populated and will be used directly""
+    ]
+  }
+}
+```",,
+medium,url_landing_page,https://www.congress.gov/bill/114th-congress/house-bill/1321,,,,,,,"The Microbead-Free Waters Act of 2015 (Public Law 114-114) amends the Federal Food, Drug, and Cosmetic Act to ban rinse-off cosmetics containing intentionally-added plastic microbeads, with the ban effective beginning January 1, 2018, and manufacturing restrictions to follow.",,,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_61_url.json,61,"Microbead-Free Waters Act, 2015",https://www.congress.gov/bill/114th-congress/house-bill/1321,llm_ok,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_www_congress_gov_bill_114th_congress_house_bill_1321.txt,url_landing_page
+,,https://doi.org/10.1520/D8332-20,,,,,,,,,,,,,65,ASTM D8333-20,https://doi.org/10.1520/d8332-20,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+,,https://doi.org/10.1520/D8489-23,,,,,,,,,,,,,67,ASTM D8489-23,https://doi.org/10.1520/d8489-23,no_zotero_match,,url_scrape_failed: [WinError 10054] An existing connection was forcibly closed by the remote host
+high,zotero_abstractNote,https://doi.org/10.26434/chemrxiv.15002539/v1,,,20 µm – 53 µm ,58077,WSTICNNE,,"Research on microplastics is developing rapidly, but methods for quantifying the smallest particles (1-100 µm) remain limited. Automated spectroscopic methods using µ-FTIR and µ-Raman spectroscopy have been developed, but these methods are often time-consuming, require expensive filters, or show poor recovery of smaller particles. To address these problems, and as part of a larger effort to develop a cost-effective method for the rapid quantification of microplastic particles, we developed and validated a method for quantifying 20 – 53 µm microplastic fragments using µ-Raman spectroscopy on polycarbonate filters. Our method is fast, reliable, and does not require expensive consumables. We validated a method for polyethylene, polystyrene, and polyethylene terephthalate fragments with good precision for one sample run multiple times (~3 – 7% coefficient of variation) and independent samples of the same mass (~18 – 35%, depending on polymer). Recovery, tested across a larger size range of particles (up to 106 µm), ranged from 69 – 77% across polymers. KOH treatment (10 or 20%) reduced the recovery of our small polyethylene terephthalate particles. Our method proves promising, and we will continue its development and validation across a greater diversity of polymers, sizes and shapes, as well as with weathered particles extracted from environmental matrices.","Particle count, polymer type identification (polyethylene, polystyrene, polyethylene terephthalate), recovery rate (69–77%), coefficient of variation (3–7% within-run, 18–35% between samples)",20–53 µm (validated range); tested up to 106 µm,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_71_WSTICNNE.json,71,Covernton et al. (2026),https://doi.org/10.26434/chemrxiv.15002539/v1,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1016/j.chroma.2019.01.033,,Count/L by polymer/size/morphology; blank-corrected; LOD = mean(blanks) + 3 SD,≥5 µm (µFTIR; California DW extraction SOP),58078,XNXQV8MH,C:\Users\Scott.Coffin\Zotero\storage\V7AUVKEK\Duemichen et al. - 2019 - Automated thermal extraction-desorption gas chromatography mass spectrometry A multifunctional tool.pdf,"The TED-GC–MS analysis is a two-step method. A sample is first decomposed in a thermogravimetric analyzer (TGA) and the gaseous decomposition products are then trapped on a solid-phase adsorber. Subsequently, the solid-phase adsorber is analyzed with thermal desorption gas chromatography mass spectrometry (TDU-GC–MS). This method is ideally suited for the analysis of polymers and their degradation processes. Here, a new entirely automated system is introduced which enables high sample throughput and reproducible automated fractioned collection of decomposition products.
+The fractionated collection together with low temperatures reduces the risk of contamination, improves instrumental stability and minimizes maintenance efforts. Through variation of the two main parameters (purge gas flow and heating rate) it is shown how the extraction process can be optimized. By measuring the decomposition products of polyethylene it is demonstrated that compounds with masses of up to 434 Da can be detected. This is achieved despite the low temperature (˜40 °C) of the solid-phase adsorber and the low thermal desorption temperature of 200 °C in the TDU unit.
+It is now shown that automated TED-GC–MS represents a new flexible multi-functional method for comprehensive polymer analyses. Comparable polymer characterization was previously only achievable through a combination of multiple independent analytical methods. This is demonstrated by three examples focused on practical challenges in materials analysis and identification: The first one is the analysis of wood plastic composites for which the decomposition processes of the polymer and the bio polymer (wood) could be clearly distinguished by fractionated collection using sequential adsorbers. Secondly, a fast quantitative application is shown by determining the weight concentrations of an unknown polyolefin blend through comparison with a reference material. Additionally, the determination of microplastic concentrations in environmental samples is becoming an increasingly important analytical necessity. It is demonstrated that with TED-GC–MS calibration curves showing good linearity for the most important precursors for microplastic, even complex matrix materials (suspended particulate matter) can be successfully analyzed.",Polymer type identification; decomposition product mass (up to 434 Da); weight concentrations; microplastic concentrations in environmental samples; calibration linearity for microplastic precursors,,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_81_XNXQV8MH.json,81,"Duemichen et al., 2019",https://doi.org/10.1016/j.chroma.2019.01.033,llm_ok,,
+,,https://doi.org/10.1016/j.chemosphere.2017.02.010,,,,58080,RDA45EMW,,,,,,,,82,"Dümichen et al., 2017",https://doi.org/10.1016/j.chemosphere.2017.02.010,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://www.sciencedirect.com/science/article/pii/S0039914025013256#da0010,,,,58053,RAGWNX3J,,"The assessment of the impact of microplastic contamination on the environment and human health requires a reliable identification of the polymer type of these particles. μ-Raman spectroscopy is a popular technique for identifying microplastics by comparing the reference spectra with those of the particles analysed. Automatic identification of microplastics requires defining an algorithm for the match between these spectra and setting a minimum match above which identification is performed with adequately high true and low false results rates. Ideally, the algorithm and match threshold should apply to different spectrometers and spectra collection parameters. This research presents a methodology to determine the best match algorithm for polymer identification using μ-Raman spectroscopy data collected on different instruments and laboratories, associated with a true positive rate (TP) of 95 % and a false positive rate (FP) lower than 5 %. Determining the match threshold (P5»P) by the bootstrap method does not require assumptions regarding match distribution. The normal distribution of the match between the reference and a particle's spectra from a different material allows FP determination. Identifying PET microparticles was optimal using Pearson's correlation coefficient (P5»P = 0.6244, TP = 95 %, FP = 4.9 × 10−7 %). Identification quality was tested based on three unweighted and three weighted correlation coefficients. Spectra with signal-to-noise ratios lower than 10 were forwarded to manual identifications. The MS Excel files used in the research are available as supporting information. The developed methodology for setting up identification criteria of microplastics by spectroscopy proved to be adequate for μ-Raman assessments and robust to different spectrometers and spectra collection conditions.","polymer type identification, true positive rate (TP), false positive rate (FP), match algorithm threshold, Pearson's correlation coefficient, signal-to-noise ratio",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_83_RAGWNX3J.json,83,Fernandes et al. (2026),https://www.sciencedirect.com/science/article/pii/S0039914025013256#da0010,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1002/appl.202200089,,,1 µm – 5 mm,58083,4FG3HD3J,,"Abstract
+            A fast method for microplastic detection is thermal extraction desorption‐gas chromatography/mass spectrometry (TED‐GC/MS), which uses polymer‐specific thermal decomposition products as marker compounds to determine polymer mass contents in environmental samples. So far, matrix impacts of different environmental matrices on TED‐GC/MS performance had not yet been assessed systematically. Therefore, three solid freshwater matrices representing different aquatic bodies with varying organic matter contents were spiked with a total of eight polymers. Additionally, for the first time, the two biodegradable polymers polybutylene adipate terephthalate (PBAT) and polylactide (PLA) were analysed using TED‐GC/MS. The methodological focus of this work was on detectability, quality of signal formation as well as realisation of quantification procedures and determination of the limit of detection (LOD) values. Overall, TED‐GC/MS allowed the unambiguous detection of the environmentally most relevant polymers analysed, even at low mass contents: 0.02 wt% for polystyrene (PS), 0.04 wt% for the tyre component styrene butadiene rubber (SBR) and 0.2 wt% for polypropylene (PP), polyethylene (PE) and PBAT. Further, all obtained LOD values were increased in all matrices compared to the neat polymer without matrix. The LOD of the standard polymers were increased similarly (PS: 0.21–0.34 µg, SBR: 0.27–0.38 µg, PP: 0.32–0.36 µg, PMMA: 0.64–1.30 µg, PET: 0.90–1.37 µg, PE: 3.80–6.99 µg) and their decompositions by radical scission processes were not significantly influenced by the matrices. In contrast, matrix‐specific LOD increases of both biodegradable polymers PBAT (LOD: 1.41–7.18 µg) and PLA (0.84–20.46 µg) were observed, probably due to their hetero‐functional character and interactions with the matrices. In conclusion, the TED‐GC/MS performance is not solely determined by the type of the polymers but also by the composition of the matrix.","Polymer mass content, limit of detection (LOD) values for PS (0.21–0.34 µg), SBR (0.27–0.38 µg), PP (0.32–0.36 µg), PMMA (0.64–1.30 µg), PET (0.90–1.37 µg), PE (3.80–6.99 µg), PBAT (1.41–7.18 µg), PLA (0.84–20.46 µg), polymer type identification, detectability, signal quality",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_85_4FG3HD3J.json,85,"Kittner et al., 2023",https://doi.org/10.1002/appl.202200089,llm_ok,,
+high,pdf_first_300_lines,https://doi.org/10.1016/j.envint.2022.107199,,,,2158,RRBFXSF5,C:\Users\Scott.Coffin\Zotero\storage\XMBBDP28\Leslie et al. - 2022 - Discovery and quantification of plastic particle p.pdf,"This study developed a robust sampling and analytical method using pyrolysis double shot-gas chromatography/mass spectrometry to measure plastic particles ≥700 nm in human whole blood from 22 healthy volunteers. Four high production volume polymers were identified and quantified in blood for the first time: polyethylene terephthalate, polyethylene, polymers of styrene, and poly(methyl methylacrylate). The mean sum quantifiable concentration of plastic particles in blood was 1.6 μg/ml, demonstrating that plastic particles are bioavailable for uptake into the human bloodstream and establishing the first measurement of mass concentration of polymeric components in human blood.","Mass concentration (μg/ml) of polymeric component; polymer type identification and quantification (polyethylene terephthalate, polyethylene, polystyrene, poly(methyl methylacrylate)); detection via pyrolysis-GC/MS",≥700 nm,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_88_RRBFXSF5.json,88,"Leslie et al., 2022",https://doi.org/10.1016/j.envint.2022.107199,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1016/j.envpol.2019.113076,,,,58059,EI5C47NA,,"Soil and sludge are important pools for microplastics (MPs), however standard separation methods for MPs from these pools are still missing. We tested the widely used methods for MPs extraction from water and sediment to six agriculture surface soils and three sewage sludges from municipal wastewater treatment plants and included an additional pre-digestion procedure with 30% H2O2 before floatation to remove soil or sludge organic matter (OM). Extraction efficiency of MPs were evaluated under different separation conditions, including floatation solution (NaCl, ZnCl2, and NaI), filtration membrane, and oxidation solution. Results showed that H2O2 pre-digestion significantly increased MPs extraction in soil and sludge, especially the samples with high OM contents, particularly sludge. Floatation solution with higher densities recovered more MPs. The extra released MPs were mainly small fibrous MPs, probably because they are easily retained by aggregates. Our results provide an feasible separation method for MPs in soil and sludge, i.e., pre-digestion with 30% H2O2 at 70 °C, floatation with NaI solution, filtration through nylon membrane, and further oxidation with 30% H2O2 + H2SO4 or 30% H2O2 at 70 °C. About 420–1290 MP items/kg soil were detected in soil samples, while much higher numbers (5553–13460 MP items/kg) were found in sludge samples. The dominate morphology of MPs was white fiber with a size of 0.02–0.25 mm, while the main types of MPs, identified by a micro-Fourier transformed infrared spectroscopy (μ-FTIR), were polyethylene and polypropylene in soil samples and polyethylene, polyethylene terephthalate, and polyacrylonitrile in sludge samples.","MP particle count (items/kg), morphology, polymer type (PE, PP, PET, PAN), fiber identification via μ-FTIR",0.02–0.25 mm (20–250 μm),No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_89_EI5C47NA.json,89,"Li et al., 2019",https://doi.org/10.1016/j.envpol.2019.113076,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.3390/toxics14010105,,,,58060,UWZQJ4I5,C:\Users\Scott.Coffin\Zotero\storage\8GSWCL2B\Ling et al. - 2026 - A Cost-Effective Standardized Quantitative Detection Method for Soil Microplastics in Different Subs.pdf,"Microplastics (MPs) are emerging pollutants with widespread global distribution, continuously accumulating in soils and posing risks of cross-media pollution. Current soil MP detection methods lack unified standards, suffering from high inter-laboratory variability and cost, which become key bottlenecks limiting data comparability and global microplastics pollution control. Here, we systematically reviewed soil MPs studies (2020–2024) and based on stepwise verification, we established a standardized, reproducible detection method: soil samples were dried at 80 °C for 12 h; density separation was performed in Erlenmeyer flasks with decantation, 10 s glass rod stirring, and 12 h settling, repeated five times; digestion was conducted using a 1:2 volume ratio of H2O2 to supernatant at 80 °C for 8 h; and MPs were quantified via stereo-microscopy combined with ImageJ. It should be noted that the use of NaCl limits the recovery of high-density polymers (e.g., PVC, PET), and the minimum detectable particle size is approximately 127 µm. The method was validated in sandy, loam, and clay soils, achieving an average recovery rate of 96.4%, with a processing time of 68 h and a cost of USD 9.77 per sample. In contrast to previous fragmented, non-standardized protocols, this workflow synergistically optimizes high recovery efficiency, cost-effectiveness, and broad applicability, offering a low-cost, efficient, and widely applicable approach for soil MPs monitoring, supporting data comparability across studies and contributing to global pollution assessment and the United Nations 2030 Sustainable Development Goals.","Microplastic quantity, recovery rate (96.4% average), polymer type identification, particle detection via stereo-microscopy and ImageJ analysis",≥127 µm,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_90_UWZQJ4I5.json,90,"Ling et al., 2026",https://doi.org/10.3390/toxics14010105,llm_ok,,
+,,https://doi.org/10.1002/etc.5024,,,,,,,,,,,,,93,"Möller et al., 2022",https://doi.org/10.1002/etc.5024,no_zotero_match,,url_scrape_failed: HTTP Error 403: Forbidden
+high,pdf_first_300_lines,https://doi.org/10.1016/j.ecoenv.2024.117428,,,,58066,85XVPFNB,C:\Users\Scott.Coffin\Zotero\storage\EBRAS9U6\Peneva et al. - 2025 - Microplastic analysis in soils A comparative assessment.pdf,"This comparative assessment evaluated seven analytical protocols for microplastic (MiP) quantification in soils with different textures and organic carbon contents. Protocols combined extraction procedures (density separation, enzymatic/oxidative digestion, solvent extraction) with detection techniques including digital microscopy, fluorescence microscopy, ATR-FTIR, FPA-µFTIR, µ-Raman spectroscopy, Pyrolysis-GC-MS, and ¹H NMR spectroscopy. Eight polymer types (HDPE, LDPE, PP, PS, PA, PET, PVC, and biodegradable PBAT/PLA) were tested as large particles (0.5–1 mm) and small particles (5–250 μm). Fluorescence microscopy achieved the highest recovery of large MiPs (88%), while Soxhlet extraction coupled with ¹H NMR provided the most reliable quantification for small biodegradable particles. Method performance varied significantly by polymer type and soil texture, with Raman spectroscopy most sensitive to soil organic matter interference. Results indicate that different methods have distinct sensitivities for different materials in different soils, requiring careful consideration when comparing MiP loads across methodologies.","Recovery percentage of microplastic particles by polymer type; particle identification and quantification; polymer type identification (HDPE, LDPE, PP, PS, PA, PET, PVC, PBAT/PLA); detection sensitivity comparison across methods; limits of detection; mass quantification for biodegradable polymers",0.5–1 mm (large microplastics) and 5–250 μm (small microplastics),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_97_85XVPFNB.json,97,"Peneva et al., 2025",https://doi.org/10.1016/j.ecoenv.2024.117428,llm_ok,,
+,,https://doi.org/10.3791/67064,,,,58067,MMSMCTFV,,,,,,,,103,"Ren et al., 2025",https://doi.org/10.3791/67064,no_pdf_attachment,,url_scrape_failed: <urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>
+,,https://www.mdpi.com/2673-8929/5/1/45,,,,,,,,,,,,,104,"Šteković et al., 2026",https://www.mdpi.com/2673-8929/5/1/45,no_zotero_match,,url_scrape_failed: HTTP Error 403: Forbidden
+,,https://doi.org/10.1016/j.polymertesting.2025.108824,,,,58068,7AFSC9T3,,,,,,,,106,Sinkha Ray et al. 2025,https://doi.org/10.1016/j.polymertesting.2025.108824,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+,,https://doi.org/10.1016/j.toxlet.2024.07.176,,,,52323,22DT35FU,,,,,,,,115,"Foss Hansen et al., 2024",https://doi.org/10.1016/j.toxlet.2024.07.176,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://doi.org/10.1016/j.envint.2020.106274,,,Comparative analysis,4080,TGZ5BJFE,C:\Users\Scott.Coffin\Zotero\storage\JG6LUY7R\Ragusa et al_2021_Plasticenta.pdf,"Microplastics are particles smaller than five millimeters deriving from the degradation of plastic objects present in the environment. Microplastics can move from the environment to living organisms, including mammals. In this study, six human placentas, collected from consenting women with physiological pregnancies, were analyzed by Raman Microspectroscopy to evaluate the presence of microplastics. In total, 12 microplastic fragments (ranging from 5 to 10 μm in size), with spheric or irregular shape were found in 4 placentas (5 in the fetal side, 4 in the maternal side and 3 in the chorioamniotic membranes); all microplastics particles were characterized in terms of morphology and chemical composition. All of them were pigmented; three were identified as stained polypropylene a thermoplastic polymer, while for the other nine it was possible to identify only the pigments, which were all used for man-made coatings, paints, adhesives, plasters, finger paints, polymers and cosmetics and personal care products.","Particle morphology (spheric or irregular shape), chemical composition (polymer type: polypropylene identified; pigment composition), particle count, distribution across placental compartments (fetal side, maternal side, chorioamniotic membranes)",5–10 μm,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_123_TGZ5BJFE.json,123,"Ragusa et al., 2021",https://doi.org/10.1016/j.envint.2020.106274,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1093/toxsci/kfl165,,,,255,YRDRW6VL,,"The rapid growth in the use of in vitro methods for nanoparticle toxicity assessment has proceeded with limited consideration of the unique kinetics of these materials in solution. Particles in general and nanoparticles specifically, diffuse, settle, and agglomerate in cell culture media as a function of systemic and particle properties: media density and viscosity and particle size, shape, charge and density, for example. Cellular dose then is also a function of these factors as they determine the rate of transport of nanoparticles to cells in culture. Here we develop and apply the principles of dosimetry in vitro and outline an approach for simulation of nanoparticle particokinetics in cell culture systems. We illustrate that where equal mass concentrations (μg/ml) imply equal doses for dissimilar materials, the corresponding particle number or surface area concentration doses differ by orders of magnitude. More importantly, when rates of diffusional and gravitational particle delivery are accounted for, trends and magnitude of the cellular dose as a function of particle size and density differ significantly from those implied by “concentration” doses. For example, 15-nm silver nanoparticles appear ∼4000 times more potent than micron-sized cadmium oxide particles on a cm2/ml media basis, but are only ∼50 times more potent when differences in delivery to adherent cells are considered. We conclude that simple surrogates of dose can cause significant misinterpretation of response and uptake data for nanoparticles in vitro. Incorporating particokinetics and principles of dosimetry would significantly improve the basis for nanoparticle toxicity assessment, increasing the predictive power and scalability of such assays.","particle number concentration, surface area concentration, cellular dose, diffusional and gravitational particle delivery rates, particle potency",15 nm to micron-sized,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_134_YRDRW6VL.json,134,"Teeguarden et al., 2007",https://doi.org/10.1093/toxsci/kfl165,llm_ok,,
+medium,url_landing_page,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R2055,,,,,,,"Commission Regulation (EU) 2023/2055 amends Annex XVII to REACH to restrict the placing on the market of synthetic polymer microparticles. The regulation establishes restrictions on intentionally added microplastics in products, with specific size thresholds and exemptions for certain applications. The regulation applies to synthetic polymer particles and sets out compliance requirements for manufacturers and importers.",Restriction on intentionally added synthetic polymer microparticles; regulatory compliance metrics; particle size classification; polymer type identification,0.1 μm to 5 mm,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_139_url.json,139,EU REACH 2023/2055,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R2055,llm_ok,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_eur_lex_europa_eu_legal_content_EN_TXT_PDF_uri_CELEX_32023R2055.txt,url_cache
+,url_landing_page,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401441,,,,,,,,,,,,,140,"European Commission, 2024",https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401441,"llm_failed: Claude did not return valid JSON: ```json
+{
+  ""particle_size_range"": ""1-5000 μm"",
+  ""key_metrics_output"": ""particle count, particle size distribution, polymer type identification, mass concentration"",
+  ""abstract"": ""Commission Delegated Decision (EU) 2024/1441 establishes the methodology for measuring microplastics in water intended for human consumption. The decision provides standardized procedures for sampling, sample preparation, and analysis of microplastic particles in drinking water supplies across EU member states."",
+  ""confidence"": ""medium"",
+  ""evidence"": {
+    ""particle_size_range"": [
+      ""Document title references 'microplastics in water' but specific size ranges not clearly extracted from available PDF context""
+    ],
+    ""key_metrics_output"": [
+      ""methodology to measure microplastics"" suggests quantitative measurement outputs including particle characterization""
+    ],
+    ""abstract"": [
+      ""Commission Delegated Decision (EU) 2024/1441 of 11 March 2024"",
+      ""methodology to measure microplastics ",C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_eur_lex_europa_eu_legal_content_EN_TXT_PDF_uri_OJ_L_202401441.txt,url_cache
+low,zotero_abstractNote,https://doi.org/10.1016/j.marpolbul.2018.11.022,,,,7081,5BV48C5V,C:\Users\Scott.Coffin\Zotero\storage\N8PFC6SL\Frias_Nash_2019_Microplastics.pdf,"Polymer science is one of the most revolutionary research areas of the last century, instigated by the discovery of Bakelite, the first synthetic plastic. Plastic, once a revolutionary material, has gradually become a global environmental threat with ubiquitous distribution.",,,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_143_5BV48C5V.json,143,"Frias & Nash, 2019",https://doi.org/10.1016/j.marpolbul.2018.11.022,llm_ok,,
+,,https://doi.org/10.1016/j.marpolbul.2024.116907,,,,58073,8V2PXL5B,,,,,,,,144,"Ho et al., 2024",https://doi.org/10.1016/j.marpolbul.2024.116907,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://doi.org/10.1021/es2031505,,,,7673,RDHWBEY2,C:\Users\Scott.Coffin\Zotero\storage\HQ8827DV\Hidalgo-Ruz et al_2012_Microplastics in the Marine Environment.pdf,"This review of 68 studies compares the methodologies used for the identification and quantification of microplastics from the marine environment. Three main sampling strategies were identified: selective, volume-reduced, and bulk sampling. Most sediment samples came from sandy beaches at the high tide line, and most seawater samples were taken at the sea surface using neuston nets. Four steps were distinguished during sample processing: density separation, filtration, sieving, and visual sorting of microplastics. Visual sorting was one of the most commonly used methods for the identification of microplastics (using type, shape, degradation stage, and color as criteria). Chemical and physical characteristics (e.g., specific density) were also used. The most reliable method to identify the chemical composition of microplastics is by infrared spectroscopy. Most studies reported that plastic fragments were polyethylene and polypropylene polymers. Units commonly used for abundance estimates are “items per m2” for sediment and sea surface studies and “items per m3” for water column studies. Mesh size of sieves and filters used during sampling or sample processing influence abundance estimates. Most studies reported two main size ranges of microplastics: (i) 500 μm−5 mm, which are retained by a 500 μm sieve/net, and (ii) 1−500 μm, or fractions thereof that are retained on filters. We recommend that future programs of monitoring continue to distinguish these size fractions, but we suggest standardized sampling procedures which allow the spatiotemporal comparison of microplastic abundance across marine environments.","abundance (items per m² for sediment/sea surface; items per m³ for water column); polymer type; particle shape, degradation stage, color; chemical composition via infrared spectroscopy; specific density",1–5 mm (two main fractions: 500 μm–5 mm and 1–500 μm),Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_153_RDHWBEY2.json,153,"Hidalgo-Ruz et al., 2012",https://doi.org/10.1021/es2031505,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.3390/su12219074,,,,58075,3IRUWNMB,C:\Users\Scott.Coffin\Zotero\storage\YWIRI8VB\Thomas et al. - 2020 - Sample Preparation Techniques for the Analysis of Microplastics in Soil—A Review.pdf,"Although most plastic pollution originates on land, current research largely remains focused on aquatic ecosystems. Studies pioneering terrestrial microplastic research have adapted analytical methods from aquatic research without acknowledging the complex nature of soil. Meanwhile, novel methods have been developed and further refined. However, methodical inconsistencies still challenge a comprehensive understanding of microplastic occurrence and fate in and on soil. This review aims to disentangle the variety of state-of-the-art sample preparation techniques for heterogeneous solid matrices to identify and discuss best-practice methods for soil-focused microplastic analyses. We show that soil sampling, homogenization, and aggregate dispersion are often neglected or incompletely documented. Microplastic preconcentration is typically performed by separating inorganic soil constituents with high-density salt solutions. Not yet standardized but currently most used separation setups involve overflowing beakers to retrieve supernatant plastics, although closed-design separation funnels probably reduce the risk of contamination. Fenton reagent may be particularly useful to digest soil organic matter if suspected to interfere with subsequent microplastic quantification. A promising new approach is extraction of target polymers with organic solvents. However, insufficiently characterized soils still impede an informed decision on optimal sample preparation. Further research and method development thus requires thorough validation and quality control with well-characterized matrices to enable robust routine analyses for terrestrial microplastics.","microplastic identification and quantification; polymer type; sample preparation efficiency (separation, preconcentration, digestion)",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_159_3IRUWNMB.json,159,"Thomas et al., 2020",https://doi.org/10.3390/su12219074,llm_ok,,
+,,https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,,,,,,,,,,,,,8,ISO 16094-3 (DIS),https://www.iso.org/obp/ui/en/#iso:std:iso:16094:-2:ed-1:v1:en,no_zotero_match,,url_no_context
+high,zotero_abstractNote,https://doi.org/10.1186/s43591-025-00145-6,,,,238,Q7LKCP66,C:\Users\Scott.Coffin\Zotero\storage\Y8YZKC68\Hampton et al. - 2025 - The Toxicity of Microplastics Explorer (ToMEx) 2.0.pdf,"In 2021 the Toxicity of Microplastics Explorer (ToMEx, https://microplastics.sccwrp.org) was released as an open source, open access database and web application for microplastics toxicity. Since then, it has been utilized by the microplastic research community for the exploration, visualization, and analysis of toxicity data for both hazard characterization and risk assessment. The peer-reviewed literature has continued to grow exponentially, making ToMEx out-of-date. To ensure the continued utility of ToMEx, an international crowd-sourcing approach was utilized to update ToMEx by extracting data from additional studies published since the original release. Through this process, both the aquatic and human health ToMEx databases roughly doubled in size, and modest increases in data diversity (e.g., number of species represented, types of test particles) were observed in the aquatic organisms database. However, most trends (e.g., greater toxicities observed with smaller particle sizes, lack of dose–response data etc.) observed in the first iteration of ToMEx remained constant. A previously developed framework for deriving ecological health-based microplastic thresholds using species sensitivity distributions was reapplied to determine how thresholds and their associated uncertainty intervals would change following the database update. Twelve new studies passed minimum screening criteria and were deemed fit for the purpose of threshold derivation. The addition of new data allowed for the separation of freshwater and marine compartments which had previously been combined due to a lack of applicable toxicity data for freshwater species. When molecular and cellular level endpoints were included, freshwater thresholds were comparable or increased from values calculated using previous data (-5 to 2.5-fold change) whereas marine thresholds dramatically decreased (-5000 to -29-fold change). However, when endpoints were restricted to organism and above, marine and freshwater thresholds were comparable to those calculated previously (-20 to 14-fold change). Confidence intervals for both marine and freshwater thresholds remained wide. The doubling of the database increases the value of ToMEx for researchers, particularly those focused on characterizing hazards associated with microplastics. Its utility remains limited for environmental managers as 89% of studies in ToMEx 2.0 failed to meet minimum screening criteria for threshold derivation, highlighting the need to generate fit-for-purpose toxicity data for threshold development. However, ToMEx continues to be a useful research tool, and future iterations could become even more powerful through novel artificial intelligence applications to streamline data curation and even predict toxicological outcomes.","toxicity data, hazard characterization, risk assessment, ecological health-based thresholds, species sensitivity distributions, dose-response data, organism-level and molecular/cellular endpoints",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_47_Q7LKCP66.json,47,"Thornton Hampton et al., 2025",https://doi.org/10.1186/s43591-025-00145-6,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1520/D8332-20,,,,58046,R8TYA6TL,,"Significance and Use
+
+5.1 When significant quantities of inorganic or organic material are present in water samples (high suspended solids), microplastic particles/fibers can be masked and the ability to conduct reliable identification and quantification analyses of the plastic particles/fibers can be impeded.
+
+5.2 In order to quantify the occurrence of microplastic particles/fibers in wastewater influent (high suspended solids), the sampling procedure must be able to reliably collect samples at a constant flow over the desired 24-hour interval to reflect changes in diurnal flow. For wastewater influent the capture flow rate should be no less than 1 GPM over the 24-hour interval (approximately 1440 gal or 5450 L total) to minimize the problem with heterogeneity of the suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.3 In order to quantify the occurrence of microplastic particles/fibers in all other water samples with a lower content of inorganic or organic material present addressed by this practice (low to medium suspended solids), a minimum volume of 1500 L (approximately 400 gal) should be filtered through the appropriate filters or sieves to minimize potential issues with heterogeneity of suspended solids and to reduce the standard error (the larger the sample size, the smaller the standard error).
+
+5.4 Microplastic particles/fibers retained on the sieves are suitable for characterization in terms of size, shape, quantity, and composition (polymer type), dependent upon the chosen analytical method.
+
+Scope
+
+1.1 This practice provides for the collection of water samples with high, medium, or low suspended solids to determine the presence, count, polymer type, and physical characteristics of microplastic particles and fibers. This collection practice has been validated for the collection of samples from drinking water, surface waters, wastewater influent and effluent (secondary and tertiary), and marine waters. This practice is not limited to these particular water matrices; however, the applicability of this practice to other aqueous matrices must be demonstrated.
+
+1.2 Water samples are passed through filters or sieves of adequate mesh size to enable capture of the smallest desired particle size. For waters with high or medium suspended solids content, a series of sieves with increasingly smaller mesh size should be used to prevent clogging and allow for the collection of desired particle size fractions.
+
+1.3 Subsequent sample preparation followed by analysis utilizing either Pyrolysis gas chromatography/mass spectrometry (Py-GC/MS), IR spectroscopy, or Raman spectroscopy may be used to identify the quantity (mass or number count) and composition (polymer type) of microplastic particles/fibers. The spectroscopic methods can provide a count of the number of particles and fibers present in a sample, and Py-GC/MS can provide the mass present in a sample. When desired, microplastic particle/fiber size, shape and surface characteristics can be ascertained with appropriate instruments such as a scanning electron microscope (SEM).
+
+1.4 Units—The values stated in SI units are to be regarded as the standard except where standard U.S. equipment is specified in imperial units, for example, inches and gallons. No other units of measurement are included in this standard.
+
+1.5 Standard Practice—This practice offers a set of instructions for performing one or more specific operations. This practice cannot replace education or experience and should be used in conjunction with professional judgment. Not all aspects of this practice may be applicable in all circumstances. This practice is not intended to represent or replace the standard of care by which the adequacy of a given professional service must be judged, nor should this practice be applied without consideration of a project’s many unique aspects.
+
+1.6 This standard does not purport to address all of the safety concerns, if any, associated with its use. It is the responsibility of the user of this standard to establish appropriate safety, health, and environmental practices and determine the applicability of regulatory limitations prior to use.
+
+1.7 This international standard was developed in accordance with internationally recognized principles on standardization established in the Decision on Principles for the Development of International Standards, Guides and Recommendations issued by the World Trade Organization Technical Barriers to Trade (TBT) Committee.","particle count, mass, polymer type, size, shape, surface characteristics",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_65_R8TYA6TL.json,65,ASTM D8333-20,https://doi.org/10.1520/d8332-20,llm_ok,,
+,,https://doi.org/10.1520/D8489-23,,,,,,,,,,,,,67,ASTM D8489-23,https://doi.org/10.1520/d8489-23,no_zotero_match,,url_scrape_failed: <urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>
+,,https://doi.org/10.1016/j.chemosphere.2017.02.010,,,,58080,RDA45EMW,,,,,,,,82,"Dümichen et al., 2017",https://doi.org/10.1016/j.chemosphere.2017.02.010,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+high,zotero_abstractNote,https://doi.org/10.1002/etc.5024,,,,2140,NIY874Z2,C:\Users\Scott.Coffin\Zotero\storage\8DH4P5II\Möller et al. - 2022 - Tackling the Challenge of Extracting Microplastics.pdf,"Microplastic pollution in soils is an emerging topic in the scientiﬁc community, with researchers striving to determine the occurrence and the impact of microplastics on soil health, ecology, and functionality. However, information on the microplastic contamination of soils is limited because of a lack of suitable analytical methods. Because micro‐Fouriertransform infrared spectroscopy (µ‐FTIR), next to Raman spectroscopy, is one of the few methods that allows the determination of the number, polymer type, shape, and size of microplastic particles, the present study addresses the challenge of purifying soil samples sufﬁciently to allow a subsequent µ‐FTIR analysis. A combination of freeze‐drying, sieving, density separation, and a sequential enzymatic‐oxidative digestion protocol enables removal of the mineral mass (>99.9% dry wt) and an average reduction of 77% dry weight of the remaining organic fraction. In addition to visual integrity, attenuated total reﬂectance FTIR, gel permeation chromatography, and differential scanning calorimetry showed that polyamide, polyethylene, polyethylene terephthalate, and polyvinyl chloride in the size range of 100 to 400 µm were not affected by the approach. However, biodegradable polylactic acid showed visible signs of degradation and reduced molecular weight distribution after protease treatment. Nevertheless, the presented puriﬁcation protocol is a reliable and robust method to purify relatively large soil samples of approximately 250 g dry weight for spectroscopic analysis in microplastic research and has been shown to recover various microplastic ﬁbers and fragments down to a size of 10 µm from natural soil samples. Environ Toxicol Chem 2022;41:844–857. © 2021 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals LLC on behalf of SETAC.","polymer type, particle number, shape, size; mineral mass removal (>99.9%), organic fraction reduction (77%); recovery of fibers and fragments",10–400 μm,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_93_NIY874Z2.json,93,"Möller et al., 2022",https://doi.org/10.1002/etc.5024,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.3791/67064,,,,58067,MMSMCTFV,,"Microplastics (MPs) pollution in the terrestrial environment has received increasing attention over the last decade, with increasing studies describing the numbers and types of MPs in different soil systems and their impacts on soil and crop health. However, different MPs extraction and analytical methods are used, limiting opportunities to compare results and generate reliable evidence for industry advice and policymakers. Here, we present a protocol that describes the methodology for sampling, separation, and chemical identification of conventional MPs from soil. The method is low-cost, and the materials are readily available. This enhances operational ease and may help with widespread adoption. The protocol provides detailed information on sample collection from the top 0-30 cm of soil using plastic-free utensils; simulation of different soil types through the use of various solid media (such as bentonite clay, silicon dioxide, and non-contaminated soil), with the addition of the same mass of polyethylene(PE)-MPs for subsequent quantification; density separation of plastic particles utilizing saturated sodium chloride (NaCl) solution and digestion of organic impurities in the supernatant using 4 M sodium hydroxide (NaOH) solution; quantification of particles using fluorescent microscopy after Nile Red staining; and polymer identification using micro Fourier-Transform Infrared Spectroscopy (μ-FTIR) or Laser-Direct Infrared (LDIR) spectroscopy. The MPs recovery rate ranged from 83% - 90% for the abovementioned media. This protocol presents an efficient method for soil MPs analysis that is optimized for feasibility, applicability, and cost-effectiveness. Moreover, the video accompanied can guide the process of analyzing the soil MPs step-by-step virtually. This study is dedicated to standardizing the methods for soil MPs analysis, enhancing the connectivity and comparability of measurements, and establishing a foundation for more standardized and scientific research.","Particle quantification (count), polymer type identification, recovery rate (83%-90%), particle morphology",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_103_MMSMCTFV.json,103,"Ren et al., 2025",https://doi.org/10.3791/67064,llm_ok,,
+high,zotero_abstractNote,https://www.mdpi.com/2673-8929/5/1/45,,,,58086,EIUPIF7N,C:\Users\Scott.Coffin\Zotero\storage\7483FQNP\Šteković et al. - 2026 - Development of a Microwave-Assisted Digestion Procedure for Microplastics Extraction from Different.pdf,"Growing concern over the presence of microplastics in food has led to the development of numerous methods for their extraction and analysis. However, many of these methods are time-consuming and limited to specific food types. In this study, we present a novel and quick approach involving microwave-assisted acid extraction of microplastics from food, followed by Raman microscopy analysis. The method’s performance was evaluated through determination of its digestion efficiency, particle mass and number recovery, limit of detection (LOD), and the digestion protocol’s effect on polymer physicochemical characteristics. The extraction protocol achieved 99.74–100.01% digestion of four different food matrices within 2 h, with 81.4–110.7% mass and 80–108% number recoveries of added polymer particles, both being within the 80–120% range. Importantly, DSC, TGA, DLS and Raman analyses of added particle polymers showed no significant change in PE, PP and PTFE polymer structure, while some structural changes were found for PET and PMMA. This method’s good analytical performance, high throughput and suitability for quick digestion of several different food matrices make it a promising step towards reliable monitoring of microplastics in food.","digestion efficiency (99.74–100.01%), particle mass recovery (81.4–110.7%), particle number recovery (80–108%), limit of detection (LOD), polymer type identification (PE, PP, PTFE, PET, PMMA), polymer physicochemical characteristics via DSC, TGA, DLS, and Raman analysis",,Yes,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_104_EIUPIF7N.json,104,"Šteković et al., 2026",https://www.mdpi.com/2673-8929/5/1/45,llm_ok,,
+high,zotero_abstractNote,https://doi.org/10.1016/j.polymertesting.2025.108824,,,,58068,7AFSC9T3,,"Understanding microplastics' (MPs) transport from soils to aquatic ecosystems is challenging due to labor-intensive detection methods, especially in large-scale plot experiments analyzing surface runoff and soil erosion. To address this, we used fluorescent MPs as tracers and developed a cost-effective protocol to detect them in dry soils and eroded sediments. We analyzed spherical polyethylene (PE: 125–150 μm; 425–500 μm) and irregular polylactic acid (PLA: 125–150 μm; 250–300 μm). Sample assays were prepared primarily based on dry and wet sieving. Subsequent darkroom photography under 365 nm illumination, and thresholding and segmentation-based image analysis were done. The developed protocol demonstrates high reliability, precision, and F-scores of 88.7 % ± 2.9 %, 85.2 % ± 3.1 %, and 86.9 % ± 2.8 %. PE exhibited slightly higher recovery rates (85 % ± 5 %) than PLA (79 % ± 8 %). Particle size influenced recovery, with larger MPs achieving significantly higher recovery. Smaller particles showed slightly lower recovery under dry soil conditions, but their recovery improved under sediment conditions facilitated by wet sieving and ultrasonication. All fluorescent MPs retained >95 % detectability after three months of storage, highlighting marker temporal stability. Compared to existing methods, this protocol eliminates complex digestion steps, reduces costs, and ensures minimal contamination, providing a robust framework for MP transport studies. It offers potential for enhancement through advanced imaging and machine learning, enabling more efficient and accessible detection in environmental research.","Recovery rates (%), reliability, precision, F-scores, detectability retention, polymer type (PE, PLA), particle shape (spherical, irregular)","125–150 μm, 250–300 μm, 425–500 μm",No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_106_7AFSC9T3.json,106,Sinkha Ray et al. 2025,https://doi.org/10.1016/j.polymertesting.2025.108824,llm_ok,,
+,,https://doi.org/10.1016/j.toxlet.2024.07.176,,,,52323,22DT35FU,,,,,,,,115,"Foss Hansen et al., 2024",https://doi.org/10.1016/j.toxlet.2024.07.176,no_pdf_attachment,,url_scrape_failed: HTTP Error 403: Forbidden
+,url_landing_page,https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401441,,,,,,,,,,,,,140,"European Commission, 2024",https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401441,"llm_failed: Claude did not return valid JSON: ```json
+{
+  ""particle_size_range"": ""1-5000 μm"",
+  ""key_metrics_output"": ""particle count, particle size distribution, polymer type identification, mass concentration"",
+  ""abstract"": ""Commission Delegated Decision (EU) 2024/1441 establishes the methodology for measuring microplastics in water intended for human consumption. The decision provides standardized procedures for sampling, sample preparation, and analysis of microplastic particles in drinking water supplies across EU member states."",
+  ""confidence"": ""medium"",
+  ""evidence"": {
+    ""particle_size_range"": [
+      ""Document title references 'microplastics in water' but specific size ranges not clearly extracted from provided PDF context""
+    ],
+    ""key_metrics_output"": [
+      ""methodology to measure microplastics"" suggests quantitative measurement outputs including particle characterization""
+    ],
+    ""abstract"": [
+      ""Commission Delegated Decision (EU) 2024/1441 of 11 March 2024"",
+      ""methodology to measure microplastics i",C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\url_context\https_eur_lex_europa_eu_legal_content_EN_TXT_PDF_uri_OJ_L_202401441.txt,url_cache
+high,zotero_abstractNote,https://doi.org/10.1016/j.marpolbul.2024.116907,,,,58073,8V2PXL5B,,"•
+the term microplastics (MP) can stir strong sentiments in some microplastic research and management circles
+•
+a consistent definition promotes more coherent discussion around the fate and adverse effects to human health and the environment
+•
+a definition should be agnostic to the analytical instrumentation, as these tools are rapidly becoming more sensitive and faster
+•
+lower size limits were selected, in part, to capture bioavailable particles which have greater ecological, and human health risks","Definition consistency, size range boundaries, bioavailability assessment, ecological and human health risk implications",,No,Yes,C:\Users\Scott.Coffin\Documents\Claude\Projects\Quality Manuscript\methods_navigator\metadata_cache\responses\row_144_8V2PXL5B.json,144,"Ho et al., 2024",https://doi.org/10.1016/j.marpolbul.2024.116907,llm_ok,,

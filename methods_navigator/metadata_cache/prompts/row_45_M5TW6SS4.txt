@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Thornton Hampton et al., 2022a
+Year: 2022
+Full Title: A living tool for the continued exploration of microplastic toxicity
+DOI/URL: https://doi.org/10.1186/s43591-022-00032-4
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: A living tool for the continued exploration of microplastic toxicity
+DOI: 10.1186/s43591-022-00032-4
+Date: 2022-12-00 12/2022
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Throughout the past decade, many studies have reported adverse effects in biota following microplastic exposure. Yet, the field is still emerging as the current understanding of microplastic toxicity is limited. At the same time, recent legislative mandates have required environmental regulators to devise strategies to mitigate microplastic pollution and develop health-based thresholds for the protection of human and ecosystem health. The current publication rate also presents a unique challenge as scientists, environmental managers, and other communities may find it difficult to keep up with microplastic research as it rapidly evolves. At present, there is no tool that compiles and synthesizes the data from these studies to allow for visualization, interpretation, or analysis. Here, we present the Toxicity of Microplastics Explorer (ToMEx), an open access database and open source accompanying R Shiny web application that enables users to upload, search, visualize, and analyze microplastic toxicity data. Though ToMEx was originally created to facilitate the development of health-based thresholds to support California legislations, maintaining the database by the greater scientific community will be invaluable to furthering research and informing policies globally. The database and web applications may be accessed at https://microplastics.sccwrp.org/.
+
+Context source: zotero_abstractNote
+
+Source context:
+Throughout the past decade, many studies have reported adverse effects in biota following microplastic exposure. Yet, the field is still emerging as the current understanding of microplastic toxicity is limited. At the same time, recent legislative mandates have required environmental regulators to devise strategies to mitigate microplastic pollution and develop health-based thresholds for the protection of human and ecosystem health. The current publication rate also presents a unique challenge as scientists, environmental managers, and other communities may find it difficult to keep up with microplastic research as it rapidly evolves. At present, there is no tool that compiles and synthesizes the data from these studies to allow for visualization, interpretation, or analysis. Here, we present the Toxicity of Microplastics Explorer (ToMEx), an open access database and open source accompanying R Shiny web application that enables users to upload, search, visualize, and analyze microplastic toxicity data. Though ToMEx was originally created to facilitate the development of health-based thresholds to support California legislations, maintaining the database by the greater scientific community will be invaluable to furthering research and informing policies globally. The database and web applications may be accessed at https://microplastics.sccwrp.org/.

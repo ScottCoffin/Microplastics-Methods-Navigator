@@ -1,0 +1,18 @@
+{
+  "scope": "Marine biota tissues (fish gastrointestinal tracts and mussel tissues); microplastic extraction method harmonization",
+  "particle_size_range": null,
+  "key_metrics_output": "Recovery percentage by polymer type (polyethylene, polypropylene, polyethylene terephthalate); interlaboratory coefficient of variation; recovery rate comparison between digestion methods (H2O2 vs KOH)",
+  "abstract": "In the framework of the Plastic Busters MPAs project, a harmonization exercise on two methods of microplastic extraction from biological samples i.e. 15% H2O2 digestion and 10% KOH digestion was carried out. The two methods were tested in four laboratories on fish gastrointestinal tracts and mussel tissues spiked with polyethylene, polypropylene and polyethylene terephthalate. The recovery percentage of microplastics for each method, species and polymer tested were overall similar among laboratories, and interlaboratory coefficient of variation was less than 11% for the majority of samples. Microplastic recovery rates for the two methods were similar for each sample tested, but overall mean interlaboratory recovery rate using KOH (96.67%) was higher than H2O2 (88.75%). Results validate the use of both methods for extracting microplastics from biota tissues. However, when comparing the two methods in terms of microplastic recovery rate, time consumed, technical difficulties and cost, digestion with 10% KOH is considered optimal.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "recovery percentage of microplastics for each method, species and polymer tested",
+      "interlaboratory coefficient of variation was less than 11% for the majority of samples",
+      "mean interlaboratory recovery rate using KOH (96.67%) was higher than H2O2 (88.75%)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

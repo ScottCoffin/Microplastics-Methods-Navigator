@@ -1,0 +1,17 @@
+{
+  "scope": "Microplastics data analysis and quality control; comparison of blank/control data correction methods",
+  "particle_size_range": null,
+  "key_metrics_output": "Contamination removal efficiency (%), control data correction methods performance, limits of detection/quantification (LOD/LOQ), statistical analysis",
+  "abstract": "Although significant headway has been achieved regarding method harmonisation for the analysis of micro­ plastics, analysis and interpretation of control data has largely been overlooked. There is currently no consensus on the best method to utilise data generated from controls, and consequently many methods are arbitrarily employed. This study identified 6 commonly implemented strategies: a) No correction; b) Subtraction; c) Mean Subtraction; d) Spectral Similarity; e) Limits of detection/ limits of quantification (LOD/LOQ) or f) Statistical analysis, of which many variations are possible. Here, the 6 core methods and 45 variant methods (n = 51) thereof were used to correct a dummy dataset using control data. Most of the methods tested were too inflexible to account for the inherent variation present in microplastic data. Only 7 of the 51 methods tested (six LOD/LOQ methods and one statistical method) showed promise, removing between 96.3 % and 100 % of the contamination data from the dummy set. The remaining 44 methods resulted in deficient corrections for background contamination due to the heterogeneity of microplastics. These methods should be avoided in the future to avoid skewed results, especially in low abundance samples. Overall, LOD/LOQ methods or statistical analysis comparing means are recommended for future use in microplastic studies.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "removing between 96.3 % and 100 % of the contamination data",
+      "LOD/LOQ methods or statistical analysis comparing means are recommended"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

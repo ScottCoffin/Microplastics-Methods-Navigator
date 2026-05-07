@@ -1,0 +1,19 @@
+{
+  "scope": "Sediment; freshwater benthic organisms (L. variegatus); comparison of microplastics versus natural mineral particles; chronic toxicity testing",
+  "particle_size_range": null,
+  "key_metrics_output": "Growth, reproduction, particle egestion (faecal pellet production), effect threshold (EC50), organic matter content effects, particle concentration (% v/v)",
+  "abstract": "Whether microplastics cause different effects than inert natural particles, and how to create relevant testing materials, are key questions in microplastics research. We prepared Environmentally Relevant Microplastic (ERMP) and Mineral Microparticle (ERMS) mixtures with similar levels of polydispersity and tested their 28-day chronic effects on the reproduction and growth of L. variegatus at two different organic matter (OM) contents (average and enriched). Additionally L. variegatus was exposed to ERMP and ERMS to study the particle egestion for 14 days. We observed no differences in growth or reproduction between ERMP and ERMS at particle concentrations of up to 10 % (v/v). In contrast, organisms exposed to enriched OM content increased their growth with 30 % and increased reproduction with 20 %. For ERMP with an enriched OM content, reproduction was reduced with an effect threshold EC50 of 13.68 ± 5.54 % (v/v). After 14 days of exposure to 5 % ERMP, the egestion of faecal pellets was higher compared to exposure to 5 % ERMS, suggesting that in order to acquire the same amount of nutrition, L. variegatus is spending more energy. With this study, we demonstrate that refinements in the manufacturing of environmentally diverse particle mixtures can contribute to a more realistic testing of particle effects.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "tested their 28-day chronic effects on the reproduction and growth of L. variegatus",
+      "particle concentrations of up to 10 % (v/v)",
+      "reproduction was reduced with an effect threshold EC50 of 13.68 ± 5.54 % (v/v)",
+      "egestion of faecal pellets was higher compared to exposure to 5 % ERMS"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

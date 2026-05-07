@@ -1,0 +1,24 @@
+{
+  "particle_size_range": "≥700 nm",
+  "key_metrics_output": "Mass concentration (μg/ml) of polymeric component; polymer type identification and quantification (polyethylene terephthalate, polyethylene, polystyrene, poly(methyl methylacrylate)); detection via pyrolysis-GC/MS",
+  "abstract": "This study developed a robust sampling and analytical method using pyrolysis double shot-gas chromatography/mass spectrometry to measure plastic particles ≥700 nm in human whole blood from 22 healthy volunteers. Four high production volume polymers were identified and quantified in blood for the first time: polyethylene terephthalate, polyethylene, polymers of styrene, and poly(methyl methylacrylate). The mean sum quantifiable concentration of plastic particles in blood was 1.6 μg/ml, demonstrating that plastic particles are bioavailable for uptake into the human bloodstream and establishing the first measurement of mass concentration of polymeric components in human blood.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "particles ≥700 nm in human whole blood",
+      "operationally defined method targeted particles that could be retained on a filter with pore size of 700 nm, i.e. particles ≥700 nm in dimension"
+    ],
+    "key_metrics_output": [
+      "Four high production volume polymers applied in plastic were identified and quantified",
+      "Polyethylene terephthalate, polyethylene and polymers of styrene...were the most widely encountered, followed by poly(methyl methylacrylate)",
+      "the mean of the sum quantifiable concentration of plastic particles in blood was 1.6 µg/ml",
+      "pyrolysis double shot - gas chromatography/mass spectrometry"
+    ],
+    "abstract": [
+      "This study's goal was to develop a robust and sensitive sampling and analytical method with pyrolysis double shot - gas chromatography/mass spectrometry and apply it to measure plastic particles ≥ 700 nm in human whole blood",
+      "Four high production volume polymers applied in plastic were identified and quantified for the first time in blood",
+      "the mean of the sum quantifiable concentration of plastic particles in blood was 1.6 µg/ml",
+      "plastic particles are bioavailable for uptake into the human bloodstream"
+    ]
+  }
+}

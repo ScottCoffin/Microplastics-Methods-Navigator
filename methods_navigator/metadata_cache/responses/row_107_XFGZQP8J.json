@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "Recovery rates (fragments 77-80%, fibers 20-33%), particle counts, polymer type identification (PE, PET, PP), blank correction effects, particle morphology (fragments vs fibers)",
+  "abstract": "Although microplastics research has received enormous attention in the last decade, both the research practices and the quality of produced data should still be improved. In this study, the identification process of microplastics with Raman imaging microscope was improved by decreasing the time needed for the analysis. To do that, new features, including terrain mosaic and automatic particle selection, were utilized and various ways of handling the produced microplastics data were implemented and discussed. Furthermore, blank correction of microplastic concentrations was demonstrated and its effects on the recovery of spiked microplastics was assessed with aqueous and solid samples. Six types of microplastics, including fragments and fibers, were spiked in triplicates of ultra-pure water and reference sediment samples. The spiked samples were pretreated by a modified method of the universal enzymatic purification protocol. Microplastics were analyzed with Raman imaging microscope, using terrain mosaic combined with automatic particle selection. The microplastics data were subjected to different identification steps to estimate the potential overestimation and underestimation of microplastics counts. With the complete correction of Raman-based data, the average recovery rates of fragments (77–80%) were higher than fibers (20–33%). The decrease in recovery rates of spiked microplastics (49–57%) were observed when blank correction was applied (28–47%). The impact of the blank correction depended on the polymer, causing exclusion of PE, PET, and PP from sediment samples. For the completely corrected Raman-based data, the average recovery rates of microplastics were higher for water than sediment samples both with and without blank correction. The results demonstrated the impact of blank correction on the microplastics recovery rates. To our knowledge, this is the first study to explore the use of automatic particle selection of Raman imaging microscope for microplastics analysis. Hence, potential drawbacks and advantages of the new features of Raman imaging microscope were explicitly discussed.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "average recovery rates of fragments (77–80%) were higher than fibers (20–33%)",
+      "recovery rates of spiked microplastics (49–57%) were observed when blank correction was applied (28–47%)",
+      "exclusion of PE, PET, and PP from sediment samples",
+      "Six types of microplastics, including fragments and fibers, were spiked"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

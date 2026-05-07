@@ -1,0 +1,26 @@
+{
+  "particle_size_range": "1–500 μm (four fractions: 1–20, 20–212, 212–500, >500 μm for PET; 1–250 μm for aged PE)",
+  "key_metrics_output": "Polymer identity (PET, PE), mass fraction (μg/mg), particle number concentration, particle size distribution (Feret diameter), recovery rates, spectroscopic accuracy (μ-FTIR 95%, μ-Raman 91%), reproducibility (SR 45.9–129%), blank contamination (91±141 particles)",
+  "abstract": "An interlaboratory comparison involving 84 analytical laboratories assessed the accuracy of microplastic detection methods using ISO-approved techniques. Two reference materials (PET and PE powders, 10–200 μm nominal range) were embedded in a water-soluble matrix and pressed into tablets for distribution. Five analytical methods were evaluated: pyrolysis GC/MS, thermal extraction desorption GC/MS, μ-FTIR, μ-Raman, and QCL-IRRAS spectroscopies. Parameters assessed included polymer identity, mass fraction, particle number concentration, and particle size distribution. Results showed high agreement between thermo-analytical methods but variable reproducibility across laboratories (SR 45.9–129%). Tablet dissolution was identified as a critical challenge requiring optimization. Findings will inform ISO standardization documents ISO/DIS 16094-2 and ISO/DIS 16094-3 to improve harmonization and comparability of microplastic analysis worldwide.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "evaluation of particles in a smaller size range is addressed: 1−100 μm for PET and 1−250 μm for aged PE films",
+      "participants were asked to group particles according to the longest distance (maximum Feret diameter) into following categories: (1) 500−100 μm, (2) 100−50 μm, (3) 50−10 μm, (4) 10−5 μm, and (5) 5−1 μm",
+      "additional size class >500 μm to check how efficient the sieving process was"
+    ],
+    "key_metrics_output": [
+      "Parameters to be assessed during microplastic analysis are specified in ISO 24187:2023, where polymer type identification, particle number concentration, size distribution, and particle mass in a sample",
+      "The reproducibility, SR, in thermo-analytical experiments ranged from 62%−117% (for PE) and 45.9%−62% (for PET). In spectroscopical experiments, the SR varied between 121% and 129% (for PE) and 64% and 70% (for PET)",
+      "All participants correctly identified both polymer types",
+      "Lowest limits for identification, depending on the instrument, lie within 10−20 μm (for μ-FTIR spectroscopy) and around 0.5−5 μm (for μ-Raman spectroscopy)"
+    ],
+    "abstract": [
+      "The ILC was organized under the prestandardization platform of VAMAS and gathered a large number (84) of analytical laboratories across the globe",
+      "Two reference materials (RMs), polyethylene terephthalate (PET) and polyethylene (PE) as powders with rough size ranges between 10 and 200 μm, were used to press tablets for the ILC",
+      "The following parameters had to be assessed: polymer identity, mass fraction, particle number concentration, and particle size distribution",
+      "Tablet dissolution turned out to be a very challenging step and should be optimized",
+      "The obtained results as well as test materials will be transferred into the ISO standardization body ISO/TC 147/SC 2 to the documents ISO/DIS 16094-2 and ISO/DIS 16094-3, helping to create standards and achieve comparable results worldwide"
+    ]
+  }
+}

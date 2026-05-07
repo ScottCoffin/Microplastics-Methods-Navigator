@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Koelmans et al., 2020
+Year: 2020
+Full Title: Solving the Nonalignment of Methods and Approaches Used in Microplastic Research to Consistently Characterize Risk
+DOI/URL: https://doi.org/10.1021/acs.est.0c02982
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Solving the Nonalignment of Methods and Approaches Used in Microplastic Research to Consistently Characterize Risk
+DOI: 10.1021/acs.est.0c02982
+Date: 2020-10-06 2020-10-06
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+The lack of standard approaches in microplastic research limits progress in the abatement of plastic pollution. Here, we propose and test rescaling methods that are able to improve the alignment of methods used in microplastic research. We describe a method to correct for the differences in size ranges as used by studies reporting microplastic concentrations and demonstrate how this reduces the variation in aqueous-phase concentrations caused by method differences. We provide a method to interchange between number, volume, and mass concentrations using probability density functions that represent environmental microplastic. Finally, we use this method to correct for the incompatibility of data as used in current species sensitivity distributions (SSDs), caused by differences in the microplastic types used in effect studies and those in nature. We derived threshold effect concentrations from such a corrected SSD for freshwater species. Comparison of the rescaled exposure concentrations and threshold effect concentrations reveals that the latter would be exceeded for 1.5% of the known surface water exposure concentrations worldwide. Altogether, this toolset allows us to correct for the diversity of microplastic, to address it in a common language, and to assess its risks as one environmental material.
+
+Context source: zotero_abstractNote
+
+Source context:
+The lack of standard approaches in microplastic research limits progress in the abatement of plastic pollution. Here, we propose and test rescaling methods that are able to improve the alignment of methods used in microplastic research. We describe a method to correct for the differences in size ranges as used by studies reporting microplastic concentrations and demonstrate how this reduces the variation in aqueous-phase concentrations caused by method differences. We provide a method to interchange between number, volume, and mass concentrations using probability density functions that represent environmental microplastic. Finally, we use this method to correct for the incompatibility of data as used in current species sensitivity distributions (SSDs), caused by differences in the microplastic types used in effect studies and those in nature. We derived threshold effect concentrations from such a corrected SSD for freshwater species. Comparison of the rescaled exposure concentrations and threshold effect concentrations reveals that the latter would be exceeded for 1.5% of the known surface water exposure concentrations worldwide. Altogether, this toolset allows us to correct for the diversity of microplastic, to address it in a common language, and to assess its risks as one environmental material.

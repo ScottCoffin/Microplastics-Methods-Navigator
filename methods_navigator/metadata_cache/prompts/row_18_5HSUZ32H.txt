@@ -1,0 +1,210 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Hüffer et al., 2017
+        Year: 2017
+        Full Title: Microplastic Exposure Assessment in Aquatic Environments: Learning from Similarities and Differences to Engineered Nanoparticles
+        DOI/URL: https://doi.org/10.1021/acs.est.6b04054
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Microplastic Exposure Assessment in Aquatic Environments: Learning from Similarities and Differences to Engineered Nanoparticles
+        DOI: 10.1021/acs.est.6b04054
+        Date: 2017-03-07 2017-03-07
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Feature 
+
+**==> picture [181 x 73] intentionally omitted <==**
+
+pubs.acs.org/est 
+
+# Microplastic Exposure Assessment in Aquatic Environments: from Similarities and Di erences to Learning ff Engineered Nanoparticles 
+
+Thorsten Huffer,[†][,][∥] Antonia Praetorius,[†][,][‡][,][∥] Stephan Wagner,[§][,][∥] Frank von der Kammer,*[,][†] and Thilo Hofmann*[,][†][,][‡] 
+
+> †University of Vienna, Department of Environmental Geosciences and Environmental Science Research Network, Althanstrasse 14, 1090 Vienna, Austria 
+
+> ‡University of Vienna, Research Platform Nano-Norms-Nature, Althanstrasse 14, 1090 Vienna, Austria 
+
+> §Helmholtz Centre for Environmental Research − UFZ, Department of Analytical Chemistry, Permoserstrasse 15, 04318 Leipzig, Germany 
+
+ABSTRACT: Microplastics (MPs) have been identified as contaminants of emerging concern in aquatic environments and research into their behavior and fate has been sharply increasing in recent years. Nevertheless, significant gaps remain in our understanding of several crucial aspects of MP exposure and risk assessment, including the quantification of emissions, dominant fate processes, types of analytical tools required for characterization and monitoring, and adequate laboratory protocols for analysis and hazard testing. This Feature aims at identifying transferrable knowledge and experience from engineered nanoparticle (ENP) exposure assessment. This is achieved by comparing ENP and MPs based on their similarities as particulate contaminants, whereas critically discussing specific differences. We also highlight the most pressing research priorities to support an efficient development of tools and methods for MPs environmental risk assessment. 
+
+## ■[INTRODUCTION] 
+
+The field of environmental exposure and risk assessment of emerging contaminants is often dominated by certain “hot ” topics ,[1] for example, pharmaceuticals, nanomaterials, or (most recently) microplastics. The increased interest in a new, “hot” contaminant class is often based on, or justified by, a significant lack of knowledge concerning its behavior in natural environments and/or the toxic potential of the emerging contaminant, together with a need to assess the suitability of existing regulations or develop new ones. Since an emerging contaminant class is rarely entirely novel and unique, but often shares properties with “established” contaminants, a careful assessment of existing knowledge on related substances help us to direct our research efforts and make more efficient use of limited research resources. 
+
+Plastic in the aquatic environment is an issue of global concern that is particularly evident from the growing amount of plastic litter found in the world’s oceans.[2][,][3] This concern has led to a marked increase in both public and political attention. As a result, the “Leaders’ Declaration” from the 2015 G7 Summit in Germany acknowledged the global risks posed by marine litter, particularly plastics, to marine and coastal life, to ecosystems, and also potentially to human health.[4] Marine littering has been controlled since the 1970s,[5] whereas the debate on the occurrence and the consequences of plastic 
+
+particles with sizes between 1 μm and 5 mm, so-called microplastics (MPs), in the environment has received increased attention only in the recent decade.[6][−][8] MPs are not only a concern for marine environments, but also for freshwater systems as indicated by preliminary reports on a quantitatively similar degree of contamination in both.[7][,][9][,][10] 
+
+Despite the rapidly growing body of published research into the impacts of MPs on various ecosystems,[11] our mechanistic understanding of the behavior of MPs in the environment remains limited. To improve our understanding of the occurrence, behavior and transport of MPs in aquatic systems and to ultimately improve our ability to assess the risks they may present a number of open research questions and challenges remain,[5][,][7][,][12][,][13] falling predominantly into the domains of 
+
+- (1) Elucidating formation, sources and emission pathways, 
+
+- (2) Understanding relevant environmental transformation and transport processes, 
+
+- (3) Developing analytical methods for characterization and monitoring, 
+
+- (4) Designing representative laboratory experiments. 
+
+Over the past decade, research on potential environmental implications of engineered nanoparticles (ENPs), generally 
+
+Published: January 26, 2017 
+
+2499 
+
+© 2017 American Chemical Society 
+
+DOI: 10.1021/acs.est.6b04054 Environ. Sci. Technol. 2017, 51, 2499−2507 
+
+Environmental Science & Technology 
+
+Feature 
+
+Table 1. Overview of ENPs and MP Characteristics and Identification of Transferrable Knowledge from ENPs to MP Fate and Exposure Assessment 
+
+**==> picture [504 x 271] intentionally omitted <==**
+
+defined as particles with at least one dimension <100 nm,[14] has been addressing very similar topics and facing related challenges. Given the particulate nature of both ENPs and MPs, this comes as no surprise. Exposure assessment strategies developed for “conventional” contaminants, present as individual substances in the form of dissolved molecules or ions, are often not adequate for particles. Particulate contaminants are present as more or less stable dispersions (multiphase systems). As a result, their behavior cannot be described by thermodynamics; that is, the use of equilibrium partition coefficients, such as for example the octanol−water partition coefficient Kow, which play an important role in exposure predictions of “conventional” organic contaminants, is not valid for ENPs and MPs.[15] Their fate needs to be described by kinetic principles of aggregation and transport and can be largely based on theories developed in colloid/particle science. This is equally valid for ENPs and for MPs. Furthermore, their properties cannot be described by their chemical composition alone, but are also dependent on particle size and shape. Additionally, heterogeneities in particle populations, both in terms of the chemical composition of the individual particles and the polydispersity in their size distributions, often increase the level of difficulty in understanding and predicting fate. Particles on the smaller end of the size spectrum are particularly prone to exhibiting specific effects due to their high surface to volume ratios. Even bulk materials consisting mainly of ≫100 nm sized particles, in terms of mass, often contain a significant nanofraction, in terms of particle number, at the lower end of their size distribution. This unintentional nanofraction has been discussed several times for ENPs[16][−][18] and the relevance of nanoplastics (i.e., plastic particles <100 nm) in environmental exposure assessment of MPs has received increasing attention as well, but so far lacking field data.[19][−][22] 
+
+It quickly becomes apparent that parallels can be drawn between these two groups of emerging contaminants. In this Feature we relate current challenges and open questions regarding the fate and exposure assessment of MPs to lessons learned over a decade of studying ENPs in the environment.[23][−][25] First, the similarities between ENPs and MPs are used to identify the transferrable knowledge from ENP exposure assessment (Table 1). This is then followed by a critical discussion of differences requiring specific adjustments for MPs. We aim to support a more rapid development of the tools and methods required to advance MP exposure and ultimately risk assessment so that prompt regulatory action can be taken, where necessary. 
+
+## ■[ELUCIDATING][FORMATION,][SOURCES][AND] EMISSION PATHWAYS 
+
+ENPs are typically incorporated in consumer products or industrial applications to fulfill a specific purpose,[26][,][27] or are intentionally applied to the environment, for example as nanopesticides or nanofertilizers in agriculture,[28][,][29] and for contaminant remediation purposes.[30] In contrast, MPs are only rarely deliberately incorporated into a product to serve a specific function, but generally occur as so-called secondary MPs,[24] resulting from the unintentional release and fragmentation of larger pieces of plastics.[6] An exception here are primary MPs, which are specifically produced as microscale particles and used predominantly in personal care products, for example, in the form of microbeads in cosmetic peelings. These primary MPs, which make up only about 0.1−3% of the MPs in the natural environment,[31] may dominate locally, for example, in wastewater effluents of urban environments,[32] but are globally of minor importance. The predominantly unintentional generation of secondary MPs makes it harder to quantify their sources for mass flow models as total production volumes 
+
+2500 
+
+DOI: 10.1021/acs.est.6b04054 Environ. Sci. Technol. 2017, 51, 2499−2507 
+
+Environmental Science & Technology 
+
+Feature 
+
+**==> picture [313 x 282] intentionally omitted <==**
+
+Figure 1. Overview of the most relevant transformation and transport processes affecting ENPs (black circles) and MPs (black pentagons) in aquatic systems. NOM: natural organic matter. The green clouds represent naturally occurring suspended particulate matter (SPM). 
+
+of plastics may be less relevant in this context, compared to breakup/fragmentation/release processes during or after the use stage. For the release quantification of secondary MP two steps are required: (i) quantification of mismanaged plastic waste which is released in the aquatic environment,[33] and (ii) determination of the rates of fragmentation of the released plastic waste in the aquatic environment. 
+
+The ENPs produced in the largest volumes typically consist of metals or metal oxides.[34][,][35] Several mass-flow modeling studies provided emission estimates into different environmental compartments during their life-cycle (e.g., air, water, soil) at global and regional scales.[34][,][36][−][38] These emission estimates are mainly based on data or estimates of production volumes or market penetration of ENP-containing products and applications, release rates during use and transfer factors between various life-cycle stages (e.g., retention in wastewater treatment). In principle, similar mass flow modeling approaches can be applied to MPs, however, different strategies may be needed to elucidate sources and production volumes. 
+
+## ■[UNDERSTANDING][RELEVANT][ENVIRONMENTAL] TRANSFORMATION AND TRANSPORT PROCESSES 
+
+Understanding the transport and transformation processes that contaminants undergo in natural environments is essential to assess their fate pathways and predict environmental concentrations.[39] For this purpose, laboratory[40][−][43] and mesocosm[43][,][44] studies as well as environmental fate models[45] for ENPs have been developed in recent years, with varying levels of detail, realism, and spatial resolution. Many of these approaches could serve as a starting point to study MPs. A river model for ENPs has, for example, already been adapted for modeling the fate of MPs.[20] This was possible because the particulate nature of both ENPs and MPs means that the transport processes for both can 
+
+be in principle described using established concepts from colloid science.[15][,][20][,][46][,][47] More specifically, processes affecting the fate of particles in aquatic environments are heteroaggregation with suspended particulate matter (SPM), sedimentation and deposition on surfaces, resuspension, bed load transport, and various transformation and aging processes (biotic and abiotic) (Figure 1).[48][,][49] These processes are influenced by the properties of the surrounding aquatic medium (pH, ionic strength, composition, temperature, sunlight, SPM, natural organic matter (NOM) content, flow, and turbulence) as well as the particle characteristics (size, shape, density, surface chemistry).[50][,][51] The effect of specific differences in MP and ENP properties on their fate need to be accounted for when extrapolating approaches developed for ENP to MPs. 
+
+Colloidal aggregation and transport processes are strongly influenced by particle sizes and, for the larger colloidal entities, also densities.[52] MPs typically fall into size ranges similar to SPM (μm to mm) in contrast to the much smaller ENPs. Most MPs have very low densities close to the density of water (e.g., polyethylene (PE): 0.91−0.95 g/cm[3] ; polypropylene (PP): 0.91−0.92 g/cm[3] ; and polystyrene (PS): 1.01−1.05 g/cm[3] ),[5][,][53] while ENPs generally have densities greater than 1 g/cm[3] (e.g., TiO2 4.17 g/cm[3] , Ag 10.5 g/cm[3] , CuO 6.31 g/cm[3] ).[54] The lower densities of MPs combined with their larger sizes compared to ENPs will likely lead to the following differences in aggregation and transport: 
+
+- MP-SPM heteroaggregates will be less stable than ENPSPM heteroaggregates due to the MPs’ larger sizes and heteroaggregates’ porosity.[55] Therefore, aggregate breakup needs to be accounted for. 
+
+- Stronger effect of MP properties on MP-SPM heteroaggregates. Slower sedimentation of MP-SPM hetero- 
+
+2501 
+
+DOI: 10.1021/acs.est.6b04054 Environ. Sci. Technol. 2017, 51, 2499−2507 
+
+Environmental Science & Technology 
+
+Feature 
+
+**==> picture [397 x 256] intentionally omitted <==**
+
+Figure 2. Overview of relevant size ranges for ENPs, natural colloids, MPs and nanoplastics and available analytical techniques to characterize particles by size and/or composition. * only in combination with an energy dispersive X-ray detector (EDX), ** no direct size measurement, calculation from mass measurements based on information on particle shape and stoichiometry *** only in combination with element specific detection e.g. with ICP-MS. 
+
+   - aggregates compared to ENP-SPM heteroaggregates or pure SPM, due to lower MP density and higher MP volume fraction in heteroaggregate. Higher potential for MPs to be transported far from their emission source. 
+
+- SPM acts as a collector for ENPs, whereas MPs could act as collectors of SPM or as substrates for biofilm growth, a scenario that is most unlikely for ENPs. 
+
+- ENP movement is dominated by Brownian motion/ diffusion due to their small sizes,[37] whereas MPs experience stronger shear forces during laminar and turbulent flow making them much more susceptible to resuspension from sediments than ENPs.[56] 
+
+The heteroaggregation attachment efficiencies (i.e., the probability of heteroaggregate formation upon collision with SPM) of ENPs and MPs will vary according to their different surface characteristics but are expected to follow similar trends, depending on the conditions in the surrounding aquatic medium (e.g., increased heteroaggregation with increasing ionic strength and stabilization in the presence of NOM).[20][,][57][,][58] Just like the attachment efficiencies, the transformation behavior of both MPs and ENPs are largely dependent on their composition. Some ENPs undergo fast surface transformation and/or dissolution reactions (e.g., dissolution/sulphidation of silver and copper oxide NPs),[59][−][63] whereas other remain largely inert (e.g., titanium dioxide and cerium oxide NPs).[64] In contrast, MPs made of polymeric material (e.g., PE, PP, or PS) are not expected to dissolve in the environment. They can, however, be affected by aging processes, for example when exposed to sunlight. Aging of ENPs results mainly in surface transformations (e.g., oxidation[65] or loss of particle coating), whereas aging of MPs typically leads to more brittle particles that could break up into smaller, possibly nanoscale particles (nanoplastics),[66] together 
+
+with the leaching of various additives incorporated during production of the original plastic materials.[67] 
+
+Homoaggregation of both ENPs and MPs in aquatic environments is likely to be negligible due to the low particle concentrations expected in surface waters compared to the concentrations of naturally occurring SPM. This can be illustrated by comparing the mean interparticle distance between MPs and SPM in a typical freshwater body. Assuming a particle number concentration of 316 particles/1000 m[3] for MP particles with a size of 1 mm (as found in the Danube River by Lechner et al.[68] ), the average distance between MP particles would be 1.8 m. In contrast, the mean distance to SPM, present with a typical mass concentration of 30 mg/L (corresponding to 2.6 × 10[10] particles/1000 m[3] , assuming a density of 2.0 g/ cm[3] and a particle size of 0.1 mm) is equal to 2.0 × 10[−][4] m, approximately 4 orders of magnitude less than the mean distance between MP particles. 
+
+## ■[DEVELOPING][ANALYTICAL][METHODS][FOR] CHARACTERIZATION AND MONITORING 
+
+In case of particulate contaminants such as MPs and ENPs the characterization and quantification in laboratory settings, technical products and natural environments has to go beyond total mass quantification toward a more detailed analysis to reveal information on particle size (distribution), possible coatings, shape and aggregation state.[69][,][70] For ENPs continuous developments and improvements in terms of sensitivity and selectivity of microscopic, chromatographic and spectroscopic instruments have led to the identification of promising approaches, which however often require a combination of complementary analytical techniques, to elucidate the ENP characteristics (Figure 2).[71] For example, particle size and particle composition of inorganic ENPs can be determined with a hyphenation of field flow fractionation (FFF) and element 
+
+2502 
+
+DOI: 10.1021/acs.est.6b04054 Environ. Sci. Technol. 2017, 51, 2499−2507 
+
+Environmental Science & Technology 
+
+Feature 
+
+selective detectors such as inductively coupled plasma mass spectrometry (ICP-MS). Further prominent methods to determine ENP size (distribution) include electron microscopy (EM), light scattering and, most recently, single particle (sp-) ICP-MS (Figure 2). A particular challenge is associated with the fact that the ENPs of primary concern are those smaller than 10 nm, which are also the most difficult to analyze since most of the analytical methods used are based on the detection of mass.[72] The mass scales with the third order to particle size, therefore a 50% reduction in particle size (for spheres) reduces the mass (and hence the signal detected) by 87.5%. 
+
+The broad size range of MPs ranging over 3 orders of magnitude or more requires the use of a variety of techniques in order to cover the entire range of sizes (Figure 2). For MPs the development of analytical strategies has so far been focusing on larger size particles (micrometer range and above), where techniques such as sieving, optical microcopy and laser obscuration in combination with Raman or Fourier transformed infrared spectroscopy or thermoanalytical techniques to determine particle composition (polymer type) were applied. Besides particle size and composition, additives in the polymer might be of interest in the discussion of MP analysis. 
+
+The listed techniques which are known from material science are considered as most promising to meet the challenges (particle size and composition, i.e., polymer type) for analysis of MPs in the size range >50 μm in aquatic environmental samples.[73] For MP size fractions <50 μm similar challenges (selectivity and sensitivity) as for ENPs arise for the development of analytical methods, where knowledge from ENPs could be integrated (Table 1). The possible existence of nanoplastic particles may lead to a further increase in similarities as encountered for the detection of ENPs above (Figure 2). For particle size determination, FFF[74] or liquid chromatography[75] techniques might be adapted, but will be challenged by particles >1 μm. Detection techniques for analysis of organic ENPs (determination of carbon-based ENPs, for example, C60 fullerenes in environmental samples by atmospheric photoionization with an Orbitrap high resolution MS) are not directly transferable to nanoplastic analysis because of insufficient ionization of the polymer matrix. There is clearly a need to develop and adapt polymer selective detectors (e.g., Raman spectroscopy hyphenated to particle size separation techniques) in order to reveal the existence and fate of nanosized MPs in environmental matrices. 
+
+Similar to ENPs, MP characterization in the presence of a particulate matrix (as often encountered in natural systems and biota) requires sample preparation and/or highly specific and sensitive particle analysis. For ENP determination particle-byparticle analysis using high-resolution and element-specific methods such as electron-microscopy or newly developed spectrometric techniques are under discussion.[76][,][77] Furthermore, suitable sample preparation strategies are critical to preserve ENP or MP properties, and need to be developed on a case-by-case basis.[71] For example, to extract particles from a product or environmental matrix, harsh sample treatment strategies may result in a physical or chemical alteration of particle properties or induce particle aggregation resulting in misleading size measurements.[78][,][79] 
+
+Although a huge effort is currently being directed to developing appropriate analytical protocols for determining and characterizing levels of MP contamination in aquatic environments, there remain significant discrepancies between different sets of published data due to a lack of standardization 
+
+(of analytical methods and definitions).[80][,][81] This is particularly evident from the broad variety of concentration units in which the occurrence of MPs in aqueous systems is reported. For marine surface samples, these range from mass-based “grams per m[3] ” to number-based “particles per m[3] ” as well as to surface area normalized concentrations “grams per m[2] ” and “particles per m[2] ”.[82] The debate on reporting particle number versus mass-based concentrations among the MP research community is reminiscent of similar discussions with respect to ENPs.[83] For ENPs, no final agreement on concentration metrics has been found, but the discussion has resulted in an increased awareness of the challenges associated with reporting properties of particulate contaminants. 
+
+## ■[DESIGNING][REPRESENTATIVE][LABORATORY] EXPERIMENTS 
+
+Particulate contaminants require special considerations when it comes to designing adequate laboratory experiments to investigate, for example, their behavior or toxicity. Since particles do not form solutions but more or less stable dispersions, their dispersion stability needs to be controlled in the experimental set-ups. The dispersion stability will depend on both the properties of the particles and of the medium[40] as well as the particle concentration. At high ionic strength for example, ENPs are prone to aggregation since the dissolved ions in solution effectively screen the repulsive charges on the ENP surfaces and promote aggregation. In systems where their surface charge is important enough to provide electrostatic stabilization against aggregation, the ENPs form stable dispersions, whose movement is dominated by Brownian motion and sedimentation is prevented, even in nonstirred systems (Figure 3a). MPs on the other hand, which are often 
+
+**==> picture [241 x 84] intentionally omitted <==**
+
+Figure 3. Schematic representation of ENPs and MPs in laboratory experiments. The effect of particle size and density is depicted by comparing small particles (nanometer scale) of high density (a), large particles of low density (b) and large particles with high density. Experiments using realistic particle concentrations often fall below analytical detection thresholds (d), while suspensions with concentrations high enough to be detected are prone to fast particle aggregation (e). 
+
+characterized by a lower density and larger sizes, may float in the aquatic media, possibly leading to inhomogeneities in nonstirred systems (Figure 3b). Even in cases where MPs have a density larger than water, stirring would be required to avoid sedimentation due to increased gravitational settling of large and dense particles (Figure 3c). 
+
+The strong influence that the properties of the surrounding aquatic medium exert on the behavior of particulate contaminants needs to be taken into consideration. Important aspects of ENP fate assessment are (i) the use of well-defined aquatic media that are complex enough to be representative of environmental conditions but can be reproduced in standard laboratories,[41][,][84] and (ii) a detailed knowledge of the ENP 
+
+2503 
+
+DOI: 10.1021/acs.est.6b04054 Environ. Sci. Technol. 2017, 51, 2499−2507 
+
+Feature 
+
+## Environmental Science & Technology 
+
+characteristics. This will be equally important in similar investigations for MPs. An additional challenge, which may be relevant for both ENPs and MPs is the fact that laboratory experiments typically require the use of particle concentrations that are orders of magnitude greater than those likely to be foun

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: ASTM D8402-23
+Year: 2023
+Full Title: Standard Practice for Development of Microplastic Reference Samples for Calibration and Proficiency Evaluation in All Types of Water Matrices
+DOI/URL: https://doi.org/10.1520/D8402-23
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: 
+DOI: 
+Date: 
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+Overview Governance Governance ASTM President Board of Directors Senior Staff Global Cooperation Global Cooperation In-Residence Training Programs Online Training International Partners UAE Chapter Corporate Citizenship History History 125 Anniversary Case Studies Regional Offices and Support Diversity, Equity, Inclusion & Belonging Culture & Careers Membership & Participation Membership & Participation Overview Membership Membership Member Types Participating Members Organizational Members Informational Members Student Members Renew or Reinstate Membership Technical Committees Technical Committees View All Technical Committees Initiate a New Standards Activity Key Documents and Forms Interlaboratory Studies Program Honors and Awards Member Tools Member Tools New Member Orientation Virtual Classroom for Members ASTM101: Intro to Standards Meetings, Symposia, Workshops Meetings, Symposia, Workshops Upcoming Events Committee Meetings Propose a Symposia/Workshop Academic Outreach Academic Outreach For Students For Professors For Librarians For Members Student Chapters Emerging Professionals Publish with ASTM Publish with ASTM ASTM Digital Library Consumer Participation Consumer Participation Consumer Safety Standards How to Get Involved Training & Resources News & Events Standards & Solutions Standards & Solutions Overview Standards & Publications Standards & Publications Standards Products Catalogs ASTM Standards Tracker® Adjuncts and Reference Radiographs Selected Technical Papers (STPs) Manuals, Monographs, and Data Series Journals Technical Reports Research Reports Reading Room Book of Standards Book of Standards Standards by Section Enterprise Solutions Enterprise Solutions ASTM Compass® ASTM SpecBuilder Digital Library Digital Library Market Insights & Innovation Market Insights & Innovation Market Insights Market Innovation Standardization Impact Reports ASTM Xcellerate Centers of Excellence Advisory Services Market Intelligence Portfolio Laboratory Services Laboratory Services Proficiency Testing Program Reference Materials ASTM Insight SQC Cement and Concrete Reference Laboratory Training Courses Training Courses Accreditations International Training Certification Certification Products Personnel Safety Equipment Institute NCATT Environmental Product Declarations News News Standardization News Standardization News Editorial Calendar & Media Kit Español Issue Archive Press Releases Podcasts Help Help Overview Contact ASTM Locations FAQ Home Products & Services Scope 1.1 This practice describes manufacturing methods to create microplastic particles from pellets of common polymers and the preparation of microplastic reference samples for calibration and proficiency evaluation of microplastic collection practices, preparation practices, and identification methods. 1.2 This practice does not describe methods for controlling or characterizing the shapes of particles. The procedures have been observed to yield irregularly shaped particles, the use of which in many cases will serve to remove the analytical bias inherent with using distinctive manufactured spherical beads. Other procedures should be used if spheres or elongated fibers are desired. 1.3 This practice does not describe handling procedures for waste generated when executing the procedures described herein. It is the responsibility of the user of this practice to follow applicable laws and regulations when manufacturing and disposing of microplastic particles, and to establish appropriate procedures to minimize the amount of waste generated. 1.4 The values stated in SI units are to be regarded as standard. No other units of measurement are included in this standard. 1.5 This standard does not purport to address all of the safety concerns, if any, associated with its use. It is the responsibility of the user of this standard to establish appropriate safety, health, and environmental practices and determine the applicability of regulatory limitations prior to use. 1.6 This international standard was developed in accordance with internationally recognized principles on standardization established in the Decision on Principles for the Development of International Standards, Guides and Recommendations issued by the World Trade Organization Technical Barriers to Trade (TBT) Committee. Language Select Language Format Select Format What is a Redline? Why Redline? A PDF redline is a quick and easy way to compare all of the changes between the current, active standard and the previous version. With a redline you'll immediately see: additions deletions and other changes between the two standards. Save Time and Trouble! With a Redline you no longer have to spend time trying to determine what has changed in the new standard! Redlines save you time and ensure you see what the changes are to the standard. Price When you select the "Standard + Redline" option you get both documents! Best of all, the cost of a Standard + Redline is only slightly more than buying the Active Standar

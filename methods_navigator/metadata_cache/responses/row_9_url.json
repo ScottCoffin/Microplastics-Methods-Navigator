@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "particle size classification, sampling apparatus specifications, sample preparation procedures, representative sample quantities",
+  "abstract": "ISO 24187:2023 establishes principles for the analysis of microplastics in various environmental matrices. The standard specifies minimum requirements for microplastics analysis including particle size classification of plastics, apparatus selection for sampling, sample preparation procedures, and determination of representative sample quantities. The document provides a consistent basis for development of specific standards to enable comparison and correlation of results across different case situations and environmental matrices.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "the unique particle size classification of plastics, the use of certain apparatus with regard to sampling, sample preparation, and the determination of representative sample quantities"
+    ],
+    "abstract": [
+      "describes the principles to be followed in the analysis of microplastics in various environmental matrices",
+      "includes the unique particle size classification of plastics, the use of certain apparatus with regard to sampling, sample preparation, and the determination of representative sample quantities",
+      "specify minimum requirements until specific standards for the different case situations are available",
+      "ensure that comparison or correlation of results is possible"
+    ]
+  }
+}

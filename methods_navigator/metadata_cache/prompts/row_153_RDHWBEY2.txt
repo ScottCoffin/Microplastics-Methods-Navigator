@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Hidalgo-Ruz et al., 2012
+Year: 2012
+Full Title: Microplastics in the marine environment: a review of the methods used for identification and quantification
+DOI/URL: https://doi.org/10.1021/es2031505
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Microplastics in the Marine Environment: A Review of the Methods Used for Identification and Quantification
+DOI: 10.1021/es2031505
+Date: 2012-03-20 2012-03-20
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+This review of 68 studies compares the methodologies used for the identification and quantification of microplastics from the marine environment. Three main sampling strategies were identified: selective, volume-reduced, and bulk sampling. Most sediment samples came from sandy beaches at the high tide line, and most seawater samples were taken at the sea surface using neuston nets. Four steps were distinguished during sample processing: density separation, filtration, sieving, and visual sorting of microplastics. Visual sorting was one of the most commonly used methods for the identification of microplastics (using type, shape, degradation stage, and color as criteria). Chemical and physical characteristics (e.g., specific density) were also used. The most reliable method to identify the chemical composition of microplastics is by infrared spectroscopy. Most studies reported that plastic fragments were polyethylene and polypropylene polymers. Units commonly used for abundance estimates are “items per m2” for sediment and sea surface studies and “items per m3” for water column studies. Mesh size of sieves and filters used during sampling or sample processing influence abundance estimates. Most studies reported two main size ranges of microplastics: (i) 500 μm−5 mm, which are retained by a 500 μm sieve/net, and (ii) 1−500 μm, or fractions thereof that are retained on filters. We recommend that future programs of monitoring continue to distinguish these size fractions, but we suggest standardized sampling procedures which allow the spatiotemporal comparison of microplastic abundance across marine environments.
+
+Context source: zotero_abstractNote
+
+Source context:
+This review of 68 studies compares the methodologies used for the identification and quantification of microplastics from the marine environment. Three main sampling strategies were identified: selective, volume-reduced, and bulk sampling. Most sediment samples came from sandy beaches at the high tide line, and most seawater samples were taken at the sea surface using neuston nets. Four steps were distinguished during sample processing: density separation, filtration, sieving, and visual sorting of microplastics. Visual sorting was one of the most commonly used methods for the identification of microplastics (using type, shape, degradation stage, and color as criteria). Chemical and physical characteristics (e.g., specific density) were also used. The most reliable method to identify the chemical composition of microplastics is by infrared spectroscopy. Most studies reported that plastic fragments were polyethylene and polypropylene polymers. Units commonly used for abundance estimates are “items per m2” for sediment and sea surface studies and “items per m3” for water column studies. Mesh size of sieves and filters used during sampling or sample processing influence abundance estimates. Most studies reported two main size ranges of microplastics: (i) 500 μm−5 mm, which are retained by a 500 μm sieve/net, and (ii) 1−500 μm, or fractions thereof that are retained on filters. We recommend that future programs of monitoring continue to distinguish these size fractions, but we suggest standardized sampling procedures which allow the spatiotemporal comparison of microplastic abundance across marine environments.

@@ -1,0 +1,351 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: SWRCB/DDW, 2025
+        Year: 2025
+        Full Title: Laboratory Methods for Collection of Drinking Water Samples for Subsequent Analysis Using Raman or uFTIR Spectroscopy
+        DOI/URL: https://ftp.sccwrp.org/pub/download/MICROPLASTICS_WORKSHOP_DRINKING_WATER/MPDW%20workshop%20materials/Training%20recources%20on%20sample%20collection/031925%20-%20SOP%20-%20Collection%20of%20Drinking%20Water%20Sample.pdf
+        Existing Particle Size Range: 0.1–5000 µm (NMPs; multi-route exposure scenarios — oral, inhalation, dermal)
+        Existing Key Metrics / Output: Estimated daily intake by route and matrix; population exposure distributions
+
+        Zotero metadata:
+        Title: Laboratory Methods for Collection of Drinking Water Samples for Subsequent Analysis Using Raman or uFTIR Spectroscopy
+        DOI: 
+        Date: 2025-00-00 2025
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        **Laboratory Methods for Collection of Drinking Water Samples for Subsequent Analysis Using Raman or**  **FTIR Spectroscopy** 
+
+## **March 19, 2025** 
+
+Questions concerning this document should be addressed to: 
+
+State Water Resources Control Board 
+
+Division of Drinking Water (DDWRegUnit@waterboards.ca.gov) 
+
+1001 I Street 
+
+Sacramento, CA 95814 
+
+## **Table of Contents** 
+
+|1.|Scope and Applicability .......................................................................................................... 1|
+|---|---|
+|2.|Summary of Method ............................................................................................................... 1|
+|3.|Definitions............................................................................................................................... 2|
+|4.|Health & Safety Warnings ...................................................................................................... 2|
+|5.|Contamination Control............................................................................................................ 2|
+|6.|Equipment and Supplies ......................................................................................................... 4|
+||6.1<br>Laboratory ....................................................................................................................... 4|
+||6.2<br>Sampling equipment ....................................................................................................... 4|
+||6.3<br>Booster pump and constant head tank ............................................................................ 7|
+|7.|Procedure ................................................................................................................................ 8|
+||7.1<br>Preparation of 0.05% MP-free Tween® 20 surfactant solution...................................... 8|
+||7.2<br>Cleaning .......................................................................................................................... 9|
+||7.3<br>In-line filter equipment assembly ................................................................................... 9|
+||7.4<br>Sampling ....................................................................................................................... 10|
+||7.4.1<br>Direct connection/Sufficient line pressure (>50 psi) ............................................ 11|
+||7.4.2<br>Use of booster pump/Insufficient line pressure (<50 psi) ..................................... 12|
+||7.5<br>Sample blanks ............................................................................................................... 13|
+||7.6<br>In-line filter holder disassembly ................................................................................... 13|
+|8.|Troubleshooting .................................................................................................................... 15|
+||8.1<br>Rapid clogging .............................................................................................................. 15|
+||8.2<br>Leaking ......................................................................................................................... 15|
+|9.|Data and Records Management ............................................................................................ 15|
+|10. Quality Assurance and Quality Control ................................................................................ 16||
+
+
+
+## **1. Scope and Applicability** 
+
+- The purpose of this document is to describe how source and treated drinking water samples should be collected on-site at drinking water treatment facilities for subsequent microplastic (MP) analysis using Raman or FTIR microscopy. 
+
+- The procedure describes the assembly, operation, and disassembly of in-line holders which contain filters used to collect microplastics. Extraction of microplastics from filters, as well as additional processing methods (typically required) prior to analysis are discussed elsewhere. Inclusion of such methods is highly recommended in order to reduce the presence of extraneous, non-plastic particulates which may complicate the characterization of polymer types and sizes. 
+
+## **2. Summary of Method** 
+
+Samples containing microplastics are collected using an enclosed, in-line filtration equipment whereby membrane filters of decreasing pore sizes (e.g., 20 µm followed by 5 µm) are arranged in-series. The equipment is typically connected directly to sampling taps at drinking water treatment (DWT) facilities. The method is also applicable to other sampling point configurations provided that appropriate fittings, adapters, or reducers are available. A booster pump may be required to increase line pressure at the point of sampling. When using a booster pump, a constant head tank (that also serves as an air gap) may be required. Prior to sampling, individual equipment components are cleaned using pre-filtered surfactant, assembled, and sealed within a Class II laminar flow hood/biological safety cabinet (BSC). Filtration equipment is unsealed only immediately prior to direct connection to on-site sampling taps via a metal hose. Following filtration of a target volume of water, connections to the in-line filter holders are re-sealed and returned to a laminar flow hood for disassembly (removal of the filters and rinsing of internal components). A training video that illustrates this method is available at https://vimeo.com/1063685718 (password: 3535). 
+
+1 
+
+## **3. Definitions** 
+
+BSC Biological Safety Cabinet 
+
+- CHT Constant Head Tank 
+
+- DWT Drinking Water Treatment 
+
+- FTIR Fourier Transform Infrared Spectroscopy 
+
+- HEPA High-Efficiency Particulate Filter 
+
+- NPT National Pipe Thread 
+
+- PC Polycarbonate 
+
+PPE Personal Protective Equipment 
+
+- PRV Pressure Relief Valve 
+
+PTFE Polytetrafluoroethylene 
+
+## **4. Health & Safety Warnings** 
+
+- Follow all appropriate site-specific safety and PPE requirements when conducting sampling. 
+
+- Equipment may be heavy – lift with care. 
+
+- Cotton lab coats, safety glasses, and nitrile gloves should be worn when conducting all laboratory work. 
+
+- Do not work with volatile or flammable materials in a laminar flow hood/BSC. 
+
+## **5. Contamination Control** 
+
+Microplastics represent a widespread atmospheric contaminant and are likely to be present in laboratory spaces. Measures to prevent contamination of samples are required, including the following: 
+
+- Reduce exposure of sampling equipment to airborne microplastics. 
+
+   - Assemble and disassemble in-line filter holders in a Class II laminar flow hood/BSC equipped with a HEPA filter. 
+
+   - Turn on the Class II laminar flow hood/BSC at least 1 h prior to use. 
+
+   - Perform all lab-related work in a Class II laminar flow hood/BSC whenever possible (except when working with materials which dictate the use of a fume hood) 
+
+2 
+
+to reduce the potential for airborne contamination. This includes activities such as vacuum filtration, rinsing, and sampling equipment preparation. 
+
+   - Cover all glassware and bottles with aluminum foil (instead of plastic caps) when not in use. 
+
+   - Where possible, adopt ISO Class 5 (or better) clean room guidelines. Employ HEPA filters throughout laboratory spaces and conduct work in dedicated, closed rooms. 
+
+- Reduce/limit the use of plastic materials. 
+
+   - Use glass or metal laboratory equipment (beakers, pipettes, etc.) whenever possible. 
+
+   - When polymer materials must be used (i.e., membrane filters, pipette tips) use the same polymer type (if possible) and record all polymers used. These polymers may be excluded from subsequent analysis to avoid potential microplastic overestimation. 
+
+   - If plastic materials are used, inspect their integrity. Blanks are analyzed to identify procedural contamination from plastics that may come in contact with the sample during processing. 
+
+   - Purple nitrile gloves are associated with minimal contamination potential; their color makes it easy to distinguish if any contamination can be attributed to them. 
+
+   - Be aware that polymeric membrane filters may degrade and shed particles during handling. 
+
+- Prepare all rinsing solutions (e.g., ultrapure water and surfactant solution) immediately prior to use using microplastics analysis-grade (MAG) water. MAG water may be generated by filtering Type I (ultrapure) or II ASTM water  through a ≤1 µm filter (material such as cellulose acetate or polytetrafluoroethylene (PTFE)) using a glass vacuum filtration apparatus in a Class II laminar flow hood (See Section 7.1). 
+
+- Triple rinse all glassware and equipment with filtered surfactant solution prior to use. 
+
+3 
+
+## **6. Equipment and Supplies** 
+
+References to specific brands or catalogue numbers are included as examples only and do not imply endorsement of the product. Such reference does not preclude the use of other vendors or suppliers. 
+
+## _6.1 Laboratory_ 
+
+- Class II laminar flow hood/BSC 
+
+- Portable HEPA filters 
+
+- Ultrasonic bath (400 kHz, 600 W) 
+
+- Metal bins (e.g., stainless steel) to hold sampling equipment during cleaning 
+
+- Equipment to produce Type I (ultrapure) or II ASTM water including a 0.22  m outlet filter 
+
+- Tween® 20 (viscous liquid stock, CAS #9005-64-5) or alternative surfactant (e.g., Alcojet, Fisher Catalog no. 16-000-110) 
+
+- 1 L glass graduated cylinder 
+
+- 1 L glass vacuum filtration apparatus,  = 47mm (funnel, stem, flask, and metal clamp) 
+
+- Dry vacuum pump (approx. -50 psi) 
+
+-  0.45  m pore size membrane filters,  = 47mm (material such as cellulose acetate or PTFE) 
+
+- Stainless steel forceps 
+
+- Disposable glass Pasteur pipettes (5 cm/2 in) and rubber bulbs 
+
+- Glass beakers and flasks (100-600 mL) 
+
+- Aluminum foil 
+
+- Waste beaker 
+
+- Retort stand and clamps 
+
+## _6.2 Sampling equipment_ 
+
+- Two 47 mm diameter in-line stainless steel filter holders (e.g., MilliporeSigma Cat #XX4404700 or similar (Figure 1 a-b)) arranged in series with fittings as follows: 
+
+4 
+
+   - Upstream filter holder inlet: ¼” NPT brass/stainless steel globe valve with a ¼” NPT brass/stainless steel inlet quick connection 
+
+   - Upstream filter holder components: low compression relaxation-treated nitrile rubber O-ring, 47 mm diameter, 20  m pore size membrane filters (material such as PTFE, PC), fine filter support, coarse filter support (note: filter supports are included in MilliporeSigma Cat #XX4404700). 
+
+   - Upstream filter holder bottom: ¼” NPT brass/stainless steel quick connection 
+
+   - Downstream filter holder top: ¼” NPT brass/stainless steel quick connection. 
+
+   - Downstream filter holder components: same as upstream filter holder except includes a 5 µm pore size membrane filter (material such as PTFE, PC) 
+
+   - Downstream filter holder outlet: ¼” NPT brass/stainless steel globe valve with a ¼” NPT brass/stainless steel outlet quick connection 
+
+- PTFE sealing tape for threaded connections 
+
+- Allen key and bolts, as supplied with the filter holders 
+
+- ¼” flexible stainless-steel hose of appropriate length with ¼” NPT inlet/outlet quick connections 
+
+- Various plumbing fixture adapters to allow the connection of ¼” quick connections to sampling taps 
+
+   - Note: Required connections are dependent on specific sampling locations at DWT facilities; must be determined prior to sampling 
+
+- ¼” natural rubber tubing, cut into 1-2” pieces 
+
+- ¼” diameter worm clamps and screwdriver 
+
+- Spare ¼” NPT brass/stainless steel outlet connections 
+
+- ¼” (or adapted to ¼”) in-line pressure gauge (approx. 0-100 psi) 
+
+- ¼” (or adapted to ¼”) 50 psi pressure relief valve (PRV) 
+
+- Aluminum foil 
+
+- Flow totalizer (1-50 L/min; e.g., High-Accuracy Totalizer for Water 304 Stainless Steel Body, 1/2 NPT Male with ¼” NPT adapters, McMaster-Carr CAT #4119K611) 
+
+- 1 L graduated cylinder (plastic for field measurement) 
+
+- Field turbidimeter (if not available on-site) 
+
+5 
+
+- Thermometer (if not available on-site) 
+
+**==> picture [468 x 394] intentionally omitted <==**
+
+**Figure 1 a.** Internal components of stainless steel in-line sampling equipment which holds 47 
+
+mm diameter filter. 
+
+**==> picture [468 x 132] intentionally omitted <==**
+
+**Figure 1 b.** Assembled stainless steel in-line sampling equipment. 
+
+6 
+
+- _6.3 Booster pump and constant head tank_ 
+
+   - Rotary vane pump with all-metal internal components (e.g., Fluid-o-Tech Model GA072, Corsico, Milan, Italy) equipped with ¼” NPT brass/stainless steel inlet/outlet quick connections 
+
+   - Stainless steel constant head tank with three ports (Figure 2 a-b): 
+
+      - Top: Inlet with ¼” NPT brass/stainless steel inlet quick connection 
+
+      - Middle: Overflow to waste 
+
+      - Bottom: Outlet with ¼” NPT brass/stainless steel outlet quick connection 
+
+   - ¼” flexible stainless-steel hose with ¼” NPT inlet/outlet quick connections 
+
+**==> picture [463 x 173] intentionally omitted <==**
+
+**----- Start of picture text -----**<br>
+Sample inlet<br>37.5 cm Constant Head Tank  6 cm/2.4 in<br>14.8 in (approx. 30 L/7.9 gal) Overflow<br>12.5 cm/4.9 in<br>Pressure<br>Relief<br>Pump Valve  In-line filter<br>4.5 cm/1.8 in<br>(50 psi)<br>⌀ = 32 cm/12.6 in<br>**----- End of picture text -----**<br>
+
+
+**Figure 2 a.** Pressure booster system schematic. 
+
+**==> picture [300 x 206] intentionally omitted <==**
+
+**Figure 2 b.** Example pressure booster equipment. 
+
+7 
+
+## **7. Procedure** 
+
+A training video that illustrates this method is available at https://vimeo.com/1063685718 
+
+- (password: 3535). The sampling process flow chart described in this section is depicted in Figure 3. 
+
+**==> picture [477 x 224] intentionally omitted <==**
+
+**Figure 3.** Sampling flow chart. 
+
+- _7.1 Preparation of 0.05% MP-free Tween® 20 surfactant solution_ 
+
+Note: Conduct all work in a Class II laminar flow hood/BSC. 
+
+1. Prepare a 10% w/w Tween® or equivalent surfactant solution using Type I ASTM/ultrapure water. 
+
+   - 1.1. Dilute the solution in Type I or II ASTM water to achieve a surfactant concentration of 0.05% (e.g., add 5 mL 10% w/w Tween® in 995 mL Type I or II ASTM water). 
+
+   - 1.2. Rinse the vacuum filtration equipment by passing approximately 100 mL of 0.05% surfactant solution and rinsing the filtration flask into a waste beaker. Rinse the flask two additional times (total three rinses). 
+
+2. Filter the remaining ~800 mL of 0.05% surfactant solution through a  0.45  m pore size filter membrane using the rinsed glass vacuum filtration equipment. 
+
+3. Clean a storage bottle or beaker by triple rinsing with filtered 0.05% surfactant. 
+
+8 
+
+4. Pour remaining contents of the filtration flask into a cleaned bottle or beaker and store in a Class II laminar flow hood/BSC covered with aluminum foil. Use within one week of preparation. 
+
+## _7.2 Cleaning_ 
+
+1. Place the filter holders and associated internal components into a stainless-steel container filled with filtered 0.05% surfactant. 
+
+   - 1.1. Open globe valves. 
+
+   - 1.2. Ensure all quick connections and globe valves are fully submerged. 
+
+2. Sonicate for 10 minutes at 400 kHz and 600 W. 
+
+3. Subsequently rinse each component with ~50 mL additional filtered 0.05% surfactant. 
+
+4. Equipment may be used immediately for sampling. However, if equipment is to be stored, air dry in a Class II laminar flow hood (typically several hours). 
+
+## _7.3 In-line filter equipment assembly_ 
+
+Note: Conduct all work in a Class II laminar flow hood/BSC. 
+
+1. Triple rinse all materials (beakers, forceps, etc.) and equipment with filtered 0.05% surfactant solution.

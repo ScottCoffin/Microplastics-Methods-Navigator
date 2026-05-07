@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Ragusa et al., 2021
+Year: 2021
+Full Title: Plasticenta: First evidence of microplastics in human placenta
+DOI/URL: https://doi.org/10.1016/j.envint.2020.106274
+Existing Particle Size Range: Comparative analysis
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Plasticenta: First evidence of microplastics in human placenta
+DOI: 10.1016/j.envint.2020.106274
+Date: 2021-01-00 01/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Microplastics are particles smaller than five millimeters deriving from the degradation of plastic objects present in the environment. Microplastics can move from the environment to living organisms, including mammals. In this study, six human placentas, collected from consenting women with physiological pregnancies, were analyzed by Raman Microspectroscopy to evaluate the presence of microplastics. In total, 12 microplastic fragments (ranging from 5 to 10 μm in size), with spheric or irregular shape were found in 4 placentas (5 in the fetal side, 4 in the maternal side and 3 in the chorioamniotic membranes); all microplastics particles were characterized in terms of morphology and chemical composition. All of them were pigmented; three were identified as stained polypropylene a thermoplastic polymer, while for the other nine it was possible to identify only the pigments, which were all used for man-made coatings, paints, adhesives, plasters, finger paints, polymers and cosmetics and personal care products.
+
+Context source: zotero_abstractNote
+
+Source context:
+Microplastics are particles smaller than five millimeters deriving from the degradation of plastic objects present in the environment. Microplastics can move from the environment to living organisms, including mammals. In this study, six human placentas, collected from consenting women with physiological pregnancies, were analyzed by Raman Microspectroscopy to evaluate the presence of microplastics. In total, 12 microplastic fragments (ranging from 5 to 10 μm in size), with spheric or irregular shape were found in 4 placentas (5 in the fetal side, 4 in the maternal side and 3 in the chorioamniotic membranes); all microplastics particles were characterized in terms of morphology and chemical composition. All of them were pigmented; three were identified as stained polypropylene a thermoplastic polymer, while for the other nine it was possible to identify only the pigments, which were all used for man-made coatings, paints, adhesives, plasters, finger paints, polymers and cosmetics and personal care products.

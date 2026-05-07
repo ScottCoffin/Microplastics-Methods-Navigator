@@ -1,0 +1,56 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Arthur et al., 2009
+        Year: 2009
+        Full Title: Proceedings of the International Research Workshop on the Occurrence Effects and Fate of Microplastic Marine Debris
+        DOI/URL: https://repository.library.noaa.gov/view/noaa/2509
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        "The purpose of the workshop was to bring together environmental research scientists from around the world to discuss the impacts of microplastic interactions and ingestion to marine species, the connection with contaminant uptake by organisms, and to outline the potential next steps in microplastic research. The workshop format combined presentations, breakout groups, and participant discussions during two days of meetings. Thirty two individuals participated in the workshop, representing academic, industrial, private, policy and governmental sectors. Fourteen oral presentations included research on such broad-ranging topics as the oceanography of the North Pacific, the ingestion of microplastics by marine invertebrates, and persistent organic pollutants in marine plastic debris. All fourteen presentations are included here, with abstracts and slides as deemed appropriated by the presenters"--Preface.
+
+The NOAA IR serves as an archival repository of NOAA-published products including scientific findings, journal articles, guidelines, recommendations, or other information authored or co-authored by NOAA or funded partners. As a repository, the NOAA IR retains documents in their original published format to ensure public access to scientific information.
+
+Description: "The purpose of the workshop was to bring together environmental research scientists from around the world to discuss the impacts of microplastic interactions and ingestion to marine species, the connection with contaminant uptake by organisms, and to outline the potential next steps in microplastic research. The workshop format combined presentations, breakout groups, and participant discussions during two days of meetings. Thirty two individuals participated in the workshop, representing academic, industrial, private, policy and governmental sectors. Fourteen oral presentations included research on such broad-ranging topics as the oceanography of the North Pacific, the ingestion of microplastics by marine invertebrates, and persistent organic pollutants in marine plastic debris. All fourteen presentations are included here, with abstracts and slides as deemed appropriated by the presenters"--Preface. Content Notes: Courtney Arthur, Joel Baker, and Holly Bamford, editors. Also available online in PDF via the NOAA Central Library. System requirements: CD-ROM drive; Adobe Acrobat Reader. Includes bibliographical references. Keywords: Environmental Aspects Marine Debris Marine Resources Conservation Plastic Marine Debris Research Environmental Aspects Marine Debris Marine Resources Conservation Plastic Marine Debris Series: NOAA technical memorandum NOS-OR&R Document Type: Technical Memorandum Rights Information: Public Domain Compliance: Library Main Document Checksum: urn:sha-512:8142c51e8ec9da64ccc8c50512c761b3c04884c9ab28cf6e98688b5b7e4ca9db66aa3fadca80c4574a823e385a7ec125753ca9f9b691cf571a7d936a708c67a2 Download URL: https://repository.library.noaa.gov/view/noaa/2509/noaa_2509_DS1.pdf File Type: [PDF - 2.20 MB ] PREVIOUS Download Full Screen Citation Generic APA MLA Chicago RIS Title : Proceedings of the International Research Workshop on the Occurrence, Effects, and Fate of Microplastic Marine Debris, September 9-11, 2008, University of Washington Tacoma, Tacoma, WA, USA Personal Author(s) : Arthur, Courtney;Baker, Joel E., 1959-;Bamford, Holly A.; Corporate Authors(s) : United States, National Ocean Service., Office of Response and Restoration Conference Author(s) : International Research Workshop on the Occurrence, Effects, and Fate of Microplastic Marine Debris 2008 : Tacoma, Wash.), sponsor. Published Date : 2009 Series : NOAA technical memorandum NOS-OR&R ; 30 URL : https://repository.library.noaa.gov/view/noaa/2509 Arthur, Courtney et al. (2009).

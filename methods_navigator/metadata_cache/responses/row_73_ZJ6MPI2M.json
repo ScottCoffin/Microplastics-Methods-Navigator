@@ -1,0 +1,21 @@
+{
+  "particle_size_range": ">500 µm (large microplastics 500–5 mm and macroplastics >5 mm)",
+  "key_metrics_output": "Polymer type identification; spectral collection modes (transmission, ATR, reflection); spectral quality assessment",
+  "abstract": "FTIR spectral identification is today’s gold standard analytical procedure for plastic pollution material characterization. High-throughput FTIR techniques have been advanced for small microplastics (10–500 µm) but less so for large microplastics (500–5 mm) and macroplastics (> 5 mm). These larger plastics are typically analyzed using ATR, which is highly manual and can sometimes destroy particles of interest. Furthermore, spectral libraries are often inadequate due to the limited variety of reference materials and spectral collection modes, resulting from expensive spectral data collection. We advance a new high-throughput technique to remedy these problems using FTIR microplate readers for measuring large particles (>500 µm). We created a new reference database of over 6000 spectra for transmission, ATR, and reflection spectral collection modes with over 600 plastic, organic, and mineral reference materials relevant to plastic pollution research. We also streamline future analysis in microplate readers by creating a new particle holder for transmission measurements using off-the-shelf parts and fabricating a nonplastic 96-well microplate for storing particles. We determined that particles should be presented to microplate readers as thin as possible due to thick particles causing poor-quality spectra and identifications. We validated the new database using Open Specy and demonstrated that additional transmission and reflection spectra reference data were needed in spectral libraries.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "small microplastics (10–500 µm) but less so for large microplastics (500–5 mm) and macroplastics (> 5 mm)",
+      "using FTIR microplate readers for measuring large particles (>500 µm)"
+    ],
+    "key_metrics_output": [
+      "FTIR spectral identification",
+      "transmission, ATR, and reflection spectral collection modes",
+      "plastic, organic, and mineral reference materials",
+      "spectral quality and identifications"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

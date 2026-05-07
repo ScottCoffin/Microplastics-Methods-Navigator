@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Tsangaris et al., 2021
+Year: 2021
+Full Title: Interlaboratory comparison of microplastic extraction methods from marine biota tissues: A harmonization exercise
+DOI/URL: https://doi.org/10.1016/j.marpolbul.2021.111992
+Existing Particle Size Range: ≥1 µm (Raman); ≥10–20 µm (FTIR practical limit) for clean/surface water
+Existing Key Metrics / Output: Count/volume by polymer/size; spectral HQI >70%; library ≥10 polymer types, ≥7 size bins
+
+Zotero metadata:
+Title: Interlaboratory comparison of microplastic extraction methods from marine biota tissues: A harmonization exercise of the Plastic Busters MPAs project
+DOI: 10.1016/j.marpolbul.2021.111992
+Date: 2021-03-01 2021-03-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+In the framework of the Plastic Busters MPAs project, a harmonization exercise on two methods of microplastic extraction from biological samples i.e. 15% H2O2 digestion and 10% KOH digestion was carried out. The two methods were tested in four laboratories on fish gastrointestinal tracts and mussel tissues spiked with polyethylene, polypropylene and polyethylene terephthalate. The recovery percentage of microplastics for each method, species and polymer tested were overall similar among laboratories, and interlaboratory coefficient of variation was less than 11% for the majority of samples. Microplastic recovery rates for the two methods were similar for each sample tested, but overall mean interlaboratory recovery rate using KOH (96.67%) was higher than H2O2 (88.75%). Results validate the use of both methods for extracting microplastics from biota tissues. However, when comparing the two methods in terms of microplastic recovery rate, time consumed, technical difficulties and cost, digestion with 10% KOH is considered optimal.
+
+Context source: zotero_abstractNote
+
+Source context:
+In the framework of the Plastic Busters MPAs project, a harmonization exercise on two methods of microplastic extraction from biological samples i.e. 15% H2O2 digestion and 10% KOH digestion was carried out. The two methods were tested in four laboratories on fish gastrointestinal tracts and mussel tissues spiked with polyethylene, polypropylene and polyethylene terephthalate. The recovery percentage of microplastics for each method, species and polymer tested were overall similar among laboratories, and interlaboratory coefficient of variation was less than 11% for the majority of samples. Microplastic recovery rates for the two methods were similar for each sample tested, but overall mean interlaboratory recovery rate using KOH (96.67%) was higher than H2O2 (88.75%). Results validate the use of both methods for extracting microplastics from biota tissues. However, when comparing the two methods in terms of microplastic recovery rate, time consumed, technical difficulties and cost, digestion with 10% KOH is considered optimal.

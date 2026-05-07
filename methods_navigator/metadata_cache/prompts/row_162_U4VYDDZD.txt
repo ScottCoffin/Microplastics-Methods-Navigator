@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Gouin et al., 2024
+Year: 2024
+Full Title: Addressing the relevance of polystyrene nano- and microplastic particles used to support exposure, toxicity and risk assessment
+DOI/URL: https://doi.org/10.1186/s12989-024-00599-1
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Addressing the relevance of polystyrene nano- and microplastic particles used to support exposure, toxicity and risk assessment: implications and recommendations
+DOI: 10.1186/s12989-024-00599-1
+Date: 2024-09-27 2024-09-27
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+There has been an exponential increase in the number of studies reporting on the toxicological effects associated with exposure to nano and microplastic particles (NMPs). The majority of these studies, however, have used monodispersed polystyrene microspheres (PSMs) as ‘model’ particles. Here we review the differences between the manufacture and resulting physicochemical properties of polystyrene used in commerce and the PSMs most commonly used in toxicity studies.
+
+Context source: zotero_abstractNote
+
+Source context:
+There has been an exponential increase in the number of studies reporting on the toxicological effects associated with exposure to nano and microplastic particles (NMPs). The majority of these studies, however, have used monodispersed polystyrene microspheres (PSMs) as ‘model’ particles. Here we review the differences between the manufacture and resulting physicochemical properties of polystyrene used in commerce and the PSMs most commonly used in toxicity studies.

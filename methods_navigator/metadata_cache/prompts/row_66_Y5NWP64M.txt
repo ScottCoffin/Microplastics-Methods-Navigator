@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: ASTM D8401-24
+Year: 2024
+Full Title: Standard Test Method for Identification of Polymer Type and Quantity of Microplastic Particles and Fibers in Waters with High to Low Suspended Solids Using Pyrolysis-Gas Chromatography/Mass Spectrometry
+DOI/URL: https://store.astm.org/d8401-24.html
+Existing Particle Size Range: <200 µm
+Existing Key Metrics / Output: Mass and polymer type
+
+Zotero metadata:
+Title: Standard Test Method for Identification of Polymer Type and Quantity of Microplastic Particles and Fibers in Waters with High to Low Suspended Solids Using Pyrolysis-Gas Chromatography/Mass Spectrometry
+DOI: 
+Date: 2024-00-00 2024
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+
+
+Context source: url_landing_page
+
+Source context:
+Overview Governance Governance ASTM President Board of Directors Senior Staff Global Cooperation Global Cooperation In-Residence Training Programs Online Training International Partners UAE Chapter Corporate Citizenship History History 125 Anniversary Case Studies Regional Offices and Support Diversity, Equity, Inclusion & Belonging Culture & Careers Membership & Participation Membership & Participation Overview Membership Membership Member Types Participating Members Organizational Members Informational Members Student Members Renew or Reinstate Membership Technical Committees Technical Committees View All Technical Committees Initiate a New Standards Activity Key Documents and Forms Interlaboratory Studies Program Honors and Awards Member Tools Member Tools New Member Orientation Virtual Classroom for Members ASTM101: Intro to Standards Meetings, Symposia, Workshops Meetings, Symposia, Workshops Upcoming Events Committee Meetings Propose a Symposia/Workshop Academic Outreach Academic Outreach For Students For Professors For Librarians For Members Student Chapters Emerging Professionals Publish with ASTM Publish with ASTM ASTM Digital Library Consumer Participation Consumer Participation Consumer Safety Standards How to Get Involved Training & Resources News & Events Standards & Solutions Standards & Solutions Overview Standards & Publications Standards & Publications Standards Products Catalogs ASTM Standards Tracker® Adjuncts and Reference Radiographs Selected Technical Papers (STPs) Manuals, Monographs, and Data Series Journals Technical Reports Research Reports Reading Room Book of Standards Book of Standards Standards by Section Enterprise Solutions Enterprise Solutions ASTM Compass® ASTM SpecBuilder Digital Library Digital Library Market Insights & Innovation Market Insights & Innovation Market Insights Market Innovation Standardization Impact Reports ASTM Xcellerate Centers of Excellence Advisory Services Market Intelligence Portfolio Laboratory Services Laboratory Services Proficiency Testing Program Reference Materials ASTM Insight SQC Cement and Concrete Reference Laboratory Training Courses Training Courses Accreditations International Training Certification Certification Products Personnel Safety Equipment Institute NCATT Environmental Product Declarations News News Standardization News Standardization News Editorial Calendar & Media Kit Español Issue Archive Press Releases Podcasts Help Help Overview Contact ASTM Locations FAQ Home Products & Services Scope 1.1 In this pyrolysis-gas chromatography/mass spectrometry (Py-GC/MS) test method, an analytical protocol validated specifically for the analysis of water with high to low suspended solids is described. This test method will standardize the identification and simultaneous quantitation of organic polymer particles and fibers in water. It has been designed for and applies to all microplastic particles and fibers, and is intended for use with treated drinking water, surface waters, wastewater influent and effluent (secondary and tertiary), and marine waters. This test method is not limited to these particular water matrices; however, the applicability of this test method to other aqueous matrices shall be demonstrated. 1.2 Microgram quantities of a sample containing microplastics are pyrolyzed (Py) at 600 °C. The pyrolyzates are separated on an analytical column (GC) and detected using a 70-eV electron impact mass spectrometer (MS). Polymers often have similar pyrograms, making it difficult to differentiate the pyrolyzates for a given polymer from those of the composite sample. In this test method, ion ratios at predetermined retention times to facilitate the identification of each polymer present in a sample containing microplastics are compared. 1.3 This test method is to be used in conjunction with Practices D8332 D8333 , and D8402 . These ASTM International standards enable the collection and preparation of water samples with high, medium, or low suspended solids for the identification and quantification of microplastic particles and fibers without compromising the integrity of the microplastics. This test method is applicable to microplastic fibers and particles, including sizes defined as a nanoparticle; this is a natural extension of this test method because Py-GC/MS technology responds to the total mass of the sample independent of individual particle sizes. The uniformity of particle size influences the reproducibility of the pyrogram and samples with microplastics should be reduced to a fine powder with the final particle size diameter on the order of less than 0.2 mm. 1.4 It is the responsibility of the user to ensure the validity of this test method for untested matrices. 1.5 Units— The values stated in SI units are to be regarded as the standard. No other units of measurement are included in this standard. 1.6 This standard does not purport to address all of the safety concerns, if any, associated with its use. It is the responsibility of the use

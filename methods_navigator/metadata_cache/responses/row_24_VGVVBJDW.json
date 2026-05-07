@@ -1,0 +1,19 @@
+{
+  "particle_size_range": "Microplastics: 0.1–5,000 μm; Nanoplastics: 0.001–0.1 μm (1–100 nm)",
+  "key_metrics_output": "Presence, identity, and quantification of microplastics and nanoplastics in food; additive content (average 4%); contaminant adsorption; occurrence data; toxicity and toxicokinetic endpoints",
+  "abstract": "Following a request from the German Federal Institute for Risk Assessment (BfR), the EFSA Panel for Contaminants in the Food Chain was asked to deliver a statement on the presence of microplastics and nanoplastics in food, with particular focus on seafood. Primary microplastics are plastics originally manufactured to be that size, while secondary microplastics originate from fragmentation. Nanoplastics can originate from engineered material or can be produced during fragmentation of microplastic debris. Microplastics range from 0.1 to 5,000 lm and nanoplastics from approximately 1 to 100 nm (0.001–0.1 lm). There is no legislation for microplastics and nanoplastics as contaminants in food. Methods are available for identiﬁcation and quantiﬁcation of microplastics in food, including seafood. Occurrence data are limited. In contrast to microplastics no methods or occurrence data in food are available for nanoplastics. Microplastics can contain on average 4% of additives and the plastics can adsorb contaminants. Both additives and contaminants can be of organic as well of inorganic nature. Based on a conservative estimate the presence of microplastics in seafood would have a small effect on the overall exposure to additives or contaminants. Toxicity and toxicokinetic data are lacking for both microplastics and nanoplastics for a human risk assessment. It is recommended that analytical methods should be further developed for microplastics and developed for nanoplastics and standardised, in order to assess their presence, identity and to quantify their amount in food. Furthermore, quality assurance should be in place and demonstrated. For microplastics and nanoplastics, occurrence data in food, including effects of food processing, in particular, for the smaller sized particles (< 150 lm) should be generated. Research on the toxicokinetics and toxicity, including studies on local effects in the gastrointestinal (GI) tract, are needed as is research on the degradation of microplastics and potential formation of nanoplastics in the human GI tract.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Microplastics range from 0.1 to 5,000 lm and nanoplastics from approximately 1 to 100 nm (0.001–0.1 lm)"
+    ],
+    "key_metrics_output": [
+      "Methods are available for identification and quantification of microplastics in food",
+      "Microplastics can contain on average 4% of additives and the plastics can adsorb contaminants",
+      "Toxicity and toxicokinetic data are lacking for both microplastics and nanoplastics"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

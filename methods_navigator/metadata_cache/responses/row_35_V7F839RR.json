@@ -1,0 +1,17 @@
+{
+  "scope": "Drinking water; chemical identification of microplastics using microspectroscopy methods",
+  "particle_size_range": null,
+  "key_metrics_output": "Chemical identification accuracy; polymer type; particle color, morphology, size; spectral collection mode; spectral range",
+  "abstract": "Fourier transform infrared (FTIR) and Raman microspectroscopy are methods applied in microplastics research to determine the chemical identity of microplastics. These techniques enable quantification of microplastic particles across various matrices. Previous work has highlighted the benefits and limitations of each method and found these to be complimentary. Within this work, metadata collected within an interlaboratory method validation study was used to determine which variables most influenced successful chemical identification of un-weathered microplastics in simulated drinking water samples using FTIR and Raman microspectroscopy. No variables tested had a strong correlation with the accuracy of chemical identification (r = ≤0.63). The variables most correlated with accuracy differed between the two methods, and include both physical characteristics of particles (color, morphology, size, polymer type), and instrumental parameters (spectral collection mode, spectral range). Based on these results, we provide technical recommendations to improve capabilities of both methods for measuring microplastics in drinking water and highlight priorities for further research. For FTIR microspectroscopy, recommendations include considering the type of particle in question to inform sample presentation and spectral collection mode for sample analysis. Instrumental parameters should be adjusted for certain particle types when using Raman micro­ spectroscopy. For both instruments, the study highlighted the need for harmonization of spectral reference libraries among research groups, including the use of libraries containing reference materials of both weathered plastic and natural materials that are commonly found in environmental samples.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "variables most correlated with accuracy differed between the two methods, and include both physical characteristics of particles (color, morphology, size, polymer type), and instrumental parameters (spectral collection mode, spectral range)",
+      "accuracy of chemical identification"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Wagner et al., 2014
+Year: 2014
+Full Title: Microplastics in freshwater ecosystems: what we know and what we need to know
+DOI/URL: https://doi.org/10.1186/s12302-014-0012-7
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Microplastics in freshwater ecosystems: what we know and what we need to know
+DOI: 10.1186/s12302-014-0012-7
+Date: 2014-12-00 12/2014
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Background: While the use of plastic materials has generated huge societal benefits, the ‘plastic age’ comes with downsides: One issue of emerging concern is the accumulation of plastics in the aquatic environment. Here, so-called microplastics (MP), fragments smaller than 5 mm, are of special concern because they can be ingested throughout the food web more readily than larger particles. Focusing on freshwater MP, we briefly review the state of the science to identify gaps of knowledge and deduce research needs. State of the science: Environmental scientists started investigating marine (micro)plastics in the early 2000s. Today, a wealth of studies demonstrates that MP have ubiquitously permeated the marine ecosystem, including the polar regions and the deep sea. MP ingestion has been documented for an increasing number of marine species. However, to date, only few studies investigate their biological effects. The majority of marine plastics are considered to originate from land-based sources, including surface waters. Although they may be important transport pathways of MP, data from freshwater ecosystems is scarce. So far, only few studies provide evidence for the presence of MP in rivers and lakes. Data on MP uptake by freshwater invertebrates and fish is very limited. Knowledge gaps: While the research on marine MP is more advanced, there are immense gaps of knowledge regarding freshwater MP. Data on their abundance is fragmentary for large and absent for small surface waters. Likewise, relevant sources and the environmental fate remain to be investigated. Data on the biological effects of MP in freshwater species is completely lacking. The accumulation of other freshwater contaminants on MP is of special interest because ingestion might increase the chemical exposure. Again, data is unavailable on this important issue. Conclusions: MP represent freshwater contaminants of emerging concern. However, to assess the environmental risk associated with MP, comprehensive data on their abundance, fate, sources, and biological effects in freshwater ecosystems are needed. Establishing such data critically depends on a collaborative effort by environmental scientists from diverse disciplines (chemistry, hydrology, ecotoxicology, etc.) and, unsurprisingly, on the allocation of sufficient public funding.
+
+Context source: zotero_abstractNote
+
+Source context:
+Background: While the use of plastic materials has generated huge societal benefits, the ‘plastic age’ comes with downsides: One issue of emerging concern is the accumulation of plastics in the aquatic environment. Here, so-called microplastics (MP), fragments smaller than 5 mm, are of special concern because they can be ingested throughout the food web more readily than larger particles. Focusing on freshwater MP, we briefly review the state of the science to identify gaps of knowledge and deduce research needs. State of the science: Environmental scientists started investigating marine (micro)plastics in the early 2000s. Today, a wealth of studies demonstrates that MP have ubiquitously permeated the marine ecosystem, including the polar regions and the deep sea. MP ingestion has been documented for an increasing number of marine species. However, to date, only few studies investigate their biological effects. The majority of marine plastics are considered to originate from land-based sources, including surface waters. Although they may be important transport pathways of MP, data from freshwater ecosystems is scarce. So far, only few studies provide evidence for the presence of MP in rivers and lakes. Data on MP uptake by freshwater invertebrates and fish is very limited. Knowledge gaps: While the research on marine MP is more advanced, there are immense gaps of knowledge regarding freshwater MP. Data on their abundance is fragmentary for large and absent for small surface waters. Likewise, relevant sources and the environmental fate remain to be investigated. Data on the biological effects of MP in freshwater species is completely lacking. The accumulation of other freshwater contaminants on MP is of special interest because ingestion might increase the chemical exposure. Again, data is unavailable on this important issue. Conclusions: MP represent freshwater contaminants of emerging concern. However, to assess the environmental risk associated with MP, comprehensive data on their abundance, fate, sources, and biological effects in freshwater ecosystems are needed. Establishing such data critically depends on a collaborative effort by environmental scientists from diverse disciplines (chemistry, hydrology, ecotoxicology, etc.) and, unsurprisingly, on the allocation of sufficient public funding.

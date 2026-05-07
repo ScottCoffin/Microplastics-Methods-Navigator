@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Cowger et al., 2024a
+Year: 2024
+Full Title: How many microplastics do you need to (sub)sample?
+DOI/URL: https://doi.org/10.1016/j.ecoenv.2024.116243
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: How many microplastics do you need to (sub)sample?
+DOI: 10.1016/j.ecoenv.2024.116243
+Date: 2024-04-15 2024-04-15
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Analysis of microplastics in the environment requires polymer characterization as a confirmation step for suspected microplastic particles found in a sample. Material characterization is costly and can take a long time per particle. When microplastic particle counts are high, many researchers cannot characterize every particle in their sample due to time or monetary constraints. Moreover, characterizing every particle in samples with high plastic particle counts is unnecessary for describing the sample properties. We propose an a priori approach to determine the number of suspected microplastic particles in a sample that should be randomly subsampled for characterization to accurately assess the polymer distribution in the environmental sample. The proposed equation is well-founded in statistics literature and was validated using published microplastic data and simulations for typical microplastic subsampling routines. We report values from the whole equation but also derive a simple way to calculate the necessary particle count for samples or subsamples by taking the error to the power of negative two. Assuming an error of 0.05 (5 %) with a confidence interval of 95 %, an unknown expected proportion, and a sample with many particles (> 100k), the minimum number of particles in a subsample should be 386 particles to accurately characterize the polymer distribution of the sample, given the particles are randomly characterized from the full population of suspected particles. Extending this equation to simultaneously estimate polymer, color, size, and morphology distributions reveals more particles (620) would be needed in the subsample to achieve the same high absolute error threshold for all properties. The above proposal for minimum subsample size also applies to the minimum count that should be present in samples to accurately characterize particle type presence and diversity in a given environmental compartment.
+
+Context source: zotero_abstractNote
+
+Source context:
+Analysis of microplastics in the environment requires polymer characterization as a confirmation step for suspected microplastic particles found in a sample. Material characterization is costly and can take a long time per particle. When microplastic particle counts are high, many researchers cannot characterize every particle in their sample due to time or monetary constraints. Moreover, characterizing every particle in samples with high plastic particle counts is unnecessary for describing the sample properties. We propose an a priori approach to determine the number of suspected microplastic particles in a sample that should be randomly subsampled for characterization to accurately assess the polymer distribution in the environmental sample. The proposed equation is well-founded in statistics literature and was validated using published microplastic data and simulations for typical microplastic subsampling routines. We report values from the whole equation but also derive a simple way to calculate the necessary particle count for samples or subsamples by taking the error to the power of negative two. Assuming an error of 0.05 (5 %) with a confidence interval of 95 %, an unknown expected proportion, and a sample with many particles (> 100k), the minimum number of particles in a subsample should be 386 particles to accurately characterize the polymer distribution of the sample, given the particles are randomly characterized from the full population of suspected particles. Extending this equation to simultaneously estimate polymer, color, size, and morphology distributions reveals more particles (620) would be needed in the subsample to achieve the same high absolute error threshold for all properties. The above proposal for minimum subsample size also applies to the minimum count that should be present in samples to accurately characterize particle type presence and diversity in a given environmental compartment.

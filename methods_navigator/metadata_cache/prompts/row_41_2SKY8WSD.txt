@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Jemec Kokalj et al., 2021
+Year: 2021
+Full Title: Quality of nanoplastics and microplastics ecotoxicity studies: Refining quality criteria for nanomaterial studies
+DOI/URL: https://doi.org/10.1016/j.jhazmat.2021.125751
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Quality of nanoplastics and microplastics ecotoxicity studies: Refining quality criteria for nanomaterial studies
+DOI: 10.1016/j.jhazmat.2021.125751
+Date: 2021-08-00 08/2021
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+It is becoming increasingly important to develop assessment criteria for the quality of nanoplastics studies. This study is an attempt to establish such criteria based on those developed for engineered nanomaterials, the GUIDEnano and DaNa criteria being two representatives. These criteria were applied to studies on polystyrene nanoparticles (PS NPs), which currently represent the majority of studies on nanoplastics. We compiled a list of existing nanomaterial-related criteria that are not fully relevant to PS NPs and propose additional nanoplastic-specific criteria targeting polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, and chemical leaching. For each criterion, scientific justification is provided. We conclude that the existing study quality assessments originally developed for nano(eco)toxicity studies can, through refinements, be applied to those dealing with nanoplastics studies, with a further outlook on microplastics. The final quality criteria catalogue presented here is intended as a starting point for further elaborations considering different purposes of an assessment.
+
+Context source: zotero_abstractNote
+
+Source context:
+It is becoming increasingly important to develop assessment criteria for the quality of nanoplastics studies. This study is an attempt to establish such criteria based on those developed for engineered nanomaterials, the GUIDEnano and DaNa criteria being two representatives. These criteria were applied to studies on polystyrene nanoparticles (PS NPs), which currently represent the majority of studies on nanoplastics. We compiled a list of existing nanomaterial-related criteria that are not fully relevant to PS NPs and propose additional nanoplastic-specific criteria targeting polymer chemical composition, source, production and field collection, impurities/chemical additives, density, hydrophobicity, colour, and chemical leaching. For each criterion, scientific justification is provided. We conclude that the existing study quality assessments originally developed for nano(eco)toxicity studies can, through refinements, be applied to those dealing with nanoplastics studies, with a further outlook on microplastics. The final quality criteria catalogue presented here is intended as a starting point for further elaborations considering different purposes of an assessment.

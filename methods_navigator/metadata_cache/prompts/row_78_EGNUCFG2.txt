@@ -1,0 +1,54 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: ISO 4484-3:2023
+        Year: 2023
+        Full Title: ISO 4484-3:2023 Textiles and textile products — Microplastics from textile sources — Part 3: Measurement of collected material mass released from textile end products by domestic washing method
+        DOI/URL: https://www.iso.org/standard/81035.html
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: Mass
+
+        Zotero metadata:
+        Title: ISO 4484-3:2023 Textiles and textile products — Microplastics from textile sources — Part 3: Measurement of collected material mass released from textile end products by domestic washing method
+        DOI: 
+        Date: 2023-00-00 2023
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        Textiles and textile products — Microplastics from textile sources — Part 3: Measurement of collected material mass released from textile end products by domestic washing method
+
+Abstract This document specifies a method for measuring the collected material mass released from the outlet hose of a standard washing machine, described in ISO 6330 , through the washing process. NOTE The washing condition of textile end products is indicated by the care labelling according to ISO 3758 This document is applicable to textile end products (including consumer textile products, such as clothing made of fleece, shirts, trousers, blouse, etc.) and home textile end products (such as, blankets, rugs, curtains, etc.) which are composed of all fibres such as natural fibres, and man-made fibres, including mixture of the fibres that can be washed in a domestic washing machine. This document is not applicable to fabrics and cut textile products. It does not cover the test for washing machines and detergents as well. General information Status Published Publication date 2023-05 Stage : International Standard published [ 60.60 Edition : 1 Number of pages : 28 Technical Committee : ISO/TC 38 ICS 13.020.40 59.080.01 RSS updates Life cycle Now Published ISO 4484-3:2023 Stage: 60.60 Preliminary Proposal 10.99 2020-07-30 New project approved Preparatory Committee 30.00 2021-04-26 Committee draft (CD) registered 30.20 2021-04-27 CD consultation initiated 30.60 2021-06-23 Close of comment period 30.99 2021-06-25 CD approved for registration as DIS Enquiry 40.00 2021-10-22 DIS registered 40.20 2021-12-24 DIS ballot initiated: 12 weeks 40.60 2022-03-28 Close of voting 40.99 2022-12-02 Full report circulated: DIS approved for registration as FDIS Approval 50.00 2022-12-07 Final text received or FDIS registered for formal approval 50.20 2023-01-30 Proof sent to secretariat or FDIS ballot initiated: 8 weeks 50.60 2023-03-28 Close of voting. Proof returned by secretariat Publication 60.00 2023-03-28 International Standard under publication 60.60 2023-05-05 International Standard published Review 90.20 International Standard under systematic review 90.60 Close of review 90.92 International Standard to be revised 90.93 International Standard confirmed 90.99 Withdrawal of International Standard proposed by TC or SC Withdrawal 95.99 Withdrawal of International Standard This standard contributes to the following Sustainable Development Goals Good Health and Well-being Clean Water and Sanitation Industry, Innovation and Infrastructure Responsible Consumption and Production Climate Action Life Below Water Life on Land Got a question? Check out our Help and Support Store Store ICS

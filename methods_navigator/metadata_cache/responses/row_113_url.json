@@ -1,0 +1,20 @@
+{
+  "particle_size_range": "≥20 μm diameter",
+  "key_metrics_output": "particle count, polymer type identification, particle shape classification (fibers, fibrous fragments, fragments, spherical fragments, spheres), size, recovery rate (88.3% ± 1.2%), hit quality index (HQI) for spectral matching",
+  "abstract": null,
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "This method was able to quantify MPs down to a diameter of 20 µm"
+    ],
+    "key_metrics_output": [
+      "detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type",
+      "recoveries of 88.3% ± 1.2%",
+      "A shape-classifying algorithm was designed using the aspect ratio values of particles to categorize MPs as fibers, fibrous fragments, fragments, spherical fragments, or spheres",
+      "A cut-off hit quality index (HQI) value of 0.7 was used to classify known and unidentified particles based on spectral matches to a reference library"
+    ],
+    "abstract": [
+      "Zotero abstractNote field is populated in source context"
+    ]
+  }
+}

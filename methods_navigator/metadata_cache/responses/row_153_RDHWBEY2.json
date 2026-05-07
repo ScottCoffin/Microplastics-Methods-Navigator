@@ -1,0 +1,21 @@
+{
+  "scope": "marine environment; sediment (sandy beaches) and seawater sampling; methodological review of identification and quantification approaches",
+  "particle_size_range": "1–5 mm (two main fractions: 500 μm–5 mm and 1–500 μm)",
+  "key_metrics_output": "abundance (items per m² for sediment/sea surface; items per m³ for water column); polymer type; particle shape, degradation stage, color; chemical composition via infrared spectroscopy; specific density",
+  "abstract": "This review of 68 studies compares the methodologies used for the identification and quantification of microplastics from the marine environment. Three main sampling strategies were identified: selective, volume-reduced, and bulk sampling. Most sediment samples came from sandy beaches at the high tide line, and most seawater samples were taken at the sea surface using neuston nets. Four steps were distinguished during sample processing: density separation, filtration, sieving, and visual sorting of microplastics. Visual sorting was one of the most commonly used methods for the identification of microplastics (using type, shape, degradation stage, and color as criteria). Chemical and physical characteristics (e.g., specific density) were also used. The most reliable method to identify the chemical composition of microplastics is by infrared spectroscopy. Most studies reported that plastic fragments were polyethylene and polypropylene polymers. Units commonly used for abundance estimates are “items per m2” for sediment and sea surface studies and “items per m3” for water column studies. Mesh size of sieves and filters used during sampling or sample processing influence abundance estimates. Most studies reported two main size ranges of microplastics: (i) 500 μm−5 mm, which are retained by a 500 μm sieve/net, and (ii) 1−500 μm, or fractions thereof that are retained on filters. We recommend that future programs of monitoring continue to distinguish these size fractions, but we suggest standardized sampling procedures which allow the spatiotemporal comparison of microplastic abundance across marine environments.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [
+      "Most studies reported two main size ranges of microplastics: (i) 500 μm−5 mm, which are retained by a 500 μm sieve/net, and (ii) 1−500 μm, or fractions thereof that are retained on filters"
+    ],
+    "key_metrics_output": [
+      "Units commonly used for abundance estimates are 'items per m2' for sediment and sea surface studies and 'items per m3' for water column studies",
+      "Visual sorting was one of the most commonly used methods for the identification of microplastics (using type, shape, degradation stage, and color as criteria)",
+      "The most reliable method to identify the chemical composition of microplastics is by infrared spectroscopy",
+      "Most studies reported that plastic fragments were polyethylene and polypropylene polymers"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,229 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Petersen et al., 2020
+        Year: 2020
+        Full Title: Cause-and-Effect Analysis as a Tool To Improve the Reproducibility of Nanobioassays: Four Case Studies
+        DOI/URL: https://doi.org/10.1021/acs.chemrestox.9b00165
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Cause-and-Effect Analysis as a Tool To Improve the Reproducibility of Nanobioassays: Four Case Studies
+        DOI: 10.1021/acs.chemrestox.9b00165
+        Date: 2020-05-18 2020-05-18
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Perspective 
+
+Cite This: Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+**==> picture [181 x 75] intentionally omitted <==**
+
+pubs.acs.org/crt 
+
+## Cause-and-Effect Analysis as a Tool To Improve the Reproducibility of Nanobioassays: Four Case Studies 
+
+*[,][†] Elijah J. Petersen, Cordula Hirsch,[‡] John T. Elliott,[†] Harald F. Krug,[§] Leonie Aengenheister,[‡] Ali Talib Arif,[∥][,][⊥] Alessia Bogni,[#] Agnieszka Kinsner-Ovaskainen,[#] Sarah May,[‡] Tobias Walser,[∇] Peter Wick,[‡] and Matthias Roesslein[‡] 
+
+†Biosystems and Biomaterials Division, Material Measurement Laboratory, National Institute of Standards and Technology (NIST), Gaithersburg, Maryland 20899, United States 
+
+> ‡Particles-Biology Interactions Laboratory, Empa, Swiss Federal Laboratories for Material Science and Technology, CH-9014 St. Gallen, Switzerland 
+
+> §NanoCASE GmbH, St. Gallerstr. 58, 9032 Engelburg, Switzerland 
+
+∥Institute for Infection Prevention and Hospital Epidemiology, University Medical Center Freiburg, Faculty of Medicine, University of Freiburg, D-79106 Freiburg, Germany 
+
+> ⊥Kurdistan Institution for Strategic Studies and Scientific Research (KISSR), Qirga, Sulaimani, Iraq 
+
+> #European Commission, Joint Research Centre (JRC), 21027 Ispra, Italy 
+
+> ∇Vereala GmbH, Eyhof 34, 8047 Zurich, Switzerland 
+
+## *S Supporting Information 
+
+ABSTRACT: One of the challenges in using in vitro data to understand the potential risks of engineered nanomaterials (ENMs) is that results often differ or are even contradictory among studies. While it is recognized that numerous factors can influence results produced by nanobioassays, there has not yet been a consistently used conceptual framework to identify key sources of variability in these assays. In this paper, we use cause-and-effect analysis to systematically describe sources of variability in four key in vitro nanobioassays: the 2′,7′-dichlorofluorescein assay, an enzyme-linked immunosorbent assay for measuring interleukin-8, a flow cytometry assay (Annexin V/propidium iodide), and the Comet assay. These assays measure end points that can occur in cells impacted by ENMs through oxidative stress, a principle mechanism for ENM toxicity. The results from this analysis identify control measurements to test for potential artifacts or 
+
+**==> picture [207 x 136] intentionally omitted <==**
+
+biases that could occur during conduct of these assays with ENMs. Cause-and-effect analysis also reveals additional measurements that could be performed either in preliminary experiments or each time the assay is run to increase confidence in the assay results and their reproducibility within and among laboratories. The approach applied here with these four assays can be used to support the development of a broad range of nanobioassays. 
+
+## ■[INTRODUCTION] 
+
+Engineered nanomaterials (ENMs) often have unique or enhanced properties such as high surface reactivity and quantum confinement compared to bulk materials of the same elemental composition. These properties can be utilized in a broad range of commercial applications such as environmental remediation, biomedical application, textiles, and renewable energy.[1][−][5] However, ENMs may also pose potential risks to human health or the environment as a result of these same properties, since a fraction of the ENMs will be intentionally or unintentionally released during the production and life cycle of these products.[6][−][15] Many assays used to assess biological effects of dissolved chemicals may require modifications prior to use with ENMs because these materials 
+
+often behave differently in the test media (e.g., agglomeration or dissolution) and may cause artifacts in the test results.[16][−][22] 
+
+The most frequently used tests to assess the potential hazards of ENMs are in vitro toxicity assays.[17] They have the advantage of enabling higher throughput testing which is not possible when conducting tests with larger and more complex organisms (e.g., rats or fish). High-throughput testing can be used to develop categories for ENMs based on results from these assays, the ENM composition, and physicochemical 
+
+Special Issue: Future Nanosafety 
+
+Received: April 15, 2019 Published: September 11, 2019 
+
+1039 
+
+© 2019 American Chemical Society 
+
+DOI: 10.1021/acs.chemrestox.9b00165 Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+Chemical Research in Toxicology 
+
+Perspective 
+
+Table 1. Overview for Each of the Five Assays 
+
+|assay|assay purpose|what is measured|
+|---|---|---|
+|MTS assay|measures metabolical|the amount of metabolically active cells (i.e., living/healthy cells) is estimated by spectrophotometrically quantifying the amount of|
+||activity as an indirect|MTS reagent metabolized|
+||estimate of the amount||
+||of living cells||
+|DCF|measures ROS in cellular|a cell-permeable, nonfuorescent dye is added to cells; the cells cleave ofthe diacetate moiety, the dye is reduced by ROS; and the|
+||systems|reduced dye is detected using fuorescence|
+|ELISA<br>method|measures the cellular<br>release of the cytokine|after cellular exposure to a potential stimulus (e.g., ENM), the supernatant is removed and added to a plate which has an antibody<br>attached surface; a second biotinylated antibody is then added to bind to the same cytokine but at a diferent epitope; and last the|
+|with IL-8|IL-8|cytokine concentration is measured spectrophotometrically after horseradish peroxidase linked to avidin reacts using TMB as the|
+|||substrate reacts with the biotinylated antibody|
+|Annexin V/<br>PI fow|measures cell viability<br>and necrotic/apop-|dyes are added to distinguish between viable, necrotic, and apoptotic cells, and the cells are measured using fow cytometry|
+|cytometry|totic cells||
+|Comet<br>assay|measures DNA damage|after cell lysis and single cell gel electrophoresis, the addition of a DNA-intercalating dye and microscopic imaging allow quantifying<br>DNA breaks in each cell; the relativefuorescence intensity in the tail (% DNA in tail), the tail length as well as the tail moment<br>(taking tail intensity as well as tail length into consideration) are accepted metrics for DNA damage quantifcation|
+
+
+
+properties.[23][−][26] In some cases, there is evidence that in vitro assay results might also be used to estimate the toxicity observed with more complex organisms such as pulmonary toxicity with rats.[27][,][28] In addition, in vitro tests such as cytotoxicity assays can be used in a tiered testing system to assess potential hazards caused by ENMs. This can support the prioritization of additional testing using larger organisms thus reducing the number of animals used.[27][−][29] 
+
+One of the most substantial limitations for in vitro testing with ENMs is a lack of robust, “validated” methods for these materials.[27][,][30][−][33] The challenges of assessing ENMs with existing test methods have also been recognized by the test guideline program of the Organization for Economic Cooperation and Development (OECD). The OECD launched the testing program of ENMs in 2007 to ensure that the approaches for hazard, exposure, and risk assessment for ENMs are science based and internationally harmonized.[34] One objective of this program is to explore the potential application of alternative methods for testing of ENMs. Validated methods have been developed for dissolved chemical substances, yet additional work is needed in some cases to adapt these methods for use with ENMs given their different behaviors in the assay system. For example, there is a possibility for ENMs to cause artifacts in these assays such as by adsorbing reagents of the test system,[35][−][38] damaging biomolecules after a cell assay has concluded (e.g., ENMinduced photoactivity as a result of laboratory lighting),[21][,][39] or producing a signal (e.g., fluorescence or absorbance) similar to the measurand for the assay.[19][,][20] Biases caused by these artifacts and other important, yet often uncontrolled, aspects of the assay such as cell-seeding density may be the source of contradictory results on the toxicity of various ENMs. Another complication for the development of robust assays for ENMs is the dispersion protocol, which, if not standardized, may lead to different ENM suspensions even when using the same starting material.[17][,][18][,][40][−][42] Testing the ENMs with the same composition but from different manufacturers may generate different results, hindering comparison among in vitro assay results even within a single laboratory.[43] 
+
+One approach that we have used previously to comprehensively evaluate potential sources of uncertainty for the 3- (4,5-dimethylthiazol-2-yl)-5-(3-carboxymethoxyphenyl)-2-(4sulfophenyl)-2H-tetrazolium (MTS) cell viability assay is cause-and-effect (C&E) analysis.[15] C&E analysis is an approach originally utilized in quality manufacturing and propagation of measurement error in analytical chemistry.[44] It 
+
+highlights through C&E diagrams, prepared based on expert judgment, aspects of the assay anticipated to most strongly influence the variability of the assay result. C&E diagrams, in particular, provide a graphical representation of potential sources of variability in assays. These diagrams can then be used to add process control measurements to an assay protocol to track key potential sources of variability.[15] Understanding these sources of variability and the robustness of the assay to minor, unintended changes in the protocol (e.g., temperature, stability of reagents, time range for incubation) enables scientifically informed, instead of ad hoc, choices about components of the assay to monitor, and allowable ranges for different steps of the assay (e.g., temperature or incubation duration). This supports reducing interlaboratory variability during interlaboratory testing and eventual approval for usage in regulatory testing.[45] For example, during sensitivity testing of the MTS assay, we determined that the cell pipetting caused the highest variability in the assay result.[15] These findings and the use of process control measurements supported successful interlaboratory testing of the protocol where outlier results from one laboratory could be traced to a different interpretation of a single assay step and corrected by revising the procedure.[46] However, it was unclear from this case study about how to apply this approach to other nanocytotoxicity assays and if the same control measurements would be sufficient to capture the most important steps in these assays, particularly if the assays required more complex steps than the relatively straightforward MTS assay. 
+
+To address this topic, a workshop took place in St. Gallen, Switzerland, during June 2015 entitled “Cause-and-Effect Analysis: A New Approach for Developing Robust Nanobioassays” with 17 participants from 4 countries. During the workshop, the application of C&E analysis was evaluated on four additional cell-based assays, selected by the workshop participants, for use with ENMs: the 2′,7′-dichlorofluorescein (DCF) assay, an enzyme-linked immunosorbent assay (ELISA) for measuring interleukin-8 (IL-8), a flow cytometry assay (Annexin V/propidium iodide (PI)), and the Comet assay. These assays can be used to measure a possible cascade of events that can occur in cells impacted by ENMs through oxidative stress, a condition in which the amount of intracellular reactive oxygen species (ROS) produced overwhelms the cells’ antioxidant defense capacities.[47][,][48] Oxidative stress has been shown in numerous nanotoxicity studies to be the principal mechanism causing toxicity given the potential for a broad range of ENMs to produce ROS or activate redox 
+
+1040 
+
+DOI: 10.1021/acs.chemrestox.9b00165 Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+Chemical Research in Toxicology Perspective 
+
+**==> picture [505 x 598] intentionally omitted <==**
+
+Figure 1. Flowcharts illustrating steps for MTS, DCF, ELISA, flow cytometry, and Comet assays. 
+
+reactions. Because of this, reactivity is among the most promising intrinsic ENM properties used in ENM hazard categorization.[47][,][49][−][52] Given that it is not yet clear which combination of assays measuring oxidative stress is most predictive to estimate in vivo effects,[47] the previously mentioned four assays were evaluated: the DCF assay which 
+
+directly measures intracellular ROS, the ELISA which measures the increase in cytokines indicative of inflammation, the flow cytometry assay which measures the mechanism of cell death which can be caused if the cells are exposed to sustained oxidative stress, and the Comet assay which measures DNA damage, another potential outcome of 
+
+1041 
+
+DOI: 10.1021/acs.chemrestox.9b00165 Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+Chemical Research in Toxicology 
+
+Perspective 
+
+**==> picture [455 x 274] intentionally omitted <==**
+
+Figure 2. C&E diagram of MTS assay. Modified and reprinted with permission from ref 15. Copyright 2015 American Chemical Society. 
+
+increased intracellular ROS levels. However, it should be noted that positive responses with these assays can also be caused by mechanisms other than oxidative stress. For each assay, we performed a C&E analysis and designed control measurements to assess for ENM interference with the assay. The extent to which data from positive chemical control samples can provide insights into how well the assay is functioning is also discussed. Lastly, next steps are described that could be taken with these assays to more fully evaluate different expected sources of variability. 
+
+## ■[OVERVIEW][OF][COMMONLY][USED][IN] VITRO-BASED CYTOTOXICITY ASSAYS 
+
+An overview for each of the four assays investigated during the workshop is provided in Table 1, and each assay will be briefly described. The full protocols for each assay are provided in the Supporting Information (SI). Flowcharts which describe each step of the assay are shown in Figure 1. More detailed descriptions and protocols for each of these assays are available in the SI. The DCF assay is designed to measure production of ROS by ENMs, one of the most common mechanisms of ENM toxicity. The assay works by assessing the rate at which a nonfluorescent dye is chemically reduced by ROS to form a fluorescent dye. This assay can be conducted under acellular or cellular conditions. In the acellular version of the assay, there are additional steps to remove the diacetate moiety, while deacetylation occurs intracellularly in the cellular version of the assay. In the ELISA, the release of cytokines, molecules that are indicative of inflammatory reactions, is quantified. The production of a specific cytokine, in this example interleukin8 (IL-8), is measured using the sandwich ELISA method which works as follows: (1) adsorbing a primary antibody onto the surface of a high-affinity binding microwell plate, (2) having the antibody bind the protein of interest in the cell culture supernatant, (3) adding a second antibody to bind to the same 
+
+protein of interest but at a different epitope, (4) adding horseradish peroxidase linked to avidin to initiate an enzymatic reaction with tetramethylbenzidine (TMB) as the substrate, and (5) quantifying the TMB using absorbance on a plate reader. In the third assay, flow cytometry can be used to evaluate the quantity of apoptotic and necrotic cells. Cells are treated with markers to distinguish between (1) viable cells, (2) cells which are not viable but have the membrane intact (apoptotic cells), and (3) cells which are not viable and also have undergone membrane disintegration (necrotic cells). The cells are subsequently analyzed using flow cytometry. In contrast to the in vivo situation, apoptotic cells cannot be removed by tissue macrophages in vitro. Their membranes start to disintegrate, and cells stain double-positive for both markers (late apoptotic cells). Lastly, the purpose of the Comet assay is to assess the potential genotoxicity of a compound through measuring the degree of DNA damage that has occurred. The DNA integrity of cells is evaluated after gel electrophoresis, and the length and quantity of DNA in the Comet tail relate to the extent of DNA damage. 
+
+## ■[CONTROL][CHARTING][DATA] 
+
+Control charting data of the positive and negative control results (i.e., results for these control measurements from assays performed on multiple different days) from the four assays − obtained at Empa using A549 cells are provided in Figures S1 S4. The control charting data were also evaluated to assess if there was a statistically significant correlation among the control charting data for different components of data in the control charts (e.g., the negative control data and the positive control data, Figures S5 and S6). The nonparametric Spearman’s rank test (GraphPad Prism) was applied to the data to determine if there was a trend in the rank of data, and in some cases a linear regression was used. Discussion of these results is provided in the SI. 
+
+1042 
+
+DOI: 10.1021/acs.chemrestox.9b00165 Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+Chemical Research in Toxicology 
+
+Perspective 
+
+Table 2. Control Preliminary Experiments to Assess Sources of Variability and Bias for the DCF Assay with ENMs 
+
+|source of|step||
+|---|---|---|
+|variability/bias|no.|potential control measurements|
+|positive chemical|5|evaluate potential positive chemical controls ideally to fnd a compound that always induces the same amount of ROS|
+|control|||
+|time dependency|17|perform kinetic measurement because only a small fraction of ENMs may have reached the cells at the bottom of the test plate at early time points|
+|||(e.g., 4 h). However, it is also valuable to obtain data about the amount of ROS produced shortly after ENM exposure with cells to try to measure|
+|||the initial release of ROS. It is also possible to quantify ENM uptake in separate experiments prior to the DCF assay (although in practice this|
+|||may be challenging to measure for some ENMs)|
+|false positive re-|5|cleave the DA from H2DCF-DA in an acellular experiment and then investigate for potential production of DCF signal during incubation with|
+|sults from ex-||ENMs as a result of extracellular ROS production. If this is observed, there could be a false positive signal in cellular assays if both extracellular|
+|tracellular pro-||deacetylation and ROS production occur. In addition, if such a signal is observed, it could further indicate that the ENM’s reactive surface|
+|duction of ROS||processes the H2DCF dye without production of ROS|
+
+
+
+Overall, these results indicate that all of these assays could benefit from decreasing their variability and increasing the within-laboratory reproducibility. Therefore, the assays were evaluated in greater detail in subsequent sections to discuss possible options for improving their reproducibility and for enabling their use with ENMs. 
+
+## ■[EVALUATION][OF][SOURCES][OF][VARIABILITY][IN] THE ASSAYS 
+
+Only two steps are similar among all of the assays: the initial cell seeding step and the step related to treating the cells with the ENM and positive chemical controls (see Figure 1), although the ENMs are dispersed in different media among the assays prior to cell treatment. To assess the ENM dispersion, it is important to characterize, preferably using orthogonal techniques, the suspended ENMs, such as the extent to which they have agglomerated and their interactions with serum proteins (if in the media). It is important to note though that these measurements are challenging, and the results may vary among analytical techniques. Overall, improvements in the repeatability for the ENM dispersion, cell seeding, and dosing steps could help improve the precision of all of the assays. However, the extent that the variability would be decreased would depend on the relative contribution of these steps to the total variability for each assay. It is also evident when viewing the flowcharts that there are substantial differences in the number of steps in the assays with the Comet assay and the ELISA method containing the highest number. The instrument used to obtain the final assay readout also varies with two of the assays requiring absorbance measurements, while the other assays utilize flow cytometry, fluorescence, or microscopic analysis. 
+
+The C&E diagrams showed similar sources of variability among assays and key differences (Figures 2−6). The aspects of the branch colored in orange are designed to highlight differences compared to the previously published C&E diagram for using the MTS assay with ENMs (Figure 2). For all of the assays except for the MTS assay, the positive chemical control to be used to elicit a similar response as the potential impact of the ENM was a significant source of variability. Therefore, this topic will be discussed in depth in subsequent sections. 
+
+These C&E diagrams were created based upon the specific protocols available in the SI. While there are factors such as the media used or the serum percentage that vary among protocols, these factors are not discussed in depth here since these experimental details are specified in the protocols. Similarly, the use of high-throughput testing may help minimize variability in assay results comparing different ENMs if the suspensions are tested at the same time,[53] but 
+
+that is not possible using the protocols described here. In addition, the branches for the C&E diagrams were determined by expert judgment and can be refined based upon robustness testing of the assays,[54] since some of the expected sources of variability may not have a substantial contribution. These sources of variability focus on unintended deviations from the assay protocol (e.g., random variability from pipetting cells among multiple pipetting ejections or misinterpreting a step of the protocol such as cell rinsing during the MTS assay[46] ). The C&E diagrams do not cover mistakes performing the assay protocol (e.g., pipetting double the intended volume or if the cells are contaminated such as with mycoplasma), which should be avoided through a laboratory’s quality control system. In other words, to the best of his or her knowledge, the operator executes the protocol correctly, but nevertheless, unnoticed or unavoidable sources of variability lead to varying assay results. 
+
+To address the sources of uncertainty revealed during the C&E analysis, sensitivity testing can be conducted to quantify the amount of variability from these different sources, and control experiments can be performed to evaluate potential artifacts from ENM testing. Overall, potential artifacts from ENM testing depend upon the individual steps in an assay and also the analytical instrument (e.g., plate reader) used to perform the measurement. Thus, there are not overarching control experiments that would be relevant for all four assays. Nevertheless, the conceptual process for identifying control experiments related to artifacts from ENM exposure for these four assays is similar with three primary questions: (1) Is the ENM able to process or modify probe molecule in the absence of cells? (2) Is the ENM fluorescent or absorbent by itself? (3) Is the ENM reducing or increasing an existing signal? These considerations and insights from the C&E diagrams were used to delineate control measurements for each assay several of which are shown in Tables 2−5 and are discussed for each assay in the following sections. 
+
+It is valuable to note that there are key control measurements for instrument performance specific to the instruments used for each of the assays. For example, it is important to ensure that the plate reader is calibrated and to confirm that it provides a linear response for the conditions being used in the assay (e.g., for the fluorescent DCF molecule for the DCF assay). For older plate readers, there is typically only a limited number of settings available, and thus the specific suggested excitation and emission wavelengths for a dye may not be available. Therefore, it is often necessary to determine the optimal settings for each system. It should be noted though that differences in the excitation/emission settings for plate readers can be a source of increased variability among laboratories. There are similar considerations that are relevant 
+
+1043 
+
+DOI: 10.1021/acs.chemrestox.9b00165 Chem. Res. Toxicol. 2020, 33, 1039−1054 
+
+Chemical Research in Toxicology 
+
+Perspective 
+
+**==> picture [455 x 276] intentionally omitted <==**
+
+Figure 3. C&E diagram of the DCF assay. Parts of the diagram in orange font indicate differences from the C&E diagram for the MTS assay. 
+
+for a fluorescent microscope (e.g., linearity, benchmarking) and the flow cytometer (e.g., potential for spillover for the dyes used and assessment of the size of the cells to be tested by measuring their side and forward scattering to determine the binning). Since these aspects of instrument maintenance and calibration are not specific to these assays, they will

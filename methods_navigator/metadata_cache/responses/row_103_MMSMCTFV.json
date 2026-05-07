@@ -1,0 +1,18 @@
+{
+  "scope": "Farmland soils; terrestrial microplastics extraction and identification",
+  "particle_size_range": null,
+  "key_metrics_output": "Particle quantification (count), polymer type identification, recovery rate (83%-90%), particle morphology",
+  "abstract": "Microplastics (MPs) pollution in the terrestrial environment has received increasing attention over the last decade, with increasing studies describing the numbers and types of MPs in different soil systems and their impacts on soil and crop health. However, different MPs extraction and analytical methods are used, limiting opportunities to compare results and generate reliable evidence for industry advice and policymakers. Here, we present a protocol that describes the methodology for sampling, separation, and chemical identification of conventional MPs from soil. The method is low-cost, and the materials are readily available. This enhances operational ease and may help with widespread adoption. The protocol provides detailed information on sample collection from the top 0-30 cm of soil using plastic-free utensils; simulation of different soil types through the use of various solid media (such as bentonite clay, silicon dioxide, and non-contaminated soil), with the addition of the same mass of polyethylene(PE)-MPs for subsequent quantification; density separation of plastic particles utilizing saturated sodium chloride (NaCl) solution and digestion of organic impurities in the supernatant using 4 M sodium hydroxide (NaOH) solution; quantification of particles using fluorescent microscopy after Nile Red staining; and polymer identification using micro Fourier-Transform Infrared Spectroscopy (μ-FTIR) or Laser-Direct Infrared (LDIR) spectroscopy. The MPs recovery rate ranged from 83% - 90% for the abovementioned media. This protocol presents an efficient method for soil MPs analysis that is optimized for feasibility, applicability, and cost-effectiveness. Moreover, the video accompanied can guide the process of analyzing the soil MPs step-by-step virtually. This study is dedicated to standardizing the methods for soil MPs analysis, enhancing the connectivity and comparability of measurements, and establishing a foundation for more standardized and scientific research.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "quantification of particles using fluorescent microscopy after Nile Red staining",
+      "polymer identification using micro Fourier-Transform Infrared Spectroscopy (μ-FTIR) or Laser-Direct Infrared (LDIR) spectroscopy",
+      "The MPs recovery rate ranged from 83% - 90%"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

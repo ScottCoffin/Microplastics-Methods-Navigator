@@ -1,0 +1,16 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "polymer type, color, size, morphology; minimum subsample size (386-620 particles); polymer distribution characterization",
+  "abstract": "Analysis of microplastics in the environment requires polymer characterization as a confirmation step for suspected microplastic particles found in a sample. Material characterization is costly and can take a long time per particle. When microplastic particle counts are high, many researchers cannot characterize every particle in their sample due to time or monetary constraints. Moreover, characterizing every particle in samples with high plastic particle counts is unnecessary for describing the sample properties. We propose an a priori approach to determine the number of suspected microplastic particles in a sample that should be randomly subsampled for characterization to accurately assess the polymer distribution in the environmental sample. The proposed equation is well-founded in statistics literature and was validated using published microplastic data and simulations for typical microplastic subsampling routines. We report values from the whole equation but also derive a simple way to calculate the necessary particle count for samples or subsamples by taking the error to the power of negative two. Assuming an error of 0.05 (5 %) with a confidence interval of 95 %, an unknown expected proportion, and a sample with many particles (> 100k), the minimum number of particles in a subsample should be 386 particles to accurately characterize the polymer distribution of the sample, given the particles are randomly characterized from the full population of suspected particles. Extending this equation to simultaneously estimate polymer, color, size, and morphology distributions reveals more particles (620) would be needed in the subsample to achieve the same high absolute error threshold for all properties. The above proposal for minimum subsample size also applies to the minimum count that should be present in samples to accurately characterize particle type presence and diversity in a given environmental compartment.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "Extending this equation to simultaneously estimate polymer, color, size, and morphology distributions reveals more particles (620) would be needed",
+      "the minimum number of particles in a subsample should be 386 particles to accurately characterize the polymer distribution of the sample"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

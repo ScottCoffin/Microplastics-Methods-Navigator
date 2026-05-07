@@ -1,0 +1,227 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Peneva et al., 2025
+        Year: 2025
+        Full Title: Microplastic analysis in soils: A comparative assessment
+        DOI/URL: https://doi.org/10.1016/j.ecoenv.2024.117428
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Microplastic analysis in soils: A comparative assessment
+        DOI: 10.1016/j.ecoenv.2024.117428
+        Date: 2025-01-00 01/2025
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Ecotoxicology and Environmental Safety 289 (2025) 117428 
+
+**==> picture [61 x 67] intentionally omitted <==**
+
+Contents lists available at ScienceDirect 
+
+## Ecotoxicology and Environmental Safety 
+
+journal homepage: www.elsevier.com/locate/ecoenv 
+
+**==> picture [57 x 72] intentionally omitted <==**
+
+## Microplastic analysis in soils: A comparative assessment 
+
+**==> picture [29 x 29] intentionally omitted <==**
+
+Stoyana Peneva[a][,][d][,][1] , Quynh Nhu Phan Le[b][,][1] , Davi R. Munhoz[c][,][1] , Olivia Wrigley[d] , Flora Wille[e] , Heidi Doose[f][,][g] , Crispin Halsall[b] , Paula Harkes[c] , Michael Sander[e] , Melanie Braun[d][,][*][,][1] , Wulf Amelung[d][,][h] 
+
+a _Wessling GmbH, AM Umweltpark 1, Bochum 44793, Germany_ 
+
+b _Lancaster Environment Centre, Lancaster University, Lancaster LA1 4YQ, UK_ 
+
+c _Soil Physics and Land Management Group, Wageningen University & Research, P.O. Box 47, Wageningen 6700 AA, the Netherlands_ 
+
+d _Institute of Crop Science and Resource Conservation (INRES), Soil Science and Soil Ecology, University of Bonn, Nussallee 13, Bonn 53115, Germany_ 
+
+e _Insitute of Biogeochemistry and Pollutant Dynamics, ETH Zurich, Zurich 8092, Switzerland_ 
+
+- f _Co.KG, Feodor-Lynen Straße 23, Hannover 30625, Germany_ 
+
+g _Wessling Consulting Engineering GmbH &amp, Feodor-Lynen Straß~e 23, Hannover 30625, Germany_ 
+
+h _Agrosphere Institute (IBG-3), Forschungszentrum Jülich GmbH, Wilhelm-Johnen-Str, Jülich 52425, Germany_ 
+
+A R T I C L E I N F O A B S T R A C T 
+
+> _Keywords:_ Microplastic (MiP) contamination poses environmental risks, but harmonizing data from different quantification 
+
+> Spectroscopy methods and sample matrices remains challenging. We compared analytical protocols for MiP quantification in 
+
+> Soil pollution soil, consisting of Digital, Fluorescence, Fourier-transform infrared (FTIR), and Raman Microscopy as well as Conventional synthetic and biodegradable quantitative Pyrolysis-Gas Chromatography-Mass Spectroscopy (Py-GC-MS) and 1-proton nuclear magnetic polymers resonance ([1] H NMR) spectroscopy as detection techniques. Each technique was coupled with a specific extraction procedure and evaluated for three soils with different textures and organic carbon contents, amended with eight types of large MiPs (0.5–1 mm) – high- and low-density polyethylene (HDPE and LDPE), polypropylene (PP), polystyrene (PS), polyamide (PA), polyethylene terephthalate (PET), polyvinyl chloride (PVC), and a biodegradable mulch film product composed of polybutylene adipate-co-terephthalate/ polylactic acid (PBAT/ PLA). In addition, we included two types of small MiPs (20–250 µm) composed of either LDPE or PBAT/ PLA in the tests. The results showed that protocols for Digital, Fluorescence, and ATR-FTIR microscopy recovered 74–98 % of the large MiPs, with fluorescence yielding the highest recoveries. Raman spectroscopy was most sensitive to soil organic matter residues, requiring more sophisticated sample pretreatment. Fluorescence staining with subsequent Fluorescence microscopy detection effectively recovered most small-sized LDPE-MiP but missed 56– 93 % of small PBAT/ PLA particles. For the latter, reliable quantification was achieved only using Soxhlet extraction combined with[1] H NMR spectroscopic quantification. Pyrolysis-GC-MS showed intermediate results, displaying low sensitivity to plastic type and lower recoveries as soil clay content increased. We conclude that different methods have different sensitivities for different MiP materials in different soils, i.e. comparisons of MiP loads and threshold settings for MiP loads across methodologies require careful consideration. Yet, our data indicate that adding stained large MiP as an internal standard could enhance extraction control, while Soxhletextraction with subsequent[1] H NMR analysis is most powerful for controlling future thresholds of small MiP from biodegradable materials. 
+
+## **1. Introduction** 
+
+Since the first fully synthetic polymer material was discovered in the early 20th century, plastic materials have found widespread use due to their outstanding chemical and physical properties such as their 
+
+inertness, lightweight, and flexible usability, as well as their fast production at low cost. In the meantime, consumption of plastics has quadrupled over the past 30 years, resulting in a total global plastic production of 400.3 Mio t in 2022 (OECD, 2022; PlasticsEurope, 2023). Because of mismanaged waste, a significant fraction of plastics ends up 
+
+- Corresponding author. 
+
+- _E-mail address:_ melanie.braun@uni-bonn.de (M. Braun). 
+
+- 1 _Shared first authorship_ 
+
+https://doi.org/10.1016/j.ecoenv.2024.117428 
+
+Received 7 May 2024; Received in revised form 21 November 2024; Accepted 26 November 2024 Available online 6 December 2024 
+
+0147-6513/© 2024 Published by Elsevier Inc. This is an open access article under the CC BY-NC-ND license ( http://creativecommons.org/licenses/by-nc-nd/4.0/ ). 
+
+> _S. Peneva et al.                                                                                                                                                                                                                                  Ecotoxicology and Environmental Safety 289 (2025) 117428_ 
+
+in the environment (OECD, 2022). Consequently, macroplastics (MaPs, _>_ 2.5 cm), mesoplastics (5 mm - 2.5 cm), and microplastics (MiPs, 1 µm – 5 mm) have been found in both aquatic and terrestrial ecosystems (Lebreton et al., 2017; Sajjad et al., 2022). Yet, reliable extraction and accurate quantification in various environments, especially in soils, remains challenging (Astner et al., 2023; Wang et al., 2023). Current reports point to highly variable MiP loads, which could reflect different plastic exposure and input pathways (e.g., plastic mulching, application of compost or sewage sludge) as well as more diffuse sources (such as flooding of rivers, lakes, and seawater, littering or atmospheric deposition; Büks and Kaupenjohann, 2020; Zhou et al., 2020; Braun et al., 2023). However, variations in the reported MiP concentrations in soil could also reflect differences in analytical protocols used for MiP isolation and detection, with different sensitivities to plastic types, sizes and masses, and limits of detection (Blasing and Amelung, 2018; Büks and ¨ Kaupenjohann, 2020; Primpke et al., 2020a,2020b; Wrigley et al., 2024). 
+
+Most extraction methods for analyzing MiPs in soil contain two removal steps, one for the mineral phase and one for soil organic matter (SOM; Moller et al., 2020¨ ). The removal of the mineral phase is mostly accomplished by density separation: a salt solution with a specific density higher than the one of the plastic is used to separate minerals from plastics which float on the solution surface and can be collected (Coppock et al., 2017; Ribeiro-Claro et al., 2017). Sodium chloride (NaCl) is the preferred salt by most scientists, due to its low price and lack of toxicity (Han et al., 2019). However, using NaCl achieves a maximum density of only 1.2 g mL[−][1] , insufficient for extracting high-density plastics like polyvinyl chloride (PVC) or polyethylene terephthalate (PET), both of which have a density of appr. 1.37 g mL[−][1] . Hence, other solutions, such as zinc chloride (ZnCl2), adjustable to a density of up to 2.1 g mL[−][1] , have been recommended for isolating plastic particles with higher densities (Mintenig et al., 2016; Loder et al., 2017¨ ; El Hayany et al., 2020). However, caution is required when working and disposing of ZnCl2 or sodium iodide (NaI), which are suitable for extracting of high-density plastics, but are considered hazardous (Perez et al., 2022). Besides, ZnCl2 is a rather strong Lewis acid, thus potentially altering biodegradable plastics upon use. 
+
+The extracted plastic fraction, however, also contains SOM, which may interfere with MiP identification. Therefore, several studies use an acid, alkaline, enzymatic, or oxidative pretreatment for SOM removal, e. g., using oxidative agents like hydrogen peroxide (H2O2) or Fenton’s reagent (H2O2 with iron(II) sulfate, FeSO4 as a catalyst; Zhou et al., 2020; Junhao et al., 2021). While methods such as Fenton’s reaction or strong or alkaline acidic digestion pose the risk of degrading some polymer types (Nuelle et al., 2014; Radford et al., 2021), enzymes can be considered as more gentle reagents (Loder et al., 2017¨ ; He et al., 2018; Zhang et al., 2018), and may not completely eliminate SOM. These mineral phase and SOM removal steps have advantages and limitations, requiring careful consideration in protocols for MiP analysis. 
+
+The extent to which SOM needs to be removed also depends on the microscopic and spectroscopic technology subsequently used for MiP detection. While larger particles ( _>_ 0.5 mm) can be identified by eye and removed by hand, for smaller particles, optical microscopy can be used (Mani et al., 2019; Moller et al., 2021; Perez et al., 2022; Braun et al., ¨ 2023 ). Fluorescent staining, using Nile red (NR) as an example fluorophore, combined with automated detection of the stained particles, accelerates MiP detection (Shim et al., 2016). However, there is a risk of false positive results due to the co-staining of SOM with NR, and not all plastics uniformly interact with fluorophores. Moreover, this approach, akin to digital microscopy, cannot differentiate between plastic types (Sturm et al., 2021). For the identification of plastics, techniques like Fourier-transform infrared (FTIR) (Primpke et al., 2020a,2020b) or Raman spectroscopy (Ribeiro-Claro et al., 2017) have been recommended. When operating as an Imaging spectrometer, µ-FTIR can be used for particles of sizes down to 20 µm (Primpke et al., 2018), whereas µ-Raman possesses a better spatial resolution down to 1 µm (Imhof et al., 
+
+2012), but also needs exhaustive sample clean-up to prevent SOM auto-fluorescence from distorting the Raman-signal (Loder et al., 2015; ¨ Anger et al., 2018). Additionally, the high-resolution mode and accuracy in particle counting makes these techniques very time-consuming (Araujo et al., 2018); sometimes only 1–2 samples can be processed per day. Also, the techniques have specific analytical window for MiP sizes, leading to method inherent challenges particle counting. Yet, a systematic study evaluating the potential of these techniques together for known MiP contaminations in different soils, is still lacking. 
+
+In contrast to the above-mentioned particle-based techniques, there are also methods that quantify absolute MiP concentrations without determining MiP sizes. Thermo-extraction desorption (TED-) Gas – Chromatography Mass Spectroscopy (GC-MS) and Pyrolysis (Pyr-) GCMS have been proposed for this purpose (Dümichen et al., 2017; Kittner et al., 2023). The limit of detection (LOD) for TED- as well as Pyr-GC-MS, depends on several factors, including the MiP type, the applied method for sample preparation, the analytical instrument used, and the expertise of the analyst (El Hayany et al., 2020; Ivleva et al., 2021). Comparing the particle-based and total mass of microplastics (MiP) remains challenging (Caputo et al., 2021). Primpke et al. (2020a), (2020b) explored the detection and identification of microplastics in wastewater, water, and marine sediments using FTIR and Py-GC-MS. While both techniques showed similar trends overall, FTIR often indicated higher concentrations of specific polymer types like PMMA/PUR, whereas Py-GC-MS detected higher shares of PE and PVC. Also, the calculated masses were primarily driven by particles larger than 100 µm. That led to an overestimation of mass, especially for PP, where a few large-sized particles could significantly inflate the calculated masses. Furthermore, TED- and Pyr-GC-MS are typically conducted on extracted materials due to the specificity of the analysis and the potential overlap of pyrolyzed products from plastic with organic compounds and minerals in uncleaned soil samples. 
+
+The presence of SOM and contaminants from other soil components can additionally hinder MiP quantification (Primpke et al., 2020a, 2020b). One approach to address this challenge involves dissolving MiPs in solvents before, e.g., Pyr-GC-MS and[1] H NMR analyses. Here the solubility of the polymers in the chosen solvent and the heterogeneous nature of the soil matrix has to be considered (Nelson et al., 2019; Steinmetz et al., 2020). Using only one solvent, the application of this method will be limited to polymer types that dissolve in the chosen solvent. Nonetheless, the varying solubility of polymers can allow for the separation and individual analysis of different polymer types. Such logic is also used in a method to quantify polymers using[1] H NMR. Recently, 1H NMR has gained attraction for monitoring PBAT/ PLA biodegradation in soils, given its precision and low LOD/ limit of quantification (LOQ) values (1.3 and 4.4 μg mL[−][1 ] respectively for PBAT in deuterated chloroform (CDCl3; Nelson et al., 2019). Hence, this study tested this method against other potential mass-based (e.g., Py-GC-MS) and particle-based methods for PBAT/ PLA quantification, such as µ-Raman and µ-FTIR. Since these standard analytical techniques are not yet routinely used for biodegradable plastics, we aimed to assess them alongside the established protocol based on solvent extraction and[1] H NMR. 
+
+In summary, several extraction protocols with subsequent detection techniques for MiPs in soil are available, with their unique strengths and limitations. However, a comparative analysis is missing, which hinders a direct comparison of results from different studies. Hence, our goal was to evaluate the efficiency of commonly used methods to recover MiP particles from soils by adding these particles to different soils in known amounts and particle numbers. We focused on two MiP size ranges: visible pieces in the size range of 500–1000 μm, which provide robust quality control as they are easy to spike and identify, and small MiPs in the size range of ~100 μm diameter, not clearly visible by the naked eye as individual particles. In addition, we selected different polymer types (biodegradable versus non-biodegradable, low-density versus highdensity plastics), and performed our analyses with different soil types 
+
+2 
+
+> _S. Peneva et al.                                                                                                                                                                                                                                  Ecotoxicology and Environmental Safety 289 (2025) 117428_ 
+
+(sandy, loamy, and clayey mineral soils). The application of all common methods for plastic analyses to the same samples set allows us to provide clearer insights into possible bias of common plastic detection methods towards material origins and soil interferences. 
+
+## **2. Methods and materials** 
+
+## _2.1. Soils used for spike-recovery experiments_ 
+
+To assess the potential effects of texture and soil organic carbon content on the extraction of MiPs, we chose three mineral soils with different textures: we used sandy and clayey soils (Cambisol and Stagnosol, respectively) from sampling campaigns near Bonn, Germany, and supplemented it with certified loamy topsoil to allow standardized comparisons in future studies (LUFA soil SP 2.4.; Speyer, Germany). All soils were air-dried and sieved to 2 mm (Table 1). Measured background contaminations were negligibly small for all analytical techniques (Table S1), but for fluorescence microscopy up to 3590 fluorescent particles were detected in loamy soil. However, this count may include false positive results attributed to SOM. Thus, background subtraction is highly important for accurate analyses, especially for the fluorescence technique. (see Results and Discussion section). 
+
+## _2.2. Plastic materials used for recovery experiments_ 
+
+To cover a range of potential polymer types of plastic found as MiP in soil, we used two different MiP size groups, (500–1000 µm and 5–250 µm) and different plastic types as examples for conventional and biodegradable plastics. For larger MiPs (500–1000 µm), we used eight plastic types derived from household products (Table 1 and Figure S1); MiPs were produced using a standard razor blade and ensured to be the desired size with a digital microscope (Zeiss STEMi 305). For small MiPs (5–250 µm), we obtained LDPE microparticles from Goonvean Fibers Ltd (Cullompton, England) and cryo-milled a PBAT/ PLA blend film (BIONOV B, Barbier, France). While LDPE was specified to be 10–150 µm, the PBAT/ PLA was sieved to 100–250 µm. Quality assurance using fluorescence and Raman microscopes, and a particle measuring system (model Syringe, Markus Klotz GmbH) in ethanol suspension revealed actual sizes between 5 and 250 µm for both plastics (Figure S2, Supplementary Materials). 
+
+## _2.3. Spiking of soil samples_ 
+
+To determine the recovery of MiP from the soils by each of the different methodologies, 10 g of each soil (in 3-fold replication) was spiked with large and small MiPs (Table 2): for large MiPs, five particles of each of the eight plastic types were added to the soil, and for small MiPs, 3 mg of each LDPE and PBAT/ PLA was added (Table S2). To minimize particle loss during spiking, MiPs were placed on pre-wetted gelatin sheet, 1 cm×1 cm (one sheet for large particles and two sheets for each LDPE and PBAT/ PLA; Hurley et al., 2018; Zhang et al., 2018), which can be re-dissolved and homogenized in a mixture of soil and water (Moller et al., 2020¨ ). Large MiPs were placed onto the gelatin 
+
+## **Table 1** 
+
+Physicochemical properties of soils used for comparative method assessment. 
+
+|**Texture**|**Sandy**|**Loamy (LUFA 2.4.)**|**Clayey**|
+|---|---|---|---|
+|**Organic Carbon, g kg¡1**|9± 2|18± 2|59± 1|
+|**Particle size distribution**|**(mm) (g kg¡1)**|||
+|_<_0.002|85±0.5|238±1.5|503±0.5|
+|0.002–0.006|37±7.5|76± 6|82± 3.7|
+|0.006–0.02|38±2.5|146±10|140±0.3|
+|0.02–0.063|89±6|264±14|141±13.5|
+|0.063–0.2|169±2.5|208±12|58± 0.6|
+|0.2–0.63<br>0.63–2|515±29<br>49±8.5|55± 19<br>13± 4|23± 2<br>1.7±0.4|
+
+
+
+sheet using either non-static tweezers or a needle, while small MiPs were directly weighted on the gelatin sheet. Three gelatin sheets (one with large and two with small MiPs) were added to each soil in a beaker and left overnight, covered with a small amount of water to ensure their dissolution. For the Soxhlet – extraction coupled to[1] H NMR analysis, 3 mg of PBAT/ PLA (Table S2) was directly added to the tested soils. For each analytical test, the whole 10 g of spiked soil was processed in replicates. 
+
+For each detection technique specific sample preparation is required and was subsequently tested (Fig. 1 and description in Supplementary Materials and Table S3 and S4 for details): 
+
+- Method A – Density separation followed by Digital Microscopy analysis (Braun et al., 2021, 2023). 
+
+- Method B – Density separation, Fenton’s digestion, followed by fluorescence staining and Fluorescence Microscopy (Coppock et al., 2017; Shim et al., 2016). 
+
+- Method C – Density separation, Enzymatic, and Fenton’s digestion and followed by ATR- and focal plane array (FPA-) µ-FTIR (method C1 and C2), µ-Raman Spectromicroscopy (method C3), and Pyr-GCMS analysis (method C4; Loder et al., 2017¨ ; Mintenig et al., 2017; Primpke et al., 2018; Mbachu et al., 2021). 
+
+- Method D - Soxhlet extraction coupled to quantitative[1] H NMR spectroscopy (Nelson et al., 2019). 
+
+Methods C with excessive SOM removal treatments involved four different detection techniques, equated with C1, C2, C3 and C4, respectively. In line with common reports in the literature, Methods A - Digital Microscope and method C1 – ATR-FTIR were applied for large MiPs only (Perez et al., 2022). In contrast, methods B - Fluorescence Spectroscopy and method C3 - µ-Raman Microscope were used for both small and large MiPs, while methods C2 – FPA - µ-FTIR, C4 – Pyr-GC-MS ’ and D –[1] H NMR were used for small MiPs only. It s worth noting that each extraction protocol and subsequent purification protocol is considered to be optimal for matching the respective detection method. For each of the seven analytic techniques included (procedure in Supplementary Materials), one of four extraction methods was selected to match the requirements of the technique. We used ZnCl2 as this salt is the most commonly used salt for extraction when high-density plastics are also included in the analysis (Mintenig et al., 2016; Loder et al., ¨ 2017; Prosenc et al., 2021; Way et al., 2022). For the small-sized MiPs, aliquots of samples prepared for µ-FTIR and µ-Raman were used for the Pyr-GC-MS measurements as well. Additionally, to the comparison of spectral libraries and matching indexes we used to evaluate the potential effects of sample pre-treatment on the MiPs, we inspected the large MiP for visual changes (via digital microscope), as these changes might also disturb IR or Raman signals or interfere with the staining efficiency for the Fluorescence Microscope. 
+
+Each analytical protocol, except for[1] H NMR spectroscopy, begins with a density separation step (Fig. 1). We used a prefiltered ZnCl2 solution with a density of 1.5 g mL[−][1] , which was added in a soil:solution ratio of 1:20 (m/v). 
+
+The recovery of small particles for methods C2 - FPA-µ-FTIR and C3 - µ-Raman was calculated as a percentage of the expected number in the aliquot taken. In the case of method B - Fluorescence Microscopy the entire sample was considered when calculating recovery. Specific care to prevent sample contaminations from airborne dust or clothes during setup and spiking was taken in each lab as described in Supplementary Materials. 
+
+## _2.4. Data analysis_ 
+
+Statistical analysis was completed using R (V 4.1.2; (R Core Team, 2018)), with the packages ggplot, tidyverse, and dplyr (Wickham, 2016), car (Fox and Weisberg, 2019), and FSA (Ogle et al., 2023). Data were first tested for normality and homoscedasticity by applying a 
+
+3 
+
+> _S. Peneva et al.                                                                                                                                                                                                                                  Ecotoxicology and Environmental Safety 289 (2025) 117428_ 
+
+**Table 2** 
+
+Characteristics of plastics used for method testing and recovery calculations. 
+
+|Type|Source|Color|Shape|Size|Density, g/|Chemical Structure|
+|---|---|---|---|---|---|---|
+||||||cm3||
+|PP|Milk bottle lids|Transparent|NUF|0.5–1 mm|0.91||
+|LDPE|Packaging bags|Transparent, with black|NUFF|0.5–1 mm, 10–150µm|0.91–0.93||
+|||writing||powder|||
+|HDPE|Packaging bags|White|NUF|0.5–1 mm|0.93–0.97||
+|PS|Foam -|White|NUF|0.5–1 mm|1.02||
+||styropor||||||
+|Biodegradable mulch flm|Novamont|Black|NUFF|0.5–1 mm, 10–250µm|1.23–1.29||
+|PBAT/ PLA||||powder|||
+|PA - Nylon 6,6|Fishing net|Light brown|UF|0.5–1 mm|1.14||
+|PET|Restaurant|Transparent|UF|0.5–1 mm|1.38||
+||boxes||||||
+|PVC|Isolating cable|Transparent|NUF|0.5–1 mm|1.38||
+
+
+
+UF: uniform fragment, NUF: non-uniform fragment, NUFF: non-uniform film fragment. 
+
+Shapiro-Wilk and Levene’s tests, respectively. Although the Shapiro-Wilk test is typically used for larger datasets, we could not perform the more typical Kolmogorov-Smirnov test due to the factor variables involved. For normally distributed and homoscedastic data, a one-way ANOVA, and post-hoc Tukey test where necessary, were applied to complete pairwise analysis of means. Where data were determined to be either not from a normally distributed sample or heteroscedastic, a non-parametric alternative was performed (Kruskal-Wallis and a post-hoc Dunn’s test, where necessary). In all cases, a significance level of 0.05 was applied. When means are expressed, deviations (±) are given as standard error. 
+
+## **3. Results** 
+
+Changes in the physical appearance of the large MiPs were uncommon. However, nylon underwent bleaching when a ZnCl2 density separation solution was used (Figure S3). Upon microscopic examination (method B and method C3), the surface of the large PBAT/PLA particles appeared altered, exhibiting signs of thinning. Furthermore, PP and PS resulted in diminished recoveries when subjected to method C3, possibly due to fragmentation. 
+
+## _3.1. Recovery of large MiPs_ 
+
+The mean recovery of large MiPs across all soils was highest for method B - Fluorescence microscopy (88 ± 4 %), and method A - Digital microscopy (86 ± 3 %), followed by method C1 - ATR-FTIR (80 ± 3 %), and method C3 – µ-Raman (60 ± 17 %) (Table 3). The reduced recoveries observed with the latter method were primarily attributed to MiP analyses of soils with heavier textures, loamy, and clayey (Table 3). For large MiPs only the number of particles rather than their total concentration or mass are routinely determined. Hence, we did not 
+
+apply[1] H NMR and Pyr-GC-

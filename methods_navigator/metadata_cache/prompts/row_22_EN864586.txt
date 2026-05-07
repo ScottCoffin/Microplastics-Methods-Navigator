@@ -1,0 +1,350 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: WHO, 2022
+        Year: 2022
+        Full Title: Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health
+        DOI/URL: https://www.who.int/publications/i/item/9789240054608
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: Dietary and inhalation exposure to nano-and microplastic particles and potential implications for human health
+        DOI: 
+        Date: 2022-00-00 2022
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+**==> picture [146 x 4] intentionally omitted <==**
+
+**==> picture [20 x 6] intentionally omitted <==**
+
+**==> picture [219 x 35] intentionally omitted <==**
+
+**==> picture [99 x 22] intentionally omitted <==**
+
+**==> picture [216 x 59] intentionally omitted <==**
+
+**==> picture [128 x 44] intentionally omitted <==**
+
+**==> picture [138 x 136] intentionally omitted <==**
+
+**==> picture [141 x 40] intentionally omitted <==**
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+**==> picture [141 x 40] intentionally omitted <==**
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+ISBN 978-92-4-005460-8 (electronic version) ISBN 978-92-4-005461-5 (print version) 
+
+## **© World Health Organization 2022** 
+
+Some rights reserved. This work is available under the Creative Commons AttributionNonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/ licenses/by-nc-sa/3.0/igo). 
+
+Under the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: _“_ This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition”. Any mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/amc/en/ mediation/rules/). 
+
+**Suggested citation.** Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health. Geneva: World Health Organization; 2022. Licence: CC BYNC-SA 3.0 IGO. 
+
+**Cataloguing-in-Publication (CIP) data.** CIP data are available at http://apps.who.int/iris. 
+
+**Sales, rights and licensing.** To purchase WHO publications, see http://apps.who.int/bookorders. To submit requests for commercial use and queries on rights and licensing, see https://www.who. int/copyright. 
+
+**Third-party materials.** If you wish to reuse material from this work that is attributed to a third party, such as tables, figures or images, it is your responsibility to determine whether permission is needed for that reuse and to obtain permission from the copyright holder. The risk of claims resulting from infringement of any third-party-owned component in the work rests solely with the user. 
+
+**General disclaimers.** The designations employed and the presentation of the material in this publication do not imply the expression of any opinion whatsoever on the part of WHO concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Dotted and dashed lines on maps represent approximate border lines for which there may not yet be full agreement. 
+
+The mention of specific companies or of certain manufacturers’ products does not imply that they are endorsed or recommended by WHO in preference to others of a similar nature that are not mentioned. Errors and omissions excepted, the names of proprietary products are distinguished by initial capital letters. 
+
+All reasonable precautions have been taken by WHO to verify the information contained in this publication. However, the published material is being distributed without warranty of any kind, either expressed or implied. The responsibility for the interpretation and use of the material lies with the reader. In no event shall WHO be liable for damages arising from its use. 
+
+## CONTENTS 
+
+|CONTENTS|CONTENTS||
+|---|---|---|
+|Acknowledgements||v|
+|Abbreviations and acronyms||vii|
+|Executive summary||viii|
+|**1. Introduction**||**1**|
+||1.1 Background and scope|1|
+||1.2 Defnitions|3|
+||1.3 Composition and properties of particles|5|
+|**2. Human exposure**||**13**|
+||2.1 Occurrence in drinking-water|13|
+||2.2 Occurrence in air|20|
+||2.3 Dermal exposure|26|
+||2.4 Occurrence in food|28|
+||2.5 Summary and recommendations|43|
+|**3. Observations from epidemiology**||**45**|
+||3.1 Summary and recommendations|47|
+|**4. Dosimetry and biokinetics**||**49**|
+||4.1 Dosimetry: extrapolation from external to internal exposure|49|
+||4.2 Biokinetics|57|
+||4.3 Biokinetics: summary and recommendations|64|
+|**5. Toxicological effects**||**67**|
+||5.1 Literature review and experimental study evaluation|68|
+||5.2 Nano- and microplastics as vectors of chemical exposure|84|
+||5.3 Summary and recommendations|88|
+|**6. Nano-**|**and microplastics as vectors of pathogens**|**91**|
+||6.1 Microplastic-associated bioflms in water|91|
+||6.2 Microplastic-associated bioflms in food|93|
+|**7. Summary and research topics**||**95**|
+||7.1 Summary|95|
+||7.2 Options for curbing exposure|98|
+||7.3 Key messages and research topics|98|
+|**References**||101|
+|**Annex**Quality assurance and quality control scoring for studies reporting|||
+|microplastic particles in air samples||137|
+|FIGURES|||
+|Fig. 1.|Attributes of nano- and microplastics to be considered in||
+||assessing both exposure and hazard|6|
+|Fig. 2.|Classifcations of manufactured and commonly encountered||
+||plastic materials|7|
+
+
+
+|Fig. 3.|Concentrations of microplastic particles in drinking-water||
+|---|---|---|
+||according to particle size in studies with a total assessment<br>score ≥ 11 and in which particles were verifed as plastic|19|
+|Fig.4.|Dietary consumption from 16 food categories derived from||
+||all 17 GEMS/Food clusters|40|
+|Fig. 5.|Extrapolation of concentrations and doses of inhaled||
+||particles in the respiratory tract of rats to humans|50|
+|Fig. 6.|Main regions of particle deposition in the human respiratory||
+||system and modelled deposition of a 1-g/cm3spherical particle in||
+||relation to the diameter of the particle|52|
+|Fig. 7.|Approach used to evaluate studies of effects in vivo and in||
+||vitro for use in assessing human health risks due to exposure to||
+||nano- and microplastic particles|68|
+|Fig. 8.|QA/QC evaluation scores for 76 studies in mammals in vivo|70|
+|Fig. 9.|QA/QC evaluation scores for 76 studies in mammals in vivo||
+||exposed by ingestion or inhalation|70|
+|Fig. 10.|QA/QC evaluation scores for 37 studies of effects in vitro|73|
+|Fig. 11.|QA/QC evaluation scores for 37 studies of effects in vitro<br>designed to refect exposure by ingestion and by inhalation|81|
+|Fig. 12.|Uptake and biokinetics that infuence the effects on human||
+||health of exposure to nano- and microplastic particles|97|
+|TABLES|||
+|Table 1.|Average densities of commonly used polymers, the||
+||applications of representative additives and the estimated typical||
+||percentages added (weight/weight) of commonly used polymers|9|
+|Table 2.|Recent studies on the numbers and characteristics of||
+||microplastic or microplastic-like particles in drinking-water|16|
+|Table 3.|Studies with a total assessment score > 10 of microplastic||
+||particles in indoor and outdoor air at urban and rural sites|25|
+|Table 4.|Reported numbers of microplastic or microplastic-like||
+||particles and particle characteristics in studies of their presence||
+||in food and beverages for human consumption|31|
+|Table 5.|Estimated daily and annual per capita ingestion of||
+||microplastic particles|38|
+|Table 6.|Criteria for evaluating the reliability and quality of in-vivo||
+||and in-vitro studies on the effects and biokinetics of nano- and||
+||microplastic particles|57|
+|Table 7.|Experimental study design criteria related specifcally to||
+||animal husbandry|76|
+|BOXES|||
+|Box 1.|Defnitions of nano-, micro-, meso- and macro-plastic||
+||particles and related terms|4|
+|Box 2.|Recommendations for improving sampling and analytical||
+||methods|14|
+
+
+
+## ACKNOWLEDGEMENTS 
+
+The World Health Organization expresses its appreciation to all those who contributed to the preparation and development of this report, including the colleagues named below. 
+
+This report is the product of several expert meetings held between 2019 and 2022, and represents a follow-up to the WHO report on Microplastics in Drinking Water, published in 2019. 
+
+Lead authors 
+
+- Alan Boobis, Imperial College London, United Kingdom 
+
+- Flemming Cassee, National Institute for Public Health and the Environment, Netherlands 
+
+- Todd Gouin, Independent Consultant, United Kingdom 
+
+- Bart Koelmans, Wageningen University, Netherlands 
+
+- Shirley Price, University of Surrey, United Kingdom 
+
+- Sandra Wagener, German Federal Institute for Risk Assessment, Berlin, Germany 
+
+- Stephanie Wright, Imperial College London, United Kingdom 
+
+Experts who provided insights, wrote text, offered peer review, and/or participated in meetings: 
+
+- Guillaume Duflos, Agence Nationale de Sécurité Sanitaire de l’Alimentation, de l’Environnement et du Travail, France 
+
+- John Fawell, Cranfield University, United Kingdom 
+
+- Jennifer De France, WHO, Switzerland 
+
+- Bruce Gordon, WHO, Switzerland 
+
+- Matthias Labrenz, Leibniz-Institute for Baltic Sea Research, Germany 
+
+- Christine Lemieux, Health Canada, Canada 
+
+- Peter Marsden, Drinking Water Inspectorate, United Kingdom 
+
+- Lidia Morawska, Australia-China Centre for Air Quality Science and Management, Australia 
+
+- Maria Neria, WHO, Switzerland 
+
+- Sabine Pahl, University of Plymouth, United Kingdom 
+
+- Kim Petersen, WHO Switzerland 
+
+- Lisa Scheuermann, WHO, Switzerland 
+
+- Emanuela Testai, Istituto Superiore di Sanità, Italy 
+
+- Dick Vethaak, Deltares, The Netherlands 
+
+- Martin Wagner, Norwegian University of Science and Technology, Norway 
+
+v 
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+- Annemarie van Wezel, University of Amsterdam, The Netherlands 
+
+The development and production of this document was coordinated and managed by Lisa Scheuermann and Kim Petersen (both WHO).  Elisabeth Heseltine, France, edited the report. 
+
+WHO also gratefully acknowledges the financial support provided by the Ministry of Foreign Affairs, Norway. 
+
+vi 
+
+## ABBREVIATIONS AND ACRONYMS 
+
+|ABS|acrylonitrile butadiene styrene|
+|---|---|
+|bw|body weight|
+|EFSA|European Food Safety Authority|
+|FAO|Food and Agriculture Organization of the United Nations|
+|GEMS/Food|Global Environmental Monitoring System – Food Contamination|
+||Monitoring and Assessment Programme|
+|LOD|limit of detection|
+|LOQ|limit of quantifcation|
+|MMAD|mass median aerodynamic diameter|
+|MOE|margin of exposure|
+|MP|microplastic particles|
+|NMP|nano- and microplastic particles|
+|NP|nanoplastic particles|
+|OECD|Organisation for Economic Co-operation and Development|
+|PBPK|physiologically based pharmacokinetics|
+|PCB|polychlorinated biphenyl|
+|PET|poly(ethylene terephthalate)|
+|PM|particulate matter|
+|PM10|particulate matter ≤ 10 µm|
+|PM2.5|particulate matter ≤ 2.5 µm|
+|PVC|polyvinyl chloride|
+|QA/QC|quality assurance and quality control|
+|QIVIVE|quantitative in vitro to in vivo extrapolation|
+|TAS|total assessment score|
+|WHO|World Health Organization|
+|wt|weight|
+|ww|wet body weight|
+
+
+
+vii 
+
+## EXECUTIVE SUMMARY 
+
+The number of reports of the presence of microplastic particles (MP) in the environment has increased significantly during the past few years. MP have been detected in air, water, soil, food and beverages, indicating that exposure of humans to these particles is ubiquitous. In 2019, the World Health Organization (WHO) commissioned a report to evaluate the evidence for risks to human health associated with exposure to nano- and microplastic particles (NMP) in drinking-water. The report was based on literature reviews of studies published up to December 2021 in which original data on the occurrence of NMP in air, water, food and beverages were reported and also experimental studies on their toxicity. WHO experts evaluated the quality of the studies of environmental monitoring and of toxicity, particularly with regard to the reliability and relevance of the data for characterizing risk. The possible role of NMP as vectors of chemicals and pathogens was also assessed, and clinical observations from occupational epidemiology are summarized. A key observation is that MP are ubiquitous in the environment and have been detected in environmental media with direct relevance for human exposure, including air, dust, water, food and beverages. 
+
+There is increasing awareness of the occurrence of NMP in air and their implications for human health. Studies of the inhalation of NMP should include consideration of their biokinetics, as their intake depends on their size, shape, density and surface chemistry, which influence their deposition in the alveolar regions of the lungs. Observations from occupational epidemiology suggest that acute and chronic exposure to elevated concentrations of NMP, such as polyvinyl chloride dust and nylon flock, can result in harm to the respiratory tract. Better characterization is necessary of the properties of NMP in air, such as the fractions that contribute to (regulated levels of) particulate matter and their absolute concentrations. The current lack of such data limits characterization and quantification of the impact of human inhalation of NMP. 
+
+Ingestion of MP has been reported in a variety of foods and beverages, including fish and seafood products, salt, sugar, honey, rice, milk and drinking-water. Limited characterization of the hazard of NMP due to dietary exposure suggests the possibility of adverse outcomes similar to those of other well-studied insoluble particles, as they have similar modes of 
+
+viii 
+
+Executive summary 
+
+action, including generation of reactive oxidation species and stimulation of an inflammatory response. 
+
+A number of difficulties obviated an assessment of overall human exposure to NMP, including the limited availability of data on the occurrence of NMP measuring < 10 μm in water, food and beverages. Observations from particle and fibre toxicology indicate that particles < 10 μm are probably taken up biologically. Most of the available studies on the occurrence of NMP in water, food and beverages reported particles measuring > 10 μm, which are unlikely to be absorbed or taken up. As most of the toxicity studies were conducted with a monodisperse group of plastic particles, typically measuring < 10 µm, studies of effects and of exposure are mismatched, obviating extrapolation of data on toxicity for use in a quantitative risk assessment. 
+
+For this report, the quality, reliability and relevance of data on both exposure and effects were assessed for their possible contribution to a risk assessment of NMP. The assessment scores indicated that the available data are of only very limited use for assessing the risk of NMP to human health. Several shortcomings were identified, the most important of which was the heterogeneity of the methods used, including use of “bespoke” methods for analysing data obtained by environmental monitoring and inconsistencies in observations of adverse effects. Assessment of the quality of the studies should promote best practices in experimental design to be used in future studies. It is generally recommended that standard methods be developed and adopted to ensure that the research community can reduce uncertainties, strengthen overall scientific understanding and provide more robust data for assessing the risks of exposure to NMP to humans. 
+
+Research to improve exposure assessment, for instance, should be designed to complement research on the dosimetry and biokinetics of environmentally relevant NMP. Quantitative data on the rate of translocation of NMP and on their size distribution, shape, polymer composition and surface chemistry in air, food and beverages, including drinkingwater, are necessary to determine which properties are most relevant for studies of biokinetics and adverse effects. This will require methods for characterizing and quantifying NMP < 10 μm, depending on the media in which they are dispersed. 
+
+The selection of in-vitro and in-vivo test systems should be guided by better understanding of exposure. Testing 
+
+ix 
+
+Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health 
+
+of the toxicity of environmentally relevant NMP should represent a priority, and it is recommended that a series of well-characterized reference NMP be generated and made available to the research community. Furthermore, the applicability of tools for extrapolating results obtained in vitro to the situation in vivo and physiologically based pharmacokinetics models should be assessed and new models developed as necessary. 
+
+Little is known about the adverse effects of MP-associated biofilms, although the available data provide no evidence of a risk to human health. NMP constitute only a fraction of the particles that occur in the environment on which microorganisms can colonize and form biofilms. Additionally, little is known about exposure to NMP in air, food and beverages, particularly with respect to the polymer composition of NMP < 10 μm, the specific mass and the identity of associated plastic additives, including factors that might influence their bioavailability. It is therefore not currently possible to characterize or quantify the potential role of NMP in the transport of chemicals. The possibility of enrichment of antimicrobial-resistance genes in MP-associated biofilms and the role of NMP as vectors for pathogens and chemicals should be studied further. Such research would benefit from better measurement of exposure made possible by the development and application of standard methods. 
+
+## **Recommendations** 
+
+Although the limited data provide little evidence that NMP have adverse effects in humans, there is increasing public awareness and an overwhelming consensus among all stakeholders that plastics do not belong in the environment, and measures should be taken to mitigate exposure to NMP. This should include better management of plastics throughout their product life-cycle and reducing the use of plastics, when possible, to move towards a more sustainable plastics economy. In addition to measures to better manage plastic, such as innovations in waste treatment and initiatives to reduce the use of plastics, innovations in materials science should be supported, particularly to ensure substantial reductions in the release of NMP from plastic products used in commerce. 
+
+The weight of the scientific evidence provided by current data on adverse effects of NMP on human health is low, because of substantial limitations of the available information. 
+
+x 
+
+Executive summary 
+
+Strengthening of the evidence necessary for reliable characterization and quantification of the risks to human health posed by NMP will require active participation by all stakeholders in developing and making available standard methods. Standard methods should be developed to improve the quality and reliability of data from both environmental monitoring and studies of effects. Researchers should ensure that studies on the sources and occurrence of NMP in air, water, food and beverages are based on appropriately designed, quality-controlled protocols. 
+
+Of particular interest are NMP measuring < 10 μm. Better understanding of environmentally relevant exposure to these particles could be used to generate reference NMP for use in testing biokinetics and toxicity. Better understanding of the toxicological effects of environmentally relevant NMP at environmentally relevant concentrations, combined with use of standardized toxicity testing methods will provide more accurate dose–response relationships, from which threshold effect concentrations can be derived and assessed for risk. 
+
+xi 
+
+## 1. INTRODUCTION 
+
+Both the intentional use and unintentional generation of nano- to micro-sized plastic particles and their release to the environment have implications for human and ecosystem health and are emerging public concerns. Increasing numbers of studies have demonstrated the presence of nano- and microplastic particles (NMP) in drinking-water, air, food and beverages, indicating possible risks to human health associated with exposure to the particles and to chemical toxicants and biological agents vectored by NMP _(1–9)_ . 
+
+WHO previously reviewed scientific information on microplastic particles (MP) in drinking-water, drinking-water sources and wastewater _(1, 2)_ to evaluate the potential risks for human health. This report extends the assessment by including evaluations of exposure to NMP from other sources, including the air and diet. Recent reports on MP in food and the environment, such as those of the European Food Safety Authority (EFSA) _(10)_ , the Science Advice for Policy by European Authorities _(11)_ , the Norwegian Scientific Committee for Food and Environment _(12)_ , the Government of Canada’s Science Assessment of Plastic Pollution _(13)_ , the Committee on Toxicity of Chemicals in Food, Consumer Products and the Environment in the United Kingdom of Great Britain and Northern Ireland _(14)_ and the State of California (United States of America) _(15)_ , show that the available data on exposure to MP and its effects are insufficient to conduct a full quantitative risk assessment. This report summarizes current scientific understanding of exposure to and the effects and potential risks of NMP in relation to human health and provides guidance and recommendations for future research. The report: 
+
+- summarizes data on human exposure to NMP in food, beverages, drinking-water and air and on the pathways specific to human health; 
+
+- examines the implications for human health on the basis of data on occurrence, toxicology and exposure; 
+
+- when possible, identifies opportunities for mitigating exposure to NMP; and 
+
+- identifies gaps in the data and proposes topics for research. 
+
+## **1.1 Background and scope**

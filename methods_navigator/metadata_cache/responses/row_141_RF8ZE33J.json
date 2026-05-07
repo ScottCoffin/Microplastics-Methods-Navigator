@@ -1,0 +1,17 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "environmental risk assessment framework, effects and exposure characterization, standardized reference materials",
+  "abstract": "Emissions of plastic waste to the environment and the subsequent degradation into microplastic particles that have the potential to interact with biological organisms represent a concern for global society. Current understanding of the potential impacts on aquatic and terrestrial population stability and ecosystem structure and function associated with emissions of microplastic particles is limited and insufﬁcient to fully assess environmental risks. Multistakeholder discussions can provide an important element in helping to identify and prioritize key knowledge gaps in assessing potential risks. In the present review, we summarize multistakeholder discussions from a 1‐d International Council of Chemical Associations–sponsored symposium, which involved 39 scientists from 8 countries with representatives from academia, industry, and government. Participants were asked to consider the following: discuss the scientiﬁc merits and limitations of applying a proposed conceptual environmental risk assessment (ERA) framework for microplastic particles and identify and prioritize major research needs in applying ERA tools for microplastic particles. Multistakeholder consensus was obtained with respect to the interpretation of the current state of the science related to effects and exposure to microplastic particles, which implies that it is unlikely that the presence of microplastic in the environment currently represents a risk. However, the quality and quantity of existing data require substantial improvement before conclusions regarding the potential risks and impacts of microplastic particles can be fully assessed. Research that directly addresses the development and application of methods that strengthen the quality of data should thus be given the highest priority. Activities aimed at supporting the development of and access to standardized reference material were identiﬁed as a key research need. Environ Toxicol Chem 2019;38:2087–2100. © 2019 The Authors. Environmental Toxicology and Chemistry published by Wiley Periodicals, Inc. on behalf of SETAC.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "discuss the scientific merits and limitations of applying a proposed conceptual environmental risk assessment (ERA) framework for microplastic particles",
+      "identify and prioritize major research needs in applying ERA tools for microplastic particles",
+      "Activities aimed at supporting the development of and access to standardized reference material were identified as a key research need"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

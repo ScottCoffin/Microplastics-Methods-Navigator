@@ -1,0 +1,18 @@
+{
+  "scope": "drinking water and its sources; human health risk assessments",
+  "particle_size_range": null,
+  "key_metrics_output": "data quality evaluation, study reliability assessment, QA/QC screening results, suitability ranking for exposure and risk assessments",
+  "abstract": "Concerns about the negative impacts of microplastics on human health are increasing in society, while exposure and risk assessments require high-quality, reliable data. Although quality assurance and –control (QA/QC) frameworks exist to evaluate the reliability of data for these purposes, manually assessing studies is too timeconsuming and prone to inconsistencies due to semantic ambiguities and evaluator bias. The rapid growth of microplastic studies makes manually screening relevant data practically unfeasible. This study explores the potential of artificial intelligence (AI), specifically large language models (LLMs) such as OpenAI’s ChatGPT and Google’s Gemini, to streamline and standardize the QA/QC screening of data in microplastics research. We developed specific prompts based on previously published QA/QC criteria for the analysis of microplastics in drinking water and its sources, and used these to instruct AI tools to evaluate 73 studies published between 2011 and 2024. Our approach demonstrated the effectiveness of AI in extracting relevant information, interpreting the reliability of studies, and replicating human assessments. The findings indicate that AI-assisted assessments show promise in improving speed, consistency and applicability in QA/QC tasks, as well as in ranking studies or datasets based on their suitability for exposure and risk assessments. This groundbreaking application of LLMs in the environmental sciences suggests that AI can play a vital role in harmonizing microplastics risk assessments within regulatory frameworks and demonstrates how to meet the demands of an increasingly data-intensive application domain.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "QA/QC screening of data in microplastics research",
+      "extracting relevant information, interpreting the reliability of studies",
+      "ranking studies or datasets based on their suitability for exposure and risk assessments"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "ASTM D883-25 is a standard terminology document that provides definitions of technical terms used in the plastics industry. The standard covers terms judged to be generally usable in ASTM documents for which Committee D20 is responsible, and cross-references related terminology standards for specific applications including thermal insulation, electrical/electronic insulating materials, fire-related terms, and plastic piping systems.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "This terminology covers definitions of technical terms used in the plastics industry.",
+      "When a term is used in an ASTM document for which Committee D20 is responsible it is included only when judged, after review, by Subcommittee D20.92 to be a generally usable term.",
+      "Subsections 1.6.1 – 1.6.5 contain references to specific terminology standards that are relevant to specific plastic products or applications."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "particle number; morphology (morphological characteristics); dimensional distribution; polymer type, chemical origin or nature, and colour; estimated surface area; mass of microplastics per unit sample",
+  "abstract": "ISO 4484-2:2023 establishes qualitative and quantitative analytical methods for determining microplastics from textile sources across various matrices including textile process wastewater, clothes washing water, air emissions, and solid waste. The standard specifies determination of particle number, morphology, dimensional distribution, polymer type and colour, with results expressed as estimated surface area and mass per unit sample. It applies to textile sector samples in solid, liquid, or aeriform states from production, processing, treatment, and use phases, enabling transfer of size, shape, surface, and mass information for ecotoxicological assessments.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "particle number; morphology (morphological characteristics); dimensional distribution; the type, chemical origin or nature of polymers and their colour, if present",
+      "expression of results in terms of estimated surface area and mass of microplastics (MPs) per unit sample"
+    ],
+    "abstract": [
+      "This document establishes a qualitative-quantitative analytical evaluation (i.e. determination) of microplastics",
+      "applicable to the determination of microplastics (from the textile sector) collected in various matrices (for example textile process wastewater, clothes washing water, textile process air emissions, textile process solid waste)",
+      "applies to textile sector samples of matrices of different physical states (solid, liquid or aeriform)"
+    ]
+  }
+}

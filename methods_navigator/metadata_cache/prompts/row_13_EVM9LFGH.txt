@@ -1,0 +1,350 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: de Ruijter et al., 2020
+        Year: 2020
+        Full Title: Quality Criteria for Microplastic Effect Studies in the Context of Risk Assessment: A Critical Review
+        DOI/URL: https://doi.org/10.1021/acs.est.0c03057
+        Existing Particle Size Range: 0.001–5000 µm (NMP size range; dietary + inhalation multi-route framework)
+        Existing Key Metrics / Output: Daily intake (particles/day, µg/day) by exposure route; hazard quotient for human health RA
+
+        Zotero metadata:
+        Title: Quality Criteria for Microplastic Effect Studies in the Context of Risk Assessment: A Critical Review
+        DOI: 10.1021/acs.est.0c03057
+        Date: 2020-10-06 October 6, 2020
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: pdf_first_300_lines
+
+        Source context:
+        Subscriber access provided by CALIFORNIA EPA AIR RESOURCES BOARD 
+
+**==> picture [132 x 51] intentionally omitted <==**
+
+## Critical Review 
+
+## **Quality criteria for microplastic effect studies in the context of risk assessment: A critical review** 
+
+Vera Nyangoma de Ruijter, Paula E Redondo Hasselerharm, Todd Gouin, and Albert A. Koelmans _Environ. Sci. Technol._ , **Just Accepted Manuscript** • DOI: 10.1021/acs.est.0c03057 • Publication Date (Web): 28 Aug 2020 **Downloaded from pubs.acs.org on August 28, 2020** 
+
+## **Just Accepted** 
+
+“Just Accepted” manuscripts have been peer-reviewed and accepted for publication. They are posted online prior to technical editing, formatting for publication and author proofing. The American Chemical Society provides “Just Accepted” as a service to the research community to expedite the dissemination of scientific material as soon as possible after acceptance. “Just Accepted” manuscripts appear in full in PDF format accompanied by an HTML abstract. “Just Accepted” manuscripts have been fully peer reviewed, but should not be considered the official version of record. They are citable by the Digital Object Identifier (DOI®). “Just Accepted” is an optional service offered to authors. Therefore, the “Just Accepted” Web site may not include all articles that will be published in the journal. After a manuscript is technically edited and formatted, it will be removed from the “Just Accepted” Web site and published as an ASAP article. Note that technical editing may introduce minor changes to the manuscript text and/or graphics which could affect content, and all legal disclaimers and ethical guidelines that apply to the journal pertain. ACS cannot be held responsible for errors or consequences arising from the use of information contained in these “Just Accepted” manuscripts. 
+
+is published by the American Chemical Society. 1155 Sixteenth Street N.W., Washington, DC 20036 Published by American Chemical Society. Copyright © American Chemical Society. However, no copyright claim is made to original U.S. Government works, or works produced by employees of any Commonwealth realm Crown government in the course of their duties. 
+
+Page 1 of 44 
+
+Environmental Science & Technology 
+
+# 1 **Quality criteria for microplastic effect studies in the** 2 **context of risk assessment:  A critical review** 
+
+- 3 
+
+4 
+
+- 5 Vera N. de Ruijter[$, †, *] , Paula E. Redondo-Hasselerharm[$, †] , Todd Gouin[#] , Albert 6 A. Koelmans[$] 
+
+7 
+
+- $ 
+
+- 8 Aquatic Ecology and Water Quality Management group, Wageningen University & 
+
+- 9 Research, P.O. Box 47, 6700 AA Wageningen, The Netherlands 
+
+- 10 # TG Environmental Research, Sharnbrook, Bedfordshire, UK 
+
+- 11 
+
+12 
+
+- 13 †Equal contribution 
+
+- 14 *Corresponding author: vera.deruijter@wur.nl 
+
+15 
+
+- 16 
+
+- 17 
+
+- 18 
+
+- 19 
+
+- 20 
+
+21 
+
+- 22 Word count: 6975 (excluding references) 
+
+23 
+
+24 
+
+25 
+
+26 
+
+27 
+
+28 
+
+ACS Paragon Plus Environment 
+
+Page 2 of 44 
+
+Environmental Science & Technology 
+
+## 29 **Abstract** 
+
+- 30 In the literature, there is widespread consensus that methods in plastic research need 31 improvement. Current limitations in quality assurance and harmonization prevent progress in 
+
+- 32 our understanding of what the true effects of microplastic in the environment are. Following 
+
+- 33 the recent development of quality assessment methods for studies reporting concentrations in 
+
+- 34 biota and water samples, we propose a method to assess the quality of microplastic effect 35 studies. We reviewed 105 microplastic effect studies with aquatic biota, provided a systematic 
+
+- 36 overview of their characteristics, developed 20 quality criteria in four main criteria categories 
+
+- 37 (particle characterization, experimental design, applicability in risk assessment, and ecological 
+
+- 38 relevance), propose a protocol for future effect studies with particles, and, finally, used all the 
+
+- 39 information to define the weight of evidence with respect to demonstrated effect mechanisms. 
+
+- 40 On average, studies scored 44.6% (range 20-77.5%) of the maximum score. No study scored 
+
+- 41 positively on all criteria, reconfirming the urgent need for better quality assurance. Most urgent 
+
+- 42 recommendations for improvement relate to avoiding and verifying background contamination, 
+
+- 43 and to improving the environmental relevance of exposure conditions. The majority of the 44 studies (86.7%) evaluated on particle characteristics properly, nonetheless it should be 45 underlined that by failing to provide characteristics of the particles, an entire experiment can 46 become irreproducible. Studies addressed environmentally realistic polymer types fairly well; 47 however, there was a mismatch between sizes tested and those targeted when analyzing 
+
+- 48 microplastic in environmental samples. In far too many instances, studies suggest and speculate 
+
+- 49 mechanisms that are poorly supported by the design and reporting of data in the study. This 
+
+- 50 represents a problem for decision-makers and needs to be minimized in future research. In their 
+
+- 51 papers, authors frame 10 effects mechanisms as ‘suggested’, whereas 7 of them are framed as 
+
+- 52 ‘demonstrated’. When accounting for the quality of the studies according to our assessment, 
+
+- 53 three of these mechanisms remained. These are _inhibition of food assimilation and/or decreased_ 
+
+ACS Paragon Plus Environment 
+
+Page 3 of 44 
+
+Environmental Science & Technology 
+
+- 54 _nutritional value of food_ , _internal physical damage_ and _external physical damage_ . We 
+
+- 55 recommend that risk assessment addresses these mechanisms with higher priority. 
+
+- 56 **Keywords:** microplastic, particle toxicity, quality criteria, effect mechanism, risk assessment 
+
+- 57 **Introduction** 
+
+- 58 In the last decade, the body of literature addressing the occurrence and impacts of plastic debris 
+
+- 59 has substantially increased.[1] Particular attention has been given to microplastic particles (MP), 
+
+- 60 generally defined as plastic particles 1 µm - 5 mm[2–7] which have been detected at a wide range 
+
+- 61 of concentrations in various aquatic systems, from remote marine to coastal zone and estuarine 
+
+- 62 areas, as well as in freshwater lakes and rivers.[8–11] Their ubiquity in aquatic systems and their 
+
+- 63 small size has resulted in concerns regarding their effects on aquatic biota for which ingestion 64 has been observed at all levels of biological organization.[12–14] 
+
+- 65 Characterizing and quantifying the environmental fate and transport of MP requires insight into 
+
+- 66 the influence of various environmental processes and pathways.[8,15,16] The release of MP into 
+
+- 67 the environment can occur either directly, such as via primary emissions from products during 
+
+- 68 their manufacture and consumer-use life cycle, or alternatively, can be generated from the 69 degradation and fragmentation of mismanaged plastic waste, commonly referred to as 
+
+- 70 secondary MP, which results in a heterogeneous mixture of particle types, shapes, and sizes 
+
+- 71 released to the environment.[17] It is generally agreed that secondary sources represent the 
+
+- 72 dominant source of MP.[18] Primary sources are estimated to contribute between 15 and 31% of 73 all plastic in the environment.[19] 
+
+- 74 To assess the ecological risk associated with exposure to MP, there is a need to develop robust 
+
+- 75 toxicological dose-response relationships, which can effectively relate environmentally 
+
+- 76 relevant exposures with effects.[20] Because of the heterogeneous presence of MP in the 
+
+- 77 environment of varying concentrations of shapes, sizes, and polymer composition, there is a 
+
+ACS Paragon Plus Environment 
+
+Page 4 of 44 
+
+Environmental Science & Technology 
+
+78 need to better understand effect mechanisms and the key factors triggering them. For instance, 79 effects observed following exposure to MP on an organism can either be initiated due to 80 sorption of the particles on the external surface of the organism or due to other mechanisms of 81 action being triggered following their ingestion.[12] Effects following exposure to MP, both 82 external and internal, have been assessed in laboratory studies for a wide range of species.[21–25] 83 The ingestion and/or adsorption of MPs has been suggested to cause adverse effects on 84 toxicological endpoints at various levels of biological organization, generally observed in 85 laboratory test systems at relatively high exposure concentrations.[21,22,24–26] Furthermore, 86 experimental work has suggested that effects of MPs can occur at the community level (e.g. 87 biodiversity, species composition),[27,28] population level (e.g., abundance),[29] individual level 88 (e.g. survival, reproduction, growth, feeding, emergence, embryonic development, mobility, 89 and physiology),[21,22,25,30] or sub-organismal level (e.g., inflammation, reduced lysosomal 90 stability in the digestive gland, reduced antioxidant capacity, DNA damage, neurotoxicity, 91 oxidative damage, gut dysbiosis and alteration of the genetic expression, the ionic exchange 92 and enzymatic activity).[1,10,26,31–35] Several studies have speculated that elevated MP 93 concentrations can cause physical damage (i.e., blockage of food passage), leading to a feeling 94 of satiation and a reduced feeding.[36–38] Some studies have attributed the effects to specific 95 properties of the polymer composition, such as the availability of functional surface groups,[39,40] 96 while other studies have assigned effects of MP to the leaching of chemical additives and 97 plasticizers or other hydrophobic organic pollutants.[28,32,41–43] A limitation identified for studies 98 testing ecotoxicological effects, however, is a lack of consistency and standardization of test 99 methods necessary to characterize dose-response relationships for specific endpoints. 100 Particularly problematic is the need for standard methods in relation to the dosing of 101 particulates, such as MP, an issue that can result in ambiguous results and considerable 102 speculation regarding the proposed mechanisms of action representative of ecologically 
+
+ACS Paragon Plus Environment 
+
+Page 5 of 44 
+
+Environmental Science & Technology 
+
+- 103 relevant exposures.[20,44] Consequently, the weight of the evidence supportive of a quantitative 
+
+- 104 risk assessment for MP remains unclear. Recent reviews have discussed the evidence regarding 
+
+- 105 the occurrence of MP effects and the underlying effect mechanisms.[45–47] However, in their 
+
+- 106 evaluations of the literature, the quality of studies was not taken into account, possibly leading 
+
+- 107 to biased assessments. While these reviews underline that the quality of effect studies should 
+
+- 108 improve, and call for more ecologically and environmentally relevant exposure systems in order 
+
+- 109 to better assess the effect of MP on the environment, we argue that the quality of studies should 
+
+- 110 be assessed first, in order to be able to discard unreliable data. 
+
+- 111 A fundamental element of assessing ecological risk is the availability of a suite of standardized 
+
+- 112 test systems and analytical tools and methods, which enable the application of dose-response 
+
+- 113 relationships relating environmental exposure to effect threshold concentrations that are 
+
+- 114 consistent and of sufficient quality.[48–50] This also applies to the relatively young field of MP 
+
+- 115 risk assessment, where many studies have emphasized the need to improve the quality of data 
+
+- 116 needed to inform risks assessment(s).[10,51–58] Efforts to assess the quality of data emerging from 
+
+- 117 studies reporting on exposure concentrations of MPs in biota and in surface and drinking water, 
+
+- 118 adopting methods similar to the existing Klimisch and CRED approaches[48,49] , have recently 
+
+- 119 been developed and applied.[54,55] Whereas these systems and aspects of these systems start to be 
+
+- 120 adopted and recommended in the literature,[59–66] currently, a similar evaluation method for 
+
+- 121 assessing the quality of MP effect studies is lacking. 
+
+- 122 
+
+- 123 The aim of the present study is to critically review the literature reporting on ecotoxicological 
+
+- 124 effects of MP on aquatic biota, emphasizing quality assurance aspects of studies, and assessing 
+
+- 125 the weight of the evidence (WOE) the studies provide with respect to the effect mechanisms 
+
+- 126 that they report. This is done by first developing a quantitative evaluation method for effect 
+
+- 127 studies and methods employed to assess effects of MP on aquatic biota. The evaluation method 
+
+ACS Paragon Plus Environment 
+
+Page 6 of 44 
+
+Environmental Science & Technology 
+
+- 128 is subsequently applied retrospectively to the reviewed studies. Average scores per evaluation 
+
+- 129 criterion are used to prioritize and provide guidance with respect to the analytical and test 
+
+- 130 system protocol that would benefit most from refinement. Based on our analysis, a guidance 
+
+- 131 protocol for testing ecotoxicological effects of MP for aquatic species is provided. 
+
+- 132 Demonstrated and suggested effect mechanisms reported in the reviewed papers are 
+
+- 133 summarized and discussed, with the results of the quality evaluation applied as a method to 
+
+- 134 assess the overall weight of evidence regarding probable ecologically relevant effects of MP. 
+
+- 135 
+
+- 136 **2. Methods** 
+
+- 137 _2.1 Literature search_ 
+
+- 138 Literature was retrieved from the database from the systematic review underlying the SAPEA 
+
+- 139 report.[1] In addition, an extensive literature search accessing the Natural Science Collection 
+
+- 140 database available at ProQuest[®] was performed for ecotoxicological effect studies with MP 
+
+- 141 until November 2019. The following search strings were used: (effect OR impact OR endpoint 
+
+- 142 OR toxicity) AND (growth OR feeding OR consumption OR survival OR mortality OR 143 behavior OR behaviour OR stress OR response(s) OR activity OR reproduction OR inhibition) 
+
+- 144 AND (microplastic(s) OR microbead OR polyethylene (PE) OR polystyrene (PS) OR 145 polyamide (PA) OR polypropylene (PP) OR polyvinyl chloride (PVC)) AND (aquatic OR 
+
+- 146 freshwater OR marine OR estuarine) NOT (chemicals OR additives). Studies were only 
+
+- 147 included when at least one type of MP tested had a diameter between 1 _µ_ m and 5 mm. To enable 
+
+- 148 interpretation of particle effects, studies explicitly aiming to study effects of plastic-associated 
+
+- 149 chemicals, or aiming to solely study accumulation, ingestion and/or egestion of MP were 150 excluded from the analysis. 
+
+- 151 _2.2 Assessment of general study characteristics_ 
+
+ACS Paragon Plus Environment 
+
+Page 7 of 44 
+
+Environmental Science & Technology 
+
+- 152 A total of 10 characteristics were extracted from each paper and summarized (see Table S1 in 
+
+- 153 the Supporting Information): Size, Shape, Polymer type, Ecosystem (fresh, marine, estuarine), 
+
+- 154 Taxonomy categories (Class, Species), Exposure duration, Endpoints studied, Endpoints 
+
+- 155 affected and Effect threshold when reported (as either LCx, ECx, LOEC or NOEC). When a 
+
+- 156 size range was used, the upper and lower size ranges are noted, however, if an average size was 
+
+- 157 provided together with the range, the average is also recorded. In instances when the average 
+
+- 158 was not given, it is assumed that the particles are uniformly distributed between the upper and 
+
+- 159 lower size limit and that the average can be estimated accordingly. For shapes, the terms

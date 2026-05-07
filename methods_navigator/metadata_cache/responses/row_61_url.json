@@ -1,0 +1,14 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "The Microbead-Free Waters Act of 2015 (Public Law 114-114) amends the Federal Food, Drug, and Cosmetic Act to ban rinse-off cosmetics containing intentionally-added plastic microbeads, with the ban effective beginning January 1, 2018, and manufacturing restrictions to follow.",
+  "confidence": "medium",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "ban rinse-off cosmetics that contain intentionally-added plastic microbeads beginning on January 1, 2018",
+      "amends the Federal Food, Drug, and Cosmetic Act"
+    ]
+  }
+}

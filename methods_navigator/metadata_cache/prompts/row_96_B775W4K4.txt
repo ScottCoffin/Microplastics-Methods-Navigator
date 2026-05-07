@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Pegoraro et al., 2025
+Year: 2025
+Full Title: Nanoplastic reference materials for biological and methodological assessment
+DOI/URL: https://doi.org/10.1186/s43591-025-00157-2
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Nanoplastic reference materials for biological and methodological assessment
+DOI: 10.1186/s43591-025-00157-2
+Date: 2025-12-01 2025-12-01
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Plastic particles are pervasive across all environments, yet quantifying their total abundance remains challenging—especially for nanoplastics, which are problematic to separate and detect efficiently. This challenge is further exacerbated by the heterogeneous nature of environmental nanoplastics, making it difficult to determine their biological impacts. Despite these limitations, correlational studies implicate that nanoplastics may pose potential health concerns for both wildlife and humans. Metrological reference materials can be used to address this gap; these standardized plastics enable validation of detection technologies and support biological investigations. One such material has recently been made available (NPPP-1, National Research Council of Canada) with more to follow in the future. These materials are produced using ultrashort laser pulses for laser ablation, a versatile approach for the high-throughput production of nanoplastics. The resulting nanoplastics resemble those found in the environment, exhibiting heterogeneous sizes and shapes, as well as modified chemical fingerprints associated with environmental weathering, while remaining stable in different media, allowing their use in biological and ecotoxicology testing. In both two-dimensional cell culture and three-dimensional organoid models, nanoplastics are shown to have limited effects on cell viability at relatively high number concentrations while activating inflammatory pathways in biological systems. Taken together, it is demonstrated that nanoscale plastics produced using ultrashort laser ablation are fit for purpose for both validating quantification methods and assessing biological activity.
+
+Context source: zotero_abstractNote
+
+Source context:
+Plastic particles are pervasive across all environments, yet quantifying their total abundance remains challenging—especially for nanoplastics, which are problematic to separate and detect efficiently. This challenge is further exacerbated by the heterogeneous nature of environmental nanoplastics, making it difficult to determine their biological impacts. Despite these limitations, correlational studies implicate that nanoplastics may pose potential health concerns for both wildlife and humans. Metrological reference materials can be used to address this gap; these standardized plastics enable validation of detection technologies and support biological investigations. One such material has recently been made available (NPPP-1, National Research Council of Canada) with more to follow in the future. These materials are produced using ultrashort laser pulses for laser ablation, a versatile approach for the high-throughput production of nanoplastics. The resulting nanoplastics resemble those found in the environment, exhibiting heterogeneous sizes and shapes, as well as modified chemical fingerprints associated with environmental weathering, while remaining stable in different media, allowing their use in biological and ecotoxicology testing. In both two-dimensional cell culture and three-dimensional organoid models, nanoplastics are shown to have limited effects on cell viability at relatively high number concentrations while activating inflammatory pathways in biological systems. Taken together, it is demonstrated that nanoscale plastics produced using ultrashort laser ablation are fit for purpose for both validating quantification methods and assessing biological activity.

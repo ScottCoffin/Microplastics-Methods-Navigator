@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Galgani et al., 2013
+Year: 2013
+Full Title: Guidance on Monitoring of Marine Litter in European Seas — MSFD Technical Subgroup on Marine Litter
+DOI/URL: https://doi.org/10.2788/99475
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: Guidance on monitoring of marine litter in European seas.
+DOI: 10.2788/99475
+Date: 2013-00-00 2013
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+The MSFD Technical Subgroup on Marine Litter was tasked to deliver guidance so that European Member States could initiate programmes for monitoring of Descriptor 10 of the MSFD. The present document provides the recommendations and information needed to commence the monitoring required for marine litter, including methodological protocols and categories of items to be used for the assessment of litter on the beach, water column, seafloor and biota, including a special section on microparticles.
+
+Context source: zotero_abstractNote
+
+Source context:
+The MSFD Technical Subgroup on Marine Litter was tasked to deliver guidance so that European Member States could initiate programmes for monitoring of Descriptor 10 of the MSFD. The present document provides the recommendations and information needed to commence the monitoring required for marine litter, including methodological protocols and categories of items to be used for the assessment of litter on the beach, water column, seafloor and biota, including a special section on microparticles.

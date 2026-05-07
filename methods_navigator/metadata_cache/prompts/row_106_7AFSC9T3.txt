@@ -1,0 +1,52 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+Fill three fields for the reference using ONLY the supplied
+Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+is absent or too ambiguous, use null for that field.
+
+Target fields:
+- scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+- particle_size_range: concise particle size range (report in μm) or operational size
+  domain studied/reported. Include lower/upper bounds
+  only if supported.
+- key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+  performance metrics, endpoints, or reported method outputs.
+- abstract: use null when Zotero abstractNote is populated. If Zotero
+  abstractNote is absent and no formal abstract is visible in the PDF
+  context, write a concise factual abstract-style summary without
+  inventing unsupported results.
+
+Return strict JSON only with this schema. Do not wrap the JSON in
+Markdown code fences.
+{
+  "particle_size_range": string or null,
+  "key_metrics_output": string or null,
+  "abstract": string or null,
+  "confidence": "high" | "medium" | "low",
+  "evidence": {
+    "particle_size_range": [short supporting quote strings],
+    "key_metrics_output": [short supporting quote strings],
+    "abstract": [short supporting quote strings]
+  }
+}
+
+Crosswalk row:
+Short Citation: Sinkha Ray et al. 2025
+Year: 2025
+Full Title: A cost-effective protocol for detecting fluorescent microplastics in arable soils to study redistribution processes
+DOI/URL: https://doi.org/10.1016/j.polymertesting.2025.108824
+Existing Particle Size Range: 
+Existing Key Metrics / Output: 
+
+Zotero metadata:
+Title: A cost-effective protocol for detecting fluorescent microplastics in arable soils to study redistribution processes
+DOI: 10.1016/j.polymertesting.2025.108824
+Date: 2025-06-00 06/2025
+Zotero abstractNote, which will be used directly for the Abstract
+field when present:
+Understanding microplastics' (MPs) transport from soils to aquatic ecosystems is challenging due to labor-intensive detection methods, especially in large-scale plot experiments analyzing surface runoff and soil erosion. To address this, we used fluorescent MPs as tracers and developed a cost-effective protocol to detect them in dry soils and eroded sediments. We analyzed spherical polyethylene (PE: 125–150 μm; 425–500 μm) and irregular polylactic acid (PLA: 125–150 μm; 250–300 μm). Sample assays were prepared primarily based on dry and wet sieving. Subsequent darkroom photography under 365 nm illumination, and thresholding and segmentation-based image analysis were done. The developed protocol demonstrates high reliability, precision, and F-scores of 88.7 % ± 2.9 %, 85.2 % ± 3.1 %, and 86.9 % ± 2.8 %. PE exhibited slightly higher recovery rates (85 % ± 5 %) than PLA (79 % ± 8 %). Particle size influenced recovery, with larger MPs achieving significantly higher recovery. Smaller particles showed slightly lower recovery under dry soil conditions, but their recovery improved under sediment conditions facilitated by wet sieving and ultrasonication. All fluorescent MPs retained >95 % detectability after three months of storage, highlighting marker temporal stability. Compared to existing methods, this protocol eliminates complex digestion steps, reduces costs, and ensures minimal contamination, providing a robust framework for MP transport studies. It offers potential for enhancement through advanced imaging and machine learning, enabling more efficient and accessible detection in environmental research.
+
+Context source: zotero_abstractNote
+
+Source context:
+Understanding microplastics' (MPs) transport from soils to aquatic ecosystems is challenging due to labor-intensive detection methods, especially in large-scale plot experiments analyzing surface runoff and soil erosion. To address this, we used fluorescent MPs as tracers and developed a cost-effective protocol to detect them in dry soils and eroded sediments. We analyzed spherical polyethylene (PE: 125–150 μm; 425–500 μm) and irregular polylactic acid (PLA: 125–150 μm; 250–300 μm). Sample assays were prepared primarily based on dry and wet sieving. Subsequent darkroom photography under 365 nm illumination, and thresholding and segmentation-based image analysis were done. The developed protocol demonstrates high reliability, precision, and F-scores of 88.7 % ± 2.9 %, 85.2 % ± 3.1 %, and 86.9 % ± 2.8 %. PE exhibited slightly higher recovery rates (85 % ± 5 %) than PLA (79 % ± 8 %). Particle size influenced recovery, with larger MPs achieving significantly higher recovery. Smaller particles showed slightly lower recovery under dry soil conditions, but their recovery improved under sediment conditions facilitated by wet sieving and ultrasonication. All fluorescent MPs retained >95 % detectability after three months of storage, highlighting marker temporal stability. Compared to existing methods, this protocol eliminates complex digestion steps, reduces costs, and ensures minimal contamination, providing a robust framework for MP transport studies. It offers potential for enhancement through advanced imaging and machine learning, enabling more efficient and accessible detection in environmental research.

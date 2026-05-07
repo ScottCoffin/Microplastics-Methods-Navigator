@@ -1,0 +1,14 @@
+{
+  "scope": "Microplastics definition and consensus",
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "Polymer science is one of the most revolutionary research areas of the last century, instigated by the discovery of Bakelite, the first synthetic plastic. Plastic, once a revolutionary material, has gradually become a global environmental threat with ubiquitous distribution.",
+  "confidence": "low",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

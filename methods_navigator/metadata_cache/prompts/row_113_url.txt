@@ -1,0 +1,60 @@
+You are extracting metadata for a curated microplastics methods crosswalk.
+
+        Fill three fields for the reference using ONLY the supplied
+        Zotero/PDF/URL context. Do not use outside knowledge. If the evidence
+        is absent or too ambiguous, use null for that field.
+
+        Target fields:
+        - scope: concise description of the scope of the study/method/document (e.g., "marine", "freshwater", "sediment", EU drinking water monitoring", "Intentionally added products", etc.)
+        - particle_size_range: concise particle size range (report in μm) or operational size
+          domain studied/reported. Include lower/upper bounds
+          only if supported.
+        - key_metrics_output: concise list of key quantitative outputs (e.g., mass, particle shape, size, density, polymer type, color, etc.),
+          performance metrics, endpoints, or reported method outputs.
+        - abstract: use null when Zotero abstractNote is populated. If Zotero
+          abstractNote is absent and no formal abstract is visible in the PDF
+          context, write a concise factual abstract-style summary without
+          inventing unsupported results.
+
+        Return strict JSON only with this schema. Do not wrap the JSON in
+        Markdown code fences.
+        {
+          "particle_size_range": string or null,
+          "key_metrics_output": string or null,
+          "abstract": string or null,
+          "confidence": "high" | "medium" | "low",
+          "evidence": {
+            "particle_size_range": [short supporting quote strings],
+            "key_metrics_output": [short supporting quote strings],
+            "abstract": [short supporting quote strings]
+          }
+        }
+
+        Crosswalk row:
+        Short Citation: Whiting et al., 2022
+        Year: 2022
+        Full Title: A high-throughput automated technique for microplastics detection quantification and characterization in surface waters using laser direct infrared spectroscopy
+        DOI/URL: https://doi.org/10.1007/s00216-022-04371-2
+        Existing Particle Size Range: 
+        Existing Key Metrics / Output: 
+
+        Zotero metadata:
+        Title: 
+        DOI: 
+        Date: 
+        Zotero abstractNote, which will be used directly for the Abstract
+        field when present:
+
+
+        Context source: url_landing_page
+
+        Source context:
+        A high-throughput approach to detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type using laser direct infrared (LDIR) spectroscopy in surface water samples is demonstrated. Three urban creeks were sampled for their MP content near Cincinnati, OH. A simple Fenton reaction was used to oxidize the surface water samples, and the water samples were filtered onto a gold-coated polyester membrane. Infrared (IR) analysis for polymer identification was conducted, with recoveries of 88.3% ± 1.2%. This method was able to quantify MPs down to a diameter of 20 µm, a size comparable to that of MPs quantified by other techniques such as Fourier transform infrared spectroscopy (FTIR) and Raman spectroscopy. A shape-classifying algorithm was designed using the aspect ratio values of particles to categorize MPs as fibers, fibrous fragments, fragments, spherical fragments, or spheres. Cut-off values were identified from measurements of known sphere, fragment, and fibrous particles. About half of all environmental samples were classified as fragments while the other shapes accounted for the other half. A cut-off hit quality index (HQI) value of 0.7 was used to classify known and unidentified particles based on spectral matches to a reference library. Center for Marine Debris Research Polymer Kit 1.0 standards were analyzed by LDIR and compared to the given FTIR spectra by HQI, showing that LDIR obtains similar identifications as FTIR analysis. The simplicity and automation of the LDIR allows for quick, reproducible particle analysis, making LDIR attractive for high-throughput analysis of MPs.
+
+A high-throughput approach to detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type using laser direct infrared (
+
+A high-throughput approach to detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type using laser direct infrared (LDIR) spectroscopy in surface water samples is demonstrated. Three urban creeks were sampled for their MP content near Cincinnati, OH. A simple Fenton reaction was used to oxidize the surface water samples, and the water samples were filtered onto a gold-coated polyester membrane. Infrared (IR) analysis for polymer identification was conducted, with recoveries of 88.3% ± 1.2%. This method was able to quantify MPs down to a diameter of 20 µm, a size comparable to that of MPs quantified by other techniques such as Fourier transform infrared spectroscopy (FTIR) and Raman spectroscopy. A shape-classifying algorithm was designed using the aspect ratio values of particles to categorize MPs as fibers, fibrous fragments, fragments, spherical fragments, or spheres. Cut-off values were identified from measurements of known sphere, fragment, and fibrous particles. About half of all environmental samples were classified as fragments while the other shapes accounted for the other half. A cut-off hit quality index (HQI) value of 0.7 was used to classify known and unidentified particles based on spectral matches to a reference library. Center for Marine Debris Research Polymer Kit 1.0 standards were analyzed by LDIR and compared to the given FTIR spectra by HQI, showing that LDIR obtains similar identifications as FTIR analysis. The simplicity and automation of the LDIR allows for quick, reproducible particle analysis, making LDIR attractive for high-throughput analysis of MPs. Graphical abstract
+
+Analytical and Bioanalytical Chemistry - A high-throughput approach to detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type using laser direct infrared...
+
+scope Submit manuscript Quinn T. Whiting Keith F. O’Connor Phillip M. Potter Souhail R. Al-Abed Show authors 3387 Accesses Citations Altmetric Explore all metrics Abstract A high-throughput approach to detecting, quantifying, and characterizing microplastics (MPs) by shape, size, and polymer type using laser direct infrared (LDIR) spectroscopy in surface water samples is demonstrated. Three urban creeks were sampled for their MP content near Cincinnati, OH. A simple Fenton reaction was used to oxidize the surface water samples, and the water samples were filtered onto a gold-coated polyester membrane. Infrared (IR) analysis for polymer identification was conducted, with recoveries of 88.3% ± 1.2%. This method was able to quantify MPs down to a diameter of 20 µm, a size comparable to that of MPs quantified by other techniques such as Fourier transform infrared spectroscopy (FTIR) and Raman spectroscopy. A shape-classifying algorithm was designed using the aspect ratio values of particles to categorize MPs as fibers, fibrous fragments, fragments, spherical fragments, or spheres. Cut-off values were identified from measurements of known sphere, fragment, and fibrous particles. About half of all environmental samples were classified as fragments while the other shapes accounted for the other half. A cut-off hit quality index (HQI) value of 0.7 was used to classify known and unidentified particles based on spectral matches to a reference library. Center for Marine Debris Research Polymer Kit 1.0 standards were analyzed by LDIR and compared to the given FTIR spectra by HQI, showing that LDIR obtains similar identifications as FTIR analysis. The simplicity and automation of the LDIR allows for quick, reproducible particle analysis, making LDIR attractive for high-throughput analysis of MPs. Graphical abstract The alternative text for this image may have been generated using AI. This is a preview of subscription content, log in via an institution to check access. Access this article Log in via an institution Subscribe and save Springer+ from $39.99 /Month Starting from 10 chapters or articles per month Access and download chapters and articles from more than 300k books and 2,500 journals Cancel anytime View plans Buy Now Buy article PDF USD 39.95 Price excludes VAT (USA) Tax calculation will be finalised during checkout. Instant access to the full article PDF. Institutional subscriptions Fig. 1 The alternative text for this image may have been generated using AI. Fig. 2

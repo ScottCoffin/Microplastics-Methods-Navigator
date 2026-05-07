@@ -1,0 +1,18 @@
+{
+  "particle_size_range": null,
+  "key_metrics_output": "particle color, shape, size, surface topology, morphology, fluorescence intensity, polymer type (chemical classification)",
+  "abstract": "Microplastic research is a rapidly developing field, with urgent needs for high throughput and automated analysis techniques. We conducted a review covering image analysis from optical microscopy, scanning electron microscopy, fluorescence microscopy, and spectral analysis from Fourier transform infrared (FT-IR) spectroscopy, Raman spectroscopy, pyrolysis gas–chromatography mass–spectrometry, and energy dispersive X-ray spectroscopy. These techniques were commonly used to collect, process, and interpret data from microplastic samples. This review outlined and critiques current approaches for analysis steps in image processing (color, thresholding, particle quantification), spectral processing (background and baseline subtraction, smoothing and noise reduction, data transformation), image classification (reference libraries, morphology, color, and fluorescence intensity), and spectral classification (reference libraries, matching procedures, and best practices for developing in-house reference tools). We highlighted opportunities to advance microplastic data analysis and interpretation by (i) quantifying colors, shapes, sizes, and surface topologies with image analysis software, (ii) identifying threshold values of particle characteristics in images that distinguish plastic particles from other particles, (iii) advancing spectral processing and classification routines, (iv) creating and sharing robust spectral libraries, (v) conducting double blind and negative controls, (vi) sharing raw data and analysis code, and (vii) leveraging readily available data to develop machine learning classification models. We identified analytical needs that we could fill and developed supplementary information for a reference library of plastic images and spectra, a tutorial for basic image analysis, and a code to download images from peer reviewed literature. Our major findings were that research on microplastics was progressing toward the use of multiple analytical methods and increasingly incorporating chemical classification. We suggest that new and repurposed methods need to be developed for high throughput screening using a diversity of approaches and highlight machine learning as one potential avenue toward this capability.",
+  "confidence": "high",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [
+      "quantifying colors, shapes, sizes, and surface topologies with image analysis software",
+      "image processing (color, thresholding, particle quantification)",
+      "image classification (reference libraries, morphology, color, and fluorescence intensity)",
+      "spectral classification (reference libraries, matching procedures)"
+    ],
+    "abstract": [
+      "Zotero abstractNote"
+    ]
+  }
+}

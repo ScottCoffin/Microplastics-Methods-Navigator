@@ -1,0 +1,15 @@
+{
+  "scope": "soil microplastics, European interlaboratory study",
+  "particle_size_range": null,
+  "key_metrics_output": null,
+  "abstract": "Final report of the European interlaboratory study (MISSOURI/SOILveR ILS) on microplastics in soil, documenting standardized methods and results from participating laboratories across Europe for soil microplastics analysis.",
+  "confidence": "low",
+  "evidence": {
+    "particle_size_range": [],
+    "key_metrics_output": [],
+    "abstract": [
+      "European interlaboratory study on microplastics in soil — Final Report",
+      "SOILveR-MISSOURI-ILS_final-report"
+    ]
+  }
+}
