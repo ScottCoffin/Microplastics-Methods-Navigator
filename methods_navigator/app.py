@@ -17,6 +17,8 @@ import streamlit as st
 import pandas as pd
 import yaml
 import sys
+import re
+import html
 from pathlib import Path
 
 # ── CONFIG ──────────────────────────────────────────────────
@@ -221,6 +223,42 @@ def sort_by_tier(df):
 
 # ── DISPLAY FUNCTIONS ───────────────────────────────────────
 
+def normalize_abstract_text(value):
+    """Clean abstract text for display without changing the dataframe."""
+    if value is None or pd.isna(value):
+        return ""
+    text = str(value)
+    text = re.sub(r"[\r\n\t]+", " ", text)
+    text = re.sub(r"\s*[•●▪◦‣⁃]\s*", " ", text)
+    text = re.sub(r"\s+(?:[-*])\s+", " ", text)
+    text = re.sub(
+        r"\s*\b(?:Abstract|Summary)\b\s*[:.-]?\s*",
+        " ",
+        text,
+        count=1,
+        flags=re.I,
+    )
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def compact_export_df(df):
+    """Return a small, stable export table for filtered reference sets."""
+    output = pd.DataFrame(index=df.index)
+    column_map = {
+        "Short Citation": ["Short Citation"],
+        "Year": ["Year"],
+        "Document Type": ["Document Type"],
+        "Tier": ["Priority Tier", "Tier", "tier_num"],
+        "DOI": ["DOI/URL", "DOI", "URL"],
+        "Key Notes": ["Key Notes"],
+    }
+    for label, candidates in column_map.items():
+        col = find_column(df, candidates)
+        output[label] = df[col] if col else ""
+    return output.reset_index(drop=True)
+
+
 def display_reference_card(row):
     """Display a single reference as a styled card."""
     tier = (
@@ -248,36 +286,67 @@ def display_reference_card(row):
     notes = get_field(row, ["Key Notes"])
     doi = get_field(row, ["DOI/URL", "DOI", "URL"])
     size_range = get_field(row, ["Particle Size Range", "Particle Size"])
+    metrics = get_field(row, ["Key Metrics / Output", "Key Metrics", "Output"])
+    scope = get_field(row, ["Scope"])
+    status = get_field(row, ["Status"])
+    abstract = normalize_abstract_text(get_field(row, ["Abstract"]))
+    citation_safe = html.escape(citation)
+    year_safe = html.escape(year)
+    doc_type_safe = html.escape(doc_type)
+    notes_safe = html.escape(notes)
+    doi_safe = html.escape(doi, quote=True)
+    size_range_safe = html.escape(size_range)
+    metrics_preview = metrics[:150] + ("..." if len(metrics) > 150 else "")
+    metrics_safe = html.escape(metrics_preview)
+    scope_safe = html.escape(scope)
+    status_safe = html.escape(status)
 
     # Build the card HTML
     parts = [
         f'<div style="border-left: 4px solid {color}; padding: 8px 12px; '
         f'margin-bottom: 8px; background-color: #f8f9fa; border-radius: 4px;">',
-        f"<strong>{icon} {citation}"
-        + (f" ({year})" if year else "")
+        f"<strong>{icon} {citation_safe}"
+        + (f" ({year_safe})" if year else "")
         + "</strong>",
-        f'<span style="color: {color}; font-size: 0.85em;"> — {doc_type}</span>'
+        f'<span style="color: {color}; font-size: 0.85em;"> — {doc_type_safe}</span>'
         if doc_type
         else "",
         "<br/>",
-        f'<span style="font-size: 0.9em;">{notes}</span>' if notes else "",
+        f'<span style="font-size: 0.9em;">{notes_safe}</span>' if notes else "",
     ]
 
     if size_range:
         parts.append(
             f"<br/><span style='font-size: 0.8em; color: #555;'>"
-            f"📐 Size range: {size_range}</span>"
+            f"📐 Size range: {size_range_safe}</span>"
         )
+
+    if metrics:
+        parts.append(
+            f"<br/><span style='font-size: 0.8em; color: #7a6b2e;'>"
+            f"📊 {metrics_safe}</span>"
+        )
+
+    if tier <= 2 and (scope or status):
+        parts.append("<br/><span style='font-size: 0.8em; color: #555;'>")
+        if scope:
+            parts.append(f"🎯 {scope_safe}")
+        if status:
+            parts.append(f"{' · ' if scope else ''}📋 {status_safe}")
+        parts.append("</span>")
 
     if doi:
         parts.append(
-            f"<br/><a href='{doi}' style='font-size: 0.8em;'>"
-            f"🔗 {doi}</a>"
+            f"<br/><a href='{doi_safe}' style='font-size: 0.8em;'>"
+            f"🔗 {doi_safe}</a>"
         )
 
     parts.append("</div>")
 
     st.markdown("".join(parts), unsafe_allow_html=True)
+    if abstract:
+        with st.expander("Abstract", expanded=False):
+            st.write(abstract)
 
 
 def display_results(df, title="References", gap_note=None):
@@ -313,14 +382,61 @@ def display_results(df, title="References", gap_note=None):
             for _, row in tier_df.iterrows():
                 display_reference_card(row)
 
-    # Export button
-    csv = df_sorted.to_csv(index=False)
-    st.download_button(
-        "📥 Export filtered references as CSV",
-        csv,
-        file_name="filtered_references.csv",
-        mime="text/csv",
+    export_cols = st.columns(2)
+    with export_cols[0]:
+        st.download_button(
+            "📥 Export (compact)",
+            compact_export_df(df_sorted).to_csv(index=False),
+            file_name="filtered_references_compact.csv",
+            mime="text/csv",
+        )
+    with export_cols[1]:
+        st.download_button(
+            "📥 Export (full)",
+            df_sorted.to_csv(index=False),
+            file_name="filtered_references_full.csv",
+            mime="text/csv",
+        )
+
+
+def render_search_all_references(df):
+    """Search across citation, notes, abstract, and metadata fields."""
+    st.markdown("### Search All References")
+    query = st.text_input(
+        "Search references",
+        placeholder="Search Short Citation, Key Notes, Abstract, DOI, metrics...",
+        key="search_all_references_query",
     )
+    searchable_cols = [
+        find_column(df, [name])
+        for name in [
+            "Short Citation",
+            "Full Title",
+            "Key Notes",
+            "Abstract",
+            "Key Metrics / Output",
+            "Particle Size Range",
+            "DOI/URL",
+        ]
+    ]
+    searchable_cols = [col for col in searchable_cols if col]
+    result_df = df
+    if query.strip() and searchable_cols:
+        terms = [term for term in query.lower().split() if term]
+        haystack = (
+            df[searchable_cols]
+            .fillna("")
+            .astype(str)
+            .agg(" ".join, axis=1)
+            .str.lower()
+        )
+        mask = pd.Series(True, index=df.index)
+        for term in terms:
+            mask = mask & haystack.str.contains(term, regex=False, na=False)
+        result_df = df[mask]
+
+    st.caption(f"{len(result_df)} of {len(df)} references shown")
+    display_results(result_df, "Search Results")
 
 
 def get_gap_note(tree, matrix_key, step_key):
@@ -366,11 +482,11 @@ def main():
     # ── App tabs ────────────────────────────────────────────
     step_by_step_enabled = False
     if step_by_step_enabled:
-        tab1, tab2, tab3 = st.tabs(
-            ["Step-by-Step Navigator", "Decision Tree", "Crosswalk"]
+        tab1, tab2, tab3, tab4 = st.tabs(
+            ["Step-by-Step Navigator", "Decision Tree", "Crosswalk", "Search All References"]
         )
     else:
-        tab2, tab3 = st.tabs(["Decision Tree", "Crosswalk"])
+        tab2, tab3, tab4 = st.tabs(["Decision Tree", "Crosswalk", "Search All References"])
 
     if step_by_step_enabled:
         with tab1:
@@ -729,6 +845,9 @@ def main():
     with tab3:
         from crosswalk_tab import render_crosswalk_tab
         render_crosswalk_tab(df)
+
+    with tab4:
+        render_search_all_references(df)
 
     # ── FOOTER ──────────────────────────────────────────────
     st.divider()

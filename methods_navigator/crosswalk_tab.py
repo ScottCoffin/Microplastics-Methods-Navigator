@@ -94,13 +94,20 @@ def render_crosswalk_tab(df):
         st.markdown("### Crosswalk")
         st.caption(f"{len(filtered_df)} of {len(table_df)} references")
     with right:
-        csv = filtered_df.to_csv(index=False)
         st.download_button(
-            "Export filtered CSV",
-            csv,
-            file_name="crosswalk_filtered.csv",
+            "Export (compact)",
+            compact_export_df(filtered_df).to_csv(index=False),
+            file_name="crosswalk_filtered_compact.csv",
             mime="text/csv",
-            key="crosswalk_export",
+            key="crosswalk_export_compact",
+            width="stretch",
+        )
+        st.download_button(
+            "Export (full)",
+            filtered_df.to_csv(index=False),
+            file_name="crosswalk_filtered_full.csv",
+            mime="text/csv",
+            key="crosswalk_export_full",
             width="stretch",
         )
 
@@ -142,6 +149,26 @@ def prepare_table(df):
     if "Year" in table_df.columns:
         table_df["Year"] = pd.to_numeric(table_df["Year"], errors="coerce").astype("Int64")
     return table_df
+
+
+def compact_export_df(df):
+    column_map = {
+        "Short Citation": ["Short Citation"],
+        "Year": ["Year"],
+        "Document Type": ["Document Type"],
+        "Tier": ["Priority Tier", "tier_num"],
+        "DOI": ["DOI/URL", "DOI", "URL"],
+        "Key Notes": ["Key Notes"],
+    }
+    output = pd.DataFrame(index=df.index)
+    lower_cols = {str(col).lower(): col for col in df.columns}
+    for label, candidates in column_map.items():
+        col = next(
+            (lower_cols[candidate.lower()] for candidate in candidates if candidate.lower() in lower_cols),
+            None,
+        )
+        output[label] = df[col] if col else ""
+    return output.reset_index(drop=True)
 
 
 def render_filters(df):

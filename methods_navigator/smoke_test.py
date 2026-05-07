@@ -19,13 +19,26 @@ from app import (
     load_tree,
 )
 from visual_tree_tab import (
+    INSTRUMENTS,
     MATRICES,
     MONITORING_AUXILIARY,
     MONITORING_CORE,
+    PARTICLE_TYPES,
+    RA_AUXILIARY,
+    RA_CORE,
+    RECEPTORS,
+    TOX_AUXILIARY,
+    TOX_CORE,
     _apply_step_filters,
     _filter_domain,
     _filter_matrix,
+    _filter_particle_types,
+    _filter_primary_focus,
+    _filter_problem_formulation,
+    _filter_target_receptor,
     _instrument_availability,
+    _normalize_abstract_text,
+    _ra_core_for_receptor,
     _reference_context_messages,
     _workflow_availability,
     build_graphviz,
@@ -86,6 +99,13 @@ def main():
         "Primary Domain",
         "Instrumentation Tags",
         "Matrix Tags",
+        "Primary Focus",
+        "Target Receptor(s)",
+        "Particle/Polymer Type Tags",
+        "Scope",
+        "Status",
+        "Key Metrics / Output",
+        "Abstract",
         "tier_num",
     ]
     for column in required:
@@ -130,6 +150,34 @@ def main():
         check(len(aux_results) > 0, "Decision Tree auxiliary result returns rows", errors)
         check("Tier 1\\n" in dot, "Decision Tree node tier labels render on separate lines", errors)
         check("AUX_DEFINITIONS" in dot, "Decision Tree auxiliary node renders", errors)
+        check("splines=polyline" in dot, "Decision Tree uses polyline graph routing", errors)
+        check(
+            'URL="?tree_core_step=sampling"' in dot,
+            "Decision Tree core nodes include clickable selection URLs",
+            errors,
+        )
+        check(
+            'URL="?tree_aux_step=definitions"' in dot,
+            "Decision Tree auxiliary nodes include clickable selection URLs",
+            errors,
+        )
+        analysis_dot = build_graphviz(
+            domain="Monitoring",
+            matrix_key="drinking_water",
+            core_step_key="analysis",
+            aux_step_key="definitions",
+            availability=availability,
+        )
+        check(
+            "CORE_BEFORE" in analysis_dot and "CORE_AFTER" in analysis_dot,
+            "Monitoring Analysis graph collapses non-selected core steps",
+            errors,
+        )
+        check(
+            "CORE_SAMPLING" not in analysis_dot and "CORE_REPORTING" not in analysis_dot,
+            "Monitoring Analysis graph hides individual non-selected core nodes",
+            errors,
+        )
 
         air_df = _filter_matrix(nav_monitoring, MATRICES["air"]["kw"])
         extraction_step = next(
@@ -150,6 +198,195 @@ def main():
         check(
             not any("Ashta" in text for text in context_messages),
             "Decision Tree context avoids single hardcoded best-available citation",
+            errors,
+        )
+
+        check(
+            "interlaboratory" not in {step["key"] for step in MONITORING_AUXILIARY},
+            "Monitoring interlaboratory studies are not an auxiliary workflow box",
+            errors,
+        )
+        check(
+            [step["key"] for step in MONITORING_CORE][-2:] == ["data_stats", "reporting"],
+            "Monitoring workflow places Data Analysis before Reporting",
+            errors,
+        )
+        check(
+            "subsampling" in [step["key"] for step in MONITORING_CORE],
+            "Monitoring workflow includes Sub-sampling",
+            errors,
+        )
+        check(
+            {"wastewater", "biosolids"}.issubset(MATRICES),
+            "Decision Tree includes Wastewater and Biosolids matrix options",
+            errors,
+        )
+        check(
+            "imaging" in INSTRUMENTS,
+            "Decision Tree includes Visual / SEM / Imaging instrument option",
+            errors,
+        )
+        particle_filtered = _filter_particle_types(
+            nav_monitoring, list(PARTICLE_TYPES.keys())[:1]
+        )
+        check(
+            len(particle_filtered) <= len(nav_monitoring),
+            "Decision Tree particle/polymer type filter is bounded",
+            errors,
+        )
+
+        tox_keys = [step["key"] for step in TOX_CORE]
+        check(
+            tox_keys[:3] == ["ref_particles", "particle_char", "dosimetry"],
+            "Toxicology workflow orders reference particles before characterization and dosimetry",
+            errors,
+        )
+        check(
+            tox_keys[-2:] == ["tox_reporting", "data_repository"],
+            "Toxicology workflow places Data Repository after Reporting",
+            errors,
+        )
+
+        tox_df = _filter_domain(df, "Toxicology")
+        human_tox = _filter_target_receptor(
+            tox_df, RECEPTORS["human_health"]["kw"]
+        )
+        eco_tox = _filter_target_receptor(
+            tox_df, RECEPTORS["ecotoxicology"]["kw"]
+        )
+        in_vitro_tox = _filter_target_receptor(
+            tox_df, RECEPTORS["in_vitro"]["kw"]
+        )
+        check(len(human_tox) > 0, "Toxicology Human Health receptor filter returns rows", errors)
+        check(len(eco_tox) > 0, "Toxicology Ecotoxicology receptor filter returns rows", errors)
+        check(len(in_vitro_tox) > 0, "Toxicology In Vitro receptor filter returns rows", errors)
+        ref_particles_step = next(
+            step for step in TOX_CORE if step["key"] == "ref_particles"
+        )
+        ref_particles = _apply_step_filters(human_tox, ref_particles_step)
+        ref_particles_primary = _filter_primary_focus(
+            human_tox, "Reference Materials"
+        )
+        ref_particle_citations = set(
+            ref_particles["Short Citation"].astype(str).str.strip()
+        )
+        check(
+            len(ref_particles) > len(ref_particles_primary),
+            "Toxicology reference particle selection uses column/keyword fallback",
+            errors,
+        )
+        check(
+            "Gouin et al., 2024" in ref_particle_citations,
+            "Toxicology reference particle selection includes quality critiques of PS spheres",
+            errors,
+        )
+        check(
+            "interlaboratory" not in {step["key"] for step in TOX_AUXILIARY},
+            "Toxicology interlaboratory studies are not a workflow box",
+            errors,
+        )
+        check(
+            "interlaboratory" not in {step["key"] for step in RA_AUXILIARY},
+            "Risk Assessment interlaboratory studies are not a workflow box",
+            errors,
+        )
+        tox_dot = build_graphviz(
+            domain="Toxicology",
+            receptor_key="human_health",
+            core_step_key="effects",
+            aux_step_key="definitions",
+        )
+        ra_dot = build_graphviz(
+            domain="Risk Assessment",
+            receptor_key="human_health",
+            core_step_key="hazard",
+            aux_step_key="definitions",
+        )
+        check(
+            "{ rank=same; AUX_DEFINITIONS; AUX_QUALITY }" in tox_dot,
+            "Toxicology auxiliary nodes are constrained to the same rank",
+            errors,
+        )
+        check(
+            "{ rank=same; AUX_DEFINITIONS }" in ra_dot,
+            "Risk Assessment auxiliary nodes are constrained to the same rank",
+            errors,
+        )
+        ra_df = _filter_domain(df, "Risk Assessment")
+        human_ra = _filter_target_receptor(
+            ra_df, RECEPTORS["human_health"]["kw"]
+        )
+        eco_ra = _filter_target_receptor(
+            ra_df, RECEPTORS["ecotoxicology"]["kw"]
+        )
+        human_ra_keys = [step["key"] for step in _ra_core_for_receptor("human_health")]
+        eco_ra_keys = [step["key"] for step in _ra_core_for_receptor("ecotoxicology")]
+        check(
+            human_ra_keys[human_ra_keys.index("exposure") + 1] == "pbpk",
+            "Human Health Risk Assessment places PBPK after exposure",
+            errors,
+        )
+        check(
+            human_ra_keys[human_ra_keys.index("pbpk") + 1] == "risk_char",
+            "Human Health Risk Assessment places PBPK before risk characterization",
+            errors,
+        )
+        check(
+            "pbpk" not in eco_ra_keys,
+            "Ecotoxicology Risk Assessment does not show PBPK workflow step",
+            errors,
+        )
+        pbpk_step = next(step for step in RA_CORE if step["key"] == "pbpk")
+        pbpk_refs = _apply_step_filters(human_ra, pbpk_step)
+        check(
+            "Wardani et al., 2024" in set(pbpk_refs["Short Citation"].astype(str)),
+            "Human Health PBPK step filters Primary Focus == PBPK Modelling",
+            errors,
+        )
+        check(
+            len(_apply_step_filters(eco_ra, pbpk_step)) == 0,
+            "Ecotoxicology PBPK filter has no receptor-matched rows",
+            errors,
+        )
+        data_repo_step = next(
+            step for step in TOX_CORE if step["key"] == "data_repository"
+        )
+        data_repo_short_citations = set(
+            _apply_step_filters(human_tox, data_repo_step)["Short Citation"]
+            .astype(str)
+            .str.strip()
+        )
+        check(
+            {
+                "Thornton Hampton et al., 2022a",
+                "Thornton Hampton et al., 2025",
+            }.issubset(data_repo_short_citations),
+            "Toxicology Data Repository includes Thornton Hampton repository entries",
+            errors,
+        )
+        normalized_abstract = _normalize_abstract_text(
+            "Abstract\n • First point\n - Second point\t with spacing"
+        )
+        check(
+            normalized_abstract == "First point Second point with spacing",
+            "Decision Tree abstract display normalizes whitespace and bullets",
+            errors,
+        )
+        check(
+            len(_filter_problem_formulation(df)) > 0,
+            "Problem Formulation interactive node returns cross-cutting rows",
+            errors,
+        )
+        dot_with_problem = build_graphviz(
+            domain="Monitoring",
+            matrix_key="drinking_water",
+            core_step_key="sampling",
+            aux_step_key="definitions",
+            availability={"PF": {"count": 1, "tier": 1, "active": False}},
+        )
+        check(
+            'URL="?tree_problem=1"' in dot_with_problem,
+            "Problem Formulation node includes clickable selection URL",
             errors,
         )
 

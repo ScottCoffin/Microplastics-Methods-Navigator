@@ -16,6 +16,12 @@ Integration in app.py:
 
 import streamlit as st
 import pandas as pd
+import re
+import html
+import graphviz
+import streamlit.components.v1 as components
+from urllib.parse import urlencode
+from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 
 # ── WORKFLOW STRUCTURES ─────────────────────────────────────
@@ -24,8 +30,10 @@ import pandas as pd
 MONITORING_CORE = [
     {"key": "sampling",    "label": "Sampling",    "icon": "📍", "column": "Sampling (Field Methods)"},
     {"key": "extraction",  "label": "Extraction",  "icon": "🧪", "column": "Sample Processing / Extraction"},
+    {"key": "subsampling", "label": "Sub-sampling", "icon": "🔢", "column": "Sub-sampling"},
     {"key": "analysis",    "label": "Analysis",    "icon": "🔎", "column": "Analytical Methods (General)",
      "has_instruments": True},
+    {"key": "data_stats",  "label": "Data Analysis & Statistics", "icon": "📊", "column": "Data Analysis & Statistics"},
     {"key": "reporting",   "label": "Reporting & Data Deposition", "icon": "📝", "column": "Reporting & Harmonization"},
 ]
 
@@ -33,12 +41,14 @@ MONITORING_AUXILIARY = [
     {"key": "definitions",     "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
     {"key": "ref_materials",   "label": "Reference Materials",       "icon": "📦", "column": "Reference Materials / +Controls"},
     {"key": "blanks",          "label": "Blanks & Contamination Control", "icon": "🧹", "column": "Blanks & Contamination Control"},
-    {"key": "data_stats",      "label": "Data Analysis & Statistics", "icon": "📊", "column": "Data Analysis & Statistics"},
-    {"key": "interlaboratory", "label": "Interlaboratory Studies",   "icon": "🔄", "doc_type": "Interlaboratory"},
 ]
 
 # Toxicology: linear core + auxiliary
 TOX_CORE = [
+    {"key": "ref_particles", "label": "Reference Particle Selection / Generation", "icon": "📦",
+     "column": "Reference Materials / +Controls",
+     "primary_focus": "Reference Materials",
+     "keywords": "particle preparation;test material;ERMP;heterogeneous mixture;PS sphere;polystyrene;proxy materials"},
     {"key": "particle_char", "label": "Particle Characterization", "icon": "🔬",
      "column": "Toxicology: Study Design & Dosimetry"},
     {"key": "dosimetry",     "label": "Dosimetry",                 "icon": "💊",
@@ -48,11 +58,12 @@ TOX_CORE = [
      "column": "Toxicology: Effects Testing Methods", "has_test_systems": True},
     {"key": "tox_reporting", "label": "Reporting",                 "icon": "📝",
      "column": "Reporting & Harmonization"},
+    {"key": "data_repository", "label": "Data Repository",          "icon": "🗃️",
+     "primary_focus": "Data Repository"},
 ]
 
 TOX_AUXILIARY = [
     {"key": "definitions",   "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
-    {"key": "ref_particles", "label": "Reference / Test Particles", "icon": "📦", "column": "Reference Materials / +Controls"},
     {"key": "quality",       "label": "Study Quality & Scoring",   "icon": "✅",
      "column": "Toxicology: Study Design & Dosimetry",
      "keywords": "quality;QA;scoring;criteria;checklist;ToMEx"},
@@ -61,13 +72,15 @@ TOX_AUXILIARY = [
 # Risk Assessment: linear
 RA_CORE = [
     {"key": "frameworks", "label": "RA Frameworks",        "icon": "🏗️",
-     "column": "Risk Assessment / Risk Char.", "doc_type": "Framework"},
+     "column": "Risk Assessment / Risk Char.", "primary_focus": "Risk Assessment"},
     {"key": "hazard",     "label": "Hazard Identification", "icon": "⚠️",
      "column": "Risk Assessment / Risk Char.",
-     "keywords": "hazard;toxicity;effect;ToMEx;SSD"},
+     "keywords": "hazard identification;hazard characterization;toxicity database;ToMEx;SSD;species sensitivity;adverse effect;dose-response"},
     {"key": "exposure",   "label": "Exposure Assessment",   "icon": "📏",
      "column": "Risk Assessment / Risk Char.",
-     "keywords": "exposure;PBK;monitoring;scenario;dietary;inhalation"},
+     "keywords": "exposure assessment;exposure scenario;PBK;PBPK;biokinetic;dietary exposure;inhalation exposure;internal dose;external dose"},
+    {"key": "pbpk",       "label": "PBPK Modelling",         "icon": "🧮",
+     "primary_focus": "PBPK Modelling", "receptors": ["human_health"]},
     {"key": "risk_char",  "label": "Risk Characterization", "icon": "📊",
      "column": "Risk Assessment / Risk Char.",
      "keywords": "risk quotient;threshold;management;stochastic;TRL"},
@@ -81,12 +94,20 @@ RA_AUXILIARY = [
 MATRICES = {
     "drinking_water": {"label": "Drinking Water",  "icon": "🚰", "kw": "Drinking Water"},
     "surface_water":  {"label": "Surface Water",   "icon": "🌊", "kw": "Surface Water"},
+    "wastewater":     {"label": "Wastewater",      "icon": "🏭", "kw": "Wastewater"},
+    "biosolids":      {"label": "Biosolids / Sludge", "icon": "♻️", "kw": "Biosolids"},
     "sediment":       {"label": "Sediment",        "icon": "🪨", "kw": "Sediment"},
     "biota":          {"label": "Biota / Tissue",  "icon": "🐟", "kw": "Biota"},
     "air":            {"label": "Air",             "icon": "💨", "kw": "Air"},
     "food":           {"label": "Food / Dietary",  "icon": "🍽️", "kw": "Food"},
     "human_tissue":   {"label": "Human Tissue",    "icon": "🩸", "kw": "Human"},
     "soil":           {"label": "Soil",            "icon": "🌱", "kw": "Soil"},
+}
+
+RECEPTORS = {
+    "human_health": {"label": "Human Health", "icon": "🧍", "kw": "Human Health"},
+    "ecotoxicology": {"label": "Ecotoxicology", "icon": "🐟", "kw": "Ecotoxicology"},
+    "in_vitro": {"label": "In Vitro", "icon": "🧫", "kw": "In Vitro"},
 }
 
 # Instruments (sub-branch of Analysis)
@@ -97,6 +118,15 @@ INSTRUMENTS = {
     "pyrolysis": {"label": "Py-GC-MS",          "kw": "Py-GC-MS"},
     "ted":       {"label": "TED-GC-MS",         "kw": "TED-GC-MS"},
     "nile_red":  {"label": "Nile Red",           "kw": "Nile Red"},
+    "imaging":   {"label": "Visual / SEM / Imaging", "kw": "Imaging;Visual;SEM"},
+}
+
+PARTICLE_TYPES = {
+    "nanoplastics": {"label": "Nanoplastics", "kw": "Nanoplastics"},
+    "microfibers": {"label": "Microfibers / Textiles", "kw": "Microfibers;Textiles;Textile fibers"},
+    "tire_wear": {"label": "Tire Wear Particles", "kw": "Tire wear;Tire Wear Particles;TWP"},
+    "ermp": {"label": "Environmentally Realistic Mixtures", "kw": "Environmentally Realistic Mixtures;ERMP"},
+    "microbeads": {"label": "Microbeads", "kw": "Microbeads"},
 }
 
 # Test systems (sub-branch of Effects Testing)
@@ -148,6 +178,19 @@ def _filter_matrix(df, kw):
     return df[s.str.contains(kw, case=False, na=False) | s.str.contains("Cross-cutting", case=False, na=False)]
 
 
+def _filter_target_receptor(df, kw):
+    col = _find_col(df, ["Target Receptor(s)", "Target Receptors"])
+    if col is None:
+        return df
+    s = df[col].astype(str)
+    return df[
+        s.str.contains(kw, case=False, na=False)
+        | s.str.contains(r"Cross[- ]?cutting|Both", case=False, na=False, regex=True)
+        | s.isin(["", "nan", "None"])  # <-- pass through untagged entries
+        | df[col].isna()               # <-- pass through NaN
+    ]
+
+
 def _filter_column(df, col_name):
     col = _find_col(df, [col_name])
     if col is None:
@@ -155,11 +198,58 @@ def _filter_column(df, col_name):
     return df[df[col].notna() & (df[col] != "") & (df[col] != 0)]
 
 
+def _filter_primary_focus(df, value):
+    col = _find_col(df, ["Primary Focus"])
+    if col is None:
+        return df
+    return df[df[col].astype(str).str.contains(value, case=False, na=False)]
+
+
 def _filter_instrument(df, kw):
     col = _find_col(df, ["Instrumentation Tags"])
     if col is None:
         return df
-    return df[df[col].astype(str).str.contains(kw, case=False, na=False)]
+    mask = pd.Series(False, index=df.index)
+    for term in str(kw).split(";"):
+        term = term.strip()
+        if term:
+            mask = mask | df[col].astype(str).str.contains(term, case=False, na=False)
+    return df[mask]
+
+
+def _filter_particle_type(df, kw):
+    col = _find_col(df, ["Particle/Polymer Type Tags"])
+    if col is None:
+        return df
+    mask = pd.Series(False, index=df.index)
+    for term in str(kw).split(";"):
+        term = term.strip()
+        if term:
+            mask = mask | df[col].astype(str).str.contains(term, case=False, na=False)
+    return df[mask]
+
+
+def _filter_particle_types(df, selected_keys):
+    if not selected_keys:
+        return df
+    mask = pd.Series(False, index=df.index)
+    for key in selected_keys:
+        info = PARTICLE_TYPES.get(key)
+        if info:
+            mask = mask | df.index.isin(_filter_particle_type(df, info["kw"]).index)
+    return df[mask]
+
+
+def _filter_problem_formulation(df):
+    definition_col = _find_col(df, ["Definitions & Terminology"])
+    problem_col = _find_col(df, ["Problem Formulation"])
+    topic_mask = pd.Series(False, index=df.index)
+    for col in [definition_col, problem_col]:
+        if col:
+            topic_mask = topic_mask | (
+                df[col].notna() & (df[col] != "") & (df[col] != 0)
+            )
+    return df[topic_mask]
 
 
 def _filter_doc_type(df, dt):
@@ -182,10 +272,22 @@ def _filter_keywords(df, kws):
 def _apply_step_filters(df, step_info):
     """Apply all filters defined in a step dict."""
     result = df
-    if "column" in step_info:
-        result = _filter_column(result, step_info["column"])
     if "doc_type" in step_info:
         result = _filter_doc_type(result, step_info["doc_type"])
+    if "primary_focus" in step_info and (
+        "column" in step_info or "keywords" in step_info
+    ):
+        matched_indexes = set(_filter_primary_focus(result, step_info["primary_focus"]).index)
+        if "column" in step_info:
+            matched_indexes.update(_filter_column(result, step_info["column"]).index)
+        if "keywords" in step_info:
+            matched_indexes.update(_filter_keywords(result, step_info["keywords"]).index)
+        return result.loc[result.index.isin(matched_indexes)]
+
+    if "column" in step_info:
+        result = _filter_column(result, step_info["column"])
+    if "primary_focus" in step_info:
+        result = _filter_primary_focus(result, step_info["primary_focus"])
     if "keywords" in step_info:
         result = _filter_keywords(result, step_info["keywords"])
     return result
@@ -228,7 +330,83 @@ def _state_choice(key, options, default_index=0):
     value = st.session_state.get(key)
     if value in options:
         return value
-    return options[min(default_index, len(options) - 1)]
+    fallback = options[min(default_index, len(options) - 1)]
+    st.session_state[key] = fallback
+    return fallback
+
+
+def _ra_core_for_receptor(receptor_key):
+    if not receptor_key:
+        return [step for step in RA_CORE if "receptors" not in step]
+    return [
+        step
+        for step in RA_CORE
+        if "receptors" not in step or receptor_key in step["receptors"]
+    ]
+
+
+def _query_param_value(key):
+    if get_script_run_ctx(suppress_warning=True) is None:
+        return None
+    value = st.query_params.get(key)
+    if isinstance(value, list):
+        return value[0] if value else None
+    return value
+
+
+def _sync_tree_query_params():
+    if get_script_run_ctx(suppress_warning=True) is None:
+        return
+    valid_values = {
+        "tree_domain": ["Monitoring", "Toxicology", "Risk Assessment"],
+        "tree_matrix": list(MATRICES.keys()),
+        "tree_particle_type": list(PARTICLE_TYPES.keys()),
+        "tree_receptor": list(RECEPTORS.keys()),
+        "tree_problem": ["1"],
+        "tree_core_step": [step["key"] for step in MONITORING_CORE],
+        "tree_aux_step": [step["key"] for step in MONITORING_AUXILIARY],
+        "tree_tox_core": [step["key"] for step in TOX_CORE],
+        "tree_tox_aux": [step["key"] for step in TOX_AUXILIARY],
+        "tree_ra_step": [step["key"] for step in RA_CORE],
+        "tree_ra_aux": [step["key"] for step in RA_AUXILIARY],
+        "tree_instrument": ["all", *INSTRUMENTS.keys()],
+        "tree_test_sys": ["all", *TEST_SYSTEMS.keys()],
+    }
+    last_synced = st.session_state.setdefault("_tree_synced_query_params", {})
+    if _query_param_value("tree_problem") is None and last_synced.get("tree_problem") == "1":
+        st.session_state.pop("tree_problem", None)
+        last_synced.pop("tree_problem", None)
+    for key, allowed in valid_values.items():
+        value = _query_param_value(key)
+        if value in allowed and last_synced.get(key) != value:
+            st.session_state[key] = value
+            last_synced[key] = value
+
+
+def _tree_query_url(**updates):
+    params = (
+        dict(st.query_params)
+        if get_script_run_ctx(suppress_warning=True) is not None
+        else {}
+    )
+    for key, value in updates.items():
+        if value is None:
+            params.pop(key, None)
+        else:
+            params[key] = value
+    return "?" + urlencode(params)
+
+
+def _tree_query_values(key):
+    if get_script_run_ctx(suppress_warning=True) is None:
+        return []
+    value = st.query_params.get_all(key)
+    if value:
+        return value
+    single_value = st.query_params.get(key)
+    if isinstance(single_value, list):
+        return single_value
+    return [single_value] if single_value else []
 
 
 def _reference_context_messages(df):
@@ -386,16 +564,22 @@ def _node_style(active=False, auxiliary=False, availability=None):
     return style, fill, border, text, penwidth
 
 
-def _n(nid, label, active=False, auxiliary=False, availability=None):
+def _n(nid, label, active=False, auxiliary=False, availability=None, url=None):
     """Generate a DOT node."""
     style, fill, border, text, penwidth = _node_style(
         active=active, auxiliary=auxiliary, availability=availability
     )
     label = _availability_label(label, availability)
     fontsize = 10 if auxiliary else 11
+    link_attrs = (
+        f', URL="{url}", target="_self", tooltip="Click to select"'
+        if url
+        else ""
+    )
     return (f'    {nid} [label="{label}", style="{style}", '
             f'fillcolor="{fill}", color="{border}", '
-            f'fontcolor="{text}", penwidth={penwidth}, fontsize={fontsize}];')
+            f'fontcolor="{text}", penwidth={penwidth}, '
+            f'fontsize={fontsize}{link_attrs}];')
 
 
 def _e(src, dst, active=False, auxiliary=False, tier=None):
@@ -409,7 +593,13 @@ def _e(src, dst, active=False, auxiliary=False, tier=None):
         return f'    {src} -> {dst} [color="{_DIM_BORDER}", penwidth=0.8];'
 
 
-def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
+def _summary_node(nid, label="..."):
+    return (f'    {nid} [label="{label}", style="filled,dashed", '
+            f'fillcolor="{_DIM_FILL}", color="{_DIM_BORDER}", '
+            f'fontcolor="{_DIM_TEXT}", penwidth=1.0, fontsize=11];')
+
+
+def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_key=None,
                    aux_step_key=None, instrument_key=None,
                    availability=None):
     """Build a Graphviz DOT string showing the linear workflow with auxiliary branches."""
@@ -421,19 +611,28 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
         '    bgcolor="transparent";',
         '    node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=11, margin="0.15,0.08"];',
         '    edge [arrowsize=0.7];',
-        '    splines=ortho;',
+        '    splines=polyline;',
         "",
     ]
 
     # ── Problem Formulation (always shown) ──────────────────
-    lines.append(_n("PF", "📋 Problem Formulation", active=True))
+    pf_active = availability.get("PF", {}).get("active", False)
+    lines.append(
+        _n(
+            "PF",
+            "📋 Problem Formulation",
+            active=pf_active,
+            availability=availability.get("PF"),
+            url=_tree_query_url(tree_problem="1"),
+        )
+    )
     lines.append("")
 
     # ── Domain branch ───────────────────────────────────────
     for dk, lab in [("Monitoring", "🔬 Monitoring"), ("Toxicology", "🧫 Toxicology"), ("Risk Assessment", "⚖️ Risk Assessment")]:
         nid = dk.upper().replace(" ", "_")
         act = (domain == dk)
-        lines.append(_n(nid, lab, active=act))
+        lines.append(_n(nid, lab, active=act, url=_tree_query_url(tree_domain=dk, tree_problem=None)))
         lines.append(_e("PF", nid, active=act))
     lines.append("")
 
@@ -447,15 +646,34 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
         if matrix_key and matrix_key in MATRICES:
             mv = MATRICES[matrix_key]
             mat_id = f"MAT_{matrix_key.upper()}"
-            lines.append(_n(mat_id, f'{mv["icon"]} {mv["label"]}', active=True))
+            lines.append(
+                _n(
+                    mat_id,
+                    f'{mv["icon"]} {mv["label"]}',
+                    active=True,
+                    url=_tree_query_url(tree_matrix=matrix_key),
+                )
+            )
             lines.append(_e(parent, mat_id, active=True))
             chain_parent = mat_id
         else:
             chain_parent = parent
 
+        collapse_monitoring_core = core_step_key == "analysis"
+
         # Linear core chain
         prev = chain_parent
-        for s in core_steps:
+        rendered_steps = (
+            [step for step in core_steps if step["key"] == core_step_key]
+            if collapse_monitoring_core
+            else core_steps
+        )
+        if collapse_monitoring_core:
+            lines.append(_summary_node("CORE_BEFORE", "..."))
+            lines.append(_e(prev, "CORE_BEFORE"))
+            prev = "CORE_BEFORE"
+
+        for s in rendered_steps:
             sid = f"CORE_{s['key'].upper()}"
             node_availability = availability.get(sid)
             act = (core_step_key == s["key"])
@@ -465,6 +683,7 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     f'{s["icon"]} {s["label"]}',
                     active=act,
                     availability=node_availability,
+                    url=_tree_query_url(tree_core_step=s["key"]),
                 )
             )
             lines.append(
@@ -485,6 +704,10 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                             iv["label"],
                             active=iact,
                             availability=node_availability,
+                            url=_tree_query_url(
+                                tree_core_step="analysis",
+                                tree_instrument=ik,
+                            ),
                         )
                     )
                     lines.append(
@@ -495,6 +718,10 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                             tier=node_availability.get("tier") if node_availability else None,
                         )
                     )
+
+        if collapse_monitoring_core:
+            lines.append(_summary_node("CORE_AFTER", "..."))
+            lines.append(_e(prev, "CORE_AFTER"))
 
         # Auxiliary branches (off the side of the chain)
         # Attach them to the chain parent (matrix node) with dashed edges
@@ -512,6 +739,7 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     active=aact,
                     auxiliary=True,
                     availability=node_availability,
+                    url=_tree_query_url(tree_aux_step=a["key"]),
                 )
             )
             lines.append(
@@ -524,16 +752,27 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                 )
             )
 
-        # Force auxiliary nodes to same rank (horizontal cluster)
-        aux_ids = [f"AUX_{a['key'].upper()}" for a in aux_steps]
-        lines.append(f'    {{ rank=same; {"; ".join(aux_ids)} }}')
-
     elif domain == "Toxicology":
         core_steps = TOX_CORE
         aux_steps = TOX_AUXILIARY
         parent = "TOXICOLOGY"
+        chain_parent = parent
 
-        prev = parent
+        if receptor_key and receptor_key in RECEPTORS:
+            rv = RECEPTORS[receptor_key]
+            receptor_id = f"RECEPTOR_{receptor_key.upper()}"
+            lines.append(
+                _n(
+                    receptor_id,
+                    f'{rv["icon"]} {rv["label"]}',
+                    active=True,
+                    url=_tree_query_url(tree_receptor=receptor_key),
+                )
+            )
+            lines.append(_e(parent, receptor_id, active=True))
+            chain_parent = receptor_id
+
+        prev = chain_parent
         for s in core_steps:
             sid = f"CORE_{s['key'].upper()}"
             act = (core_step_key == s["key"])
@@ -544,6 +783,7 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     f'{s["icon"]} {s["label"]}',
                     active=act,
                     availability=node_availability,
+                    url=_tree_query_url(tree_tox_core=s["key"]),
                 )
             )
             lines.append(
@@ -564,27 +804,43 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     active=aact,
                     auxiliary=True,
                     availability=node_availability,
+                    url=_tree_query_url(tree_tox_aux=a["key"]),
                 )
             )
             lines.append(
                 _e(
-                    parent,
+                    chain_parent,
                     aid,
                     active=aact,
                     auxiliary=(not aact),
                     tier=node_availability.get("tier") if node_availability else None,
                 )
             )
-
         aux_ids = [f"AUX_{a['key'].upper()}" for a in aux_steps]
-        lines.append(f'    {{ rank=same; {"; ".join(aux_ids)} }}')
+        if aux_ids:
+            lines.append(f'    {{ rank=same; {"; ".join(aux_ids)} }}')
 
     elif domain == "Risk Assessment":
-        core_steps = RA_CORE
+        core_steps = _ra_core_for_receptor(receptor_key)
         aux_steps = RA_AUXILIARY
         parent = "RISK_ASSESSMENT"
+        chain_parent = parent
 
-        prev = parent
+        if receptor_key and receptor_key in RECEPTORS:
+            rv = RECEPTORS[receptor_key]
+            receptor_id = f"RECEPTOR_{receptor_key.upper()}"
+            lines.append(
+                _n(
+                    receptor_id,
+                    f'{rv["icon"]} {rv["label"]}',
+                    active=True,
+                    url=_tree_query_url(tree_receptor=receptor_key),
+                )
+            )
+            lines.append(_e(parent, receptor_id, active=True))
+            chain_parent = receptor_id
+
+        prev = chain_parent
         for s in core_steps:
             sid = f"CORE_{s['key'].upper()}"
             act = (core_step_key == s["key"])
@@ -595,6 +851,7 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     f'{s["icon"]} {s["label"]}',
                     active=act,
                     availability=node_availability,
+                    url=_tree_query_url(tree_ra_step=s["key"]),
                 )
             )
             lines.append(
@@ -613,23 +870,63 @@ def build_graphviz(domain=None, matrix_key=None, core_step_key=None,
                     active=aact,
                     auxiliary=True,
                     availability=node_availability,
+                    url=_tree_query_url(tree_ra_aux=a["key"]),
                 )
             )
             lines.append(
                 _e(
-                    parent,
+                    chain_parent,
                     aid,
                     active=aact,
                     auxiliary=(not aact),
                     tier=node_availability.get("tier") if node_availability else None,
                 )
             )
+        aux_ids = [f"AUX_{a['key'].upper()}" for a in aux_steps]
+        if aux_ids:
+            lines.append(f'    {{ rank=same; {"; ".join(aux_ids)} }}')
 
     lines.append("}")
     return "\n".join(lines)
 
 
 # ── REFERENCE DISPLAY ───────────────────────────────────────
+
+def _normalize_abstract_text(value):
+    """Clean abstract text for display without modifying the source dataframe."""
+    if value is None or pd.isna(value):
+        return ""
+    text = str(value)
+    text = re.sub(r"[\r\n\t]+", " ", text)
+    text = re.sub(r"\s*[•●▪◦‣⁃]\s*", " ", text)
+    text = re.sub(r"\s+(?:[-*])\s+", " ", text)
+    text = re.sub(r"\s*\b(?:Abstract|Summary)\b\s*[:.-]?\s*", " ", text, count=1, flags=re.I)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def _row_text(row, df, candidates):
+    value = row.get(_find_col(df, candidates) or "", "")
+    if pd.isna(value) or str(value).strip().lower() in ["nan", "none", ""]:
+        return ""
+    return str(value).strip()
+
+def _compact_export_df(df):
+    """Return a small, stable export table for filtered reference sets."""
+    output = pd.DataFrame(index=df.index)
+    column_map = {
+        "Short Citation": ["Short Citation"],
+        "Year": ["Year"],
+        "Document Type": ["Document Type"],
+        "Tier": ["Priority Tier", "Tier", "tier_num"],
+        "DOI": ["DOI/URL", "DOI", "URL"],
+        "Key Notes": ["Key Notes"],
+    }
+    for label, candidates in column_map.items():
+        col = _find_col(df, candidates)
+        output[label] = df[col] if col else ""
+    return output.reset_index(drop=True)
+
 
 def _display_compact_results(df, tier_expanders=True):
     df_sorted = _sort_tier(df)
@@ -665,41 +962,91 @@ def _display_compact_results(df, tier_expanders=True):
 
         with tier_container:
             for _, row in tier_df.iterrows():
-                cite = row.get(_find_col(df, ["Short Citation"]) or "", "?")
-                year = row.get(_find_col(df, ["Year"]) or "", "")
-                dtype = row.get(_find_col(df, ["Document Type"]) or "", "")
-                notes = row.get(_find_col(df, ["Key Notes"]) or "", "")
-                doi = row.get(_find_col(df, ["DOI/URL", "DOI"]) or "", "")
-
-                cite = "" if pd.isna(cite) else str(cite)
-                year = "" if pd.isna(year) else str(year).replace(".0", "")
-                dtype = "" if pd.isna(dtype) else str(dtype)
-                notes = "" if pd.isna(notes) else str(notes)
-                doi = "" if pd.isna(doi) or str(doi).strip().lower() in ["nan", ""] else str(doi)
-                doi_html = f" · <a href='{doi}'>link</a>" if doi else ""
+                cite = _row_text(row, df, ["Short Citation"])
+                year = _row_text(row, df, ["Year"]).replace(".0", "")
+                dtype = _row_text(row, df, ["Document Type"])
+                notes = _row_text(row, df, ["Key Notes"])
+                doi = _row_text(row, df, ["DOI/URL", "DOI"])
+                abstract = _row_text(row, df, ["Abstract"])
+                metrics = _row_text(row, df, ["Key Metrics / Output", "Key Metrics", "Output"])
+                size_range = _row_text(row, df, ["Particle Size Range"])
+                scope = _row_text(row, df, ["Scope"])
+                status = _row_text(row, df, ["Status"])
+                cite_safe = html.escape(cite)
+                year_safe = html.escape(year)
+                dtype_safe = html.escape(dtype)
+                notes_preview = notes[:200] + ("..." if len(notes) > 200 else "")
+                notes_safe = html.escape(notes_preview)
+                metrics_preview = metrics[:150] + ("..." if len(metrics) > 150 else "")
+                metrics_safe = html.escape(metrics_preview)
+                size_range_safe = html.escape(size_range)
+                scope_safe = html.escape(scope)
+                status_safe = html.escape(status)
+                doi_safe = html.escape(doi, quote=True)
+                doi_html = f" · <a href='{doi_safe}'>link</a>" if doi else ""
+                tier_context = ""
+                if tier_num <= 2:
+                    if scope:
+                        tier_context += f" · 🎯 {scope_safe}"
+                    if status:
+                        tier_context += f" · 📋 {status_safe}"
+                metrics_html = (
+                    f"<br/><span style='font-size:0.8em; color:#7a6b2e;'>"
+                    f"📊 {metrics_safe}</span>"
+                    if metrics and metrics != "0"
+                    else ""
+                )
+                size_html = (
+                    f"<br/><span style='font-size:0.8em; color:#555;'>📐 {size_range_safe}</span>"
+                    if size_range and size_range not in ["0", "Not specified"]
+                    else ""
+                )
 
                 st.markdown(
                     f"<div style='border-left:3px solid {color}; padding:4px 8px; "
                     f"margin-bottom:4px; font-size:0.9em;'>"
-                    f"<strong>{icon} {cite}</strong> ({year}) "
-                    f"<span style='color:{color};'>— {dtype}</span>{doi_html}<br/>"
+                    f"<strong>{icon} {cite_safe}</strong> ({year_safe}) "
+                    f"<span style='color:{color};'>— {dtype_safe}</span>{doi_html}"
+                    f"<span style='color:#555; font-size:0.8em;'>{tier_context}</span><br/>"
                     f"<span style='color:#555; font-size:0.85em;'>"
-                    f"{notes[:200]}{'...' if len(notes) > 200 else ''}</span>"
+                    f"{notes_safe}</span>"
+                    f"{metrics_html}"
+                    f"{size_html}"
                     f"</div>",
                     unsafe_allow_html=True,
                 )
+                if abstract:
+                    with st.expander("Abstract", expanded=False):
+                        st.write(_normalize_abstract_text(abstract))
 
-    csv = df_sorted.to_csv(index=False)
-    st.download_button(
-        "📥 Export", csv, "filtered_references.csv", "text/csv",
-        key=f"tree_export_{hash(tuple(df_sorted.index.tolist()))}",
-    )
+    compact_csv = _compact_export_df(df_sorted).to_csv(index=False)
+    full_csv = df_sorted.to_csv(index=False)
+    export_cols = st.columns(2)
+    key_base = hash(tuple(df_sorted.index.tolist()))
+    with export_cols[0]:
+        st.download_button(
+            "📥 Export (compact)",
+            compact_csv,
+            "filtered_references_compact.csv",
+            "text/csv",
+            key=f"tree_export_compact_{key_base}",
+        )
+    with export_cols[1]:
+        st.download_button(
+            "📥 Export (full)",
+            full_csv,
+            "filtered_references_full.csv",
+            "text/csv",
+            key=f"tree_export_full_{key_base}",
+        )
 
 
 # ── MAIN RENDER ─────────────────────────────────────────────
 
 def render_decision_tree(df, tree=None):
     """Render the workflow tree with separate core and auxiliary results."""
+    _sync_tree_query_params()
+
     st.markdown("### 🌳 Study Design Workflow")
     st.markdown(
         "Follow the linear workflow below. **Core steps** (solid lines) proceed sequentially. "
@@ -707,6 +1054,7 @@ def render_decision_tree(df, tree=None):
     )
 
     matrix_key = None
+    receptor_key = None
     instrument_key = None
     core_step_key = None
     aux_step_key = None
@@ -720,6 +1068,9 @@ def render_decision_tree(df, tree=None):
     aux_options = {}
     detail_selector = None
     availability = {}
+    problem_selected = st.session_state.get("tree_problem") == "1"
+    problem_result_df = _filter_problem_formulation(df)
+    availability["PF"] = _availability(problem_result_df) | {"active": problem_selected}
 
     study_col, matrix_col = st.columns([1.1, 1.2])
     with study_col:
@@ -753,11 +1104,24 @@ def render_decision_tree(df, tree=None):
                 format_func=lambda key: matrix_options[key],
                 key="tree_matrix",
             )
+        particle_defaults = [
+            key for key in _tree_query_values("tree_particle_type")
+            if key in PARTICLE_TYPES
+        ]
+        particle_keys = st.multiselect(
+            "Particle/polymer type",
+            list(PARTICLE_TYPES.keys()),
+            default=particle_defaults,
+            format_func=lambda key: PARTICLE_TYPES[key]["label"],
+            key="tree_particle_type",
+        )
+        st.caption("Showing references matching ANY selected type")
         core_step_key = _state_choice("tree_core_step", list(core_options.keys()))
         aux_step_key = _state_choice("tree_aux_step", list(aux_options.keys()))
 
         matrix_info = MATRICES[matrix_key]
         context_df = _filter_matrix(df_domain, matrix_info["kw"])
+        context_df = _filter_particle_types(context_df, particle_keys)
         core_info = next(
             step for step in MONITORING_CORE if step["key"] == core_step_key
         )
@@ -799,7 +1163,11 @@ def render_decision_tree(df, tree=None):
         availability.update(_instrument_availability(context_df))
 
     elif domain == "Toxicology":
-        context_df = _filter_domain(df, "Toxicology")
+        df_domain = _filter_domain(df, "Toxicology")
+        receptor_options = {
+            key: f'{value["icon"]} {value["label"]}'
+            for key, value in RECEPTORS.items()
+        }
         core_options = {
             step["key"]: f'{step["icon"]} {step["label"]}'
             for step in TOX_CORE
@@ -812,12 +1180,14 @@ def render_decision_tree(df, tree=None):
         aux_selector_key = "tree_tox_aux"
 
         with matrix_col:
-            st.selectbox(
-                "Matrix",
-                ["Not applicable"],
-                disabled=True,
-                key="tree_tox_matrix_placeholder",
+            receptor_key = st.selectbox(
+                "Target receptor",
+                list(receptor_options.keys()),
+                format_func=lambda key: receptor_options[key],
+                key="tree_receptor",
             )
+        receptor_info = RECEPTORS[receptor_key]
+        context_df = _filter_target_receptor(df_domain, receptor_info["kw"])
         core_step_key = _state_choice("tree_tox_core", list(core_options.keys()))
         aux_step_key = _state_choice("tree_tox_aux", list(aux_options.keys()))
 
@@ -853,10 +1223,10 @@ def render_decision_tree(df, tree=None):
         )
 
     elif domain == "Risk Assessment":
-        context_df = df
-        core_options = {
-            step["key"]: f'{step["icon"]} {step["label"]}'
-            for step in RA_CORE
+        df_domain = _filter_domain(df, "Risk Assessment")
+        receptor_options = {
+            key: f'{value["icon"]} {value["label"]}'
+            for key, value in RECEPTORS.items()
         }
         aux_options = {
             step["key"]: f'{step["icon"]} {step["label"]}'
@@ -866,16 +1236,23 @@ def render_decision_tree(df, tree=None):
         aux_selector_key = "tree_ra_aux"
 
         with matrix_col:
-            st.selectbox(
-                "Matrix",
-                ["Not applicable"],
-                disabled=True,
-                key="tree_ra_matrix_placeholder",
+            receptor_key = st.selectbox(
+                "Target receptor",
+                list(receptor_options.keys()),
+                format_func=lambda key: receptor_options[key],
+                key="tree_receptor",
             )
+        receptor_info = RECEPTORS[receptor_key]
+        context_df = _filter_target_receptor(df_domain, receptor_info["kw"])
+        ra_core_steps = _ra_core_for_receptor(receptor_key)
+        core_options = {
+            step["key"]: f'{step["icon"]} {step["label"]}'
+            for step in ra_core_steps
+        }
         core_step_key = _state_choice("tree_ra_step", list(core_options.keys()))
         aux_step_key = _state_choice("tree_ra_aux", list(aux_options.keys()))
 
-        core_info = next(step for step in RA_CORE if step["key"] == core_step_key)
+        core_info = next(step for step in ra_core_steps if step["key"] == core_step_key)
         aux_info = next(
             step for step in RA_AUXILIARY if step["key"] == aux_step_key
         )
@@ -884,13 +1261,14 @@ def render_decision_tree(df, tree=None):
         core_result_df = _apply_step_filters(context_df, core_info)
         aux_result_df = _apply_step_filters(context_df, aux_info)
 
-        availability.update(_workflow_availability(context_df, RA_CORE, "CORE"))
+        availability.update(_workflow_availability(context_df, ra_core_steps, "CORE"))
         availability.update(_workflow_availability(context_df, RA_AUXILIARY, "AUX"))
 
     st.markdown("---")
     dot = build_graphviz(
         domain=domain,
         matrix_key=matrix_key,
+        receptor_key=receptor_key,
         core_step_key=core_step_key,
         aux_step_key=aux_step_key,
         instrument_key=instrument_key,
@@ -907,6 +1285,9 @@ def render_decision_tree(df, tree=None):
     if matrix_key:
         matrix_info = MATRICES[matrix_key]
         path_parts.append(f'{matrix_info["icon"]} {matrix_info["label"]}')
+    if receptor_key:
+        receptor_info = RECEPTORS[receptor_key]
+        path_parts.append(f'{receptor_info["icon"]} {receptor_info["label"]}')
     if core_label:
         path_parts.append(core_label)
     if instrument_key and instrument_key in INSTRUMENTS:
@@ -916,6 +1297,12 @@ def render_decision_tree(df, tree=None):
     st.markdown(f"**📍 Core Path:** {' → '.join(path_parts)}")
     if aux_label:
         st.markdown(f"**🔧 Auxiliary Support:** {aux_label}")
+
+    with st.expander(
+        f"Problem Formulation references ({len(problem_result_df)})",
+        expanded=problem_selected,
+    ):
+        _display_compact_results(problem_result_df, tier_expanders=False)
 
     if core_selector_key:
         core_control_cols = st.columns([1.5, 1.2]) if detail_selector else [st.container()]
