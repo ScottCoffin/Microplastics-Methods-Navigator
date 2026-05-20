@@ -3,14 +3,13 @@ Microplastics Methods Navigator
 Interactive decision-tree tool for researchers planning MP monitoring or toxicology studies.
 Reads from the crosswalk Excel file and guides users to the best available references by tier.
 
-Usage:
-    pip install streamlit pandas openpyxl pyyaml
-    streamlit run app.py
+Usage from the repository root:
+    pip install -r requirements.txt
+    streamlit run methods_navigator/app.py
 
 Expects:
-    - crosswalk.xlsx  (your crosswalk workbook — Crosswalk Table sheet)
-    - tree_structure.yaml  (decision tree configuration)
-Both in the same directory as app.py.
+    - methods_navigator/data/crosswalk.xlsx
+    - methods_navigator/config/tree_structure.yaml
 """
 
 import streamlit as st
@@ -24,11 +23,15 @@ from pathlib import Path
 # ── CONFIG ──────────────────────────────────────────────────
 
 APP_DIR = Path(__file__).resolve().parent
-if str(APP_DIR) not in sys.path:
-    sys.path.insert(0, str(APP_DIR))
-CROSSWALK_FILE = APP_DIR / "crosswalk.xlsx"
+PROJECT_ROOT = APP_DIR.parent
+for import_root in (PROJECT_ROOT, APP_DIR):
+    if str(import_root) not in sys.path:
+        sys.path.insert(0, str(import_root))
+DATA_DIR = APP_DIR / "data"
+CONFIG_DIR = APP_DIR / "config"
+CROSSWALK_FILE = DATA_DIR / "crosswalk.xlsx"
 CROSSWALK_SHEET = "Crosswalk Table"
-TREE_FILE = APP_DIR / "tree_structure.yaml"
+TREE_FILE = CONFIG_DIR / "tree_structure.yaml"
 EXPECTED_CROSSWALK_COLUMNS = {
     "Short Citation",
     "Priority Tier",
@@ -486,7 +489,7 @@ def main():
             ["Step-by-Step Navigator", "Decision Tree", "Crosswalk", "Search All References"]
         )
     else:
-        tab2, tab3, tab4 = st.tabs(["Decision Tree", "Crosswalk", "Search All References"])
+        tab2, tab3, tab4, tab5, tab6 = st.tabs(["Decision Tree", "Crosswalk", "Search All References", "Glossary", "Citation & License"])
 
     if step_by_step_enabled:
         with tab1:
@@ -578,7 +581,7 @@ def main():
                         "Sample Processing / Extraction"
                     ),
                     "📦 Reference Materials / Controls": (
-                        "Reference Materials / +Controls"
+                        "Material Standards - materials"
                     ),
                     "🧹 Blanks & Contamination Control": (
                         "Blanks & Contamination Control"
@@ -686,7 +689,7 @@ def main():
                         "Toxicology: Study Design & Dosimetry"
                     ),
                     "📦 Reference / Test Particles": (
-                        "Reference Materials / +Controls"
+                        "Material Standards - materials"
                     ),
                     "💊 Dosimetry (in vitro)": (
                         "Toxicology: Study Design & Dosimetry"
@@ -839,15 +842,23 @@ def main():
                 )
     
     with tab2:
-        from visual_tree_tab import render_decision_tree
+        from tabs.visual_tree_tab import render_decision_tree
         render_decision_tree(df, tree)
 
     with tab3:
-        from crosswalk_tab import render_crosswalk_tab
+        from tabs.crosswalk_tab import render_crosswalk_tab
         render_crosswalk_tab(df)
 
     with tab4:
         render_search_all_references(df)
+
+    with tab5:
+        from tabs.glossary_tab import render_glossary_tab
+        render_glossary_tab()
+
+    with tab6:
+        from tabs.citation_tab import render_citation_tab
+        render_citation_tab()
 
     # ── FOOTER ──────────────────────────────────────────────
     st.divider()
@@ -855,7 +866,7 @@ def main():
         "<div style='text-align: center; color: #888; "
         "font-size: 0.85em;'>"
         "<strong>Microplastics Methods Navigator</strong> · "
-        "MIT License 2026<br/>"
+        "AGPL-3.0 License 2026<br/>"
         f"Crosswalk entries: {len(df)} · "
         f"Tier 1: {len(df[df['tier_num'] == 1])} · "
         f"Tier 2: {len(df[df['tier_num'] == 2])} · "

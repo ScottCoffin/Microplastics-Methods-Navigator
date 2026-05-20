@@ -78,7 +78,9 @@ monitoring_workflow:
     reference_materials:
       label: "📦 Reference Materials / Positive Controls"
       description: "Spike standards, calibration materials, reference particles"
-      crosswalk_column: "Reference Materials / +Controls"
+      crosswalk_columns:
+        - "Material Standards - materials"
+        - "Material Standards - protocol"
     blanks_qc:
       label: "🧹 Blanks & Contamination Control"
       description: "Procedural blanks, field blanks, contamination prevention"
@@ -144,7 +146,9 @@ tox_workflow:
     reference_particles:
       label: "📦 Reference / Test Particles"
       description: "Selecting or preparing environmentally relevant test materials"
-      crosswalk_column: "Reference Materials / +Controls"
+      crosswalk_columns:
+        - "Material Standards - materials"
+        - "Material Standards - protocol"
       domain_filter: "Toxicology"
     dosimetry:
       label: "💊 Dosimetry (in vitro)"

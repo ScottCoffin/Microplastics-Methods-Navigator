@@ -1,1 +1,7 @@
-methods_navigator/.env
+.env
+**/.env
+__pycache__/
+*.py[cod]
+.playwright-cli/
+docs/generated/
+streamlit_server*.log

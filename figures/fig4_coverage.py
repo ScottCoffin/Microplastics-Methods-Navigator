@@ -30,7 +30,7 @@ HERE   = pathlib.Path(__file__).parent
 OUTDIR = HERE
 OUTDIR.mkdir(parents=True, exist_ok=True)
 
-XLSX = HERE.parent / "MNP Quality Standards Crosswalk v3.xlsx"
+XLSX = HERE.parent / "methods_navigator/data/crosswalk.xlsx"
 wb = openpyxl.load_workbook(XLSX)
 ws = wb["Crosswalk Table"]
 papers = [row for row in ws.iter_rows(min_row=3, values_only=True) if row[0] is not None]

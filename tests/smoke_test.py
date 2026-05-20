@@ -1,8 +1,8 @@
 """
 Headless smoke test for the Microplastics Methods Navigator.
 
-Run from methods_navigator/:
-    python smoke_test.py
+Run from the repository root:
+    python tests/smoke_test.py
 """
 
 import py_compile
@@ -11,14 +11,18 @@ from pathlib import Path
 
 import pandas as pd
 
-from app import (
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from methods_navigator.app import (
     filter_by_domain,
     filter_by_matrix,
     filter_by_topic_column,
     load_crosswalk,
     load_tree,
 )
-from visual_tree_tab import (
+from methods_navigator.tabs.visual_tree_tab import (
     INSTRUMENTS,
     MATRICES,
     MONITORING_AUXILIARY,
@@ -58,24 +62,33 @@ def check(condition, message, errors):
 
 def main():
     errors = []
-    base_dir = Path(__file__).resolve().parent
+    app_dir = PROJECT_ROOT / "methods_navigator"
 
-    for filename in [
-        "crosswalk.xlsx",
-        "tree_structure.yaml",
+    expected_files = {
+        "crosswalk.xlsx": app_dir / "data" / "crosswalk.xlsx",
+        "tree_structure.yaml": app_dir / "config" / "tree_structure.yaml",
+        "app.py": app_dir / "app.py",
+        "visual_tree_tab.py": app_dir / "tabs" / "visual_tree_tab.py",
+        "crosswalk_tab.py": app_dir / "tabs" / "crosswalk_tab.py",
+        "glossary_tab.py": app_dir / "tabs" / "glossary_tab.py",
+        "citation_tab.py": app_dir / "tabs" / "citation_tab.py",
+    }
+    for label, path in expected_files.items():
+        check(path.exists(), f"{label} exists", errors)
+
+    for label in [
         "app.py",
         "visual_tree_tab.py",
         "crosswalk_tab.py",
+        "glossary_tab.py",
+        "citation_tab.py",
     ]:
-        check((base_dir / filename).exists(), f"{filename} exists", errors)
-
-    for filename in ["app.py", "visual_tree_tab.py", "crosswalk_tab.py"]:
         try:
-            py_compile.compile(str(base_dir / filename), doraise=True)
-            print(f"OK: {filename} compiles")
+            py_compile.compile(str(expected_files[label]), doraise=True)
+            print(f"OK: {label} compiles")
         except py_compile.PyCompileError as exc:
-            print(f"FAIL: {filename} compile error: {exc.msg}")
-            errors.append(f"{filename} compile error")
+            print(f"FAIL: {label} compile error: {exc.msg}")
+            errors.append(f"{label} compile error")
 
     try:
         tree = load_tree()
@@ -205,7 +218,7 @@ def main():
             "Zoomable diagram enables requested pan/zoom settings",
             errors,
         )
-        visual_tree_source = (base_dir / "visual_tree_tab.py").read_text(encoding="utf-8")
+        visual_tree_source = expected_files["visual_tree_tab.py"].read_text(encoding="utf-8")
         check(
             "components.html" not in visual_tree_source,
             "Zoomable diagram avoids deprecated HTML component API",

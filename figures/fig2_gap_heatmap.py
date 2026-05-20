@@ -14,7 +14,7 @@ Facet 2 (bottom) — Toxicology Workflow
 Hover shows per-paper details: analytical method(s), particle size range covered,
 key metrics reported (mass vs. count vs. full characterization), and contextual notes.
 
-Data source: MNP Quality Standards Crosswalk v3.xlsx
+Data source: methods_navigator\data\crosswalk.xlsx
 
 Tier color scheme
   Tier 1  |  #6A0DAD  purple     Regulatory / Accredited SOP
@@ -33,7 +33,7 @@ import json, pathlib
 import openpyxl
 
 HERE   = pathlib.Path(__file__).parent
-XLSX   = HERE.parent / "MNP Quality Standards Crosswalk v3.xlsx"
+XLSX   = HERE.parent / "methods_navigator/data/crosswalk.xlsx"
 OUTDIR = HERE
 OUTDIR.mkdir(parents=True, exist_ok=True)
 

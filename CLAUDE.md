@@ -20,19 +20,19 @@ At each terminal node, the app displays matching references sorted by a 4-tier a
 root/
 ├── CLAUDE.md               # This file
 └── README.md               # User-facing documentation
-└──microplastics_navigator/
+└── methods_navigator/
     ├── app.py                  # Streamlit app (main entry point)
-    ├── tree_structure.yaml     # Decision tree config (nodes, branches, gap notes)
-    ├── crosswalk.xlsx          # Data source (Excel workbook with ~150 references)
-    ├── requirements.txt        # Python dependencies
+    ├── config/tree_structure.yaml
+    ├── data/crosswalk.xlsx
+    └── tabs/                   # Streamlit tab renderers
 ```
 
 ### Data Flow
 
 ```         
-crosswalk.xlsx ──read──► pandas DataFrame
+methods_navigator/data/crosswalk.xlsx ──read──► pandas DataFrame
                               │
-tree_structure.yaml ──read──► dict (YAML)
+methods_navigator/config/tree_structure.yaml ──read──► dict (YAML)
                               │
 User selections (Streamlit) ──► filter chain:
     1. filter_by_domain()      Primary Domain column
@@ -48,17 +48,17 @@ User selections (Streamlit) ──► filter chain:
 
 ### Key Design Decisions
 
-1.  **Filtering is layered, not hardcoded.** Each filter narrows the DataFrame progressively. The tree_structure.yaml defines WHICH filters to apply at each node, but the filter functions themselves are generic. Adding a new branch means adding YAML, not Python.
+1.  **Filtering is layered, not hardcoded.** Each filter narrows the DataFrame progressively. `methods_navigator/config/tree_structure.yaml` defines WHICH filters to apply at each node, but the filter functions themselves are generic. Adding a new branch means adding YAML, not Python.
 
 2.  **Column name matching is fuzzy.** The `find_column()` function handles the fact that Excel column headers often contain line breaks, inconsistent spacing, etc. It does substring matching as a fallback. This makes the app resilient to minor spreadsheet reformatting.
 
-3.  **The spreadsheet is the single source of truth.** All reference data lives in `crosswalk.xlsx`. The app never modifies it. The YAML file only defines navigation structure and gap notes.
+3.  **The spreadsheet is the single source of truth.** All reference data lives in `methods_navigator/data/crosswalk.xlsx`. The app never modifies it. The YAML file only defines navigation structure and gap notes.
 
 4.  **Gap notes surface known blind spots.** When a matrix + workflow step combination has no Tier 1/2 coverage, the YAML file provides a contextual warning. These come from a formal gap analysis conducted during the crosswalk development.
 
 ## Crosswalk Data Schema
 
-The Excel file (`methods_navigator/crosswalk.xlsx`, sheet "Crosswalk Table") has this structure:
+The Excel file (`methods_navigator/data/crosswalk.xlsx`, sheet "Crosswalk Table") has this structure:
 
 ### Bibliographic Columns
 
@@ -106,7 +106,7 @@ The YAML file defines: - **Decision nodes:** Each has a `question` and `options`
 
 ``` bash
 # Install dependencies
-pip install -r methods_navigator/requirements.txt
+pip install -r requirements.txt
 
 # Run locally
 streamlit run methods_navigator/app.py
@@ -122,14 +122,14 @@ streamlit run methods_navigator/app.py --server.runOnSave true
 
 ### Adding a new reference to the crosswalk
 
-1.  Add a row to `crosswalk.xlsx` with all required columns filled
+1.  Add a row to `methods_navigator/data/crosswalk.xlsx` with all required columns filled
 2.  Score the relevant topic columns with the appropriate tier number
 3.  Tag `Primary Domain`, `Instrumentation Tags`, and `Matrix Tags`
 4.  The app will pick it up automatically on next load (clear Streamlit cache if needed)
 
 ### Adding a new matrix or workflow branch
 
-1.  Add the new option to `tree_structure.yaml` under the appropriate parent node
+1.  Add the new option to `methods_navigator/config/tree_structure.yaml` under the appropriate parent node
 2.  Specify the filter instructions (column name, matrix keyword, etc.)
 3.  Add a gap note if the matrix has known coverage gaps
 4.  No Python changes needed unless the filter type is entirely new
@@ -143,7 +143,7 @@ streamlit run methods_navigator/app.py --server.runOnSave true
 ### Changing the tier system
 
 1.  Update `TIER_LABELS`, `TIER_COLORS`, `TIER_ICONS` dicts in `app.py`
-2.  Update the `Priority Tier` strings in `crosswalk.xlsx`
+2.  Update the `Priority Tier` strings in `methods_navigator/data/crosswalk.xlsx`
 3.  The tier number extraction regex (`Tier\s*(\d)`) must still match
 
 ## Known Limitations and TODOs

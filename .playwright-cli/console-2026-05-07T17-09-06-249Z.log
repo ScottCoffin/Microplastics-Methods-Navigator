@@ -64,3 +64,21 @@
 [  471341ms] [ERROR] Unsafe attempt to initiate navigation for frame with URL 'http://localhost:8501/' from frame with URL 'about:srcdoc'. The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
  @ :0
 [ 1115644ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[ 2147427ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[ 4070756ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/health:0
+[ 4070756ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/host-config:0
+[ 4071017ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:8501/_stcore/health:0
+[ 4071018ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:8501/_stcore/host-config:0
+[ 4444522ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[11758103ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/health:0
+[11758104ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/host-config:0
+[88067872ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[88068510ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/health:0
+[88068511ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/host-config:0
+[89568987ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:8501/_stcore/host-config:0
+[93774493ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[94565228ms] [WARNING] WebSocket onclose @ http://localhost:8501/static/js/index.D2ZqaFuW.js:17
+[101005678ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/health:0
+[101005678ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:8501/_stcore/host-config:0
+[101006449ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:8501/_stcore/health:0
+[101006567ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:8501/_stcore/host-config:0

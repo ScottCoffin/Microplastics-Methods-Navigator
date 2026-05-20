@@ -11,44 +11,45 @@ Zotero?, and Reviewed back to a workbook.
 
 Command reference:
     Install metadata dependencies:
-        python -m pip install -r metadata_requirements.txt
+        python -m pip install -r requirements-metadata.txt
 
     Beta test one DOI, dry-run:
-        python fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282
+        python scripts/fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282
 
     Write one DOI to crosswalk.metadata_filled.xlsx:
-        python fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282 --write
+        python scripts/fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282 --write
 
     Process all rows into a populated copy:
-        python fill_crosswalk_metadata.py --write
+        python scripts/fill_crosswalk_metadata.py --write
 
     Resume from crosswalk.metadata_filled.xlsx in batches of 3:
-        python fill_crosswalk_metadata.py --resume --batch-size 3
+        python scripts/fill_crosswalk_metadata.py --resume --batch-size 3
 
     Resume at a specific Excel row and process the next 3 eligible rows:
-        python fill_crosswalk_metadata.py --resume --start-row 42 --batch-size 3
+        python scripts/fill_crosswalk_metadata.py --resume --start-row 42 --batch-size 3
 
     Resume and keep looping until no unreviewed rows remain:
-        python fill_crosswalk_metadata.py --resume --batch-size 3 --batch-loop
+        python scripts/fill_crosswalk_metadata.py --resume --batch-size 3 --batch-loop
 
     After adding missing PDFs to Zotero, rerun only unreviewed rows:
-        python fill_crosswalk_metadata.py --resume --batch-size 3 --batch-loop
+        python scripts/fill_crosswalk_metadata.py --resume --batch-size 3 --batch-loop
 
     Disable DOI/URL landing-page scraping for an offline Zotero/PDF-only run:
-        python fill_crosswalk_metadata.py --resume --batch-size 3 --skip-url-scrape
+        python scripts/fill_crosswalk_metadata.py --resume --batch-size 3 --skip-url-scrape
 
-    Start a fresh audit log by deleting metadata_cache/crosswalk_metadata_audit.csv
-    before running. Otherwise, audit rows append across batches/runs.
+    Start a fresh audit log by deleting
+    methods_navigator/data/metadata_cache/crosswalk_metadata_audit.csv before
+    running. Otherwise, audit rows append across batches/runs.
 
     Overwrite existing metadata fields when needed:
-        python fill_crosswalk_metadata.py --resume --overwrite
+        python scripts/fill_crosswalk_metadata.py --resume --overwrite
 
 Legacy examples:
     Example beta test:
-    python fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282
+    python scripts/fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282
 
     Write a populated copy:
-    python fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282 --write
+    python scripts/fill_crosswalk_metadata.py --doi 10.1016/j.chemosphere.2022.134282 --write
 """
 
 from __future__ import annotations
@@ -88,6 +89,8 @@ TARGET_HEADERS = {
 }
 PDF_MAX_PAGES = 5
 PDF_MAX_MARKDOWN_LINES = 500
+DEFAULT_WORKBOOK = Path("methods_navigator/data/crosswalk.xlsx")
+DEFAULT_CACHE_DIR = Path("methods_navigator/data/metadata_cache")
 
 
 @dataclass
@@ -889,8 +892,13 @@ def apply_resume_defaults(args: argparse.Namespace, base_dir: Path) -> argparse.
     if not args.resume:
         return args
 
-    filled_workbook = base_dir / "crosswalk.metadata_filled.xlsx"
-    if args.workbook == "crosswalk.xlsx" and filled_workbook.exists():
+    workbook_path = Path(args.workbook)
+    if not workbook_path.is_absolute():
+        workbook_path = base_dir / workbook_path
+    filled_workbook = workbook_path.with_name(
+        f"{workbook_path.stem}.metadata_filled{workbook_path.suffix}"
+    )
+    if workbook_path.name == "crosswalk.xlsx" and filled_workbook.exists():
         args.workbook = str(filled_workbook)
     args.only_skipped = True
     args.write = True
@@ -900,7 +908,7 @@ def apply_resume_defaults(args: argparse.Namespace, base_dir: Path) -> argparse.
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workbook", default="crosswalk.xlsx")
+    parser.add_argument("--workbook", default=str(DEFAULT_WORKBOOK))
     parser.add_argument("--sheet", default="Crosswalk Table")
     parser.add_argument("--zotero-db", default=str(Path.home() / "Zotero" / "zotero.sqlite"))
     parser.add_argument("--zotero-storage", default=str(Path.home() / "Zotero" / "storage"))
@@ -944,8 +952,8 @@ def parse_args() -> argparse.Namespace:
             "Useful after adding PDFs for previously skipped rows."
         ),
     )
-    parser.add_argument("--cache-dir", default="metadata_cache")
-    parser.add_argument("--audit-csv", default="metadata_cache/crosswalk_metadata_audit.csv")
+    parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR))
+    parser.add_argument("--audit-csv", default=str(DEFAULT_CACHE_DIR / "crosswalk_metadata_audit.csv"))
     parser.add_argument("--env-file", default=".env")
     parser.add_argument("--model", default=os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL))
     parser.add_argument("--max-input-chars", type=int, default=25000)
@@ -1201,13 +1209,16 @@ def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    base_dir = Path(__file__).resolve().parent
+    base_dir = Path(__file__).resolve().parents[1]
     early_args = argparse.ArgumentParser(add_help=False)
     early_args.add_argument("--env-file", default=".env")
     env_args, _ = early_args.parse_known_args()
     env_path = Path(env_args.env_file)
     if not env_path.is_absolute():
         env_path = base_dir / env_path
+    legacy_env_path = base_dir / "methods_navigator" / ".env"
+    if env_args.env_file == ".env" and not env_path.exists() and legacy_env_path.exists():
+        env_path = legacy_env_path
     load_env_file(env_path)
 
     args = apply_resume_defaults(parse_args(), base_dir)

@@ -10,7 +10,7 @@ Reflects how studies actually proceed:
 Integration in app.py:
     tab1, tab2 = st.tabs(["🔍 Step-by-Step Navigator", "🌳 Decision Tree"])
     with tab2:
-        from visual_tree_tab import render_decision_tree
+        from tabs.visual_tree_tab import render_decision_tree
         render_decision_tree(df, tree)
 """
 
@@ -40,14 +40,15 @@ MONITORING_CORE = [
 
 MONITORING_AUXILIARY = [
     {"key": "definitions",     "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
-    {"key": "ref_materials",   "label": "Reference Materials",       "icon": "📦", "column": "Reference Materials / +Controls"},
+    {"key": "ref_materials",   "label": "Reference Materials",       "icon": "📦",
+     "columns": ["Material Standards - materials", "Material Standards - protocol"]},
     {"key": "blanks",          "label": "Blanks & Contamination Control", "icon": "🧹", "column": "Blanks & Contamination Control"},
 ]
 
 # Toxicology: linear core + auxiliary
 TOX_CORE = [
     {"key": "ref_particles", "label": "Reference Particle Selection / Generation", "icon": "📦",
-     "column": "Reference Materials / +Controls",
+     "columns": ["Material Standards - materials", "Material Standards - protocol"],
      "primary_focus": "Reference Materials",
      "keywords": "particle preparation;test material;ERMP;heterogeneous mixture;PS sphere;polystyrene;proxy materials"},
     {"key": "particle_char", "label": "Particle Characterization", "icon": "🔬",
@@ -147,6 +148,15 @@ TIER_LABELS = {
     2: "★★★☆ Tier 2 — Authoritative / Institutional",
     3: "★★☆☆ Tier 3 — Peer-Reviewed / Validated",
     4: "★☆☆☆ Tier 4 — Supporting / Contextual",
+}
+
+# Matrix-conditional tier overrides.
+# Format: {citation_substring: {matrix_keyword: tier, "default": tier}}
+# Used when a reference carries a different authority level depending on the
+# selected matrix (e.g., Sherrod et al. 2024 One4All is mandated by CA for
+# drinking water [Tier 1] but is voluntary / best-practice for other matrices [Tier 3]).
+MATRIX_TIER_OVERRIDES: dict[str, dict] = {
+    "Sherrod": {"Drinking Water": 1, "default": 3},
 }
 
 
@@ -283,26 +293,63 @@ def _filter_keywords(df, kws):
     return df[mask]
 
 
+def _apply_matrix_tier_overrides(df, matrix_kw):
+    """Adjust tier_num for references with matrix-conditional authority levels."""
+    if "tier_num" not in df.columns:
+        return df
+    citation_col = _find_col(df, ["Short Citation"])
+    if citation_col is None:
+        return df
+    df = df.copy()
+    for fragment, overrides in MATRIX_TIER_OVERRIDES.items():
+        mask = df[citation_col].astype(str).str.contains(fragment, case=False, na=False)
+        if not mask.any():
+            continue
+        if matrix_kw and matrix_kw in overrides:
+            df.loc[mask, "tier_num"] = overrides[matrix_kw]
+        elif "default" in overrides:
+            df.loc[mask, "tier_num"] = overrides["default"]
+    return df
+
+
+def _filter_any_columns(df, col_names):
+    """Return rows that have a non-empty score in ANY of the listed columns (OR logic)."""
+    mask = pd.Series(False, index=df.index)
+    for col_name in col_names:
+        col = _find_col(df, [col_name])
+        if col is not None:
+            mask = mask | (df[col].notna() & (df[col] != "") & (df[col] != 0))
+    return df[mask]
+
+
 def _apply_step_filters(df, step_info):
     """Apply all filters defined in a step dict."""
     result = df
     if "doc_type" in step_info:
         result = _filter_doc_type(result, step_info["doc_type"])
-    if "primary_focus" in step_info and (
-        "column" in step_info or "keywords" in step_info
-    ):
+
+    has_columns = "columns" in step_info
+    has_column = "column" in step_info
+    has_focus = "primary_focus" in step_info
+    has_keywords = "keywords" in step_info
+
+    if has_focus and (has_column or has_columns or has_keywords):
         matched_indexes = set(_filter_primary_focus(result, step_info["primary_focus"]).index)
-        if "column" in step_info:
+        if has_column:
             matched_indexes.update(_filter_column(result, step_info["column"]).index)
-        if "keywords" in step_info:
+        if has_columns:
+            matched_indexes.update(_filter_any_columns(result, step_info["columns"]).index)
+        if has_keywords:
             matched_indexes.update(_filter_keywords(result, step_info["keywords"]).index)
         return result.loc[result.index.isin(matched_indexes)]
 
-    if "column" in step_info:
+    if has_column:
         result = _filter_column(result, step_info["column"])
-    if "primary_focus" in step_info:
+    if has_columns:
+        result = _filter_any_columns(result, step_info["columns"])
+    if has_focus:
         result = _filter_primary_focus(result, step_info["primary_focus"])
-    if "keywords" in step_info:
+    if has_keywords:
         result = _filter_keywords(result, step_info["keywords"])
     return result
 
@@ -1235,6 +1282,7 @@ def render_decision_tree(df, tree=None):
 
         matrix_info = MATRICES[matrix_key]
         context_df = _filter_matrix(df_domain, matrix_info["kw"])
+        context_df = _apply_matrix_tier_overrides(context_df, matrix_info["kw"])
         context_df = _filter_particle_types(context_df, particle_keys)
         core_info = next(
             step for step in MONITORING_CORE if step["key"] == core_step_key
