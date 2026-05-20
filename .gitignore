@@ -3,5 +3,10 @@
 __pycache__/
 *.py[cod]
 .playwright-cli/
-docs/generated/
+docs/
 streamlit_server*.log
+.claude/
+tests/
+CLAUDE.md
+CLAUDE_PROJECT_MEMORY.md
+archive/

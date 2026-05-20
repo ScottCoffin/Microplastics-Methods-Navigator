@@ -6,6 +6,8 @@ This repository contains the Streamlit companion app and supporting materials fo
 
 The app helps researchers locate microplastics and nanoplastics methods, standards, guidance, and risk-assessment references by study domain, matrix, workflow step, instrumentation, particle type, and authority tier.
 
+The Microplastics Methods Navigator is an interactive decision-tree web tool for researchers designing microplastics monitoring, toxicology, or risk assessment studies. Users step through their study type, environmental matrix (drinking water, sediment, biota, air, food, soil, and others), and workflow step (sampling, extraction, analytical identification, QA/QC, reporting) to retrieve a curated, ranked list of methods, standards, and guidance documents drawn from a crosswalk of > 175 seminal references in microplastics research. Results are grouped by a four-tier authority hierarchy — from Tier 1 normative and binding standards (e.g., ISO, ASTM, government regulations and SOPs) to Tier 4 supporting literature (reviews and commentary) — and displayed with document type, key notes, and direct links, with the option to export filtered results to CSV. A full-text search across all references, an interactive visual decision tree, and a domain glossary are also available.
+
 ## Quick Start
 
 From the repository root:

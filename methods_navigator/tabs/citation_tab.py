@@ -102,8 +102,30 @@ Full license text: https://www.gnu.org/licenses/agpl-3.0.html
 """
 
 
+ABOUT_TEXT = (
+    "The Microplastics Methods Navigator is an interactive decision-tree web tool for "
+    "researchers designing microplastics monitoring, toxicology, or risk assessment studies. "
+    "Users step through their study type, environmental matrix (drinking water, sediment, "
+    "biota, air, food, soil, and others), and workflow step (sampling, extraction, analytical "
+    "identification, QA/QC, reporting) to retrieve a curated, ranked list of methods, "
+    "standards, and guidance documents drawn from a crosswalk of approximately 150 seminal "
+    "references in microplastics research. Results are grouped by a four-tier authority "
+    "hierarchy — from Tier 1 normative and binding standards (e.g., ISO, ASTM, government "
+    "regulations and SOPs) to Tier 4 supporting literature (reviews and commentary) — and "
+    "displayed with document type, key notes, and direct links, with the option to export "
+    "filtered results to CSV. A full-text search across all references, an interactive visual "
+    "decision tree, and a domain glossary are also available."
+)
+
+
 def render_citation_tab():
     """Render the citation, codebase, and license tab."""
+
+    # ── About ────────────────────────────────────────────────────────────────
+    st.markdown("### About This Tool")
+    st.markdown(ABOUT_TEXT)
+
+    st.divider()
 
     # ── Paper citation ───────────────────────────────────────────────────────
     st.markdown("### Companion Publication")

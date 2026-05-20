@@ -183,11 +183,11 @@ normalize_instrument_tags <- function(tags) {
 
   normalized <- case_when(
     is.na(tags) ~ NA_character_,
-    str_detect(tag_lower, "ted-gc-ms") ~ "TED-GC-MS",
+    str_detect(tag_lower, "ted-gc-ms") ~ "Py-GC-MS",
     str_detect(tag_lower, "py-gc|pyr-gc") ~ "Py-GC-MS",
     str_detect(tag_lower, "raman") ~ "µRaman",
     str_detect(tag_lower, "ftir") ~ "µFTIR",
-    str_detect(tag_lower, "ldir") ~ "LDIR",
+    str_detect(tag_lower, "ldir") ~ "µFTIR",
     str_detect(tag_lower, "nile red|fluorescence") ~ "Fluorescence / Nile Red",
     str_detect(tag_lower, "imagej|image analysis") ~ "Image Analysis",
     str_detect(
@@ -208,7 +208,7 @@ normalize_instrument_tags <- function(tags) {
 
 # ── FIGURE 2: Coverage Heatmap (Matrix × Workflow Step) ─────────────────────
 
-fig2_coverage_heatmap <- function(df) {
+fig1 <- function(df) {
   # Define the matrix columns and workflow step columns to cross
   matrix_defs <- tribble(
     ~matrix_label        , ~col_candidates                                      ,
@@ -359,17 +359,17 @@ fig2_coverage_heatmap <- function(df) {
     )
 
   # ggsave(
-  #   file.path(OUT_DIR, "fig2_coverage_heatmap.pdf"),
+  #   file.path(OUT_DIR, "fig1.pdf"),
   #   p,
   #   width = 10,
   #   height = 6
   # )
   ggsave(
-    file.path(OUT_DIR, "fig2_coverage_heatmap.png"),
+    file.path(OUT_DIR, "fig1.png"),
     p,
     width = 10,
     height = 6,
-    dpi = 300
+    dpi = 500
   )
   message("✅ Figure 2 saved")
   return(p)
@@ -378,7 +378,7 @@ fig2_coverage_heatmap <- function(df) {
 
 # ── FIGURE 4: Temporal Coverage (Year × Domain) ────────────────────────────
 
-fig4_temporal <- function(df) {
+fig4 <- function(df) {
   # Need Year and Primary Domain
   year_col <- find_col(df, c("year"))
   domain_col <- find_col(df, c("primary domain"))
@@ -482,9 +482,9 @@ fig4_temporal <- function(df) {
     ) +
     coord_cartesian(clip = "off")
 
-  #ggsave(file.path(OUT_DIR, "fig4_temporal.pdf"), p, width = 12, height = 5)
+  #ggsave(file.path(OUT_DIR, "fig4.pdf"), p, width = 12, height = 5)
   ggsave(
-    file.path(OUT_DIR, "fig4_temporal.png"),
+    file.path(OUT_DIR, "fig4.png"),
     p,
     width = 12,
     height = 5,
@@ -505,7 +505,7 @@ fig4_temporal <- function(df) {
 # The visible annular ring between consecutive layers encodes that tier's count.
 # Total ref count is labeled in white in the center.
 
-fig5_instrument_matrix <- function(df) {
+fig2 <- function(df) {
   inst_col <- find_col(df, c("instrumentation tags"))
 
   if (is.na(inst_col)) {
@@ -513,12 +513,12 @@ fig5_instrument_matrix <- function(df) {
     return(NULL)
   }
 
-  df_fig5 <- df %>%
+  df_fig2 <- df %>%
     filter(!is.na(tier_num), tier_num < 4)
 
-  df_fig5$.instrument_tags <- lapply(
+  df_fig2$.instrument_tags <- lapply(
     str_split(
-      ifelse(is.na(df_fig5[[inst_col]]), "", as.character(df_fig5[[inst_col]])),
+      ifelse(is.na(df_fig2[[inst_col]]), "", as.character(df_fig2[[inst_col]])),
       fixed(";")
     ),
     normalize_instrument_tags
@@ -529,22 +529,20 @@ fig5_instrument_matrix <- function(df) {
     "µFTIR",
     "µRaman",
     "Py-GC-MS",
-    "TED-GC-MS",
-    "LDIR",
     "Fluorescence / Nile Red",
     "Visual / Stereomicroscopy",
-    "Image Analysis",
     "SEM",
     "NMR",
     "Antibody-Based",
     "Density Separation",
     "H295R Assay"
   )
-  observed_instruments <- sort(unique(unlist(df_fig5$.instrument_tags)))
+  observed_instruments <- sort(unique(unlist(df_fig2$.instrument_tags)))
   instruments <- c(
     intersect(instrument_order, observed_instruments),
     setdiff(observed_instruments, instrument_order)
   )
+  instruments <- setdiff(instruments, "Image Analysis")
 
   matrix_defs <- tribble(
     ~matrix_label    , ~col_candidates                                      ,
@@ -564,7 +562,7 @@ fig5_instrument_matrix <- function(df) {
   results <- list()
 
   for (inst in instruments) {
-    inst_rows <- df_fig5 %>%
+    inst_rows <- df_fig2 %>%
       filter(vapply(
         .instrument_tags,
         function(tags) inst %in% tags,
@@ -706,13 +704,7 @@ fig5_instrument_matrix <- function(df) {
     )
 
   ggsave(
-    file.path(OUT_DIR, "fig5_instrument_matrix.pdf"),
-    p,
-    width = 11,
-    height = 6.5
-  )
-  ggsave(
-    file.path(OUT_DIR, "fig5_instrument_matrix.png"),
+    file.path(OUT_DIR, "fig2.png"),
     p,
     width = 11,
     height = 6.5,
@@ -860,147 +852,99 @@ fig6_tox_workflow <- function(df) {
     guides(fill = guide_legend(reverse = TRUE, nrow = 1))
 
   #ggsave(file.path(OUT_DIR, "fig6_tox_workflow.pdf"), p, width = 9, height = 5)
-  ggsave(
-    file.path(OUT_DIR, "fig6_tox_workflow.png"),
-    p,
-    width = 9,
-    height = 5,
-    dpi = 300
-  )
-  message("✅ Figure 6 saved")
+  # ggsave(
+  #   file.path(OUT_DIR, "fig6_tox_workflow.png"),
+  #   p,
+  #   width = 9,
+  #   height = 5,
+  #   dpi = 300
+  # )
+  #  message("✅ Figure 6 saved")
   return(p)
 }
 
 
-# ── FIGURE 4b: Workflow Step Coverage (stacked bar by tier) ─────────────────
+# ── FIGURE 3: Workflow Step Coverage (stacked bar by tier) ─────────────────
 
-fig4_coverage <- function(df) {
-  # Three-panel stacked bar chart mirroring fig4_coverage.py.
-  # Tier attribution uses per-cell integer values from topic scoring columns,
-  # consistent with fig2's matrix-column approach.
-  # "Analytical Methods (General)" excluded to avoid double-counting with
-  # FTIR / Raman / Py-GC-MS columns.
+fig3 <- function(df) {
+  # Single-panel horizontal stacked bar chart.
+  # Three super-categories: Framing & Shared Context · Monitoring · Toxicology.
+  # Tier attribution uses per-cell integer values from topic scoring columns.
 
   steps_raw <- list(
-    # Panel 1 — Framing & Sampling
+    # Panel 1 — Framing & Shared Context
     list(
       c("definitions & terminology"),
-      "Definitions &\nTerminology",
+      "Definitions & Terminology",
       1L,
       "Framing"
     ),
-    list(c("problem formulation"), "Problem\nFormulation", 1L, "Framing"),
+    list(c("problem formulation"), "Problem Formulation", 1L, "Framing"),
     list(
-      c("sampling (field methods)"),
-      "Sampling\n(Field)",
+      c("material standards - materials", "material standards - protocol"),
+      "Material Standards",
       1L,
-      "Sampling & Matrix"
+      "Shared Context"
     ),
-    list(
-      c("matrix: drinking water"),
-      "Matrix:\nDrinking Water",
-      1L,
-      "Sampling & Matrix"
-    ),
-    list(
-      c("matrix: surface"),
-      "Matrix:\nSurface /\nWastewater",
-      1L,
-      "Sampling & Matrix"
-    ),
-    list(c("matrix: sediment"), "Matrix:\nSediment", 1L, "Sampling & Matrix"),
-    list(
-      c("matrix: biota"),
-      "Matrix:\nBiota / Tissue",
-      1L,
-      "Sampling & Matrix"
-    ),
-    list(c("matrix: air"), "Matrix:\nAir / Atmos.", 1L, "Sampling & Matrix"),
-    list(c("matrix: food"), "Matrix:\nFood / Diet", 1L, "Sampling & Matrix"),
-    list(
-      c("matrix: human tissue", "human tissue/biomonitor"),
-      "Matrix:\nHuman Tissue /\nBiomonit.",
-      1L,
-      "Sampling & Matrix"
-    ),
-    # Panel 2 — Lab Processing & Analysis
+    # Panel 2 — Monitoring
+    list(c("sampling (field methods)"), "Sampling", 2L, "Monitoring"),
+    list(c("sub-sampling", "subsampling"), "Sub-sampling", 2L, "Monitoring"),
     list(
       c("sample processing / extraction", "sample processing"),
-      "Sample\nProcessing /\nExtraction",
+      "Sample Processing/Extraction",
       2L,
-      "Lab Processing"
+      "Monitoring"
     ),
+    # Five analytical-method columns summed: each paper counted once per column it scores in
     list(
-      c("sub-sampling", "subsampling"),
-      "Sub-\nsampling",
+      c(
+        "analytical methods (general)",
+        "ftir / ir spectroscopy",
+        "raman spectroscopy",
+        "py-gc-ms",
+        "imaging"
+      ),
+      "Analytical Methods",
       2L,
-      "Lab Processing"
-    ),
-    list(
-      c("reference materials"),
-      "Reference\nMaterials /\nControls",
-      2L,
-      "Lab Processing"
+      "Monitoring",
+      "sum"
     ),
     list(
       c("blanks & contamination", "blanks"),
-      "Blanks &\nContam. Control",
+      "Blanks & Contam. Control",
       2L,
-      "Lab Processing"
-    ),
-    list(
-      c("ftir / ir spectroscopy", "ftir"),
-      "FTIR / IR",
-      2L,
-      "Spectroscopic Analysis"
-    ),
-    list(
-      c("raman spectroscopy", "raman"),
-      "Raman /\nµRaman",
-      2L,
-      "Spectroscopic Analysis"
-    ),
-    list(c("py-gc-ms"), "Py-GC-MS", 2L, "Spectroscopic Analysis"),
-    list(
-      c("interlaboratory"),
-      "Interlaboratory\nValidation",
-      2L,
-      "Spectroscopic Analysis"
-    ),
-    # Panel 3 — Data, Reporting & Toxicology
-    list(
-      c("data analysis & statistics"),
-      "Data Analysis\n& Statistics",
-      3L,
-      "Data & Reporting"
+      "Monitoring"
     ),
     list(
       c("reporting & harmonization"),
-      "Reporting &\nHarmonization",
-      3L,
-      "Data & Reporting"
+      "Monitoring: Reporting & Harmonization",
+      2L,
+      "Monitoring"
     ),
     list(
       c("databases & data sharing", "databases"),
-      "Data\nDeposition",
-      3L,
-      "Data & Reporting"
+      "Monitoring: Data Deposition",
+      2L,
+      "Monitoring"
     ),
+    # Panel 3 — Toxicology
     list(
       c("toxicology: study design"),
-      "Tox: Study\nDesign &\nDosimetry",
+      "Study Design & Dosimetry",
       3L,
       "Toxicology"
     ),
+    list(c("toxicology: effects testing"), "Effects Testing", 3L, "Toxicology"),
     list(
-      c("toxicology: effects testing"),
-      "Tox: Effects\nTesting",
+      c("toxicology: reporting"),
+      "Tox: Reporting & Harmonization",
       3L,
       "Toxicology"
     ),
+    list(c("toxicology: databases"), "Tox: Data Deposition", 3L, "Toxicology"),
     list(
       c("risk assessment"),
-      "Risk\nAssessment /\nRisk Char.",
+      "Risk Assessment / Risk Char.",
       3L,
       "Toxicology"
     )
@@ -1008,19 +952,50 @@ fig4_coverage <- function(df) {
 
   step_labels_ordered <- vapply(steps_raw, `[[`, character(1), 2)
 
-  # Count tier hits per step using per-cell integer values from topic columns
+  # Count tier hits per step using per-cell integer values from topic columns.
+  # Default (multi-column): OR logic — each paper counted once at its best tier.
+  # "sum" mode: raw column counts summed — a paper scored in N columns contributes N times.
   results <- lapply(steps_raw, function(s) {
-    col_name <- find_col(df, s[[1]])
-    if (is.na(col_name)) {
+    col_names <- unique(na.omit(vapply(
+      s[[1]],
+      function(cand) find_col(df, cand),
+      character(1)
+    )))
+    agg_mode <- if (length(s) >= 5) s[[5]] else "min"
+
+    if (length(col_names) == 0) {
       tier_counts <- integer(4)
-    } else {
-      vals <- suppressWarnings(as.numeric(df[[col_name]]))
+    } else if (agg_mode == "sum") {
+      tier_counts <- Reduce(
+        `+`,
+        lapply(col_names, function(cn) {
+          vals <- suppressWarnings(as.numeric(df[[cn]]))
+          vapply(1:4, function(t) sum(vals == t, na.rm = TRUE), integer(1))
+        })
+      )
+    } else if (length(col_names) == 1) {
+      vals <- suppressWarnings(as.numeric(df[[col_names]]))
       tier_counts <- vapply(
         1:4,
         function(t) sum(vals == t, na.rm = TRUE),
         integer(1)
       )
+    } else {
+      col_mat <- do.call(
+        cbind,
+        lapply(col_names, function(cn) suppressWarnings(as.numeric(df[[cn]])))
+      )
+      row_best <- apply(col_mat, 1, function(row) {
+        v <- row[!is.na(row) & row >= 1 & row <= 4]
+        if (length(v) == 0) NA_real_ else min(v)
+      })
+      tier_counts <- vapply(
+        1:4,
+        function(t) sum(row_best == t, na.rm = TRUE),
+        integer(1)
+      )
     }
+
     tibble(
       step_label = s[[2]],
       panel = s[[3]],
@@ -1030,152 +1005,138 @@ fig4_coverage <- function(df) {
     )
   })
 
+  # Reverse factor levels so Panel 1 (Framing) sits at the top of the y-axis
   plot_df <- bind_rows(results) %>%
-    mutate(step_label = factor(step_label, levels = step_labels_ordered))
+    mutate(step_label = factor(step_label, levels = rev(step_labels_ordered)))
 
-  subgroup_colors <- c(
-    "Framing" = "#E3F2FD",
-    "Sampling & Matrix" = "#F3E5F5",
-    "Lab Processing" = "#E8F5E9",
-    "Spectroscopic Analysis" = "#FFF3E0",
-    "Data & Reporting" = "#E0F7FA",
-    "Toxicology" = "#FCE4EC"
-  )
+  # Totals per step for end-of-bar labels
+  totals_df <- plot_df %>%
+    group_by(step_label) %>%
+    summarise(total = sum(count), .groups = "drop")
 
-  panel_titles <- c(
-    "1" = "Framing & Sampling",
-    "2" = "Lab Processing & Analysis",
-    "3" = "Data, Reporting & Toxicology"
-  )
+  max_total <- max(totals_df$total, na.rm = TRUE)
 
-  make_panel <- function(pnl_num, show_legend = FALSE) {
-    pd <- plot_df %>% filter(panel == pnl_num)
-
-    # Sub-group bounding boxes for background shading (drawn before bars)
-    sg_df <- pd %>%
-      select(step_label, subgroup) %>%
-      distinct() %>%
-      mutate(xpos = as.integer(step_label)) %>%
-      group_by(subgroup) %>%
-      summarise(
-        xmin = min(xpos) - 0.5,
-        xmax = max(xpos) + 0.5,
-        .groups = "drop"
-      ) %>%
-      mutate(bg = subgroup_colors[subgroup])
-
-    tot_df <- pd %>%
-      group_by(step_label) %>%
-      summarise(total = sum(count), .groups = "drop") %>%
-      filter(total > 0)
-
-    p <- ggplot(pd, aes(x = step_label, y = count, fill = tier))
-
-    for (i in seq_len(nrow(sg_df))) {
-      p <- p +
-        annotate(
-          "rect",
-          xmin = sg_df$xmin[i],
-          xmax = sg_df$xmax[i],
-          ymin = -Inf,
-          ymax = Inf,
-          fill = sg_df$bg[i],
-          alpha = 0.30
-        )
-    }
-
-    p <- p +
-      geom_col(width = 0.7) +
-      geom_text(
-        aes(label = ifelse(count > 0, as.character(count), "")),
-        position = position_stack(vjust = 0.5),
-        size = 2.2,
-        color = "white",
-        fontface = "bold"
-      ) +
-      geom_text(
-        data = tot_df,
-        aes(x = step_label, y = total + 0.35, label = total, fill = NULL),
-        size = 2.8,
-        fontface = "bold",
-        color = "gray30",
-        inherit.aes = FALSE
-      ) +
-      scale_fill_manual(
-        values = TIER_PALETTE,
-        labels = TIER_LABELS,
-        name = "Authority Tier",
-        breaks = c("1", "2", "3", "4"),
-        drop = FALSE
-      ) +
-      scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
-      labs(
-        title = panel_titles[as.character(pnl_num)],
-        x = NULL,
-        y = "Papers (n)"
-      ) +
-      coord_cartesian(clip = "off") +
-      theme_minimal(base_size = 11) +
-      theme(
-        # Angled labels; generous bottom margin prevents bleeding into the
-        # panel below when assembled by patchwork
-        axis.text.x = element_text(
-          angle = 40,
-          hjust = 1,
-          vjust = 1,
-          size = 8.5,
-          lineheight = 0.82
-        ),
-        axis.text.y = element_text(size = 9),
-        axis.title.y = element_text(size = 9),
-        plot.title = element_text(face = "bold", size = 10.5, color = "#333"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.grid.major.y = element_line(color = "#EEEEEE"),
-        plot.margin = margin(
-          t = 4,
-          r = 10,
-          b = if (show_legend) 8 else 55,
-          l = 10
-        ),
-        legend.position = if (show_legend) "bottom" else "none",
-        legend.direction = "horizontal"
-      )
-
-    if (show_legend) {
-      p <- p + guides(fill = guide_legend(reverse = TRUE, nrow = 2))
-    }
-
-    return(p)
-  }
-
-  p1 <- make_panel(1)
-  p2 <- make_panel(2)
-  p3 <- make_panel(3, show_legend = TRUE)
-
-  combined <- (p1 / p2 / p3) +
-    plot_layout(heights = c(10, 8, 6)) +
-    plot_annotation(
-      title = "Coverage of MNP Research Workflow Steps by Priority Tier",
-      subtitle = paste0(
-        'Papers per step · per-cell tier ratings · ',
-        '"Analytical Methods (General)" excluded to avoid double-counting with FTIR / Raman / Py-GC-MS'
-      ),
-      theme = theme(
-        plot.title = element_text(face = "bold", size = 13),
-        plot.subtitle = element_text(size = 9, color = "gray40")
-      )
+  # Super-category background band positions (data-driven from factor integer y-positions)
+  group_bands <- plot_df %>%
+    select(step_label, panel) %>%
+    distinct() %>%
+    mutate(y_pos = as.integer(step_label)) %>%
+    group_by(panel) %>%
+    summarise(
+      ymin = min(y_pos) - 0.5,
+      ymax = max(y_pos) + 0.5,
+      ymid = (min(y_pos) + max(y_pos)) / 2,
+      .groups = "drop"
+    ) %>%
+    mutate(
+      bg_color = c(
+        "1" = "#E3F2FD",
+        "2" = "#E8F5E9",
+        "3" = "#FFF8E1"
+      )[as.character(panel)],
+      supercat = c(
+        "1" = "Framing & Shared Context",
+        "2" = "Monitoring",
+        "3" = "Toxicology"
+      )[as.character(panel)]
     )
 
+  label_x <- max_total + 1.5 # x start for right-side super-category labels
+
+  p <- ggplot(plot_df, aes(y = step_label, x = count, fill = tier))
+
+  # Background bands drawn first (behind bars)
+  for (i in seq_len(nrow(group_bands))) {
+    p <- p +
+      annotate(
+        "rect",
+        ymin = group_bands$ymin[i],
+        ymax = group_bands$ymax[i],
+        xmin = -Inf,
+        xmax = Inf,
+        fill = group_bands$bg_color[i],
+        alpha = 0.40
+      )
+  }
+
+  p <- p +
+    geom_col(width = 0.65) +
+    geom_text(
+      aes(label = ifelse(count > 0, as.character(count), "")),
+      position = position_stack(vjust = 0.5),
+      size = 2.4,
+      color = "white",
+      fontface = "bold"
+    ) +
+    geom_text(
+      data = totals_df,
+      aes(y = step_label, x = total + 0.25, label = total, fill = NULL),
+      size = 3,
+      fontface = "bold",
+      color = "gray30",
+      hjust = 0,
+      inherit.aes = FALSE
+    ) +
+    # Right-side super-category labels (rendered outside the panel via clip = "off")
+    annotate(
+      "text",
+      y = group_bands$ymid,
+      x = label_x,
+      label = group_bands$supercat,
+      hjust = 1.0,
+      vjust = -3,
+      size = 4,
+      fontface = "bold",
+      color = "#333333",
+      lineheight = 0.9
+    ) +
+    scale_fill_manual(
+      values = TIER_PALETTE,
+      labels = TIER_LABELS,
+      name = "Authority Tier",
+      breaks = c("1", "2", "3", "4"),
+      drop = FALSE
+    ) +
+    scale_x_continuous(
+      expand = expansion(mult = c(0, 0.05)),
+      breaks = scales::pretty_breaks(n = 6)
+    ) +
+    labs(
+      x = "Number of Papers",
+      y = NULL
+    ) +
+    coord_cartesian(clip = "off") +
+    theme_minimal(base_size = 12) +
+    theme(
+      axis.text.y = element_text(
+        size = 9.5,
+        lineheight = 0.85,
+        margin = margin(r = 8)
+      ),
+      axis.text.x = element_text(size = 10),
+      axis.title.x = element_text(size = 10),
+      panel.grid.major.y = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_line(color = "#EEEEEE"),
+      legend.text = element_text(size = 9),
+      legend.position = c(0.4, -0.11),
+      legend.direction = "horizontal",
+      plot.title = element_text(face = "bold", size = 13),
+      plot.subtitle = element_text(size = 9, color = "gray40"),
+      # Generous right margin so super-category labels (clip = "off") have room
+      plot.margin = margin(t = 10, r = 10, b = 40, l = 10)
+    ) +
+    guides(fill = guide_legend(reverse = TRUE, nrow = 1))
+
   ggsave(
-    file.path(OUT_DIR, "fig4_coverage.png"),
-    combined,
-    width = 12,
-    height = 14,
-    dpi = 300
+    file.path(OUT_DIR, "fig3.png"),
+    p,
+    width = 9,
+    height = 7,
+    dpi = 500
   )
-  message("✅ Figure 4 (coverage) saved")
-  return(combined)
+  message("✅ Figure 3 (coverage) saved")
+  return(p)
 }
 
 
@@ -1198,16 +1159,16 @@ main <- function() {
 
   # Generate figures
   message("── Generating Figure 2: Coverage Heatmap ──")
-  p2 <- fig2_coverage_heatmap(df)
+  p2 <- fig1(df)
 
   message("── Generating Figure 4: Temporal Coverage ──")
-  p4 <- fig4_temporal(df)
+  p4 <- fig4(df)
 
   message("── Generating Figure 4 (coverage): Workflow Step Coverage ──")
-  p4b <- fig4_coverage(df)
+  p4b <- fig3(df)
 
   message("── Generating Figure 5: Instrumentation × Matrix ──")
-  p5 <- fig5_instrument_matrix(df)
+  p5 <- fig2(df)
 
   message("── Generating Figure 6: Toxicology Workflow ──")
   p6 <- fig6_tox_workflow(df)
@@ -1216,7 +1177,7 @@ main <- function() {
   message("All figures saved to: ", OUT_DIR, "/")
 
   # Return all plots invisibly
-  invisible(list(fig2 = p2, fig4 = p4, fig4b = p4b, fig5 = p5, fig6 = p6))
+  invisible(list(fig1 = p2, fig4 = p4, fig4b = p4b, fig2 = p5, fig6 = p6))
 }
 
 # Run

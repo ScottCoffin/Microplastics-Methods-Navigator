@@ -489,7 +489,7 @@ def main():
             ["Step-by-Step Navigator", "Decision Tree", "Crosswalk", "Search All References"]
         )
     else:
-        tab2, tab3, tab4, tab5, tab6 = st.tabs(["Decision Tree", "Crosswalk", "Search All References", "Glossary", "Citation & License"])
+        tab2, tab3, tab4, tab5, tab6 = st.tabs(["Decision Tree", "Crosswalk", "Search All References", "Glossary", "About"])
 
     if step_by_step_enabled:
         with tab1:
@@ -697,7 +697,7 @@ def main():
                     "✅ Study Quality / Scoring": (
                         "Toxicology: Study Design & Dosimetry"
                     ),
-                    "📝 Reporting (Tox)": "Reporting & Harmonization",
+                    "📝 Reporting (Tox)": "Toxicology: Reporting & Harmonization",
                 }
         
                 if tox_step == "🧬 Effects Testing":

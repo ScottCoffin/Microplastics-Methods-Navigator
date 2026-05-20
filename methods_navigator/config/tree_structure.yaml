@@ -76,7 +76,7 @@ monitoring_workflow:
       description: "Instrument-based polymer identification and quantification"
       next: instrumentation_select
     reference_materials:
-      label: "📦 Reference Materials / Positive Controls"
+      label: "📦  Material Standards / Positive Controls"
       description: "Spike standards, calibration materials, reference particles"
       crosswalk_columns:
         - "Material Standards - materials"
@@ -143,18 +143,10 @@ tox_workflow:
       description: "Characterizing test particles: size, shape, polymer, additives"
       crosswalk_column: "Toxicology: Study Design & Dosimetry"
       domain_filter: "Toxicology"
-    reference_particles:
-      label: "📦 Reference / Test Particles"
-      description: "Selecting or preparing environmentally relevant test materials"
-      crosswalk_columns:
-        - "Material Standards - materials"
-        - "Material Standards - protocol"
-      domain_filter: "Toxicology"
     dosimetry:
       label: "💊 Dosimetry (in vitro)"
       description: "Calculating delivered dose: sedimentation, diffusion, particokinetics"
       crosswalk_column: "Toxicology: Study Design & Dosimetry"
-      keyword_filter: "dosimetry"
     effects_testing:
       label: "🧬 Effects Testing"
       description: "Assays, test organisms, endpoints, protocols"
@@ -167,7 +159,7 @@ tox_workflow:
     tox_reporting:
       label: "📝 Reporting (Tox)"
       description: "Reporting standards and data deposition for tox studies"
-      crosswalk_column: "Reporting & Harmonization"
+      crosswalk_column: "Toxicology: Reporting & Harmonization"
       domain_filter: "Toxicology"
 
 tox_system_select:

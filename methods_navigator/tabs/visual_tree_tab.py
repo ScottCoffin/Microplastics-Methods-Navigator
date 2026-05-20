@@ -39,34 +39,40 @@ MONITORING_CORE = [
 ]
 
 MONITORING_AUXILIARY = [
-    {"key": "definitions",     "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
-    {"key": "ref_materials",   "label": "Reference Materials",       "icon": "📦",
-     "columns": ["Material Standards - materials", "Material Standards - protocol"]},
-    {"key": "blanks",          "label": "Blanks & Contamination Control", "icon": "🧹", "column": "Blanks & Contamination Control"},
+    {"key": "ref_materials", "label": "Material Standards",             "icon": "📦",
+     "columns": ["Material Standards - materials", "Material Standards - protocol"],
+     "has_subtypes": True,
+     "subtypes": {
+         "materials": {"label": "Materials",            "column": "Material Standards - materials"},
+         "protocols": {"label": "Generation Protocols", "column": "Material Standards - protocol"},
+     }},
+    {"key": "blanks",        "label": "Blanks & Contamination Control", "icon": "🧹",
+     "column": "Blanks & Contamination Control"},
 ]
 
 # Toxicology: linear core + auxiliary
 TOX_CORE = [
-    {"key": "ref_particles", "label": "Reference Particle Selection / Generation", "icon": "📦",
-     "columns": ["Material Standards - materials", "Material Standards - protocol"],
-     "primary_focus": "Reference Materials",
-     "keywords": "particle preparation;test material;ERMP;heterogeneous mixture;PS sphere;polystyrene;proxy materials"},
-    {"key": "particle_char", "label": "Particle Characterization", "icon": "🔬",
+    {"key": "particle_char",   "label": "Particle Characterization", "icon": "🔬",
      "column": "Toxicology: Study Design & Dosimetry"},
-    {"key": "dosimetry",     "label": "Dosimetry",                 "icon": "💊",
-     "column": "Toxicology: Study Design & Dosimetry",
-     "keywords": "dosimetry;particokinetics;delivered dose;ISDD;PBK;sedimentation"},
-    {"key": "effects",       "label": "Effects Testing",           "icon": "🧬",
+    {"key": "dosimetry",       "label": "Dosimetry",                 "icon": "💊",
+     "column": "Toxicology: Study Design & Dosimetry"},
+    {"key": "effects",         "label": "Effects Testing",           "icon": "🧬",
      "column": "Toxicology: Effects Testing Methods", "has_test_systems": True},
-    {"key": "tox_reporting", "label": "Reporting",                 "icon": "📝",
-     "column": "Reporting & Harmonization"},
-    {"key": "data_repository", "label": "Data Repository",          "icon": "🗃️",
-     "primary_focus": "Data Repository"},
+    {"key": "tox_reporting",   "label": "Reporting",                 "icon": "📝",
+     "column": "Toxicology: Reporting & Harmonization"},
+    {"key": "data_repository", "label": "Data Repository",           "icon": "🗃️",
+     "column": "Toxicology: Databases & Data Sharing"},
 ]
 
 TOX_AUXILIARY = [
-    {"key": "definitions",   "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
-    {"key": "quality",       "label": "Study Quality & Scoring",   "icon": "✅",
+    {"key": "ref_materials", "label": "Material Standards",             "icon": "📦",
+     "columns": ["Material Standards - materials", "Material Standards - protocol"],
+     "has_subtypes": True,
+     "subtypes": {
+         "materials": {"label": "Materials",            "column": "Material Standards - materials"},
+         "protocols": {"label": "Generation Protocols", "column": "Material Standards - protocol"},
+     }},
+    {"key": "quality",       "label": "Study Quality & Scoring",        "icon": "✅",
      "column": "Toxicology: Study Design & Dosimetry",
      "keywords": "quality;QA;scoring;criteria;checklist;ToMEx"},
 ]
@@ -88,9 +94,7 @@ RA_CORE = [
      "keywords": "risk quotient;threshold;management;stochastic;TRL"},
 ]
 
-RA_AUXILIARY = [
-    {"key": "definitions", "label": "Definitions & Terminology", "icon": "📖", "column": "Definitions & Terminology"},
-]
+RA_AUXILIARY = []
 
 # Matrices
 MATRICES = {
@@ -432,6 +436,7 @@ def _sync_tree_query_params():
         "tree_ra_aux": [step["key"] for step in RA_AUXILIARY],
         "tree_instrument": ["all", *INSTRUMENTS.keys()],
         "tree_test_sys": ["all", *TEST_SYSTEMS.keys()],
+        "tree_aux_subtype": ["all", "materials", "protocols"],
     }
     last_synced = st.session_state.setdefault("_tree_synced_query_params", {})
     if _query_param_value("tree_problem") is None and last_synced.get("tree_problem") == "1":
@@ -601,6 +606,18 @@ def _instrument_availability(base_df):
     }
 
 
+def _subtype_availability(base_df, step):
+    """Compute availability for each sub-node of a has_subtypes step."""
+    if not step.get("has_subtypes"):
+        return {}
+    return {
+        f"AUXSUB_{step['key'].upper()}_{sub_key.upper()}": _availability(
+            _filter_column(base_df, sub_info["column"])
+        )
+        for sub_key, sub_info in step["subtypes"].items()
+    }
+
+
 def _node_style(active=False, auxiliary=False, availability=None):
     style = "filled"
     if active:
@@ -656,7 +673,7 @@ def _summary_node(nid, label="..."):
 
 
 def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_key=None,
-                   aux_step_key=None, instrument_key=None,
+                   aux_step_key=None, instrument_key=None, aux_subtype_key=None,
                    availability=None):
     """Build a Graphviz DOT string showing the linear workflow with auxiliary branches."""
     availability = availability or {}
@@ -682,6 +699,14 @@ def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_ke
             url=_tree_query_url(tree_problem="1"),
         )
     )
+    # ── Definitions (auxiliary to Problem Formulation) ──────
+    def_avail = availability.get("DEF")
+    lines.append(
+        _n("DEF", "📖 Definitions &\\nTerminology",
+           auxiliary=True, availability=def_avail)
+    )
+    lines.append(_e("PF", "DEF", auxiliary=True,
+                    tier=def_avail.get("tier") if def_avail else None))
     lines.append("")
 
     # ── Domain branch ───────────────────────────────────────
@@ -807,6 +832,25 @@ def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_ke
                     tier=node_availability.get("tier") if node_availability else None,
                 )
             )
+            if a.get("has_subtypes"):
+                for sub_key, sub_info in a["subtypes"].items():
+                    sub_id = f"AUXSUB_{a['key'].upper()}_{sub_key.upper()}"
+                    sub_avail = availability.get(sub_id)
+                    sub_act = (aux_subtype_key == sub_key)
+                    lines.append(
+                        _n(
+                            sub_id,
+                            sub_info["label"],
+                            active=sub_act,
+                            auxiliary=True,
+                            availability=sub_avail,
+                            url=_tree_query_url(tree_aux_step=a["key"], tree_aux_subtype=sub_key),
+                        )
+                    )
+                    lines.append(
+                        _e(aid, sub_id, active=sub_act, auxiliary=(not sub_act),
+                           tier=sub_avail.get("tier") if sub_avail else None)
+                    )
 
     elif domain == "Toxicology":
         core_steps = TOX_CORE
@@ -872,6 +916,25 @@ def build_graphviz(domain=None, matrix_key=None, receptor_key=None, core_step_ke
                     tier=node_availability.get("tier") if node_availability else None,
                 )
             )
+            if a.get("has_subtypes"):
+                for sub_key, sub_info in a["subtypes"].items():
+                    sub_id = f"AUXSUB_{a['key'].upper()}_{sub_key.upper()}"
+                    sub_avail = availability.get(sub_id)
+                    sub_act = (aux_subtype_key == sub_key)
+                    lines.append(
+                        _n(
+                            sub_id,
+                            sub_info["label"],
+                            active=sub_act,
+                            auxiliary=True,
+                            availability=sub_avail,
+                            url=_tree_query_url(tree_tox_aux=a["key"], tree_aux_subtype=sub_key),
+                        )
+                    )
+                    lines.append(
+                        _e(aid, sub_id, active=sub_act, auxiliary=(not sub_act),
+                           tier=sub_avail.get("tier") if sub_avail else None)
+                    )
         aux_ids = [f"AUX_{a['key'].upper()}" for a in aux_steps]
         if aux_ids:
             lines.append(f'    {{ rank=same; {"; ".join(aux_ids)} }}')
@@ -1219,6 +1282,7 @@ def render_decision_tree(df, tree=None):
     instrument_key = None
     core_step_key = None
     aux_step_key = None
+    aux_subtype_key = None
     core_label = ""
     aux_label = ""
     core_result_df = pd.DataFrame()
@@ -1228,10 +1292,13 @@ def render_decision_tree(df, tree=None):
     core_options = {}
     aux_options = {}
     detail_selector = None
+    aux_info = {}
     availability = {}
     problem_selected = st.session_state.get("tree_problem") == "1"
     problem_result_df = _filter_problem_formulation(df)
+    def_result_df = _filter_column(df, "Definitions & Terminology")
     availability["PF"] = _availability(problem_result_df) | {"active": problem_selected}
+    availability["DEF"] = _availability(def_result_df)
 
     study_col, matrix_col = st.columns([1.1, 1.2])
     with study_col:
@@ -1315,6 +1382,17 @@ def render_decision_tree(df, tree=None):
         else:
             core_result_df = _apply_step_filters(context_df, core_info)
         aux_result_df = _apply_step_filters(context_df, aux_info)
+        if aux_info.get("has_subtypes"):
+            _sub_opts = {"all": "📋 Both"} | {
+                k: v["label"] for k, v in aux_info["subtypes"].items()
+            }
+            _sel = _state_choice("tree_aux_subtype", list(_sub_opts.keys()))
+            if _sel and _sel != "all":
+                aux_subtype_key = _sel
+                aux_result_df = _filter_column(
+                    context_df, aux_info["subtypes"][_sel]["column"]
+                )
+                aux_label = f'{aux_info["icon"]} {aux_info["label"]} — {aux_info["subtypes"][_sel]["label"]}'
 
         availability.update(
             _workflow_availability(context_df, MONITORING_CORE, "CORE")
@@ -1323,6 +1401,8 @@ def render_decision_tree(df, tree=None):
             _workflow_availability(context_df, MONITORING_AUXILIARY, "AUX")
         )
         availability.update(_instrument_availability(context_df))
+        for _a in MONITORING_AUXILIARY:
+            availability.update(_subtype_availability(context_df, _a))
 
     elif domain == "Toxicology":
         df_domain = _filter_domain(df, "Toxicology")
@@ -1378,11 +1458,24 @@ def render_decision_tree(df, tree=None):
                     core_result_df, TEST_SYSTEMS[system_key]["keywords"]
                 )
         aux_result_df = _apply_step_filters(context_df, aux_info)
+        if aux_info.get("has_subtypes"):
+            _sub_opts = {"all": "📋 Both"} | {
+                k: v["label"] for k, v in aux_info["subtypes"].items()
+            }
+            _sel = _state_choice("tree_aux_subtype", list(_sub_opts.keys()))
+            if _sel and _sel != "all":
+                aux_subtype_key = _sel
+                aux_result_df = _filter_column(
+                    context_df, aux_info["subtypes"][_sel]["column"]
+                )
+                aux_label = f'{aux_info["icon"]} {aux_info["label"]} — {aux_info["subtypes"][_sel]["label"]}'
 
         availability.update(_workflow_availability(context_df, TOX_CORE, "CORE"))
         availability.update(
             _workflow_availability(context_df, TOX_AUXILIARY, "AUX")
         )
+        for _a in TOX_AUXILIARY:
+            availability.update(_subtype_availability(context_df, _a))
 
     elif domain == "Risk Assessment":
         df_domain = _filter_domain(df, "Risk Assessment")
@@ -1390,12 +1483,7 @@ def render_decision_tree(df, tree=None):
             key: f'{value["icon"]} {value["label"]}'
             for key, value in RECEPTORS.items()
         }
-        aux_options = {
-            step["key"]: f'{step["icon"]} {step["label"]}'
-            for step in RA_AUXILIARY
-        }
         core_selector_key = "tree_ra_step"
-        aux_selector_key = "tree_ra_aux"
 
         with matrix_col:
             receptor_key = st.selectbox(
@@ -1412,19 +1500,12 @@ def render_decision_tree(df, tree=None):
             for step in ra_core_steps
         }
         core_step_key = _state_choice("tree_ra_step", list(core_options.keys()))
-        aux_step_key = _state_choice("tree_ra_aux", list(aux_options.keys()))
 
         core_info = next(step for step in ra_core_steps if step["key"] == core_step_key)
-        aux_info = next(
-            step for step in RA_AUXILIARY if step["key"] == aux_step_key
-        )
         core_label = f'{core_info["icon"]} {core_info["label"]}'
-        aux_label = f'{aux_info["icon"]} {aux_info["label"]}'
         core_result_df = _apply_step_filters(context_df, core_info)
-        aux_result_df = _apply_step_filters(context_df, aux_info)
 
         availability.update(_workflow_availability(context_df, ra_core_steps, "CORE"))
-        availability.update(_workflow_availability(context_df, RA_AUXILIARY, "AUX"))
 
     st.markdown("---")
     dot = build_graphviz(
@@ -1434,6 +1515,7 @@ def render_decision_tree(df, tree=None):
         core_step_key=core_step_key,
         aux_step_key=aux_step_key,
         instrument_key=instrument_key,
+        aux_subtype_key=aux_subtype_key,
         availability=availability,
     )
     _render_zoomable_graphviz(dot, 800)
@@ -1466,6 +1548,12 @@ def render_decision_tree(df, tree=None):
         expanded=problem_selected,
     ):
         _display_compact_results(problem_display_df, tier_expanders=False)
+
+    with st.expander(
+        f"📖 Definitions & Terminology ({len(def_result_df)})",
+        expanded=False,
+    ):
+        _display_compact_results(def_result_df, tier_expanders=False)
 
     if core_selector_key:
         core_control_cols = st.columns([1.5, 1.2]) if detail_selector else [st.container()]
@@ -1503,13 +1591,30 @@ def render_decision_tree(df, tree=None):
 
     if aux_selector_key:
         st.markdown("**<span style='font-size:1.5em;'>Auxiliary Support</span>**", unsafe_allow_html=True)
-        st.selectbox(
-            "Auxiliary support",
-            list(aux_options.keys()),
-            format_func=lambda key: aux_options[key],
-            key=aux_selector_key,
-            label_visibility="collapsed",
-        )
+        aux_has_subtypes = aux_info.get("has_subtypes", False)
+        aux_ctrl_cols = st.columns([1.5, 1.2]) if aux_has_subtypes else [st.container()]
+        with aux_ctrl_cols[0]:
+            st.selectbox(
+                "Auxiliary support",
+                list(aux_options.keys()),
+                format_func=lambda key: aux_options[key],
+                key=aux_selector_key,
+                label_visibility="collapsed",
+            )
+        if aux_has_subtypes:
+            with aux_ctrl_cols[1]:
+                st.markdown("**<span style='font-size:1.5em;'>Sub-type</span>**", unsafe_allow_html=True)
+                _sub_opts = {"all": "📋 Both"} | {
+                    k: v["label"]
+                    for k, v in aux_info.get("subtypes", {}).items()  # type: ignore[union-attr]
+                }
+                st.selectbox(
+                    "Sub-type",
+                    list(_sub_opts.keys()),
+                    format_func=lambda k: _sub_opts[k],
+                    key="tree_aux_subtype",
+                    label_visibility="collapsed",
+                )
 
     with st.expander(
         f"Auxiliary Support references: {aux_label} ({len(aux_result_df)})",
