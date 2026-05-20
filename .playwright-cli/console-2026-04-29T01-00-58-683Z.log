@@ -1,1 +1,0 @@
-[    3345ms] [WARNING] No script tag of type "javascript/worker" was found and "useWorker" is true. Not using web worker. @ http://127.0.0.1:8765/static/js/GraphVizChart.Bc7oRXRk.js:2

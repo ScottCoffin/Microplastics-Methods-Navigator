@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -c \"from glossary_tab import GLOSSARY, ALL_CATEGORIES; print\\(f'{len\\(GLOSSARY\\)} terms across {len\\(ALL_CATEGORIES\\)} categories'\\); print\\('Categories:', ALL_CATEGORIES\\)\")"
-    ]
-  }
-}
