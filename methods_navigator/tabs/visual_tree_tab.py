@@ -1105,11 +1105,9 @@ def _render_zoomable_graphviz(dot, height):
     try:
         svg = _dot_to_svg(dot)
     except graphviz.ExecutableNotFound:
-        st.warning(
-            "Zoomable diagram rendering requires the Graphviz 'dot' executable "
-            "on PATH. Falling back to Streamlit's static Graphviz renderer."
-        )
-        st.graphviz_chart(dot, width="stretch")
+        col, _ = st.columns([1, 1])
+        with col:
+            st.graphviz_chart(dot, use_container_width=True)
         return
     st.iframe(_zoomable_svg_html(svg, height), width="stretch", height=height)
 
