@@ -15,10 +15,23 @@ GLOSSARY: list[dict] = [
         "term": "Microplastics (MPs)",
         "category": "Particle Terminology",
         "definition": (
-            "Plastic particles with a longest dimension of 1 µm–5 mm. "
-            "The 5 mm upper bound is broadly agreed; the lower bound varies: "
-            "ISO 21994 uses 1 µm; NOAA's original definition (≤5 mm) specifies no lower bound; "
-            "ECHA's REACH restriction and some EU legislation use 1 nm. "
+            "Plastic particles with dimensions in the micrometer-to-millimeter range. "
+            "The 5 mm upper bound is broadly agreed; the lower bound and internal size "
+            "classifications vary by standard and jurisdiction. "
+            # ── CORRECTED ──
+            # • ISO/TR 21960:2020 (not "ISO 21994") defines "microplastic" as 1 µm–1 mm
+            #   and "large microplastic" as 1 mm–5 mm; ISO 16094-2:2025 encompasses
+            #   both categories (1 µm–5 mm) for analytical purposes.
+            # • ECHA Entry 78 sets NO formal lower size limit — not "1 nm."
+            #   A temporary 0.1 µm enforcement floor applies for analytical verification.
+            # • California's statutory definition (Health & Safety Code § 116376) is 1 nm–5 mm.
+            # • NOAA's original definition (≤5 mm) specifies no lower bound.
+            "ISO/TR 21960:2020 defines 'microplastic' as 1 µm–1 mm and 'large microplastic' as "
+            "1 mm–5 mm; ISO 16094-2:2025 encompasses both categories (1 µm–5 mm) for "
+            "analytical purposes. NOAA's original definition (≤5 mm) specifies no lower bound. "
+            "ECHA's REACH restriction (Entry 78) sets no formal lower size limit but applies a "
+            "temporary 0.1 µm enforcement floor for analytical verification; California's statutory "
+            "definition (Health & Safety Code § 116376) extends from 5 mm down to 1 nm. "
             "Definitions also differ on whether semi-synthetic and coated materials are included."
         ),
         "decision_tree_relevance": (
@@ -30,13 +43,21 @@ GLOSSARY: list[dict] = [
         "term": "Nanoplastics (NPs)",
         "category": "Particle Terminology",
         "definition": (
-            "Plastic particles smaller than 1 µm (ISO/TR 21960) or <100 nm (EU nanomaterial definition). "
+            # ── CORRECTED ──
+            # ISO/TR 21960:2020 is the correct standard (not "ISO/TR 21960" alone —
+            # the year should be included for clarity). The EU nanomaterial definition
+            # (<100 nm) is a general definition, not plastic-specific.
+            "Plastic particles smaller than 1 µm (ISO/TR 21960:2020) or <100 nm (EU Commission "
+            "Recommendation on the definition of nanomaterial, 2022/C 229/01). "
             "No internationally harmonized definition exists. "
             "Colloidal behavior dominates at this scale, making conventional MP methods inapplicable."
         ),
         "decision_tree_relevance": (
+            # ── CORRECTED ──
+            # ISO 16094-2:2025 is the correct standard for the 20 µm FTIR minimum
+            # (not "ISO 16094-2" without date or context).
             "CRITICAL GAP: No standardized detection or quantification method exists for NPs. "
-            "ISO 16094-2 specifies a 20 µm practical minimum for most FTIR approaches. "
+            "ISO 16094-2:2025 specifies a 20 µm practical minimum for FTIR and 5 µm for Raman. "
             "The gap note in the decision tree flags this as the most significant unresolved standardization challenge."
         ),
     },
@@ -49,7 +70,11 @@ GLOSSARY: list[dict] = [
             "Released directly into the environment without further fragmentation."
         ),
         "decision_tree_relevance": (
-            "Relevant to source investigation studies and regulatory scope (ECHA's restriction targets intentionally added MPs). "
+            # ── CORRECTED ──
+            # Clarified that ECHA's restriction targets "intentionally added"
+            # synthetic polymer microparticles (SPMs), not just "intentionally added MPs."
+            "Relevant to source investigation studies and regulatory scope (ECHA's restriction targets "
+            "intentionally added synthetic polymer microparticles). "
             "Morphologically uniform — generally easier to spike and recover than secondary MPs."
         ),
     },
@@ -70,9 +95,15 @@ GLOSSARY: list[dict] = [
         "term": "Particle Morphology / Shape",
         "category": "Particle Terminology",
         "definition": (
-            "The physical form of a microplastic: fragment (irregular, angular), fiber (elongated, aspect ratio >3:1), "
+            # ── CORRECTED ──
+            # Fiber aspect ratio >3:1 matches the ECHA Entry 78 definition for
+            # fiber-like particles. A note is added that other definitions use
+            # higher thresholds.
+            "The physical form of a microplastic: fragment (irregular, angular), fiber (elongated), "
             "film (thin flat sheet), pellet/nurdle (pre-production spheroid), foam, or bead (spherical). "
-            "Shape must be defined and recorded consistently. Fibers present special challenges for size measurement "
+            "Shape must be defined and recorded consistently. ECHA Entry 78 defines fiber-like particles "
+            "as those with a length-to-diameter ratio >3; some researchers use higher thresholds (e.g., >10:1). "
+            "Fibers present special challenges for size measurement "
             "(length vs. width) and for spectral analysis due to orientation effects."
         ),
         "decision_tree_relevance": (
@@ -115,10 +146,19 @@ GLOSSARY: list[dict] = [
         "term": "Synthetic vs. Semi-Synthetic Particles",
         "category": "Particle Terminology",
         "definition": (
-            "Synthetic particles are virgin petroleum-derived polymers (e.g., polystyrene beads, PE pellets). "
-            "Semi-synthetic particles derive from natural polymers modified with synthetic chemistry "
+            # ── CORRECTED ──
+            # • Removed reference to non-existent "ISO 11097."
+            # • Corrected: ECHA restriction INCLUDES chemically modified natural
+            #   polymers (semi-synthetics); it does NOT exclude them.
+            # • Clarified the distinction between synthetic, semi-synthetic, and bio-based.
+            "Synthetic particles are composed of polymers produced entirely by chemical synthesis "
+            "(e.g., polystyrene beads, PE pellets), whether from fossil-fuel or bio-based feedstocks. "
+            "Semi-synthetic particles derive from natural polymers that have been chemically modified "
             "(cellulose acetate, rayon/viscose, lyocell). Regulatory scope varies: "
-            "ECHA's restriction and ISO 11097 include synthetic polymers only and generally exclude semi-synthetics."
+            "ECHA's REACH restriction (Entry 78) covers both synthetic polymers AND chemically modified "
+            "natural polymers, but excludes unmodified natural polymers. ISO/TR 21960:2020 and "
+            "ISO 24187:2023 scope microplastic definitions to materials within ISO/TC 61, noting that "
+            "'rubber, fibres, cosmetic means, etc. are not within the scope.'"
         ),
         "decision_tree_relevance": (
             "Critical for scope decisions in monitoring and toxicology — whether cellulose acetate fibers (cigarette filter waste) "
@@ -130,9 +170,15 @@ GLOSSARY: list[dict] = [
         "term": "Lower Limit of Detection (LLOD) / Minimum Reportable Size",
         "category": "Particle Terminology",
         "definition": (
+            # ── CORRECTED ──
+            # FTIR LLOD range adjusted to match ISO 16094-2:2025 (20 µm for IR)
+            # and literature (some instruments reach 10 µm). Raman minimum is 1–5 µm
+            # per ISO 16094-2:2025.
             "The smallest particle size that can be reliably detected AND polymer-identified by the method under routine conditions. "
             "Distinct from instrument spatial resolution (the smallest feature physically resolvable). "
-            "Approximate LLODs: µFTIR/LDIR ~20–50 µm; µRaman ~1 µm; Py-GC-MS and TED-GC-MS have no particle-level LLOD (bulk method)."
+            "Approximate LLODs per ISO 16094-2:2025: µFTIR ~10–20 µm (standard specifies 20 µm; "
+            "some instruments validated to 10 µm); µRaman ~1–5 µm; LDIR ~10–20 µm. "
+            "Py-GC-MS and TED-GC-MS have no particle-level LLOD (bulk methods)."
         ),
         "decision_tree_relevance": (
             "Must be reported in all monitoring studies. Studies with different LLODs cannot be directly compared — "
@@ -261,7 +307,12 @@ GLOSSARY: list[dict] = [
             "Collection methods include manta trawls, pump sampling, and continuous flow centrifugation."
         ),
         "decision_tree_relevance": (
-            "No Tier 1 regulatory SOP exists; ASTM D8332-20 is recommended. "
+            # ── CORRECTED ──
+            # ASTM D8332-20 covers drinking water, surface water, wastewater,
+            # and marine waters — not only surface water. Its applicability is broader
+            # than the original text implied.
+            "No Tier 1 regulatory SOP exists for surface water; ASTM D8332-20 is recommended and covers "
+            "drinking water, surface waters, wastewater influent and effluent, and marine waters. "
             "Gap notes in the decision tree identify Tier 1/2 coverage gaps for sampling and extraction steps."
         ),
     },
@@ -313,7 +364,9 @@ GLOSSARY: list[dict] = [
             "Matrix complexity (fats, proteins, starches) requires tailored digestion protocols."
         ),
         "decision_tree_relevance": (
-            "No Tier 1 or 2 method exists. EFSA (2016) identified major standardization gaps. "
+            # ── CORRECTED ──
+            # EFSA 2016 published a "scientific statement" (CONTAM Panel), not an "opinion."
+            "No Tier 1 or 2 method exists. EFSA's CONTAM Panel statement (2016) identified major standardization gaps. "
             "Navigate: Monitoring → Food / Dietary to see available Tier 3–4 references."
         ),
     },
@@ -321,13 +374,22 @@ GLOSSARY: list[dict] = [
         "term": "Human Tissue / Biomonitoring",
         "category": "Environmental Matrix",
         "definition": (
+            # ── CORRECTED ──
+            # Rauert et al. 2025 recharacterized: it is a methodological critique of
+            # Py-GC-MS for blood analysis, not a confirmatory detection study.
             "Detection and quantification of MPs in human biological samples: blood, lung tissue, placenta, "
             "stool, urine, and breast milk. Human biomonitoring bridges environmental exposure assessment "
-            "and internal dose for health risk assessment. MP detection in human blood (Leslie et al. 2022; "
-            "Rauert et al. 2025) has driven significant recent interest."
+            "and internal dose for health risk assessment. Leslie et al. (2022, Environment International) "
+            "reported the first detection and quantification of plastic particles in human blood using Py-GC-MS, "
+            "finding a mean summed concentration of 1.6 µg/mL in 22 healthy volunteers. "
+            "However, Rauert et al. (2025, Environ. Sci. Technol.) subsequently demonstrated significant "
+            "analytical limitations of Py-GC-MS for this matrix, including interference from blood proteins "
+            "that can produce false positives for PE and PVC, indicating that prior concentration estimates "
+            "may require reassessment. The field remains methodologically immature."
         ),
         "decision_tree_relevance": (
-            "No Tier 1 or 2 method exists. Py-GC-MS is the leading technique for blood and tissue. "
+            "No Tier 1 or 2 method exists. Py-GC-MS is widely used for blood and tissue but faces "
+            "documented matrix-interference challenges (Rauert et al. 2025). "
             "Navigate: Monitoring → Human Tissue / Biomonitoring for the most current references."
         ),
     },
@@ -384,7 +446,7 @@ GLOSSARY: list[dict] = [
             "ZnCl₂ (~1.5–1.8 g/cm³), NaI (~1.6–1.8 g/cm³), CaCl₂."
         ),
         "decision_tree_relevance": (
-            "NaCl-based density separation systematically under-recovers denser polymers (PET ρ≈1.38, PVC ρ≈1.4). "
+            "NaCl-based density separation systematically under-recovers denser polymers (PET ρ≈1.38, PVC ρ≈1.3–1.45). "
             "For comprehensive extraction, NaI or ZnCl₂ is recommended. "
             "Recovery of each target polymer type should be validated with spike experiments."
         ),
@@ -469,11 +531,17 @@ GLOSSARY: list[dict] = [
         "term": "µFTIR / FPA-FTIR (Micro-Fourier Transform Infrared)",
         "category": "Analytical Method",
         "definition": (
+            # ── CORRECTED ──
+            # Covered by ISO 16094-2:2025 (not "ISO 24187"). ISO 24187 is a
+            # general principles document. Spatial resolution figures updated
+            # to match the standard.
             "Identifies polymer type by measuring infrared absorption across individual particles, "
             "matched against a spectral library. Focal Plane Array (FPA) FTIR images an entire filter in one acquisition, "
             "enabling automated particle-by-particle mapping. "
-            "Spatial resolution: typically 5–20 µm (transmission mode) or ~5 µm (ATR mode). "
-            "Covered by ISO 24187 and California SWRCB SOP."
+            "Minimum measurable particle size: 20 µm per ISO 16094-2:2025 (some instruments validated to 10 µm); "
+            "spatial resolution: typically 5–20 µm depending on mode (transmission vs. ATR). "
+            "Covered by ISO 16094-2:2025 (vibrational spectroscopy methods for water with low suspended solids) "
+            "and California SWRCB SOP."
         ),
         "decision_tree_relevance": (
             "Most widely used particle-counting method in monitoring. "
@@ -486,7 +554,8 @@ GLOSSARY: list[dict] = [
         "definition": (
             "Automated particle analysis system (Agilent 8700 LDIR) using a tunable quantum cascade laser "
             "to acquire IR spectra across a filter at automated stage positions. "
-            "Higher throughput than FPA-FTIR; spatial resolution ~20 µm. "
+            "Higher throughput than FPA-FTIR; minimum measurable particle size ~20 µm per ISO 16094-2:2025, "
+            "with some validations demonstrating reliability to 10 µm. "
             "Requires specialized consumables and filter substrates."
         ),
         "decision_tree_relevance": (
@@ -498,8 +567,11 @@ GLOSSARY: list[dict] = [
         "term": "µRaman (Micro-Raman Spectroscopy)",
         "category": "Analytical Method",
         "definition": (
+            # ── CORRECTED ──
+            # Minimum measurable particle size per ISO 16094-2:2025 is 1–5 µm for Raman.
             "Identifies polymer molecular structure via laser-excited inelastic (Raman) light scattering. "
-            "Spatial resolution ~1 µm — finer than FTIR, enabling detection of particles down to ~1 µm. "
+            "Minimum measurable particle size: 1–5 µm per ISO 16094-2:2025 — finer than FTIR, "
+            "enabling detection of particles down to ~1 µm. "
             "Fluorescence from organic matter can interfere (mitigated by photobleaching or shifted excitation). "
             "Generally slower throughput than FPA-FTIR for whole-filter analysis."
         ),
@@ -512,13 +584,16 @@ GLOSSARY: list[dict] = [
         "term": "Py-GC-MS (Pyrolysis Gas Chromatography–Mass Spectrometry)",
         "category": "Analytical Method",
         "definition": (
-            "Thermally decomposes (pyrolyzes) a bulk sample (~0.5 mg) and identifies polymer type by "
+            # ── CORRECTED ──
+            # Sample size range broadened from "~0.5 mg" to "~0.1–1 mg."
+            "Thermally decomposes (pyrolyzes) a bulk sample (~0.1–1 mg) and identifies polymer type by "
             "the characteristic volatile breakdown products detected by GC-MS. "
             "Provides mass-based quantification (µg/g or µg/L), not particle count, size, or morphology. "
-            "Sample size is a major limitation — risks non-representative sub-sampling in heterogeneous matrices."
+            "Small sample size is a major limitation — risks non-representative sub-sampling in heterogeneous matrices."
         ),
         "decision_tree_relevance": (
-            "Best for human tissue, blood, and complex matrices where particle isolation is impractical. "
+            "Used for human tissue, blood, and complex matrices where particle isolation is impractical, "
+            "though matrix interference in biological samples can produce false positives (Rauert et al. 2025). "
             "Also used for source attribution. Navigate: Analytical Identification → Py-GC-MS."
         ),
     },
@@ -557,7 +632,7 @@ GLOSSARY: list[dict] = [
             "Optical identification of suspected MPs under a dissecting or stereomicroscope, "
             "classified by color, morphology, and transparency. Lowest cost but highest false-positive rate "
             "(organic matter, diatoms, and natural fibers are commonly misidentified as MPs). "
-            "WHO (2019) and GESAMP (2016) consider visual-only identification insufficient."
+            "WHO (2019) and GESAMP (2015, 2016) consider visual-only identification insufficient."
         ),
         "decision_tree_relevance": (
             "Acceptable for initial sorting before spectroscopic analysis, but not a standalone identification method. "
@@ -615,15 +690,23 @@ GLOSSARY: list[dict] = [
         "term": "Certified Reference Material (CRM)",
         "category": "QA/QC",
         "definition": (
+            # ── CORRECTED ──
+            # EURM-060 is explicitly NOT a certified reference material per the JRC
+            # product information sheet. It is a reference material (RM).
+            # No true CRM for environmental microplastics currently exists.
             "A reference material with certified values established by a metrologically traceable procedure "
             "and issued by a national metrology institute (NIST, JRC/IRMM, BAM, etc.). "
             "Provides an external benchmark for instrument calibration and inter-laboratory comparability. "
-            "Only one CRM currently exists for MPs: EURM-060 (PET particles in water, European Commission JRC). "
-            "NIST and JRC are developing CRMs for sediment and biological matrices."
+            "No true CRM for environmental microplastics currently exists. "
+            "EURM-060 (PET particles in water, European Commission JRC, released February 2025) is a "
+            "non-certified reference material (RM) — its product information sheet explicitly states it "
+            "'is not a certified reference material' and 'should not be used as a reference in a "
+            "metrological traceability chain.' NIST, JRC, and BAM are working toward true CRMs "
+            "for sediment, biological, and other matrices."
         ),
         "decision_tree_relevance": (
-            "CRITICAL GAP: the near-absence of CRMs is a major barrier to harmonization. "
-            "Navigate: Reference Materials / Positive Controls for available CRM and near-CRM materials."
+            "CRITICAL GAP: the absence of true CRMs is a major barrier to harmonization. "
+            "Navigate: Reference Materials / Positive Controls for available RM and near-CRM materials."
         ),
     },
     {
@@ -720,9 +803,9 @@ GLOSSARY: list[dict] = [
         "definition": (
             "Particokinetics describes the time-dependent transport of particles in a cell culture medium: "
             "sedimentation, diffusion, and agglomeration. The In vitro Sedimentation, Diffusion, "
-            "and Dosimetry (ISDD) model (Hinderliter et al. 2010) calculates the fraction of particles "
-            "that reaches the cell monolayer over time, based on particle size, density, "
-            "medium viscosity, and well geometry."
+            "and Dosimetry (ISDD) model (Hinderliter et al. 2010, Particle and Fibre Toxicology) "
+            "calculates the fraction of particles that reaches the cell monolayer over time, based on "
+            "particle size, density, medium viscosity, and well geometry."
         ),
         "decision_tree_relevance": (
             "Required for rigorous in vitro dosimetry (keyword: 'particokinetics; ISDD; delivered dose'). "
@@ -777,10 +860,14 @@ GLOSSARY: list[dict] = [
         "term": "ToMEx (Toxicity of Microplastics Explorer)",
         "category": "Toxicology",
         "definition": (
-            "An open-access database (toxmex.org) that compiles and quality-scores published MP toxicity studies. "
+            # ── CORRECTED ──
+            # URL corrected from "toxmex.org" to the actual URL.
+            "An open-access database and R Shiny web application (https://microplastics.sccwrp.org) "
+            "that compiles and quality-scores published MP toxicity studies. "
             "Includes effect concentrations (LC50, EC50, NOEC), species, endpoints, particle characteristics, "
             "and study quality scores based on defined criteria. "
-            "Developed by SCCWRP and collaborators for use in California MP risk assessment."
+            "Developed by SCCWRP and collaborators for use in California MP risk assessment. "
+            "ToMEx 2.0 was released in 2025 with a substantially expanded dataset."
         ),
         "decision_tree_relevance": (
             "Primary resource for hazard identification in risk assessment. "
@@ -938,9 +1025,15 @@ GLOSSARY: list[dict] = [
         "term": "Consensus Standard",
         "category": "Authority Tier System",
         "definition": (
+            # ── CORRECTED ──
+            # ISO 24187 correctly described as general principles for environmental
+            # matrix analysis; ISO 16094-2 added as the water-specific vibrational
+            # spectroscopy standard. ASTM D8332-20 scope corrected.
             "A technical standard developed through a formal multi-stakeholder process by a recognized standards body "
             "(ISO, ASTM, CEN, DIN) with public comment periods and ballot approval. "
-            "Examples: ISO 24187 (FTIR for MPs in water), ASTM D8332-20 (surface water sampling). "
+            "Examples: ISO 24187:2023 (general principles for MP analysis in environmental matrices), "
+            "ISO 16094-2:2025 (vibrational spectroscopy methods for MPs in water with low suspended solids), "
+            "ASTM D8332-20 (water sampling for drinking water, surface water, wastewater, and marine waters). "
             "Key ISO committees: TC 147/SC 2 (water quality methods) and TC 61/SC 14 (environmental aspects of plastics)."
         ),
         "decision_tree_relevance": (
@@ -966,10 +1059,15 @@ GLOSSARY: list[dict] = [
         "term": "ISO (International Organization for Standardization)",
         "category": "Key Organization",
         "definition": (
+            # ── CORRECTED ──
+            # Added ISO 16094-2:2025 to the list of key published standards.
+            # ISO/TR 21960 year corrected to 2020 (was implied but not stated).
             "The world's largest independent standards body. Relevant committees for MPs: "
             "ISO TC 147/SC 2 (physical, chemical, and biochemical water quality methods — including drinking water MPs), "
             "ISO TC 61/SC 14 (environmental aspects of plastics — definitions, fate, and effects). "
-            "Key published standards: ISO/TR 21960, ISO 24187, ISO 11097."
+            "Key published standards: ISO/TR 21960:2020 (definitions and state of knowledge), "
+            "ISO 24187:2023 (general principles for MP analysis in environmental matrices), "
+            "ISO 16094-2:2025 (vibrational spectroscopy for MPs in water with low suspended solids)."
         ),
         "decision_tree_relevance": (
             "ISO standards are Tier 1–2 in the crosswalk. "
@@ -980,9 +1078,13 @@ GLOSSARY: list[dict] = [
         "term": "ASTM International",
         "category": "Key Organization",
         "definition": (
+            # ── CORRECTED ──
+            # D8333-20 is for sample preparation, not just D8332-20.
+            # Both are under Committee D34 (Waste Management). Scope of D8332-20 clarified.
             "American standards development organization. "
             "MP-relevant standards under Committee D34 (Waste Management): "
-            "D8332-20 (surface water sampling), D8333-20 (sample preparation), "
+            "D8332-20 (water sampling for drinking water, surface waters, wastewater, and marine waters), "
+            "D8333-20 (sample preparation for water with low, medium, or high suspended solids), "
             "and several in development for other matrices."
         ),
         "decision_tree_relevance": (
@@ -993,10 +1095,13 @@ GLOSSARY: list[dict] = [
         "term": "NOAA (National Oceanic and Atmospheric Administration)",
         "category": "Key Organization",
         "definition": (
+            # ── CORRECTED ──
+            # Clarified the contrast between NOAA (no lower bound) and ISO/TR 21960
+            # (1 µm lower bound for "microplastic," <1 µm = "nanoplastic").
             "U.S. federal agency; NOAA's Marine Debris Program co-developed widely used protocols "
             "for monitoring MPs in ocean and Great Lakes environments. "
             "NOAA's ≤5 mm size definition (no lower bound specified) is the most widely adopted globally, "
-            "differing from ISO's 1 µm lower bound."
+            "differing from ISO/TR 21960:2020's 1 µm lower bound for the 'microplastic' size class."
         ),
         "decision_tree_relevance": (
             "NOAA laboratory methods are Tier 2 references in surface water and sediment branches. "
@@ -1008,8 +1113,9 @@ GLOSSARY: list[dict] = [
         "category": "Key Organization",
         "definition": (
             "U.N. public health agency. WHO (2019) published a landmark Tier 2 assessment of MP risks "
-            "in drinking water, concluding that current evidence does not indicate a health risk "
-            "at present levels but calling for further research and standardized methods."
+            "in drinking water, concluding that based on the limited evidence available, microplastics in "
+            "drinking water do not appear to pose a health risk at current levels "
+            "but calling for further research and standardized methods."
         ),
         "decision_tree_relevance": (
             "WHO (2019) is a key Tier 2 reference in the Drinking Water matrix branch."
@@ -1019,8 +1125,12 @@ GLOSSARY: list[dict] = [
         "term": "GESAMP (Joint Group of Experts on Scientific Aspects of Marine Environmental Protection)",
         "category": "Key Organization",
         "definition": (
-            "A joint U.N. expert body. Published 'Sources, Fate and Effects of Microplastics in the Marine Environment' "
-            "(2016), among the most-cited Tier 2 guidance documents on marine MP monitoring methodology."
+            # ── CORRECTED ──
+            # Added Part 1 (2015, R&S No. 90) alongside Part 2 (2016, R&S No. 93).
+            "A joint U.N. expert body (IMO/FAO/UNESCO-IOC/UNIDO/WMO/IAEA/UN/UNEP/UNDP). "
+            "Published 'Sources, Fate and Effects of Microplastics in the Marine Environment' in two parts: "
+            "Part 1 (2015, R&S No. 90) and Part 2 (2016, R&S No. 93, edited by Kershaw & Rochman), "
+            "among the most-cited Tier 2 guidance documents on marine MP monitoring methodology."
         ),
         "decision_tree_relevance": (
             "Tier 2 reference in marine/surface water monitoring branches."
@@ -1030,8 +1140,17 @@ GLOSSARY: list[dict] = [
         "term": "EFSA (European Food Safety Authority)",
         "category": "Key Organization",
         "definition": (
-            "EU agency for food safety risk assessment. Published key opinions on MPs in seafood (2016) "
-            "and a comprehensive re-evaluation incorporating new occurrence and toxicity data (2023)."
+            # ── CORRECTED ──
+            # EFSA 2016 was a "scientific statement" by the CONTAM Panel, not an "opinion."
+            # The "2023 comprehensive re-evaluation" claim removed — EFSA has NOT completed
+            # a full risk assessment. The European Parliament mandated this in late 2024/2025,
+            # with the opinion scheduled for completion by end of 2027.
+            "EU agency for food safety risk assessment. The CONTAM Panel published a scientific statement "
+            "on micro- and nanoplastics in food, with particular focus on seafood, in June 2016. "
+            "It identified significant uncertainties and highlighted the lack of standardized methods. "
+            "In late 2024, the European Parliament requested EFSA to deliver a full scientific opinion on "
+            "the potential health risks posed by microplastics in food, water, and air; "
+            "this opinion is scheduled for completion by end of 2027."
         ),
         "decision_tree_relevance": (
             "Key Tier 2 reference in the Food / Dietary matrix branch. Identified major standardization gaps."
@@ -1041,14 +1160,22 @@ GLOSSARY: list[dict] = [
         "term": "ECHA (European Chemicals Agency)",
         "category": "Key Organization",
         "definition": (
+            # ── CORRECTED ──
+            # • Restriction is Entry 78 of Annex XVII — confirmed correct.
+            # • Clarified that the restriction covers "synthetic polymer microparticles"
+            #   (SPMs), not just "microplastics" — ECHA deliberately avoided the term.
+            # • Corrected: scope covers BOTH synthetic polymers AND chemically modified
+            #   natural polymers; excludes only unmodified natural polymers.
             "EU agency responsible for chemical regulation under REACH. Drafted the EU restriction on "
-            "intentionally added microplastics (REACH Annex XVII, Entry 78), defining MPs as "
-            "synthetic polymer particles <5 mm. The restriction assessment contains an extensive "
-            "methodology review and MP definition analysis."
+            "intentionally added synthetic polymer microparticles (REACH Annex XVII, Entry 78, "
+            "Commission Regulation (EU) 2023/2055), applying from 17 October 2023. "
+            "ECHA deliberately used the term 'synthetic polymer microparticles' (SPMs) rather than "
+            "'microplastics' because the scope is broader. The restriction covers both synthetic polymers "
+            "and chemically modified natural polymers, but excludes unmodified natural polymers, "
+            "degradable polymers (per Appendix 15), and polymers soluble above 2 g/L."
         ),
         "decision_tree_relevance": (
-            "ECHA restriction documents are Tier 1 references for definitions and intentional-additive scope. "
-            "ECHA's definition explicitly excludes natural polymers and semi-synthetics."
+            "ECHA restriction documents are Tier 1 references for definitions and intentional-additive scope."
         ),
     },
     {
@@ -1057,7 +1184,8 @@ GLOSSARY: list[dict] = [
         "definition": (
             "California-based public research agency that co-developed the California drinking water "
             "MP monitoring methodology with SWRCB. Published extensive Tier 3 protocols for "
-            "surface water, sediment, and biota monitoring. Hosts the ToMEx database."
+            "surface water, sediment, and biota monitoring. Hosts the ToMEx database "
+            "(https://microplastics.sccwrp.org)."
         ),
         "decision_tree_relevance": (
             "Tier 2–3 references throughout multiple monitoring branches."
@@ -1069,7 +1197,8 @@ GLOSSARY: list[dict] = [
         "definition": (
             "California's primary water quality regulatory agency. Issued the world's first enforceable "
             "regulation requiring MP monitoring in drinking water (SB 1422, 2018). "
-            "The SWRCB SOP for drinking water analysis is a Tier 1 regulatory reference."
+            "The SWRCB Policy Handbook (adopted September 2022) establishes a standard method of "
+            "testing and reporting of microplastics in drinking water and is a Tier 1 regulatory reference."
         ),
         "decision_tree_relevance": (
             "Tier 1 reference in the Drinking Water matrix branch. "
@@ -1082,16 +1211,25 @@ GLOSSARY: list[dict] = [
         "term": "Semi-Synthetic Plastics / Bioplastics",
         "category": "Plastic Material Types",
         "definition": (
-            "Semi-synthetic plastics are synthesized from polymers derived from non-fossil-fuel-based sources, "
-            "including biological materials such as corn starch or bacteria. "
-            "Rayon (viscose), for example, is a semi-synthetic fiber produced from plant cellulose. "
-            "The term 'bioplastic' is commonly used interchangeably with semi-synthetic and also — confusingly — "
-            "with biodegradable plastic, although not all bioplastics are biodegradable or compostable. "
-            "Most conventional plastics are synthetic (derived from fossil fuels)."
+            # ── CORRECTED ──
+            # Clearly distinguished semi-synthetic from bio-based.
+            # Removed conflation of bio-based polymers (PLA from corn starch)
+            # with semi-synthetic (chemically modified natural) polymers.
+            # Removed reference to non-existent "ISO 11097."
+            # Corrected: ECHA restriction INCLUDES chemically modified natural polymers.
+            "Semi-synthetic plastics are produced by chemically modifying natural polymers: "
+            "cellulose acetate (from cellulose + acetic anhydride), rayon/viscose (regenerated cellulose), "
+            "and lyocell are common examples. These are distinct from bio-based plastics, which are fully "
+            "synthetic polymers manufactured from biological feedstocks (e.g., PLA from corn starch). "
+            "The term 'bioplastic' is used ambiguously in public discourse — it may refer to bio-based, "
+            "biodegradable, or semi-synthetic materials, though these are chemically distinct categories. "
+            "Regulatory scope varies: ECHA's REACH restriction (Entry 78) includes both synthetic polymers "
+            "and chemically modified natural polymers (semi-synthetics) within its scope, while excluding "
+            "unmodified natural polymers. ISO/TR 21960:2020 scopes microplastics to materials within "
+            "ISO/TC 61 and notes that rubber, fibres, and cosmetic means are not within the scope."
         ),
         "decision_tree_relevance": (
             "Scope decisions in monitoring and toxicology depend on whether semi-synthetics are included. "
-            "ECHA's REACH restriction and ISO 11097 generally exclude semi-synthetic polymers. "
             "Navigate to Definitions & Terminology to see how different standards handle this boundary."
         ),
     },
@@ -1106,7 +1244,12 @@ GLOSSARY: list[dict] = [
             "do not degrade meaningfully under real environmental conditions."
         ),
         "decision_tree_relevance": (
+            # ── CORRECTED ──
+            # Added note that ECHA Entry 78 provides a specific degradability test
+            # protocol (Appendix 15) for determining whether a polymer is excluded.
             "Biodegradable polymers may or may not be in scope for MP monitoring depending on the regulatory definition used. "
+            "ECHA's Entry 78 provides specific degradability test criteria (Appendix 15) for determining "
+            "whether a polymer is excluded from the restriction scope. "
             "Their intermediate degradation products (micro-sized fragments) may behave like conventional MPs "
             "before complete mineralization. Navigate to Definitions & Terminology for regulatory scope guidance."
         ),
@@ -1117,7 +1260,7 @@ GLOSSARY: list[dict] = [
         "definition": (
             "Plastics certified to biodegrade under controlled composting conditions — typically requiring "
             "elevated temperatures (55–60 °C), humidity, and microbial activity found in industrial composting facilities. "
-            "Compostable plastics may be either bioplastics or fossil-fuel-derived (e.g., PBAT). "
+            "Compostable plastics may be either bio-based (e.g., PLA) or fossil-fuel-derived (e.g., PBAT). "
             "Most do not degrade in home compost bins or in open environmental conditions at the required rate. "
             "Not synonymous with biodegradable, recyclable, or bioplastic."
         ),
@@ -1211,15 +1354,22 @@ GLOSSARY: list[dict] = [
         "term": "Certified Reference Material (CRM) / Standardized Reference Material",
         "category": "Reference & Calibration Materials",
         "definition": (
+            # ── CORRECTED ──
+            # EURM-060 is explicitly NOT a CRM. The JRC product information sheet
+            # states it is a non-certified reference material. Clarified that no
+            # true CRM for environmental MPs currently exists.
             "Metrologically characterized materials issued by a standards or metrology institute "
             "(e.g., JRC/IRMM, NIST, BAM) for method validation, quality control, and interlaboratory comparability. "
             "CRMs for MP-adjacent purposes exist (e.g., for nanoparticle bead sizing, phthalate concentrations in PVC), "
-            "but very few environmental matrices containing known MP concentrations currently exist as true CRMs. "
-            "The main available CRM for environmental MPs is EURM-060 (PET particles in water, European Commission JRC)."
+            "but no true CRM for environmental microplastics currently exists. "
+            "EURM-060 (PET particles in water, JRC, released February 2025) is a non-certified reference material (RM) "
+            "intended for quality control and assessment of method performance — its product information sheet "
+            "explicitly states it 'is not a certified reference material.' "
+            "NIST, JRC, and BAM are working toward true CRMs for additional matrices."
         ),
         "decision_tree_relevance": (
-            "CRITICAL GAP: Near-absence of CRMs is a major barrier to inter-laboratory comparability. "
-            "Navigate: Reference Materials / Positive Controls for the most current CRM availability information."
+            "CRITICAL GAP: absence of true CRMs is a major barrier to inter-laboratory comparability. "
+            "Navigate: Reference Materials / Positive Controls for the most current RM availability information."
         ),
     },
 
@@ -1276,7 +1426,8 @@ GLOSSARY: list[dict] = [
         ),
         "decision_tree_relevance": (
             "Mass-based methods — provide polymer mass per sample (µg/g or µg/L), not particle count or size. "
-            "Best for complex matrices (human tissue, blood, sediment) where particle isolation is impractical. "
+            "Best for complex matrices (sediment, sewage sludge) where particle isolation is impractical. "
+            "For human tissue and blood, matrix interference can produce false positives (Rauert et al. 2025). "
             "Navigate: Analytical Identification → Py-GC-MS or TED-GC-MS."
         ),
     },
@@ -1309,7 +1460,9 @@ GLOSSARY: list[dict] = [
             "Field blank values are subtracted from sample results or used to assess contamination risk."
         ),
         "decision_tree_relevance": (
-            "Required in all standardized monitoring protocols (SWRCB SOP, WHO 2019, GESAMP 2016). "
+            # ── CORRECTED ──
+            # Added GESAMP (2015, 2016) instead of just "(2016)."
+            "Required in all standardized monitoring protocols (SWRCB SOP, WHO 2019, GESAMP 2015/2016). "
             "Navigate: Blanks & Contamination Control."
         ),
     },
@@ -1454,3 +1607,4 @@ def _render_glossary_card(entry: dict):
             f"*{entry['decision_tree_relevance']}*"
         )
         st.caption(f"Category: {entry['category']}")
+
