@@ -207,6 +207,19 @@ normalize_instrument_tags <- function(tags) {
 
 
 # ── FIGURE 2: Coverage Heatmap (Matrix × Workflow Step) ─────────────────────
+#
+# CAPTION:
+# Figure 2. Standardization coverage matrix for microplastics monitoring and
+# toxicology workflow steps across ten environmental and biological matrices.
+# Each cell displays the highest authority tier available for that
+# matrix–workflow step combination: Tier 1 (normative/binding; dark green)
+# includes legislation, ISO/ASTM consensus standards, and government standard
+# operating procedures; Tier 2 (authoritative/institutional; steel blue)
+# includes guidance from WHO, GESAMP, EFSA, and equivalent agencies; Tier 3
+# (interlaboratory-tested/critical guidance; gold) includes peer-reviewed
+# methods with published quantitative validation data; Tier 4 (supporting/
+# contextual; gray) includes reviews, frameworks, and emerging methods. Cells
+# labeled 'No' indicate no crosswalk coverage at any tier for that combination.
 
 fig1 <- function(df) {
   # Define the matrix columns and workflow step columns to cross
@@ -377,6 +390,19 @@ fig1 <- function(df) {
 
 
 # ── FIGURE 4: Temporal Coverage (Year × Domain) ────────────────────────────
+#
+# CAPTION:
+# Figure 4. Temporal distribution of crosswalk references by primary domain
+# and authority tier. Each point represents one crosswalk entry; horizontal
+# jitter (±0.45 years) and vertical jitter (±0.25 units) are applied for
+# legibility. Point shape distinguishes authority tier (filled circle = Tier 1;
+# filled triangle = Tier 2; filled square = Tier 3; open circle = Tier 4).
+# Vertical dotted lines mark key definitional and regulatory milestones in
+# microplastics standardization: Thompson et al. (2004) coinage of the term
+# 'microplastics'; NOAA 5 mm size definition (2009); California SB 1422
+# microplastics monitoring mandate (2018); California regulatory microplastics
+# definition (2020); EU REACH restriction proposal (2023); and publication of
+# ISO 16094-2 (2025). References published before 2004 are excluded.
 
 fig4 <- function(df) {
   # Need Year and Primary Domain
@@ -504,6 +530,21 @@ fig4 <- function(df) {
 #
 # The visible annular ring between consecutive layers encodes that tier's count.
 # Total ref count is labeled in white in the center.
+#
+# CAPTION:
+# Figure 5. Analytical instrumentation and method coverage across environmental
+# and biological matrices, stratified by authority tier. Each cell represents
+# the intersection of an analytical technique (x-axis) and sample matrix
+# (y-axis); empty cells indicate no crosswalk entries for that combination.
+# Circle area scales with the total number of Tier 1–3 references (labeled in
+# white). Concentric rings encode cumulative authority-tier coverage: the outer
+# ring (gold) encompasses all Tier 1–3 references combined; the middle ring
+# (steel blue) encompasses Tier 1 and Tier 2 references; the inner circle (dark
+# green) represents Tier 1 references only. The visible annular band between
+# successive layers therefore reflects the count of references at that specific
+# tier. Tier 4 (supporting/contextual) references are excluded from all layers.
+# Techniques are ordered left to right from particle-counting spectroscopic
+# methods (µFTIR, µRaman) to mass-based and screening methods.
 
 fig2 <- function(df) {
   inst_col <- find_col(df, c("instrumentation tags"))
@@ -716,6 +757,19 @@ fig2 <- function(df) {
 
 
 # ── FIGURE 6: Toxicology Workflow Coverage ──────────────────────────────────
+#
+# CAPTION:
+# Figure 6. Reference coverage across toxicology workflow steps by authority
+# tier. Stacked bars show the number of crosswalk entries addressing each step
+# of a generalized microplastics toxicology study workflow: particle
+# characterization and study design/dosimetry; reference particle selection and
+# positive controls; dosimetry and particokinetic modeling; effects testing
+# methods; and reporting and harmonization. Bar segments are color-coded by
+# authority tier (Tier 1, dark green; Tier 2, steel blue; Tier 3, gold; Tier 4,
+# gray). Annotations above each bar indicate the best available authority tier
+# for that step; steps with no Tier 1–3 coverage are flagged as gaps (⚠ GAP).
+# Only references with a Primary Domain of 'Toxicology', 'Both', or
+# 'Cross-cutting' are included.
 
 fig6_tox_workflow <- function(df) {
   # Define tox workflow steps and their column mappings
@@ -865,6 +919,21 @@ fig6_tox_workflow <- function(df) {
 
 
 # ── FIGURE 3: Workflow Step Coverage (stacked bar by tier) ─────────────────
+#
+# CAPTION:
+# Figure 3. Reference coverage across microplastics research workflow steps by
+# authority tier. Horizontal stacked bars show the number of crosswalk entries
+# addressing each workflow step, color-coded by authority tier (Tier 1, dark
+# green; Tier 2, steel blue; Tier 3, gold; Tier 4, gray). Total reference
+# counts are labeled at the right end of each bar. Steps are grouped into three
+# thematic categories distinguished by background shading: Framing & Shared
+# Context (blue; definitions, problem formulation, material standards);
+# Monitoring (green; field sampling through reporting); and Toxicology (yellow;
+# study design through risk assessment). For workflow steps addressed by
+# multiple topic columns (Analytical Methods), a single reference is counted
+# once per scored column, so totals in that row reflect the aggregate number of
+# method-specific citations rather than unique references. Tier 4 references
+# are included to show the full landscape of available guidance.
 
 fig3 <- function(df) {
   # Single-panel horizontal stacked bar chart.
