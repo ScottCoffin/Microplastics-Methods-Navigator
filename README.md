@@ -2,9 +2,11 @@
 
 This repository contains the Streamlit companion app and supporting materials for the manuscript:
 
-> Learning from history instead of reinventing the wheel: A call for coordinating microplastics research, reporting, and publication criteria across disciplines
+> Learning from history instead of reinventing the wheel: A resource for coordinating microplastics research, reporting, and publication criteria across disciplines
 
 The app helps researchers locate microplastics and nanoplastics methods, standards, guidance, and risk-assessment references by study domain, matrix, workflow step, instrumentation, particle type, and authority tier.
+
+![Graphical Abstract](methods_navigator/www/graphical_abstract.png)
 
 The Microplastics Methods Navigator is an interactive decision-tree web tool for researchers designing microplastics monitoring, toxicology, or risk assessment studies. Users step through their study type, environmental matrix (drinking water, sediment, biota, air, food, soil, and others), and workflow step (sampling, extraction, analytical identification, QA/QC, reporting) to retrieve a curated, ranked list of methods, standards, and guidance documents drawn from a crosswalk of > 175 seminal references in microplastics research. Results are grouped by a four-tier authority hierarchy — from Tier 1 normative and binding standards (e.g., ISO, ASTM, government regulations and SOPs) to Tier 4 supporting literature (reviews and commentary) — and displayed with document type, key notes, and direct links, with the option to export filtered results to CSV. A full-text search across all references, an interactive visual decision tree, and a domain glossary are also available.
 
@@ -175,7 +177,7 @@ The app's citation/license tab states that the crosswalk data and decision-tree 
 Suggested draft citation:
 
 ```text
-Granek, E.F., Brander, S.M., Coffin, S., El Hayek, E., Thornton Hampton, L.M., Seeley, M.E., Gray, A.B., & Harper, S.L. (in review). Learning from history instead of reinventing the wheel: A call for coordinating microplastics research, reporting, and publication criteria across disciplines. [Journal TBD]. DOI: TBD
+Granek, E.F., Coffin, S., Brander, S.M., Seeley, M.E., Thornton Hampton, L.M., El Hayek, E., Walker, V.R., Wagner, M., Gouin, T., Gray, A.B., Harper, S.L., & Rooney, A.A. (in review). Learning from history instead of reinventing the wheel: A resource for coordinating microplastics research, reporting, and publication criteria across disciplines. [Journal TBD]. DOI: TBD
 ```
 
 Update the citation once the manuscript has a final journal reference and DOI.

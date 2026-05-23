@@ -470,13 +470,19 @@ def main():
         layout="wide",
     )
 
-    st.title("🔬 Microplastics Methods Navigator")
-    st.markdown(
-        "*Interactive decision tree for planning microplastics "
-        "monitoring and toxicology studies.*  \n"
-        "Select your study type, matrix, and workflow step to find "
-        "the best available methods ranked by authority tier."
-    )
+    _ga_path = APP_DIR / "www" / "graphical_abstract.png"
+    _img_col, _txt_col = st.columns([1, 5])
+    with _img_col:
+        if _ga_path.exists():
+            st.image(str(_ga_path), width=130)
+    with _txt_col:
+        st.title("Microplastics Methods Navigator")
+        st.markdown(
+            "*Interactive decision tree for planning microplastics "
+            "monitoring and toxicology studies.*  \n"
+            "Select your study type, matrix, and workflow step to find "
+            "the best available methods ranked by authority tier."
+        )
 
     # Load data
     df = load_crosswalk()
