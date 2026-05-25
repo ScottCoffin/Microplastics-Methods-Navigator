@@ -474,7 +474,7 @@ def main():
     _img_col, _txt_col = st.columns([1, 5])
     with _img_col:
         if _ga_path.exists():
-            st.image(str(_ga_path), width=130)
+            st.image(str(_ga_path), use_container_width=True)
     with _txt_col:
         st.title("Microplastics Methods Navigator")
         st.markdown(

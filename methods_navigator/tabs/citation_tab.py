@@ -145,7 +145,9 @@ def render_citation_tab():
     # ── About ────────────────────────────────────────────────────────────────
     st.markdown("### About This Tool")
     if _GRAPHICAL_ABSTRACT.exists():
-        st.image(str(_GRAPHICAL_ABSTRACT), caption="Graphical Abstract", width=420)
+        _img_col, _ = st.columns([1, 2])
+        with _img_col:
+            st.image(str(_GRAPHICAL_ABSTRACT), caption="Granek et al. (in review). Graphical Abstract", use_container_width=True)
     st.markdown(ABOUT_TEXT)
 
     st.divider()
