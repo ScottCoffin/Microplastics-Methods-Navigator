@@ -2,11 +2,16 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import streamlit as st
+
+_WWW_DIR = Path(__file__).resolve().parent.parent / "www"
+_GRAPHICAL_ABSTRACT = _WWW_DIR / "graphical_abstract.png"
 
 PAPER_TITLE = (
     "Learning from history instead of reinventing the wheel: "
-    "A call for coordinating microplastics research, reporting, "
+    "A resource for coordinating microplastics research, reporting, "
     "and publication criteria across disciplines"
 )
 
@@ -16,13 +21,6 @@ AUTHORS = [
         "affiliation": "Environmental Science & Management, Portland State University, Oregon, USA",
     },
     {
-        "name": "Brander, Susanne M.",
-        "affiliation": (
-            "Oregon State University, College of Agricultural Sciences, "
-            "Corvallis, Oregon, 97331, USA"
-        ),
-    },
-    {
         "name": "Coffin, Scott",
         "affiliation": (
             "Office of Environmental Health Hazard Assessment, "
@@ -30,10 +28,17 @@ AUTHORS = [
         ),
     },
     {
-        "name": "El Hayek, Eliane",
+        "name": "Brander, Susanne M.",
         "affiliation": (
-            "Department of Pharmaceutical Sciences, University of New Mexico, "
-            "College of Pharmacy, MSC09 5360, Albuquerque, New Mexico 87131, USA"
+            "Oregon State University, College of Agricultural Sciences, "
+            "Corvallis, Oregon, 97331, USA"
+        ),
+    },
+    {
+        "name": "Seeley, Meredith Evans",
+        "affiliation": (
+            "Virginia Institute of Marine Science, William & Mary, "
+            "Gloucester Point, VA 23062, USA"
         ),
     },
     {
@@ -44,11 +49,23 @@ AUTHORS = [
         ),
     },
     {
-        "name": "Seeley, Meredith Evans",
+        "name": "El Hayek, Eliane",
         "affiliation": (
-            "Virginia Institute of Marine Science, William & Mary, "
-            "Gloucester Point, VA 23062, USA"
+            "Department of Pharmaceutical Sciences, University of New Mexico, "
+            "College of Pharmacy, MSC09 5360, Albuquerque, New Mexico 87131, USA"
         ),
+    },
+    {
+        "name": "Walker, Vickie R.",
+        "affiliation": "",
+    },
+    {
+        "name": "Wagner, Martin",
+        "affiliation": "",
+    },
+    {
+        "name": "Gouin, Todd",
+        "affiliation": "",
     },
     {
         "name": "Gray, Andrew B.",
@@ -63,6 +80,10 @@ AUTHORS = [
             "Oregon State University, College of Agricultural Sciences / College of Engineering, "
             "Corvallis, Oregon, 97331, USA"
         ),
+    },
+    {
+        "name": "Rooney, Andrew A.",
+        "affiliation": "",
     },
 ]
 
@@ -123,6 +144,10 @@ def render_citation_tab():
 
     # ── About ────────────────────────────────────────────────────────────────
     st.markdown("### About This Tool")
+    if _GRAPHICAL_ABSTRACT.exists():
+        _img_col, _ = st.columns([1, 2])
+        with _img_col:
+            st.image(str(_GRAPHICAL_ABSTRACT), caption="Granek et al. (in review). Graphical Abstract", use_container_width=True)
     st.markdown(ABOUT_TEXT)
 
     st.divider()
@@ -149,8 +174,9 @@ def render_citation_tab():
     # Formatted draft citation block
     st.markdown("#### Suggested Citation *(draft — update with journal/DOI when published)*")
     author_short = (
-        "Granek, E.F., Brander, S.M., Coffin, S., El Hayek, E., "
-        "Thornton Hampton, L.M., Seeley, M.E., Gray, A.B., & Harper, S.L."
+        "Granek, E.F., Coffin, S., Brander, S.M., Seeley, M.E., "
+        "Thornton Hampton, L.M., El Hayek, E., Walker, V.R., Wagner, M., "
+        "Gouin, T., Gray, A.B., Harper, S.L., & Rooney, A.A."
     )
     citation_text = (
         f"{author_short} (in review). {PAPER_TITLE}. "
