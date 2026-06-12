@@ -284,6 +284,7 @@ def display_reference_card(row):
         return ""
 
     citation = get_field(row, ["Short Citation"])
+    full_title = get_field(row, ["Full Title", "Title"])
     year = get_field(row, ["Year"])
     doc_type = get_field(row, ["Document Type"])
     notes = get_field(row, ["Key Notes"])
@@ -294,6 +295,7 @@ def display_reference_card(row):
     status = get_field(row, ["Status"])
     abstract = normalize_abstract_text(get_field(row, ["Abstract"]))
     citation_safe = html.escape(citation)
+    full_title_safe = html.escape(full_title)
     year_safe = html.escape(year)
     doc_type_safe = html.escape(doc_type)
     notes_safe = html.escape(notes)
@@ -313,6 +315,10 @@ def display_reference_card(row):
         + "</strong>",
         f'<span style="color: {color}; font-size: 0.85em;"> — {doc_type_safe}</span>'
         if doc_type
+        else "",
+        f'<br/><span style="font-size: 0.9em; color: #333; font-style: italic;">'
+        f"{full_title_safe}</span>"
+        if full_title
         else "",
         "<br/>",
         f'<span style="font-size: 0.9em;">{notes_safe}</span>' if notes else "",

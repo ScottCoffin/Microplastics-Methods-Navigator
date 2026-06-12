@@ -1188,6 +1188,7 @@ def _display_compact_results(df, tier_expanders=True):
         with tier_container:
             for _, row in tier_df.iterrows():
                 cite = _row_text(row, df, ["Short Citation"])
+                full_title = _row_text(row, df, ["Full Title", "Title"])
                 year = _row_text(row, df, ["Year"]).replace(".0", "")
                 dtype = _row_text(row, df, ["Document Type"])
                 notes = _row_text(row, df, ["Key Notes"])
@@ -1198,6 +1199,7 @@ def _display_compact_results(df, tier_expanders=True):
                 scope = _row_text(row, df, ["Scope"])
                 status = _row_text(row, df, ["Status"])
                 cite_safe = html.escape(cite)
+                full_title_safe = html.escape(full_title)
                 year_safe = html.escape(year)
                 dtype_safe = html.escape(dtype)
                 notes_preview = notes[:200] + ("..." if len(notes) > 200 else "")
@@ -1226,13 +1228,20 @@ def _display_compact_results(df, tier_expanders=True):
                     if size_range and size_range not in ["0", "Not specified"]
                     else ""
                 )
+                title_html = (
+                    f"<br/><span style='color:#333; font-size:0.85em; font-style:italic;'>"
+                    f"{full_title_safe}</span>"
+                    if full_title
+                    else ""
+                )
 
                 st.markdown(
                     f"<div style='border-left:3px solid {color}; padding:4px 8px; "
                     f"margin-bottom:4px; font-size:0.9em;'>"
                     f"<strong>{icon} {cite_safe}</strong> ({year_safe}) "
                     f"<span style='color:{color};'>— {dtype_safe}</span>{doi_html}"
-                    f"<span style='color:#555; font-size:0.8em;'>{tier_context}</span><br/>"
+                    f"<span style='color:#555; font-size:0.8em;'>{tier_context}</span>"
+                    f"{title_html}<br/>"
                     f"<span style='color:#555; font-size:0.85em;'>"
                     f"{notes_safe}</span>"
                     f"{metrics_html}"
