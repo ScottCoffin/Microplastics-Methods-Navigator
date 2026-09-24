@@ -9,37 +9,29 @@ import streamlit as st
 _WWW_DIR = Path(__file__).resolve().parent.parent / "www"
 _GRAPHICAL_ABSTRACT = _WWW_DIR / "graphical_abstract.png"
 
-# TODO(human): confirm final manuscript title.
-#
+try:
+    from tabs.visual_tree_tab import (
+        INSTRUMENTS, MATRICES, MATRIX_TIER_OVERRIDES, MONITORING_AUXILIARY,
+        MONITORING_CORE, PARTICLE_TYPES, RA_CORE, TEST_SYSTEMS, TOX_AUXILIARY,
+        TOX_CORE,
+    )
+except ImportError:  # imported as mnp_compass.tabs.citation_tab (tests)
+    from mnp_compass.tabs.visual_tree_tab import (
+        INSTRUMENTS, MATRICES, MATRIX_TIER_OVERRIDES, MONITORING_AUXILIARY,
+        MONITORING_CORE, PARTICLE_TYPES, RA_CORE, TEST_SYSTEMS, TOX_AUXILIARY,
+        TOX_CORE,
+    )
+
 # PAPER_TITLE is the single constant used both for the "Companion Publication"
 # info box and the "Suggested Citation" text below — do not retype the title
-# in a second place.
-#
-# mandate.md (Task 3) asserted the manuscript's current title is "MNP
-# Compass: a resource for coordinating microplastics research, reporting,
-# and publication criteria across disciplines," sourced from an internal
-# reference to a "Letter-to-journals-and-funders-(2).docx" that is not
-# present anywhere in this repository (checked: no .docx files exist at
-# all; neither "Letter to journals and funders.md" at the repo root nor
-# docs/letter-to-journals-and-funders.md contains the phrase "MNP Compass").
-# That claim could not be verified and is NOT applied here.
-#
-# What the audit actually found: the repo-root "Letter to journals and
-# funders.md" (the more complete/recent of the two letter drafts, with a
-# full author list) titles the piece "Learning from history instead of
-# reinventing the wheel: A call for coordinating microplastics research,
-# reporting, and publication criteria across disciplines" — one word
-# different from the title below ("call" vs. "resource"). The value below
-# is left unchanged (it's the best-attested title in-repo) pending a human
-# confirming the actual current manuscript title — including whether the
-# "MNP Compass:" framing mandate.md referenced exists in some other
-# document outside this repository (e.g. Obsidian/Drive) that should be
-# treated as authoritative instead.
+# in a second place. Source: NanoImpact decision letter for IMPACT-D-26-00454
+# (major revision, 2026). Update PAPER_STATUS / PAPER_JOURNAL / DOI on acceptance.
 PAPER_TITLE = (
-    "Learning from history instead of reinventing the wheel: "
-    "A resource for coordinating microplastics research, reporting, "
-    "and publication criteria across disciplines"
+    "MNP Compass: a resource for coordinating micro-/nano-plastics research, "
+    "reporting, and publication criteria across disciplines"
 )
+PAPER_JOURNAL = "NanoImpact"
+PAPER_STATUS = "in revision"
 
 AUTHORS = [
     {
@@ -167,8 +159,9 @@ def _about_text(reference_count):
         "references in microplastics research. Results are grouped by a four-tier authority and "
         "validation framework — described in detail below — and displayed with document type, "
         "key notes, and direct links, with the option to export filtered results to CSV. "
-        "A full-text search across all references, an interactive visual decision tree, and a "
-        "domain glossary are also available."
+        "Worked examples (Quick Start), a live map of where authoritative methods exist and "
+        "where they are missing (Coverage & Gaps), a full-text search across all references, "
+        "and a domain glossary are also available."
     )
 
 # Canonical tier definitions for the whole app. README.md's tier section is a manual
@@ -227,6 +220,191 @@ TIER_FRAMEWORK_OUTRO = (
     "applicability, and available resources."
 )
 
+# Concrete cases where a lower-tier resource fits a study better than a higher-tier one.
+# Named references and tiers are checked against crosswalk.xlsx by tests/smoke_test.py
+# (LOWER_TIER_EXAMPLE_TIERS) — update both together.
+LOWER_TIER_EXAMPLES = [
+    (
+        "Particle size outside the higher-tier method's scope",
+        "The Tier 1 drinking-water methods (California SWB-MP2, Wong & Coffin, 2022b; EU "
+        "Delegated Decision 2024/1441, European Commission, 2024) cover 20 µm–5 mm. A study of "
+        "smaller particles needs a method whose validated range extends lower, such as "
+        "ISO 16094-2:2025 (Tier 2; 1 µm–5 mm in low-turbidity water). Below that range, and "
+        "for nanoplastics, only Tier 3–4 resources exist.",
+    ),
+    (
+        "Matrix outside the higher-tier method's scope",
+        "Tier 1–2 spectroscopy methods were developed for drinking water and other "
+        "low-turbidity waters. For human blood, the most applicable resources are Tier 4 "
+        "single-laboratory studies. Rauert et al. (2025) found that Py-GC-MS is currently "
+        "unsuitable for polyethylene and PVC in biological matrices because of matrix "
+        "interferences, a finding that should shape any blood study even though it carries "
+        "less formal authority than a drinking-water SOP.",
+    ),
+    (
+        "Study purpose",
+        "The Tier 2 certified reference material EURM-060 (JRC, 2025; ~10 µm PET in water) "
+        "suits recovery checks for drinking-water methods. A toxicity test intended to reflect "
+        "environmental exposure is better served by Tier 3 protocols for environmentally "
+        "relevant particle mixtures (De Ruijter et al., 2025a), and Tier 4 commentary explains "
+        "why polystyrene spheres are of limited relevance (Gouin et al., 2024).",
+    ),
+    (
+        "Jurisdiction",
+        "Tier 1 status applies only within a jurisdiction and program. A method binding for "
+        "California or EU drinking water is not binding for a different matrix or country. "
+        "MNP Compass records this where it matters: Sherrod et al. (2024) is ranked Tier 1 "
+        "under Monitoring → Drinking Water and Tier 3 under the other monitoring matrices.",
+    ),
+    (
+        "Currency",
+        "Standards take years to revise. When the newest reference at the best available "
+        "tier predates 2021, the app warns that newer lower-tier work may update the approach.",
+    ),
+    (
+        "Resources and instrumentation",
+        "A Tier 1 SOP presumes specific instruments, sample volumes, and staff time. A "
+        "laboratory without them may reasonably adopt a validated Tier 3 method it can run "
+        "well, provided the choice and its validation data are reported transparently.",
+    ),
+]
+LOWER_TIER_EXAMPLE_TIERS = {
+    "Wong & Coffin, 2022b": 1,
+    "European Commission, 2024": 1,
+    "ISO 16094-2:2025": 2,
+    "Rauert et al., 2025": 4,
+    "JRC, 2025 (EURM-060)": 2,
+    "De Ruijter et al., 2025a": 3,
+    "Gouin et al., 2024": 4,
+    "Sherrod et al., 2024": 1,
+}
+
+CURATION_TEXT = (
+    "References were assembled from the best-practice and QA/QC syntheses that underpin the "
+    "companion manuscript, together with the author team's expertise across ecotoxicology, "
+    "human-health toxicology, analytical chemistry, environmental monitoring, and risk "
+    "assessment. A resource was included if it can serve as a method, standard, guidance "
+    "document, reference material, database, or critical or evidence-synthesis review for a "
+    "specific step of an MNP study. The crosswalk is a curated map of that literature, "
+    "**not an exhaustive systematic review**.\n\n"
+    "Each reference was assigned one authority tier by a single author applying the "
+    "framework above. Tier boundaries are interpretive, so some assignments are open to "
+    "debate. Each reference was then tagged by domain, matrix, instrumentation, particle "
+    "type, and target receptor, and scored in every topic column (workflow step, matrix, "
+    "analytical technique) it addresses. A topic score normally equals the document's tier; "
+    "it can differ by matrix where authority is matrix- or jurisdiction-specific."
+)
+
+
+def _describe_step_filter(step):
+    """Plain-language description of a Decision Tree step's filter, built from its config."""
+    parts = []
+    if "column" in step:
+        parts.append(f"scored in `{step['column']}`")
+    if "columns" in step:
+        parts.append("scored in any of " + ", ".join(f"`{c}`" for c in step["columns"]))
+    if "keywords" in step:
+        parts.append(
+            "Key Notes mention any of: " + ", ".join(k.strip() for k in step["keywords"].split(";"))
+        )
+    joiner = " **or** " if "primary_focus" in step and parts else " **and** "
+    if "primary_focus" in step:
+        parts.insert(0, f"Primary Focus contains \"{step['primary_focus']}\"")
+    return joiner.join(parts)
+
+
+def _render_ranking_method():
+    st.markdown(
+        "Every Decision Tree result list is produced by the same deterministic filter chain. "
+        "There is no relevance score, weighting, or machine learning, so any result can be "
+        "traced to the columns of `crosswalk.xlsx`.\n\n"
+        "1. **Study type:** keep references whose Primary Domain is the selected study type, "
+        "`Both`, or `Cross-cutting`.\n"
+        "2. **Context.** *Monitoring:* keep references tagged with the selected matrix, scored "
+        "in its `Matrix: …` column, or tagged `Cross-cutting`; the last group is marked "
+        "🌐 cross-cutting in results. An optional particle/polymer-type filter keeps "
+        "references matching **any** selected type. *Toxicology and Risk Assessment:* keep "
+        "references whose Target Receptor(s) include the selected receptor, are "
+        "`Cross-cutting`/`Both`, or are blank (untagged references are kept rather than "
+        "hidden).\n"
+        "3. **Workflow step:** keep references scored in the step's topic column(s). "
+        "Analytical techniques match Instrumentation Tags; some steps also use Key Notes "
+        "keywords or Primary Focus (exact rules below).\n"
+        "4. **Matrix-conditional tiers (Monitoring only):** a small number of references carry "
+        "a different tier depending on the selected matrix (listed below).\n"
+        "5. **Ordering:** sort by tier (Tier 1 first), then by publication year (newest "
+        "first). Nothing else affects order within a tier.\n"
+        "6. **Automated context messages:** the app warns when no Tier 1/2 reference matches, "
+        "when the newest reference at the best available tier predates 2021, and when the "
+        "best tier comes only from cross-cutting documents rather than matrix-specific ones.\n\n"
+        "Diagram node colors show the best (lowest-numbered) tier among a node's references. "
+        "The **Search All References** tab keeps references containing **all** search terms "
+        "and applies the same ordering."
+    )
+
+    with st.expander("Exact filter rules for every Decision Tree step"):
+        groups = [
+            ("Monitoring — core workflow", MONITORING_CORE),
+            ("Monitoring — auxiliary support", MONITORING_AUXILIARY),
+            ("Toxicology — core workflow", TOX_CORE),
+            ("Toxicology — auxiliary support", TOX_AUXILIARY),
+            ("Risk Assessment", RA_CORE),
+        ]
+        for heading, steps in groups:
+            st.markdown(f"**{heading}**")
+            st.markdown(
+                "\n".join(f"- {s['label']}: {_describe_step_filter(s)}" for s in steps)
+            )
+        st.markdown("**Matrices** (Matrix Tags keyword · matrix column)")
+        st.markdown(
+            "\n".join(f"- {m['label']}: \"{m['kw']}\" · `{m['column']}`" for m in MATRICES.values())
+        )
+        st.markdown("**Analytical techniques** (Instrumentation Tags contain any of)")
+        st.markdown(
+            "\n".join(f"- {i['label']}: {i['kw'].replace(';', ', ')}" for i in INSTRUMENTS.values())
+        )
+        st.markdown("**Toxicology test systems** (Key Notes mention any of)")
+        st.markdown(
+            "\n".join(
+                f"- {t['label']}: {t['keywords'].replace(';', ', ')}" for t in TEST_SYSTEMS.values()
+            )
+        )
+        st.markdown("**Particle/polymer types** (Particle/Polymer Type Tags contain any of)")
+        st.markdown(
+            "\n".join(f"- {p['label']}: {p['kw'].replace(';', ', ')}" for p in PARTICLE_TYPES.values())
+        )
+
+    st.markdown("**Matrix-conditional tier assignments**")
+    st.markdown(
+        "\n".join(
+            f"- References matching \"{fragment}\": "
+            + ", ".join(
+                f"Tier {tier} for {'all other matrices' if matrix == 'default' else matrix}"
+                for matrix, tier in overrides.items()
+            )
+            for fragment, overrides in MATRIX_TIER_OVERRIDES.items()
+        )
+    )
+
+
+def _render_growth_section(reference_count):
+    st.markdown(
+        "MNP Compass is designed to change as the field does. All "
+        + (f"{reference_count} " if reference_count else "")
+        + "references live in one openly licensed, version-controlled spreadsheet "
+        "(`mnp_compass/data/crosswalk.xlsx`). Result lists, diagram colors, the Coverage & "
+        "Gaps table, and all counts are recalculated from it on every load, so adding or "
+        "re-tiering a reference needs no code changes.\n\n"
+        f"- **Suggest a reference, correction, or re-tiering:** open an issue at "
+        f"[{GITHUB_URL}/issues]({GITHUB_URL}/issues), or submit a pull request that edits "
+        "the spreadsheet (see `CONTRIBUTING.md`). Maintainers review every tier assignment "
+        "before merging and ask contributors to cite the tier criterion a resource meets.\n"
+        "- **New categories** (a new matrix, technique, particle type, or workflow step) are "
+        "added in the app configuration and discussed in an issue first.\n"
+        "- **History:** every change to the data and code is recorded in the repository's "
+        "commit history, so earlier versions of any result list can be reproduced."
+    )
+
 
 def render_citation_tab(df=None):
     """Render the citation, codebase, and license tab.
@@ -241,7 +419,7 @@ def render_citation_tab(df=None):
     if _GRAPHICAL_ABSTRACT.exists():
         _img_col, _ = st.columns([1, 2])
         with _img_col:
-            st.image(str(_GRAPHICAL_ABSTRACT), caption="Granek et al. (in review). Graphical Abstract", use_container_width=True)
+            st.image(str(_GRAPHICAL_ABSTRACT), caption=f"Granek et al. ({PAPER_STATUS}). Graphical Abstract", width="stretch")
     reference_count = len(df) if df is not None else None
     st.markdown(_about_text(reference_count))
 
@@ -255,12 +433,31 @@ def render_citation_tab(df=None):
         st.markdown(description)
     st.markdown(TIER_FRAMEWORK_OUTRO)
 
+    st.markdown("#### When a lower-tier resource may be the better choice")
+    for heading, body in LOWER_TIER_EXAMPLES:
+        st.markdown(f"- **{heading}.** {body}")
+
+    st.divider()
+
+    st.markdown("### How the Crosswalk Was Compiled and Tiered")
+    st.markdown(CURATION_TEXT)
+
+    st.divider()
+
+    st.markdown("### How Results Are Selected and Ordered")
+    _render_ranking_method()
+
+    st.divider()
+
+    st.markdown("### How MNP Compass Grows")
+    _render_growth_section(reference_count)
+
     st.divider()
 
     # ── Paper citation ───────────────────────────────────────────────────────
     st.markdown("### Companion Publication")
     st.markdown(
-        f"This tool accompanies the following manuscript *(submitted / in review)*:"
+        f"This tool accompanies the following manuscript *({PAPER_STATUS}, {PAPER_JOURNAL})*:"
     )
 
     st.info(f"**{PAPER_TITLE}**", icon="📄")
@@ -284,8 +481,8 @@ def render_citation_tab(df=None):
         "Gouin, T., Gray, A.B., Harper, S.L., & Rooney, A.A."
     )
     citation_text = (
-        f"{author_short} (in review). {PAPER_TITLE}. "
-        f"[Journal TBD]. DOI: TBD"
+        f"{author_short} ({PAPER_STATUS}). {PAPER_TITLE}. "
+        f"{PAPER_JOURNAL}. DOI: TBD"
     )
     st.code(citation_text, language=None)
 

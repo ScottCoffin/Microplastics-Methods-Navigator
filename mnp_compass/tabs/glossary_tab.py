@@ -1074,6 +1074,85 @@ GLOSSARY: list[dict] = [
             "Typically Tier 1. Navigate to Drinking Water matrix for the most complete SOP coverage."
         ),
     },
+    # Document-status terms. MNP Compass uses these words with distinct meanings; they are
+    # not interchangeable, because they carry different evidentiary and institutional weight.
+    {
+        "term": "Regulation / Legal Requirement",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "A legally enforceable obligation (statute, regulation, or regulatory decision) issued by a "
+            "government with jurisdiction. Examples: EU REACH restriction 2023/2055; Commission Delegated "
+            "Decision (EU) 2024/1441 on measuring microplastics in drinking water; California's drinking-water "
+            "microplastics policy. Binding only within its jurisdiction and scope."
+        ),
+        "decision_tree_relevance": (
+            "Tier 1. Compliance is mandatory within the jurisdiction; elsewhere the document is influential "
+            "but not binding."
+        ),
+    },
+    {
+        "term": "Standard (Standardized Method)",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "A document that specifies requirements or a method, approved through a formal consensus "
+            "process by a recognized standards body (see Consensus Standard) or issued by an agency as a "
+            "required procedure (see Government SOP). A standard can be voluntary (most ISO/ASTM standards) "
+            "or made mandatory when a regulation or accreditation program adopts it. Not every widely used "
+            "method is a standard."
+        ),
+        "decision_tree_relevance": (
+            "Tier 1 when required by a regulation or accreditation program; otherwise Tier 2."
+        ),
+    },
+    {
+        "term": "Guidance Document",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "Advice issued by an authoritative body (e.g., WHO, EFSA, GESAMP, OECD, a national agency) on "
+            "how to approach a problem. It is not legally binding and, unlike a standard, does not go through "
+            "formal consensus balloting. Its weight comes from the issuing institution and its expert process."
+        ),
+        "decision_tree_relevance": "Typically Tier 2.",
+    },
+    {
+        "term": "Validated Method",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "A method whose performance (e.g., recovery, precision, detection limits, between-laboratory "
+            "reproducibility) has been measured, ideally through interlaboratory comparison or proficiency "
+            "testing. Validation is evidence about performance, not an institutional endorsement: a validated "
+            "method may have no formal status, and a formally adopted method may have limited validation "
+            "data for some matrices or size ranges."
+        ),
+        "decision_tree_relevance": (
+            "Tier 3 when validated without formal adoption; validation data also support higher-tier methods."
+        ),
+    },
+    {
+        "term": "Best Practice",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "A procedure the research community broadly regards as producing reliable results, usually set "
+            "out in peer-reviewed guides or critical reviews (e.g., QA/QC and reporting guidelines). Best "
+            "practices carry scientific rather than legal weight and change as evidence accumulates."
+        ),
+        "decision_tree_relevance": (
+            "Tier 3 when grounded in systematic or critical evaluation of evidence; Tier 4 when based "
+            "mainly on expert opinion or a narrative review."
+        ),
+    },
+    {
+        "term": "Recommendation",
+        "category": "Authority and Validation Tier System",
+        "definition": (
+            "A suggested course of action from an author, expert group, or institution. Its weight depends "
+            "entirely on who issues it and on what evidence: an intergovernmental body's recommendation "
+            "(Tier 2) differs from a recommendation in a single perspective article (Tier 4)."
+        ),
+        "decision_tree_relevance": (
+            "Tier depends on the source; check the Document Type shown on each result."
+        ),
+    },
 
     # ── Key Organizations ───────────────────────────────────────────────────
     {

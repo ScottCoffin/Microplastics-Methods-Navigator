@@ -6,6 +6,7 @@ Run from the repository root:
 """
 
 import py_compile
+import re
 import sys
 from pathlib import Path
 
@@ -38,7 +39,6 @@ from mnp_compass.tabs.visual_tree_tab import (
     _filter_domain,
     _filter_matrix,
     _filter_particle_types,
-    _filter_primary_focus,
     _filter_problem_formulation,
     _filter_target_receptor,
     _instrument_availability,
@@ -46,10 +46,99 @@ from mnp_compass.tabs.visual_tree_tab import (
     _ra_core_for_receptor,
     _reference_context_messages,
     _ensure_graphviz_dot_on_path,
+    _matrix_specific_mask,
     _zoomable_svg_html,
     _workflow_availability,
     build_graphviz,
+    monitoring_coverage,
+    resolve_tree_path,
+    path_dot_for_state,
 )
+from mnp_compass.tabs.quick_start_tab import (
+    MAIN_TABS,
+    MAIN_TABS_KEY,
+    TAB_DECISION_TREE,
+    WORKED_EXAMPLES,
+)
+from mnp_compass.tabs.citation_tab import LOWER_TIER_EXAMPLE_TIERS
+
+
+def citation_tiers(df):
+    """Map Short Citation -> set of tiers (a citation string can repeat)."""
+    tiers = {}
+    for cite, tier in zip(df["Short Citation"].astype(str).str.strip(), df["tier_num"]):
+        tiers.setdefault(cite, set()).add(int(tier))
+    return tiers
+
+
+def check_worked_examples(df, errors):
+    """Quick Start / About text names references and tiers; keep them true to the data."""
+    tiers = citation_tiers(df)
+    for cite, tier in LOWER_TIER_EXAMPLE_TIERS.items():
+        check(
+            tier in tiers.get(cite, set()),
+            f"About lower-tier example: {cite} is Tier {tier}",
+            errors,
+        )
+    for example in WORKED_EXAMPLES:
+        if not example.get("state"):
+            continue
+        path = resolve_tree_path(df, example["state"])
+        results = path["aux"] if example.get("expand") == "aux" else path["core"]
+        result_tiers = citation_tiers(results)
+        dot = path_dot_for_state(df, example["state"])
+        state = example["state"]
+        highlighted = [
+            f"CORE_{state[k].upper()}" for k in ("tree_core_step", "tree_tox_core") if k in state
+        ] + [
+            f"AUX_{state[k].upper()}" for k in ("tree_aux_step", "tree_tox_aux") if k in state
+        ] + ([f"INST_{state['tree_instrument'].upper()}"] if "tree_instrument" in state else [])
+        check(
+            all(
+                re.search(rf"^\s*{node} \[.*penwidth=3\.0", dot, re.M) for node in highlighted
+            ),
+            f"Quick Start '{example['key']}' diagram highlights {highlighted}",
+            errors,
+        )
+        for cite, tier in example["expected_tiers"].items():
+            check(
+                tier in result_tiers.get(cite, set()),
+                f"Quick Start '{example['key']}': {cite} appears as Tier {tier}",
+                errors,
+            )
+
+
+def check_quick_start_end_to_end(errors):
+    """Click every Quick Start example in a headless app run; results must match."""
+    from streamlit.testing.v1 import AppTest
+
+    df = load_crosswalk()
+    app = AppTest.from_file(str(PROJECT_ROOT / "mnp_compass" / "app.py"), default_timeout=60)
+    app.run()
+    check(not app.exception, "App runs headless without exceptions", errors)
+    for example in WORKED_EXAMPLES:
+        app.button(key=f"quick_start_{example['key']}").click().run()
+        check(not app.exception, f"Quick Start '{example['key']}' runs without exceptions", errors)
+        target = example.get("tab", TAB_DECISION_TREE)
+        check(
+            app.session_state[MAIN_TABS_KEY] == target,
+            f"Quick Start '{example['key']}' switches to {target}",
+            errors,
+        )
+        if not example.get("state"):
+            continue
+        path = resolve_tree_path(df, example["state"])
+        prefix, expected = (
+            ("Auxiliary Support references:", len(path["aux"]))
+            if example.get("expand") == "aux"
+            else ("Core Workflow references:", len(path["core"]))
+        )
+        labels = [e.label for e in app.expander if e.label.startswith(prefix)]
+        check(
+            len(labels) == 1 and labels[0].endswith(f"({expected})"),
+            f"Quick Start '{example['key']}' tree shows the resolved count ({expected}): {labels}",
+            errors,
+        )
 
 
 def check(condition, message, errors):
@@ -165,7 +254,11 @@ def main():
         check(len(core_results) > 0, "Decision Tree core result returns rows", errors)
         check(len(aux_results) > 0, "Decision Tree auxiliary result returns rows", errors)
         check("Tier 1\\n" in dot, "Decision Tree node tier labels render on separate lines", errors)
-        check("AUX_DEFINITIONS" in dot, "Decision Tree auxiliary node renders", errors)
+        check(
+            "AUX_REF_MATERIALS" in dot and "DEF [label=" in dot,
+            "Decision Tree auxiliary and Definitions nodes render",
+            errors,
+        )
         check("splines=polyline" in dot, "Decision Tree uses polyline graph routing", errors)
         check("URL=" not in dot, "Decision Tree graph nodes are not clickable", errors)
         check("target=" not in dot, "Decision Tree graph nodes do not navigate iframes", errors)
@@ -216,6 +309,11 @@ def main():
             and "center: true" in zoom_html
             and "zoomScaleSensitivity: 0.3" in zoom_html,
             "Zoomable diagram enables requested pan/zoom settings",
+            errors,
+        )
+        check(
+            "if (!isVisible()) return;" in zoom_html,
+            "Zoomable diagram defers pan/zoom until visible (hidden-tab blank-diagram fix)",
             errors,
         )
         visual_tree_source = expected_files["visual_tree_tab.py"].read_text(encoding="utf-8")
@@ -283,8 +381,10 @@ def main():
 
         tox_keys = [step["key"] for step in TOX_CORE]
         check(
-            tox_keys[:3] == ["ref_particles", "particle_char", "dosimetry"],
-            "Toxicology workflow orders reference particles before characterization and dosimetry",
+            tox_keys[:2] == ["particle_char", "dosimetry"]
+            and "ref_materials" in {step["key"] for step in TOX_AUXILIARY},
+            "Toxicology workflow starts with characterization and dosimetry; "
+            "reference materials are auxiliary support",
             errors,
         )
         check(
@@ -306,20 +406,12 @@ def main():
         check(len(human_tox) > 0, "Toxicology Human Health receptor filter returns rows", errors)
         check(len(eco_tox) > 0, "Toxicology Ecotoxicology receptor filter returns rows", errors)
         check(len(in_vitro_tox) > 0, "Toxicology In Vitro receptor filter returns rows", errors)
-        ref_particles_step = next(
-            step for step in TOX_CORE if step["key"] == "ref_particles"
+        ref_materials_step = next(
+            step for step in TOX_AUXILIARY if step["key"] == "ref_materials"
         )
-        ref_particles = _apply_step_filters(human_tox, ref_particles_step)
-        ref_particles_primary = _filter_primary_focus(
-            human_tox, "Reference Materials"
-        )
+        ref_particles = _apply_step_filters(human_tox, ref_materials_step)
         ref_particle_citations = set(
             ref_particles["Short Citation"].astype(str).str.strip()
-        )
-        check(
-            len(ref_particles) > len(ref_particles_primary),
-            "Toxicology reference particle selection uses column/keyword fallback",
-            errors,
         )
         check(
             "Gouin et al., 2024" in ref_particle_citations,
@@ -349,13 +441,13 @@ def main():
             aux_step_key="definitions",
         )
         check(
-            "{ rank=same; AUX_DEFINITIONS; AUX_QUALITY }" in tox_dot,
+            "{ rank=same; AUX_REF_MATERIALS; AUX_QUALITY }" in tox_dot,
             "Toxicology auxiliary nodes are constrained to the same rank",
             errors,
         )
         check(
-            "{ rank=same; AUX_DEFINITIONS }" in ra_dot,
-            "Risk Assessment auxiliary nodes are constrained to the same rank",
+            "AUX_" not in ra_dot,
+            "Risk Assessment has no auxiliary nodes",
             errors,
         )
         ra_df = _filter_domain(df, "Risk Assessment")
@@ -454,9 +546,59 @@ def main():
             "Decision Tree warns when top-tier coverage is older than 2021",
             errors,
         )
+
+        # Matrix filter also keeps rows scored in the matrix's own topic column
+        # (e.g., ASTM standards tagged "All Water Matrices").
+        dw_info = MATRICES["drinking_water"]
+        dw_context = _filter_matrix(nav_monitoring, dw_info["kw"], dw_info["column"])
+        check(
+            "ASTM D8402-23" in set(dw_context["Short Citation"].astype(str).str.strip()),
+            "Matrix filter includes references scored in the matrix column",
+            errors,
+        )
+        food_info = MATRICES["food"]
+        food_context = _filter_matrix(nav_monitoring, food_info["kw"], food_info["column"])
+        food_analysis = _apply_step_filters(
+            food_context, next(s for s in MONITORING_CORE if s["key"] == "analysis")
+        )
+        specific = _matrix_specific_mask(food_analysis, food_info)
+        check(
+            0 < specific.sum() < len(food_analysis),
+            "Matrix-specific mask separates food-specific from cross-cutting references",
+            errors,
+        )
+        check(
+            any(
+                "cross-cutting documents" in text
+                for _, text in _reference_context_messages(food_analysis, food_info)
+            ),
+            "Context messages flag tiers that come only from cross-cutting documents",
+            errors,
+        )
+        coverage = monitoring_coverage(df)
+        check(
+            len(coverage) == len(MATRICES) * (len(MONITORING_CORE) + len(MONITORING_AUXILIARY)),
+            "Coverage table has one row per matrix × monitoring step",
+            errors,
+        )
+        both = coverage.dropna(subset=["tier", "specific_tier"])
+        check(
+            (both["specific_tier"] >= both["tier"]).all()
+            and (coverage["specific_count"] <= coverage["count"]).all(),
+            "Coverage: matrix-specific tier/count never exceed the all-references values",
+            errors,
+        )
+        check_worked_examples(df, errors)
     except Exception as exc:
         print(f"FAIL: decision tree smoke error: {exc}")
         errors.append("decision tree smoke error")
+
+    try:
+        check(MAIN_TABS[0] == "Quick Start", "Quick Start is the first tab", errors)
+        check_quick_start_end_to_end(errors)
+    except Exception as exc:
+        print(f"FAIL: end-to-end app error: {exc!r}")
+        errors.append("end-to-end app error")
 
     if tree:
         print(f"OK: gap notes loaded: {len(tree.get('gap_notes', {}))}")

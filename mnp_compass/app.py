@@ -483,7 +483,7 @@ def main():
     _img_col, _txt_col = st.columns([1, 5])
     with _img_col:
         if _ga_path.exists():
-            st.image(str(_ga_path), use_container_width=True)
+            st.image(str(_ga_path), width="stretch")
     with _txt_col:
         st.title("MNP Compass")
         st.markdown(
@@ -491,8 +491,9 @@ def main():
             "monitoring and toxicology studies.*  \n"
             "Select your study type, matrix, and workflow step to find "
             "the best available methods ranked by authority tier — "
-            "Tier 1 (Normative/Binding) to Tier 4 (Supporting/Contextual); "
-            "see the About tab for the full framework."
+            "Tier 1 (Normative/Binding) to Tier 4 (Supporting/Contextual). "
+            "New here? Start with **Quick Start** for worked examples; "
+            "the About tab explains how references were tiered and ranked."
         )
 
     # Load data
@@ -500,13 +501,18 @@ def main():
     tree = load_tree()
 
     # ── App tabs ────────────────────────────────────────────
+    from tabs.quick_start_tab import MAIN_TABS, MAIN_TABS_KEY
+
     step_by_step_enabled = False
     if step_by_step_enabled:
         tab1, tab2, tab3, tab4 = st.tabs(
             ["Step-by-Step Navigator", "Decision Tree", "Crosswalk", "Search All References"]
         )
     else:
-        tab2, tab3, tab4, tab5, tab6 = st.tabs(["Decision Tree", "Crosswalk", "Search All References", "Glossary", "About"])
+        # Keyed so Quick Start examples can switch to the Decision Tree tab.
+        tab0, tab2, tab_cov, tab3, tab4, tab5, tab6 = st.tabs(
+            MAIN_TABS, key=MAIN_TABS_KEY, on_change="rerun"
+        )
 
     if step_by_step_enabled:
         with tab1:
@@ -858,9 +864,19 @@ def main():
                     df_result, ra_step.split(" ", 1)[1]
                 )
     
+    if not step_by_step_enabled:
+        with tab0:
+            from tabs.quick_start_tab import render_quick_start_tab
+            render_quick_start_tab(df)
+
     with tab2:
         from tabs.visual_tree_tab import render_decision_tree
         render_decision_tree(df, tree)
+
+    if not step_by_step_enabled:
+        with tab_cov:
+            from tabs.coverage_tab import render_coverage_tab
+            render_coverage_tab(df)
 
     with tab3:
         from tabs.crosswalk_tab import render_crosswalk_tab

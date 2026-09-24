@@ -8,7 +8,7 @@ The app helps researchers locate microplastics and nanoplastics methods, standar
 
 ![Graphical Abstract](mnp_compass/www/graphical_abstract.png)
 
-MNP Compass is an interactive decision-tree web tool for researchers designing microplastics monitoring, toxicology, or risk assessment studies. Users step through their study type, environmental matrix (drinking water, sediment, biota, air, food, soil, and others), and workflow step (sampling, extraction, analytical identification, QA/QC, reporting) to retrieve a curated, ranked list of methods, standards, and guidance documents drawn from a crosswalk of <!-- count sourced from crosswalk.xlsx row count as of 2026-08-27; the in-app count on the Crosswalk and About tabs is computed live from the same file and will not drift from it, but this README prose count is static and should be updated by hand if the workbook's row count changes -->190 seminal references in microplastics research. Results are grouped by a four-tier authority and validation framework — described below — and displayed with document type, key notes, and direct links, with the option to export filtered results to CSV. A full-text search across all references, an interactive visual decision tree, and a domain glossary are also available.
+MNP Compass is an interactive decision-tree web tool for researchers designing microplastics monitoring, toxicology, or risk assessment studies. Users step through their study type, environmental matrix (drinking water, sediment, biota, air, food, soil, and others), and workflow step (sampling, extraction, analytical identification, QA/QC, reporting) to retrieve a curated, ranked list of methods, standards, and guidance documents drawn from a crosswalk of <!-- count sourced from crosswalk.xlsx row count as of 2026-08-27; the in-app count on the Crosswalk and About tabs is computed live from the same file and will not drift from it, but this README prose count is static and should be updated by hand if the workbook's row count changes -->190 seminal references in microplastics research. Results are grouped by a four-tier authority and validation framework — described below — and displayed with document type, key notes, and direct links, with the option to export filtered results to CSV. Worked examples (Quick Start), a live map of where authoritative methods exist and where they are missing (Coverage & Gaps), a full-text search across all references, and a domain glossary are also available.
 
 ### Authority and Validation Tier Framework
 
@@ -69,8 +69,10 @@ python tests/smoke_test.py
 |   |   `-- metadata_cache/
 |   `-- tabs/
 |       |-- citation_tab.py
+|       |-- coverage_tab.py
 |       |-- crosswalk_tab.py
 |       |-- glossary_tab.py
+|       |-- quick_start_tab.py
 |       `-- visual_tree_tab.py
 |-- scripts/
 |   `-- fill_crosswalk_metadata.py
@@ -95,7 +97,7 @@ python tests/smoke_test.py
 
 `mnp_compass/config/tree_structure.yaml` stores a decision-tree structure and gap notes, loaded by `app.py`. **Note:** the live "Decision Tree" tab is currently rendered entirely by hardcoded Python dicts in `mnp_compass/tabs/visual_tree_tab.py` (matrices, instruments, particle types, workflow steps) and does not read this YAML — the YAML only feeds a "Step-by-Step Navigator" tab that is currently disabled (`step_by_step_enabled = False` in `app.py`). The two enumerations have drifted as a result; see `TODO(human)` in `visual_tree_tab.py` and `AUDIT_FINDINGS.md`.
 
-`mnp_compass/tabs/` contains the app tab renderers for the visual decision tree, crosswalk browser, glossary, and citation/license page.
+`mnp_compass/tabs/` contains the app tab renderers, in tab order: Quick Start (a three-step guide plus worked examples that open pre-set Decision Tree paths), the visual decision tree, Coverage & Gaps (best available tier per matrix × monitoring step, matrix-specific or including cross-cutting documents), the crosswalk browser, search, glossary, and the About/citation page (tier framework, curation process, the exact filter and ordering rules, and the contribution process).
 
 `scripts/fill_crosswalk_metadata.py` is the active maintenance script for filling selected workbook metadata fields from Zotero, PDFs, DOI/URL pages, and an Anthropic model.
 

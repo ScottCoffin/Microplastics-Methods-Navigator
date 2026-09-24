@@ -107,38 +107,39 @@ RA_AUXILIARY = []
 # never consumed by this module (render_decision_tree(df, tree) ignores the
 # `tree` argument), so nothing has kept the two enumerations in sync.
 #
-# Additionally, "biosolids" below currently matches zero crosswalk rows —
-# no row's Matrix Tags contains the literal substring "Biosolids"; the one
-# plausibly-related row (Li et al., 2019) is tagged "Soil; Sludge" instead.
-# Whether "Sludge" should count as "Biosolids" for filtering purposes is a
-# domain judgment call, not a text-matching bug (contrast with the "ermp"
-# keyword fix elsewhere in this file, which corrected an objective text
-# mismatch) — left for a human to decide rather than auto-resolved here.
+# "biosolids" matches zero rows by Matrix Tags keyword (no tag contains
+# "Biosolids"), but since each matrix now also matches rows the curator
+# scored in its own "Matrix: …" topic column (see _filter_matrix), it picks
+# up the rows scored under "Matrix: Biosolids" — including Li et al., 2019
+# (tagged "Soil; Sludge"). This is the same matrix-column logic Figure 2
+# (figures/manuscript_figures.R) uses, so app and figure now agree.
 #
 # Please decide and update this comment when resolved:
 #   1. Should the app use 8 matrices (matching tree_structure.yaml) or these
 #      10 (current live behavior), or some other reconciled set?
-#   2. Should "biosolids" be kept (and its keyword broadened to catch
-#      "Sludge", if that's judged equivalent), merged into another matrix,
-#      or removed?
+#   2. Should "biosolids" be kept as its own matrix, merged into another
+#      matrix, or removed? (Its keyword could also be broadened to
+#      "Biosolids;Sludge" if those are judged equivalent.)
 #   3. Should tree_structure.yaml be wired up as the real source of truth
 #      for this tab (larger refactor), or formally retired/documented as
 #      dead configuration for the disabled step-by-step tab only?
 # Do not delete a matrix that has real references behind it without
 # confirming first.
 #
-# Matrices
+# Matrices. "kw" matches Matrix Tags; "column" is the curator-scored
+# "Matrix: …" topic column. A reference is matrix-specific if it matches
+# either; it is "cross-cutting" if it only enters via a Cross-cutting tag.
 MATRICES = {
-    "drinking_water": {"label": "Drinking Water",  "icon": "🚰", "kw": "Drinking Water"},
-    "surface_water":  {"label": "Surface Water",   "icon": "🌊", "kw": "Surface Water"},
-    "wastewater":     {"label": "Wastewater",      "icon": "🏭", "kw": "Wastewater"},
-    "biosolids":      {"label": "Biosolids / Sludge", "icon": "♻️", "kw": "Biosolids"},
-    "sediment":       {"label": "Sediment",        "icon": "🪨", "kw": "Sediment"},
-    "biota":          {"label": "Biota / Tissue",  "icon": "🐟", "kw": "Biota"},
-    "air":            {"label": "Air",             "icon": "💨", "kw": "Air"},
-    "food":           {"label": "Food / Dietary",  "icon": "🍽️", "kw": "Food"},
-    "human_tissue":   {"label": "Human Tissue",    "icon": "🩸", "kw": "Human"},
-    "soil":           {"label": "Soil",            "icon": "🌱", "kw": "Soil"},
+    "drinking_water": {"label": "Drinking Water",  "icon": "🚰", "kw": "Drinking Water", "column": "Matrix: Drinking Water"},
+    "surface_water":  {"label": "Surface Water",   "icon": "🌊", "kw": "Surface Water",  "column": "Matrix: Surface Water"},
+    "wastewater":     {"label": "Wastewater",      "icon": "🏭", "kw": "Wastewater",     "column": "Matrix: Wastewater"},
+    "biosolids":      {"label": "Biosolids / Sludge", "icon": "♻️", "kw": "Biosolids",   "column": "Matrix: Biosolids"},
+    "sediment":       {"label": "Sediment",        "icon": "🪨", "kw": "Sediment",       "column": "Matrix: Sediment"},
+    "biota":          {"label": "Biota / Tissue",  "icon": "🐟", "kw": "Biota",          "column": "Matrix: Biota/Tissue"},
+    "air":            {"label": "Air",             "icon": "💨", "kw": "Air",            "column": "Matrix: Air/Atmos."},
+    "food":           {"label": "Food / Dietary",  "icon": "🍽️", "kw": "Food",           "column": "Matrix: Food/Dietary"},
+    "human_tissue":   {"label": "Human Tissue",    "icon": "🩸", "kw": "Human",          "column": "Matrix: Human Tissue/ Biomonitor"},
+    "soil":           {"label": "Soil",            "icon": "🌱", "kw": "Soil",           "column": "Matrix: Soil"},
 }
 
 RECEPTORS = {
@@ -216,12 +217,35 @@ def _filter_domain(df, domain):
     return df[df[col].astype(str).str.lower().isin([domain.lower(), "both", "cross-cutting"])]
 
 
-def _filter_matrix(df, kw):
+def _scored(df, col_name):
+    """Boolean mask: rows with a non-empty score in a topic column (all False if absent)."""
+    col = _find_col(df, [col_name]) if col_name else None
+    if col is None:
+        return pd.Series(False, index=df.index)
+    return df[col].notna() & (df[col] != "") & (df[col] != 0)
+
+
+def _matrix_specific_mask(df, matrix_info):
+    """Rows tagged with the matrix keyword or scored in the matrix's topic column."""
+    col = _find_col(df, ["Matrix Tags"])
+    tagged = (
+        df[col].astype(str).str.contains(matrix_info["kw"], case=False, na=False)
+        if col is not None
+        else pd.Series(False, index=df.index)
+    )
+    return tagged | _scored(df, matrix_info.get("column"))
+
+
+def _filter_matrix(df, kw, column=None):
     col = _find_col(df, ["Matrix Tags"])
     if col is None:
         return df
     s = df[col].astype(str)
-    return df[s.str.contains(kw, case=False, na=False) | s.str.contains("Cross-cutting", case=False, na=False)]
+    return df[
+        s.str.contains(kw, case=False, na=False)
+        | s.str.contains("Cross-cutting", case=False, na=False)
+        | _scored(df, column)
+    ]
 
 
 def _filter_target_receptor(df, kw):
@@ -506,7 +530,7 @@ def _tree_query_values(key):
     return [single_value] if single_value else []
 
 
-def _reference_context_messages(df):
+def _reference_context_messages(df, matrix_info=None):
     """Generate rules-based context from the selected Crosswalk rows."""
     if len(df) == 0:
         return []
@@ -521,6 +545,30 @@ def _reference_context_messages(df):
     tier_counts = tiers.value_counts().sort_index().to_dict()
     best_tier_count = tier_counts.get(best_tier, 0)
     messages = []
+
+    if matrix_info:
+        specific_df = df[_matrix_specific_mask(df, matrix_info)]
+        specific_tier = _best_tier(specific_df)
+        matrix_label = matrix_info["label"]
+        if specific_tier is None:
+            messages.append(
+                (
+                    "warning",
+                    f"None of these references is specific to {matrix_label}; all are "
+                    f"cross-cutting documents (🌐) written for other or unspecified "
+                    f"matrices. Check their applicability to {matrix_label} before use.",
+                )
+            )
+        elif specific_tier > best_tier:
+            messages.append(
+                (
+                    "warning",
+                    f"The Tier {best_tier} coverage here comes from cross-cutting "
+                    f"documents (🌐). The best {matrix_label}-specific reference is "
+                    f"Tier {specific_tier} ({len(specific_df)} matrix-specific "
+                    f"reference{'' if len(specific_df) == 1 else 's'}).",
+                )
+            )
 
     if best_tier > 2:
         messages.append(
@@ -608,8 +656,13 @@ def _best_tier(df):
     return int(tiers.min())
 
 
-def _availability(df):
-    return {"count": len(df), "tier": _best_tier(df)}
+def _availability(df, matrix_info=None):
+    availability = {"count": len(df), "tier": _best_tier(df)}
+    if matrix_info:
+        specific_df = df[_matrix_specific_mask(df, matrix_info)]
+        availability["specific_tier"] = _best_tier(specific_df)
+        availability["specific_count"] = len(specific_df)
+    return availability
 
 
 def _availability_label(label, availability):
@@ -618,35 +671,69 @@ def _availability_label(label, availability):
     count = availability.get("count", 0)
     tier = availability.get("tier")
     tier_label = f"Tier {tier}" if tier else "No refs"
-    return f"{label}\\n{tier_label}\\n{count} refs"
+    lines = [label, tier_label, f"{count} refs"]
+    if tier and "specific_tier" in availability:
+        specific_tier = availability["specific_tier"]
+        if specific_tier != tier:
+            lines.append(
+                f"matrix-specific: T{specific_tier}" if specific_tier else "matrix-specific: none"
+            )
+    return "\\n".join(lines)
 
 
-def _workflow_availability(base_df, steps, prefix):
+def _workflow_availability(base_df, steps, prefix, matrix_info=None):
     return {
         f"{prefix}_{step['key'].upper()}": _availability(
-            _apply_step_filters(base_df, step)
+            _apply_step_filters(base_df, step), matrix_info
         )
         for step in steps
     }
 
 
-def _instrument_availability(base_df):
+def _instrument_availability(base_df, matrix_info=None):
     return {
-        f"INST_{key.upper()}": _availability(_filter_instrument(base_df, info["kw"]))
+        f"INST_{key.upper()}": _availability(
+            _filter_instrument(base_df, info["kw"]), matrix_info
+        )
         for key, info in INSTRUMENTS.items()
     }
 
 
-def _subtype_availability(base_df, step):
+def _subtype_availability(base_df, step, matrix_info=None):
     """Compute availability for each sub-node of a has_subtypes step."""
     if not step.get("has_subtypes"):
         return {}
     return {
         f"AUXSUB_{step['key'].upper()}_{sub_key.upper()}": _availability(
-            _filter_column(base_df, sub_info["column"])
+            _filter_column(base_df, sub_info["column"]), matrix_info
         )
         for sub_key, sub_info in step["subtypes"].items()
     }
+
+
+def monitoring_coverage(df, particle_keys=None):
+    """Best tier per matrix × monitoring step, using the live Decision Tree filters.
+
+    Returns one row per (matrix, step) with the best tier and count over all
+    matching references (including cross-cutting documents) and over
+    matrix-specific references only. Used by the Coverage tab.
+    """
+    df_domain = _filter_domain(df, "Monitoring")
+    rows = []
+    for matrix_key, matrix_info in MATRICES.items():
+        context_df = _filter_matrix(df_domain, matrix_info["kw"], matrix_info["column"])
+        context_df = _apply_matrix_tier_overrides(context_df, matrix_info["kw"])
+        context_df = _filter_particle_types(context_df, particle_keys or [])
+        for step in MONITORING_CORE + MONITORING_AUXILIARY:
+            availability = _availability(_apply_step_filters(context_df, step), matrix_info)
+            rows.append({
+                "matrix_key": matrix_key,
+                "matrix": matrix_info["label"],
+                "step_key": step["key"],
+                "step": step["label"],
+                **availability,
+            })
+    return pd.DataFrame(rows)
 
 
 def _node_style(active=False, auxiliary=False, availability=None):
@@ -1093,13 +1180,24 @@ def _zoomable_svg_html(svg, height):
   </div>
   <script>
     const container = document.getElementById("workflow-container");
-    const panZoom = svgPanZoom("#workflow-svg", {{
-      controlIconsEnabled: true,
-      fit: true,
-      center: true,
-      zoomScaleSensitivity: 0.3
-    }});
+    // The diagram often loads inside a hidden tab (0×0). Fitting then sets the zoom
+    // to 0, which can never be fitted back, leaving a blank diagram — so create
+    // pan/zoom lazily once the container is visible, and skip refits while hidden.
+    let panZoom = null;
+    function isVisible() {{
+      const rect = container.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0;
+    }}
     function refitDiagram() {{
+      if (!isVisible()) return;
+      if (!panZoom) {{
+        panZoom = svgPanZoom("#workflow-svg", {{
+          controlIconsEnabled: true,
+          fit: true,
+          center: true,
+          zoomScaleSensitivity: 0.3
+        }});
+      }}
       panZoom.resize();
       panZoom.fit();
       panZoom.center();
@@ -1142,7 +1240,7 @@ def _render_zoomable_graphviz(dot, height):
         try:
             col, _ = st.columns([1, 1])
             with col:
-                st.graphviz_chart(dot, use_container_width=True)
+                st.graphviz_chart(dot, width="stretch")
             return
         except Exception:
             st.warning(
@@ -1194,20 +1292,34 @@ def _compact_export_df(df):
     return output.reset_index(drop=True)
 
 
-def _display_compact_results(df, tier_expanders=True):
+def _display_compact_results(df, tier_expanders=True, matrix_info=None):
     df_sorted = _sort_tier(df)
 
     if len(df_sorted) == 0:
         st.info("No references found for this path.")
         return
 
-    for level, message in _reference_context_messages(df_sorted):
+    specific_mask = (
+        _matrix_specific_mask(df_sorted, matrix_info)
+        if matrix_info
+        else pd.Series(True, index=df_sorted.index)
+    )
+
+    for level, message in _reference_context_messages(df_sorted, matrix_info):
         if level == "warning":
             st.warning(message)
         else:
             st.info(message)
 
-    st.caption(f"📚 {len(df_sorted)} references")
+    st.caption(
+        f"📚 {len(df_sorted)} references"
+        + (
+            f" · {int(specific_mask.sum())} specific to {matrix_info['label']}, "
+            f"{int((~specific_mask).sum())} cross-cutting (🌐)"
+            if matrix_info
+            else ""
+        )
+    )
 
     for tier_num in [1, 2, 3, 4]:
         tier_df = df_sorted[df_sorted["tier_num"] == tier_num]
@@ -1227,7 +1339,14 @@ def _display_compact_results(df, tier_expanders=True):
             tier_container = st.container()
 
         with tier_container:
-            for _, row in tier_df.iterrows():
+            for idx, row in tier_df.iterrows():
+                scope_badge = (
+                    " <span style='color:#555; font-size:0.8em;' "
+                    "title='Cross-cutting: not written for this specific matrix'>"
+                    "🌐 cross-cutting</span>"
+                    if not specific_mask.loc[idx]
+                    else ""
+                )
                 cite = _row_text(row, df, ["Short Citation"])
                 full_title = _row_text(row, df, ["Full Title", "Title"])
                 year = _row_text(row, df, ["Year"]).replace(".0", "")
@@ -1280,7 +1399,7 @@ def _display_compact_results(df, tier_expanders=True):
                     f"<div style='border-left:3px solid {color}; padding:4px 8px; "
                     f"margin-bottom:4px; font-size:0.9em;'>"
                     f"<strong>{icon} {cite_safe}</strong> ({year_safe}) "
-                    f"<span style='color:{color};'>— {dtype_safe}</span>{doi_html}"
+                    f"<span style='color:{color};'>— {dtype_safe}</span>{doi_html}{scope_badge}"
                     f"<span style='color:#555; font-size:0.8em;'>{tier_context}</span>"
                     f"{title_html}<br/>"
                     f"<span style='color:#555; font-size:0.85em;'>"
@@ -1316,11 +1435,255 @@ def _display_compact_results(df, tier_expanders=True):
         )
 
 
+# ── HEADLESS PATH RESOLUTION ────────────────────────────────
+
+def resolve_tree_path(df, state):
+    """Core and auxiliary results for a Decision Tree state dict, without rendering.
+
+    `state` uses the same keys as the tree's widgets (tree_domain, tree_matrix,
+    tree_core_step, tree_instrument, ...); missing keys fall back to the first
+    option, as the widgets do. Mirrors the filter chain in render_decision_tree;
+    tests/smoke_test.py checks the two agree for every Quick Start example.
+    """
+    domain = state.get("tree_domain", "Monitoring")
+    particle_keys = state.get("tree_particle_type") or []
+    subtype = state.get("tree_aux_subtype", "all")
+    result = {"matrix_info": None, "core": df.iloc[0:0], "aux": df.iloc[0:0]}
+
+    def first(steps, key):
+        wanted = state.get(key)
+        return next((s for s in steps if s["key"] == wanted), steps[0])
+
+    def aux_results(context_df, aux_info):
+        if aux_info.get("has_subtypes") and subtype in aux_info.get("subtypes", {}):
+            return _filter_column(context_df, aux_info["subtypes"][subtype]["column"])
+        return _apply_step_filters(context_df, aux_info)
+
+    if domain == "Monitoring":
+        matrix_info = MATRICES[state.get("tree_matrix", next(iter(MATRICES)))]
+        context_df = _filter_matrix(
+            _filter_domain(df, "Monitoring"), matrix_info["kw"], matrix_info["column"]
+        )
+        context_df = _apply_matrix_tier_overrides(context_df, matrix_info["kw"])
+        context_df = _filter_particle_types(context_df, particle_keys)
+        core_info = first(MONITORING_CORE, "tree_core_step")
+        instrument = state.get("tree_instrument", "all")
+        if core_info.get("has_instruments") and instrument in INSTRUMENTS:
+            core = _filter_instrument(context_df, INSTRUMENTS[instrument]["kw"])
+        elif core_info.get("has_instruments"):
+            core = _filter_column(context_df, core_info["column"])
+        else:
+            core = _apply_step_filters(context_df, core_info)
+        aux = aux_results(context_df, first(MONITORING_AUXILIARY, "tree_aux_step"))
+        result.update(matrix_info=matrix_info, core=core, aux=aux)
+        result["core_specific"] = core[_matrix_specific_mask(core, matrix_info)]
+        result["aux_specific"] = aux[_matrix_specific_mask(aux, matrix_info)]
+    elif domain == "Toxicology":
+        receptor_info = RECEPTORS[state.get("tree_receptor", next(iter(RECEPTORS)))]
+        context_df = _filter_target_receptor(_filter_domain(df, "Toxicology"), receptor_info["kw"])
+        core_info = first(TOX_CORE, "tree_tox_core")
+        core = _apply_step_filters(context_df, core_info)
+        system = state.get("tree_test_sys", "all")
+        if core_info.get("has_test_systems") and system in TEST_SYSTEMS:
+            core = _filter_keywords(core, TEST_SYSTEMS[system]["keywords"])
+        aux = aux_results(context_df, first(TOX_AUXILIARY, "tree_tox_aux"))
+        result.update(core=core, aux=aux)
+    elif domain == "Risk Assessment":
+        receptor_key = state.get("tree_receptor", next(iter(RECEPTORS)))
+        context_df = _filter_target_receptor(
+            _filter_domain(df, "Risk Assessment"), RECEPTORS[receptor_key]["kw"]
+        )
+        core_info = first(_ra_core_for_receptor(receptor_key), "tree_ra_step")
+        result["core"] = _apply_step_filters(context_df, core_info)
+    return result
+
+
+def _state_availability(df, state):
+    """Availability (tier colors, counts) and selected keys for a Decision Tree state.
+
+    Uses the same filters as render_decision_tree, so a diagram built from it
+    matches what the live tree shows for that state.
+    """
+    domain = state.get("tree_domain", "Monitoring")
+    particle_keys = state.get("tree_particle_type") or []
+    availability = {
+        "PF": _availability(_filter_problem_formulation(df)) | {"active": True},
+    }
+    keys = {"domain": domain}
+
+    def pick(steps, key):
+        wanted = state.get(key)
+        return next((s for s in steps if s["key"] == wanted), steps[0])["key"]
+
+    if domain == "Monitoring":
+        matrix_key = state.get("tree_matrix", next(iter(MATRICES)))
+        matrix_info = MATRICES[matrix_key]
+        context_df = _filter_matrix(
+            _filter_domain(df, "Monitoring"), matrix_info["kw"], matrix_info["column"]
+        )
+        context_df = _apply_matrix_tier_overrides(context_df, matrix_info["kw"])
+        context_df = _filter_particle_types(context_df, particle_keys)
+        availability.update(_workflow_availability(context_df, MONITORING_CORE, "CORE", matrix_info))
+        availability.update(_workflow_availability(context_df, MONITORING_AUXILIARY, "AUX", matrix_info))
+        availability.update(_instrument_availability(context_df, matrix_info))
+        for step in MONITORING_AUXILIARY:
+            availability.update(_subtype_availability(context_df, step, matrix_info))
+        instrument = state.get("tree_instrument")
+        keys.update(
+            matrix_key=matrix_key,
+            core_step_key=pick(MONITORING_CORE, "tree_core_step"),
+            aux_step_key=pick(MONITORING_AUXILIARY, "tree_aux_step"),
+            instrument_key=instrument if instrument in INSTRUMENTS else None,
+        )
+    elif domain == "Toxicology":
+        receptor_key = state.get("tree_receptor", next(iter(RECEPTORS)))
+        context_df = _filter_target_receptor(
+            _filter_domain(df, "Toxicology"), RECEPTORS[receptor_key]["kw"]
+        )
+        availability.update(_workflow_availability(context_df, TOX_CORE, "CORE"))
+        availability.update(_workflow_availability(context_df, TOX_AUXILIARY, "AUX"))
+        for step in TOX_AUXILIARY:
+            availability.update(_subtype_availability(context_df, step))
+        core_key = pick(TOX_CORE, "tree_tox_core")
+        system = state.get("tree_test_sys")
+        if system in TEST_SYSTEMS:
+            core_info = next(s for s in TOX_CORE if s["key"] == core_key)
+            availability[f"SYS_{system.upper()}"] = _availability(
+                _filter_keywords(
+                    _apply_step_filters(context_df, core_info),
+                    TEST_SYSTEMS[system]["keywords"],
+                )
+            )
+        keys.update(
+            receptor_key=receptor_key,
+            core_step_key=core_key,
+            aux_step_key=pick(TOX_AUXILIARY, "tree_tox_aux"),
+            test_system_key=system if system in TEST_SYSTEMS else None,
+        )
+    elif domain == "Risk Assessment":
+        receptor_key = state.get("tree_receptor", next(iter(RECEPTORS)))
+        context_df = _filter_target_receptor(
+            _filter_domain(df, "Risk Assessment"), RECEPTORS[receptor_key]["kw"]
+        )
+        steps = _ra_core_for_receptor(receptor_key)
+        availability.update(_workflow_availability(context_df, steps, "CORE"))
+        keys.update(receptor_key=receptor_key, core_step_key=pick(steps, "tree_ra_step"))
+
+    subtype = state.get("tree_aux_subtype")
+    keys["aux_subtype_key"] = subtype if subtype and subtype != "all" else None
+    return availability, keys
+
+
+def path_dot_for_state(df, state):
+    """Compact Graphviz DOT of one Decision Tree path, highlighted, for Quick Start.
+
+    Shows only the nodes on `state`'s path (study type → matrix/receptor → step →
+    technique/test system, plus an auxiliary step when `state` names one), with a
+    dim "+N other …" node standing in for the options not taken. Nodes carry the
+    same tier colors, counts, and bold highlighting as the full Decision Tree.
+    """
+    availability, keys = _state_availability(df, state)
+    domain = keys["domain"]
+    lines = [
+        "digraph Path {",
+        "    rankdir=TB;",
+        '    bgcolor="transparent";',
+        "    nodesep=0.3;",
+        "    ranksep=0.3;",
+        '    node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=11, margin="0.15,0.08"];',
+        "    edge [arrowsize=0.7];",
+    ]
+
+    def others(nid, parent, n, noun):
+        if n > 0:
+            lines.append(_summary_node(nid, f"+{n} other {noun}"))
+            lines.append(_e(parent, nid))
+
+    lines.append(_n("PF", "📋 Problem Formulation", active=True, availability=availability["PF"]))
+    domain_icons = {"Monitoring": "🔬", "Toxicology": "🧫", "Risk Assessment": "⚖️"}
+    lines.append(_n("DOMAIN", f"{domain_icons[domain]} {domain}", active=True))
+    lines.append(_e("PF", "DOMAIN", active=True))
+    others("DOMAIN_OTHERS", "PF", 2, "study types")
+
+    if domain == "Monitoring":
+        context_id, context = "MAT", MATRICES[keys["matrix_key"]]
+        core_steps, aux_steps = MONITORING_CORE, MONITORING_AUXILIARY
+        context_noun, n_contexts = "matrices", len(MATRICES)
+    else:
+        context_id, context = "RECEPTOR", RECEPTORS[keys["receptor_key"]]
+        if domain == "Toxicology":
+            core_steps, aux_steps = TOX_CORE, TOX_AUXILIARY
+        else:
+            core_steps, aux_steps = _ra_core_for_receptor(keys["receptor_key"]), []
+        context_noun, n_contexts = "receptors", len(RECEPTORS)
+    lines.append(_n(context_id, f'{context["icon"]} {context["label"]}', active=True))
+    lines.append(_e("DOMAIN", context_id, active=True))
+    others("CONTEXT_OTHERS", "DOMAIN", n_contexts - 1, context_noun)
+
+    show_core = any(k in state for k in ("tree_core_step", "tree_tox_core", "tree_ra_step"))
+    aux_state_key = "tree_aux_step" if domain == "Monitoring" else "tree_tox_aux"
+    show_aux = aux_state_key in state and bool(aux_steps)
+
+    if show_core:
+        step = next(s for s in core_steps if s["key"] == keys["core_step_key"])
+        sid = f"CORE_{step['key'].upper()}"
+        avail = availability.get(sid)
+        lines.append(_n(sid, f'{step["icon"]} {step["label"]}', active=True, availability=avail))
+        lines.append(_e(context_id, sid, active=True, tier=avail.get("tier") if avail else None))
+        others("CORE_OTHERS", context_id, len(core_steps) - 1, "workflow steps")
+        leaf = None
+        if keys.get("instrument_key"):
+            instrument = keys["instrument_key"]
+            leaf = (f"INST_{instrument.upper()}", INSTRUMENTS[instrument]["label"],
+                    len(INSTRUMENTS) - 1, "techniques")
+        elif keys.get("test_system_key"):
+            system = keys["test_system_key"]
+            leaf = (f"SYS_{system.upper()}", TEST_SYSTEMS[system]["label"],
+                    len(TEST_SYSTEMS) - 1, "test systems")
+        if leaf:
+            lid, label, n_other, noun = leaf
+            lavail = availability.get(lid)
+            lines.append(_n(lid, label, active=True, availability=lavail))
+            lines.append(_e(sid, lid, active=True, tier=lavail.get("tier") if lavail else None))
+            others("LEAF_OTHERS", sid, n_other, noun)
+
+    if show_aux:
+        step = next(s for s in aux_steps if s["key"] == keys["aux_step_key"])
+        aid = f"AUX_{step['key'].upper()}"
+        avail = availability.get(aid)
+        lines.append(_n(aid, f'{step["icon"]} {step["label"]}', active=True,
+                        auxiliary=True, availability=avail))
+        lines.append(_e(context_id, aid, active=True, tier=avail.get("tier") if avail else None))
+        subtype = keys.get("aux_subtype_key")
+        if step.get("has_subtypes") and subtype in step.get("subtypes", {}):
+            sub_id = f"AUXSUB_{step['key'].upper()}_{subtype.upper()}"
+            savail = availability.get(sub_id)
+            lines.append(_n(sub_id, step["subtypes"][subtype]["label"], active=True,
+                            auxiliary=True, availability=savail))
+            lines.append(_e(aid, sub_id, active=True, tier=savail.get("tier") if savail else None))
+
+    lines.append("}")
+    return "\n".join(lines)
+
+
+def render_static_graphviz(dot):
+    """Render DOT as a static SVG (no pan/zoom iframe). Returns False if dot is unavailable."""
+    _ensure_graphviz_dot_on_path()
+    try:
+        svg = _dot_to_svg(dot)
+    except graphviz.ExecutableNotFound:
+        return False
+    st.image(svg, width="stretch")
+    return True
+
+
 # ── MAIN RENDER ─────────────────────────────────────────────
 
 def render_decision_tree(df, tree=None):
     """Render the workflow tree with separate core and auxiliary results."""
     _sync_tree_query_params()
+    # Set by a Quick Start worked example: open that example's results panel once.
+    expand_results = st.session_state.pop("tree_expand_results", None)
 
     st.markdown("### 🌳 Study Design Workflow")
     st.markdown(
@@ -1329,6 +1692,7 @@ def render_decision_tree(df, tree=None):
     )
 
     matrix_key = None
+    matrix_info = None
     receptor_key = None
     instrument_key = None
     core_step_key = None
@@ -1399,7 +1763,7 @@ def render_decision_tree(df, tree=None):
         aux_step_key = _state_choice("tree_aux_step", list(aux_options.keys()))
 
         matrix_info = MATRICES[matrix_key]
-        context_df = _filter_matrix(df_domain, matrix_info["kw"])
+        context_df = _filter_matrix(df_domain, matrix_info["kw"], matrix_info["column"])
         context_df = _apply_matrix_tier_overrides(context_df, matrix_info["kw"])
         context_df = _filter_particle_types(context_df, particle_keys)
         core_info = next(
@@ -1446,14 +1810,14 @@ def render_decision_tree(df, tree=None):
                 aux_label = f'{aux_info["icon"]} {aux_info["label"]} — {aux_info["subtypes"][_sel]["label"]}'
 
         availability.update(
-            _workflow_availability(context_df, MONITORING_CORE, "CORE")
+            _workflow_availability(context_df, MONITORING_CORE, "CORE", matrix_info)
         )
         availability.update(
-            _workflow_availability(context_df, MONITORING_AUXILIARY, "AUX")
+            _workflow_availability(context_df, MONITORING_AUXILIARY, "AUX", matrix_info)
         )
-        availability.update(_instrument_availability(context_df))
+        availability.update(_instrument_availability(context_df, matrix_info))
         for _a in MONITORING_AUXILIARY:
-            availability.update(_subtype_availability(context_df, _a))
+            availability.update(_subtype_availability(context_df, _a, matrix_info))
 
     elif domain == "Toxicology":
         df_domain = _filter_domain(df, "Toxicology")
@@ -1574,6 +1938,13 @@ def render_decision_tree(df, tree=None):
     st.caption(
         "Node color shows best available tier: Tier 1 green, Tier 2 blue, "
         "Tier 3 gold, Tier 4 gray; red means no matching references."
+        + (
+            " Counts include cross-cutting documents (🌐) that apply across matrices; "
+            "when the best matrix-specific tier is lower, the node shows it on an extra "
+            "line (e.g., \"matrix-specific: T4\")."
+            if domain == "Monitoring"
+            else ""
+        )
     )
 
     st.markdown("**<span style='font-size:1.5em;'>Problem Formulation</span>**", unsafe_allow_html=True)
@@ -1633,11 +2004,12 @@ def render_decision_tree(df, tree=None):
 
     with st.expander(
         f"Core Workflow references: {core_label} ({len(core_result_df)})",
-        expanded=False,
+        expanded=(expand_results == "core"),
     ):
         _display_compact_results(
             core_result_df,
             tier_expanders=False,
+            matrix_info=matrix_info,
         )
 
     if aux_selector_key:
@@ -1669,6 +2041,6 @@ def render_decision_tree(df, tree=None):
 
     with st.expander(
         f"Auxiliary Support references: {aux_label} ({len(aux_result_df)})",
-        expanded=False,
+        expanded=(expand_results == "aux"),
     ):
-        _display_compact_results(aux_result_df, tier_expanders=False)
+        _display_compact_results(aux_result_df, tier_expanders=False, matrix_info=matrix_info)
